@@ -119,8 +119,10 @@ data:
   verifiedWith: []
 documentation_of: src/cpp-template/template.hpp
 layout: document
-redirect_from:
-- /library/src/cpp-template/template.hpp
-- /library/src/cpp-template/template.hpp.html
-title: src/cpp-template/template.hpp
+title: template
 ---
+
+# template
+C++ 用のテンプレート
+
+vim-snippet 用のファイルとして https://github.com/Luzhiled/comp-library/blob/main/src/cpp-template/cpp.snip もある

@@ -34,7 +34,7 @@ data:
   _extendedRequiredBy:
   - icon: ':warning:'
     path: src/cpp-template/template.hpp
-    title: src/cpp-template/template.hpp
+    title: template
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/itp1-1-a.test.cpp

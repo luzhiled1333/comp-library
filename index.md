@@ -40,7 +40,7 @@ data:
     pages:
     - icon: ':warning:'
       path: src/cpp-template/template.hpp
-      title: src/cpp-template/template.hpp
+      title: template
   verificationCategories:
   - name: test/aoj
     pages:
