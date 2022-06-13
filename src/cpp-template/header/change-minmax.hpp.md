@@ -38,8 +38,9 @@ data:
   - test/aoj/itp1-1-a.test.cpp
 documentation_of: src/cpp-template/header/change-minmax.hpp
 layout: document
-redirect_from:
-- /library/src/cpp-template/header/change-minmax.hpp
-- /library/src/cpp-template/header/change-minmax.hpp.html
-title: src/cpp-template/header/change-minmax.hpp
+title: chmin / chmax
 ---
+
+# chmin / chmax
+- `chmin(&a, b)`: `a` よりも `b` のほうが小さいとき `a` の値を `b` に変更する。更新があったときのみ `true` を返す。
+- `chmax(&a, b)`: `a` よりも `b` のほうが大きいとき `a` の値を `b` に変更する。更新があったときのみ `true` を返す。

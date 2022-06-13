@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/change-minmax.hpp
-    title: src/cpp-template/header/change-minmax.hpp
+    title: chmin / chmax
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/fast-ios.hpp
     title: src/cpp-template/header/fast-ios.hpp
@@ -124,5 +124,9 @@ title: template
 
 # template
 C++ 用のテンプレート
+
+ファイルの生成時に copy&paste などによってこのファイルを挿入することを想定しており、通常このファイルを include することは考えられていない。
+
+現在は vim-snippet によってこのファイルを挿入する運用にしている。
 
 vim-snippet 用のファイル: [cpp.snip](https://github.com/Luzhiled/comp-library/blob/main/src/cpp-template/cpp.snip)

@@ -5,7 +5,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: src/cpp-template/header/change-minmax.hpp
-      title: src/cpp-template/header/change-minmax.hpp
+      title: chmin / chmax
     - icon: ':heavy_check_mark:'
       path: src/cpp-template/header/fast-ios.hpp
       title: src/cpp-template/header/fast-ios.hpp
