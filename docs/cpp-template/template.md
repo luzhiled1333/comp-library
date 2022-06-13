@@ -1,6 +1,6 @@
 ---
 title: template
-documentation_of: //src/cpp-template/template.hpp
+documentation_of: //src/cpp-template/template.cpp
 ---
 
 # template
