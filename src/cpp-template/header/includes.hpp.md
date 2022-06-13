@@ -6,7 +6,7 @@ data:
     path: src/cpp-template/header/template-header.hpp
     title: src/cpp-template/header/template-header.hpp
   - icon: ':warning:'
-    path: src/cpp-template/template.hpp
+    path: src/cpp-template/template.cpp
     title: template
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -57,7 +57,7 @@ data:
   isVerificationFile: false
   path: src/cpp-template/header/includes.hpp
   requiredBy:
-  - src/cpp-template/template.hpp
+  - src/cpp-template/template.cpp
   - src/cpp-template/header/template-header.hpp
   timestamp: '2022-06-13 01:05:23+09:00'
   verificationStatus: LIBRARY_ALL_AC

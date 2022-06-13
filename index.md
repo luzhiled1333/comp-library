@@ -39,7 +39,7 @@ data:
   - name: src/cpp-template
     pages:
     - icon: ':warning:'
-      path: src/cpp-template/template.hpp
+      path: src/cpp-template/template.cpp
       title: template
   verificationCategories:
   - name: test/aoj

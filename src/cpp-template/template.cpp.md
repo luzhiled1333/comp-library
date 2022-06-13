@@ -37,7 +37,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
-  _pathExtension: hpp
+  _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
@@ -93,7 +93,7 @@ data:
     \n  template <typename T1, typename T2>\n  inline bool chmax(T1 &a, T2 b) {\n\
     \    return a < b and (a = b, true);\n  }\n\n  template <typename T1, typename\
     \ T2>\n  inline bool chmin(T1 &a, T2 b) {\n    return a > b and (a = b, true);\n\
-    \  }\n\n} // namespace luz\n#line 2 \"src/cpp-template/template.hpp\"\n\nnamespace\
+    \  }\n\n} // namespace luz\n#line 2 \"src/cpp-template/template.cpp\"\n\nnamespace\
     \ luz {\n\n  void main_() {\n\n  }\n\n} // namespace luz\n\nint main() {\n  luz::set_fast_ios();\n\
     \  luz::io_set(15);\n\n  luz::main_();\n}\n"
   code: "#include \"src/cpp-template/header/template-header.hpp\"\n\nnamespace luz\
@@ -112,12 +112,12 @@ data:
   - src/cpp-template/header/make-vector.hpp
   - src/cpp-template/header/change-minmax.hpp
   isVerificationFile: false
-  path: src/cpp-template/template.hpp
+  path: src/cpp-template/template.cpp
   requiredBy: []
-  timestamp: '2022-06-13 01:05:23+09:00'
+  timestamp: '2022-06-13 14:47:43+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: src/cpp-template/template.hpp
+documentation_of: src/cpp-template/template.cpp
 layout: document
 title: template
 ---
