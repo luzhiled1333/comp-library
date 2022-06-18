@@ -1,5 +1,7 @@
 #pragma once
 
+#include "src/cpp-template/header/rep.hpp"
+
 namespace luz {
 
   template< typename T >
