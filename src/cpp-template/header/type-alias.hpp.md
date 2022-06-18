@@ -8,10 +8,16 @@ data:
   - icon: ':warning:'
     path: src/cpp-template/template.cpp
     title: template
+  - icon: ':heavy_check_mark:'
+    path: src/sequence/coordinate-compression.hpp
+    title: src/sequence/coordinate-compression.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/itp1-1-a.test.cpp
     title: test/aoj/itp1-1-a.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: unit-test/sequence/coordinate-complession.test.cpp
+    title: unit-test/sequence/coordinate-complession.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -31,9 +37,11 @@ data:
   requiredBy:
   - src/cpp-template/template.cpp
   - src/cpp-template/header/template-header.hpp
+  - src/sequence/coordinate-compression.hpp
   timestamp: '2022-06-13 01:05:23+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - unit-test/sequence/coordinate-complession.test.cpp
   - test/aoj/itp1-1-a.test.cpp
 documentation_of: src/cpp-template/header/type-alias.hpp
 layout: document

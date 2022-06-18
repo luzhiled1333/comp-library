@@ -41,11 +41,21 @@ data:
     - icon: ':warning:'
       path: src/cpp-template/template.cpp
       title: template
+  - name: src/sequence
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/sequence/coordinate-compression.hpp
+      title: src/sequence/coordinate-compression.hpp
   verificationCategories:
   - name: test/aoj
     pages:
     - icon: ':heavy_check_mark:'
       path: test/aoj/itp1-1-a.test.cpp
       title: test/aoj/itp1-1-a.test.cpp
+  - name: unit-test/sequence
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: unit-test/sequence/coordinate-complession.test.cpp
+      title: unit-test/sequence/coordinate-complession.test.cpp
 layout: toppage
 ---

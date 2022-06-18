@@ -72,23 +72,24 @@ data:
     \n\n#line 2 \"src/cpp-template/header/input.hpp\"\n\nnamespace luz {\n\n  template<\
     \ typename T = i64 > T input() {\n    T tmp;\n    std::cin >> tmp;\n    return\
     \ tmp;\n  }\n\n} // namespace luz\n#line 11 \"src/cpp-template/header/template-header.hpp\"\
-    \n\n#line 2 \"src/cpp-template/header/vector-ios.hpp\"\n\nnamespace luz {\n\n\
-    \  template< typename T >\n  std::ostream &operator<<(std::ostream &os, std::vector<\
-    \ T > &vs) {\n    for (usize i: rep(0, vs.size())) {\n      os << vs[i] << (i\
-    \ + 1 != vs.size() ? \" \" : \"\");\n    }\n    return os;\n  }\n\n  template<\
-    \ typename T >\n  std::istream &operator>>(std::istream &is, std::vector< T >\
-    \ &vs) {\n    for (T &v: vs) {\n      is >> v;\n    }\n    return is;\n  }\n\n\
-    } // namespace luz\n#line 2 \"src/cpp-template/header/pair-ios.hpp\"\n\nnamespace\
-    \ luz {\n\n  template< typename T1, typename T2 >\n  std::ostream &operator<<(std::ostream\
-    \ &os, std::pair < T1, T2 > &p) {\n    os << \"(\" << p.first << \", \" << p.second\
-    \ << \")\";\n    return os;\n  }\n\n  template< typename T1, typename T2 >\n \
-    \ std::istream &operator>>(std::istream &is, std::pair< T1, T2 > &p) {\n    is\
-    \ >> p.first >> p.second;\n    return is;\n  }\n\n} // namespace luz\n#line 14\
-    \ \"src/cpp-template/header/template-header.hpp\"\n\n#line 2 \"src/cpp-template/header/make-vector.hpp\"\
-    \n\nnamespace luz {\n\n  template <typename T>\n  std::vector<T> make_vector(usize\
-    \ a, T b) {\n    return std::vector<T>(a, b);\n  }\n\n  template <typename...\
-    \ Ts>\n  auto make_vector(usize a, Ts... ts) {\n    return std::vector<decltype(make_vector(ts...))>(a,\
-    \ make_vector(ts...));\n  }\n\n} // namespace luz\n#line 16 \"src/cpp-template/header/template-header.hpp\"\
+    \n\n#line 2 \"src/cpp-template/header/vector-ios.hpp\"\n\n#line 4 \"src/cpp-template/header/vector-ios.hpp\"\
+    \n\nnamespace luz {\n\n  template< typename T >\n  std::ostream &operator<<(std::ostream\
+    \ &os, std::vector< T > &vs) {\n    for (usize i: rep(0, vs.size())) {\n     \
+    \ os << vs[i] << (i + 1 != vs.size() ? \" \" : \"\");\n    }\n    return os;\n\
+    \  }\n\n  template< typename T >\n  std::istream &operator>>(std::istream &is,\
+    \ std::vector< T > &vs) {\n    for (T &v: vs) {\n      is >> v;\n    }\n    return\
+    \ is;\n  }\n\n} // namespace luz\n#line 2 \"src/cpp-template/header/pair-ios.hpp\"\
+    \n\nnamespace luz {\n\n  template< typename T1, typename T2 >\n  std::ostream\
+    \ &operator<<(std::ostream &os, std::pair < T1, T2 > &p) {\n    os << \"(\" <<\
+    \ p.first << \", \" << p.second << \")\";\n    return os;\n  }\n\n  template<\
+    \ typename T1, typename T2 >\n  std::istream &operator>>(std::istream &is, std::pair<\
+    \ T1, T2 > &p) {\n    is >> p.first >> p.second;\n    return is;\n  }\n\n} //\
+    \ namespace luz\n#line 14 \"src/cpp-template/header/template-header.hpp\"\n\n\
+    #line 2 \"src/cpp-template/header/make-vector.hpp\"\n\nnamespace luz {\n\n  template\
+    \ <typename T>\n  std::vector<T> make_vector(usize a, T b) {\n    return std::vector<T>(a,\
+    \ b);\n  }\n\n  template <typename... Ts>\n  auto make_vector(usize a, Ts... ts)\
+    \ {\n    return std::vector<decltype(make_vector(ts...))>(a, make_vector(ts...));\n\
+    \  }\n\n} // namespace luz\n#line 16 \"src/cpp-template/header/template-header.hpp\"\
     \n\n#line 2 \"src/cpp-template/header/change-minmax.hpp\"\n\nnamespace luz {\n\
     \n  template <typename T1, typename T2>\n  inline bool chmax(T1 &a, T2 b) {\n\
     \    return a < b and (a = b, true);\n  }\n\n  template <typename T1, typename\
@@ -114,7 +115,7 @@ data:
   isVerificationFile: false
   path: src/cpp-template/template.cpp
   requiredBy: []
-  timestamp: '2022-06-13 14:47:43+09:00'
+  timestamp: '2022-06-18 23:58:06+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/cpp-template/template.cpp
