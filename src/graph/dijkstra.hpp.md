@@ -112,7 +112,6 @@ layout: document
 title: Dijkstra's Algorithm
 ---
 
-# Dijkstra's algorithm
 ## コンストラクタ
 ```
 Dijkstra(const Graph<cost_type> &g_, usize source);
