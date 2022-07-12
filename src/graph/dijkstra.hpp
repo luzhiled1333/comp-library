@@ -2,7 +2,7 @@
 #include <utility>
 #include <queue>
 
-#include "../cpp-template/change-minmax.hpp"
+#include "../cpp-template/header/change-minmax.hpp"
 #include "graph-template.hpp"
 
 namespace luz {
