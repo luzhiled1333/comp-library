@@ -1,5 +1,5 @@
 ---
-title: template
+title: Dijkstra's Algorithm
 documentation_of: //src/graph/dijkstra.hpp
 ---
 
