@@ -42,11 +42,11 @@ namespace luz {
       g[v].emplace_back(v, u, cost, edge_count++);
     }
 
-    inline std::vector< Edge<cost_type> > &operator[](const usize &v) {
+    inline Edges< cost_type > &operator[](const usize &v) {
       return g[v];
     }
 
-    inline const std::vector< Edge<cost_type> > &operator[](const usize &v) const {
+    inline const Edges< cost_type > &operator[](const usize &v) const {
       return g[v];
     }
   };
