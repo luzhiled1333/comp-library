@@ -8,7 +8,13 @@ data:
   - icon: ':warning:'
     path: src/cpp-template/template.cpp
     title: template
+  - icon: ':heavy_check_mark:'
+    path: src/graph/dijkstra.hpp
+    title: template
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/grl-1-a.test.cpp
+    title: test/aoj/grl-1-a.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/itp1-1-a.test.cpp
     title: test/aoj/itp1-1-a.test.cpp
@@ -30,12 +36,14 @@ data:
   isVerificationFile: false
   path: src/cpp-template/header/change-minmax.hpp
   requiredBy:
+  - src/graph/dijkstra.hpp
   - src/cpp-template/template.cpp
   - src/cpp-template/header/template-header.hpp
   timestamp: '2022-06-13 01:05:23+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/itp1-1-a.test.cpp
+  - test/aoj/grl-1-a.test.cpp
 documentation_of: src/cpp-template/header/change-minmax.hpp
 layout: document
 title: chmin / chmax

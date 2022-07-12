@@ -41,6 +41,14 @@ data:
     - icon: ':warning:'
       path: src/cpp-template/template.cpp
       title: template
+  - name: src/graph
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/graph/dijkstra.hpp
+      title: template
+    - icon: ':heavy_check_mark:'
+      path: src/graph/graph-template.hpp
+      title: src/graph/graph-template.hpp
   - name: src/sequence
     pages:
     - icon: ':heavy_check_mark:'
@@ -49,6 +57,9 @@ data:
   verificationCategories:
   - name: test/aoj
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/grl-1-a.test.cpp
+      title: test/aoj/grl-1-a.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/itp1-1-a.test.cpp
       title: test/aoj/itp1-1-a.test.cpp

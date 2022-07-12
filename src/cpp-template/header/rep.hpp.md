@@ -16,6 +16,9 @@ data:
     title: src/sequence/coordinate-compression.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/grl-1-a.test.cpp
+    title: test/aoj/grl-1-a.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/itp1-1-a.test.cpp
     title: test/aoj/itp1-1-a.test.cpp
   - icon: ':heavy_check_mark:'
@@ -69,6 +72,7 @@ data:
   verifiedWith:
   - unit-test/sequence/coordinate-complession.test.cpp
   - test/aoj/itp1-1-a.test.cpp
+  - test/aoj/grl-1-a.test.cpp
 documentation_of: src/cpp-template/header/rep.hpp
 layout: document
 redirect_from:
