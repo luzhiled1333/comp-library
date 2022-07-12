@@ -45,7 +45,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: src/graph/dijkstra.hpp
-      title: template
+      title: Dijkstra's Algorithm
     - icon: ':heavy_check_mark:'
       path: src/graph/graph-template.hpp
       title: src/graph/graph-template.hpp

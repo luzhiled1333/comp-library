@@ -109,7 +109,7 @@ data:
   - test/aoj/grl-1-a.test.cpp
 documentation_of: src/graph/dijkstra.hpp
 layout: document
-title: template
+title: Dijkstra's Algorithm
 ---
 
 # Dijkstra's algorithm

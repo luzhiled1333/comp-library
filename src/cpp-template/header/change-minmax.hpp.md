@@ -10,7 +10,7 @@ data:
     title: template
   - icon: ':heavy_check_mark:'
     path: src/graph/dijkstra.hpp
-    title: template
+    title: Dijkstra's Algorithm
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/grl-1-a.test.cpp
