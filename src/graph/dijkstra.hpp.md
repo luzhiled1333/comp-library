@@ -9,7 +9,7 @@ data:
     title: src/cpp-template/header/type-alias.hpp
   - icon: ':heavy_check_mark:'
     path: src/graph/graph-template.hpp
-    title: src/graph/graph-template.hpp
+    title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -42,11 +42,11 @@ data:
     \ {\n      g[from].emplace_back(from, to, cost, edge_count++);\n    }\n\n    void\
     \ add_undirected_edge(usize u, usize v, cost_type cost = 1) {\n      g[u].emplace_back(u,\
     \ v, cost, edge_count);\n      g[v].emplace_back(v, u, cost, edge_count++);\n\
-    \    }\n\n    inline std::vector< Edge<cost_type> > &operator[](const usize &v)\
-    \ {\n      return g[v];\n    }\n\n    inline const std::vector< Edge<cost_type>\
-    \ > &operator[](const usize &v) const {\n      return g[v];\n    }\n  };\n\n}\n\
-    #line 7 \"src/graph/dijkstra.hpp\"\n\nnamespace luz {\n\n  template< typename\
-    \ cost_type >\n  class Dijkstra {\n    static constexpr usize undefined_ = std::numeric_limits<usize>::max();\n\
+    \    }\n\n    inline Edges< cost_type > &operator[](const usize &v) {\n      return\
+    \ g[v];\n    }\n\n    inline const Edges< cost_type > &operator[](const usize\
+    \ &v) const {\n      return g[v];\n    }\n  };\n\n}\n#line 7 \"src/graph/dijkstra.hpp\"\
+    \n\nnamespace luz {\n\n  template< typename cost_type >\n  class Dijkstra {\n\
+    \    static constexpr usize undefined_ = std::numeric_limits<usize>::max();\n\
     \    static constexpr cost_type inf_ = std::numeric_limits<cost_type>::max();\n\
     \  \n    Graph< cost_type > g;\n    usize g_size;\n    std::vector< cost_type\
     \ > ds;\n    std::vector< usize > froms, ids;\n  \n    void dijkstra(usize s)\
@@ -103,7 +103,7 @@ data:
   isVerificationFile: false
   path: src/graph/dijkstra.hpp
   requiredBy: []
-  timestamp: '2022-07-13 02:17:03+09:00'
+  timestamp: '2022-07-13 03:22:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/grl-1-a.test.cpp

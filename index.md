@@ -48,7 +48,7 @@ data:
       title: Dijkstra's Algorithm
     - icon: ':heavy_check_mark:'
       path: src/graph/graph-template.hpp
-      title: src/graph/graph-template.hpp
+      title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
   - name: src/sequence
     pages:
     - icon: ':heavy_check_mark:'

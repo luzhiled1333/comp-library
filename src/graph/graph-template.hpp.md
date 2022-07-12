@@ -33,10 +33,10 @@ data:
     \ from, usize to, cost_type cost = 1) {\n      g[from].emplace_back(from, to,\
     \ cost, edge_count++);\n    }\n\n    void add_undirected_edge(usize u, usize v,\
     \ cost_type cost = 1) {\n      g[u].emplace_back(u, v, cost, edge_count);\n  \
-    \    g[v].emplace_back(v, u, cost, edge_count++);\n    }\n\n    inline std::vector<\
-    \ Edge<cost_type> > &operator[](const usize &v) {\n      return g[v];\n    }\n\
-    \n    inline const std::vector< Edge<cost_type> > &operator[](const usize &v)\
-    \ const {\n      return g[v];\n    }\n  };\n\n}\n"
+    \    g[v].emplace_back(v, u, cost, edge_count++);\n    }\n\n    inline Edges<\
+    \ cost_type > &operator[](const usize &v) {\n      return g[v];\n    }\n\n   \
+    \ inline const Edges< cost_type > &operator[](const usize &v) const {\n      return\
+    \ g[v];\n    }\n  };\n\n}\n"
   code: "#pragma once\n\n#include <vector>\n\n#include \"src/cpp-template/header/type-alias.hpp\"\
     \n\nnamespace luz {\n\n  template< typename cost_type >\n  class Edge {\n   public:\n\
     \    usize from, to;\n    cost_type cost;\n    usize id;\n    Edge() = default;\n\
@@ -50,23 +50,63 @@ data:
     \ {\n      g[from].emplace_back(from, to, cost, edge_count++);\n    }\n\n    void\
     \ add_undirected_edge(usize u, usize v, cost_type cost = 1) {\n      g[u].emplace_back(u,\
     \ v, cost, edge_count);\n      g[v].emplace_back(v, u, cost, edge_count++);\n\
-    \    }\n\n    inline std::vector< Edge<cost_type> > &operator[](const usize &v)\
-    \ {\n      return g[v];\n    }\n\n    inline const std::vector< Edge<cost_type>\
-    \ > &operator[](const usize &v) const {\n      return g[v];\n    }\n  };\n\n}\n"
+    \    }\n\n    inline Edges< cost_type > &operator[](const usize &v) {\n      return\
+    \ g[v];\n    }\n\n    inline const Edges< cost_type > &operator[](const usize\
+    \ &v) const {\n      return g[v];\n    }\n  };\n\n}\n"
   dependsOn:
   - src/cpp-template/header/type-alias.hpp
   isVerificationFile: false
   path: src/graph/graph-template.hpp
   requiredBy:
   - src/graph/dijkstra.hpp
-  timestamp: '2022-06-19 00:20:41+09:00'
+  timestamp: '2022-07-13 03:22:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/grl-1-a.test.cpp
 documentation_of: src/graph/graph-template.hpp
 layout: document
-redirect_from:
-- /library/src/graph/graph-template.hpp
-- /library/src/graph/graph-template.hpp.html
-title: src/graph/graph-template.hpp
+title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
 ---
+
+## コンストラクタ
+```
+Graph(usize n)
+```
+
+頂点数 `n` のグラフを定義する。
+
+### 制約
+- $0 \leq n$
+
+## size
+```
+usize size()
+```
+
+グラフの頂点数を返す。
+
+## add_directed_edge
+```
+void add_directed_edge(usize from, usize to, cost_type cost = 1)
+```
+
+`from` から `to` へのコスト`cost`の有向辺をグラフに追加する。 `cost` を指定しなかった場合、その辺のコストは 1 になる。
+
+辺には追加された順に 0-indexed で辺番号が割り振られる。
+
+## add_undirected_edge
+```
+void add_undirected_edge(usize u, usize v, cost_type cost = 1)
+```
+
+`u` から `v` へのコスト `cost` の無向辺をグラフに追加する。 `cost` を指定しなかった場合、その辺のコストは 1 になる。
+
+辺には追加された順に 0-indexed で辺番号が割り振られる。
+
+## operator[]
+```
+(1)       Edges &operator[](const usize &v)
+(2) const Edges &operator[](const usize &v) const
+```
+
+`v` を始点とする辺のリストを返す。
