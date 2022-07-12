@@ -3,7 +3,6 @@ title: Dijkstra's Algorithm
 documentation_of: //src/graph/dijkstra.hpp
 ---
 
-# Dijkstra's algorithm
 ## コンストラクタ
 ```
 Dijkstra(const Graph<cost_type> &g_, usize source);
