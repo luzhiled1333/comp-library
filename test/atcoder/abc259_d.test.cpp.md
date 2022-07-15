@@ -9,7 +9,7 @@ data:
     title: Type alias
   - icon: ':x:'
     path: src/geometry/Z2-geometry/intersect/is-intersect-circle-circle.hpp
-    title: src/geometry/Z2-geometry/intersect/is-intersect-circle-circle.hpp
+    title: "\u5186\u3068\u5186\u306E\u4EA4\u5DEE\u5224\u5B9A"
   - icon: ':x:'
     path: src/geometry/Z2-geometry/intersect/is-intersect-point-circle.hpp
     title: src/geometry/Z2-geometry/intersect/is-intersect-point-circle.hpp

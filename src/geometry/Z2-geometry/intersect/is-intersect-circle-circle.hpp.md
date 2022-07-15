@@ -88,8 +88,7 @@ data:
   - test/atcoder/abc259_d.test.cpp
 documentation_of: src/geometry/Z2-geometry/intersect/is-intersect-circle-circle.hpp
 layout: document
-redirect_from:
-- /library/src/geometry/Z2-geometry/intersect/is-intersect-circle-circle.hpp
-- /library/src/geometry/Z2-geometry/intersect/is-intersect-circle-circle.hpp.html
-title: src/geometry/Z2-geometry/intersect/is-intersect-circle-circle.hpp
+title: "\u5186\u3068\u5186\u306E\u4EA4\u5DEE\u5224\u5B9A"
 ---
+
+![内包されている場合](./contain.png)
