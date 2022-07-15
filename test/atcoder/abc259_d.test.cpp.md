@@ -3,10 +3,10 @@ data:
   _extendedDependsOn:
   - icon: ':question:'
     path: src/cpp-template/header/rep.hpp
-    title: src/cpp-template/header/rep.hpp
+    title: "rep \u69CB\u9020\u4F53"
   - icon: ':question:'
     path: src/cpp-template/header/type-alias.hpp
-    title: src/cpp-template/header/type-alias.hpp
+    title: Type alias
   - icon: ':x:'
     path: src/geometry/Z2-geometry/intersect/is-intersect-circle-circle.hpp
     title: src/geometry/Z2-geometry/intersect/is-intersect-circle-circle.hpp

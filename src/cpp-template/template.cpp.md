@@ -21,13 +21,13 @@ data:
     title: pair I/O
   - icon: ':question:'
     path: src/cpp-template/header/rep.hpp
-    title: src/cpp-template/header/rep.hpp
+    title: "rep \u69CB\u9020\u4F53"
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/template-header.hpp
     title: src/cpp-template/header/template-header.hpp
   - icon: ':question:'
     path: src/cpp-template/header/type-alias.hpp
-    title: src/cpp-template/header/type-alias.hpp
+    title: Type alias
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/vector-ios.hpp
     title: vector I/O

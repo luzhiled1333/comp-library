@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':question:'
     path: src/cpp-template/header/type-alias.hpp
-    title: src/cpp-template/header/type-alias.hpp
+    title: Type alias
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/template-header.hpp
@@ -89,8 +89,25 @@ data:
   - test/aoj/grl-1-a.test.cpp
 documentation_of: src/cpp-template/header/rep.hpp
 layout: document
-redirect_from:
-- /library/src/cpp-template/header/rep.hpp
-- /library/src/cpp-template/header/rep.hpp.html
-title: src/cpp-template/header/rep.hpp
+title: "rep \u69CB\u9020\u4F53"
 ---
+
+`[l, r)` の各要素を昇順/降順に列挙するために使う。
+
+
+```cpp
+for (std::size_t i = l; i < r; i++)
+```
+
+と同等のコードを
+
+```cpp
+for (usize i: rep(l, r))
+```
+
+と書くことができる。
+
+## note
+`l`, `r` は非負であることを想定している。ループの範囲として負数を含む必要がある場合の多くは注意深く実装する必要があるため、そのような場合は通常の `for` 文を用いて書くことにしている。
+
+また、1ずつ進めないような場合も特殊なものであると考えているため、そのような場合も通常の `for` 文で実装するものとしている。

@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':question:'
     path: src/cpp-template/header/type-alias.hpp
-    title: src/cpp-template/header/type-alias.hpp
+    title: Type alias
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/template-header.hpp

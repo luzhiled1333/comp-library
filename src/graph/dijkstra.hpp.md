@@ -6,7 +6,7 @@ data:
     title: chmin / chmax
   - icon: ':question:'
     path: src/cpp-template/header/type-alias.hpp
-    title: src/cpp-template/header/type-alias.hpp
+    title: Type alias
   - icon: ':heavy_check_mark:'
     path: src/graph/graph-template.hpp
     title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
