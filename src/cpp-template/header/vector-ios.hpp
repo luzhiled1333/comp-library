@@ -2,6 +2,8 @@
 
 #include "src/cpp-template/header/rep.hpp"
 
+#include <iostream>
+
 namespace luz {
 
   template< typename T >

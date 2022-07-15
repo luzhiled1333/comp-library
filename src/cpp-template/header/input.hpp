@@ -2,6 +2,8 @@
 
 #include "src/cpp-template/header/type-alias.hpp"
 
+#include <iostream>
+
 namespace luz {
 
   template< typename T = i64 > T input() {
