@@ -10,7 +10,7 @@ data:
     title: specify output precision
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/make-vector.hpp
-    title: src/cpp-template/header/make-vector.hpp
+    title: input
   - icon: ':question:'
     path: src/cpp-template/header/rep.hpp
     title: src/cpp-template/header/rep.hpp
