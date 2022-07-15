@@ -20,7 +20,7 @@ data:
       title: make vector
     - icon: ':heavy_check_mark:'
       path: src/cpp-template/header/pair-ios.hpp
-      title: src/cpp-template/header/pair-ios.hpp
+      title: pair I/O
     - icon: ':question:'
       path: src/cpp-template/header/rep.hpp
       title: src/cpp-template/header/rep.hpp
@@ -32,7 +32,7 @@ data:
       title: src/cpp-template/header/type-alias.hpp
     - icon: ':heavy_check_mark:'
       path: src/cpp-template/header/vector-ios.hpp
-      title: src/cpp-template/header/vector-ios.hpp
+      title: vector I/O
   - name: src/cpp-template
     pages:
     - icon: ':warning:'

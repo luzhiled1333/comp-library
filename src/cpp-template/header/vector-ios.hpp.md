@@ -75,8 +75,9 @@ data:
   - test/aoj/itp1-1-a.test.cpp
 documentation_of: src/cpp-template/header/vector-ios.hpp
 layout: document
-redirect_from:
-- /library/src/cpp-template/header/vector-ios.hpp
-- /library/src/cpp-template/header/vector-ios.hpp.html
-title: src/cpp-template/header/vector-ios.hpp
+title: vector I/O
 ---
+
+`std::vector` の入出力を定義する。
+
+多次元の vector を出力した際、すべての要素が空白区切りで出力されてしまうことに注意。基本的には一次元の vector を出力することを想定している。

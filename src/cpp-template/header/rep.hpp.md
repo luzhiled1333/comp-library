@@ -10,7 +10,7 @@ data:
     title: src/cpp-template/header/template-header.hpp
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/vector-ios.hpp
-    title: src/cpp-template/header/vector-ios.hpp
+    title: vector I/O
   - icon: ':warning:'
     path: src/cpp-template/template.cpp
     title: template

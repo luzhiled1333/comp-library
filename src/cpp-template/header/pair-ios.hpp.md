@@ -42,8 +42,11 @@ data:
   - test/aoj/itp1-1-a.test.cpp
 documentation_of: src/cpp-template/header/pair-ios.hpp
 layout: document
-redirect_from:
-- /library/src/cpp-template/header/pair-ios.hpp
-- /library/src/cpp-template/header/pair-ios.hpp.html
-title: src/cpp-template/header/pair-ios.hpp
+title: pair I/O
 ---
+
+`std::pair` の入出力を定義する。
+
+入力は `first`, `second` の順に行われる。
+
+出力は `(first, second)` の形式で行われるが、これはデバッグプリントなどのために用いることを想定しており、安全のため、解として出力したい場合は `p.first`, `p.second` のように書くようにしている。

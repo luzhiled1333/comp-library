@@ -9,7 +9,7 @@ data:
     title: src/cpp-template/header/type-alias.hpp
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/vector-ios.hpp
-    title: src/cpp-template/header/vector-ios.hpp
+    title: vector I/O
   - icon: ':heavy_check_mark:'
     path: src/sequence/coordinate-compression.hpp
     title: src/sequence/coordinate-compression.hpp
