@@ -1,5 +1,8 @@
 #pragma once
 
+#include <cstddef>
+#include <cstdint>
+
 namespace luz {
 
   using isize = std::ptrdiff_t;
