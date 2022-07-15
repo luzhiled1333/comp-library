@@ -41,6 +41,33 @@ data:
     - icon: ':warning:'
       path: src/cpp-template/template.cpp
       title: template
+  - name: src/geometry/Z2-geometry/intersect
+    pages:
+    - icon: ':warning:'
+      path: src/geometry/Z2-geometry/intersect/is-intersect-circle-circle.hpp
+      title: src/geometry/Z2-geometry/intersect/is-intersect-circle-circle.hpp
+    - icon: ':warning:'
+      path: src/geometry/Z2-geometry/intersect/is-intersect-point-circle.hpp
+      title: src/geometry/Z2-geometry/intersect/is-intersect-point-circle.hpp
+  - name: src/geometry/Z2-geometry/operation
+    pages:
+    - icon: ':warning:'
+      path: src/geometry/Z2-geometry/operation/square-norm.hpp
+      title: src/geometry/Z2-geometry/operation/square-norm.hpp
+    - icon: ':warning:'
+      path: src/geometry/Z2-geometry/operation/square.hpp
+      title: src/geometry/Z2-geometry/operation/square.hpp
+  - name: src/geometry/Z2-geometry/struct
+    pages:
+    - icon: ':warning:'
+      path: src/geometry/Z2-geometry/struct/circle.hpp
+      title: src/geometry/Z2-geometry/struct/circle.hpp
+    - icon: ':warning:'
+      path: src/geometry/Z2-geometry/struct/point.hpp
+      title: src/geometry/Z2-geometry/struct/point.hpp
+    - icon: ':warning:'
+      path: src/geometry/Z2-geometry/struct/vector.hpp
+      title: src/geometry/Z2-geometry/struct/vector.hpp
   - name: src/graph
     pages:
     - icon: ':heavy_check_mark:'
