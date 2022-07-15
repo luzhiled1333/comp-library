@@ -34,12 +34,21 @@ namespace Z2 {
     }
 
     Vector operator+(const Vector &v) const {
-      return (*this) += v;
+      return Vector(*this) += v;
     }
 
     Vector operator-(const Vector &v) const {
-      return (*this) -= v;
+      return Vector(*this) -= v;
     }
+
+    Z x() const {
+      return x_;
+    }
+
+    Z y() const {
+      return y_;
+    }
+
   };
 
   template< typename Z >
