@@ -128,7 +128,7 @@ data:
   isVerificationFile: true
   path: test/aoj/grl-1-a.test.cpp
   requiredBy: []
-  timestamp: '2022-07-16 00:29:36+09:00'
+  timestamp: '2022-07-16 03:55:45+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/grl-1-a.test.cpp

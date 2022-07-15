@@ -70,30 +70,30 @@ data:
     \ {\n      return ds;\n    }\n  \n    inline std::vector< usize > get_shortest_path_tree()\
     \ const {\n      return froms;\n    }\n  \n    inline std::vector< usize > get_edge_labels()\
     \ const {\n      return ids;\n    }\n  };\n\n}\n"
-  code: "#include <limits>\n#include <utility>\n#include <queue>\n\n#include \"../cpp-template/header/change-minmax.hpp\"\
-    \n#include \"graph-template.hpp\"\n\nnamespace luz {\n\n  template< typename cost_type\
-    \ >\n  class Dijkstra {\n    static constexpr usize undefined_ = std::numeric_limits<usize>::max();\n\
-    \    static constexpr cost_type inf_ = std::numeric_limits<cost_type>::max();\n\
-    \  \n    Graph< cost_type > g;\n    usize g_size;\n    std::vector< cost_type\
-    \ > ds;\n    std::vector< usize > froms, ids;\n  \n    void dijkstra(usize s)\
-    \ {\n      using pq_type = std::pair< cost_type, usize >;\n      std::priority_queue<\
-    \ pq_type, std::vector<pq_type>, std::greater<pq_type> > pq;\n  \n      ds[s]\
-    \ = 0;\n      pq.emplace(ds[s], s);\n  \n      while (not pq.empty()) {\n    \
-    \    auto [cost, v] = pq.top();\n        pq.pop();\n  \n        if (ds[v] < cost)\
-    \ continue;\n        for (auto &e: g[v]) {\n          if (chmin(ds[e.to], cost\
-    \ + e.cost)) {\n            pq.emplace(ds[e.to], e.to);\n            froms[e.to]\
-    \ = v;\n            ids[e.to] = e.id;\n          }\n        }\n      }\n    }\n\
-    \  \n   public:\n    explicit Dijkstra(const Graph< cost_type > &g_, usize source)\
-    \ : \n        g(g_), g_size(g.size()), ds(g_size, inf_), \n        froms(g_size,\
-    \ undefined_), ids(g_size, undefined_) {\n      dijkstra(source);\n    }\n  \n\
-    \    inline usize undefined() const {\n      return undefined_;\n    }\n  \n \
-    \   inline cost_type inf() const {\n      return inf_;\n    }\n  \n    inline\
-    \ cost_type dist(const usize v) const {\n      return ds[v];\n    }\n  \n    inline\
-    \ usize from_on_shortest_path_tree(const usize v) const {\n      return froms[v];\n\
-    \    }\n  \n    inline usize edge_label(const usize v) const {\n      return ids[v];\n\
-    \    }\n  \n    inline Graph< cost_type > get_original_graph() const {\n     \
-    \ return g;\n    }\n  \n    inline std::vector< cost_type > get_distances() const\
-    \ {\n      return ds;\n    }\n  \n    inline std::vector< usize > get_shortest_path_tree()\
+  code: "#include <limits>\n#include <utility>\n#include <queue>\n\n#include \"src/cpp-template/header/change-minmax.hpp\"\
+    \n#include \"src/graph/graph-template.hpp\"\n\nnamespace luz {\n\n  template<\
+    \ typename cost_type >\n  class Dijkstra {\n    static constexpr usize undefined_\
+    \ = std::numeric_limits<usize>::max();\n    static constexpr cost_type inf_ =\
+    \ std::numeric_limits<cost_type>::max();\n  \n    Graph< cost_type > g;\n    usize\
+    \ g_size;\n    std::vector< cost_type > ds;\n    std::vector< usize > froms, ids;\n\
+    \  \n    void dijkstra(usize s) {\n      using pq_type = std::pair< cost_type,\
+    \ usize >;\n      std::priority_queue< pq_type, std::vector<pq_type>, std::greater<pq_type>\
+    \ > pq;\n  \n      ds[s] = 0;\n      pq.emplace(ds[s], s);\n  \n      while (not\
+    \ pq.empty()) {\n        auto [cost, v] = pq.top();\n        pq.pop();\n  \n \
+    \       if (ds[v] < cost) continue;\n        for (auto &e: g[v]) {\n         \
+    \ if (chmin(ds[e.to], cost + e.cost)) {\n            pq.emplace(ds[e.to], e.to);\n\
+    \            froms[e.to] = v;\n            ids[e.to] = e.id;\n          }\n  \
+    \      }\n      }\n    }\n  \n   public:\n    explicit Dijkstra(const Graph< cost_type\
+    \ > &g_, usize source) : \n        g(g_), g_size(g.size()), ds(g_size, inf_),\
+    \ \n        froms(g_size, undefined_), ids(g_size, undefined_) {\n      dijkstra(source);\n\
+    \    }\n  \n    inline usize undefined() const {\n      return undefined_;\n \
+    \   }\n  \n    inline cost_type inf() const {\n      return inf_;\n    }\n  \n\
+    \    inline cost_type dist(const usize v) const {\n      return ds[v];\n    }\n\
+    \  \n    inline usize from_on_shortest_path_tree(const usize v) const {\n    \
+    \  return froms[v];\n    }\n  \n    inline usize edge_label(const usize v) const\
+    \ {\n      return ids[v];\n    }\n  \n    inline Graph< cost_type > get_original_graph()\
+    \ const {\n      return g;\n    }\n  \n    inline std::vector< cost_type > get_distances()\
+    \ const {\n      return ds;\n    }\n  \n    inline std::vector< usize > get_shortest_path_tree()\
     \ const {\n      return froms;\n    }\n  \n    inline std::vector< usize > get_edge_labels()\
     \ const {\n      return ids;\n    }\n  };\n\n}\n"
   dependsOn:
@@ -103,7 +103,7 @@ data:
   isVerificationFile: false
   path: src/graph/dijkstra.hpp
   requiredBy: []
-  timestamp: '2022-07-16 00:29:36+09:00'
+  timestamp: '2022-07-16 03:55:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/grl-1-a.test.cpp
