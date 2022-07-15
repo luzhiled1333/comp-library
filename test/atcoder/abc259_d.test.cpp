@@ -1,4 +1,5 @@
 // verification-helper: PROBLEM https://atcoder.jp/contests/abc259/tasks/abc259_d
+// verification-helper: IGNORE
 
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/cpp-template/header/rep.hpp"
