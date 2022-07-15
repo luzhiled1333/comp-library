@@ -91,4 +91,4 @@ layout: document
 title: "\u5186\u3068\u5186\u306E\u4EA4\u5DEE\u5224\u5B9A"
 ---
 
-![内包されている場合](/comp-library/main/docs/assets/contain.png)
+![内包されている場合](/docs/assets/contain.png)
