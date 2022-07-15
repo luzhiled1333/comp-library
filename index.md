@@ -75,7 +75,7 @@ data:
       title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
   - name: src/sequence
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/sequence/coordinate-compression.hpp
       title: src/sequence/coordinate-compression.hpp
   verificationCategories:
@@ -94,7 +94,7 @@ data:
       title: test/atcoder/abc259_d.test.cpp
   - name: unit-test/sequence
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: unit-test/sequence/coordinate-complession.test.cpp
       title: unit-test/sequence/coordinate-complession.test.cpp
 layout: toppage

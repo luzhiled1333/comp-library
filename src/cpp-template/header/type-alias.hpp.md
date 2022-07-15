@@ -29,6 +29,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/graph/graph-template.hpp
     title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
+  - icon: ':heavy_check_mark:'
+    path: src/sequence/coordinate-compression.hpp
+    title: src/sequence/coordinate-compression.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/grl-1-a.test.cpp
@@ -39,6 +42,9 @@ data:
   - icon: ':x:'
     path: test/atcoder/abc259_d.test.cpp
     title: test/atcoder/abc259_d.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: unit-test/sequence/coordinate-complession.test.cpp
+    title: unit-test/sequence/coordinate-complession.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
   _verificationStatusIcon: ':question:'
@@ -66,9 +72,11 @@ data:
   - src/cpp-template/header/vector-ios.hpp
   - src/cpp-template/header/io-set.hpp
   - src/cpp-template/header/input.hpp
+  - src/sequence/coordinate-compression.hpp
   timestamp: '2022-07-16 00:29:36+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - unit-test/sequence/coordinate-complession.test.cpp
   - test/atcoder/abc259_d.test.cpp
   - test/aoj/itp1-1-a.test.cpp
   - test/aoj/grl-1-a.test.cpp

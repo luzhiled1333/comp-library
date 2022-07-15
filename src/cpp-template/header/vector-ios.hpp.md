@@ -18,6 +18,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/itp1-1-a.test.cpp
     title: test/aoj/itp1-1-a.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: unit-test/sequence/coordinate-complession.test.cpp
+    title: unit-test/sequence/coordinate-complession.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -68,6 +71,7 @@ data:
   timestamp: '2022-07-16 05:05:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - unit-test/sequence/coordinate-complession.test.cpp
   - test/aoj/itp1-1-a.test.cpp
 documentation_of: src/cpp-template/header/vector-ios.hpp
 layout: document
