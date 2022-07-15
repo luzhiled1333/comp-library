@@ -7,7 +7,7 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/template-header.hpp
-    title: src/cpp-template/header/template-header.hpp
+    title: Template Header
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/vector-ios.hpp
     title: vector I/O

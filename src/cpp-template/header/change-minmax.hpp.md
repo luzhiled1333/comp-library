@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/template-header.hpp
-    title: src/cpp-template/header/template-header.hpp
+    title: Template Header
   - icon: ':warning:'
     path: src/cpp-template/template.cpp
     title: template

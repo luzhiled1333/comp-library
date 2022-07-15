@@ -144,8 +144,7 @@ data:
   - test/aoj/itp1-1-a.test.cpp
 documentation_of: src/cpp-template/header/template-header.hpp
 layout: document
-redirect_from:
-- /library/src/cpp-template/header/template-header.hpp
-- /library/src/cpp-template/header/template-header.hpp.html
-title: src/cpp-template/header/template-header.hpp
+title: Template Header
 ---
+
+競技用のテンプレートをすべて include したファイル。コンテスト中などは個別に include するのではなく、このファイルのみを include することにしている。
