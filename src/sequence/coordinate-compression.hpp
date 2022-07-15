@@ -1,7 +1,6 @@
 #include <algorithm>
 #include <vector>
 
-#include "src/cpp-template/header/includes.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/cpp-template/header/rep.hpp"
 
