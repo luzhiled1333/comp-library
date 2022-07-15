@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/cpp-template/header/type-alias.hpp
     title: src/cpp-template/header/type-alias.hpp
   _extendedRequiredBy:

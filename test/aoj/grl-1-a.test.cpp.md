@@ -7,10 +7,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/input.hpp
     title: src/cpp-template/header/input.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/cpp-template/header/rep.hpp
     title: src/cpp-template/header/rep.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/cpp-template/header/type-alias.hpp
     title: src/cpp-template/header/type-alias.hpp
   - icon: ':heavy_check_mark:'
