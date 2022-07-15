@@ -31,17 +31,18 @@ data:
   bundledCode: "#line 1 \"test/aoj/grl-1-a.test.cpp\"\n// verification-helper: PROBLEM\
     \ https://onlinejudge.u-aizu.ac.jp/problems/GRL_1_A\n\n#include <iostream>\n\n\
     #line 2 \"src/cpp-template/header/input.hpp\"\n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\
-    \n\nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using usize = std::size_t;\n\
-    \n  using i32 = std::int32_t;\n  using i64 = std::int64_t;\n  using u32 = std::uint32_t;\n\
-    \  using u64 = std::uint64_t;\n  \n} // namespace luz\n#line 4 \"src/cpp-template/header/input.hpp\"\
-    \n\nnamespace luz {\n\n  template< typename T = i64 > T input() {\n    T tmp;\n\
-    \    std::cin >> tmp;\n    return tmp;\n  }\n\n} // namespace luz\n#line 2 \"\
-    src/cpp-template/header/rep.hpp\"\n\nnamespace luz {\n\n  struct rep {\n    struct\
-    \ itr {\n      usize i;\n      constexpr itr(const usize i) noexcept : i(i) {}\n\
-    \      void operator++() noexcept { ++i; }\n      constexpr usize operator*()\
-    \ const noexcept { return i; }\n      constexpr bool operator!=(const itr x) const\
-    \ noexcept { return i != x.i; }\n    };\n    const itr f, l;\n    constexpr rep(const\
-    \ usize f, const usize l) noexcept\n      : f(std::min(f, l)), l(l) {}\n    constexpr\
+    \n\n#include <cstddef>\n#include <cstdint>\n\nnamespace luz {\n\n  using isize\
+    \ = std::ptrdiff_t;\n  using usize = std::size_t;\n\n  using i32 = std::int32_t;\n\
+    \  using i64 = std::int64_t;\n  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n\
+    \  \n} // namespace luz\n#line 4 \"src/cpp-template/header/input.hpp\"\n\nnamespace\
+    \ luz {\n\n  template< typename T = i64 > T input() {\n    T tmp;\n    std::cin\
+    \ >> tmp;\n    return tmp;\n  }\n\n} // namespace luz\n#line 2 \"src/cpp-template/header/rep.hpp\"\
+    \n\n#include <algorithm>\n\nnamespace luz {\n\n  struct rep {\n    struct itr\
+    \ {\n      usize i;\n      constexpr itr(const usize i) noexcept : i(i) {}\n \
+    \     void operator++() noexcept { ++i; }\n      constexpr usize operator*() const\
+    \ noexcept { return i; }\n      constexpr bool operator!=(const itr x) const noexcept\
+    \ { return i != x.i; }\n    };\n    const itr f, l;\n    constexpr rep(const usize\
+    \ f, const usize l) noexcept\n      : f(std::min(f, l)), l(l) {}\n    constexpr\
     \ auto begin() const noexcept { return f; }\n    constexpr auto end() const noexcept\
     \ { return l; }\n  };\n\n  struct rrep {\n    struct itr {\n      usize i;\n \
     \     constexpr itr(const usize i) noexcept : i(i) {}\n      void operator++()\
@@ -127,7 +128,7 @@ data:
   isVerificationFile: true
   path: test/aoj/grl-1-a.test.cpp
   requiredBy: []
-  timestamp: '2022-07-13 03:22:52+09:00'
+  timestamp: '2022-07-16 00:29:36+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/grl-1-a.test.cpp

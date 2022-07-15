@@ -29,10 +29,26 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"src/cpp-template/header/rep.hpp\"\n\nnamespace luz {\n\n\
-    \  struct rep {\n    struct itr {\n      usize i;\n      constexpr itr(const usize\
-    \ i) noexcept : i(i) {}\n      void operator++() noexcept { ++i; }\n      constexpr\
-    \ usize operator*() const noexcept { return i; }\n      constexpr bool operator!=(const\
+  bundledCode: "#line 2 \"src/cpp-template/header/rep.hpp\"\n\n#include <algorithm>\n\
+    \nnamespace luz {\n\n  struct rep {\n    struct itr {\n      usize i;\n      constexpr\
+    \ itr(const usize i) noexcept : i(i) {}\n      void operator++() noexcept { ++i;\
+    \ }\n      constexpr usize operator*() const noexcept { return i; }\n      constexpr\
+    \ bool operator!=(const itr x) const noexcept { return i != x.i; }\n    };\n \
+    \   const itr f, l;\n    constexpr rep(const usize f, const usize l) noexcept\n\
+    \      : f(std::min(f, l)), l(l) {}\n    constexpr auto begin() const noexcept\
+    \ { return f; }\n    constexpr auto end() const noexcept { return l; }\n  };\n\
+    \n  struct rrep {\n    struct itr {\n      usize i;\n      constexpr itr(const\
+    \ usize i) noexcept : i(i) {}\n      void operator++() noexcept { --i; }\n   \
+    \   constexpr usize operator*() const noexcept { return i; }\n      constexpr\
+    \ bool operator!=(const itr x) const noexcept { return i != x.i; }\n    };\n \
+    \   const itr f, l;\n    constexpr rrep(const usize f, const usize l) noexcept\n\
+    \      : f(l - 1), l(std::min(f, l) - 1) {}\n    constexpr auto begin() const\
+    \ noexcept { return f; }\n    constexpr auto end() const noexcept { return l;\
+    \ }\n  };\n\n} // namespace luz\n"
+  code: "#pragma once\n\n#include <algorithm>\n\nnamespace luz {\n\n  struct rep {\n\
+    \    struct itr {\n      usize i;\n      constexpr itr(const usize i) noexcept\
+    \ : i(i) {}\n      void operator++() noexcept { ++i; }\n      constexpr usize\
+    \ operator*() const noexcept { return i; }\n      constexpr bool operator!=(const\
     \ itr x) const noexcept { return i != x.i; }\n    };\n    const itr f, l;\n  \
     \  constexpr rep(const usize f, const usize l) noexcept\n      : f(std::min(f,\
     \ l)), l(l) {}\n    constexpr auto begin() const noexcept { return f; }\n    constexpr\
@@ -44,21 +60,6 @@ data:
     \ usize f, const usize l) noexcept\n      : f(l - 1), l(std::min(f, l) - 1) {}\n\
     \    constexpr auto begin() const noexcept { return f; }\n    constexpr auto end()\
     \ const noexcept { return l; }\n  };\n\n} // namespace luz\n"
-  code: "#pragma once\n\nnamespace luz {\n\n  struct rep {\n    struct itr {\n   \
-    \   usize i;\n      constexpr itr(const usize i) noexcept : i(i) {}\n      void\
-    \ operator++() noexcept { ++i; }\n      constexpr usize operator*() const noexcept\
-    \ { return i; }\n      constexpr bool operator!=(const itr x) const noexcept {\
-    \ return i != x.i; }\n    };\n    const itr f, l;\n    constexpr rep(const usize\
-    \ f, const usize l) noexcept\n      : f(std::min(f, l)), l(l) {}\n    constexpr\
-    \ auto begin() const noexcept { return f; }\n    constexpr auto end() const noexcept\
-    \ { return l; }\n  };\n\n  struct rrep {\n    struct itr {\n      usize i;\n \
-    \     constexpr itr(const usize i) noexcept : i(i) {}\n      void operator++()\
-    \ noexcept { --i; }\n      constexpr usize operator*() const noexcept { return\
-    \ i; }\n      constexpr bool operator!=(const itr x) const noexcept { return i\
-    \ != x.i; }\n    };\n    const itr f, l;\n    constexpr rrep(const usize f, const\
-    \ usize l) noexcept\n      : f(l - 1), l(std::min(f, l) - 1) {}\n    constexpr\
-    \ auto begin() const noexcept { return f; }\n    constexpr auto end() const noexcept\
-    \ { return l; }\n  };\n\n} // namespace luz\n"
   dependsOn: []
   isVerificationFile: false
   path: src/cpp-template/header/rep.hpp
@@ -67,7 +68,7 @@ data:
   - src/cpp-template/header/template-header.hpp
   - src/cpp-template/header/vector-ios.hpp
   - src/sequence/coordinate-compression.hpp
-  timestamp: '2022-06-13 01:05:23+09:00'
+  timestamp: '2022-07-16 00:29:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - unit-test/sequence/coordinate-complession.test.cpp

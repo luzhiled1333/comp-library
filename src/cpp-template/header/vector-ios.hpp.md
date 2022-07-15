@@ -24,21 +24,21 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"src/cpp-template/header/vector-ios.hpp\"\n\n#line 2 \"src/cpp-template/header/rep.hpp\"\
-    \n\nnamespace luz {\n\n  struct rep {\n    struct itr {\n      usize i;\n    \
-    \  constexpr itr(const usize i) noexcept : i(i) {}\n      void operator++() noexcept\
-    \ { ++i; }\n      constexpr usize operator*() const noexcept { return i; }\n \
-    \     constexpr bool operator!=(const itr x) const noexcept { return i != x.i;\
-    \ }\n    };\n    const itr f, l;\n    constexpr rep(const usize f, const usize\
-    \ l) noexcept\n      : f(std::min(f, l)), l(l) {}\n    constexpr auto begin()\
-    \ const noexcept { return f; }\n    constexpr auto end() const noexcept { return\
-    \ l; }\n  };\n\n  struct rrep {\n    struct itr {\n      usize i;\n      constexpr\
-    \ itr(const usize i) noexcept : i(i) {}\n      void operator++() noexcept { --i;\
-    \ }\n      constexpr usize operator*() const noexcept { return i; }\n      constexpr\
-    \ bool operator!=(const itr x) const noexcept { return i != x.i; }\n    };\n \
-    \   const itr f, l;\n    constexpr rrep(const usize f, const usize l) noexcept\n\
-    \      : f(l - 1), l(std::min(f, l) - 1) {}\n    constexpr auto begin() const\
-    \ noexcept { return f; }\n    constexpr auto end() const noexcept { return l;\
-    \ }\n  };\n\n} // namespace luz\n#line 4 \"src/cpp-template/header/vector-ios.hpp\"\
+    \n\n#include <algorithm>\n\nnamespace luz {\n\n  struct rep {\n    struct itr\
+    \ {\n      usize i;\n      constexpr itr(const usize i) noexcept : i(i) {}\n \
+    \     void operator++() noexcept { ++i; }\n      constexpr usize operator*() const\
+    \ noexcept { return i; }\n      constexpr bool operator!=(const itr x) const noexcept\
+    \ { return i != x.i; }\n    };\n    const itr f, l;\n    constexpr rep(const usize\
+    \ f, const usize l) noexcept\n      : f(std::min(f, l)), l(l) {}\n    constexpr\
+    \ auto begin() const noexcept { return f; }\n    constexpr auto end() const noexcept\
+    \ { return l; }\n  };\n\n  struct rrep {\n    struct itr {\n      usize i;\n \
+    \     constexpr itr(const usize i) noexcept : i(i) {}\n      void operator++()\
+    \ noexcept { --i; }\n      constexpr usize operator*() const noexcept { return\
+    \ i; }\n      constexpr bool operator!=(const itr x) const noexcept { return i\
+    \ != x.i; }\n    };\n    const itr f, l;\n    constexpr rrep(const usize f, const\
+    \ usize l) noexcept\n      : f(l - 1), l(std::min(f, l) - 1) {}\n    constexpr\
+    \ auto begin() const noexcept { return f; }\n    constexpr auto end() const noexcept\
+    \ { return l; }\n  };\n\n} // namespace luz\n#line 4 \"src/cpp-template/header/vector-ios.hpp\"\
     \n\nnamespace luz {\n\n  template< typename T >\n  std::ostream &operator<<(std::ostream\
     \ &os, std::vector< T > &vs) {\n    for (usize i: rep(0, vs.size())) {\n     \
     \ os << vs[i] << (i + 1 != vs.size() ? \" \" : \"\");\n    }\n    return os;\n\
@@ -59,7 +59,7 @@ data:
   requiredBy:
   - src/cpp-template/template.cpp
   - src/cpp-template/header/template-header.hpp
-  timestamp: '2022-06-18 23:58:06+09:00'
+  timestamp: '2022-07-16 00:29:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - unit-test/sequence/coordinate-complession.test.cpp

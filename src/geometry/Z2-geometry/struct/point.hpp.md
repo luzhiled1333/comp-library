@@ -30,13 +30,15 @@ data:
     \ &v) {\n      x_ += v.x_; y_ += v.y_;\n      return *this;\n    }\n\n    Vector\
     \ &operator-=(const Vector &v) {\n      x_ -= v.x_; y_ -= v.y_;\n      return\
     \ *this;\n    }\n\n    Vector operator+(const Vector &v) const {\n      return\
-    \ (*this) += v;\n    }\n\n    Vector operator-(const Vector &v) const {\n    \
-    \  return (*this) -= v;\n    }\n  };\n\n  template< typename Z >\n  using Vectors\
-    \ = std::vector< Vector<Z> >;\n\n} // namespace Z2\n\n} // namespace luz\n#line\
-    \ 4 \"src/geometry/Z2-geometry/struct/point.hpp\"\n\n#line 6 \"src/geometry/Z2-geometry/struct/point.hpp\"\
-    \n\nnamespace luz {\n \nnamespace Z2 {\n\n  template< typename Z >\n  using Point\
-    \ = Vector< Z >;\n\n  template< typename Z >\n  using Points = std::vector< Point<Z>\
-    \ >;\n\n} // namespace Z2\n\n} // namespace luz\n\n"
+    \ Vector(*this) += v;\n    }\n\n    Vector operator-(const Vector &v) const {\n\
+    \      return Vector(*this) -= v;\n    }\n\n    Z x() const {\n      return x_;\n\
+    \    }\n\n    Z y() const {\n      return y_;\n    }\n\n  };\n\n  template< typename\
+    \ Z >\n  using Vectors = std::vector< Vector<Z> >;\n\n} // namespace Z2\n\n} //\
+    \ namespace luz\n#line 4 \"src/geometry/Z2-geometry/struct/point.hpp\"\n\n#line\
+    \ 6 \"src/geometry/Z2-geometry/struct/point.hpp\"\n\nnamespace luz {\n \nnamespace\
+    \ Z2 {\n\n  template< typename Z >\n  using Point = Vector< Z >;\n\n  template<\
+    \ typename Z >\n  using Points = std::vector< Point<Z> >;\n\n} // namespace Z2\n\
+    \n} // namespace luz\n\n"
   code: "#pragma once\n\n#include \"src/geometry/Z2-geometry/struct/vector.hpp\"\n\
     \n#include <vector>\n\nnamespace luz {\n \nnamespace Z2 {\n\n  template< typename\
     \ Z >\n  using Point = Vector< Z >;\n\n  template< typename Z >\n  using Points\
@@ -49,7 +51,7 @@ data:
   - src/geometry/Z2-geometry/struct/circle.hpp
   - src/geometry/Z2-geometry/intersect/is-intersect-circle-circle.hpp
   - src/geometry/Z2-geometry/intersect/is-intersect-point-circle.hpp
-  timestamp: '2022-07-15 23:48:58+09:00'
+  timestamp: '2022-07-16 00:30:39+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/Z2-geometry/struct/point.hpp

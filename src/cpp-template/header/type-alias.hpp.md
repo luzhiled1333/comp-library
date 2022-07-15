@@ -35,14 +35,15 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"src/cpp-template/header/type-alias.hpp\"\n\nnamespace luz\
-    \ {\n\n  using isize = std::ptrdiff_t;\n  using usize = std::size_t;\n\n  using\
-    \ i32 = std::int32_t;\n  using i64 = std::int64_t;\n  using u32 = std::uint32_t;\n\
-    \  using u64 = std::uint64_t;\n  \n} // namespace luz\n"
-  code: "#pragma once\n\nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using\
+  bundledCode: "#line 2 \"src/cpp-template/header/type-alias.hpp\"\n\n#include <cstddef>\n\
+    #include <cstdint>\n\nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using\
     \ usize = std::size_t;\n\n  using i32 = std::int32_t;\n  using i64 = std::int64_t;\n\
     \  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n  \n} // namespace\
     \ luz\n"
+  code: "#pragma once\n\n#include <cstddef>\n#include <cstdint>\n\nnamespace luz {\n\
+    \n  using isize = std::ptrdiff_t;\n  using usize = std::size_t;\n\n  using i32\
+    \ = std::int32_t;\n  using i64 = std::int64_t;\n  using u32 = std::uint32_t;\n\
+    \  using u64 = std::uint64_t;\n  \n} // namespace luz\n"
   dependsOn: []
   isVerificationFile: false
   path: src/cpp-template/header/type-alias.hpp
@@ -53,7 +54,7 @@ data:
   - src/cpp-template/header/template-header.hpp
   - src/cpp-template/header/input.hpp
   - src/sequence/coordinate-compression.hpp
-  timestamp: '2022-06-13 01:05:23+09:00'
+  timestamp: '2022-07-16 00:29:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - unit-test/sequence/coordinate-complession.test.cpp
