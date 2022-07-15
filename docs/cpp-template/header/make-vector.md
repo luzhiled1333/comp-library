@@ -1,9 +1,9 @@
 ---
-title: input
+title: make vector
 documentation_of: //src/cpp-template/header/make-vector.hpp
 ---
 
-## input
+## make_vector
 ```
 (1) std::vector< T > make_vector(usize a, T b)
 (2) auto make_vector(usize a, Ts... ts)
