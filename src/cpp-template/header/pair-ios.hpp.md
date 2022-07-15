@@ -17,25 +17,26 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"src/cpp-template/header/pair-ios.hpp\"\n\nnamespace luz\
+  bundledCode: "#line 2 \"src/cpp-template/header/pair-ios.hpp\"\n\n#include <iostream>\n\
+    #include <utility>\n\nnamespace luz {\n\n  template< typename T1, typename T2\
+    \ >\n  std::ostream &operator<<(std::ostream &os, std::pair < T1, T2 > &p) {\n\
+    \    os << \"(\" << p.first << \", \" << p.second << \")\";\n    return os;\n\
+    \  }\n\n  template< typename T1, typename T2 >\n  std::istream &operator>>(std::istream\
+    \ &is, std::pair< T1, T2 > &p) {\n    is >> p.first >> p.second;\n    return is;\n\
+    \  }\n\n} // namespace luz\n"
+  code: "#pragma once\n\n#include <iostream>\n#include <utility>\n\nnamespace luz\
     \ {\n\n  template< typename T1, typename T2 >\n  std::ostream &operator<<(std::ostream\
     \ &os, std::pair < T1, T2 > &p) {\n    os << \"(\" << p.first << \", \" << p.second\
     \ << \")\";\n    return os;\n  }\n\n  template< typename T1, typename T2 >\n \
     \ std::istream &operator>>(std::istream &is, std::pair< T1, T2 > &p) {\n    is\
     \ >> p.first >> p.second;\n    return is;\n  }\n\n} // namespace luz\n"
-  code: "#pragma once\n\nnamespace luz {\n\n  template< typename T1, typename T2 >\n\
-    \  std::ostream &operator<<(std::ostream &os, std::pair < T1, T2 > &p) {\n   \
-    \ os << \"(\" << p.first << \", \" << p.second << \")\";\n    return os;\n  }\n\
-    \n  template< typename T1, typename T2 >\n  std::istream &operator>>(std::istream\
-    \ &is, std::pair< T1, T2 > &p) {\n    is >> p.first >> p.second;\n    return is;\n\
-    \  }\n\n} // namespace luz\n"
   dependsOn: []
   isVerificationFile: false
   path: src/cpp-template/header/pair-ios.hpp
   requiredBy:
   - src/cpp-template/template.cpp
   - src/cpp-template/header/template-header.hpp
-  timestamp: '2022-06-13 01:05:23+09:00'
+  timestamp: '2022-07-16 05:05:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/itp1-1-a.test.cpp

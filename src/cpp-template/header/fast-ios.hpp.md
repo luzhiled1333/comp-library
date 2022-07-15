@@ -17,18 +17,19 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"src/cpp-template/header/fast-ios.hpp\"\n\nnamespace luz\
-    \ {\n\n  void set_fast_ios() {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n\
-    \  }\n\n} // namespace luz\n"
-  code: "#pragma once\n\nnamespace luz {\n\n  void set_fast_ios() {\n    std::ios::sync_with_stdio(false);\n\
+  bundledCode: "#line 2 \"src/cpp-template/header/fast-ios.hpp\"\n\n#include <iostream>\n\
+    \nnamespace luz {\n\n  void set_fast_ios() {\n    std::ios::sync_with_stdio(false);\n\
     \    std::cin.tie(nullptr);\n  }\n\n} // namespace luz\n"
+  code: "#pragma once\n\n#include <iostream>\n\nnamespace luz {\n\n  void set_fast_ios()\
+    \ {\n    std::ios::sync_with_stdio(false);\n    std::cin.tie(nullptr);\n  }\n\n\
+    } // namespace luz\n"
   dependsOn: []
   isVerificationFile: false
   path: src/cpp-template/header/fast-ios.hpp
   requiredBy:
   - src/cpp-template/template.cpp
   - src/cpp-template/header/template-header.hpp
-  timestamp: '2022-06-13 01:05:23+09:00'
+  timestamp: '2022-07-16 04:59:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/itp1-1-a.test.cpp

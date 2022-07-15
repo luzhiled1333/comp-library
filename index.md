@@ -10,9 +10,6 @@ data:
       path: src/cpp-template/header/fast-ios.hpp
       title: Fast I/O
     - icon: ':heavy_check_mark:'
-      path: src/cpp-template/header/includes.hpp
-      title: src/cpp-template/header/includes.hpp
-    - icon: ':heavy_check_mark:'
       path: src/cpp-template/header/input.hpp
       title: input
     - icon: ':heavy_check_mark:'
@@ -78,7 +75,7 @@ data:
       title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
   - name: src/sequence
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: src/sequence/coordinate-compression.hpp
       title: src/sequence/coordinate-compression.hpp
   verificationCategories:
@@ -97,7 +94,7 @@ data:
       title: test/atcoder/abc259_d.test.cpp
   - name: unit-test/sequence
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: unit-test/sequence/coordinate-complession.test.cpp
       title: unit-test/sequence/coordinate-complession.test.cpp
 layout: toppage
