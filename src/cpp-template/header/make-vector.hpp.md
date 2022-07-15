@@ -47,10 +47,10 @@ data:
   - test/aoj/itp1-1-a.test.cpp
 documentation_of: src/cpp-template/header/make-vector.hpp
 layout: document
-title: input
+title: make vector
 ---
 
-## input
+## make_vector
 ```
 (1) std::vector< T > make_vector(usize a, T b)
 (2) auto make_vector(usize a, Ts... ts)
