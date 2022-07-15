@@ -34,8 +34,14 @@ data:
   - test/aoj/itp1-1-a.test.cpp
 documentation_of: src/cpp-template/header/fast-ios.hpp
 layout: document
-redirect_from:
-- /library/src/cpp-template/header/fast-ios.hpp
-- /library/src/cpp-template/header/fast-ios.hpp.html
-title: src/cpp-template/header/fast-ios.hpp
+title: Fast I/O
 ---
+
+## set_fast_ios
+```
+void set_fast_ios()
+```
+
+C++ の標準入出力ストリームが C の入出力と同期しないようにして高速にする。
+
+この関数を呼び出したあと、これらが混ざるようなコードを書くと入力がおかしくなるので注意。

@@ -8,13 +8,13 @@ data:
       title: chmin / chmax
     - icon: ':heavy_check_mark:'
       path: src/cpp-template/header/fast-ios.hpp
-      title: src/cpp-template/header/fast-ios.hpp
+      title: Fast I/O
     - icon: ':heavy_check_mark:'
       path: src/cpp-template/header/includes.hpp
       title: src/cpp-template/header/includes.hpp
     - icon: ':heavy_check_mark:'
       path: src/cpp-template/header/input.hpp
-      title: src/cpp-template/header/input.hpp
+      title: input
     - icon: ':heavy_check_mark:'
       path: src/cpp-template/header/io-set.hpp
       title: src/cpp-template/header/io-set.hpp

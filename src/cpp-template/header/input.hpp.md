@@ -47,8 +47,14 @@ data:
   - test/aoj/grl-1-a.test.cpp
 documentation_of: src/cpp-template/header/input.hpp
 layout: document
-redirect_from:
-- /library/src/cpp-template/header/input.hpp
-- /library/src/cpp-template/header/input.hpp.html
-title: src/cpp-template/header/input.hpp
+title: input
 ---
+
+## input
+```
+T input()
+```
+
+値を一つ受け取って返す。
+
+unused variable との相性がよい。

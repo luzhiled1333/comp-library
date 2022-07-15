@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/input.hpp
-    title: src/cpp-template/header/input.hpp
+    title: input
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/template-header.hpp
     title: src/cpp-template/header/template-header.hpp
