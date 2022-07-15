@@ -1,5 +1,7 @@
 #pragma once
 
+#include <iostream>
+
 namespace luz {
 
   void set_fast_ios() {
