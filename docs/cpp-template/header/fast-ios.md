@@ -1,6 +1,6 @@
 ---
 title: Fast I/O
-documentation_of: //src/cpp-template/header/fast-ioshpp
+documentation_of: //src/cpp-template/header/fast-ios.hpp
 ---
 
 ## set_fast_ios
