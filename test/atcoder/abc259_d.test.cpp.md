@@ -34,30 +34,32 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':x:'
   attributes:
+    IGNORE: ''
     PROBLEM: https://atcoder.jp/contests/abc259/tasks/abc259_d
     links:
     - https://atcoder.jp/contests/abc259/tasks/abc259_d
   bundledCode: "#line 1 \"test/atcoder/abc259_d.test.cpp\"\n// verification-helper:\
-    \ PROBLEM https://atcoder.jp/contests/abc259/tasks/abc259_d\n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\
-    \n\n#include <cstddef>\n#include <cstdint>\n\nnamespace luz {\n\n  using isize\
-    \ = std::ptrdiff_t;\n  using usize = std::size_t;\n\n  using i32 = std::int32_t;\n\
-    \  using i64 = std::int64_t;\n  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n\
-    \  \n} // namespace luz\n#line 2 \"src/cpp-template/header/rep.hpp\"\n\n#include\
-    \ <algorithm>\n\nnamespace luz {\n\n  struct rep {\n    struct itr {\n      usize\
-    \ i;\n      constexpr itr(const usize i) noexcept : i(i) {}\n      void operator++()\
-    \ noexcept { ++i; }\n      constexpr usize operator*() const noexcept { return\
-    \ i; }\n      constexpr bool operator!=(const itr x) const noexcept { return i\
-    \ != x.i; }\n    };\n    const itr f, l;\n    constexpr rep(const usize f, const\
-    \ usize l) noexcept\n      : f(std::min(f, l)), l(l) {}\n    constexpr auto begin()\
-    \ const noexcept { return f; }\n    constexpr auto end() const noexcept { return\
-    \ l; }\n  };\n\n  struct rrep {\n    struct itr {\n      usize i;\n      constexpr\
-    \ itr(const usize i) noexcept : i(i) {}\n      void operator++() noexcept { --i;\
+    \ PROBLEM https://atcoder.jp/contests/abc259/tasks/abc259_d\n// verification-helper:\
+    \ IGNORE\n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\n\n#include <cstddef>\n\
+    #include <cstdint>\n\nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using\
+    \ usize = std::size_t;\n\n  using i32 = std::int32_t;\n  using i64 = std::int64_t;\n\
+    \  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n  \n} // namespace\
+    \ luz\n#line 2 \"src/cpp-template/header/rep.hpp\"\n\n#include <algorithm>\n\n\
+    namespace luz {\n\n  struct rep {\n    struct itr {\n      usize i;\n      constexpr\
+    \ itr(const usize i) noexcept : i(i) {}\n      void operator++() noexcept { ++i;\
     \ }\n      constexpr usize operator*() const noexcept { return i; }\n      constexpr\
+    \ bool operator!=(const itr x) const noexcept { return i != x.i; }\n    };\n \
+    \   const itr f, l;\n    constexpr rep(const usize f, const usize l) noexcept\n\
+    \      : f(std::min(f, l)), l(l) {}\n    constexpr auto begin() const noexcept\
+    \ { return f; }\n    constexpr auto end() const noexcept { return l; }\n  };\n\
+    \n  struct rrep {\n    struct itr {\n      usize i;\n      constexpr itr(const\
+    \ usize i) noexcept : i(i) {}\n      void operator++() noexcept { --i; }\n   \
+    \   constexpr usize operator*() const noexcept { return i; }\n      constexpr\
     \ bool operator!=(const itr x) const noexcept { return i != x.i; }\n    };\n \
     \   const itr f, l;\n    constexpr rrep(const usize f, const usize l) noexcept\n\
     \      : f(l - 1), l(std::min(f, l) - 1) {}\n    constexpr auto begin() const\
     \ noexcept { return f; }\n    constexpr auto end() const noexcept { return l;\
-    \ }\n  };\n\n} // namespace luz\n#line 5 \"test/atcoder/abc259_d.test.cpp\"\n\n\
+    \ }\n  };\n\n} // namespace luz\n#line 6 \"test/atcoder/abc259_d.test.cpp\"\n\n\
     #line 2 \"src/geometry/Z2-geometry/struct/point.hpp\"\n\n#line 2 \"src/geometry/Z2-geometry/struct/vector.hpp\"\
     \n\n#include <vector>\n\nnamespace luz {\n\nnamespace Z2 {\n\n  template< typename\
     \ Z >\n  class Vector {\n\n    Z x_, y_;\n\n   public:\n    Vector() {}\n    Vector(Z\
@@ -100,7 +102,7 @@ data:
     \n\nnamespace luz {\n\nnamespace Z2 {\n\n  template< typename Z >\n  bool is_intersect_pc(Point<\
     \ Z > p, Circle< Z > c) {\n    Z sq_norm = square_norm(c.center() - p);\n    return\
     \ sq_norm == square(c.r());\n  }\n\n} // namespace Z2\n\n} // namespace luz\n\
-    #line 10 \"test/atcoder/abc259_d.test.cpp\"\n\n#include <iostream>\n#include <atcoder/dsu>\n\
+    #line 11 \"test/atcoder/abc259_d.test.cpp\"\n\n#include <iostream>\n#include <atcoder/dsu>\n\
     \nnamespace luz {\n\n  void main_() {\n    usize n;\n    std::cin >> n;\n\n  \
     \  i64 sx, sy, tx, ty;\n    std::cin >> sx >> sy >> tx >> ty;\n\n    using namespace\
     \ Z2;\n    Point< i64 > s(sx, sy), t(tx, ty);\n\n    Circles< i64 > cs;\n    for\
@@ -114,9 +116,9 @@ data:
     \ t_idx) ? \"Yes\" : \"No\") << std::endl;\n\n  }\n\n} // namespace luz\n\nint\
     \ main() {\n  luz::main_();\n}\n"
   code: "// verification-helper: PROBLEM https://atcoder.jp/contests/abc259/tasks/abc259_d\n\
-    \n#include \"src/cpp-template/header/type-alias.hpp\"\n#include \"src/cpp-template/header/rep.hpp\"\
-    \n\n#include \"src/geometry/Z2-geometry/struct/point.hpp\"\n#include \"src/geometry/Z2-geometry/struct/circle.hpp\"\
-    \n#include \"src/geometry/Z2-geometry/intersect/is-intersect-circle-circle.hpp\"\
+    // verification-helper: IGNORE\n\n#include \"src/cpp-template/header/type-alias.hpp\"\
+    \n#include \"src/cpp-template/header/rep.hpp\"\n\n#include \"src/geometry/Z2-geometry/struct/point.hpp\"\
+    \n#include \"src/geometry/Z2-geometry/struct/circle.hpp\"\n#include \"src/geometry/Z2-geometry/intersect/is-intersect-circle-circle.hpp\"\
     \n#include \"src/geometry/Z2-geometry/intersect/is-intersect-point-circle.hpp\"\
     \n\n#include <iostream>\n#include <atcoder/dsu>\n\nnamespace luz {\n\n  void main_()\
     \ {\n    usize n;\n    std::cin >> n;\n\n    i64 sx, sy, tx, ty;\n    std::cin\
@@ -144,7 +146,7 @@ data:
   isVerificationFile: true
   path: test/atcoder/abc259_d.test.cpp
   requiredBy: []
-  timestamp: '2022-07-16 00:51:12+09:00'
+  timestamp: '2022-07-16 04:02:09+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/atcoder/abc259_d.test.cpp
