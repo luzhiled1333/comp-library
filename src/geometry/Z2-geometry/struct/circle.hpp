@@ -14,7 +14,7 @@ namespace Z2 {
 
    public:
     Circle() {}
-    Circle(Point< Z > &center, Z r): center_(center), r_(r) {}
+    Circle(Point< Z > center, Z r): center_(center), r_(r) {}
 
     Point< Z > center() const {
       return center_;
@@ -24,6 +24,9 @@ namespace Z2 {
       return r_;
     }
   };
+
+  template< typename Z >
+  using Circles = std::vector< Circle< Z > >;
 
 } // namespace Z2
 
