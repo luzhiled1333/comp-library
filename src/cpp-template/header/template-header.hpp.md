@@ -15,7 +15,7 @@ data:
     title: input
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/io-set.hpp
-    title: src/cpp-template/header/io-set.hpp
+    title: specify output precision
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/make-vector.hpp
     title: src/cpp-template/header/make-vector.hpp
