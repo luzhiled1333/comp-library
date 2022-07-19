@@ -76,10 +76,10 @@ data:
   isVerificationFile: false
   path: src/cpp-template/header/rep.hpp
   requiredBy:
-  - src/cpp-template/template.cpp
+  - src/sequence/coordinate-compression.hpp
   - src/cpp-template/header/template-header.hpp
   - src/cpp-template/header/vector-ios.hpp
-  - src/sequence/coordinate-compression.hpp
+  - src/cpp-template/template.cpp
   timestamp: '2022-07-16 05:05:19+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:

@@ -63,16 +63,16 @@ data:
   isVerificationFile: false
   path: src/cpp-template/header/type-alias.hpp
   requiredBy:
-  - src/graph/dijkstra.hpp
   - src/graph/graph-template.hpp
-  - src/cpp-template/template.cpp
+  - src/graph/dijkstra.hpp
+  - src/sequence/coordinate-compression.hpp
   - src/cpp-template/header/make-vector.hpp
-  - src/cpp-template/header/rep.hpp
   - src/cpp-template/header/template-header.hpp
+  - src/cpp-template/header/rep.hpp
   - src/cpp-template/header/vector-ios.hpp
   - src/cpp-template/header/io-set.hpp
   - src/cpp-template/header/input.hpp
-  - src/sequence/coordinate-compression.hpp
+  - src/cpp-template/template.cpp
   timestamp: '2022-07-16 00:29:36+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:

@@ -57,11 +57,11 @@ data:
   isVerificationFile: false
   path: src/geometry/Z2-geometry/struct/vector.hpp
   requiredBy:
-  - src/geometry/Z2-geometry/operation/square-norm.hpp
-  - src/geometry/Z2-geometry/struct/point.hpp
   - src/geometry/Z2-geometry/struct/circle.hpp
+  - src/geometry/Z2-geometry/struct/point.hpp
   - src/geometry/Z2-geometry/intersect/is-intersect-circle-circle.hpp
   - src/geometry/Z2-geometry/intersect/is-intersect-point-circle.hpp
+  - src/geometry/Z2-geometry/operation/square-norm.hpp
   timestamp: '2022-07-16 00:30:39+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:

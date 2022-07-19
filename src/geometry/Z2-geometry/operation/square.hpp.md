@@ -30,9 +30,9 @@ data:
   isVerificationFile: false
   path: src/geometry/Z2-geometry/operation/square.hpp
   requiredBy:
-  - src/geometry/Z2-geometry/operation/square-norm.hpp
   - src/geometry/Z2-geometry/intersect/is-intersect-circle-circle.hpp
   - src/geometry/Z2-geometry/intersect/is-intersect-point-circle.hpp
+  - src/geometry/Z2-geometry/operation/square-norm.hpp
   timestamp: '2022-07-15 23:50:54+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
