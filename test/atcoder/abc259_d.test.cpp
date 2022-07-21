@@ -25,7 +25,7 @@ namespace luz {
     Point< i64 > s(sx, sy), t(tx, ty);
 
     Circles< i64 > cs;
-    for (usize _: rep(0, n)) {
+    for ([[maybe_unused]] usize _: rep(0, n)) {
       i64 x, y, r;
       std::cin >> x >> y >> r;
 
