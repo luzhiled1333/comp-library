@@ -38,33 +38,33 @@ data:
     - icon: ':warning:'
       path: src/cpp-template/template.cpp
       title: template
-  - name: src/geometry/Z2-geometry/intersect
+  - name: src/geometry/Z2/intersect
     pages:
     - icon: ':x:'
-      path: src/geometry/Z2-geometry/intersect/is-intersect-circle-circle.hpp
-      title: "\u5186\u3068\u5186\u306E\u4EA4\u5DEE\u5224\u5B9A"
+      path: src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
+      title: src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
     - icon: ':x:'
-      path: src/geometry/Z2-geometry/intersect/is-intersect-point-circle.hpp
-      title: src/geometry/Z2-geometry/intersect/is-intersect-point-circle.hpp
-  - name: src/geometry/Z2-geometry/operation
+      path: src/geometry/Z2/intersect/is-intersect-point-circle.hpp
+      title: src/geometry/Z2/intersect/is-intersect-point-circle.hpp
+  - name: src/geometry/Z2/operation
     pages:
     - icon: ':x:'
-      path: src/geometry/Z2-geometry/operation/square-norm.hpp
-      title: src/geometry/Z2-geometry/operation/square-norm.hpp
+      path: src/geometry/Z2/operation/square-norm.hpp
+      title: src/geometry/Z2/operation/square-norm.hpp
     - icon: ':x:'
-      path: src/geometry/Z2-geometry/operation/square.hpp
-      title: src/geometry/Z2-geometry/operation/square.hpp
-  - name: src/geometry/Z2-geometry/struct
+      path: src/geometry/Z2/operation/square.hpp
+      title: src/geometry/Z2/operation/square.hpp
+  - name: src/geometry/Z2/struct
     pages:
     - icon: ':x:'
-      path: src/geometry/Z2-geometry/struct/circle.hpp
-      title: src/geometry/Z2-geometry/struct/circle.hpp
+      path: src/geometry/Z2/struct/circle.hpp
+      title: src/geometry/Z2/struct/circle.hpp
     - icon: ':x:'
-      path: src/geometry/Z2-geometry/struct/point.hpp
-      title: src/geometry/Z2-geometry/struct/point.hpp
+      path: src/geometry/Z2/struct/point.hpp
+      title: src/geometry/Z2/struct/point.hpp
     - icon: ':x:'
-      path: src/geometry/Z2-geometry/struct/vector.hpp
-      title: src/geometry/Z2-geometry/struct/vector.hpp
+      path: src/geometry/Z2/struct/vector.hpp
+      title: src/geometry/Z2/struct/vector.hpp
   - name: src/graph
     pages:
     - icon: ':heavy_check_mark:'

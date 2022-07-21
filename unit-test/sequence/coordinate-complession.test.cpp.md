@@ -45,12 +45,13 @@ data:
     \ usize l) noexcept\n      : f(l - 1), l(std::min(f, l) - 1) {}\n    constexpr\
     \ auto begin() const noexcept { return f; }\n    constexpr auto end() const noexcept\
     \ { return l; }\n  };\n\n} // namespace luz\n#line 4 \"src/cpp-template/header/vector-ios.hpp\"\
-    \n\n#include <iostream>\n\nnamespace luz {\n\n  template< typename T >\n  std::ostream\
-    \ &operator<<(std::ostream &os, std::vector< T > &vs) {\n    for (usize i: rep(0,\
-    \ vs.size())) {\n      os << vs[i] << (i + 1 != vs.size() ? \" \" : \"\");\n \
-    \   }\n    return os;\n  }\n\n  template< typename T >\n  std::istream &operator>>(std::istream\
-    \ &is, std::vector< T > &vs) {\n    for (T &v: vs) {\n      is >> v;\n    }\n\
-    \    return is;\n  }\n\n} // namespace luz\n#line 9 \"unit-test/sequence/coordinate-complession.test.cpp\"\
+    \n\n#include <iostream>\n#line 7 \"src/cpp-template/header/vector-ios.hpp\"\n\n\
+    namespace luz {\n\n  template< typename T >\n  std::ostream &operator<<(std::ostream\
+    \ &os, std::vector< T > &vs) {\n    for (usize i: rep(0, vs.size())) {\n     \
+    \ os << vs[i] << (i + 1 != vs.size() ? \" \" : \"\");\n    }\n    return os;\n\
+    \  }\n\n  template< typename T >\n  std::istream &operator>>(std::istream &is,\
+    \ std::vector< T > &vs) {\n    for (T &v: vs) {\n      is >> v;\n    }\n    return\
+    \ is;\n  }\n\n} // namespace luz\n#line 9 \"unit-test/sequence/coordinate-complession.test.cpp\"\
     \n\n#line 3 \"src/sequence/coordinate-compression.hpp\"\n\n#line 6 \"src/sequence/coordinate-compression.hpp\"\
     \n\nnamespace luz {\n\n  template< typename T >\n  std::vector< usize > coordinate_compression(std::vector<\
     \ T > vs) {\n    std::vector< usize > res(vs.size());\n\n    std::vector< T >\
@@ -83,7 +84,7 @@ data:
   isVerificationFile: true
   path: unit-test/sequence/coordinate-complession.test.cpp
   requiredBy: []
-  timestamp: '2022-07-16 05:13:03+09:00'
+  timestamp: '2022-07-21 10:59:38+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: unit-test/sequence/coordinate-complession.test.cpp
