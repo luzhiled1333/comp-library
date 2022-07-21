@@ -3,6 +3,7 @@
 #include "src/cpp-template/header/rep.hpp"
 
 #include <iostream>
+#include <vector>
 
 namespace luz {
 
