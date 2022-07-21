@@ -75,8 +75,8 @@ data:
   - test/atcoder/abc212_h.test.cpp
 documentation_of: src/math/convolution/fast-walsh-hadamard-transform.hpp
 layout: document
-redirect_from:
-- /library/src/math/convolution/fast-walsh-hadamard-transform.hpp
-- /library/src/math/convolution/fast-walsh-hadamard-transform.hpp.html
-title: src/math/convolution/fast-walsh-hadamard-transform.hpp
+title: "\u9AD8\u901F\u30A6\u30A9\u30EB\u30B7\u30E5-\u30A2\u30C0\u30DE\u30FC\u30EB\u5909\
+  \u63DB/\u9006\u5909\u63DB (Fast Walsh Hadamard Transform / Inverse Transform)"
 ---
+
+# 高速ウォルシュ-アダマール変換 / 逆変換

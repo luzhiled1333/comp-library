@@ -16,7 +16,8 @@ data:
     title: template
   - icon: ':heavy_check_mark:'
     path: src/math/convolution/fast-walsh-hadamard-transform.hpp
-    title: src/math/convolution/fast-walsh-hadamard-transform.hpp
+    title: "\u9AD8\u901F\u30A6\u30A9\u30EB\u30B7\u30E5-\u30A2\u30C0\u30DE\u30FC\u30EB\
+      \u5909\u63DB/\u9006\u5909\u63DB (Fast Walsh Hadamard Transform / Inverse Transform)"
   - icon: ':heavy_check_mark:'
     path: src/sequence/coordinate-compression.hpp
     title: src/sequence/coordinate-compression.hpp
