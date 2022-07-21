@@ -4,7 +4,7 @@
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/input.hpp"
 
-#include "src/convolution/fast-walsh-hadamard-transform.hpp"
+#include "src/math/convolution/fast-walsh-hadamard-transform.hpp"
 #include "src/math/modular-arithmetic/static-modint.hpp"
 
 // TODO: replace #11
