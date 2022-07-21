@@ -14,6 +14,8 @@ TODO
 ## test/
 `src/cpp-template/` 以下のファイルは最小限を include するようにする。
 
+warning は抑制するようにする。`rep` 構造体を用いるときなどはよく unused-variable でエラーが出るので [\[\[maybe_unused\]\]属性](https://cpprefjp.github.io/lang/cpp17/maybe_unused.html) を使う。
+
 `*.test.cpp` ファイルのテンプレート:
 
 ```cpp
