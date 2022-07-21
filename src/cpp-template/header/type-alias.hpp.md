@@ -3,9 +3,6 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: src/convolution/fast-walsh-hadamard-transform.hpp
-    title: src/convolution/fast-walsh-hadamard-transform.hpp
-  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/input.hpp
     title: input
   - icon: ':heavy_check_mark:'
@@ -32,6 +29,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/graph/graph-template.hpp
     title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
+  - icon: ':heavy_check_mark:'
+    path: src/math/convolution/fast-walsh-hadamard-transform.hpp
+    title: src/math/convolution/fast-walsh-hadamard-transform.hpp
   - icon: ':heavy_check_mark:'
     path: src/math/modular-arithmetic/static-modint.hpp
     title: src/math/modular-arithmetic/static-modint.hpp
@@ -75,8 +75,8 @@ data:
   isVerificationFile: false
   path: src/cpp-template/header/type-alias.hpp
   requiredBy:
+  - src/math/convolution/fast-walsh-hadamard-transform.hpp
   - src/math/modular-arithmetic/static-modint.hpp
-  - src/convolution/fast-walsh-hadamard-transform.hpp
   - src/graph/graph-template.hpp
   - src/graph/dijkstra.hpp
   - src/sequence/coordinate-compression.hpp

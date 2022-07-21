@@ -2,9 +2,6 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: src/convolution/fast-walsh-hadamard-transform.hpp
-    title: src/convolution/fast-walsh-hadamard-transform.hpp
-  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/input.hpp
     title: input
   - icon: ':question:'
@@ -13,6 +10,9 @@ data:
   - icon: ':question:'
     path: src/cpp-template/header/type-alias.hpp
     title: Type alias
+  - icon: ':heavy_check_mark:'
+    path: src/math/convolution/fast-walsh-hadamard-transform.hpp
+    title: src/math/convolution/fast-walsh-hadamard-transform.hpp
   - icon: ':heavy_check_mark:'
     path: src/math/modular-arithmetic/static-modint.hpp
     title: src/math/modular-arithmetic/static-modint.hpp
@@ -50,9 +50,9 @@ data:
     \n\n#line 4 \"src/cpp-template/header/input.hpp\"\n\n#include <iostream>\n\nnamespace\
     \ luz {\n\n  template< typename T = i64 > T input() {\n    T tmp;\n    std::cin\
     \ >> tmp;\n    return tmp;\n  }\n\n} // namespace luz\n#line 6 \"test/atcoder/abc212_h.test.cpp\"\
-    \n\n#line 2 \"src/convolution/fast-walsh-hadamard-transform.hpp\"\n\n#line 5 \"\
-    src/convolution/fast-walsh-hadamard-transform.hpp\"\n\n#include <cassert>\n#include\
-    \ <vector>\n\nnamespace luz {\n \n  template< typename T >\n  void impl_fwht(std::vector<\
+    \n\n#line 2 \"src/math/convolution/fast-walsh-hadamard-transform.hpp\"\n\n#line\
+    \ 5 \"src/math/convolution/fast-walsh-hadamard-transform.hpp\"\n\n#include <cassert>\n\
+    #include <vector>\n\nnamespace luz {\n \n  template< typename T >\n  void impl_fwht(std::vector<\
     \ T > &f, bool is_inverse_transform) {\n    const usize n = f.size();\n    assert((n\
     \ & (n - 1)) == 0);\n    usize i = 1;\n    while (i < n) {\n      usize j = 0;\n\
     \      while (j < n) {\n        for (usize k: rep(0, i)) {\n          T s = f[j\
@@ -104,7 +104,7 @@ data:
     }\n\n"
   code: "// verification-helper: PROBLEM https://atcoder.jp/contests/abc212/tasks/abc212_h\n\
     \n#include \"src/cpp-template/header/type-alias.hpp\"\n#include \"src/cpp-template/header/rep.hpp\"\
-    \n#include \"src/cpp-template/header/input.hpp\"\n\n#include \"src/convolution/fast-walsh-hadamard-transform.hpp\"\
+    \n#include \"src/cpp-template/header/input.hpp\"\n\n#include \"src/math/convolution/fast-walsh-hadamard-transform.hpp\"\
     \n#include \"src/math/modular-arithmetic/static-modint.hpp\"\n\n// TODO: replace\
     \ #11\nnamespace luz {\n\n  template< typename T >\n  T sum_of_geometric_sequence(const\
     \ T &a_0, const T &r, const usize &n) {\n    if (r == T(1)) return a_0 * n;\n\
@@ -121,12 +121,12 @@ data:
   - src/cpp-template/header/type-alias.hpp
   - src/cpp-template/header/rep.hpp
   - src/cpp-template/header/input.hpp
-  - src/convolution/fast-walsh-hadamard-transform.hpp
+  - src/math/convolution/fast-walsh-hadamard-transform.hpp
   - src/math/modular-arithmetic/static-modint.hpp
   isVerificationFile: true
   path: test/atcoder/abc212_h.test.cpp
   requiredBy: []
-  timestamp: '2022-07-21 12:50:03+09:00'
+  timestamp: '2022-07-21 13:11:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/atcoder/abc212_h.test.cpp

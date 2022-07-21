@@ -17,10 +17,10 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"src/convolution/fast-walsh-hadamard-transform.hpp\"\n\n\
-    #line 2 \"src/cpp-template/header/type-alias.hpp\"\n\n#include <cstddef>\n#include\
-    \ <cstdint>\n\nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using usize\
-    \ = std::size_t;\n\n  using i32 = std::int32_t;\n  using i64 = std::int64_t;\n\
+  bundledCode: "#line 2 \"src/math/convolution/fast-walsh-hadamard-transform.hpp\"\
+    \n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\n\n#include <cstddef>\n\
+    #include <cstdint>\n\nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using\
+    \ usize = std::size_t;\n\n  using i32 = std::int32_t;\n  using i64 = std::int64_t;\n\
     \  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n  \n} // namespace\
     \ luz\n#line 2 \"src/cpp-template/header/rep.hpp\"\n\n#line 4 \"src/cpp-template/header/rep.hpp\"\
     \n\n#include <algorithm>\n\nnamespace luz {\n\n  struct rep {\n    struct itr\
@@ -37,7 +37,7 @@ data:
     \ != x.i; }\n    };\n    const itr f, l;\n    constexpr rrep(const usize f, const\
     \ usize l) noexcept\n      : f(l - 1), l(std::min(f, l) - 1) {}\n    constexpr\
     \ auto begin() const noexcept { return f; }\n    constexpr auto end() const noexcept\
-    \ { return l; }\n  };\n\n} // namespace luz\n#line 5 \"src/convolution/fast-walsh-hadamard-transform.hpp\"\
+    \ { return l; }\n  };\n\n} // namespace luz\n#line 5 \"src/math/convolution/fast-walsh-hadamard-transform.hpp\"\
     \n\n#include <cassert>\n#include <vector>\n\nnamespace luz {\n \n  template< typename\
     \ T >\n  void impl_fwht(std::vector< T > &f, bool is_inverse_transform) {\n  \
     \  const usize n = f.size();\n    assert((n & (n - 1)) == 0);\n    usize i = 1;\n\
@@ -67,16 +67,16 @@ data:
   - src/cpp-template/header/type-alias.hpp
   - src/cpp-template/header/rep.hpp
   isVerificationFile: false
-  path: src/convolution/fast-walsh-hadamard-transform.hpp
+  path: src/math/convolution/fast-walsh-hadamard-transform.hpp
   requiredBy: []
-  timestamp: '2022-07-21 12:49:47+09:00'
+  timestamp: '2022-07-21 13:11:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/atcoder/abc212_h.test.cpp
-documentation_of: src/convolution/fast-walsh-hadamard-transform.hpp
+documentation_of: src/math/convolution/fast-walsh-hadamard-transform.hpp
 layout: document
 redirect_from:
-- /library/src/convolution/fast-walsh-hadamard-transform.hpp
-- /library/src/convolution/fast-walsh-hadamard-transform.hpp.html
-title: src/convolution/fast-walsh-hadamard-transform.hpp
+- /library/src/math/convolution/fast-walsh-hadamard-transform.hpp
+- /library/src/math/convolution/fast-walsh-hadamard-transform.hpp.html
+title: src/math/convolution/fast-walsh-hadamard-transform.hpp
 ---

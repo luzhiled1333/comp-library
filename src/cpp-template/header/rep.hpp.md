@@ -6,9 +6,6 @@ data:
     title: Type alias
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: src/convolution/fast-walsh-hadamard-transform.hpp
-    title: src/convolution/fast-walsh-hadamard-transform.hpp
-  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/template-header.hpp
     title: Template Header
   - icon: ':heavy_check_mark:'
@@ -17,6 +14,9 @@ data:
   - icon: ':warning:'
     path: src/cpp-template/template.cpp
     title: template
+  - icon: ':heavy_check_mark:'
+    path: src/math/convolution/fast-walsh-hadamard-transform.hpp
+    title: src/math/convolution/fast-walsh-hadamard-transform.hpp
   - icon: ':heavy_check_mark:'
     path: src/sequence/coordinate-compression.hpp
     title: src/sequence/coordinate-compression.hpp
@@ -82,7 +82,7 @@ data:
   isVerificationFile: false
   path: src/cpp-template/header/rep.hpp
   requiredBy:
-  - src/convolution/fast-walsh-hadamard-transform.hpp
+  - src/math/convolution/fast-walsh-hadamard-transform.hpp
   - src/sequence/coordinate-compression.hpp
   - src/cpp-template/header/template-header.hpp
   - src/cpp-template/header/vector-ios.hpp
