@@ -21,6 +21,8 @@ namespace luz {
        v_ = (u32)x;
      }
 
+     u32 val() const { return v_; }
+
      mint &operator+=(const mint &rhs) {
        v_ += rhs.v_;
        if (v_ >= mod) _v -= mod;
