@@ -5,7 +5,7 @@ data:
     path: src/cpp-template/header/type-alias.hpp
     title: Type alias
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/convolution/fast-walsh-hadamard-transform.hpp
     title: src/convolution/fast-walsh-hadamard-transform.hpp
   - icon: ':heavy_check_mark:'
@@ -27,7 +27,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/itp1-1-a.test.cpp
     title: test/aoj/itp1-1-a.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc212_h.test.cpp
     title: test/atcoder/abc212_h.test.cpp
   - icon: ':x:'

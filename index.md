@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: src/convolution
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: src/convolution/fast-walsh-hadamard-transform.hpp
       title: src/convolution/fast-walsh-hadamard-transform.hpp
   - name: src/cpp-template/header
@@ -14,7 +14,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/cpp-template/header/fast-ios.hpp
       title: Fast I/O
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: src/cpp-template/header/input.hpp
       title: input
     - icon: ':heavy_check_mark:'
@@ -80,7 +80,7 @@ data:
       title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
   - name: src/math/modular-arithmetic
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: src/math/modular-arithmetic/static-modint.hpp
       title: src/math/modular-arithmetic/static-modint.hpp
   - name: src/sequence
@@ -99,7 +99,7 @@ data:
       title: test/aoj/itp1-1-a.test.cpp
   - name: test/atcoder
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/atcoder/abc212_h.test.cpp
       title: test/atcoder/abc212_h.test.cpp
     - icon: ':x:'

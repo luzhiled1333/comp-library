@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/convolution/fast-walsh-hadamard-transform.hpp
     title: src/convolution/fast-walsh-hadamard-transform.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/input.hpp
     title: input
   - icon: ':question:'
@@ -13,14 +13,14 @@ data:
   - icon: ':question:'
     path: src/cpp-template/header/type-alias.hpp
     title: Type alias
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/math/modular-arithmetic/static-modint.hpp
     title: src/math/modular-arithmetic/static-modint.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://atcoder.jp/contests/abc212/tasks/abc212_h
     links:
@@ -127,7 +127,7 @@ data:
   path: test/atcoder/abc212_h.test.cpp
   requiredBy: []
   timestamp: '2022-07-21 12:50:03+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/atcoder/abc212_h.test.cpp
 layout: document

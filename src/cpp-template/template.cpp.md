@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/fast-ios.hpp
     title: Fast I/O
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/input.hpp
     title: input
   - icon: ':heavy_check_mark:'

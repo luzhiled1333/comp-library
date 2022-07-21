@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: src/cpp-template/header/type-alias.hpp
     title: Type alias
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/math/modular-arithmetic/static-modint.hpp
     title: src/math/modular-arithmetic/static-modint.hpp
   _extendedRequiredBy: []
