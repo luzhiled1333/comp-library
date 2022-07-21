@@ -1,6 +1,6 @@
 #pragma once
 
-#include "src/geometry/Z2-geometry/struct/point.hpp"
+#include "src/geometry/Z2/struct/point.hpp"
 
 namespace luz {
 
