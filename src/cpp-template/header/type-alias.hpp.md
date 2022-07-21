@@ -29,6 +29,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/graph/graph-template.hpp
     title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
+  - icon: ':warning:'
+    path: src/math/modular-arithmetic/static-modint.hpp
+    title: src/math/modular-arithmetic/static-modint.hpp
   - icon: ':heavy_check_mark:'
     path: src/sequence/coordinate-compression.hpp
     title: src/sequence/coordinate-compression.hpp
@@ -63,6 +66,7 @@ data:
   isVerificationFile: false
   path: src/cpp-template/header/type-alias.hpp
   requiredBy:
+  - src/math/modular-arithmetic/static-modint.hpp
   - src/graph/graph-template.hpp
   - src/graph/dijkstra.hpp
   - src/sequence/coordinate-compression.hpp
