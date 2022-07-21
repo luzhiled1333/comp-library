@@ -6,12 +6,15 @@ data:
     title: Type alias
   _extendedRequiredBy: []
   _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/atcoder/abc212_h.test.cpp
+    title: test/atcoder/abc212_h.test.cpp
   - icon: ':heavy_check_mark:'
     path: unit-test/math/modular-arithmetic/static-modint.test.cpp
     title: unit-test/math/modular-arithmetic/static-modint.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/math/modular-arithmetic/static-modint.hpp\"\n\n#line\
@@ -81,9 +84,10 @@ data:
   path: src/math/modular-arithmetic/static-modint.hpp
   requiredBy: []
   timestamp: '2022-07-21 12:17:00+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - unit-test/math/modular-arithmetic/static-modint.test.cpp
+  - test/atcoder/abc212_h.test.cpp
 documentation_of: src/math/modular-arithmetic/static-modint.hpp
 layout: document
 redirect_from:

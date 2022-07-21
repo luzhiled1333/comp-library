@@ -18,9 +18,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/itp1-1-a.test.cpp
     title: test/aoj/itp1-1-a.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/atcoder/abc212_h.test.cpp
+    title: test/atcoder/abc212_h.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/cpp-template/header/input.hpp\"\n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\
@@ -41,8 +44,9 @@ data:
   - src/cpp-template/header/template-header.hpp
   - src/cpp-template/template.cpp
   timestamp: '2022-07-16 05:05:19+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/atcoder/abc212_h.test.cpp
   - test/aoj/itp1-1-a.test.cpp
   - test/aoj/grl-1-a.test.cpp
 documentation_of: src/cpp-template/header/input.hpp

@@ -5,6 +5,9 @@ data:
     path: src/cpp-template/header/type-alias.hpp
     title: Type alias
   _extendedRequiredBy:
+  - icon: ':x:'
+    path: src/convolution/fast-walsh-hadamard-transform.hpp
+    title: src/convolution/fast-walsh-hadamard-transform.hpp
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/template-header.hpp
     title: Template Header
@@ -24,6 +27,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/itp1-1-a.test.cpp
     title: test/aoj/itp1-1-a.test.cpp
+  - icon: ':x:'
+    path: test/atcoder/abc212_h.test.cpp
+    title: test/atcoder/abc212_h.test.cpp
   - icon: ':x:'
     path: test/atcoder/abc259_d.test.cpp
     title: test/atcoder/abc259_d.test.cpp
@@ -76,6 +82,7 @@ data:
   isVerificationFile: false
   path: src/cpp-template/header/rep.hpp
   requiredBy:
+  - src/convolution/fast-walsh-hadamard-transform.hpp
   - src/sequence/coordinate-compression.hpp
   - src/cpp-template/header/template-header.hpp
   - src/cpp-template/header/vector-ios.hpp
@@ -84,6 +91,7 @@ data:
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - unit-test/sequence/coordinate-complession.test.cpp
+  - test/atcoder/abc212_h.test.cpp
   - test/atcoder/abc259_d.test.cpp
   - test/aoj/itp1-1-a.test.cpp
   - test/aoj/grl-1-a.test.cpp

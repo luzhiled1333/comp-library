@@ -2,7 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
+    path: src/convolution/fast-walsh-hadamard-transform.hpp
+    title: src/convolution/fast-walsh-hadamard-transform.hpp
+  - icon: ':question:'
     path: src/cpp-template/header/input.hpp
     title: input
   - icon: ':heavy_check_mark:'
@@ -29,7 +32,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/graph/graph-template.hpp
     title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/math/modular-arithmetic/static-modint.hpp
     title: src/math/modular-arithmetic/static-modint.hpp
   - icon: ':heavy_check_mark:'
@@ -42,6 +45,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/itp1-1-a.test.cpp
     title: test/aoj/itp1-1-a.test.cpp
+  - icon: ':x:'
+    path: test/atcoder/abc212_h.test.cpp
+    title: test/atcoder/abc212_h.test.cpp
   - icon: ':x:'
     path: test/atcoder/abc259_d.test.cpp
     title: test/atcoder/abc259_d.test.cpp
@@ -70,6 +76,7 @@ data:
   path: src/cpp-template/header/type-alias.hpp
   requiredBy:
   - src/math/modular-arithmetic/static-modint.hpp
+  - src/convolution/fast-walsh-hadamard-transform.hpp
   - src/graph/graph-template.hpp
   - src/graph/dijkstra.hpp
   - src/sequence/coordinate-compression.hpp
@@ -85,6 +92,7 @@ data:
   verifiedWith:
   - unit-test/math/modular-arithmetic/static-modint.test.cpp
   - unit-test/sequence/coordinate-complession.test.cpp
+  - test/atcoder/abc212_h.test.cpp
   - test/atcoder/abc259_d.test.cpp
   - test/aoj/itp1-1-a.test.cpp
   - test/aoj/grl-1-a.test.cpp
