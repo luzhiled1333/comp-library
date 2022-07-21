@@ -25,7 +25,7 @@ namespace luz {
 
      mint &operator+=(const mint &rhs) {
        v_ += rhs.v_;
-       if (v_ >= mod) _v -= mod;
+       if (v_ >= mod) v_ -= mod;
        return *this;
      }
      mint &operator-=(const mint &rhs) {
