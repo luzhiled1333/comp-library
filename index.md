@@ -1,6 +1,11 @@
 ---
 data:
   libraryCategories:
+  - name: src/convolution
+    pages:
+    - icon: ':warning:'
+      path: src/convolution/fast-walsh-hadamard-transform.hpp
+      title: src/convolution/fast-walsh-hadamard-transform.hpp
   - name: src/cpp-template/header
     pages:
     - icon: ':heavy_check_mark:'
