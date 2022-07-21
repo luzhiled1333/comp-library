@@ -75,7 +75,7 @@ data:
       title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
   - name: src/math/modular-arithmetic
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/math/modular-arithmetic/static-modint.hpp
       title: src/math/modular-arithmetic/static-modint.hpp
   - name: src/sequence
@@ -97,6 +97,11 @@ data:
     - icon: ':x:'
       path: test/atcoder/abc259_d.test.cpp
       title: test/atcoder/abc259_d.test.cpp
+  - name: unit-test/math/modular-arithmetic
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: unit-test/math/modular-arithmetic/static-modint.test.cpp
+      title: unit-test/math/modular-arithmetic/static-modint.test.cpp
   - name: unit-test/sequence
     pages:
     - icon: ':heavy_check_mark:'

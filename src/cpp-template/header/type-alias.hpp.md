@@ -29,7 +29,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/graph/graph-template.hpp
     title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/math/modular-arithmetic/static-modint.hpp
     title: src/math/modular-arithmetic/static-modint.hpp
   - icon: ':heavy_check_mark:'
@@ -45,6 +45,9 @@ data:
   - icon: ':x:'
     path: test/atcoder/abc259_d.test.cpp
     title: test/atcoder/abc259_d.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: unit-test/math/modular-arithmetic/static-modint.test.cpp
+    title: unit-test/math/modular-arithmetic/static-modint.test.cpp
   - icon: ':heavy_check_mark:'
     path: unit-test/sequence/coordinate-complession.test.cpp
     title: unit-test/sequence/coordinate-complession.test.cpp
@@ -80,6 +83,7 @@ data:
   timestamp: '2022-07-16 00:29:36+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - unit-test/math/modular-arithmetic/static-modint.test.cpp
   - unit-test/sequence/coordinate-complession.test.cpp
   - test/atcoder/abc259_d.test.cpp
   - test/aoj/itp1-1-a.test.cpp
