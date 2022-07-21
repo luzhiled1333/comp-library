@@ -29,7 +29,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/graph/graph-template.hpp
     title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/math/convolution/bitwise-xor-convolution.hpp
     title: src/math/convolution/bitwise-xor-convolution.hpp
   - icon: ':heavy_check_mark:'
@@ -55,6 +55,9 @@ data:
   - icon: ':x:'
     path: test/atcoder/abc259_d.test.cpp
     title: test/atcoder/abc259_d.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/bitwise_xor_convolution.test.cpp
+    title: test/library-checker/bitwise_xor_convolution.test.cpp
   - icon: ':heavy_check_mark:'
     path: unit-test/math/modular-arithmetic/static-modint.test.cpp
     title: unit-test/math/modular-arithmetic/static-modint.test.cpp
@@ -97,6 +100,7 @@ data:
   verifiedWith:
   - unit-test/math/modular-arithmetic/static-modint.test.cpp
   - unit-test/sequence/coordinate-complession.test.cpp
+  - test/library-checker/bitwise_xor_convolution.test.cpp
   - test/atcoder/abc212_h.test.cpp
   - test/atcoder/abc259_d.test.cpp
   - test/aoj/itp1-1-a.test.cpp

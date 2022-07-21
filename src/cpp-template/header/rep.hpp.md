@@ -14,7 +14,7 @@ data:
   - icon: ':warning:'
     path: src/cpp-template/template.cpp
     title: template
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/math/convolution/bitwise-xor-convolution.hpp
     title: src/math/convolution/bitwise-xor-convolution.hpp
   - icon: ':heavy_check_mark:'
@@ -37,6 +37,9 @@ data:
   - icon: ':x:'
     path: test/atcoder/abc259_d.test.cpp
     title: test/atcoder/abc259_d.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/bitwise_xor_convolution.test.cpp
+    title: test/library-checker/bitwise_xor_convolution.test.cpp
   - icon: ':heavy_check_mark:'
     path: unit-test/sequence/coordinate-complession.test.cpp
     title: unit-test/sequence/coordinate-complession.test.cpp
@@ -96,6 +99,7 @@ data:
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - unit-test/sequence/coordinate-complession.test.cpp
+  - test/library-checker/bitwise_xor_convolution.test.cpp
   - test/atcoder/abc212_h.test.cpp
   - test/atcoder/abc259_d.test.cpp
   - test/aoj/itp1-1-a.test.cpp

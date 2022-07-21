@@ -8,13 +8,16 @@ data:
     path: src/cpp-template/header/type-alias.hpp
     title: Type alias
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/math/convolution/bitwise-xor-convolution.hpp
     title: src/math/convolution/bitwise-xor-convolution.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc212_h.test.cpp
     title: test/atcoder/abc212_h.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/bitwise_xor_convolution.test.cpp
+    title: test/library-checker/bitwise_xor_convolution.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -76,6 +79,7 @@ data:
   timestamp: '2022-07-21 13:11:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/library-checker/bitwise_xor_convolution.test.cpp
   - test/atcoder/abc212_h.test.cpp
 documentation_of: src/math/convolution/fast-walsh-hadamard-transform.hpp
 layout: document

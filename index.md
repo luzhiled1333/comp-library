@@ -75,7 +75,7 @@ data:
       title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
   - name: src/math/convolution
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/math/convolution/bitwise-xor-convolution.hpp
       title: src/math/convolution/bitwise-xor-convolution.hpp
     - icon: ':heavy_check_mark:'
@@ -109,6 +109,11 @@ data:
     - icon: ':x:'
       path: test/atcoder/abc259_d.test.cpp
       title: test/atcoder/abc259_d.test.cpp
+  - name: test/library-checker
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/library-checker/bitwise_xor_convolution.test.cpp
+      title: test/library-checker/bitwise_xor_convolution.test.cpp
   - name: unit-test/math/modular-arithmetic
     pages:
     - icon: ':heavy_check_mark:'
