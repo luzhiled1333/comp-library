@@ -29,6 +29,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/graph/graph-template.hpp
     title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
+  - icon: ':warning:'
+    path: src/math/convolution/bitwise-xor-convolution.hpp
+    title: src/math/convolution/bitwise-xor-convolution.hpp
   - icon: ':heavy_check_mark:'
     path: src/math/convolution/fast-walsh-hadamard-transform.hpp
     title: "\u9AD8\u901F\u30A6\u30A9\u30EB\u30B7\u30E5-\u30A2\u30C0\u30DE\u30FC\u30EB\
@@ -77,6 +80,7 @@ data:
   path: src/cpp-template/header/type-alias.hpp
   requiredBy:
   - src/math/convolution/fast-walsh-hadamard-transform.hpp
+  - src/math/convolution/bitwise-xor-convolution.hpp
   - src/math/modular-arithmetic/static-modint.hpp
   - src/graph/graph-template.hpp
   - src/graph/dijkstra.hpp

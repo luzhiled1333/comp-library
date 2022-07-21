@@ -7,7 +7,10 @@ data:
   - icon: ':question:'
     path: src/cpp-template/header/type-alias.hpp
     title: Type alias
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: src/math/convolution/bitwise-xor-convolution.hpp
+    title: src/math/convolution/bitwise-xor-convolution.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc212_h.test.cpp
@@ -68,7 +71,8 @@ data:
   - src/cpp-template/header/rep.hpp
   isVerificationFile: false
   path: src/math/convolution/fast-walsh-hadamard-transform.hpp
-  requiredBy: []
+  requiredBy:
+  - src/math/convolution/bitwise-xor-convolution.hpp
   timestamp: '2022-07-21 13:11:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

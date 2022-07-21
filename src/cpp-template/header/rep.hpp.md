@@ -14,6 +14,9 @@ data:
   - icon: ':warning:'
     path: src/cpp-template/template.cpp
     title: template
+  - icon: ':warning:'
+    path: src/math/convolution/bitwise-xor-convolution.hpp
+    title: src/math/convolution/bitwise-xor-convolution.hpp
   - icon: ':heavy_check_mark:'
     path: src/math/convolution/fast-walsh-hadamard-transform.hpp
     title: "\u9AD8\u901F\u30A6\u30A9\u30EB\u30B7\u30E5-\u30A2\u30C0\u30DE\u30FC\u30EB\
@@ -84,6 +87,7 @@ data:
   path: src/cpp-template/header/rep.hpp
   requiredBy:
   - src/math/convolution/fast-walsh-hadamard-transform.hpp
+  - src/math/convolution/bitwise-xor-convolution.hpp
   - src/sequence/coordinate-compression.hpp
   - src/cpp-template/header/template-header.hpp
   - src/cpp-template/header/vector-ios.hpp
