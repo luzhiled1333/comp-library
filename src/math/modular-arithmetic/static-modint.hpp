@@ -16,7 +16,7 @@ namespace luz {
 
      template< typename T >
      StaticPrimeModInt(T v) {
-       i64 x = (i64)(v % mod);
+       i64 x = (i64)(v % (i64)mod);
        if (x < 0) x += mod;
        v_ = (u32)x;
      }
@@ -57,14 +57,11 @@ namespace luz {
      friend mint operator/(const mint &lhs, const mint &rhs) {
        return mint(lhs) /= rhs;
      }
-     friend mint operator/(const mint &lhs, const mint &rhs) {
-       return mint(lhs) /= rhs;
-     }
 
-     friend mint operator==(const mint &lhs, const mint &rhs) {
+     friend bool operator==(const mint &lhs, const mint &rhs) {
        return lhs.v_ == rhs.v_;
      }
-     friend mint operator!=(const mint &lhs, const mint &rhs) {
+     friend bool operator!=(const mint &lhs, const mint &rhs) {
        return lhs.v_ != rhs.v_;
      }
 
