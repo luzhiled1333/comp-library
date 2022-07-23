@@ -26,6 +26,9 @@ data:
     title: src/sequence/coordinate-compression.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/dsl-1-a.test.cpp
+    title: test/aoj/dsl-1-a.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/grl-1-a.test.cpp
     title: test/aoj/grl-1-a.test.cpp
   - icon: ':heavy_check_mark:'
@@ -104,6 +107,7 @@ data:
   - test/atcoder/abc259_d.test.cpp
   - test/aoj/itp1-1-a.test.cpp
   - test/aoj/grl-1-a.test.cpp
+  - test/aoj/dsl-1-a.test.cpp
 documentation_of: src/cpp-template/header/rep.hpp
 layout: document
 title: "rep \u69CB\u9020\u4F53"

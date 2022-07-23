@@ -38,6 +38,11 @@ data:
     - icon: ':warning:'
       path: src/cpp-template/template.cpp
       title: template
+  - name: src/data-structure
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/disjoint-set-union.hpp
+      title: src/data-structure/disjoint-set-union.hpp
   - name: src/geometry/Z2/intersect
     pages:
     - icon: ':x:'
@@ -98,6 +103,9 @@ data:
   verificationCategories:
   - name: test/aoj
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/dsl-1-a.test.cpp
+      title: test/aoj/dsl-1-a.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/grl-1-a.test.cpp
       title: test/aoj/grl-1-a.test.cpp

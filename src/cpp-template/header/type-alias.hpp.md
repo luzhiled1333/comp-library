@@ -24,6 +24,9 @@ data:
     path: src/cpp-template/template.cpp
     title: template
   - icon: ':heavy_check_mark:'
+    path: src/data-structure/disjoint-set-union.hpp
+    title: src/data-structure/disjoint-set-union.hpp
+  - icon: ':heavy_check_mark:'
     path: src/graph/dijkstra.hpp
     title: Dijkstra's Algorithm
   - icon: ':warning:'
@@ -46,6 +49,9 @@ data:
     path: src/sequence/coordinate-compression.hpp
     title: src/sequence/coordinate-compression.hpp
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/dsl-1-a.test.cpp
+    title: test/aoj/dsl-1-a.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/grl-1-a.test.cpp
     title: test/aoj/grl-1-a.test.cpp
@@ -91,6 +97,7 @@ data:
   - src/graph/graph-template.hpp
   - src/graph/dijkstra.hpp
   - src/graph/functional-graph-utility.hpp
+  - src/data-structure/disjoint-set-union.hpp
   - src/sequence/coordinate-compression.hpp
   - src/cpp-template/header/make-vector.hpp
   - src/cpp-template/header/template-header.hpp
@@ -109,6 +116,7 @@ data:
   - test/atcoder/abc259_d.test.cpp
   - test/aoj/itp1-1-a.test.cpp
   - test/aoj/grl-1-a.test.cpp
+  - test/aoj/dsl-1-a.test.cpp
 documentation_of: src/cpp-template/header/type-alias.hpp
 layout: document
 title: Type alias
