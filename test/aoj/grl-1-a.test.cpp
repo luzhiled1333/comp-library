@@ -15,7 +15,7 @@ namespace luz {
     usize v = input(), e = input(), source = input();
 
     Graph< u32 > G(v);
-    for (usize _: rep(0, e)) {
+    for ([[maybe_unused]] usize _: rep(0, e)) {
       usize s = input(), t = input();
       u32 d = input();
       G.add_directed_edge(s, t, d);
