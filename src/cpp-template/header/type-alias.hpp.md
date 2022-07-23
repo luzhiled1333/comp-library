@@ -36,6 +36,9 @@ data:
     path: src/graph/graph-template.hpp
     title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
   - icon: ':heavy_check_mark:'
+    path: src/graph/offline-query-lowest-common-ancestor.hpp
+    title: src/graph/offline-query-lowest-common-ancestor.hpp
+  - icon: ':heavy_check_mark:'
     path: src/math/convolution/bitwise-xor-convolution.hpp
     title: src/math/convolution/bitwise-xor-convolution.hpp
   - icon: ':heavy_check_mark:'
@@ -55,6 +58,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/grl-1-a.test.cpp
     title: test/aoj/grl-1-a.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/grl-5-c.test.cpp
+    title: test/aoj/grl-5-c.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/itp1-1-a.test.cpp
     title: test/aoj/itp1-1-a.test.cpp
@@ -97,6 +103,7 @@ data:
   - src/graph/graph-template.hpp
   - src/graph/dijkstra.hpp
   - src/graph/functional-graph-utility.hpp
+  - src/graph/offline-query-lowest-common-ancestor.hpp
   - src/data-structure/disjoint-set-union.hpp
   - src/sequence/coordinate-compression.hpp
   - src/cpp-template/header/make-vector.hpp
@@ -114,6 +121,7 @@ data:
   - test/library-checker/bitwise_xor_convolution.test.cpp
   - test/atcoder/abc212_h.test.cpp
   - test/atcoder/abc259_d.test.cpp
+  - test/aoj/grl-5-c.test.cpp
   - test/aoj/itp1-1-a.test.cpp
   - test/aoj/grl-1-a.test.cpp
   - test/aoj/dsl-1-a.test.cpp

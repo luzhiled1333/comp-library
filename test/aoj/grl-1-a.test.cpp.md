@@ -101,25 +101,25 @@ data:
     \ const {\n      return froms;\n    }\n  \n    inline std::vector< usize > get_edge_labels()\
     \ const {\n      return ids;\n    }\n  };\n\n}\n#line 11 \"test/aoj/grl-1-a.test.cpp\"\
     \n\nnamespace luz {\n\n  void main_() {\n    usize v = input(), e = input(), source\
-    \ = input();\n\n    Graph< u32 > G(v);\n    for (usize _: rep(0, e)) {\n     \
-    \ usize s = input(), t = input();\n      u32 d = input();\n      G.add_directed_edge(s,\
-    \ t, d);\n    }\n\n    Dijkstra dijkstra(G, source);\n    auto dists = dijkstra.get_distances();\n\
-    \    for (auto &dist: dists) {\n      if (dist == dijkstra.inf()) {\n        std::cout\
-    \ << \"INF\" << std::endl;\n      } else {\n        std::cout << dist << std::endl;\n\
-    \      }\n    }\n  }\n\n} // namespace luz\n\nint main() {\n  luz::main_();\n\
-    }\n"
+    \ = input();\n\n    Graph< u32 > G(v);\n    for ([[maybe_unused]] usize _: rep(0,\
+    \ e)) {\n      usize s = input(), t = input();\n      u32 d = input();\n     \
+    \ G.add_directed_edge(s, t, d);\n    }\n\n    Dijkstra dijkstra(G, source);\n\
+    \    auto dists = dijkstra.get_distances();\n    for (auto &dist: dists) {\n \
+    \     if (dist == dijkstra.inf()) {\n        std::cout << \"INF\" << std::endl;\n\
+    \      } else {\n        std::cout << dist << std::endl;\n      }\n    }\n  }\n\
+    \n} // namespace luz\n\nint main() {\n  luz::main_();\n}\n"
   code: "// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/GRL_1_A\n\
     \n#include <iostream>\n\n#include \"src/cpp-template/header/input.hpp\"\n#include\
     \ \"src/cpp-template/header/type-alias.hpp\"\n#include \"src/cpp-template/header/rep.hpp\"\
     \n\n#include \"src/graph/graph-template.hpp\"\n#include \"src/graph/dijkstra.hpp\"\
     \n\nnamespace luz {\n\n  void main_() {\n    usize v = input(), e = input(), source\
-    \ = input();\n\n    Graph< u32 > G(v);\n    for (usize _: rep(0, e)) {\n     \
-    \ usize s = input(), t = input();\n      u32 d = input();\n      G.add_directed_edge(s,\
-    \ t, d);\n    }\n\n    Dijkstra dijkstra(G, source);\n    auto dists = dijkstra.get_distances();\n\
-    \    for (auto &dist: dists) {\n      if (dist == dijkstra.inf()) {\n        std::cout\
-    \ << \"INF\" << std::endl;\n      } else {\n        std::cout << dist << std::endl;\n\
-    \      }\n    }\n  }\n\n} // namespace luz\n\nint main() {\n  luz::main_();\n\
-    }\n"
+    \ = input();\n\n    Graph< u32 > G(v);\n    for ([[maybe_unused]] usize _: rep(0,\
+    \ e)) {\n      usize s = input(), t = input();\n      u32 d = input();\n     \
+    \ G.add_directed_edge(s, t, d);\n    }\n\n    Dijkstra dijkstra(G, source);\n\
+    \    auto dists = dijkstra.get_distances();\n    for (auto &dist: dists) {\n \
+    \     if (dist == dijkstra.inf()) {\n        std::cout << \"INF\" << std::endl;\n\
+    \      } else {\n        std::cout << dist << std::endl;\n      }\n    }\n  }\n\
+    \n} // namespace luz\n\nint main() {\n  luz::main_();\n}\n"
   dependsOn:
   - src/cpp-template/header/input.hpp
   - src/cpp-template/header/type-alias.hpp
@@ -130,7 +130,7 @@ data:
   isVerificationFile: true
   path: test/aoj/grl-1-a.test.cpp
   requiredBy: []
-  timestamp: '2022-07-23 09:50:49+09:00'
+  timestamp: '2022-07-23 11:34:34+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/grl-1-a.test.cpp

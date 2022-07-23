@@ -4,11 +4,17 @@ data:
   - icon: ':question:'
     path: src/cpp-template/header/type-alias.hpp
     title: Type alias
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: src/graph/offline-query-lowest-common-ancestor.hpp
+    title: src/graph/offline-query-lowest-common-ancestor.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/dsl-1-a.test.cpp
     title: test/aoj/dsl-1-a.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/grl-5-c.test.cpp
+    title: test/aoj/grl-5-c.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -54,10 +60,12 @@ data:
   - src/cpp-template/header/type-alias.hpp
   isVerificationFile: false
   path: src/data-structure/disjoint-set-union.hpp
-  requiredBy: []
+  requiredBy:
+  - src/graph/offline-query-lowest-common-ancestor.hpp
   timestamp: '2022-07-23 10:16:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/grl-5-c.test.cpp
   - test/aoj/dsl-1-a.test.cpp
 documentation_of: src/data-structure/disjoint-set-union.hpp
 layout: document

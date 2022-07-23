@@ -11,10 +11,16 @@ data:
   - icon: ':warning:'
     path: src/graph/functional-graph-utility.hpp
     title: src/graph/functional-graph-utility.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/graph/offline-query-lowest-common-ancestor.hpp
+    title: src/graph/offline-query-lowest-common-ancestor.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/grl-1-a.test.cpp
     title: test/aoj/grl-1-a.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/grl-5-c.test.cpp
+    title: test/aoj/grl-5-c.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -64,9 +70,11 @@ data:
   requiredBy:
   - src/graph/dijkstra.hpp
   - src/graph/functional-graph-utility.hpp
+  - src/graph/offline-query-lowest-common-ancestor.hpp
   timestamp: '2022-07-23 09:50:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/grl-5-c.test.cpp
   - test/aoj/grl-1-a.test.cpp
 documentation_of: src/graph/graph-template.hpp
 layout: document
