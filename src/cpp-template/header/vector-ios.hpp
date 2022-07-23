@@ -8,7 +8,7 @@
 namespace luz {
 
   template< typename T >
-  std::ostream &operator<<(std::ostream &os, std::vector< T > &vs) {
+  std::ostream &operator<<(std::ostream &os, const std::vector< T > vs) {
     for (usize i: rep(0, vs.size())) {
       os << vs[i] << (i + 1 != vs.size() ? " " : "");
     }
