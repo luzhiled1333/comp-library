@@ -1,6 +1,7 @@
 {
 "test/aoj/dsl-1-a.test.cpp": "2022-07-23 10:24:23 +0900",
-"test/aoj/grl-1-a.test.cpp": "2022-07-23 09:50:49 +0900",
+"test/aoj/grl-1-a.test.cpp": "2022-07-23 11:34:34 +0900",
+"test/aoj/grl-5-c.test.cpp": "2022-07-23 11:33:50 +0900",
 "test/aoj/itp1-1-a.test.cpp": "2022-07-23 09:50:15 +0900",
 "test/atcoder/abc212_h.test.cpp": "2022-07-21 13:11:48 +0900",
 "test/library-checker/bitwise_xor_convolution.test.cpp": "2022-07-21 15:30:45 +0900",
