@@ -70,6 +70,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/graph/dijkstra.hpp
       title: Dijkstra's Algorithm
+    - icon: ':warning:'
+      path: src/graph/functional-graph-utility.hpp
+      title: src/graph/functional-graph-utility.hpp
     - icon: ':heavy_check_mark:'
       path: src/graph/graph-template.hpp
       title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"

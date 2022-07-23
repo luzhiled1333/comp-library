@@ -48,18 +48,18 @@ data:
     \ noexcept { return f; }\n    constexpr auto end() const noexcept { return l;\
     \ }\n  };\n\n} // namespace luz\n#line 4 \"src/cpp-template/header/vector-ios.hpp\"\
     \n\n#include <iostream>\n#include <vector>\n\nnamespace luz {\n\n  template< typename\
-    \ T >\n  std::ostream &operator<<(std::ostream &os, std::vector< T > &vs) {\n\
-    \    for (usize i: rep(0, vs.size())) {\n      os << vs[i] << (i + 1 != vs.size()\
+    \ T >\n  std::ostream &operator<<(std::ostream &os, const std::vector< T > vs)\
+    \ {\n    for (usize i: rep(0, vs.size())) {\n      os << vs[i] << (i + 1 != vs.size()\
     \ ? \" \" : \"\");\n    }\n    return os;\n  }\n\n  template< typename T >\n \
     \ std::istream &operator>>(std::istream &is, std::vector< T > &vs) {\n    for\
     \ (T &v: vs) {\n      is >> v;\n    }\n    return is;\n  }\n\n} // namespace luz\n"
   code: "#pragma once\n\n#include \"src/cpp-template/header/rep.hpp\"\n\n#include\
     \ <iostream>\n#include <vector>\n\nnamespace luz {\n\n  template< typename T >\n\
-    \  std::ostream &operator<<(std::ostream &os, std::vector< T > &vs) {\n    for\
-    \ (usize i: rep(0, vs.size())) {\n      os << vs[i] << (i + 1 != vs.size() ? \"\
-    \ \" : \"\");\n    }\n    return os;\n  }\n\n  template< typename T >\n  std::istream\
-    \ &operator>>(std::istream &is, std::vector< T > &vs) {\n    for (T &v: vs) {\n\
-    \      is >> v;\n    }\n    return is;\n  }\n\n} // namespace luz\n"
+    \  std::ostream &operator<<(std::ostream &os, const std::vector< T > vs) {\n \
+    \   for (usize i: rep(0, vs.size())) {\n      os << vs[i] << (i + 1 != vs.size()\
+    \ ? \" \" : \"\");\n    }\n    return os;\n  }\n\n  template< typename T >\n \
+    \ std::istream &operator>>(std::istream &is, std::vector< T > &vs) {\n    for\
+    \ (T &v: vs) {\n      is >> v;\n    }\n    return is;\n  }\n\n} // namespace luz\n"
   dependsOn:
   - src/cpp-template/header/rep.hpp
   - src/cpp-template/header/type-alias.hpp
@@ -68,7 +68,7 @@ data:
   requiredBy:
   - src/cpp-template/header/template-header.hpp
   - src/cpp-template/template.cpp
-  timestamp: '2022-07-21 10:59:38+09:00'
+  timestamp: '2022-07-23 09:50:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - unit-test/sequence/coordinate-complession.test.cpp

@@ -76,14 +76,14 @@ data:
     src/cpp-template/header/template-header.hpp\"\n\n#line 2 \"src/cpp-template/header/vector-ios.hpp\"\
     \n\n#line 4 \"src/cpp-template/header/vector-ios.hpp\"\n\n#line 6 \"src/cpp-template/header/vector-ios.hpp\"\
     \n#include <vector>\n\nnamespace luz {\n\n  template< typename T >\n  std::ostream\
-    \ &operator<<(std::ostream &os, std::vector< T > &vs) {\n    for (usize i: rep(0,\
-    \ vs.size())) {\n      os << vs[i] << (i + 1 != vs.size() ? \" \" : \"\");\n \
-    \   }\n    return os;\n  }\n\n  template< typename T >\n  std::istream &operator>>(std::istream\
+    \ &operator<<(std::ostream &os, const std::vector< T > vs) {\n    for (usize i:\
+    \ rep(0, vs.size())) {\n      os << vs[i] << (i + 1 != vs.size() ? \" \" : \"\"\
+    );\n    }\n    return os;\n  }\n\n  template< typename T >\n  std::istream &operator>>(std::istream\
     \ &is, std::vector< T > &vs) {\n    for (T &v: vs) {\n      is >> v;\n    }\n\
     \    return is;\n  }\n\n} // namespace luz\n#line 2 \"src/cpp-template/header/pair-ios.hpp\"\
     \n\n#line 4 \"src/cpp-template/header/pair-ios.hpp\"\n#include <utility>\n\nnamespace\
     \ luz {\n\n  template< typename T1, typename T2 >\n  std::ostream &operator<<(std::ostream\
-    \ &os, std::pair < T1, T2 > &p) {\n    os << \"(\" << p.first << \", \" << p.second\
+    \ &os, std::pair < T1, T2 > p) {\n    os << \"(\" << p.first << \", \" << p.second\
     \ << \")\";\n    return os;\n  }\n\n  template< typename T1, typename T2 >\n \
     \ std::istream &operator>>(std::istream &is, std::pair< T1, T2 > &p) {\n    is\
     \ >> p.first >> p.second;\n    return is;\n  }\n\n} // namespace luz\n#line 12\
@@ -138,7 +138,7 @@ data:
   path: src/cpp-template/header/template-header.hpp
   requiredBy:
   - src/cpp-template/template.cpp
-  timestamp: '2022-07-21 10:59:38+09:00'
+  timestamp: '2022-07-23 09:50:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/itp1-1-a.test.cpp

@@ -8,6 +8,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/graph/dijkstra.hpp
     title: Dijkstra's Algorithm
+  - icon: ':warning:'
+    path: src/graph/functional-graph-utility.hpp
+    title: src/graph/functional-graph-utility.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/grl-1-a.test.cpp
@@ -27,7 +30,24 @@ data:
     \ cost;\n    usize id;\n    Edge() = default;\n    Edge(usize from_, usize to_,\
     \ cost_type cost_, usize id_):\n      from(from_), to(to_), cost(cost_), id(id_)\
     \ {}\n  };\n\n  template< typename cost_type >\n  using Edges = std::vector< Edge<cost_type>\
-    \ >;\n\n  template< typename cost_type >\n  class Graph {\n    std::vector< std::vector<Edge<cost_type>>\
+    \ >;\n\n  template< typename cost_type >\n  class Graph {\n   protected:\n   \
+    \ std::vector< std::vector<Edge<cost_type>> > g;\n    usize edge_count;\n\n  \
+    \ public:\n    Graph() = default;\n    explicit Graph(usize n): g(n), edge_count(0)\
+    \ {}\n\n    usize size() const {\n      return g.size();\n    }\n\n    void add_directed_edge(usize\
+    \ from, usize to, cost_type cost = 1) {\n      g[from].emplace_back(from, to,\
+    \ cost, edge_count++);\n    }\n\n    void add_undirected_edge(usize u, usize v,\
+    \ cost_type cost = 1) {\n      g[u].emplace_back(u, v, cost, edge_count);\n  \
+    \    g[v].emplace_back(v, u, cost, edge_count++);\n    }\n\n    inline Edges<\
+    \ cost_type > &operator[](const usize &v) {\n      return g[v];\n    }\n\n   \
+    \ inline const Edges< cost_type > &operator[](const usize &v) const {\n      return\
+    \ g[v];\n    }\n  };\n\n}\n"
+  code: "#pragma once\n\n#include <vector>\n\n#include \"src/cpp-template/header/type-alias.hpp\"\
+    \n\nnamespace luz {\n\n  template< typename cost_type >\n  class Edge {\n   public:\n\
+    \    usize from, to;\n    cost_type cost;\n    usize id;\n    Edge() = default;\n\
+    \    Edge(usize from_, usize to_, cost_type cost_, usize id_):\n      from(from_),\
+    \ to(to_), cost(cost_), id(id_) {}\n  };\n\n  template< typename cost_type >\n\
+    \  using Edges = std::vector< Edge<cost_type> >;\n\n  template< typename cost_type\
+    \ >\n  class Graph {\n   protected:\n    std::vector< std::vector<Edge<cost_type>>\
     \ > g;\n    usize edge_count;\n\n   public:\n    Graph() = default;\n    explicit\
     \ Graph(usize n): g(n), edge_count(0) {}\n\n    usize size() const {\n      return\
     \ g.size();\n    }\n\n    void add_directed_edge(usize from, usize to, cost_type\
@@ -37,29 +57,14 @@ data:
     \ u, cost, edge_count++);\n    }\n\n    inline Edges< cost_type > &operator[](const\
     \ usize &v) {\n      return g[v];\n    }\n\n    inline const Edges< cost_type\
     \ > &operator[](const usize &v) const {\n      return g[v];\n    }\n  };\n\n}\n"
-  code: "#pragma once\n\n#include <vector>\n\n#include \"src/cpp-template/header/type-alias.hpp\"\
-    \n\nnamespace luz {\n\n  template< typename cost_type >\n  class Edge {\n   public:\n\
-    \    usize from, to;\n    cost_type cost;\n    usize id;\n    Edge() = default;\n\
-    \    Edge(usize from_, usize to_, cost_type cost_, usize id_):\n      from(from_),\
-    \ to(to_), cost(cost_), id(id_) {}\n  };\n\n  template< typename cost_type >\n\
-    \  using Edges = std::vector< Edge<cost_type> >;\n\n  template< typename cost_type\
-    \ >\n  class Graph {\n    std::vector< std::vector<Edge<cost_type>> > g;\n   \
-    \ usize edge_count;\n\n   public:\n    Graph() = default;\n    explicit Graph(usize\
-    \ n): g(n), edge_count(0) {}\n\n    usize size() const {\n      return g.size();\n\
-    \    }\n\n    void add_directed_edge(usize from, usize to, cost_type cost = 1)\
-    \ {\n      g[from].emplace_back(from, to, cost, edge_count++);\n    }\n\n    void\
-    \ add_undirected_edge(usize u, usize v, cost_type cost = 1) {\n      g[u].emplace_back(u,\
-    \ v, cost, edge_count);\n      g[v].emplace_back(v, u, cost, edge_count++);\n\
-    \    }\n\n    inline Edges< cost_type > &operator[](const usize &v) {\n      return\
-    \ g[v];\n    }\n\n    inline const Edges< cost_type > &operator[](const usize\
-    \ &v) const {\n      return g[v];\n    }\n  };\n\n}\n"
   dependsOn:
   - src/cpp-template/header/type-alias.hpp
   isVerificationFile: false
   path: src/graph/graph-template.hpp
   requiredBy:
   - src/graph/dijkstra.hpp
-  timestamp: '2022-07-16 00:29:36+09:00'
+  - src/graph/functional-graph-utility.hpp
+  timestamp: '2022-07-23 09:50:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/grl-1-a.test.cpp
