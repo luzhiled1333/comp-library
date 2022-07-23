@@ -22,6 +22,7 @@ namespace luz {
 
   template< typename cost_type >
   class Graph {
+   protected:
     std::vector< std::vector<Edge<cost_type>> > g;
     usize edge_count;
 
