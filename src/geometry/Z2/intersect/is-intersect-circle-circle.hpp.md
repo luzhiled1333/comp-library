@@ -90,4 +90,4 @@ layout: document
 title: "\u5186\u3068\u5186\u306E\u4EA4\u5DEE\u5224\u5B9A"
 ---
 
-![内包されている場合](https://github.com/Luzhiled/comp-library/blob/main/assets/geometry/Z2/intersect/is-intersect-circle-001.png?raw=true)
+![内包されている場合](https://github.com/luzhiled1333/comp-library/blob/main/assets/geometry/Z2/intersect/is-intersect-circle-001.png?raw=true)

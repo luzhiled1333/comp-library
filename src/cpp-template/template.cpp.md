@@ -129,4 +129,4 @@ C++ 用のテンプレート
 
 現在は vim-snippet によってこのファイルを挿入する運用にしている。
 
-vim-snippet 用のファイル: [cpp.snip](https://github.com/Luzhiled/comp-library/blob/main/src/cpp-template/cpp.snip)
+vim-snippet 用のファイル: [cpp.snip](https://github.com/luzhiled1333/comp-library/blob/main/src/cpp-template/cpp.snip)
