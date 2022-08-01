@@ -26,7 +26,7 @@ data:
       \u5909\u63DB/\u9006\u5909\u63DB (Fast Walsh Hadamard Transform / Inverse Transform)"
   - icon: ':heavy_check_mark:'
     path: src/sequence/coordinate-compression.hpp
-    title: src/sequence/coordinate-compression.hpp
+    title: "\u5EA7\u6A19\u5727\u7E2E"
   - icon: ':warning:'
     path: test/atcoder/abc259_d.cpp
     title: test/atcoder/abc259_d.cpp

@@ -43,33 +43,33 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/data-structure/disjoint-set-union.hpp
       title: src/data-structure/disjoint-set-union.hpp
+  - name: src/geometry/Z2/class
+    pages:
+    - icon: ':warning:'
+      path: src/geometry/Z2/class/circle.hpp
+      title: "\u5186 (\u6574\u6570\u5E7E\u4F55)"
+    - icon: ':warning:'
+      path: src/geometry/Z2/class/point.hpp
+      title: "\u683C\u5B50\u70B9 (\u6574\u6570\u5E7E\u4F55)"
+    - icon: ':warning:'
+      path: src/geometry/Z2/class/vector.hpp
+      title: "\u30D9\u30AF\u30C8\u30EB (\u6574\u6570\u5E7E\u4F55)"
   - name: src/geometry/Z2/intersect
     pages:
     - icon: ':warning:'
       path: src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
-      title: src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
+      title: "\u5186\u3068\u5186\u306E\u4EA4\u5DEE\u5224\u5B9A"
     - icon: ':warning:'
       path: src/geometry/Z2/intersect/is-intersect-point-circle.hpp
-      title: src/geometry/Z2/intersect/is-intersect-point-circle.hpp
+      title: "\u70B9\u3068\u5186\u306E\u4EA4\u5DEE\u5224\u5B9A"
   - name: src/geometry/Z2/operation
     pages:
     - icon: ':warning:'
       path: src/geometry/Z2/operation/square-norm.hpp
-      title: src/geometry/Z2/operation/square-norm.hpp
+      title: "$\\|v\\|^2 (v \\in {\\mathbb{Z}}^2)$ (norm\u306E2\u4E57)"
     - icon: ':warning:'
       path: src/geometry/Z2/operation/square.hpp
-      title: src/geometry/Z2/operation/square.hpp
-  - name: src/geometry/Z2/struct
-    pages:
-    - icon: ':warning:'
-      path: src/geometry/Z2/struct/circle.hpp
-      title: src/geometry/Z2/struct/circle.hpp
-    - icon: ':warning:'
-      path: src/geometry/Z2/struct/point.hpp
-      title: src/geometry/Z2/struct/point.hpp
-    - icon: ':warning:'
-      path: src/geometry/Z2/struct/vector.hpp
-      title: src/geometry/Z2/struct/vector.hpp
+      title: $x^2 (x \in \mathbb{Z})$
   - name: src/graph
     pages:
     - icon: ':heavy_check_mark:'
@@ -102,7 +102,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: src/sequence/coordinate-compression.hpp
-      title: src/sequence/coordinate-compression.hpp
+      title: "\u5EA7\u6A19\u5727\u7E2E"
   - name: test/atcoder
     pages:
     - icon: ':warning:'

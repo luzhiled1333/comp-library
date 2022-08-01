@@ -4,13 +4,13 @@ data:
   _extendedRequiredBy:
   - icon: ':warning:'
     path: src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
-    title: src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
+    title: "\u5186\u3068\u5186\u306E\u4EA4\u5DEE\u5224\u5B9A"
   - icon: ':warning:'
     path: src/geometry/Z2/intersect/is-intersect-point-circle.hpp
-    title: src/geometry/Z2/intersect/is-intersect-point-circle.hpp
+    title: "\u70B9\u3068\u5186\u306E\u4EA4\u5DEE\u5224\u5B9A"
   - icon: ':warning:'
     path: src/geometry/Z2/operation/square-norm.hpp
-    title: src/geometry/Z2/operation/square-norm.hpp
+    title: "$\\|v\\|^2 (v \\in {\\mathbb{Z}}^2)$ (norm\u306E2\u4E57)"
   - icon: ':warning:'
     path: test/atcoder/abc259_d.cpp
     title: test/atcoder/abc259_d.cpp
@@ -39,8 +39,5 @@ data:
   verifiedWith: []
 documentation_of: src/geometry/Z2/operation/square.hpp
 layout: document
-redirect_from:
-- /library/src/geometry/Z2/operation/square.hpp
-- /library/src/geometry/Z2/operation/square.hpp.html
-title: src/geometry/Z2/operation/square.hpp
+title: $x^2 (x \in \mathbb{Z})$
 ---

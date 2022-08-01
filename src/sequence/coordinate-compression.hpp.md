@@ -64,8 +64,5 @@ data:
   - unit-test/sequence/coordinate-complession.test.cpp
 documentation_of: src/sequence/coordinate-compression.hpp
 layout: document
-redirect_from:
-- /library/src/sequence/coordinate-compression.hpp
-- /library/src/sequence/coordinate-compression.hpp.html
-title: src/sequence/coordinate-compression.hpp
+title: "\u5EA7\u6A19\u5727\u7E2E"
 ---

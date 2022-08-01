@@ -8,26 +8,26 @@ data:
     path: src/cpp-template/header/type-alias.hpp
     title: Type alias
   - icon: ':warning:'
+    path: src/geometry/Z2/class/circle.hpp
+    title: "\u5186 (\u6574\u6570\u5E7E\u4F55)"
+  - icon: ':warning:'
+    path: src/geometry/Z2/class/point.hpp
+    title: "\u683C\u5B50\u70B9 (\u6574\u6570\u5E7E\u4F55)"
+  - icon: ':warning:'
+    path: src/geometry/Z2/class/vector.hpp
+    title: "\u30D9\u30AF\u30C8\u30EB (\u6574\u6570\u5E7E\u4F55)"
+  - icon: ':warning:'
     path: src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
-    title: src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
+    title: "\u5186\u3068\u5186\u306E\u4EA4\u5DEE\u5224\u5B9A"
   - icon: ':warning:'
     path: src/geometry/Z2/intersect/is-intersect-point-circle.hpp
-    title: src/geometry/Z2/intersect/is-intersect-point-circle.hpp
+    title: "\u70B9\u3068\u5186\u306E\u4EA4\u5DEE\u5224\u5B9A"
   - icon: ':warning:'
     path: src/geometry/Z2/operation/square-norm.hpp
-    title: src/geometry/Z2/operation/square-norm.hpp
+    title: "$\\|v\\|^2 (v \\in {\\mathbb{Z}}^2)$ (norm\u306E2\u4E57)"
   - icon: ':warning:'
     path: src/geometry/Z2/operation/square.hpp
-    title: src/geometry/Z2/operation/square.hpp
-  - icon: ':warning:'
-    path: src/geometry/Z2/struct/circle.hpp
-    title: src/geometry/Z2/struct/circle.hpp
-  - icon: ':warning:'
-    path: src/geometry/Z2/struct/point.hpp
-    title: src/geometry/Z2/struct/point.hpp
-  - icon: ':warning:'
-    path: src/geometry/Z2/struct/vector.hpp
-    title: src/geometry/Z2/struct/vector.hpp
+    title: $x^2 (x \in \mathbb{Z})$
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -60,7 +60,7 @@ data:
     \ usize l) noexcept\n      : f(l - 1), l(std::min(f, l) - 1) {}\n    constexpr\
     \ auto begin() const noexcept { return f; }\n    constexpr auto end() const noexcept\
     \ { return l; }\n  };\n\n} // namespace luz\n#line 6 \"test/atcoder/abc259_d.cpp\"\
-    \n\n#line 2 \"src/geometry/Z2/struct/point.hpp\"\n\n#line 2 \"src/geometry/Z2/struct/vector.hpp\"\
+    \n\n#line 2 \"src/geometry/Z2/class/point.hpp\"\n\n#line 2 \"src/geometry/Z2/class/vector.hpp\"\
     \n\n#include <vector>\n\nnamespace luz {\n\nnamespace Z2 {\n\n  template< typename\
     \ Z >\n  class Vector {\n\n    Z x_, y_;\n\n   public:\n    Vector() {}\n    Vector(Z\
     \ x, Z y): x_(x), y_(y) {}\n\n    bool operator==(const Vector &v) const {\n \
@@ -73,12 +73,12 @@ data:
     \ const {\n      return Vector(*this) -= v;\n    }\n\n    Z x() const {\n    \
     \  return x_;\n    }\n\n    Z y() const {\n      return y_;\n    }\n\n  };\n\n\
     \  template< typename Z >\n  using Vectors = std::vector< Vector<Z> >;\n\n} //\
-    \ namespace Z2\n\n} // namespace luz\n#line 4 \"src/geometry/Z2/struct/point.hpp\"\
-    \n\n#line 6 \"src/geometry/Z2/struct/point.hpp\"\n\nnamespace luz {\n \nnamespace\
+    \ namespace Z2\n\n} // namespace luz\n#line 4 \"src/geometry/Z2/class/point.hpp\"\
+    \n\n#line 6 \"src/geometry/Z2/class/point.hpp\"\n\nnamespace luz {\n \nnamespace\
     \ Z2 {\n\n  template< typename Z >\n  using Point = Vector< Z >;\n\n  template<\
     \ typename Z >\n  using Points = std::vector< Point<Z> >;\n\n} // namespace Z2\n\
-    \n} // namespace luz\n\n#line 2 \"src/geometry/Z2/struct/circle.hpp\"\n\n#line\
-    \ 4 \"src/geometry/Z2/struct/circle.hpp\"\n\nnamespace luz {\n\nnamespace Z2 {\n\
+    \n} // namespace luz\n\n#line 2 \"src/geometry/Z2/class/circle.hpp\"\n\n#line\
+    \ 4 \"src/geometry/Z2/class/circle.hpp\"\n\nnamespace luz {\n\nnamespace Z2 {\n\
     \n  template< typename Z >\n  class Circle {\n\n    Point< Z > center_;\n    Z\
     \ r_;\n\n   public:\n    Circle() {}\n    Circle(Point< Z > center, Z r): center_(center),\
     \ r_(r) {}\n\n    Point< Z > center() const {\n      return center_;\n    }\n\n\
@@ -117,8 +117,8 @@ data:
     \n  }\n\n} // namespace luz\n\nint main() {\n  luz::main_();\n}\n"
   code: "// verification-helper: PROBLEM https://atcoder.jp/contests/abc259/tasks/abc259_d\n\
     // verification-helper: IGNORE\n\n#include \"src/cpp-template/header/type-alias.hpp\"\
-    \n#include \"src/cpp-template/header/rep.hpp\"\n\n#include \"src/geometry/Z2/struct/point.hpp\"\
-    \n#include \"src/geometry/Z2/struct/circle.hpp\"\n#include \"src/geometry/Z2/intersect/is-intersect-circle-circle.hpp\"\
+    \n#include \"src/cpp-template/header/rep.hpp\"\n\n#include \"src/geometry/Z2/class/point.hpp\"\
+    \n#include \"src/geometry/Z2/class/circle.hpp\"\n#include \"src/geometry/Z2/intersect/is-intersect-circle-circle.hpp\"\
     \n#include \"src/geometry/Z2/intersect/is-intersect-point-circle.hpp\"\n\n#include\
     \ <iostream>\n#include <atcoder/dsu>\n\nnamespace luz {\n\n  void main_() {\n\
     \    usize n;\n    std::cin >> n;\n\n    i64 sx, sy, tx, ty;\n    std::cin >>\
@@ -136,9 +136,9 @@ data:
   dependsOn:
   - src/cpp-template/header/type-alias.hpp
   - src/cpp-template/header/rep.hpp
-  - src/geometry/Z2/struct/point.hpp
-  - src/geometry/Z2/struct/vector.hpp
-  - src/geometry/Z2/struct/circle.hpp
+  - src/geometry/Z2/class/point.hpp
+  - src/geometry/Z2/class/vector.hpp
+  - src/geometry/Z2/class/circle.hpp
   - src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
   - src/geometry/Z2/operation/square.hpp
   - src/geometry/Z2/operation/square-norm.hpp
@@ -146,7 +146,7 @@ data:
   isVerificationFile: false
   path: test/atcoder/abc259_d.cpp
   requiredBy: []
-  timestamp: '2022-08-01 11:35:31+09:00'
+  timestamp: '2022-08-01 15:17:25+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: test/atcoder/abc259_d.cpp

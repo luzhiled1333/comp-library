@@ -3,20 +3,20 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':warning:'
+    path: src/geometry/Z2/class/circle.hpp
+    title: "\u5186 (\u6574\u6570\u5E7E\u4F55)"
+  - icon: ':warning:'
+    path: src/geometry/Z2/class/point.hpp
+    title: "\u683C\u5B50\u70B9 (\u6574\u6570\u5E7E\u4F55)"
+  - icon: ':warning:'
     path: src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
-    title: src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
+    title: "\u5186\u3068\u5186\u306E\u4EA4\u5DEE\u5224\u5B9A"
   - icon: ':warning:'
     path: src/geometry/Z2/intersect/is-intersect-point-circle.hpp
-    title: src/geometry/Z2/intersect/is-intersect-point-circle.hpp
+    title: "\u70B9\u3068\u5186\u306E\u4EA4\u5DEE\u5224\u5B9A"
   - icon: ':warning:'
     path: src/geometry/Z2/operation/square-norm.hpp
-    title: src/geometry/Z2/operation/square-norm.hpp
-  - icon: ':warning:'
-    path: src/geometry/Z2/struct/circle.hpp
-    title: src/geometry/Z2/struct/circle.hpp
-  - icon: ':warning:'
-    path: src/geometry/Z2/struct/point.hpp
-    title: src/geometry/Z2/struct/point.hpp
+    title: "$\\|v\\|^2 (v \\in {\\mathbb{Z}}^2)$ (norm\u306E2\u4E57)"
   - icon: ':warning:'
     path: test/atcoder/abc259_d.cpp
     title: test/atcoder/abc259_d.cpp
@@ -26,7 +26,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"src/geometry/Z2/struct/vector.hpp\"\n\n#include <vector>\n\
+  bundledCode: "#line 2 \"src/geometry/Z2/class/vector.hpp\"\n\n#include <vector>\n\
     \nnamespace luz {\n\nnamespace Z2 {\n\n  template< typename Z >\n  class Vector\
     \ {\n\n    Z x_, y_;\n\n   public:\n    Vector() {}\n    Vector(Z x, Z y): x_(x),\
     \ y_(y) {}\n\n    bool operator==(const Vector &v) const {\n      return x_ ==\
@@ -55,21 +55,18 @@ data:
     \n} // namespace Z2\n\n} // namespace luz\n"
   dependsOn: []
   isVerificationFile: false
-  path: src/geometry/Z2/struct/vector.hpp
+  path: src/geometry/Z2/class/vector.hpp
   requiredBy:
   - test/atcoder/abc259_d.cpp
-  - src/geometry/Z2/struct/circle.hpp
-  - src/geometry/Z2/struct/point.hpp
+  - src/geometry/Z2/class/circle.hpp
+  - src/geometry/Z2/class/point.hpp
   - src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
   - src/geometry/Z2/intersect/is-intersect-point-circle.hpp
   - src/geometry/Z2/operation/square-norm.hpp
-  timestamp: '2022-07-21 10:58:25+09:00'
+  timestamp: '2022-08-01 15:17:25+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: src/geometry/Z2/struct/vector.hpp
+documentation_of: src/geometry/Z2/class/vector.hpp
 layout: document
-redirect_from:
-- /library/src/geometry/Z2/struct/vector.hpp
-- /library/src/geometry/Z2/struct/vector.hpp.html
-title: src/geometry/Z2/struct/vector.hpp
+title: "\u30D9\u30AF\u30C8\u30EB (\u6574\u6570\u5E7E\u4F55)"
 ---

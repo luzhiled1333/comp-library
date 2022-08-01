@@ -50,7 +50,7 @@ data:
     title: src/math/modular-arithmetic/static-modint.hpp
   - icon: ':heavy_check_mark:'
     path: src/sequence/coordinate-compression.hpp
-    title: src/sequence/coordinate-compression.hpp
+    title: "\u5EA7\u6A19\u5727\u7E2E"
   - icon: ':warning:'
     path: test/atcoder/abc259_d.cpp
     title: test/atcoder/abc259_d.cpp
