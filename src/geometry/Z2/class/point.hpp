@@ -1,6 +1,6 @@
 #pragma once
 
-#include "src/geometry/Z2/struct/vector.hpp"
+#include "src/geometry/Z2/class/vector.hpp"
 
 #include <vector>
 

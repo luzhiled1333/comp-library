@@ -1,7 +1,7 @@
 #pragma once
 
-#include "src/geometry/Z2/struct/point.hpp"
-#include "src/geometry/Z2/struct/circle.hpp"
+#include "src/geometry/Z2/class/point.hpp"
+#include "src/geometry/Z2/class/circle.hpp"
 #include "src/geometry/Z2/operation/square-norm.hpp"
 
 namespace luz {

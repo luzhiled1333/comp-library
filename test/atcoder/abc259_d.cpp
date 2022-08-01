@@ -4,8 +4,8 @@
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/cpp-template/header/rep.hpp"
 
-#include "src/geometry/Z2/struct/point.hpp"
-#include "src/geometry/Z2/struct/circle.hpp"
+#include "src/geometry/Z2/class/point.hpp"
+#include "src/geometry/Z2/class/circle.hpp"
 #include "src/geometry/Z2/intersect/is-intersect-circle-circle.hpp"
 #include "src/geometry/Z2/intersect/is-intersect-point-circle.hpp"
 
