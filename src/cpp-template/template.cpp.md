@@ -19,13 +19,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/pair-ios.hpp
     title: pair I/O
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/rep.hpp
     title: "rep \u69CB\u9020\u4F53"
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/template-header.hpp
     title: Template Header
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/type-alias.hpp
     title: Type alias
   - icon: ':heavy_check_mark:'

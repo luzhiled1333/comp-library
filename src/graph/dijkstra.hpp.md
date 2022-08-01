@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/change-minmax.hpp
     title: chmin / chmax
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/type-alias.hpp
     title: Type alias
   - icon: ':heavy_check_mark:'

@@ -21,13 +21,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/cpp-template/header/pair-ios.hpp
       title: pair I/O
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: src/cpp-template/header/rep.hpp
       title: "rep \u69CB\u9020\u4F53"
     - icon: ':heavy_check_mark:'
       path: src/cpp-template/header/template-header.hpp
       title: Template Header
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: src/cpp-template/header/type-alias.hpp
       title: Type alias
     - icon: ':heavy_check_mark:'
@@ -45,29 +45,29 @@ data:
       title: src/data-structure/disjoint-set-union.hpp
   - name: src/geometry/Z2/intersect
     pages:
-    - icon: ':x:'
+    - icon: ':warning:'
       path: src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
       title: src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
-    - icon: ':x:'
+    - icon: ':warning:'
       path: src/geometry/Z2/intersect/is-intersect-point-circle.hpp
       title: src/geometry/Z2/intersect/is-intersect-point-circle.hpp
   - name: src/geometry/Z2/operation
     pages:
-    - icon: ':x:'
+    - icon: ':warning:'
       path: src/geometry/Z2/operation/square-norm.hpp
       title: src/geometry/Z2/operation/square-norm.hpp
-    - icon: ':x:'
+    - icon: ':warning:'
       path: src/geometry/Z2/operation/square.hpp
       title: src/geometry/Z2/operation/square.hpp
   - name: src/geometry/Z2/struct
     pages:
-    - icon: ':x:'
+    - icon: ':warning:'
       path: src/geometry/Z2/struct/circle.hpp
       title: src/geometry/Z2/struct/circle.hpp
-    - icon: ':x:'
+    - icon: ':warning:'
       path: src/geometry/Z2/struct/point.hpp
       title: src/geometry/Z2/struct/point.hpp
-    - icon: ':x:'
+    - icon: ':warning:'
       path: src/geometry/Z2/struct/vector.hpp
       title: src/geometry/Z2/struct/vector.hpp
   - name: src/graph
@@ -103,6 +103,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/sequence/coordinate-compression.hpp
       title: src/sequence/coordinate-compression.hpp
+  - name: test/atcoder
+    pages:
+    - icon: ':warning:'
+      path: test/atcoder/abc259_d.cpp
+      title: test/atcoder/abc259_d.cpp
   verificationCategories:
   - name: test/aoj
     pages:
@@ -123,9 +128,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/atcoder/abc212_h.test.cpp
       title: test/atcoder/abc212_h.test.cpp
-    - icon: ':x:'
-      path: test/atcoder/abc259_d.test.cpp
-      title: test/atcoder/abc259_d.test.cpp
   - name: test/library-checker
     pages:
     - icon: ':heavy_check_mark:'

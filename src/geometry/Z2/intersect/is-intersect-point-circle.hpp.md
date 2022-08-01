@@ -1,29 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':warning:'
     path: src/geometry/Z2/operation/square-norm.hpp
     title: src/geometry/Z2/operation/square-norm.hpp
-  - icon: ':x:'
+  - icon: ':warning:'
     path: src/geometry/Z2/operation/square.hpp
     title: src/geometry/Z2/operation/square.hpp
-  - icon: ':x:'
+  - icon: ':warning:'
     path: src/geometry/Z2/struct/circle.hpp
     title: src/geometry/Z2/struct/circle.hpp
-  - icon: ':x:'
+  - icon: ':warning:'
     path: src/geometry/Z2/struct/point.hpp
     title: src/geometry/Z2/struct/point.hpp
-  - icon: ':x:'
+  - icon: ':warning:'
     path: src/geometry/Z2/struct/vector.hpp
     title: src/geometry/Z2/struct/vector.hpp
-  _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/atcoder/abc259_d.test.cpp
-    title: test/atcoder/abc259_d.test.cpp
-  _isVerificationFailed: true
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/atcoder/abc259_d.cpp
+    title: test/atcoder/abc259_d.cpp
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/geometry/Z2/intersect/is-intersect-point-circle.hpp\"\
@@ -74,11 +74,11 @@ data:
   - src/geometry/Z2/operation/square.hpp
   isVerificationFile: false
   path: src/geometry/Z2/intersect/is-intersect-point-circle.hpp
-  requiredBy: []
+  requiredBy:
+  - test/atcoder/abc259_d.cpp
   timestamp: '2022-07-21 10:58:25+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - test/atcoder/abc259_d.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: src/geometry/Z2/intersect/is-intersect-point-circle.hpp
 layout: document
 redirect_from:

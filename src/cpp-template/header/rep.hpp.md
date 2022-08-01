@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/type-alias.hpp
     title: Type alias
   _extendedRequiredBy:
@@ -27,6 +27,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/sequence/coordinate-compression.hpp
     title: src/sequence/coordinate-compression.hpp
+  - icon: ':warning:'
+    path: test/atcoder/abc259_d.cpp
+    title: test/atcoder/abc259_d.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/dsl-1-a.test.cpp
@@ -43,18 +46,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc212_h.test.cpp
     title: test/atcoder/abc212_h.test.cpp
-  - icon: ':x:'
-    path: test/atcoder/abc259_d.test.cpp
-    title: test/atcoder/abc259_d.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/library-checker/bitwise_xor_convolution.test.cpp
     title: test/library-checker/bitwise_xor_convolution.test.cpp
   - icon: ':heavy_check_mark:'
     path: unit-test/sequence/coordinate-complession.test.cpp
     title: unit-test/sequence/coordinate-complession.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/cpp-template/header/rep.hpp\"\n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\
@@ -98,6 +98,7 @@ data:
   isVerificationFile: false
   path: src/cpp-template/header/rep.hpp
   requiredBy:
+  - test/atcoder/abc259_d.cpp
   - src/math/convolution/fast-walsh-hadamard-transform.hpp
   - src/math/convolution/bitwise-xor-convolution.hpp
   - src/graph/offline-query-lowest-common-ancestor.hpp
@@ -106,12 +107,11 @@ data:
   - src/cpp-template/header/vector-ios.hpp
   - src/cpp-template/template.cpp
   timestamp: '2022-07-16 05:05:19+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - unit-test/sequence/coordinate-complession.test.cpp
   - test/library-checker/bitwise_xor_convolution.test.cpp
   - test/atcoder/abc212_h.test.cpp
-  - test/atcoder/abc259_d.test.cpp
   - test/aoj/grl-5-c.test.cpp
   - test/aoj/itp1-1-a.test.cpp
   - test/aoj/grl-1-a.test.cpp

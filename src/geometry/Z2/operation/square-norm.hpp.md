@@ -1,26 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':warning:'
     path: src/geometry/Z2/operation/square.hpp
     title: src/geometry/Z2/operation/square.hpp
-  - icon: ':x:'
+  - icon: ':warning:'
     path: src/geometry/Z2/struct/vector.hpp
     title: src/geometry/Z2/struct/vector.hpp
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':warning:'
     path: src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
     title: src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
-  - icon: ':x:'
+  - icon: ':warning:'
     path: src/geometry/Z2/intersect/is-intersect-point-circle.hpp
     title: src/geometry/Z2/intersect/is-intersect-point-circle.hpp
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/atcoder/abc259_d.test.cpp
-    title: test/atcoder/abc259_d.test.cpp
-  _isVerificationFailed: true
+  - icon: ':warning:'
+    path: test/atcoder/abc259_d.cpp
+    title: test/atcoder/abc259_d.cpp
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/geometry/Z2/operation/square-norm.hpp\"\n\n#line 2 \"\
@@ -53,12 +53,12 @@ data:
   isVerificationFile: false
   path: src/geometry/Z2/operation/square-norm.hpp
   requiredBy:
+  - test/atcoder/abc259_d.cpp
   - src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
   - src/geometry/Z2/intersect/is-intersect-point-circle.hpp
   timestamp: '2022-07-21 10:58:25+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - test/atcoder/abc259_d.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: src/geometry/Z2/operation/square-norm.hpp
 layout: document
 redirect_from:
