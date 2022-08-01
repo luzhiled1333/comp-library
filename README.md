@@ -1,5 +1,5 @@
-[![Actions Status](https://github.com/beet-aizu/library/workflows/verify/badge.svg)](https://github.com/beet-aizu/library/actions)
-[![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=+&color=brightgreen&logo=github)](https://Luzhiled.github.io/comp-library/)
+[![Actions Status](https://github.com/luzhiled1333/comp-library/workflows/verify/badge.svg)](https://github.com/luzhiled1333/comp-library/actions)
+[![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=+&color=brightgreen&logo=github)](https://Luzhiled1333.github.io/comp-library/)
 
 # comp-library
 ## usage
