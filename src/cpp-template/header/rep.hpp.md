@@ -15,6 +15,9 @@ data:
     path: src/cpp-template/template.cpp
     title: template
   - icon: ':heavy_check_mark:'
+    path: src/data-structure/disjoint-set-union.hpp
+    title: src/data-structure/disjoint-set-union.hpp
+  - icon: ':heavy_check_mark:'
     path: src/graph/offline-query-lowest-common-ancestor.hpp
     title: src/graph/offline-query-lowest-common-ancestor.hpp
   - icon: ':heavy_check_mark:'
@@ -43,6 +46,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/itp1-1-a.test.cpp
     title: test/aoj/itp1-1-a.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc177_d.test.cpp
+    title: test/atcoder/abc177_d.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc212_h.test.cpp
     title: test/atcoder/abc212_h.test.cpp
@@ -102,6 +108,7 @@ data:
   - src/math/convolution/fast-walsh-hadamard-transform.hpp
   - src/math/convolution/bitwise-xor-convolution.hpp
   - src/graph/offline-query-lowest-common-ancestor.hpp
+  - src/data-structure/disjoint-set-union.hpp
   - src/sequence/coordinate-compression.hpp
   - src/cpp-template/header/template-header.hpp
   - src/cpp-template/header/vector-ios.hpp
@@ -111,6 +118,7 @@ data:
   verifiedWith:
   - unit-test/sequence/coordinate-complession.test.cpp
   - test/library-checker/bitwise_xor_convolution.test.cpp
+  - test/atcoder/abc177_d.test.cpp
   - test/atcoder/abc212_h.test.cpp
   - test/aoj/grl-5-c.test.cpp
   - test/aoj/itp1-1-a.test.cpp

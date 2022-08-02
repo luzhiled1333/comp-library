@@ -126,6 +126,9 @@ data:
   - name: test/atcoder
     pages:
     - icon: ':heavy_check_mark:'
+      path: test/atcoder/abc177_d.test.cpp
+      title: test/atcoder/abc177_d.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/atcoder/abc212_h.test.cpp
       title: test/atcoder/abc212_h.test.cpp
   - name: test/library-checker

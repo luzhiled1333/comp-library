@@ -48,22 +48,32 @@ data:
     \ noexcept { return f; }\n    constexpr auto end() const noexcept { return l;\
     \ }\n  };\n\n} // namespace luz\n#line 1 \"src/graph/offline-query-lowest-common-ancestor.hpp\"\
     \n#include <vector>\n#include <utility>\n\n#line 2 \"src/data-structure/disjoint-set-union.hpp\"\
-    \n\n#line 4 \"src/data-structure/disjoint-set-union.hpp\"\n\n#line 6 \"src/data-structure/disjoint-set-union.hpp\"\
-    \n#include <cassert>\n#line 8 \"src/data-structure/disjoint-set-union.hpp\"\n\n\
+    \n\n#line 5 \"src/data-structure/disjoint-set-union.hpp\"\n\n#line 7 \"src/data-structure/disjoint-set-union.hpp\"\
+    \n#include <cassert>\n#line 9 \"src/data-structure/disjoint-set-union.hpp\"\n\n\
     namespace luz {\n\n  class DisjointSetUnion {\n    usize n_;\n\n    // vals_[v]\
     \ :=\n    // if v is root node: -1 * component size\n    // otherwise: parent\
-    \ node\n    std::vector< isize > vals_;\n\n    void bound_check(usize v) {\n \
-    \     assert(v < n_);\n    }\n\n    usize impl_leader(usize v) {\n      if (vals_[v]\
-    \ < 0) return v;\n      return vals_[v] = leader(vals_[v]);\n    }\n\n   public:\n\
-    \    DisjointSetUnion() = default;\n    explicit DisjointSetUnion(usize n): n_(n),\
-    \ vals_(n, -1) {}\n\n    usize size() const {\n      return vals_.size();\n  \
-    \  }\n\n    usize leader(usize v) {\n      bound_check(v);\n      return impl_leader(v);\n\
+    \ node\n    std::vector< isize > vals_;\n\n    void bound_check(usize v) const\
+    \ {\n      assert(v < n_);\n    }\n\n    usize impl_leader(usize v) {\n      if\
+    \ (vals_[v] < 0) return v;\n      return vals_[v] = leader(vals_[v]);\n    }\n\
+    \n   public:\n    DisjointSetUnion() = default;\n    explicit DisjointSetUnion(usize\
+    \ n): n_(n), vals_(n, -1) {}\n\n    usize size() const {\n      return n_;\n \
+    \   }\n\n    usize leader(usize v) {\n      bound_check(v);\n      return impl_leader(v);\n\
     \    }\n\n    bool same(usize u, usize v) {\n      bound_check(u), bound_check(v);\n\
     \      return impl_leader(u) == impl_leader(v);\n    }\n\n    usize merge(usize\
     \ u, usize v) {\n      bound_check(u); bound_check(v);\n\n      isize x = impl_leader(u);\n\
     \      isize y = impl_leader(v);\n      if (x == y) return x;\n      if (-vals_[x]\
     \ < -vals_[y]) std::swap(x, y);\n      vals_[x] += vals_[y];\n      vals_[y] =\
-    \ x;\n      return x;\n    }\n\n  };\n\n} // namespace luz\n#line 2 \"src/graph/graph-template.hpp\"\
+    \ x;\n      return x;\n    }\n\n    usize group_size(usize v) {\n      bound_check(v);\n\
+    \      return -vals_[impl_leader(v)];\n    }\n\n    std::vector< std::vector<\
+    \ usize > > groups() {\n      std::vector< std::vector< usize > > result(n_);\n\
+    \n      std::vector< usize > leaders(n_), g_sizes(n_);\n      for (usize v: rep(0,\
+    \ n_)) {\n        leaders[v] = impl_leader(v);\n        g_sizes[leaders[v]]++;\n\
+    \      }\n      for (usize v: rep(0, n_)) {\n        result[v].reserve(g_sizes[v]);\n\
+    \      }\n      for (usize v: rep(0, n_)) {\n        result[leaders[v]].emplace_back(v);\n\
+    \      }\n\n      auto empty_check = [](const std::vector< usize > &vs) {\n  \
+    \      return vs.empty();\n      };\n      result.erase(\n        std::remove_if(result.begin(),\
+    \ result.end(), empty_check),\n        result.end()\n      );\n\n      return\
+    \ result;\n    }\n\n  };\n\n} // namespace luz\n#line 2 \"src/graph/graph-template.hpp\"\
     \n\n#line 4 \"src/graph/graph-template.hpp\"\n\n#line 6 \"src/graph/graph-template.hpp\"\
     \n\nnamespace luz {\n\n  template< typename cost_type >\n  class Edge {\n   public:\n\
     \    usize from, to;\n    cost_type cost;\n    usize id;\n    Edge() = default;\n\
@@ -130,7 +140,7 @@ data:
   isVerificationFile: true
   path: test/aoj/grl-5-c.test.cpp
   requiredBy: []
-  timestamp: '2022-07-23 11:33:50+09:00'
+  timestamp: '2022-08-02 18:24:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/grl-5-c.test.cpp

@@ -18,6 +18,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/itp1-1-a.test.cpp
     title: test/aoj/itp1-1-a.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc177_d.test.cpp
+    title: test/atcoder/abc177_d.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -42,6 +45,7 @@ data:
   timestamp: '2022-06-13 01:05:23+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/atcoder/abc177_d.test.cpp
   - test/aoj/itp1-1-a.test.cpp
   - test/aoj/grl-1-a.test.cpp
 documentation_of: src/cpp-template/header/change-minmax.hpp
