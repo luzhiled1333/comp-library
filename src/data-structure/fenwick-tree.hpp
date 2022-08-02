@@ -3,6 +3,7 @@
 #include "src/cpp-template/header/type-alias.hpp"
 
 #include <vector>
+#include <cassert>
 
 namespace luz {
  
@@ -25,6 +26,7 @@ namespace luz {
     explicit FenwickTree(usize n): n_(n), vals_(n + 1, T()) {}
     
     void add(usize k, const T &v) {
+      assert(0 <= k and k < n_);
       k++;
       while (k <= n_) {
         vals_[k] += v;
@@ -33,6 +35,7 @@ namespace luz {
     }
  
     T sum(usize l, usize r) const {
+      assert(0 <= l and l <= r and r <= n);
       return sum(r) - sum(l);
     }
  
