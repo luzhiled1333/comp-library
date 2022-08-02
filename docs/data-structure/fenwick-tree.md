@@ -7,7 +7,7 @@ documentation_of: //src/data-structure/fenwick-tree.hpp
 
 長さ $n$ の列 $(a_0, a_1, \cdots, a_{n-1})$ に対し
 
-- $a_i$ への加算
+- $a_k$ への加算
 - $a_l, a_{l+1}, \cdots, a_{r-1}$ の総和
 
 を $O(\log n)$ で求めることが可能なデータ構造
@@ -26,13 +26,13 @@ FenwickTree<T>(usize n)
 
 ## add
 ```
-void add(usize idx, const T &v)
+void add(usize k, const T &v)
 ```
 
-$a_{idx} \leftarrow a_{idx} + v$ で更新を行う。
+$a_{k} \leftarrow a_{k} + v$ で更新を行う。
 
 ### 制約
-- $0 \leq idx < n$
+- $0 \leq k < n$
 
 ### 計算量
 - $O(\log n)$

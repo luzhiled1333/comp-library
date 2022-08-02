@@ -11,11 +11,11 @@ namespace luz {
     usize n_;
     std::vector< T > vals_;
  
-    T sum(usize idx) const {
+    T sum(usize k) const {
       T result(0);
-      while (idx > 0) {
-        result += vals_[idx];
-        idx -= idx & -idx;
+      while (k > 0) {
+        result += vals_[k];
+        k -= k & -k;
       }
       return result;
     }
@@ -24,11 +24,11 @@ namespace luz {
     FenwickTree() = default;
     explicit FenwickTree(usize n): n_(n), vals_(n + 1, T()) {}
     
-    void add(usize idx, const T &v) {
-      idx++;
-      while (idx <= n_) {
-        vals_[idx] += v;
-        idx += idx & -idx;
+    void add(usize k, const T &v) {
+      k++;
+      while (k <= n_) {
+        vals_[k] += v;
+        k += k & -k;
       }
     }
  
