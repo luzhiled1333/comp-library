@@ -55,7 +55,7 @@ namespace luz {
       return x;
     }
 
-    usize group_size(usize v) const {
+    usize group_size(usize v) {
       bound_check(v);
       return -vals_[impl_leader(v)];
     }
