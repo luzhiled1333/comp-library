@@ -17,6 +17,8 @@ documentation_of: //src/data-structure/fenwick-tree.hpp
 FenwickTree<T>(usize n)
 ```
 
+列 $(a_0, a_1, \cdots a_{n-1})$ を `T()` で初期化する。
+
 ### 制約
 - $0 \leq n$
 
