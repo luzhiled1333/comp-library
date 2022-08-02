@@ -40,7 +40,7 @@ $a_{k} \leftarrow a_{k} + v$ で更新を行う。
 
 ## sum
 ```
-T sum(usize l, usize r)
+T sum(usize l, usize r) const
 ```
 
 $a_{l} + a_{l+1} + \cdots + a_{r-1}$ を返す。
