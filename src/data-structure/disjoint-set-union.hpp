@@ -1,6 +1,7 @@
 #pragma once
 
 #include "src/cpp-template/header/type-alias.hpp"
+#include "src/cpp-template/header/rep.hpp"
 
 #include <algorithm>
 #include <cassert>
@@ -16,7 +17,7 @@ namespace luz {
     // otherwise: parent node
     std::vector< isize > vals_;
 
-    void bound_check(usize v) {
+    void bound_check(usize v) const {
       assert(v < n_);
     }
 
@@ -30,7 +31,7 @@ namespace luz {
     explicit DisjointSetUnion(usize n): n_(n), vals_(n, -1) {}
 
     usize size() const {
-      return vals_.size();
+      return n_;
     }
 
     usize leader(usize v) {
@@ -53,6 +54,37 @@ namespace luz {
       vals_[x] += vals_[y];
       vals_[y] = x;
       return x;
+    }
+
+    usize group_size(usize v) {
+      bound_check(v);
+      return -vals_[impl_leader(v)];
+    }
+
+    std::vector< std::vector< usize > > groups() {
+      std::vector< std::vector< usize > > result(n_);
+
+      std::vector< usize > leaders(n_), g_sizes(n_);
+      for (usize v: rep(0, n_)) {
+        leaders[v] = impl_leader(v);
+        g_sizes[leaders[v]]++;
+      }
+      for (usize v: rep(0, n_)) {
+        result[v].reserve(g_sizes[v]);
+      }
+      for (usize v: rep(0, n_)) {
+        result[leaders[v]].emplace_back(v);
+      }
+
+      auto empty_check = [](const std::vector< usize > &vs) {
+        return vs.empty();
+      };
+      result.erase(
+        std::remove_if(result.begin(), result.end(), empty_check),
+        result.end()
+      );
+
+      return result;
     }
 
   };
