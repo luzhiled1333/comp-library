@@ -35,7 +35,7 @@ namespace luz {
     }
  
     T sum(usize l, usize r) const {
-      assert(0 <= l and l <= r and r <= n);
+      assert(0 <= l and l <= r and r <= n_);
       return sum(r) - sum(l);
     }
  
