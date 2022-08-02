@@ -16,7 +16,7 @@ namespace luz {
     // otherwise: parent node
     std::vector< isize > vals_;
 
-    void bound_check(usize v) {
+    void bound_check(usize v) const {
       assert(v < n_);
     }
 
