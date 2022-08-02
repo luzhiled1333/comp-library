@@ -30,7 +30,7 @@ namespace luz {
     explicit DisjointSetUnion(usize n): n_(n), vals_(n, -1) {}
 
     usize size() const {
-      return vals_.size();
+      return n_;
     }
 
     usize leader(usize v) {
