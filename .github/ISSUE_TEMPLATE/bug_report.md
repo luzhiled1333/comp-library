@@ -7,17 +7,17 @@ assignees: ''
 
 ---
 
-## バグの説明 / Describe the bug
+## Description
 A clear and concise description of what the bug is.
 
-## 再現するコード / To Reproduce
-submit url, or your code:
+## To Reproduce
+submit url, or code:
 ```cpp
 ```
 
-## 環境 / Environment
+## Environment
  - compiler: [e.g. gcc, clang]
  - Version [e.g. 9.2.1]
 
-## その他 / Additional context
+## note
 Add any other context about the problem here.
