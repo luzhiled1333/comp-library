@@ -55,6 +55,11 @@ namespace luz {
       return x;
     }
 
+    usize group_size(usize v) const {
+      bound_check(v);
+      return -vals_[impl_leader(v)];
+    }
+
   };
 
 } // namespace luz
