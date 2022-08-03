@@ -23,7 +23,21 @@ namespace luz {
  
    public:
     FenwickTree() = default;
+
     explicit FenwickTree(usize n): n_(n), vals_(n + 1, T()) {}
+
+    explicit FenwickTree(const std::vector< T > &a) :
+        n_(a.size()), vals_(a.size() + 1, T()) {
+      for (usize i : rep(1, a.size() + 1)) {
+        vals_[i] = a[i - 1];
+      }
+      for (usize i : rep(1, a.size() + 1)) {
+        usize j = i + (i & -i);
+        if (j <= a.size()) {
+          vals_[j] += vals_[i];
+        }
+      }
+    }
     
     void add(usize k, const T &v) {
       assert(0 <= k and k < n_);

@@ -75,6 +75,26 @@ namespace luz {
       assert(ft.sum(0, 2 + 1) == 4);
     }
 
+    { // T as i32
+      FenwickTree< i32 > ft({1, -10, 100, -1000});
+
+      assert(ft.sum(0, 0)     == 0);
+      assert(ft.sum(0, 0 + 1) == 1);
+      assert(ft.sum(0, 1 + 1) == -9);
+      assert(ft.sum(0, 2 + 1) == 91);
+      assert(ft.sum(0, 3 + 1) == -909);
+    }
+
+    { // T as u32
+      FenwickTree< u32 > ft({1, 10, 100, 1000});
+
+      assert(ft.sum(0, 0)     == 0);
+      assert(ft.sum(0, 0 + 1) == 1);
+      assert(ft.sum(0, 1 + 1) == 11);
+      assert(ft.sum(0, 2 + 1) == 111);
+      assert(ft.sum(0, 3 + 1) == 1111);
+    }
+
     std::cout << "Hello World" << std::endl;
   }
 
