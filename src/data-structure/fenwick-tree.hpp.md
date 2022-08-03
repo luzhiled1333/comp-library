@@ -99,10 +99,12 @@ title: Fenwick Tree (Binary Indexed Tree)
 
 ## コンストラクタ
 ```
-FenwickTree<T>(usize n)
+(1) FenwickTree<T>(usize n)
+(2) FenwickTree<T>(const std::vector<T> &as)
 ```
 
-列 $(a_0, a_1, \cdots a_{n-1})$ を `T()` で初期化する。
+1. 列 $(a_0, a_1, \cdots a_{n-1})$ の全要素を `T()` で初期化する。
+2. 列 $(a_0, a_1, \cdots a_{n-1})$ を $a_i = $ `as[i]` として初期化する。
 
 ### 制約
 - $0 \leq n$
