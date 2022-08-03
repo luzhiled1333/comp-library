@@ -38,6 +38,9 @@ data:
     path: test/aoj/dsl-1-a.test.cpp
     title: test/aoj/dsl-1-a.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/dsl-2-b.test.cpp
+    title: test/aoj/dsl-2-b.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/grl-1-a.test.cpp
     title: test/aoj/grl-1-a.test.cpp
   - icon: ':heavy_check_mark:'
@@ -122,6 +125,7 @@ data:
   - test/atcoder/abc212_h.test.cpp
   - test/aoj/grl-5-c.test.cpp
   - test/aoj/itp1-1-a.test.cpp
+  - test/aoj/dsl-2-b.test.cpp
   - test/aoj/grl-1-a.test.cpp
   - test/aoj/dsl-1-a.test.cpp
 documentation_of: src/cpp-template/header/rep.hpp

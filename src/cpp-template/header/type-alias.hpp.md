@@ -27,6 +27,9 @@ data:
     path: src/data-structure/disjoint-set-union.hpp
     title: src/data-structure/disjoint-set-union.hpp
   - icon: ':heavy_check_mark:'
+    path: src/data-structure/fenwick-tree.hpp
+    title: Fenwick Tree (Binary Indexed Tree)
+  - icon: ':heavy_check_mark:'
     path: src/graph/dijkstra.hpp
     title: Dijkstra's Algorithm
   - icon: ':warning:'
@@ -59,6 +62,9 @@ data:
     path: test/aoj/dsl-1-a.test.cpp
     title: test/aoj/dsl-1-a.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/dsl-2-b.test.cpp
+    title: test/aoj/dsl-2-b.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/grl-1-a.test.cpp
     title: test/aoj/grl-1-a.test.cpp
   - icon: ':heavy_check_mark:'
@@ -76,6 +82,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/bitwise_xor_convolution.test.cpp
     title: test/library-checker/bitwise_xor_convolution.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: unit-test/data-structure/fenwick-tree.test.cpp
+    title: unit-test/data-structure/fenwick-tree.test.cpp
   - icon: ':heavy_check_mark:'
     path: unit-test/math/modular-arithmetic/static-modint.test.cpp
     title: unit-test/math/modular-arithmetic/static-modint.test.cpp
@@ -108,6 +117,7 @@ data:
   - src/graph/dijkstra.hpp
   - src/graph/functional-graph-utility.hpp
   - src/graph/offline-query-lowest-common-ancestor.hpp
+  - src/data-structure/fenwick-tree.hpp
   - src/data-structure/disjoint-set-union.hpp
   - src/sequence/coordinate-compression.hpp
   - src/cpp-template/header/make-vector.hpp
@@ -121,12 +131,14 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - unit-test/math/modular-arithmetic/static-modint.test.cpp
+  - unit-test/data-structure/fenwick-tree.test.cpp
   - unit-test/sequence/coordinate-complession.test.cpp
   - test/library-checker/bitwise_xor_convolution.test.cpp
   - test/atcoder/abc177_d.test.cpp
   - test/atcoder/abc212_h.test.cpp
   - test/aoj/grl-5-c.test.cpp
   - test/aoj/itp1-1-a.test.cpp
+  - test/aoj/dsl-2-b.test.cpp
   - test/aoj/grl-1-a.test.cpp
   - test/aoj/dsl-1-a.test.cpp
 documentation_of: src/cpp-template/header/type-alias.hpp

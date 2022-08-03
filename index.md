@@ -43,6 +43,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/data-structure/disjoint-set-union.hpp
       title: src/data-structure/disjoint-set-union.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/fenwick-tree.hpp
+      title: Fenwick Tree (Binary Indexed Tree)
   - name: src/geometry/Z2/class
     pages:
     - icon: ':warning:'
@@ -115,6 +118,9 @@ data:
       path: test/aoj/dsl-1-a.test.cpp
       title: test/aoj/dsl-1-a.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/aoj/dsl-2-b.test.cpp
+      title: test/aoj/dsl-2-b.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/aoj/grl-1-a.test.cpp
       title: test/aoj/grl-1-a.test.cpp
     - icon: ':heavy_check_mark:'
@@ -136,6 +142,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/library-checker/bitwise_xor_convolution.test.cpp
       title: test/library-checker/bitwise_xor_convolution.test.cpp
+  - name: unit-test/data-structure
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: unit-test/data-structure/fenwick-tree.test.cpp
+      title: unit-test/data-structure/fenwick-tree.test.cpp
   - name: unit-test/math/modular-arithmetic
     pages:
     - icon: ':heavy_check_mark:'
