@@ -18,6 +18,9 @@ data:
     path: src/data-structure/disjoint-set-union.hpp
     title: src/data-structure/disjoint-set-union.hpp
   - icon: ':heavy_check_mark:'
+    path: src/data-structure/fenwick-tree.hpp
+    title: Fenwick Tree (Binary Indexed Tree)
+  - icon: ':heavy_check_mark:'
     path: src/graph/offline-query-lowest-common-ancestor.hpp
     title: src/graph/offline-query-lowest-common-ancestor.hpp
   - icon: ':heavy_check_mark:'
@@ -58,6 +61,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/bitwise_xor_convolution.test.cpp
     title: test/library-checker/bitwise_xor_convolution.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: unit-test/data-structure/fenwick-tree.test.cpp
+    title: unit-test/data-structure/fenwick-tree.test.cpp
   - icon: ':heavy_check_mark:'
     path: unit-test/sequence/coordinate-complession.test.cpp
     title: unit-test/sequence/coordinate-complession.test.cpp
@@ -111,6 +117,7 @@ data:
   - src/math/convolution/fast-walsh-hadamard-transform.hpp
   - src/math/convolution/bitwise-xor-convolution.hpp
   - src/graph/offline-query-lowest-common-ancestor.hpp
+  - src/data-structure/fenwick-tree.hpp
   - src/data-structure/disjoint-set-union.hpp
   - src/sequence/coordinate-compression.hpp
   - src/cpp-template/header/template-header.hpp
@@ -119,6 +126,7 @@ data:
   timestamp: '2022-07-16 05:05:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - unit-test/data-structure/fenwick-tree.test.cpp
   - unit-test/sequence/coordinate-complession.test.cpp
   - test/library-checker/bitwise_xor_convolution.test.cpp
   - test/atcoder/abc177_d.test.cpp

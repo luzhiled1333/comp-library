@@ -41,23 +41,28 @@ data:
     \      : f(l - 1), l(std::min(f, l) - 1) {}\n    constexpr auto begin() const\
     \ noexcept { return f; }\n    constexpr auto end() const noexcept { return l;\
     \ }\n  };\n\n} // namespace luz\n#line 2 \"src/data-structure/fenwick-tree.hpp\"\
-    \n\n#line 4 \"src/data-structure/fenwick-tree.hpp\"\n\n#include <vector>\n#include\
+    \n\n#line 5 \"src/data-structure/fenwick-tree.hpp\"\n\n#include <vector>\n#include\
     \ <cassert>\n\nnamespace luz {\n \n  template< typename T >\n  class FenwickTree\
     \ {\n    usize n_;\n    std::vector< T > vals_;\n \n    T sum(usize k) const {\n\
     \      T result(0);\n      while (k > 0) {\n        result += vals_[k];\n    \
     \    k -= k & -k;\n      }\n      return result;\n    }\n \n   public:\n    FenwickTree()\
-    \ = default;\n    explicit FenwickTree(usize n): n_(n), vals_(n + 1, T()) {}\n\
-    \    \n    void add(usize k, const T &v) {\n      assert(0 <= k and k < n_);\n\
-    \      k++;\n      while (k <= n_) {\n        vals_[k] += v;\n        k += k &\
-    \ -k;\n      }\n    }\n \n    T sum(usize l, usize r) const {\n      assert(0\
-    \ <= l and l <= r and r <= n_);\n      return sum(r) - sum(l);\n    }\n \n  };\n\
-    \ \n} // namespace luz\n#line 6 \"test/aoj/dsl-2-b.test.cpp\"\n\n#include <iostream>\n\
-    \nnamespace luz {\n\n  void main_() {\n    usize n, q;\n    std::cin >> n >> q;\n\
-    \n    FenwickTree< u32 > ft(n);\n    for ([[maybe_unused]] usize _: rep(0, q))\
-    \ {\n      usize com, x, y;\n      std::cin >> com >> x >> y;\n\n      if (not\
-    \ com) {\n        ft.add(x - 1, y);\n      } else {\n        std::cout << ft.sum(x\
-    \ - 1, y) << std::endl;\n      }\n    }\n\n  }\n\n} // namespace luz\n\nint main()\
-    \ {\n  luz::main_();\n}\n"
+    \ = default;\n\n    explicit FenwickTree(usize n): n_(n), vals_(n + 1, T()) {}\n\
+    \n    explicit FenwickTree(const std::vector< T > &as) :\n        n_(as.size()),\
+    \ vals_(as.size() + 1, T()) {\n      for (usize i : rep(1, as.size() + 1)) {\n\
+    \        vals_[i] = as[i - 1];\n      }\n      for (usize i : rep(1, as.size()\
+    \ + 1)) {\n        usize j = i + (i & -i);\n        if (j <= as.size()) {\n  \
+    \        vals_[j] += vals_[i];\n        }\n      }\n    }\n    \n    void add(usize\
+    \ k, const T &v) {\n      assert(0 <= k and k < n_);\n      k++;\n      while\
+    \ (k <= n_) {\n        vals_[k] += v;\n        k += k & -k;\n      }\n    }\n\
+    \ \n    T sum(usize l, usize r) const {\n      assert(0 <= l and l <= r and r\
+    \ <= n_);\n      return sum(r) - sum(l);\n    }\n \n  };\n \n} // namespace luz\n\
+    #line 6 \"test/aoj/dsl-2-b.test.cpp\"\n\n#include <iostream>\n\nnamespace luz\
+    \ {\n\n  void main_() {\n    usize n, q;\n    std::cin >> n >> q;\n\n    FenwickTree<\
+    \ u32 > ft(n);\n    for ([[maybe_unused]] usize _: rep(0, q)) {\n      usize com,\
+    \ x, y;\n      std::cin >> com >> x >> y;\n\n      if (not com) {\n        ft.add(x\
+    \ - 1, y);\n      } else {\n        std::cout << ft.sum(x - 1, y) << std::endl;\n\
+    \      }\n    }\n\n  }\n\n} // namespace luz\n\nint main() {\n  luz::main_();\n\
+    }\n"
   code: "// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_B\n\
     \n#include \"src/cpp-template/header/type-alias.hpp\"\n#include \"src/cpp-template/header/rep.hpp\"\
     \n#include \"src/data-structure/fenwick-tree.hpp\"\n\n#include <iostream>\n\n\
@@ -74,7 +79,7 @@ data:
   isVerificationFile: true
   path: test/aoj/dsl-2-b.test.cpp
   requiredBy: []
-  timestamp: '2022-08-02 22:45:14+09:00'
+  timestamp: '2022-08-04 00:52:23+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/dsl-2-b.test.cpp
