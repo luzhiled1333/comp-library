@@ -7,7 +7,6 @@
 #include <utility>
 
 namespace luz {
-
 namespace impl {
 
   template< typename T >
@@ -24,6 +23,9 @@ namespace impl {
   }
 
 } // namespace impl
+} // namespace luz
+
+namespace luz {
 
   template< typename T >
   std::vector< std::pair< T, usize > > run_length_encoding(const std::vector< T > &vs) {
