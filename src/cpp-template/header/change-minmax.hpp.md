@@ -11,6 +11,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/graph/dijkstra.hpp
     title: Dijkstra's Algorithm
+  - icon: ':warning:'
+    path: test/atcoder/abc259_c.cpp
+    title: test/atcoder/abc259_c.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/grl-1-a.test.cpp
@@ -39,6 +42,7 @@ data:
   isVerificationFile: false
   path: src/cpp-template/header/change-minmax.hpp
   requiredBy:
+  - test/atcoder/abc259_c.cpp
   - src/graph/dijkstra.hpp
   - src/cpp-template/header/template-header.hpp
   - src/cpp-template/template.cpp

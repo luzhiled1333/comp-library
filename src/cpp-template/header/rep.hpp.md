@@ -34,6 +34,9 @@ data:
     path: src/sequence/coordinate-compression.hpp
     title: "\u5EA7\u6A19\u5727\u7E2E"
   - icon: ':warning:'
+    path: test/atcoder/abc259_c.cpp
+    title: test/atcoder/abc259_c.cpp
+  - icon: ':warning:'
     path: test/atcoder/abc259_d.cpp
     title: test/atcoder/abc259_d.cpp
   _extendedVerifiedWith:
@@ -113,6 +116,7 @@ data:
   isVerificationFile: false
   path: src/cpp-template/header/rep.hpp
   requiredBy:
+  - test/atcoder/abc259_c.cpp
   - test/atcoder/abc259_d.cpp
   - src/math/convolution/fast-walsh-hadamard-transform.hpp
   - src/math/convolution/bitwise-xor-convolution.hpp

@@ -55,6 +55,13 @@ data:
     path: src/sequence/coordinate-compression.hpp
     title: "\u5EA7\u6A19\u5727\u7E2E"
   - icon: ':warning:'
+    path: src/sequence/run-length-encoding.hpp
+    title: "\u30E9\u30F3\u30EC\u30F3\u30B0\u30B9\u5727\u7E2E (\u9023\u9577\u5727\u7E2E\
+      , Run Length Encoding, RLE)"
+  - icon: ':warning:'
+    path: test/atcoder/abc259_c.cpp
+    title: test/atcoder/abc259_c.cpp
+  - icon: ':warning:'
     path: test/atcoder/abc259_d.cpp
     title: test/atcoder/abc259_d.cpp
   _extendedVerifiedWith:
@@ -109,6 +116,7 @@ data:
   isVerificationFile: false
   path: src/cpp-template/header/type-alias.hpp
   requiredBy:
+  - test/atcoder/abc259_c.cpp
   - test/atcoder/abc259_d.cpp
   - src/math/convolution/fast-walsh-hadamard-transform.hpp
   - src/math/convolution/bitwise-xor-convolution.hpp
@@ -119,6 +127,7 @@ data:
   - src/graph/offline-query-lowest-common-ancestor.hpp
   - src/data-structure/fenwick-tree.hpp
   - src/data-structure/disjoint-set-union.hpp
+  - src/sequence/run-length-encoding.hpp
   - src/sequence/coordinate-compression.hpp
   - src/cpp-template/header/make-vector.hpp
   - src/cpp-template/header/template-header.hpp
