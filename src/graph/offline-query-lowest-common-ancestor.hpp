@@ -65,8 +65,7 @@ namespace luz {
     }
 
     void build(usize root) {
-      bound_check(u);
-      bound_check(v);
+      bound_check(root);
       query_results_.resize(query_count_);
       dfs(root);
     }
