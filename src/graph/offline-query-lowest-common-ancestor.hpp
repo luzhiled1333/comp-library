@@ -9,8 +9,11 @@
 namespace luz {
 
   template< typename cost_type >
-  class OfflineLCAQuery: Graph< cost_type > {
-    using Graph< cost_type >::g;
+  // class OfflineLCAQuery: Graph< cost_type > {
+  class OfflineLCAQuery {
+    // using Graph< cost_type >::g;
+    usize g_size_;
+    Graph< cost_type > g;
 
     std::vector< std::vector< std::pair< usize, usize > > > qs;
 
@@ -38,22 +41,23 @@ namespace luz {
    public:
     using Queries = std::vector< std::pair< usize, usize > >;
 
-    using Graph< cost_type >::Graph;
-    using Graph< cost_type >::add_undirected_edge;
-    using Graph< cost_type >::size;
+    OfflineLCAQuery(Graph< cost_type > &g_): g_size_(g_.size()), g(g_) {}
+    // using Graph< cost_type >::Graph;
+    // using Graph< cost_type >::add_undirected_edge;
+    // using Graph< cost_type >::size;
 
     std::vector< usize > solve(const Queries &queries, usize root) {
       usize q = queries.size();
-      qs.resize(size());
+      qs.resize(g_size_);
       for (usize qi: rep(0, q)) {
         const auto [u, v] = queries[qi];
         qs[u].emplace_back(v, qi);
         qs[v].emplace_back(u, qi);
       }
 
-      dsu = DisjointSetUnion(size());
-      visited.assign(size(), false);
-      ancestors.resize(size());
+      dsu = DisjointSetUnion(g_size_);
+      visited.assign(g_size_, false);
+      ancestors.resize(g_size_);
 
       std::vector< usize > ret(q);
       dfs(root, ret);
