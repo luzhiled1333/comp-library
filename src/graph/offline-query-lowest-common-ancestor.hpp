@@ -13,6 +13,7 @@ namespace luz {
     usize g_size_;
     Graph< cost_type > g_;
 
+    usize query_count_;
     std::vector< std::vector< std::pair< usize, usize > > > qs_;
 
     DisjointSetUnion dsu_;
@@ -39,9 +40,12 @@ namespace luz {
    public:
     using Queries = std::vector< std::pair< usize, usize > >;
 
-    OfflineLCAQuery(Graph< cost_type > &g): g_size_(g.size()), g_(g) {}
+    OfflineLCAQuery(Graph< cost_type > &g): g_size_(g.size()), g_(g), query_count_(0), qs_(g_size_) {}
 
     usize add_query(usize u, usize v) {
+      qs_[u].emplace_back(v, query_count_);
+      qs_[v].emplace_back(u, query_count_);
+      query_count_++;
     }
 
     void build(usize root) {
@@ -51,13 +55,6 @@ namespace luz {
     }
 
     std::vector< usize > solve(const Queries &queries, usize root) {
-      usize q = queries.size();
-      qs_.resize(g_size_);
-      for (usize qi: rep(0, q)) {
-        const auto [u, v] = queries[qi];
-        qs_[u].emplace_back(v, qi);
-        qs_[v].emplace_back(u, qi);
-      }
 
       dsu_ = DisjointSetUnion(g_size_);
       visited_.assign(g_size_, false);
