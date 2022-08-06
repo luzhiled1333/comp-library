@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <cassert>
 
 #include "src/cpp-template/header/type-alias.hpp"
 
@@ -35,10 +36,14 @@ namespace luz {
     }
 
     void add_directed_edge(usize from, usize to, cost_type cost = 1) {
+      assert(from < size());
+      assert(to   < size());
       g[from].emplace_back(from, to, cost, edge_count++);
     }
 
     void add_undirected_edge(usize u, usize v, cost_type cost = 1) {
+      assert(u < size());
+      assert(v < size());
       g[u].emplace_back(u, v, cost, edge_count);
       g[v].emplace_back(v, u, cost, edge_count++);
     }

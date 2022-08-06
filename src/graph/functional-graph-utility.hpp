@@ -17,6 +17,8 @@ namespace luz {
 
    public:
     void add_edge(usize from, usize to, cost_type cost = 1) {
+      assert(from < size());
+      assert(to   < size());
       add_directed_edge(from, to, cost);
       assert(g[from].size() == 1);
     }
