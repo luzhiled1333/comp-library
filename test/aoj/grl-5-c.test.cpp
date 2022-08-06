@@ -25,19 +25,20 @@ namespace luz {
       }
     }
 
-    OfflineLCAQuery lca(g);
+    OfflineLCAQuery offline_lcas(g);
 
     usize q;
     std::cin >> q;
 
-    decltype(lca)::Queries qs(q);
+    std::vector< std::pair< usize, usize > > qs(q);
     for (auto &[u, v]: qs) {
       std::cin >> u >> v;
+      offline_lcas.add_query(u, v);
     }
 
-    auto ans = lca.solve(qs, 0);
-    for (auto &v: ans) {
-      std::cout << v << std::endl;
+    offline_lcas.build(0);
+    for (const auto &[u, v]: qs) {
+      std::cout << offline_lcas.lca(u, v) << std::endl;
     }
 
   }
