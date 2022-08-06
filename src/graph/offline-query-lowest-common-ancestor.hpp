@@ -41,6 +41,15 @@ namespace luz {
 
     OfflineLCAQuery(Graph< cost_type > &g): g_size_(g.size()), g_(g) {}
 
+    usize add_query(usize u, usize v) {
+    }
+
+    void build(usize root) {
+    }
+
+    usize lca(usize u, usize v) {
+    }
+
     std::vector< usize > solve(const Queries &queries, usize root) {
       usize q = queries.size();
       qs_.resize(g_size_);
