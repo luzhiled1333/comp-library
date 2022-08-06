@@ -7,6 +7,7 @@
 "test/atcoder/abc177_d.test.cpp": "2022-08-02 18:24:33 +0900",
 "test/atcoder/abc212_h.test.cpp": "2022-07-21 13:11:48 +0900",
 "test/library-checker/bitwise_xor_convolution.test.cpp": "2022-07-21 15:30:45 +0900",
+"test/library-checker/unionfind.test.cpp": "2022-08-06 15:54:09 +0900",
 "unit-test/data-structure/fenwick-tree.test.cpp": "2022-08-04 00:52:23 +0900",
 "unit-test/math/modular-arithmetic/static-modint.test.cpp": "2022-07-21 12:17:00 +0900",
 "unit-test/sequence/coordinate-complession.test.cpp": "2022-07-23 09:50:15 +0900"
