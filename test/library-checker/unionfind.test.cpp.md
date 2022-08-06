@@ -16,11 +16,11 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/DSL_1_A
+    PROBLEM: https://judge.yosupo.jp/problem/unionfind
     links:
-    - https://onlinejudge.u-aizu.ac.jp/problems/DSL_1_A
-  bundledCode: "#line 1 \"test/aoj/dsl-1-a.test.cpp\"\n// verification-helper: PROBLEM\
-    \ https://onlinejudge.u-aizu.ac.jp/problems/DSL_1_A\n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\
+    - https://judge.yosupo.jp/problem/unionfind
+  bundledCode: "#line 1 \"test/library-checker/unionfind.test.cpp\"\n// verification-helper:\
+    \ PROBLEM https://judge.yosupo.jp/problem/unionfind\n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\
     \n\n#include <cstddef>\n#include <cstdint>\n\nnamespace luz {\n\n  using isize\
     \ = std::ptrdiff_t;\n  using usize = std::size_t;\n\n  using i32 = std::int32_t;\n\
     \  using i64 = std::int64_t;\n  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n\
@@ -66,36 +66,36 @@ data:
     \ = [](const std::vector< usize > &vs) {\n        return vs.empty();\n      };\n\
     \      result.erase(\n        std::remove_if(result.begin(), result.end(), empty_check),\n\
     \        result.end()\n      );\n\n      return result;\n    }\n\n  };\n\n} //\
-    \ namespace luz\n#line 6 \"test/aoj/dsl-1-a.test.cpp\"\n\n#include <iostream>\n\
-    \nnamespace luz {\n\n  void main_() {\n    usize n, q;\n    std::cin >> n >> q;\n\
-    \n    DisjointSetUnion d(n);\n    for ([[maybe_unused]] usize _: rep(0, q)) {\n\
-    \      usize com, x, y;\n      std::cin >> com >> x >> y;\n\n      if (not com)\
-    \ {\n        d.merge(x, y);\n      } else {\n        std::cout << (d.same(x, y))\
-    \ << std::endl;\n      }\n    }\n\n  }\n\n} // namespace luz\n\nint main() {\n\
-    \  luz::main_();\n}\n"
-  code: "// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/DSL_1_A\n\
+    \ namespace luz\n#line 6 \"test/library-checker/unionfind.test.cpp\"\n\n#include\
+    \ <iostream>\n\nnamespace luz {\n\n  void main_() {\n    usize n, q;\n    std::cin\
+    \ >> n >> q;\n\n    DisjointSetUnion dsu(n);\n\n    for ([[maybe_unused]] usize\
+    \ _: rep(0, q)) {\n      usize t, u, v;\n      std::cin >> t >> u >> v;\n\n  \
+    \    if (t == 0) {\n        dsu.merge(u, v);\n      } else {\n        std::cout\
+    \ << dsu.same(u, v) << std::endl;\n      }\n    }\n  }\n\n} // namespace luz\n\
+    \nint main() {\n  luz::main_();\n}\n"
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/unionfind\n\
     \n#include \"src/cpp-template/header/type-alias.hpp\"\n#include \"src/cpp-template/header/rep.hpp\"\
     \n#include \"src/data-structure/disjoint-set-union.hpp\"\n\n#include <iostream>\n\
     \nnamespace luz {\n\n  void main_() {\n    usize n, q;\n    std::cin >> n >> q;\n\
-    \n    DisjointSetUnion d(n);\n    for ([[maybe_unused]] usize _: rep(0, q)) {\n\
-    \      usize com, x, y;\n      std::cin >> com >> x >> y;\n\n      if (not com)\
-    \ {\n        d.merge(x, y);\n      } else {\n        std::cout << (d.same(x, y))\
-    \ << std::endl;\n      }\n    }\n\n  }\n\n} // namespace luz\n\nint main() {\n\
+    \n    DisjointSetUnion dsu(n);\n\n    for ([[maybe_unused]] usize _: rep(0, q))\
+    \ {\n      usize t, u, v;\n      std::cin >> t >> u >> v;\n\n      if (t == 0)\
+    \ {\n        dsu.merge(u, v);\n      } else {\n        std::cout << dsu.same(u,\
+    \ v) << std::endl;\n      }\n    }\n  }\n\n} // namespace luz\n\nint main() {\n\
     \  luz::main_();\n}\n"
   dependsOn:
   - src/cpp-template/header/type-alias.hpp
   - src/cpp-template/header/rep.hpp
   - src/data-structure/disjoint-set-union.hpp
   isVerificationFile: true
-  path: test/aoj/dsl-1-a.test.cpp
+  path: test/library-checker/unionfind.test.cpp
   requiredBy: []
   timestamp: '2022-08-06 17:20:00+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/aoj/dsl-1-a.test.cpp
+documentation_of: test/library-checker/unionfind.test.cpp
 layout: document
 redirect_from:
-- /verify/test/aoj/dsl-1-a.test.cpp
-- /verify/test/aoj/dsl-1-a.test.cpp.html
-title: test/aoj/dsl-1-a.test.cpp
+- /verify/test/library-checker/unionfind.test.cpp
+- /verify/test/library-checker/unionfind.test.cpp.html
+title: test/library-checker/unionfind.test.cpp
 ---

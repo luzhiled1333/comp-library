@@ -42,7 +42,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: src/data-structure/disjoint-set-union.hpp
-      title: src/data-structure/disjoint-set-union.hpp
+      title: Disjoint Set Union (Union Find)
     - icon: ':heavy_check_mark:'
       path: src/data-structure/fenwick-tree.hpp
       title: Fenwick Tree (Binary Indexed Tree)
@@ -149,6 +149,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/library-checker/bitwise_xor_convolution.test.cpp
       title: test/library-checker/bitwise_xor_convolution.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/library-checker/unionfind.test.cpp
+      title: test/library-checker/unionfind.test.cpp
   - name: unit-test/data-structure
     pages:
     - icon: ':heavy_check_mark:'

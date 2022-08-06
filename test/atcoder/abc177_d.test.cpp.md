@@ -12,7 +12,7 @@ data:
     title: Type alias
   - icon: ':heavy_check_mark:'
     path: src/data-structure/disjoint-set-union.hpp
-    title: src/data-structure/disjoint-set-union.hpp
+    title: Disjoint Set Union (Union Find)
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -50,9 +50,9 @@ data:
     \ = b, true);\n  }\n\n} // namespace luz\n#line 2 \"src/data-structure/disjoint-set-union.hpp\"\
     \n\n#line 5 \"src/data-structure/disjoint-set-union.hpp\"\n\n#line 7 \"src/data-structure/disjoint-set-union.hpp\"\
     \n#include <cassert>\n#include <vector>\n\nnamespace luz {\n\n  class DisjointSetUnion\
-    \ {\n    usize n_;\n\n    // vals_[v] :=\n    // if v is root node: -1 * component\
-    \ size\n    // otherwise: parent node\n    std::vector< isize > vals_;\n\n   \
-    \ void bound_check(usize v) const {\n      assert(v < n_);\n    }\n\n    usize\
+    \ {\n    usize n_;\n\n    // vals_[v] :=\n    //   if v is root node: -1 * component\
+    \ size\n    //   otherwise: parent node\n    std::vector< isize > vals_;\n\n \
+    \   void bound_check(usize v) const {\n      assert(v < n_);\n    }\n\n    usize\
     \ impl_leader(usize v) {\n      if (vals_[v] < 0) return v;\n      return vals_[v]\
     \ = leader(vals_[v]);\n    }\n\n   public:\n    DisjointSetUnion() = default;\n\
     \    explicit DisjointSetUnion(usize n): n_(n), vals_(n, -1) {}\n\n    usize size()\
@@ -103,7 +103,7 @@ data:
   isVerificationFile: true
   path: test/atcoder/abc177_d.test.cpp
   requiredBy: []
-  timestamp: '2022-08-02 18:24:33+09:00'
+  timestamp: '2022-08-06 17:20:00+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/atcoder/abc177_d.test.cpp
