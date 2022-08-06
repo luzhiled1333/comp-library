@@ -9,9 +9,7 @@
 namespace luz {
 
   template< typename cost_type >
-  // class OfflineLCAQuery: Graph< cost_type > {
   class OfflineLCAQuery {
-    // using Graph< cost_type >::g;
     usize g_size_;
     Graph< cost_type > g;
 
@@ -42,9 +40,6 @@ namespace luz {
     using Queries = std::vector< std::pair< usize, usize > >;
 
     OfflineLCAQuery(Graph< cost_type > &g_): g_size_(g_.size()), g(g_) {}
-    // using Graph< cost_type >::Graph;
-    // using Graph< cost_type >::add_undirected_edge;
-    // using Graph< cost_type >::size;
 
     std::vector< usize > solve(const Queries &queries, usize root) {
       usize q = queries.size();

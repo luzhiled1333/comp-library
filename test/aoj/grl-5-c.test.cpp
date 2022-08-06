@@ -14,7 +14,6 @@ namespace luz {
     std::cin >> n;
 
     Graph< i32 > g(n);
-    // OfflineLCAQuery< i32 > g(n);
     for (usize v: rep(0, n)) {
       usize k;
       std::cin >> k;
