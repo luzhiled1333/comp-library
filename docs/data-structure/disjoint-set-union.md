@@ -3,14 +3,12 @@ title: Disjoint Set Union (Union Find)
 documentation_of: //src/data-structure/disjoint-set-union.hpp
 ---
 
-TODO
-
 ## コンストラクタ
 ```
 DisjointSetUnion<T>(usize n)
 ```
 
-TODO
+$1$ 要素の集合 $n$ 個で集合を初期化する。
 
 ### 制約
 - $0 \leq n$
@@ -24,7 +22,10 @@ TODO
 usize size() const
 ```
 
-TODO
+グラフの頂点集合のサイズを返す。
+
+[ac-library の DSU](https://atcoder.github.io/ac-library/document_ja/dsu.html) の `size()` とは仕様が異なるため注意。
+こちらと同じ動作をする関数として `group_size()` が用意されている。
 
 ### 計算量
 - $O(1)$
@@ -35,7 +36,7 @@ TODO
 usize leader(usize v)
 ```
 
-TODO
+頂点 `v` が属する連結成分の代表元を返す。
 
 ### 制約
 - $0 \leq v < n$
@@ -49,7 +50,7 @@ TODO
 bool same(usize u, usize v)
 ```
 
-TODO
+頂点 `u`, `v` が連結ならば `true` を、そうでないならば `false` を返す。
 
 ### 制約
 - $0 \leq u < n$
@@ -64,7 +65,7 @@ TODO
 usize merge(usize u, usize v)
 ```
 
-TODO
+`u`, `v` が属する連結成分を連結し、連結後の代表元を返す。
 
 ### 制約
 - $0 \leq u < n$
@@ -79,7 +80,7 @@ TODO
 usize group_size(usize v)
 ```
 
-TODO
+頂点 `v` が属する連結成分の頂点集合のサイズを返す。
 
 ### 制約
 - $0 \leq v < n$
@@ -93,7 +94,9 @@ TODO
 std::vector< std::vector< usize > > groups()
 ```
 
-TODO
+連結成分の頂点番号の集合のリストを返す。
+
+連結成分の順番は未定義。各連結成分内の頂点番号は昇順になっている。
 
 ### 計算量
 - $O(n)$
