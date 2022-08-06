@@ -46,35 +46,8 @@ data:
     \   const itr f, l;\n    constexpr rrep(const usize f, const usize l) noexcept\n\
     \      : f(l - 1), l(std::min(f, l) - 1) {}\n    constexpr auto begin() const\
     \ noexcept { return f; }\n    constexpr auto end() const noexcept { return l;\
-    \ }\n  };\n\n} // namespace luz\n#line 1 \"src/graph/offline-query-lowest-common-ancestor.hpp\"\
-    \n#include <vector>\n#include <utility>\n\n#line 2 \"src/data-structure/disjoint-set-union.hpp\"\
-    \n\n#line 5 \"src/data-structure/disjoint-set-union.hpp\"\n\n#line 7 \"src/data-structure/disjoint-set-union.hpp\"\
-    \n#include <cassert>\n#line 9 \"src/data-structure/disjoint-set-union.hpp\"\n\n\
-    namespace luz {\n\n  class DisjointSetUnion {\n    usize n_;\n\n    // vals_[v]\
-    \ :=\n    //   if v is root node: -1 * component size\n    //   otherwise: parent\
-    \ node\n    std::vector< isize > vals_;\n\n    void bound_check(usize v) const\
-    \ {\n      assert(v < n_);\n    }\n\n    usize impl_leader(usize v) {\n      if\
-    \ (vals_[v] < 0) return v;\n      return vals_[v] = leader(vals_[v]);\n    }\n\
-    \n   public:\n    DisjointSetUnion() = default;\n    explicit DisjointSetUnion(usize\
-    \ n): n_(n), vals_(n, -1) {}\n\n    usize size() const {\n      return n_;\n \
-    \   }\n\n    usize leader(usize v) {\n      bound_check(v);\n      return impl_leader(v);\n\
-    \    }\n\n    bool same(usize u, usize v) {\n      bound_check(u), bound_check(v);\n\
-    \      return impl_leader(u) == impl_leader(v);\n    }\n\n    usize merge(usize\
-    \ u, usize v) {\n      bound_check(u); bound_check(v);\n\n      isize x = impl_leader(u);\n\
-    \      isize y = impl_leader(v);\n      if (x == y) return x;\n      if (-vals_[x]\
-    \ < -vals_[y]) std::swap(x, y);\n      vals_[x] += vals_[y];\n      vals_[y] =\
-    \ x;\n      return x;\n    }\n\n    usize group_size(usize v) {\n      bound_check(v);\n\
-    \      return -vals_[impl_leader(v)];\n    }\n\n    std::vector< std::vector<\
-    \ usize > > groups() {\n      std::vector< std::vector< usize > > result(n_);\n\
-    \n      std::vector< usize > leaders(n_), g_sizes(n_);\n      for (usize v: rep(0,\
-    \ n_)) {\n        leaders[v] = impl_leader(v);\n        g_sizes[leaders[v]]++;\n\
-    \      }\n      for (usize v: rep(0, n_)) {\n        result[v].reserve(g_sizes[v]);\n\
-    \      }\n      for (usize v: rep(0, n_)) {\n        result[leaders[v]].emplace_back(v);\n\
-    \      }\n\n      auto empty_check = [](const std::vector< usize > &vs) {\n  \
-    \      return vs.empty();\n      };\n      result.erase(\n        std::remove_if(result.begin(),\
-    \ result.end(), empty_check),\n        result.end()\n      );\n\n      return\
-    \ result;\n    }\n\n  };\n\n} // namespace luz\n#line 2 \"src/graph/graph-template.hpp\"\
-    \n\n#line 5 \"src/graph/graph-template.hpp\"\n\n#line 7 \"src/graph/graph-template.hpp\"\
+    \ }\n  };\n\n} // namespace luz\n#line 2 \"src/graph/graph-template.hpp\"\n\n\
+    #include <vector>\n#include <cassert>\n\n#line 7 \"src/graph/graph-template.hpp\"\
     \n\nnamespace luz {\n\n  template< typename cost_type >\n  class Edge {\n   public:\n\
     \    usize from, to;\n    cost_type cost;\n    usize id;\n    Edge() = default;\n\
     \    Edge(usize from_, usize to_, cost_type cost_, usize id_):\n      from(from_),\
@@ -91,57 +64,90 @@ data:
     \ u, cost, edge_count++);\n    }\n\n    inline Edges< cost_type > &operator[](const\
     \ usize &v) {\n      return g[v];\n    }\n\n    inline const Edges< cost_type\
     \ > &operator[](const usize &v) const {\n      return g[v];\n    }\n  };\n\n}\n\
-    #line 8 \"src/graph/offline-query-lowest-common-ancestor.hpp\"\n\nnamespace luz\
-    \ {\n\n  template< typename cost_type >\n  class OfflineLCAQuery: Graph< cost_type\
-    \ > {\n    using Graph< cost_type >::g;\n\n    std::vector< std::vector< std::pair<\
-    \ usize, usize > > > qs;\n\n    DisjointSetUnion dsu;\n    std::vector< bool >\
-    \ visited;\n    std::vector< usize > ancestors;\n\n    void dfs(usize v, std::vector<\
-    \ usize > &ret) {\n      visited[v] = true;\n      ancestors[v] = v;\n\n     \
-    \ for (const auto &e: g[v]) {\n        if (visited[e.to]) continue;\n        dfs(e.to,\
-    \ ret);\n        dsu.merge(v, e.to);\n        ancestors[dsu.leader(v)] = v;\n\
-    \      }\n\n      for (const auto &[u, qi]: qs[v]) {\n        if (not visited[u])\
-    \ continue;\n        ret[qi] = ancestors[dsu.leader(u)];\n      }\n    }\n\n \
-    \  public:\n    using Queries = std::vector< std::pair< usize, usize > >;\n\n\
-    \    using Graph< cost_type >::Graph;\n    using Graph< cost_type >::add_undirected_edge;\n\
-    \    using Graph< cost_type >::size;\n\n    std::vector< usize > solve(const Queries\
-    \ &queries, usize root) {\n      usize q = queries.size();\n      qs.resize(size());\n\
-    \      for (usize qi: rep(0, q)) {\n        const auto [u, v] = queries[qi];\n\
-    \        qs[u].emplace_back(v, qi);\n        qs[v].emplace_back(u, qi);\n    \
-    \  }\n\n      dsu = DisjointSetUnion(size());\n      visited.assign(size(), false);\n\
-    \      ancestors.resize(size());\n\n      std::vector< usize > ret(q);\n     \
-    \ dfs(root, ret);\n      qs.clear();\n      return ret;\n    }\n\n  };\n\n} //\
-    \ namespace luz\n#line 6 \"test/aoj/grl-5-c.test.cpp\"\n\n#include <iostream>\n\
-    \nnamespace luz {\n\n  void main_() {\n    usize n;\n    std::cin >> n;\n\n  \
-    \  OfflineLCAQuery< i32 > g(n);\n    for (usize v: rep(0, n)) {\n      usize k;\n\
-    \      std::cin >> k;\n\n      for ([[maybe_unused]] usize _: rep(0, k)) {\n \
-    \       usize u;\n        std::cin >> u;\n        g.add_undirected_edge(u, v);\n\
-    \      }\n    }\n\n    usize q;\n    std::cin >> q;\n\n    OfflineLCAQuery< i32\
-    \ >::Queries qs(q);\n    for (auto &[u, v]: qs) {\n      std::cin >> u >> v;\n\
-    \    }\n\n    auto ans = g.solve(qs, 0);\n    for (auto &v: ans) {\n      std::cout\
-    \ << v << std::endl;\n    }\n\n  }\n\n} // namespace luz\n\nint main() {\n  luz::main_();\n\
-    }\n"
+    #line 2 \"src/data-structure/disjoint-set-union.hpp\"\n\n#line 5 \"src/data-structure/disjoint-set-union.hpp\"\
+    \n\n#line 9 \"src/data-structure/disjoint-set-union.hpp\"\n\nnamespace luz {\n\
+    \n  class DisjointSetUnion {\n    usize n_;\n\n    // vals_[v] :=\n    //   if\
+    \ v is root node: -1 * component size\n    //   otherwise: parent node\n    std::vector<\
+    \ isize > vals_;\n\n    void bound_check(usize v) const {\n      assert(v < n_);\n\
+    \    }\n\n    usize impl_leader(usize v) {\n      if (vals_[v] < 0) return v;\n\
+    \      return vals_[v] = leader(vals_[v]);\n    }\n\n   public:\n    DisjointSetUnion()\
+    \ = default;\n    explicit DisjointSetUnion(usize n): n_(n), vals_(n, -1) {}\n\
+    \n    usize size() const {\n      return n_;\n    }\n\n    usize leader(usize\
+    \ v) {\n      bound_check(v);\n      return impl_leader(v);\n    }\n\n    bool\
+    \ same(usize u, usize v) {\n      bound_check(u), bound_check(v);\n      return\
+    \ impl_leader(u) == impl_leader(v);\n    }\n\n    usize merge(usize u, usize v)\
+    \ {\n      bound_check(u); bound_check(v);\n\n      isize x = impl_leader(u);\n\
+    \      isize y = impl_leader(v);\n      if (x == y) return x;\n      if (-vals_[x]\
+    \ < -vals_[y]) std::swap(x, y);\n      vals_[x] += vals_[y];\n      vals_[y] =\
+    \ x;\n      return x;\n    }\n\n    usize group_size(usize v) {\n      bound_check(v);\n\
+    \      return -vals_[impl_leader(v)];\n    }\n\n    std::vector< std::vector<\
+    \ usize > > groups() {\n      std::vector< std::vector< usize > > result(n_);\n\
+    \n      std::vector< usize > leaders(n_), g_sizes(n_);\n      for (usize v: rep(0,\
+    \ n_)) {\n        leaders[v] = impl_leader(v);\n        g_sizes[leaders[v]]++;\n\
+    \      }\n      for (usize v: rep(0, n_)) {\n        result[v].reserve(g_sizes[v]);\n\
+    \      }\n      for (usize v: rep(0, n_)) {\n        result[leaders[v]].emplace_back(v);\n\
+    \      }\n\n      auto empty_check = [](const std::vector< usize > &vs) {\n  \
+    \      return vs.empty();\n      };\n      result.erase(\n        std::remove_if(result.begin(),\
+    \ result.end(), empty_check),\n        result.end()\n      );\n\n      return\
+    \ result;\n    }\n\n  };\n\n} // namespace luz\n#line 5 \"src/graph/offline-query-lowest-common-ancestor.hpp\"\
+    \n\n#line 7 \"src/graph/offline-query-lowest-common-ancestor.hpp\"\n#include <utility>\n\
+    #include <unordered_map>\n#line 10 \"src/graph/offline-query-lowest-common-ancestor.hpp\"\
+    \n\nnamespace luz {\n\n  template< typename cost_type >\n  class OfflineLCAQuery\
+    \ {\n    usize g_size_;\n    Graph< cost_type > g_;\n\n    usize query_count_;\n\
+    \    std::vector< std::vector< std::pair< usize, usize > > > qs_;\n\n    std::vector<\
+    \ std::unordered_map< usize, usize > > to_qi_;\n\n    DisjointSetUnion dsu_;\n\
+    \    std::vector< bool > visited_;\n    std::vector< usize > ancestors_;\n\n \
+    \   std::vector< usize > query_results_;\n\n    void bound_check(usize v) const\
+    \ {\n      assert(v < g_size_);\n    }\n\n    void dfs(usize v) {\n      visited_[v]\
+    \ = true;\n      ancestors_[v] = v;\n\n      for (const auto &e: g_[v]) {\n  \
+    \      if (visited_[e.to]) continue;\n        dfs(e.to);\n        dsu_.merge(v,\
+    \ e.to);\n        ancestors_[dsu_.leader(v)] = v;\n      }\n\n      for (const\
+    \ auto &[u, qi]: qs_[v]) {\n        if (not visited_[u]) continue;\n        query_results_[qi]\
+    \ = ancestors_[dsu_.leader(u)];\n      }\n    }\n\n   public:\n    using Queries\
+    \ = std::vector< std::pair< usize, usize > >;\n\n    OfflineLCAQuery(Graph< cost_type\
+    \ > &g):\n      g_size_(g.size()), g_(g),\n      query_count_(0), qs_(g_size_),\
+    \ to_qi_(g_size_),\n      dsu_(g_size_), visited_(g_size_, false), ancestors_(g_size_)\
+    \ {}\n\n    usize add_query(usize u, usize v) {\n      bound_check(u);\n     \
+    \ bound_check(v);\n      qs_[u].emplace_back(v, query_count_);\n      qs_[v].emplace_back(u,\
+    \ query_count_);\n      to_qi_[u][v] = to_qi_[v][u] = query_count_;\n      return\
+    \ query_count_++;\n    }\n\n    void build(usize root) {\n      bound_check(root);\n\
+    \      query_results_.resize(query_count_);\n      dfs(root);\n    }\n\n    usize\
+    \ lca(usize u, usize v) {\n      bound_check(u);\n      bound_check(v);\n    \
+    \  assert(to_qi_[u].count(v));\n      usize qi = to_qi_[u][v];\n      return query_results_[qi];\n\
+    \    }\n\n  };\n\n} // namespace luz\n#line 7 \"test/aoj/grl-5-c.test.cpp\"\n\n\
+    #include <iostream>\n\nnamespace luz {\n\n  void main_() {\n    usize n;\n   \
+    \ std::cin >> n;\n\n    Graph< i32 > g(n);\n    for (usize v: rep(0, n)) {\n \
+    \     usize k;\n      std::cin >> k;\n\n      for ([[maybe_unused]] usize _: rep(0,\
+    \ k)) {\n        usize u;\n        std::cin >> u;\n        g.add_undirected_edge(u,\
+    \ v);\n      }\n    }\n\n    OfflineLCAQuery offline_lcas(g);\n\n    usize q;\n\
+    \    std::cin >> q;\n\n    std::vector< std::pair< usize, usize > > qs(q);\n \
+    \   for (auto &[u, v]: qs) {\n      std::cin >> u >> v;\n      offline_lcas.add_query(u,\
+    \ v);\n    }\n\n    offline_lcas.build(0);\n    for (const auto &[u, v]: qs) {\n\
+    \      std::cout << offline_lcas.lca(u, v) << std::endl;\n    }\n\n  }\n\n} //\
+    \ namespace luz\n\nint main() {\n  luz::main_();\n}\n"
   code: "// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/GRL_5_C\n\
     \n#include \"src/cpp-template/header/type-alias.hpp\"\n#include \"src/cpp-template/header/rep.hpp\"\
-    \n#include \"src/graph/offline-query-lowest-common-ancestor.hpp\"\n\n#include\
-    \ <iostream>\n\nnamespace luz {\n\n  void main_() {\n    usize n;\n    std::cin\
-    \ >> n;\n\n    OfflineLCAQuery< i32 > g(n);\n    for (usize v: rep(0, n)) {\n\
+    \n#include \"src/graph/graph-template.hpp\"\n#include \"src/graph/offline-query-lowest-common-ancestor.hpp\"\
+    \n\n#include <iostream>\n\nnamespace luz {\n\n  void main_() {\n    usize n;\n\
+    \    std::cin >> n;\n\n    Graph< i32 > g(n);\n    for (usize v: rep(0, n)) {\n\
     \      usize k;\n      std::cin >> k;\n\n      for ([[maybe_unused]] usize _:\
     \ rep(0, k)) {\n        usize u;\n        std::cin >> u;\n        g.add_undirected_edge(u,\
-    \ v);\n      }\n    }\n\n    usize q;\n    std::cin >> q;\n\n    OfflineLCAQuery<\
-    \ i32 >::Queries qs(q);\n    for (auto &[u, v]: qs) {\n      std::cin >> u >>\
-    \ v;\n    }\n\n    auto ans = g.solve(qs, 0);\n    for (auto &v: ans) {\n    \
-    \  std::cout << v << std::endl;\n    }\n\n  }\n\n} // namespace luz\n\nint main()\
-    \ {\n  luz::main_();\n}\n"
+    \ v);\n      }\n    }\n\n    OfflineLCAQuery offline_lcas(g);\n\n    usize q;\n\
+    \    std::cin >> q;\n\n    std::vector< std::pair< usize, usize > > qs(q);\n \
+    \   for (auto &[u, v]: qs) {\n      std::cin >> u >> v;\n      offline_lcas.add_query(u,\
+    \ v);\n    }\n\n    offline_lcas.build(0);\n    for (const auto &[u, v]: qs) {\n\
+    \      std::cout << offline_lcas.lca(u, v) << std::endl;\n    }\n\n  }\n\n} //\
+    \ namespace luz\n\nint main() {\n  luz::main_();\n}\n"
   dependsOn:
   - src/cpp-template/header/type-alias.hpp
   - src/cpp-template/header/rep.hpp
+  - src/graph/graph-template.hpp
   - src/graph/offline-query-lowest-common-ancestor.hpp
   - src/data-structure/disjoint-set-union.hpp
-  - src/graph/graph-template.hpp
   isVerificationFile: true
   path: test/aoj/grl-5-c.test.cpp
   requiredBy: []
-  timestamp: '2022-08-06 17:20:00+09:00'
+  timestamp: '2022-08-06 20:47:41+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/grl-5-c.test.cpp
