@@ -19,7 +19,7 @@ data:
     title: Disjoint Set Union (Union Find)
   - icon: ':heavy_check_mark:'
     path: src/data-structure/fenwick-tree.hpp
-    title: Fenwick Tree (Binary Indexed Tree)
+    title: Fenwick Tree (Binary Indexed Tree, BIT)
   - icon: ':heavy_check_mark:'
     path: src/graph/offline-query-lowest-common-ancestor.hpp
     title: src/graph/offline-query-lowest-common-ancestor.hpp

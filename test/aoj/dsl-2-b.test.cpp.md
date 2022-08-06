@@ -9,7 +9,7 @@ data:
     title: Type alias
   - icon: ':heavy_check_mark:'
     path: src/data-structure/fenwick-tree.hpp
-    title: Fenwick Tree (Binary Indexed Tree)
+    title: Fenwick Tree (Binary Indexed Tree, BIT)
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

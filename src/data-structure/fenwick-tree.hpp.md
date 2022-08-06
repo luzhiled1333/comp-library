@@ -85,10 +85,8 @@ data:
   - test/aoj/dsl-2-b.test.cpp
 documentation_of: src/data-structure/fenwick-tree.hpp
 layout: document
-title: Fenwick Tree (Binary Indexed Tree)
+title: Fenwick Tree (Binary Indexed Tree, BIT)
 ---
-
-# Fenwick Tree
 
 長さ $n$ の列 $(a_0, a_1, \cdots, a_{n-1})$ に対し
 

@@ -45,7 +45,7 @@ data:
       title: Disjoint Set Union (Union Find)
     - icon: ':heavy_check_mark:'
       path: src/data-structure/fenwick-tree.hpp
-      title: Fenwick Tree (Binary Indexed Tree)
+      title: Fenwick Tree (Binary Indexed Tree, BIT)
   - name: src/geometry/Z2/class
     pages:
     - icon: ':warning:'
