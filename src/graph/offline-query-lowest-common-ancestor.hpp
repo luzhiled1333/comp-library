@@ -1,11 +1,11 @@
-#include <vector>
-#include <utility>
-#include <unordered_map>
-
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/data-structure/disjoint-set-union.hpp"
 #include "src/graph/graph-template.hpp"
+
+#include <vector>
+#include <utility>
+#include <unordered_map>
 
 namespace luz {
 
