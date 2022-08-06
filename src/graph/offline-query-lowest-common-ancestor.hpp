@@ -1,5 +1,6 @@
 #include <vector>
 #include <utility>
+#include <unordered_map>
 
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
@@ -16,7 +17,7 @@ namespace luz {
     usize query_count_;
     std::vector< std::vector< std::pair< usize, usize > > > qs_;
 
-    std::vector< std::unordered_map< usize > > to_qi;
+    std::vector< std::unordered_map< usize, usize > > to_qi;
 
     DisjointSetUnion dsu_;
     std::vector< bool > visited_;
@@ -46,14 +47,14 @@ namespace luz {
 
     OfflineLCAQuery(Graph< cost_type > &g):
       g_size_(g.size()), g_(g),
-      query_count_(0), qs_(g_size_),
+      query_count_(0), qs_(g_size_), to_qi(g_size_),
       dsu_(g_size_), visited_(g_size_, false), ancestors_(g_size_) {}
 
     usize add_query(usize u, usize v) {
       qs_[u].emplace_back(v, query_count_);
       qs_[v].emplace_back(u, query_count_);
       to_qi[u][v] = to_qi[v][u] = query_count_;
-      query_count_++;
+      return query_count_++;
     }
 
     void build(usize root) {
