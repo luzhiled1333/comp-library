@@ -17,13 +17,13 @@ namespace luz {
     usize query_count_;
     std::vector< std::vector< std::pair< usize, usize > > > qs_;
 
-    std::vector< std::unordered_map< usize, usize > > to_qi;
+    std::vector< std::unordered_map< usize, usize > > to_qi_;
 
     DisjointSetUnion dsu_;
     std::vector< bool > visited_;
     std::vector< usize > ancestors_;
 
-    std::vector< usize > ret;
+    std::vector< usize > query_results_;
 
     void dfs(usize v) {
       visited_[v] = true;
@@ -38,7 +38,7 @@ namespace luz {
 
       for (const auto &[u, qi]: qs_[v]) {
         if (not visited_[u]) continue;
-        ret[qi] = ancestors_[dsu_.leader(u)];
+        query_results_[qi] = ancestors_[dsu_.leader(u)];
       }
     }
 
@@ -47,24 +47,24 @@ namespace luz {
 
     OfflineLCAQuery(Graph< cost_type > &g):
       g_size_(g.size()), g_(g),
-      query_count_(0), qs_(g_size_), to_qi(g_size_),
+      query_count_(0), qs_(g_size_), to_qi_(g_size_),
       dsu_(g_size_), visited_(g_size_, false), ancestors_(g_size_) {}
 
     usize add_query(usize u, usize v) {
       qs_[u].emplace_back(v, query_count_);
       qs_[v].emplace_back(u, query_count_);
-      to_qi[u][v] = to_qi[v][u] = query_count_;
+      to_qi_[u][v] = to_qi_[v][u] = query_count_;
       return query_count_++;
     }
 
     void build(usize root) {
-      ret.resize(query_count_);
+      query_results_.resize(query_count_);
       dfs(root);
     }
 
     usize lca(usize u, usize v) {
-      usize qi = to_qi[u][v];
-      return ret[qi];
+      usize qi = to_qi_[u][v];
+      return query_results_[qi];
     }
 
   };
