@@ -62,6 +62,8 @@ namespace luz {
     }
 
     usize lca(usize u, usize v) {
+      usize qi = to_qi[u][v];
+      return ret[qi];
     }
 
   };
