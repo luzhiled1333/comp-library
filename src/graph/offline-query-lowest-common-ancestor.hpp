@@ -6,6 +6,7 @@
 #include <vector>
 #include <utility>
 #include <unordered_map>
+#include <cassert>
 
 namespace luz {
 
@@ -24,6 +25,10 @@ namespace luz {
     std::vector< usize > ancestors_;
 
     std::vector< usize > query_results_;
+
+    void bound_check(usize v) const {
+      assert(v < g_size_);
+    }
 
     void dfs(usize v) {
       visited_[v] = true;
@@ -51,6 +56,8 @@ namespace luz {
       dsu_(g_size_), visited_(g_size_, false), ancestors_(g_size_) {}
 
     usize add_query(usize u, usize v) {
+      bound_check(u);
+      bound_check(v);
       qs_[u].emplace_back(v, query_count_);
       qs_[v].emplace_back(u, query_count_);
       to_qi_[u][v] = to_qi_[v][u] = query_count_;
@@ -58,11 +65,16 @@ namespace luz {
     }
 
     void build(usize root) {
+      bound_check(u);
+      bound_check(v);
       query_results_.resize(query_count_);
       dfs(root);
     }
 
     usize lca(usize u, usize v) {
+      bound_check(u);
+      bound_check(v);
+      assert(to_qi_[u].count(v));
       usize qi = to_qi_[u][v];
       return query_results_[qi];
     }
