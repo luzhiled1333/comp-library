@@ -16,9 +16,13 @@ namespace luz {
     usize query_count_;
     std::vector< std::vector< std::pair< usize, usize > > > qs_;
 
+    std::vector< std::unordered_map< usize > > to_qi;
+
     DisjointSetUnion dsu_;
     std::vector< bool > visited_;
     std::vector< usize > ancestors_;
+
+    std::vector< usize > ret;
 
     void dfs(usize v, std::vector< usize > &ret) {
       visited_[v] = true;
@@ -40,30 +44,24 @@ namespace luz {
    public:
     using Queries = std::vector< std::pair< usize, usize > >;
 
-    OfflineLCAQuery(Graph< cost_type > &g): g_size_(g.size()), g_(g), query_count_(0), qs_(g_size_) {}
+    OfflineLCAQuery(Graph< cost_type > &g):
+      g_size_(g.size()), g_(g),
+      query_count_(0), qs_(g_size_),
+      dsu_(g_size_), visited_(g_size_, false), ancestors_(g_size_) {}
 
     usize add_query(usize u, usize v) {
       qs_[u].emplace_back(v, query_count_);
       qs_[v].emplace_back(u, query_count_);
+      to_qi[u][v] = to_qi[v][u] = query_count_;
       query_count_++;
     }
 
     void build(usize root) {
+      ret.resize(query_count_);
+      dfs(root, ret);
     }
 
     usize lca(usize u, usize v) {
-    }
-
-    std::vector< usize > solve(const Queries &queries, usize root) {
-
-      dsu_ = DisjointSetUnion(g_size_);
-      visited_.assign(g_size_, false);
-      ancestors_.resize(g_size_);
-
-      std::vector< usize > ret(q);
-      dfs(root, ret);
-      qs_.clear();
-      return ret;
     }
 
   };
