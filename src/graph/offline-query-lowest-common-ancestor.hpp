@@ -25,13 +25,13 @@ namespace luz {
 
     std::vector< usize > ret;
 
-    void dfs(usize v, std::vector< usize > &ret) {
+    void dfs(usize v) {
       visited_[v] = true;
       ancestors_[v] = v;
 
       for (const auto &e: g_[v]) {
         if (visited_[e.to]) continue;
-        dfs(e.to, ret);
+        dfs(e.to);
         dsu_.merge(v, e.to);
         ancestors_[dsu_.leader(v)] = v;
       }
@@ -59,7 +59,7 @@ namespace luz {
 
     void build(usize root) {
       ret.resize(query_count_);
-      dfs(root, ret);
+      dfs(root);
     }
 
     usize lca(usize u, usize v) {
