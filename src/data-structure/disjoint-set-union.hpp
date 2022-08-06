@@ -13,8 +13,8 @@ namespace luz {
     usize n_;
 
     // vals_[v] :=
-    // if v is root node: -1 * component size
-    // otherwise: parent node
+    //   if v is root node: -1 * component size
+    //   otherwise: parent node
     std::vector< isize > vals_;
 
     void bound_check(usize v) const {
