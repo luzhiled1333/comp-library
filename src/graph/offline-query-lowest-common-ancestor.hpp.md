@@ -16,8 +16,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/grl-5-c.test.cpp
-    title: test/aoj/grl-5-c.test.cpp
+    path: test/aoj/grl_5_c.test.cpp
+    title: test/aoj/grl_5_c.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -148,7 +148,7 @@ data:
   timestamp: '2022-08-06 20:47:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/grl-5-c.test.cpp
+  - test/aoj/grl_5_c.test.cpp
 documentation_of: src/graph/offline-query-lowest-common-ancestor.hpp
 layout: document
 redirect_from:

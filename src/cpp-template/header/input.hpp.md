@@ -13,11 +13,11 @@ data:
     title: template
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/grl-1-a.test.cpp
-    title: test/aoj/grl-1-a.test.cpp
+    path: test/aoj/grl_1_a.test.cpp
+    title: test/aoj/grl_1_a.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/itp1-1-a.test.cpp
-    title: test/aoj/itp1-1-a.test.cpp
+    path: test/aoj/itp1_1_a.test.cpp
+    title: test/aoj/itp1_1_a.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc212_h.test.cpp
     title: test/atcoder/abc212_h.test.cpp
@@ -47,8 +47,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/atcoder/abc212_h.test.cpp
-  - test/aoj/itp1-1-a.test.cpp
-  - test/aoj/grl-1-a.test.cpp
+  - test/aoj/grl_1_a.test.cpp
+  - test/aoj/itp1_1_a.test.cpp
 documentation_of: src/cpp-template/header/input.hpp
 layout: document
 title: input

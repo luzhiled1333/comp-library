@@ -16,8 +16,8 @@ data:
     title: template
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/itp1-1-a.test.cpp
-    title: test/aoj/itp1-1-a.test.cpp
+    path: test/aoj/itp1_1_a.test.cpp
+    title: test/aoj/itp1_1_a.test.cpp
   - icon: ':heavy_check_mark:'
     path: unit-test/sequence/coordinate-complession.test.cpp
     title: unit-test/sequence/coordinate-complession.test.cpp
@@ -72,7 +72,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - unit-test/sequence/coordinate-complession.test.cpp
-  - test/aoj/itp1-1-a.test.cpp
+  - test/aoj/itp1_1_a.test.cpp
 documentation_of: src/cpp-template/header/vector-ios.hpp
 layout: document
 title: vector I/O

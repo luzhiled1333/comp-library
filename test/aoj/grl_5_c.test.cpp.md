@@ -25,7 +25,7 @@ data:
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/GRL_5_C
     links:
     - https://onlinejudge.u-aizu.ac.jp/problems/GRL_5_C
-  bundledCode: "#line 1 \"test/aoj/grl-5-c.test.cpp\"\n// verification-helper: PROBLEM\
+  bundledCode: "#line 1 \"test/aoj/grl_5_c.test.cpp\"\n// verification-helper: PROBLEM\
     \ https://onlinejudge.u-aizu.ac.jp/problems/GRL_5_C\n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\
     \n\n#include <cstddef>\n#include <cstdint>\n\nnamespace luz {\n\n  using isize\
     \ = std::ptrdiff_t;\n  using usize = std::size_t;\n\n  using i32 = std::int32_t;\n\
@@ -114,7 +114,7 @@ data:
     \      query_results_.resize(query_count_);\n      dfs(root);\n    }\n\n    usize\
     \ lca(usize u, usize v) {\n      bound_check(u);\n      bound_check(v);\n    \
     \  assert(to_qi_[u].count(v));\n      usize qi = to_qi_[u][v];\n      return query_results_[qi];\n\
-    \    }\n\n  };\n\n} // namespace luz\n#line 7 \"test/aoj/grl-5-c.test.cpp\"\n\n\
+    \    }\n\n  };\n\n} // namespace luz\n#line 7 \"test/aoj/grl_5_c.test.cpp\"\n\n\
     #include <iostream>\n\nnamespace luz {\n\n  void main_() {\n    usize n;\n   \
     \ std::cin >> n;\n\n    Graph< i32 > g(n);\n    for (usize v: rep(0, n)) {\n \
     \     usize k;\n      std::cin >> k;\n\n      for ([[maybe_unused]] usize _: rep(0,\
@@ -145,15 +145,15 @@ data:
   - src/graph/offline-query-lowest-common-ancestor.hpp
   - src/data-structure/disjoint-set-union.hpp
   isVerificationFile: true
-  path: test/aoj/grl-5-c.test.cpp
+  path: test/aoj/grl_5_c.test.cpp
   requiredBy: []
-  timestamp: '2022-08-06 20:47:41+09:00'
+  timestamp: '2022-08-08 01:10:13+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/aoj/grl-5-c.test.cpp
+documentation_of: test/aoj/grl_5_c.test.cpp
 layout: document
 redirect_from:
-- /verify/test/aoj/grl-5-c.test.cpp
-- /verify/test/aoj/grl-5-c.test.cpp.html
-title: test/aoj/grl-5-c.test.cpp
+- /verify/test/aoj/grl_5_c.test.cpp
+- /verify/test/aoj/grl_5_c.test.cpp.html
+title: test/aoj/grl_5_c.test.cpp
 ---

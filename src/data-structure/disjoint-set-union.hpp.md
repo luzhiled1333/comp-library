@@ -13,11 +13,11 @@ data:
     title: src/graph/offline-query-lowest-common-ancestor.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/dsl-1-a.test.cpp
-    title: test/aoj/dsl-1-a.test.cpp
+    path: test/aoj/dsl_1_a.test.cpp
+    title: test/aoj/dsl_1_a.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/grl-5-c.test.cpp
-    title: test/aoj/grl-5-c.test.cpp
+    path: test/aoj/grl_5_c.test.cpp
+    title: test/aoj/grl_5_c.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc177_d.test.cpp
     title: test/atcoder/abc177_d.test.cpp
@@ -113,8 +113,8 @@ data:
   verifiedWith:
   - test/library-checker/unionfind.test.cpp
   - test/atcoder/abc177_d.test.cpp
-  - test/aoj/grl-5-c.test.cpp
-  - test/aoj/dsl-1-a.test.cpp
+  - test/aoj/dsl_1_a.test.cpp
+  - test/aoj/grl_5_c.test.cpp
 documentation_of: src/data-structure/disjoint-set-union.hpp
 layout: document
 title: Disjoint Set Union (Union Find)

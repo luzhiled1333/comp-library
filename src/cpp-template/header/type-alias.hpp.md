@@ -66,20 +66,20 @@ data:
     title: test/atcoder/abc259_d.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/dsl-1-a.test.cpp
-    title: test/aoj/dsl-1-a.test.cpp
+    path: test/aoj/dsl_1_a.test.cpp
+    title: test/aoj/dsl_1_a.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/dsl-2-b.test.cpp
-    title: test/aoj/dsl-2-b.test.cpp
+    path: test/aoj/dsl_2_b.test.cpp
+    title: test/aoj/dsl_2_b.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/grl-1-a.test.cpp
-    title: test/aoj/grl-1-a.test.cpp
+    path: test/aoj/grl_1_a.test.cpp
+    title: test/aoj/grl_1_a.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/grl-5-c.test.cpp
-    title: test/aoj/grl-5-c.test.cpp
+    path: test/aoj/grl_5_c.test.cpp
+    title: test/aoj/grl_5_c.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/itp1-1-a.test.cpp
-    title: test/aoj/itp1-1-a.test.cpp
+    path: test/aoj/itp1_1_a.test.cpp
+    title: test/aoj/itp1_1_a.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc177_d.test.cpp
     title: test/atcoder/abc177_d.test.cpp
@@ -149,11 +149,11 @@ data:
   - test/library-checker/bitwise_xor_convolution.test.cpp
   - test/atcoder/abc177_d.test.cpp
   - test/atcoder/abc212_h.test.cpp
-  - test/aoj/grl-5-c.test.cpp
-  - test/aoj/itp1-1-a.test.cpp
-  - test/aoj/dsl-2-b.test.cpp
-  - test/aoj/grl-1-a.test.cpp
-  - test/aoj/dsl-1-a.test.cpp
+  - test/aoj/dsl_2_b.test.cpp
+  - test/aoj/grl_1_a.test.cpp
+  - test/aoj/dsl_1_a.test.cpp
+  - test/aoj/itp1_1_a.test.cpp
+  - test/aoj/grl_5_c.test.cpp
 documentation_of: src/cpp-template/header/type-alias.hpp
 layout: document
 title: Type alias

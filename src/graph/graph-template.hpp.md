@@ -16,11 +16,11 @@ data:
     title: src/graph/offline-query-lowest-common-ancestor.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/grl-1-a.test.cpp
-    title: test/aoj/grl-1-a.test.cpp
+    path: test/aoj/grl_1_a.test.cpp
+    title: test/aoj/grl_1_a.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/grl-5-c.test.cpp
-    title: test/aoj/grl-5-c.test.cpp
+    path: test/aoj/grl_5_c.test.cpp
+    title: test/aoj/grl_5_c.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -76,8 +76,8 @@ data:
   timestamp: '2022-08-06 15:17:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/grl-5-c.test.cpp
-  - test/aoj/grl-1-a.test.cpp
+  - test/aoj/grl_1_a.test.cpp
+  - test/aoj/grl_5_c.test.cpp
 documentation_of: src/graph/graph-template.hpp
 layout: document
 title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"

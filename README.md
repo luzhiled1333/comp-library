@@ -50,7 +50,7 @@ int main() {
 ### test/aoj
 [Aizu Online Judge](https://onlinejudge.u-aizu.ac.jp/)を用いたテストをすべてここの直下に置く。
 
-ファイル名は `問題ID + .test.cpp` とし、問題ID の英大文字は英小文字に、`_` は `-` に置き換えている。
+ファイル名は `問題ID + .test.cpp` とし、問題ID の英大文字は英小文字に置き換えている。
 
 リンクは以下の形式で統一する。
 

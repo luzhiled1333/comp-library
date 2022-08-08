@@ -28,7 +28,7 @@ data:
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/GRL_1_A
     links:
     - https://onlinejudge.u-aizu.ac.jp/problems/GRL_1_A
-  bundledCode: "#line 1 \"test/aoj/grl-1-a.test.cpp\"\n// verification-helper: PROBLEM\
+  bundledCode: "#line 1 \"test/aoj/grl_1_a.test.cpp\"\n// verification-helper: PROBLEM\
     \ https://onlinejudge.u-aizu.ac.jp/problems/GRL_1_A\n\n#include <iostream>\n\n\
     #line 2 \"src/cpp-template/header/input.hpp\"\n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\
     \n\n#include <cstddef>\n#include <cstdint>\n\nnamespace luz {\n\n  using isize\
@@ -53,7 +53,7 @@ data:
     \   const itr f, l;\n    constexpr rrep(const usize f, const usize l) noexcept\n\
     \      : f(l - 1), l(std::min(f, l) - 1) {}\n    constexpr auto begin() const\
     \ noexcept { return f; }\n    constexpr auto end() const noexcept { return l;\
-    \ }\n  };\n\n} // namespace luz\n#line 8 \"test/aoj/grl-1-a.test.cpp\"\n\n#line\
+    \ }\n  };\n\n} // namespace luz\n#line 8 \"test/aoj/grl_1_a.test.cpp\"\n\n#line\
     \ 2 \"src/graph/graph-template.hpp\"\n\n#include <vector>\n#include <cassert>\n\
     \n#line 7 \"src/graph/graph-template.hpp\"\n\nnamespace luz {\n\n  template< typename\
     \ cost_type >\n  class Edge {\n   public:\n    usize from, to;\n    cost_type\
@@ -101,7 +101,7 @@ data:
     \ return g;\n    }\n  \n    inline std::vector< cost_type > get_distances() const\
     \ {\n      return ds;\n    }\n  \n    inline std::vector< usize > get_shortest_path_tree()\
     \ const {\n      return froms;\n    }\n  \n    inline std::vector< usize > get_edge_labels()\
-    \ const {\n      return ids;\n    }\n  };\n\n}\n#line 11 \"test/aoj/grl-1-a.test.cpp\"\
+    \ const {\n      return ids;\n    }\n  };\n\n}\n#line 11 \"test/aoj/grl_1_a.test.cpp\"\
     \n\nnamespace luz {\n\n  void main_() {\n    usize v = input(), e = input(), source\
     \ = input();\n\n    Graph< u32 > G(v);\n    for ([[maybe_unused]] usize _: rep(0,\
     \ e)) {\n      usize s = input(), t = input();\n      u32 d = input();\n     \
@@ -130,15 +130,15 @@ data:
   - src/graph/dijkstra.hpp
   - src/cpp-template/header/change-minmax.hpp
   isVerificationFile: true
-  path: test/aoj/grl-1-a.test.cpp
+  path: test/aoj/grl_1_a.test.cpp
   requiredBy: []
-  timestamp: '2022-08-06 15:17:37+09:00'
+  timestamp: '2022-08-08 01:10:13+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/aoj/grl-1-a.test.cpp
+documentation_of: test/aoj/grl_1_a.test.cpp
 layout: document
 redirect_from:
-- /verify/test/aoj/grl-1-a.test.cpp
-- /verify/test/aoj/grl-1-a.test.cpp.html
-title: test/aoj/grl-1-a.test.cpp
+- /verify/test/aoj/grl_1_a.test.cpp
+- /verify/test/aoj/grl_1_a.test.cpp.html
+title: test/aoj/grl_1_a.test.cpp
 ---

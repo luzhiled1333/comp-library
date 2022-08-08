@@ -16,11 +16,11 @@ data:
     title: test/atcoder/abc259_c.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/grl-1-a.test.cpp
-    title: test/aoj/grl-1-a.test.cpp
+    path: test/aoj/grl_1_a.test.cpp
+    title: test/aoj/grl_1_a.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/itp1-1-a.test.cpp
-    title: test/aoj/itp1-1-a.test.cpp
+    path: test/aoj/itp1_1_a.test.cpp
+    title: test/aoj/itp1_1_a.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc177_d.test.cpp
     title: test/atcoder/abc177_d.test.cpp
@@ -50,8 +50,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/atcoder/abc177_d.test.cpp
-  - test/aoj/itp1-1-a.test.cpp
-  - test/aoj/grl-1-a.test.cpp
+  - test/aoj/grl_1_a.test.cpp
+  - test/aoj/itp1_1_a.test.cpp
 documentation_of: src/cpp-template/header/change-minmax.hpp
 layout: document
 title: chmin / chmax

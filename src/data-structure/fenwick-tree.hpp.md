@@ -10,8 +10,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/dsl-2-b.test.cpp
-    title: test/aoj/dsl-2-b.test.cpp
+    path: test/aoj/dsl_2_b.test.cpp
+    title: test/aoj/dsl_2_b.test.cpp
   - icon: ':heavy_check_mark:'
     path: unit-test/data-structure/fenwick-tree.test.cpp
     title: unit-test/data-structure/fenwick-tree.test.cpp
@@ -82,7 +82,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - unit-test/data-structure/fenwick-tree.test.cpp
-  - test/aoj/dsl-2-b.test.cpp
+  - test/aoj/dsl_2_b.test.cpp
 documentation_of: src/data-structure/fenwick-tree.hpp
 layout: document
 title: Fenwick Tree (Binary Indexed Tree, BIT)

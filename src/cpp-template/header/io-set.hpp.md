@@ -13,8 +13,8 @@ data:
     title: template
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/itp1-1-a.test.cpp
-    title: test/aoj/itp1-1-a.test.cpp
+    path: test/aoj/itp1_1_a.test.cpp
+    title: test/aoj/itp1_1_a.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -42,7 +42,7 @@ data:
   timestamp: '2022-07-16 05:05:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/itp1-1-a.test.cpp
+  - test/aoj/itp1_1_a.test.cpp
 documentation_of: src/cpp-template/header/io-set.hpp
 layout: document
 title: specify output precision

@@ -40,7 +40,7 @@ data:
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/ITP1_1_A
     links:
     - https://onlinejudge.u-aizu.ac.jp/problems/ITP1_1_A
-  bundledCode: "#line 1 \"test/aoj/itp1-1-a.test.cpp\"\n// verification-helper: PROBLEM\
+  bundledCode: "#line 1 \"test/aoj/itp1_1_a.test.cpp\"\n// verification-helper: PROBLEM\
     \ https://onlinejudge.u-aizu.ac.jp/problems/ITP1_1_A\n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\
     \n\n#include <cstddef>\n#include <cstdint>\n\nnamespace luz {\n\n  using isize\
     \ = std::ptrdiff_t;\n  using usize = std::size_t;\n\n  using i32 = std::int32_t;\n\
@@ -97,7 +97,7 @@ data:
     \n  template <typename T1, typename T2>\n  inline bool chmax(T1 &a, T2 b) {\n\
     \    return a < b and (a = b, true);\n  }\n\n  template <typename T1, typename\
     \ T2>\n  inline bool chmin(T1 &a, T2 b) {\n    return a > b and (a = b, true);\n\
-    \  }\n\n} // namespace luz\n#line 4 \"test/aoj/itp1-1-a.test.cpp\"\n\nnamespace\
+    \  }\n\n} // namespace luz\n#line 4 \"test/aoj/itp1_1_a.test.cpp\"\n\nnamespace\
     \ luz {\n\n  void main_() {\n    std::cout << \"Hello World\" << std::endl;\n\
     \  }\n\n} // namespace luz\n\nint main() {\n  luz::set_fast_ios();\n  luz::io_set(15);\n\
     \n  luz::main_();\n}\n"
@@ -118,15 +118,15 @@ data:
   - src/cpp-template/header/make-vector.hpp
   - src/cpp-template/header/change-minmax.hpp
   isVerificationFile: true
-  path: test/aoj/itp1-1-a.test.cpp
+  path: test/aoj/itp1_1_a.test.cpp
   requiredBy: []
-  timestamp: '2022-07-23 09:50:15+09:00'
+  timestamp: '2022-08-08 01:10:13+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/aoj/itp1-1-a.test.cpp
+documentation_of: test/aoj/itp1_1_a.test.cpp
 layout: document
 redirect_from:
-- /verify/test/aoj/itp1-1-a.test.cpp
-- /verify/test/aoj/itp1-1-a.test.cpp.html
-title: test/aoj/itp1-1-a.test.cpp
+- /verify/test/aoj/itp1_1_a.test.cpp
+- /verify/test/aoj/itp1_1_a.test.cpp.html
+title: test/aoj/itp1_1_a.test.cpp
 ---

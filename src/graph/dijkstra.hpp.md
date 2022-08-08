@@ -13,8 +13,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/grl-1-a.test.cpp
-    title: test/aoj/grl-1-a.test.cpp
+    path: test/aoj/grl_1_a.test.cpp
+    title: test/aoj/grl_1_a.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -108,7 +108,7 @@ data:
   timestamp: '2022-08-06 15:17:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/grl-1-a.test.cpp
+  - test/aoj/grl_1_a.test.cpp
 documentation_of: src/graph/dijkstra.hpp
 layout: document
 title: Dijkstra's Algorithm
