@@ -49,10 +49,10 @@ namespace luz {
     const usize n = f.size();
     assert((n & (n - 1)) == 0);
     usize i = 1;
-    while(i < n) {
+    while (i < n) {
       usize j = 0;
-      while(j < n) {
-        for(usize k: rep(0, i)) {
+      while (j < n) {
+        for (usize k: rep(0, i)) {
           op(f[j + k], f[j + k + i]);
         }
         j += i << 1;
