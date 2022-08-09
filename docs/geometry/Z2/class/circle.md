@@ -11,6 +11,11 @@ documentation_of: //src/geometry/Z2/class/circle.hpp
 (2) Z2::Circle(Z2::Point o, Z2 r)
 ```
 
+1. `Z2::Circle` のデフォルトコンストラクタ。原点を中心とする半径 $0$ の円が格納される。
+2. 中心座標 `o`、半径 `r` の円が格納される。
+
+### 制約
+- $0 \leq r$
 
 ## 中心座標
 ```
