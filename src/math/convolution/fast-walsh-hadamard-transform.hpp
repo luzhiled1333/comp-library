@@ -25,6 +25,7 @@ namespace impl {
       i <<= 1;
     }
   }
+
 } // namespace impl
 } // namespace luz
 
