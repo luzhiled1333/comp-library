@@ -5,8 +5,8 @@ documentation_of: //src/geometry/Z2/class/vector.hpp
 
 ## コンストラクタ
 ```
-(1) Z2::Vector();
-(2) Z2::Vector(Z x, Z y);
+(1) Z2::Vector()
+(2) Z2::Vector(Z x, Z y)
 ```
 
 1. `Z2::Vector` のデフォルトコンストラクタ。$(0, 0)$ が格納される。
@@ -14,8 +14,8 @@ documentation_of: //src/geometry/Z2/class/vector.hpp
 
 ## 座標
 ```
-(1) Z x();
-(2) Z y();
+(1) Z x() const
+(2) Z y() const
 ```
 
 1. ベクトルの x 成分を返す。
