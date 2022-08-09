@@ -7,9 +7,10 @@
 #include <vector>
 
 namespace luz {
- 
-  template< typename T >
-  void impl_fwht(std::vector< T > &f, bool is_inverse_transform) {
+namespace impl {
+
+  template< typename T, typename F >
+  void impl_fwht(std::vector< T > &f, F op) {
     const usize n = f.size();
     assert((n & (n - 1)) == 0);
     usize i = 1;
@@ -17,31 +18,22 @@ namespace luz {
       usize j = 0;
       while (j < n) {
         for (usize k: rep(0, i)) {
-          T s = f[j + k], t = f[j + k + i];
-          f[j + k    ] = s + t;
-          f[j + k + i] = s - t;
+          op(f[j + k], f[j + k + i]);
         }
- 
-        j += (i << 1);
+        j += i << 1;
       }
- 
-      i = i << 1;
+      i <<= 1;
     }
- 
-    if (not is_inverse_transform) return;
- 
-    T n_inv = T(1) / T(n);
-    for (auto &x: f) x *= n_inv;
   }
- 
-  template< typename T >
-  void fast_walsh_hadamard_transform(std::vector< T > &f) {
-    impl_fwht(f, false);
+
+} // namespace impl
+} // namespace luz
+
+namespace luz {
+
+  template< typename T, typename F >
+  void fast_walsh_hadamard_transform(std::vector< T > &f, F op) {
+    impl::impl_fwht(f, op);
   }
- 
-  template< typename T >
-  void fast_walsh_hadamard_inverse_transform(std::vector< T > &f) {
-    impl_fwht(f, true);
-  }
- 
+
 } // namespace luz

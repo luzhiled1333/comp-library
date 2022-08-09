@@ -33,11 +33,24 @@ namespace luz {
       cs[input()] = 1;
     }
 
-    fast_walsh_hadamard_transform(cs);
+    mint inv2 = mint(1) / mint(2);
+    auto zeta = [](mint& lo, mint& hi) {
+      mint x = lo + hi;
+      mint y = lo - hi;
+      lo = x;
+      hi = y;
+    };
+    auto mobius = [inv2](mint& lo, mint& hi) {
+      mint x = lo + hi;
+      mint y = lo - hi;
+      lo = x * inv2;
+      hi = y * inv2;
+    };
+    fast_walsh_hadamard_transform(cs, zeta);
     for (mint &c: cs) {
       c = sum_of_geometric_sequence(c, c, n);
     }
-    fast_walsh_hadamard_inverse_transform(cs);
+    fast_walsh_hadamard_transform(cs, mobius);
 
     std::cout << (std::accumulate(cs.begin(), cs.end(), mint()) - cs[0]).val() << std::endl;
   }
