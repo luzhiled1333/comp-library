@@ -27,7 +27,6 @@ namespace Z2 {
       x_ += v.x_; y_ += v.y_;
       return *this;
     }
-
     Vector &operator-=(const Vector &v) {
       x_ -= v.x_; y_ -= v.y_;
       return *this;
@@ -36,10 +35,17 @@ namespace Z2 {
     Vector operator+(const Vector &v) const {
       return Vector(*this) += v;
     }
-
     Vector operator-(const Vector &v) const {
       return Vector(*this) -= v;
     }
+
+    Vector operator+() const {
+      return *this;
+    }
+    Vector operator-() const {
+      return Vector() - *this;
+    }
+
 
     Z x() const {
       return x_;
