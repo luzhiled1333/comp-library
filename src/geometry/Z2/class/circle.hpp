@@ -9,18 +9,18 @@ namespace Z2 {
   template< typename Z >
   class Circle {
 
-    Point< Z > center_;
+    Point< Z > o_;
     Z r_;
 
    public:
-    Circle(): center_(0, 0), r_(0) {}
+    Circle(): o_(0, 0), r_(0) {}
 
-    Circle(Point< Z > center, Z r): center_(center), r_(r) {
+    Circle(Point< Z > o, Z r): o_(o), r_(r) {
       assert(r >= 0);
     }
 
     Point< Z > center() const {
-      return center_;
+      return o_;
     }
 
     Z r() const {
