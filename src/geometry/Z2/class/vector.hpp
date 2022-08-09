@@ -12,7 +12,7 @@ namespace Z2 {
     Z x_, y_;
 
    public:
-    Vector() {}
+    Vector(): x_(0), y_(0) {}
     Vector(Z x, Z y): x_(x), y_(y) {}
 
     bool operator==(const Vector &v) const {
