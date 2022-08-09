@@ -42,6 +42,9 @@ data:
     path: src/graph/offline-query-lowest-common-ancestor.hpp
     title: src/graph/offline-query-lowest-common-ancestor.hpp
   - icon: ':heavy_check_mark:'
+    path: src/math/convolution/bitwise-and-convolution.hpp
+    title: src/math/convolution/bitwise-and-convolution.hpp
+  - icon: ':heavy_check_mark:'
     path: src/math/convolution/bitwise-xor-convolution.hpp
     title: src/math/convolution/bitwise-xor-convolution.hpp
   - icon: ':heavy_check_mark:'
@@ -87,6 +90,9 @@ data:
     path: test/atcoder/abc212_h.test.cpp
     title: test/atcoder/abc212_h.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/library-checker/bitwise_and_convolution.test.cpp
+    title: test/library-checker/bitwise_and_convolution.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/bitwise_xor_convolution.test.cpp
     title: test/library-checker/bitwise_xor_convolution.test.cpp
   - icon: ':heavy_check_mark:'
@@ -121,6 +127,7 @@ data:
   requiredBy:
   - test/atcoder/abc259_c.cpp
   - test/atcoder/abc259_d.cpp
+  - src/math/convolution/bitwise-and-convolution.hpp
   - src/math/convolution/fast-walsh-hadamard-transform.hpp
   - src/math/convolution/bitwise-xor-convolution.hpp
   - src/math/modular-arithmetic/static-modint.hpp
@@ -146,6 +153,7 @@ data:
   - unit-test/data-structure/fenwick-tree.test.cpp
   - unit-test/sequence/coordinate-complession.test.cpp
   - test/library-checker/unionfind.test.cpp
+  - test/library-checker/bitwise_and_convolution.test.cpp
   - test/library-checker/bitwise_xor_convolution.test.cpp
   - test/atcoder/abc177_d.test.cpp
   - test/atcoder/abc212_h.test.cpp

@@ -14,14 +14,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/library-checker/bitwise_xor_convolution.test.cpp
-    title: test/library-checker/bitwise_xor_convolution.test.cpp
+    path: test/library-checker/bitwise_and_convolution.test.cpp
+    title: test/library-checker/bitwise_and_convolution.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"src/math/convolution/bitwise-xor-convolution.hpp\"\n\n#line\
+  bundledCode: "#line 2 \"src/math/convolution/bitwise-and-convolution.hpp\"\n\n#line\
     \ 2 \"src/cpp-template/header/type-alias.hpp\"\n\n#include <cstddef>\n#include\
     \ <cstdint>\n\nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using usize\
     \ = std::size_t;\n\n  using i32 = std::int32_t;\n  using i64 = std::int64_t;\n\
@@ -51,26 +51,22 @@ data:
     \ += i << 1;\n      }\n      i <<= 1;\n    }\n  }\n\n} // namespace impl\n} //\
     \ namespace luz\n\nnamespace luz {\n\n  template< typename T, typename F >\n \
     \ void fast_walsh_hadamard_transform(std::vector< T > &f, F op) {\n    impl::impl_fwht(f,\
-    \ op);\n  }\n\n} // namespace luz\n#line 6 \"src/math/convolution/bitwise-xor-convolution.hpp\"\
-    \n\n#line 9 \"src/math/convolution/bitwise-xor-convolution.hpp\"\n\nnamespace\
-    \ luz {\n\n  template< typename T >\n  std::vector< T > bitwise_xor_convolution(std::vector<\
-    \ T > f, std::vector< T > g) {\n    assert(f.size() == g.size());\n\n    T inv2\
-    \ = T(1) / T(2);\n    auto zeta = [](T& lo, T& hi) {\n      T x = lo + hi;\n \
-    \     T y = lo - hi;\n      lo = x;\n      hi = y;\n    };\n    auto mobius =\
-    \ [inv2](T& lo, T& hi) {\n      T x = lo + hi;\n      T y = lo - hi;\n      lo\
-    \ = x * inv2;\n      hi = y * inv2;\n    };\n\n    fast_walsh_hadamard_transform(f,\
-    \ zeta);\n    fast_walsh_hadamard_transform(g, zeta);\n    for (usize i: rep(0,\
-    \ f.size())) {\n      f[i] *= g[i];\n    }\n    fast_walsh_hadamard_transform(f,\
-    \ mobius);\n    return f;\n  }\n\n} // namespace luz\n"
+    \ op);\n  }\n\n} // namespace luz\n#line 6 \"src/math/convolution/bitwise-and-convolution.hpp\"\
+    \n\n#line 9 \"src/math/convolution/bitwise-and-convolution.hpp\"\n\nnamespace\
+    \ luz {\n\n  template< typename T >\n  std::vector< T > bitwise_and_convolution(std::vector<\
+    \ T > f, std::vector< T > g) {\n    assert(f.size() == g.size());\n\n    auto\
+    \ zeta = [](T& lo, T hi) { return lo += hi; };\n    auto mobius = [](T& lo, T\
+    \ hi) { return lo -= hi; };\n    fast_walsh_hadamard_transform(f, zeta);\n   \
+    \ fast_walsh_hadamard_transform(g, zeta);\n    for (usize i: rep(0, f.size()))\
+    \ {\n      f[i] *= g[i];\n    }\n    fast_walsh_hadamard_transform(f, mobius);\n\
+    \    return f;\n  }\n\n} // namespace luz\n"
   code: "#pragma once\n\n#include \"src/cpp-template/header/type-alias.hpp\"\n#include\
     \ \"src/cpp-template/header/rep.hpp\"\n#include \"src/math/convolution/fast-walsh-hadamard-transform.hpp\"\
     \n\n#include <vector>\n#include <cassert>\n\nnamespace luz {\n\n  template< typename\
-    \ T >\n  std::vector< T > bitwise_xor_convolution(std::vector< T > f, std::vector<\
-    \ T > g) {\n    assert(f.size() == g.size());\n\n    T inv2 = T(1) / T(2);\n \
-    \   auto zeta = [](T& lo, T& hi) {\n      T x = lo + hi;\n      T y = lo - hi;\n\
-    \      lo = x;\n      hi = y;\n    };\n    auto mobius = [inv2](T& lo, T& hi)\
-    \ {\n      T x = lo + hi;\n      T y = lo - hi;\n      lo = x * inv2;\n      hi\
-    \ = y * inv2;\n    };\n\n    fast_walsh_hadamard_transform(f, zeta);\n    fast_walsh_hadamard_transform(g,\
+    \ T >\n  std::vector< T > bitwise_and_convolution(std::vector< T > f, std::vector<\
+    \ T > g) {\n    assert(f.size() == g.size());\n\n    auto zeta = [](T& lo, T hi)\
+    \ { return lo += hi; };\n    auto mobius = [](T& lo, T hi) { return lo -= hi;\
+    \ };\n    fast_walsh_hadamard_transform(f, zeta);\n    fast_walsh_hadamard_transform(g,\
     \ zeta);\n    for (usize i: rep(0, f.size())) {\n      f[i] *= g[i];\n    }\n\
     \    fast_walsh_hadamard_transform(f, mobius);\n    return f;\n  }\n\n} // namespace\
     \ luz\n"
@@ -79,16 +75,16 @@ data:
   - src/cpp-template/header/rep.hpp
   - src/math/convolution/fast-walsh-hadamard-transform.hpp
   isVerificationFile: false
-  path: src/math/convolution/bitwise-xor-convolution.hpp
+  path: src/math/convolution/bitwise-and-convolution.hpp
   requiredBy: []
   timestamp: '2022-08-09 20:57:43+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/library-checker/bitwise_xor_convolution.test.cpp
-documentation_of: src/math/convolution/bitwise-xor-convolution.hpp
+  - test/library-checker/bitwise_and_convolution.test.cpp
+documentation_of: src/math/convolution/bitwise-and-convolution.hpp
 layout: document
 redirect_from:
-- /library/src/math/convolution/bitwise-xor-convolution.hpp
-- /library/src/math/convolution/bitwise-xor-convolution.hpp.html
-title: src/math/convolution/bitwise-xor-convolution.hpp
+- /library/src/math/convolution/bitwise-and-convolution.hpp
+- /library/src/math/convolution/bitwise-and-convolution.hpp.html
+title: src/math/convolution/bitwise-and-convolution.hpp
 ---

@@ -90,6 +90,9 @@ data:
   - name: src/math/convolution
     pages:
     - icon: ':heavy_check_mark:'
+      path: src/math/convolution/bitwise-and-convolution.hpp
+      title: src/math/convolution/bitwise-and-convolution.hpp
+    - icon: ':heavy_check_mark:'
       path: src/math/convolution/bitwise-xor-convolution.hpp
       title: src/math/convolution/bitwise-xor-convolution.hpp
     - icon: ':heavy_check_mark:'
@@ -146,6 +149,9 @@ data:
       title: test/atcoder/abc212_h.test.cpp
   - name: test/library-checker
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/library-checker/bitwise_and_convolution.test.cpp
+      title: test/library-checker/bitwise_and_convolution.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/library-checker/bitwise_xor_convolution.test.cpp
       title: test/library-checker/bitwise_xor_convolution.test.cpp

@@ -8,8 +8,8 @@ data:
     path: src/cpp-template/header/type-alias.hpp
     title: Type alias
   - icon: ':heavy_check_mark:'
-    path: src/math/convolution/bitwise-xor-convolution.hpp
-    title: src/math/convolution/bitwise-xor-convolution.hpp
+    path: src/math/convolution/bitwise-and-convolution.hpp
+    title: src/math/convolution/bitwise-and-convolution.hpp
   - icon: ':heavy_check_mark:'
     path: src/math/convolution/fast-walsh-hadamard-transform.hpp
     title: "\u9AD8\u901F\u30A6\u30A9\u30EB\u30B7\u30E5-\u30A2\u30C0\u30DE\u30FC\u30EB\
@@ -23,11 +23,11 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    PROBLEM: https://judge.yosupo.jp/problem/bitwise_xor_convolution
+    PROBLEM: https://judge.yosupo.jp/problem/bitwise_and_convolution
     links:
-    - https://judge.yosupo.jp/problem/bitwise_xor_convolution
-  bundledCode: "#line 1 \"test/library-checker/bitwise_xor_convolution.test.cpp\"\n\
-    // verification-helper: PROBLEM https://judge.yosupo.jp/problem/bitwise_xor_convolution\n\
+    - https://judge.yosupo.jp/problem/bitwise_and_convolution
+  bundledCode: "#line 1 \"test/library-checker/bitwise_and_convolution.test.cpp\"\n\
+    // verification-helper: PROBLEM https://judge.yosupo.jp/problem/bitwise_and_convolution\n\
     \n#line 2 \"src/math/modular-arithmetic/static-modint.hpp\"\n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\
     \n\n#include <cstddef>\n#include <cstdint>\n\nnamespace luz {\n\n  using isize\
     \ = std::ptrdiff_t;\n  using usize = std::size_t;\n\n  using i32 = std::int32_t;\n\
@@ -59,7 +59,7 @@ data:
     \    mint inverse() const {\n       assert(v_ != 0);\n       return pow(mod -\
     \ 2);\n     }\n\n  };\n\n  using modint998244353  = StaticPrimeModInt< 998244353\
     \ >;\n  using modint1000000007 = StaticPrimeModInt< 1000000007 >;\n\n} // namespace\
-    \ luz\n#line 2 \"src/math/convolution/bitwise-xor-convolution.hpp\"\n\n#line 2\
+    \ luz\n#line 2 \"src/math/convolution/bitwise-and-convolution.hpp\"\n\n#line 2\
     \ \"src/cpp-template/header/rep.hpp\"\n\n#line 4 \"src/cpp-template/header/rep.hpp\"\
     \n\n#include <algorithm>\n\nnamespace luz {\n\n  struct rep {\n    struct itr\
     \ {\n      usize i;\n      constexpr itr(const usize i) noexcept : i(i) {}\n \
@@ -86,52 +86,50 @@ data:
     \ }\n      i <<= 1;\n    }\n  }\n\n} // namespace impl\n} // namespace luz\n\n\
     namespace luz {\n\n  template< typename T, typename F >\n  void fast_walsh_hadamard_transform(std::vector<\
     \ T > &f, F op) {\n    impl::impl_fwht(f, op);\n  }\n\n} // namespace luz\n#line\
-    \ 6 \"src/math/convolution/bitwise-xor-convolution.hpp\"\n\n#line 9 \"src/math/convolution/bitwise-xor-convolution.hpp\"\
-    \n\nnamespace luz {\n\n  template< typename T >\n  std::vector< T > bitwise_xor_convolution(std::vector<\
-    \ T > f, std::vector< T > g) {\n    assert(f.size() == g.size());\n\n    T inv2\
-    \ = T(1) / T(2);\n    auto zeta = [](T& lo, T& hi) {\n      T x = lo + hi;\n \
-    \     T y = lo - hi;\n      lo = x;\n      hi = y;\n    };\n    auto mobius =\
-    \ [inv2](T& lo, T& hi) {\n      T x = lo + hi;\n      T y = lo - hi;\n      lo\
-    \ = x * inv2;\n      hi = y * inv2;\n    };\n\n    fast_walsh_hadamard_transform(f,\
-    \ zeta);\n    fast_walsh_hadamard_transform(g, zeta);\n    for (usize i: rep(0,\
-    \ f.size())) {\n      f[i] *= g[i];\n    }\n    fast_walsh_hadamard_transform(f,\
-    \ mobius);\n    return f;\n  }\n\n} // namespace luz\n#line 5 \"test/library-checker/bitwise_xor_convolution.test.cpp\"\
-    \n\n#line 7 \"test/library-checker/bitwise_xor_convolution.test.cpp\"\n#include\
+    \ 6 \"src/math/convolution/bitwise-and-convolution.hpp\"\n\n#line 9 \"src/math/convolution/bitwise-and-convolution.hpp\"\
+    \n\nnamespace luz {\n\n  template< typename T >\n  std::vector< T > bitwise_and_convolution(std::vector<\
+    \ T > f, std::vector< T > g) {\n    assert(f.size() == g.size());\n\n    auto\
+    \ zeta = [](T& lo, T hi) { return lo += hi; };\n    auto mobius = [](T& lo, T\
+    \ hi) { return lo -= hi; };\n    fast_walsh_hadamard_transform(f, zeta);\n   \
+    \ fast_walsh_hadamard_transform(g, zeta);\n    for (usize i: rep(0, f.size()))\
+    \ {\n      f[i] *= g[i];\n    }\n    fast_walsh_hadamard_transform(f, mobius);\n\
+    \    return f;\n  }\n\n} // namespace luz\n#line 5 \"test/library-checker/bitwise_and_convolution.test.cpp\"\
+    \n\n#line 7 \"test/library-checker/bitwise_and_convolution.test.cpp\"\n#include\
     \ <iostream>\n\nnamespace luz {\n\n  void main_() {\n    usize n;\n    std::cin\
     \ >> n;\n\n    using mint = modint998244353;\n    std::vector< mint > as(1 <<\
     \ n);\n    for (mint &a: as) {\n      i32 v;\n      std::cin >> v;\n      a =\
     \ mint(v);\n    }\n\n    std::vector< mint > bs(1 << n);\n    for (mint &b: bs)\
     \ {\n      i32 v;\n      std::cin >> v;\n      b = mint(v);\n    }\n\n    auto\
-    \ cs = bitwise_xor_convolution(as, bs);\n    for (usize i: rep(0, 1 << n)) {\n\
+    \ cs = bitwise_and_convolution(as, bs);\n    for (usize i: rep(0, 1 << n)) {\n\
     \      std::cout << cs[i].val() << (i + 1 == (usize(1) << n) ? \"\\n\" : \" \"\
     );\n    }\n\n  }\n\n} // namespace luz\n\nint main() {\n  luz::main_();\n}\n"
-  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/bitwise_xor_convolution\n\
-    \n#include \"src/math/modular-arithmetic/static-modint.hpp\"\n#include \"src/math/convolution/bitwise-xor-convolution.hpp\"\
+  code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/bitwise_and_convolution\n\
+    \n#include \"src/math/modular-arithmetic/static-modint.hpp\"\n#include \"src/math/convolution/bitwise-and-convolution.hpp\"\
     \n\n#include <vector>\n#include <iostream>\n\nnamespace luz {\n\n  void main_()\
     \ {\n    usize n;\n    std::cin >> n;\n\n    using mint = modint998244353;\n \
     \   std::vector< mint > as(1 << n);\n    for (mint &a: as) {\n      i32 v;\n \
     \     std::cin >> v;\n      a = mint(v);\n    }\n\n    std::vector< mint > bs(1\
     \ << n);\n    for (mint &b: bs) {\n      i32 v;\n      std::cin >> v;\n      b\
-    \ = mint(v);\n    }\n\n    auto cs = bitwise_xor_convolution(as, bs);\n    for\
+    \ = mint(v);\n    }\n\n    auto cs = bitwise_and_convolution(as, bs);\n    for\
     \ (usize i: rep(0, 1 << n)) {\n      std::cout << cs[i].val() << (i + 1 == (usize(1)\
     \ << n) ? \"\\n\" : \" \");\n    }\n\n  }\n\n} // namespace luz\n\nint main()\
     \ {\n  luz::main_();\n}\n"
   dependsOn:
   - src/math/modular-arithmetic/static-modint.hpp
   - src/cpp-template/header/type-alias.hpp
-  - src/math/convolution/bitwise-xor-convolution.hpp
+  - src/math/convolution/bitwise-and-convolution.hpp
   - src/cpp-template/header/rep.hpp
   - src/math/convolution/fast-walsh-hadamard-transform.hpp
   isVerificationFile: true
-  path: test/library-checker/bitwise_xor_convolution.test.cpp
+  path: test/library-checker/bitwise_and_convolution.test.cpp
   requiredBy: []
   timestamp: '2022-08-09 20:57:43+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/library-checker/bitwise_xor_convolution.test.cpp
+documentation_of: test/library-checker/bitwise_and_convolution.test.cpp
 layout: document
 redirect_from:
-- /verify/test/library-checker/bitwise_xor_convolution.test.cpp
-- /verify/test/library-checker/bitwise_xor_convolution.test.cpp.html
-title: test/library-checker/bitwise_xor_convolution.test.cpp
+- /verify/test/library-checker/bitwise_and_convolution.test.cpp
+- /verify/test/library-checker/bitwise_and_convolution.test.cpp.html
+title: test/library-checker/bitwise_and_convolution.test.cpp
 ---
