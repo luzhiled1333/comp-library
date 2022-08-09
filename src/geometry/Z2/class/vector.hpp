@@ -28,7 +28,7 @@ namespace Z2 {
     }
 
     bool operator!=(const Vector &v) const {
-      return x_ == v.x_ or  y_ == v.y_;
+      return x_ != v.x_ or  y_ != v.y_;
     }
 
     Vector &operator+=(const Vector &v) {
