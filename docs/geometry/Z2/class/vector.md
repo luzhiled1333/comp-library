@@ -40,4 +40,4 @@ u != v
 ```
 
 ## エイリアス
-その他、`std::vector< Vector<Z> >` のエイリアスとして `Vectors<Z>` が宣言されている。
+その他、`std::vector< Vector<Z> >` のエイリアスとして `Vectors<Z>` が定義されている。
