@@ -15,6 +15,14 @@ namespace Z2 {
     Vector(): x_(0), y_(0) {}
     Vector(Z x, Z y): x_(x), y_(y) {}
 
+    Z x() const {
+      return x_;
+    }
+
+    Z y() const {
+      return y_;
+    }
+
     bool operator==(const Vector &v) const {
       return x_ == v.x_ and y_ == v.y_;
     }
@@ -44,15 +52,6 @@ namespace Z2 {
     }
     Vector operator-() const {
       return Vector() - *this;
-    }
-
-
-    Z x() const {
-      return x_;
-    }
-
-    Z y() const {
-      return y_;
     }
 
   };
