@@ -21,10 +21,10 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"src/geometry/Z2/operation/square.hpp\"\n\nnamespace luz\
-    \ {\n\nnamespace Z2 {\n\n  template< typename Z >\n  Z square(const Z z) {\n \
-    \   return z * z;\n  }\n\n} // namespace Z2\n\n} // namespace luz\n"
+    \ {\n\nnamespace Z2 {\n\n  template< typename Z >\n  Z square(const Z x) {\n \
+    \   return x * x;\n  }\n\n} // namespace Z2\n\n} // namespace luz\n"
   code: "#pragma once\n\nnamespace luz {\n\nnamespace Z2 {\n\n  template< typename\
-    \ Z >\n  Z square(const Z z) {\n    return z * z;\n  }\n\n} // namespace Z2\n\n\
+    \ Z >\n  Z square(const Z x) {\n    return x * x;\n  }\n\n} // namespace Z2\n\n\
     } // namespace luz\n"
   dependsOn: []
   isVerificationFile: false
@@ -34,10 +34,19 @@ data:
   - src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
   - src/geometry/Z2/intersect/is-intersect-point-circle.hpp
   - src/geometry/Z2/operation/square-norm.hpp
-  timestamp: '2022-07-21 10:58:25+09:00'
+  timestamp: '2022-08-09 21:23:57+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/Z2/operation/square.hpp
 layout: document
 title: $x^2 (x \in \mathbb{Z})$
 ---
+
+## square
+```
+Z square(Z x)
+```
+
+`x` を2乗して返す。
+
+オーバーフローに注意。

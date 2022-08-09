@@ -66,3 +66,13 @@ documentation_of: src/sequence/coordinate-compression.hpp
 layout: document
 title: "\u5EA7\u6A19\u5727\u7E2E"
 ---
+
+## coordinate_compression
+```
+std::vector< usize > coordinate_compression(std::vector<T> vs)
+```
+
+`std::vector<T>` を 0-indexed で座標圧縮して返す。
+
+### 計算量
+- `T` の比較を $O(1)$、`vs` のサイズを $n$ として $O(n \log n)$
