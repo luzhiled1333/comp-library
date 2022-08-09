@@ -13,8 +13,11 @@ namespace Z2 {
     Z r_;
 
    public:
-    Circle() {}
-    Circle(Point< Z > center, Z r): center_(center), r_(r) {}
+    Circle(): center_(0, 0), r_(0) {}
+
+    Circle(Point< Z > center, Z r): center_(center), r_(r) {
+      assert(r >= 0);
+    }
 
     Point< Z > center() const {
       return center_;
