@@ -1,6 +1,7 @@
 #include <limits>
 #include <utility>
 #include <queue>
+#include <vector>
 
 #include "src/cpp-template/header/change-minmax.hpp"
 #include "src/graph/graph-template.hpp"
