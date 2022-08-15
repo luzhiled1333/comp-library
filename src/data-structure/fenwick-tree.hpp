@@ -34,9 +34,7 @@ namespace luz {
       }
       for (usize i: rep(1, as.size() + 1)) {
         usize j = i + (i & -i);
-        if (j <= as.size()) {
-          vals_[j] += vals_[i];
-        }
+        if (j <= as.size()) { vals_[j] += vals_[i]; }
       }
     }
 
