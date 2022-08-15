@@ -7,8 +7,8 @@
 
 #include "src/cpp-template/header/input.hpp"
 
-#include "src/cpp-template/header/vector-ios.hpp"
 #include "src/cpp-template/header/pair-ios.hpp"
+#include "src/cpp-template/header/vector-ios.hpp"
 
 #include "src/cpp-template/header/make-vector.hpp"
 

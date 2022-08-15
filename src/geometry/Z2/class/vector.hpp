@@ -6,12 +6,12 @@ namespace luz {
 
 namespace Z2 {
 
-  template< typename Z >
+  template <typename Z>
   class Vector {
 
     Z x_, y_;
 
-   public:
+  public:
     Vector(): x_(0), y_(0) {}
     Vector(Z x, Z y): x_(x), y_(y) {}
 
@@ -28,15 +28,17 @@ namespace Z2 {
     }
 
     bool operator!=(const Vector &v) const {
-      return x_ != v.x_ or  y_ != v.y_;
+      return x_ != v.x_ or y_ != v.y_;
     }
 
     Vector &operator+=(const Vector &v) {
-      x_ += v.x_; y_ += v.y_;
+      x_ += v.x_;
+      y_ += v.y_;
       return *this;
     }
     Vector &operator-=(const Vector &v) {
-      x_ -= v.x_; y_ -= v.y_;
+      x_ -= v.x_;
+      y_ -= v.y_;
       return *this;
     }
 
@@ -53,12 +55,11 @@ namespace Z2 {
     Vector operator-() const {
       return Vector() - *this;
     }
-
   };
 
-  template< typename Z >
-  using Vectors = std::vector< Vector<Z> >;
+  template <typename Z>
+  using Vectors = std::vector<Vector<Z>>;
 
-} // namespace Z2
+}// namespace Z2
 
-} // namespace luz
+}// namespace luz
