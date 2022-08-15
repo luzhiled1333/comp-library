@@ -4,33 +4,33 @@
 
 namespace luz {
 
-namespace Z2 {
+  namespace Z2 {
 
-  template <typename Z>
-  class Circle {
+    template <typename Z>
+    class Circle {
 
-    Point<Z> o_;
-    Z r_;
+      Point<Z> o_;
+      Z r_;
 
-  public:
-    Circle(): o_(0, 0), r_(0) {}
+    public:
+      Circle(): o_(0, 0), r_(0) {}
 
-    Circle(Point<Z> o, Z r): o_(o), r_(r) {
-      assert(r >= 0);
-    }
+      Circle(Point<Z> o, Z r): o_(o), r_(r) {
+        assert(r >= 0);
+      }
 
-    Point<Z> center() const {
-      return o_;
-    }
+      Point<Z> center() const {
+        return o_;
+      }
 
-    Z r() const {
-      return r_;
-    }
-  };
+      Z r() const {
+        return r_;
+      }
+    };
 
-  template <typename Z>
-  using Circles = std::vector<Circle<Z>>;
+    template <typename Z>
+    using Circles = std::vector<Circle<Z>>;
 
-}// namespace Z2
+  } // namespace Z2
 
-}// namespace luz
+} // namespace luz
