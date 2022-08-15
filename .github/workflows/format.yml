@@ -1,0 +1,30 @@
+name: clang-format
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  format:
+    run-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+    - name: install tools
+      run: |
+        sudo apt update
+        sudo apt install clang-format
+    - name: apply formatter
+      run: |
+        clang-format -i $(find . -name "*.hpp")
+    - name: push
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git add .
+        git commit -m "[clang-format] apply"
+        git push
