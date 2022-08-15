@@ -31,9 +31,7 @@ namespace luz {
     Graph() = default;
     explicit Graph(usize n): g(n), edge_count(0) {}
 
-    usize size() const {
-      return g.size();
-    }
+    usize size() const { return g.size(); }
 
     void add_directed_edge(usize from, usize to,
                            cost_type cost = 1) {

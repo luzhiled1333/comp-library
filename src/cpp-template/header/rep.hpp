@@ -10,12 +10,8 @@ namespace luz {
     struct itr {
       usize i;
       constexpr itr(const usize i) noexcept: i(i) {}
-      void operator++() noexcept {
-        ++i;
-      }
-      constexpr usize operator*() const noexcept {
-        return i;
-      }
+      void operator++() noexcept { ++i; }
+      constexpr usize operator*() const noexcept { return i; }
       constexpr bool operator!=(const itr x) const noexcept {
         return i != x.i;
       }
@@ -23,24 +19,16 @@ namespace luz {
     const itr f, l;
     constexpr rep(const usize f, const usize l) noexcept
         : f(std::min(f, l)), l(l) {}
-    constexpr auto begin() const noexcept {
-      return f;
-    }
-    constexpr auto end() const noexcept {
-      return l;
-    }
+    constexpr auto begin() const noexcept { return f; }
+    constexpr auto end() const noexcept { return l; }
   };
 
   struct rrep {
     struct itr {
       usize i;
       constexpr itr(const usize i) noexcept: i(i) {}
-      void operator++() noexcept {
-        --i;
-      }
-      constexpr usize operator*() const noexcept {
-        return i;
-      }
+      void operator++() noexcept { --i; }
+      constexpr usize operator*() const noexcept { return i; }
       constexpr bool operator!=(const itr x) const noexcept {
         return i != x.i;
       }
@@ -48,12 +36,8 @@ namespace luz {
     const itr f, l;
     constexpr rrep(const usize f, const usize l) noexcept
         : f(l - 1), l(std::min(f, l) - 1) {}
-    constexpr auto begin() const noexcept {
-      return f;
-    }
-    constexpr auto end() const noexcept {
-      return l;
-    }
+    constexpr auto begin() const noexcept { return f; }
+    constexpr auto end() const noexcept { return l; }
   };
 
 } // namespace luz

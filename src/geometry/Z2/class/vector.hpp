@@ -15,13 +15,9 @@ namespace luz {
       Vector(): x_(0), y_(0) {}
       Vector(Z x, Z y): x_(x), y_(y) {}
 
-      Z x() const {
-        return x_;
-      }
+      Z x() const { return x_; }
 
-      Z y() const {
-        return y_;
-      }
+      Z y() const { return y_; }
 
       bool operator==(const Vector &v) const {
         return x_ == v.x_ and y_ == v.y_;
@@ -49,12 +45,8 @@ namespace luz {
         return Vector(*this) -= v;
       }
 
-      Vector operator+() const {
-        return *this;
-      }
-      Vector operator-() const {
-        return Vector() - *this;
-      }
+      Vector operator+() const { return *this; }
+      Vector operator-() const { return Vector() - *this; }
     };
 
     template < typename Z >

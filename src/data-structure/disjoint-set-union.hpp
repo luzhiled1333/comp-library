@@ -17,9 +17,7 @@ namespace luz {
     //   otherwise: parent node
     std::vector< isize > vals_;
 
-    void bound_check(usize v) const {
-      assert(v < n_);
-    }
+    void bound_check(usize v) const { assert(v < n_); }
 
     usize impl_leader(usize v) {
       if (vals_[v] < 0)
@@ -31,9 +29,7 @@ namespace luz {
     DisjointSetUnion() = default;
     explicit DisjointSetUnion(usize n): n_(n), vals_(n, -1) {}
 
-    usize size() const {
-      return n_;
-    }
+    usize size() const { return n_; }
 
     usize leader(usize v) {
       bound_check(v);
