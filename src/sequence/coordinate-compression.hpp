@@ -6,11 +6,11 @@
 
 namespace luz {
 
-  template <typename T>
-  std::vector<usize> coordinate_compression(std::vector<T> vs) {
-    std::vector<usize> res(vs.size());
+  template < typename T >
+  std::vector< usize > coordinate_compression(std::vector< T > vs) {
+    std::vector< usize > res(vs.size());
 
-    std::vector<T> zip = vs;
+    std::vector< T > zip = vs;
     std::sort(zip.begin(), zip.end());
     zip.erase(std::unique(zip.begin(), zip.end()), zip.end());
 

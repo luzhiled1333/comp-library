@@ -9,8 +9,8 @@
 
 namespace luz {
 
-  template <typename T>
-  std::vector<T> bitwise_xor_convolution(std::vector<T> f, std::vector<T> g) {
+  template < typename T >
+  std::vector< T > bitwise_xor_convolution(std::vector< T > f, std::vector< T > g) {
     assert(f.size() == g.size());
 
     T inv2    = T(1) / T(2);

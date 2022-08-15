@@ -5,15 +5,15 @@
 
 namespace luz {
 
-  template <typename cost_type>
-  class FunctionalGraph: Graph<cost_type> {
-    using Graph<cost_type>::Graph;
-    using Graph<cost_type>::g;
-    using Graph<cost_type>::size;
-    using Graph<cost_type>::add_directed_edge;
+  template < typename cost_type >
+  class FunctionalGraph: Graph< cost_type > {
+    using Graph< cost_type >::Graph;
+    using Graph< cost_type >::g;
+    using Graph< cost_type >::size;
+    using Graph< cost_type >::add_directed_edge;
 
     usize LOG;
-    std::vector<std::vector<usize>> doubling_table;
+    std::vector< std::vector< usize > > doubling_table;
 
   public:
     void add_edge(usize from, usize to, cost_type cost = 1) {
@@ -29,7 +29,7 @@ namespace luz {
         LOG++;
       }
 
-      doubling_table.assign(LOG, std::vector<usize>(size()));
+      doubling_table.assign(LOG, std::vector< usize >(size()));
       for (usize v: rep(0, size())) {
         doubling_table[0][v] = (g[v].size() == 1 ? g[v][0].to : -1);
       }

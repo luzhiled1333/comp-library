@@ -9,8 +9,8 @@
 
 namespace luz {
 
-  template <typename T>
-  std::vector<T> bitwise_and_convolution(std::vector<T> f, std::vector<T> g) {
+  template < typename T >
+  std::vector< T > bitwise_and_convolution(std::vector< T > f, std::vector< T > g) {
     assert(f.size() == g.size());
 
     auto zeta   = [](T &lo, T hi) { return lo += hi; };

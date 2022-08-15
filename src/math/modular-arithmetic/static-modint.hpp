@@ -6,7 +6,7 @@
 
 namespace luz {
 
-  template <u32 mod>
+  template < u32 mod >
   class StaticPrimeModInt {
     using mint = StaticPrimeModInt;
     u32 v_;
@@ -14,7 +14,7 @@ namespace luz {
   public:
     StaticPrimeModInt(): v_(0) {}
 
-    template <typename T>
+    template < typename T >
     StaticPrimeModInt(T v) {
       i64 x = (i64)(v % (i64)mod);
       if (x < 0) x += mod;
@@ -82,7 +82,7 @@ namespace luz {
     }
   };
 
-  using modint998244353  = StaticPrimeModInt<998244353>;
-  using modint1000000007 = StaticPrimeModInt<1000000007>;
+  using modint998244353  = StaticPrimeModInt< 998244353 >;
+  using modint1000000007 = StaticPrimeModInt< 1000000007 >;
 
 } // namespace luz

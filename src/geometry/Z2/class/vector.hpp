@@ -6,7 +6,7 @@ namespace luz {
 
   namespace Z2 {
 
-    template <typename Z>
+    template < typename Z >
     class Vector {
 
       Z x_, y_;
@@ -57,8 +57,8 @@ namespace luz {
       }
     };
 
-    template <typename Z>
-    using Vectors = std::vector<Vector<Z>>;
+    template < typename Z >
+    using Vectors = std::vector< Vector< Z > >;
 
   } // namespace Z2
 

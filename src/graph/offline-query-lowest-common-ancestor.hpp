@@ -10,21 +10,21 @@
 
 namespace luz {
 
-  template <typename cost_type>
+  template < typename cost_type >
   class OfflineLCAQuery {
     usize g_size_;
-    Graph<cost_type> g_;
+    Graph< cost_type > g_;
 
     usize query_count_;
-    std::vector<std::vector<std::pair<usize, usize>>> qs_;
+    std::vector< std::vector< std::pair< usize, usize > > > qs_;
 
-    std::vector<std::unordered_map<usize, usize>> to_qi_;
+    std::vector< std::unordered_map< usize, usize > > to_qi_;
 
     DisjointSetUnion dsu_;
-    std::vector<bool> visited_;
-    std::vector<usize> ancestors_;
+    std::vector< bool > visited_;
+    std::vector< usize > ancestors_;
 
-    std::vector<usize> query_results_;
+    std::vector< usize > query_results_;
 
     void bound_check(usize v) const {
       assert(v < g_size_);
@@ -48,11 +48,11 @@ namespace luz {
     }
 
   public:
-    using Queries = std::vector<std::pair<usize, usize>>;
+    using Queries = std::vector< std::pair< usize, usize > >;
 
-    OfflineLCAQuery(Graph<cost_type> &g): g_size_(g.size()), g_(g),
-                                          query_count_(0), qs_(g_size_), to_qi_(g_size_),
-                                          dsu_(g_size_), visited_(g_size_, false), ancestors_(g_size_) {}
+    OfflineLCAQuery(Graph< cost_type > &g): g_size_(g.size()), g_(g),
+                                            query_count_(0), qs_(g_size_), to_qi_(g_size_),
+                                            dsu_(g_size_), visited_(g_size_, false), ancestors_(g_size_) {}
 
     usize add_query(usize u, usize v) {
       bound_check(u);

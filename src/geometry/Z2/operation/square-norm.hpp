@@ -7,8 +7,8 @@ namespace luz {
 
   namespace Z2 {
 
-    template <typename Z>
-    Z square_norm(Vector<Z> v) {
+    template < typename Z >
+    Z square_norm(Vector< Z > v) {
       return square(v.x()) + square(v.y());
     }
 

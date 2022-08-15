@@ -15,7 +15,7 @@ namespace luz {
     // vals_[v] :=
     //   if v is root node: -1 * component size
     //   otherwise: parent node
-    std::vector<isize> vals_;
+    std::vector< isize > vals_;
 
     void bound_check(usize v) const {
       assert(v < n_);
@@ -62,10 +62,10 @@ namespace luz {
       return -vals_[impl_leader(v)];
     }
 
-    std::vector<std::vector<usize>> groups() {
-      std::vector<std::vector<usize>> result(n_);
+    std::vector< std::vector< usize > > groups() {
+      std::vector< std::vector< usize > > result(n_);
 
-      std::vector<usize> leaders(n_), g_sizes(n_);
+      std::vector< usize > leaders(n_), g_sizes(n_);
       for (usize v: rep(0, n_)) {
         leaders[v] = impl_leader(v);
         g_sizes[leaders[v]]++;
@@ -77,7 +77,7 @@ namespace luz {
         result[leaders[v]].emplace_back(v);
       }
 
-      auto empty_check = [](const std::vector<usize> &vs) {
+      auto empty_check = [](const std::vector< usize > &vs) {
         return vs.empty();
       };
       result.erase(

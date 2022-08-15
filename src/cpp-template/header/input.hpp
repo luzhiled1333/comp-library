@@ -6,7 +6,7 @@
 
 namespace luz {
 
-  template <typename T = i64>
+  template < typename T = i64 >
   T input() {
     T tmp;
     std::cin >> tmp;

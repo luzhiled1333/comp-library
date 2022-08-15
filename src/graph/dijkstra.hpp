@@ -7,19 +7,19 @@
 
 namespace luz {
 
-  template <typename cost_type>
+  template < typename cost_type >
   class Dijkstra {
-    static constexpr usize undefined_ = std::numeric_limits<usize>::max();
-    static constexpr cost_type inf_   = std::numeric_limits<cost_type>::max();
+    static constexpr usize undefined_ = std::numeric_limits< usize >::max();
+    static constexpr cost_type inf_   = std::numeric_limits< cost_type >::max();
 
-    Graph<cost_type> g;
+    Graph< cost_type > g;
     usize g_size;
-    std::vector<cost_type> ds;
-    std::vector<usize> froms, ids;
+    std::vector< cost_type > ds;
+    std::vector< usize > froms, ids;
 
     void dijkstra(usize s) {
-      using pq_type = std::pair<cost_type, usize>;
-      std::priority_queue<pq_type, std::vector<pq_type>, std::greater<pq_type>> pq;
+      using pq_type = std::pair< cost_type, usize >;
+      std::priority_queue< pq_type, std::vector< pq_type >, std::greater< pq_type > > pq;
 
       ds[s] = 0;
       pq.emplace(ds[s], s);
@@ -40,8 +40,8 @@ namespace luz {
     }
 
   public:
-    explicit Dijkstra(const Graph<cost_type> &g_, usize source): g(g_), g_size(g.size()), ds(g_size, inf_),
-                                                                 froms(g_size, undefined_), ids(g_size, undefined_) {
+    explicit Dijkstra(const Graph< cost_type > &g_, usize source): g(g_), g_size(g.size()), ds(g_size, inf_),
+                                                                   froms(g_size, undefined_), ids(g_size, undefined_) {
       dijkstra(source);
     }
 
@@ -65,19 +65,19 @@ namespace luz {
       return ids[v];
     }
 
-    inline Graph<cost_type> get_original_graph() const {
+    inline Graph< cost_type > get_original_graph() const {
       return g;
     }
 
-    inline std::vector<cost_type> get_distances() const {
+    inline std::vector< cost_type > get_distances() const {
       return ds;
     }
 
-    inline std::vector<usize> get_shortest_path_tree() const {
+    inline std::vector< usize > get_shortest_path_tree() const {
       return froms;
     }
 
-    inline std::vector<usize> get_edge_labels() const {
+    inline std::vector< usize > get_edge_labels() const {
       return ids;
     }
   };

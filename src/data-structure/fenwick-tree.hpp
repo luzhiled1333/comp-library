@@ -8,10 +8,10 @@
 
 namespace luz {
 
-  template <typename T>
+  template < typename T >
   class FenwickTree {
     usize n_;
-    std::vector<T> vals_;
+    std::vector< T > vals_;
 
     T sum(usize k) const {
       T result(0);
@@ -27,7 +27,7 @@ namespace luz {
 
     explicit FenwickTree(usize n): n_(n), vals_(n + 1, T()) {}
 
-    explicit FenwickTree(const std::vector<T> &as): n_(as.size()), vals_(as.size() + 1, T()) {
+    explicit FenwickTree(const std::vector< T > &as): n_(as.size()), vals_(as.size() + 1, T()) {
       for (usize i: rep(1, as.size() + 1)) {
         vals_[i] = as[i - 1];
       }
