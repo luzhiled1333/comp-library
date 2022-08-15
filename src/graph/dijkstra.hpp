@@ -32,7 +32,8 @@ namespace luz {
         auto [cost, v] = pq.top();
         pq.pop();
 
-        if (ds[v] < cost) continue;
+        if (ds[v] < cost)
+          continue;
         for (auto &e: g[v]) {
           if (chmin(ds[e.to], cost + e.cost)) {
             pq.emplace(ds[e.to], e.to);
@@ -50,11 +51,17 @@ namespace luz {
       dijkstra(source);
     }
 
-    inline usize undefined() const { return undefined_; }
+    inline usize undefined() const {
+      return undefined_;
+    }
 
-    inline cost_type inf() const { return inf_; }
+    inline cost_type inf() const {
+      return inf_;
+    }
 
-    inline cost_type dist(const usize v) const { return ds[v]; }
+    inline cost_type dist(const usize v) const {
+      return ds[v];
+    }
 
     inline usize
     from_on_shortest_path_tree(const usize v) const {

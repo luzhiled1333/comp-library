@@ -45,9 +45,12 @@ namespace luz {
     }
 
     usize jump(usize v, u64 k) {
-      if (k == 0) return v;
+      if (k == 0)
+        return v;
       for (usize i: rep(0, LOG)) {
-        if ((k & 1) == 1) { v = doubling_table[i][v]; }
+        if ((k & 1) == 1) {
+          v = doubling_table[i][v];
+        }
         k >>= 1;
       }
 
