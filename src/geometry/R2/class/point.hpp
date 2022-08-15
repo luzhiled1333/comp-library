@@ -15,4 +15,3 @@ namespace R2 {
 
 } // namespace R2
 } // namespace luz
-
