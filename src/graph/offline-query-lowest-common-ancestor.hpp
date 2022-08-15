@@ -26,7 +26,9 @@ namespace luz {
 
     std::vector< usize > query_results_;
 
-    void bound_check(usize v) const { assert(v < g_size_); }
+    void bound_check(usize v) const {
+      assert(v < g_size_);
+    }
 
     void dfs(usize v) {
       visited_[v]   = true;

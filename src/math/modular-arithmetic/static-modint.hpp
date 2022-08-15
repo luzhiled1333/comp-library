@@ -22,7 +22,9 @@ namespace luz {
       v_ = (u32)x;
     }
 
-    u32 val() const { return v_; }
+    u32 val() const {
+      return v_;
+    }
 
     mint &operator+=(const mint &rhs) {
       v_ += rhs.v_;
@@ -45,8 +47,12 @@ namespace luz {
       return *this;
     }
 
-    mint operator+() const { return *this; }
-    mint operator-() const { return mint() - *this; }
+    mint operator+() const {
+      return *this;
+    }
+    mint operator-() const {
+      return mint() - *this;
+    }
 
     friend mint operator+(const mint &lhs, const mint &rhs) {
       return mint(lhs) += rhs;
