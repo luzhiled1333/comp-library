@@ -9,19 +9,19 @@
 
 namespace luz {
 
-namespace Z2 {
+  namespace Z2 {
 
-  template < typename Z >
-  bool is_intersect_cc(Circle< Z > c0, Circle< Z > c1) {
-    if (c0.r() > c1.r()) std::swap(c0, c1);
+    template < typename Z >
+    bool is_intersect_cc(Circle< Z > c0, Circle< Z > c1) {
+      if (c0.r() > c1.r()) std::swap(c0, c1);
 
-    Z sq_dist = square_norm(c0.center() - c1.center());
+      Z sq_dist = square_norm(c0.center() - c1.center());
 
-    if (sq_dist < square(c1.r() - c0.r())) return false;
-    if (square(c1.r() + c0.r()) < sq_dist) return false;
-    return true;
-  }
+      if (sq_dist < square(c1.r() - c0.r())) return false;
+      if (square(c1.r() + c0.r()) < sq_dist) return false;
+      return true;
+    }
 
-} // namespace Z2
+  } // namespace Z2
 
 } // namespace luz

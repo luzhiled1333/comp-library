@@ -7,22 +7,22 @@
 
 namespace luz {
 
-template < typename T >
-std::ostream &operator<<(std::ostream &os,
-                         const std::vector< T > vs) {
-  for (usize i: rep(0, vs.size())) {
-    os << vs[i] << (i + 1 != vs.size() ? " " : "");
+  template < typename T >
+  std::ostream &operator<<(std::ostream &os,
+                           const std::vector< T > vs) {
+    for (usize i: rep(0, vs.size())) {
+      os << vs[i] << (i + 1 != vs.size() ? " " : "");
+    }
+    return os;
   }
-  return os;
-}
 
-template < typename T >
-std::istream &operator>>(std::istream &is,
-                         std::vector< T > &vs) {
-  for (T &v: vs) {
-    is >> v;
+  template < typename T >
+  std::istream &operator>>(std::istream &is,
+                           std::vector< T > &vs) {
+    for (T &v: vs) {
+      is >> v;
+    }
+    return is;
   }
-  return is;
-}
 
 } // namespace luz
