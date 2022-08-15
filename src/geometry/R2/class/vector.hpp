@@ -22,12 +22,13 @@ namespace R2 {
       return y_;
     }
 
-    bool operator==(const Vector &v) const {
-      return x_ == v.x_ and y_ == v.y_;
-    }
-    bool operator!=(const Vector &v) const {
-      return x_ != v.x_ or  y_ != v.y_;
-    }
+    // TODO: consider EPS
+    // bool operator==(const Vector &v) const {
+    //   return x_ == v.x_ and y_ == v.y_;
+    // }
+    // bool operator!=(const Vector &v) const {
+    //   return x_ != v.x_ or  y_ != v.y_;
+    // }
 
     Vector &operator+=(const Vector &v) {
       x_ += v.x_; y_ += v.y_;
@@ -50,6 +51,22 @@ namespace R2 {
     }
     Vector operator-() const {
       return Vector() - *this;
+    }
+
+    Vector &operator*=(const R r) {
+      x_ *= r; y_ *= r;
+      return *this;
+    }
+    Vector &operator/=(const R r) {
+      x_ /= r; y_ /= r;
+      return *this;
+    }
+
+    Vector operator*(const R r) const {
+      return Vector(*this) *= r;
+    }
+    Vector operator/(const R r) const {
+      return Vector(*this) /= r;
     }
 
   };
