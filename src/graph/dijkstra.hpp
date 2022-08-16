@@ -32,8 +32,7 @@ namespace luz {
         auto [cost, v] = pq.top();
         pq.pop();
 
-        if (ds[v] < cost)
-          continue;
+        if (ds[v] < cost) continue;
         for (auto &e: g[v]) {
           if (chmin(ds[e.to], cost + e.cost)) {
             pq.emplace(ds[e.to], e.to);

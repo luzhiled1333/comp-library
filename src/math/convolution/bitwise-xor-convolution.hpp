@@ -30,7 +30,9 @@ namespace luz {
 
     fast_walsh_hadamard_transform(f, zeta);
     fast_walsh_hadamard_transform(g, zeta);
-    for (usize i: rep(0, f.size())) { f[i] *= g[i]; }
+    for (usize i: rep(0, f.size())) {
+      f[i] *= g[i];
+    }
     fast_walsh_hadamard_transform(f, mobius);
     return f;
   }

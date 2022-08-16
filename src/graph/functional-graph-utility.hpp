@@ -25,7 +25,9 @@ namespace luz {
 
     void initialize_jump(const u64 MAX_K) {
       LOG = 0;
-      while (usize(1) << (LOG + 1) <= MAX_K) { LOG++; }
+      while (usize(1) << (LOG + 1) <= MAX_K) {
+        LOG++;
+      }
 
       doubling_table.assign(LOG, std::vector< usize >(size()));
       for (usize v: rep(0, size())) {
@@ -44,8 +46,7 @@ namespace luz {
     }
 
     usize jump(usize v, u64 k) {
-      if (k == 0)
-        return v;
+      if (k == 0) return v;
       for (usize i: rep(0, LOG)) {
         if ((k & 1) == 1) {
           v = doubling_table[i][v];

@@ -13,15 +13,12 @@ namespace luz {
 
     template < typename Z >
     bool is_intersect_cc(Circle< Z > c0, Circle< Z > c1) {
-      if (c0.r() > c1.r())
-        std::swap(c0, c1);
+      if (c0.r() > c1.r()) std::swap(c0, c1);
 
       Z sq_dist = square_norm(c0.center() - c1.center());
 
-      if (sq_dist < square(c1.r() - c0.r()))
-        return false;
-      if (square(c1.r() + c0.r()) < sq_dist)
-        return false;
+      if (sq_dist < square(c1.r() - c0.r())) return false;
+      if (square(c1.r() + c0.r()) < sq_dist) return false;
       return true;
     }
 

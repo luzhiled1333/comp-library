@@ -22,8 +22,7 @@ namespace luz {
     }
 
     usize impl_leader(usize v) {
-      if (vals_[v] < 0)
-        return v;
+      if (vals_[v] < 0) return v;
       return vals_[v] = leader(vals_[v]);
     }
 
@@ -51,10 +50,8 @@ namespace luz {
 
       isize x = impl_leader(u);
       isize y = impl_leader(v);
-      if (x == y)
-        return x;
-      if (-vals_[x] < -vals_[y])
-        std::swap(x, y);
+      if (x == y) return x;
+      if (-vals_[x] < -vals_[y]) std::swap(x, y);
       vals_[x] += vals_[y];
       vals_[y] = x;
       return x;
@@ -73,7 +70,9 @@ namespace luz {
         leaders[v] = impl_leader(v);
         g_sizes[leaders[v]]++;
       }
-      for (usize v: rep(0, n_)) { result[v].reserve(g_sizes[v]); }
+      for (usize v: rep(0, n_)) {
+        result[v].reserve(g_sizes[v]);
+      }
       for (usize v: rep(0, n_)) {
         result[leaders[v]].emplace_back(v);
       }
