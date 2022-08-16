@@ -12,7 +12,7 @@ namespace luz {
       Point< Z > o_;
       Z r_;
 
-    public:
+     public:
       Circle(): o_(0, 0), r_(0) {}
 
       Circle(Point< Z > o, Z r): o_(o), r_(r) {

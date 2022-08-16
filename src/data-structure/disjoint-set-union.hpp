@@ -27,7 +27,7 @@ namespace luz {
       return vals_[v] = leader(vals_[v]);
     }
 
-  public:
+   public:
     DisjointSetUnion() = default;
     explicit DisjointSetUnion(usize n): n_(n), vals_(n, -1) {}
 
@@ -73,9 +73,7 @@ namespace luz {
         leaders[v] = impl_leader(v);
         g_sizes[leaders[v]]++;
       }
-      for (usize v: rep(0, n_)) {
-        result[v].reserve(g_sizes[v]);
-      }
+      for (usize v: rep(0, n_)) { result[v].reserve(g_sizes[v]); }
       for (usize v: rep(0, n_)) {
         result[leaders[v]].emplace_back(v);
       }
@@ -83,9 +81,9 @@ namespace luz {
       auto empty_check = [](const std::vector< usize > &vs) {
         return vs.empty();
       };
-      result.erase(std::remove_if(result.begin(), result.end(),
-                                  empty_check),
-                   result.end());
+      result.erase(
+          std::remove_if(result.begin(), result.end(), empty_check),
+          result.end());
 
       return result;
     }

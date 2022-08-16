@@ -44,7 +44,7 @@ namespace luz {
       }
     }
 
-  public:
+   public:
     explicit Dijkstra(const Graph< cost_type > &g_, usize source)
         : g(g_), g_size(g.size()), ds(g_size, inf_),
           froms(g_size, undefined_), ids(g_size, undefined_) {
@@ -63,8 +63,7 @@ namespace luz {
       return ds[v];
     }
 
-    inline usize
-    from_on_shortest_path_tree(const usize v) const {
+    inline usize from_on_shortest_path_tree(const usize v) const {
       return froms[v];
     }
 

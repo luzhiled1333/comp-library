@@ -49,13 +49,13 @@ namespace luz {
       }
     }
 
-  public:
+   public:
     using Queries = std::vector< std::pair< usize, usize > >;
 
     OfflineLCAQuery(Graph< cost_type > &g)
-        : g_size_(g.size()), g_(g), query_count_(0),
-          qs_(g_size_), to_qi_(g_size_), dsu_(g_size_),
-          visited_(g_size_, false), ancestors_(g_size_) {}
+        : g_size_(g.size()), g_(g), query_count_(0), qs_(g_size_),
+          to_qi_(g_size_), dsu_(g_size_), visited_(g_size_, false),
+          ancestors_(g_size_) {}
 
     usize add_query(usize u, usize v) {
       bound_check(u);

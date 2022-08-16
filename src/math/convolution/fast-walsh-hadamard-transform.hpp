@@ -17,9 +17,7 @@ namespace luz {
       while (i < n) {
         usize j = 0;
         while (j < n) {
-          for (usize k: rep(0, i)) {
-            op(f[j + k], f[j + k + i]);
-          }
+          for (usize k: rep(0, i)) { op(f[j + k], f[j + k + i]); }
           j += i << 1;
         }
         i <<= 1;

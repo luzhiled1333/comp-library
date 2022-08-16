@@ -17,8 +17,7 @@ namespace luz {
   }
 
   template < typename T >
-  std::istream &operator>>(std::istream &is,
-                           std::vector< T > &vs) {
+  std::istream &operator>>(std::istream &is, std::vector< T > &vs) {
     for (T &v: vs) { is >> v; }
     return is;
   }

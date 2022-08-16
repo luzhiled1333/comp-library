@@ -15,7 +15,7 @@ namespace luz {
     usize LOG;
     std::vector< std::vector< usize > > doubling_table;
 
-  public:
+   public:
     void add_edge(usize from, usize to, cost_type cost = 1) {
       assert(from < size());
       assert(to < size());
@@ -29,8 +29,7 @@ namespace luz {
 
       doubling_table.assign(LOG, std::vector< usize >(size()));
       for (usize v: rep(0, size())) {
-        doubling_table[0][v] =
-            (g[v].size() == 1 ? g[v][0].to : -1);
+        doubling_table[0][v] = (g[v].size() == 1 ? g[v][0].to : -1);
       }
       for (usize k: rep(1, LOG)) {
         for (usize v: rep(0, size())) {

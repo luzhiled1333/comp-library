@@ -11,7 +11,7 @@ namespace luz {
     using mint = StaticPrimeModInt;
     u32 v_;
 
-  public:
+   public:
     StaticPrimeModInt(): v_(0) {}
 
     template < typename T >

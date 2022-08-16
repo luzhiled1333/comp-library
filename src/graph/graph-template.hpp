@@ -9,7 +9,7 @@ namespace luz {
 
   template < typename cost_type >
   class Edge {
-  public:
+   public:
     usize from, to;
     cost_type cost;
     usize id;
@@ -23,11 +23,11 @@ namespace luz {
 
   template < typename cost_type >
   class Graph {
-  protected:
+   protected:
     std::vector< std::vector< Edge< cost_type > > > g;
     usize edge_count;
 
-  public:
+   public:
     Graph() = default;
     explicit Graph(usize n): g(n), edge_count(0) {}
 
@@ -35,15 +35,13 @@ namespace luz {
       return g.size();
     }
 
-    void add_directed_edge(usize from, usize to,
-                           cost_type cost = 1) {
+    void add_directed_edge(usize from, usize to, cost_type cost = 1) {
       assert(from < size());
       assert(to < size());
       g[from].emplace_back(from, to, cost, edge_count++);
     }
 
-    void add_undirected_edge(usize u, usize v,
-                             cost_type cost = 1) {
+    void add_undirected_edge(usize u, usize v, cost_type cost = 1) {
       assert(u < size());
       assert(v < size());
       g[u].emplace_back(u, v, cost, edge_count);
