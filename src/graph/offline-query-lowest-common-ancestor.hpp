@@ -35,16 +35,14 @@ namespace luz {
       ancestors_[v] = v;
 
       for (const auto &e: g_[v]) {
-        if (visited_[e.to])
-          continue;
+        if (visited_[e.to]) continue;
         dfs(e.to);
         dsu_.merge(v, e.to);
         ancestors_[dsu_.leader(v)] = v;
       }
 
       for (const auto &[u, qi]: qs_[v]) {
-        if (not visited_[u])
-          continue;
+        if (not visited_[u]) continue;
         query_results_[qi] = ancestors_[dsu_.leader(u)];
       }
     }
