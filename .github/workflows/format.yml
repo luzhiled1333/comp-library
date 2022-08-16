@@ -15,6 +15,7 @@ jobs:
       run: |
         sudo wget -qO - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add - 2>/dev/null
         sudo add-apt-repository "deb http://apt.llvm.org/`lsb_release -sc`/ llvm-toolchain-`lsb_release -sc` main" 2>/dev/null
+	sudo apt-get update
         sudo apt-get install clang-format-16
     - name: apply formatter
       run: |
