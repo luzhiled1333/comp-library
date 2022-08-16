@@ -1,5 +1,5 @@
 BasedOnStyle: LLVM
-AccessModifierOffset: -2
+AccessModifierOffset: -1
 AlignAfterOpenBracket: Align
 AlignConsecutiveAssignments: true
 AlignOperands: false
@@ -32,7 +32,7 @@ BreakBeforeBinaryOperators: None
 BreakBeforeTernaryOperators: true
 BreakConstructorInitializers: BeforeColon
 BreakInheritanceList: BeforeColon
-ColumnLimit: 65
+ColumnLimit: 70
 CompactNamespaces: false
 ContinuationIndentWidth: 4
 IndentCaseLabels: true
