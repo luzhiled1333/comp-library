@@ -13,11 +13,12 @@ jobs:
         ref: ${{ github.ref }}
     - name: install tools
       run: |
-        sudo apt update
-        sudo apt install clang-format
+        sudo wget -qO - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add - 2>/dev/null
+	sudo add-apt-repository "deb http://apt.llvm.org/`lsb_release -sc`/ llvm-toolchain-`lsb_release -sc` main" 2>/dev/null
+        sudo apt install clang-format-16
     - name: apply formatter
       run: |
-        clang-format -i $(find . -name "*.hpp")
+        clang-format-16 -i $(find . -name "*.hpp")
     - name: push
       run: |
         git config user.name github-actions
