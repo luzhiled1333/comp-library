@@ -15,7 +15,10 @@ namespace luz {
     usize id;
     Edge() = default;
     Edge(usize from_, usize to_, cost_type cost_, usize id_)
-        : from(from_), to(to_), cost(cost_), id(id_) {}
+        : from(from_),
+          to(to_),
+          cost(cost_),
+          id(id_) {}
   };
 
   template < typename cost_type >
@@ -52,8 +55,8 @@ namespace luz {
       return g[v];
     }
 
-    inline const Edges< cost_type > &
-    operator[](const usize &v) const {
+    inline const Edges< cost_type > &operator[](
+        const usize &v) const {
       return g[v];
     }
   };

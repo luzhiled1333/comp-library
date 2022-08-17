@@ -1,9 +1,9 @@
 #pragma once
 
-#include "src/cpp-template/header/rep.hpp"
-
 #include <iostream>
 #include <vector>
+
+#include "src/cpp-template/header/rep.hpp"
 
 namespace luz {
 

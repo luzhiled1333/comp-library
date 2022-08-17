@@ -1,10 +1,10 @@
 #pragma once
 
-#include "src/cpp-template/header/rep.hpp"
-#include "src/cpp-template/header/type-alias.hpp"
-
 #include <cassert>
 #include <vector>
+
+#include "src/cpp-template/header/rep.hpp"
+#include "src/cpp-template/header/type-alias.hpp"
 
 namespace luz {
 
@@ -28,7 +28,8 @@ namespace luz {
     explicit FenwickTree(usize n): n_(n), vals_(n + 1, T()) {}
 
     explicit FenwickTree(const std::vector< T > &as)
-        : n_(as.size()), vals_(as.size() + 1, T()) {
+        : n_(as.size()),
+          vals_(as.size() + 1, T()) {
       for (usize i: rep(1, as.size() + 1)) {
         vals_[i] = as[i - 1];
       }

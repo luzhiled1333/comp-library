@@ -45,8 +45,11 @@ namespace luz {
 
    public:
     explicit Dijkstra(const Graph< cost_type > &g_, usize source)
-        : g(g_), g_size(g.size()), ds(g_size, inf_),
-          froms(g_size, undefined_), ids(g_size, undefined_) {
+        : g(g_),
+          g_size(g.size()),
+          ds(g_size, inf_),
+          froms(g_size, undefined_),
+          ids(g_size, undefined_) {
       dijkstra(source);
     }
 

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "src/cpp-template/header/type-alias.hpp"
-
 #include <iostream>
+
+#include "src/cpp-template/header/type-alias.hpp"
 
 namespace luz {
 

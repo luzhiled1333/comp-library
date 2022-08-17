@@ -1,8 +1,8 @@
 #pragma once
 
-#include "src/cpp-template/header/type-alias.hpp"
-
 #include <algorithm>
+
+#include "src/cpp-template/header/type-alias.hpp"
 
 namespace luz {
 
@@ -22,7 +22,8 @@ namespace luz {
     };
     const itr f, l;
     constexpr rep(const usize f, const usize l) noexcept
-        : f(std::min(f, l)), l(l) {}
+        : f(std::min(f, l)),
+          l(l) {}
     constexpr auto begin() const noexcept {
       return f;
     }
@@ -47,7 +48,8 @@ namespace luz {
     };
     const itr f, l;
     constexpr rrep(const usize f, const usize l) noexcept
-        : f(l - 1), l(std::min(f, l) - 1) {}
+        : f(l - 1),
+          l(std::min(f, l) - 1) {}
     constexpr auto begin() const noexcept {
       return f;
     }
