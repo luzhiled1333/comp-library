@@ -1,7 +1,7 @@
 name: clang-format
 
 on:
-  push:
+  pull_request:
 
 jobs:
   format:
@@ -19,11 +19,4 @@ jobs:
         sudo apt-get install clang-format-16
     - name: apply formatter
       run: |
-        clang-format-16 -i $(find . -name "*.hpp")
-    - name: push
-      run: |
-        git config user.name github-actions
-        git config user.email github-actions@github.com
-        git add .
-        git commit -m "[clang-format] apply"
-        git push
+        clang-format-16 --dry-run --Werror $(find . -name "*.hpp")
