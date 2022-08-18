@@ -3,8 +3,8 @@
 namespace luz::Z2 {
 
   template< typename Z >
-  Z square(const Z z) {
-    return z * z;
+  Z square(const Z x) {
+    return x * x;
   }
 
 } // namespace luz::Z2
