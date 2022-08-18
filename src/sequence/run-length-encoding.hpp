@@ -1,10 +1,10 @@
 #pragma once
 
+#include "src/cpp-template/header/type-alias.hpp"
+
 #include <string>
 #include <utility>
 #include <vector>
-
-#include "src/cpp-template/header/type-alias.hpp"
 
 namespace luz {
   namespace impl {

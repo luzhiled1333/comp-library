@@ -1,9 +1,9 @@
+#include "src/cpp-template/header/change-minmax.hpp"
+#include "src/graph/graph-template.hpp"
+
 #include <limits>
 #include <queue>
 #include <utility>
-
-#include "src/cpp-template/header/change-minmax.hpp"
-#include "src/graph/graph-template.hpp"
 
 namespace luz {
 

@@ -1,11 +1,11 @@
 #pragma once
 
-#include <cassert>
-#include <vector>
-
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/math/convolution/fast-walsh-hadamard-transform.hpp"
+
+#include <cassert>
+#include <vector>
 
 namespace luz {
 

@@ -1,9 +1,9 @@
 #pragma once
 
+#include "src/cpp-template/header/type-alias.hpp"
+
 #include <cassert>
 #include <vector>
-
-#include "src/cpp-template/header/type-alias.hpp"
 
 namespace luz {
 

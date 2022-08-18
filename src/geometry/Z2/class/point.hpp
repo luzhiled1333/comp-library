@@ -1,8 +1,8 @@
 #pragma once
 
-#include <vector>
-
 #include "src/geometry/Z2/class/vector.hpp"
+
+#include <vector>
 
 namespace luz {
 

@@ -1,12 +1,12 @@
-#include <cassert>
-#include <unordered_map>
-#include <utility>
-#include <vector>
-
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/data-structure/disjoint-set-union.hpp"
 #include "src/graph/graph-template.hpp"
+
+#include <cassert>
+#include <unordered_map>
+#include <utility>
+#include <vector>
 
 namespace luz {
 

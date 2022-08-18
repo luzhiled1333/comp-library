@@ -1,7 +1,7 @@
-#include <cassert>
-
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/graph/graph-template.hpp"
+
+#include <cassert>
 
 namespace luz {
 

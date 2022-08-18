@@ -1,8 +1,8 @@
 #pragma once
 
-#include <cassert>
-
 #include "src/cpp-template/header/type-alias.hpp"
+
+#include <cassert>
 
 namespace luz {
 

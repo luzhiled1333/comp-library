@@ -1,11 +1,11 @@
 #pragma once
 
-#include <utility>
-
 #include "src/geometry/Z2/class/circle.hpp"
 #include "src/geometry/Z2/class/point.hpp"
 #include "src/geometry/Z2/operation/square-norm.hpp"
 #include "src/geometry/Z2/operation/square.hpp"
+
+#include <utility>
 
 namespace luz {
 
