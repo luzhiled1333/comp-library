@@ -21,4 +21,4 @@ namespace luz {
     return res;
   }
 
-}
+} // namespace luz

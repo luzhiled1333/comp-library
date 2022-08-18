@@ -6,7 +6,7 @@
 #include <cassert>
 #include <vector>
 
-namespace luz {
+namespace luz::impl {
  
   template< typename T >
   void impl_fwht(std::vector< T > &f, bool is_inverse_transform) {
@@ -33,15 +33,19 @@ namespace luz {
     T n_inv = T(1) / T(n);
     for (auto &x: f) x *= n_inv;
   }
+
+} // namespace luz::impl
+
+namespace luz {
  
   template< typename T >
   void fast_walsh_hadamard_transform(std::vector< T > &f) {
-    impl_fwht(f, false);
+    impl::impl_fwht(f, false);
   }
  
   template< typename T >
   void fast_walsh_hadamard_inverse_transform(std::vector< T > &f) {
-    impl_fwht(f, true);
+    impl::impl_fwht(f, true);
   }
  
 } // namespace luz

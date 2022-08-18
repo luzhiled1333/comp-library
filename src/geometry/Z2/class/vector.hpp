@@ -2,9 +2,7 @@
 
 #include <vector>
 
-namespace luz {
-
-namespace Z2 {
+namespace luz::Z2 {
 
   template< typename Z >
   class Vector {
@@ -54,6 +52,4 @@ namespace Z2 {
   template< typename Z >
   using Vectors = std::vector< Vector<Z> >;
 
-} // namespace Z2
-
-} // namespace luz
+} // namespace luz::Z2
