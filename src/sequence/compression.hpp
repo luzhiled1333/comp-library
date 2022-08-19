@@ -11,18 +11,19 @@ namespace luz {
   class Compressor {
     std::vector< T > vs_;
     std::vector< T > zip_;
+    std::vector< usize > ziped_vs_;
 
    public:
-    explicit Compressor(std::vector< T > vs): vs_(vs), zip_(vs) {
+    explicit Compressor(std::vector< T > vs): vs_(vs), zip_(vs), ziped_vs_(vs.size()) {
       std::sort(zip_.begin(), zip_.end(), Compare());
       zip_.erase(std::unique(zip_.begin(), zip_.end()), zip_.end());
-      for (auto &v: vs_) {
-        v = std::lower_bound(zip_.begin(), zip_.end(), v) - zip_.begin();
+      for (usize i: rep(0, vs.size())) {
+        ziped_vs_[i] = compress(vs[i]);
       }
     }
 
-    std::vector< T > result_of_compressing_vs() const {
-      return vs_;
+    std::vector< usize > result_of_compressing_vs() const {
+      return ziped_vs_;
     }
 
     usize compress(T v) const {
