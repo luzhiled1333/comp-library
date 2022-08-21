@@ -7,9 +7,7 @@
 
 #include <utility>
 
-namespace luz {
-
-namespace Z2 {
+namespace luz::Z2 {
 
   template< typename Z >
   bool is_intersect_cc(Circle< Z > c0, Circle< Z > c1) {
@@ -22,6 +20,4 @@ namespace Z2 {
     return true;
   }
 
-} // namespace Z2
-
-} // namespace luz
+} // namespace luz::Z2

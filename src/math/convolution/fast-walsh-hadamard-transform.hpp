@@ -6,8 +6,7 @@
 #include <cassert>
 #include <vector>
 
-namespace luz {
-namespace impl {
+namespace luz::impl {
 
   template< typename T, typename F >
   void impl_fwht(std::vector< T > &f, F op) {
@@ -25,9 +24,7 @@ namespace impl {
       i <<= 1;
     }
   }
-
-} // namespace impl
-} // namespace luz
+} // namespace luz::impl
 
 namespace luz {
 
