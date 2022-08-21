@@ -112,9 +112,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/unionfind.test.cpp
-  - test/atcoder/abc177_d.test.cpp
-  - test/aoj/dsl_1_a.test.cpp
   - test/aoj/grl_5_c.test.cpp
+  - test/aoj/dsl_1_a.test.cpp
+  - test/atcoder/abc177_d.test.cpp
 documentation_of: src/data-structure/disjoint-set-union.hpp
 layout: document
 title: Disjoint Set Union (Union Find)

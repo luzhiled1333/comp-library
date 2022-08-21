@@ -41,14 +41,14 @@ data:
   isVerificationFile: false
   path: src/cpp-template/header/input.hpp
   requiredBy:
-  - src/cpp-template/header/template-header.hpp
   - src/cpp-template/template.cpp
+  - src/cpp-template/header/template-header.hpp
   timestamp: '2022-07-16 05:05:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/atcoder/abc212_h.test.cpp
   - test/aoj/grl_1_a.test.cpp
   - test/aoj/itp1_1_a.test.cpp
+  - test/atcoder/abc212_h.test.cpp
 documentation_of: src/cpp-template/header/input.hpp
 layout: document
 title: input

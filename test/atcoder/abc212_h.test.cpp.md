@@ -53,13 +53,13 @@ data:
     \ >> tmp;\n    return tmp;\n  }\n\n} // namespace luz\n#line 6 \"test/atcoder/abc212_h.test.cpp\"\
     \n\n#line 2 \"src/math/convolution/fast-walsh-hadamard-transform.hpp\"\n\n#line\
     \ 5 \"src/math/convolution/fast-walsh-hadamard-transform.hpp\"\n\n#include <cassert>\n\
-    #include <vector>\n\nnamespace luz {\nnamespace impl {\n\n  template< typename\
-    \ T, typename F >\n  void impl_fwht(std::vector< T > &f, F op) {\n    const usize\
-    \ n = f.size();\n    assert((n & (n - 1)) == 0);\n    usize i = 1;\n    while\
-    \ (i < n) {\n      usize j = 0;\n      while (j < n) {\n        for (usize k:\
-    \ rep(0, i)) {\n          op(f[j + k], f[j + k + i]);\n        }\n        j +=\
-    \ i << 1;\n      }\n      i <<= 1;\n    }\n  }\n\n} // namespace impl\n} // namespace\
-    \ luz\n\nnamespace luz {\n\n  template< typename T, typename F >\n  void fast_walsh_hadamard_transform(std::vector<\
+    #include <vector>\n\nnamespace luz::impl {\n\n  template< typename T, typename\
+    \ F >\n  void impl_fwht(std::vector< T > &f, F op) {\n    const usize n = f.size();\n\
+    \    assert((n & (n - 1)) == 0);\n    usize i = 1;\n    while (i < n) {\n    \
+    \  usize j = 0;\n      while (j < n) {\n        for (usize k: rep(0, i)) {\n \
+    \         op(f[j + k], f[j + k + i]);\n        }\n        j += i << 1;\n     \
+    \ }\n      i <<= 1;\n    }\n  }\n} // namespace luz::impl\n\nnamespace luz {\n\
+    \n  template< typename T, typename F >\n  void fast_walsh_hadamard_transform(std::vector<\
     \ T > &f, F op) {\n    impl::impl_fwht(f, op);\n  }\n\n} // namespace luz\n#line\
     \ 2 \"src/math/modular-arithmetic/static-modint.hpp\"\n\n#line 4 \"src/math/modular-arithmetic/static-modint.hpp\"\
     \n\n#line 6 \"src/math/modular-arithmetic/static-modint.hpp\"\n\nnamespace luz\
@@ -132,7 +132,7 @@ data:
   isVerificationFile: true
   path: test/atcoder/abc212_h.test.cpp
   requiredBy: []
-  timestamp: '2022-08-09 21:26:56+09:00'
+  timestamp: '2022-08-22 07:19:34+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/atcoder/abc212_h.test.cpp

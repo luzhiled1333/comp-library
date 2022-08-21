@@ -43,7 +43,7 @@ data:
     \ zip = vs;\n    std::sort(zip.begin(), zip.end());\n    zip.erase(std::unique(zip.begin(),\
     \ zip.end()), zip.end());\n\n    for (usize i: rep(0, vs.size())) {\n      res[i]\
     \ = std::lower_bound(zip.begin(), zip.end(), vs[i]) - zip.begin();\n    }\n\n\
-    \    return res;\n  }\n\n}\n"
+    \    return res;\n  }\n\n} // namespace luz\n"
   code: "#include <algorithm>\n#include <vector>\n\n#include \"src/cpp-template/header/type-alias.hpp\"\
     \n#include \"src/cpp-template/header/rep.hpp\"\n\nnamespace luz {\n\n  template<\
     \ typename T >\n  std::vector< usize > coordinate_compression(std::vector< T >\
@@ -51,14 +51,14 @@ data:
     \ = vs;\n    std::sort(zip.begin(), zip.end());\n    zip.erase(std::unique(zip.begin(),\
     \ zip.end()), zip.end());\n\n    for (usize i: rep(0, vs.size())) {\n      res[i]\
     \ = std::lower_bound(zip.begin(), zip.end(), vs[i]) - zip.begin();\n    }\n\n\
-    \    return res;\n  }\n\n}\n"
+    \    return res;\n  }\n\n} // namespace luz\n"
   dependsOn:
   - src/cpp-template/header/type-alias.hpp
   - src/cpp-template/header/rep.hpp
   isVerificationFile: false
   path: src/sequence/coordinate-compression.hpp
   requiredBy: []
-  timestamp: '2022-07-16 05:13:03+09:00'
+  timestamp: '2022-08-22 07:19:34+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - unit-test/sequence/coordinate-complession.test.cpp

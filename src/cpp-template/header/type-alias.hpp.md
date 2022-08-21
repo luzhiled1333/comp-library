@@ -127,41 +127,41 @@ data:
   requiredBy:
   - test/atcoder/abc259_c.cpp
   - test/atcoder/abc259_d.cpp
-  - src/math/convolution/bitwise-and-convolution.hpp
-  - src/math/convolution/fast-walsh-hadamard-transform.hpp
-  - src/math/convolution/bitwise-xor-convolution.hpp
-  - src/math/modular-arithmetic/static-modint.hpp
-  - src/graph/graph-template.hpp
-  - src/graph/dijkstra.hpp
-  - src/graph/functional-graph-utility.hpp
-  - src/graph/offline-query-lowest-common-ancestor.hpp
-  - src/data-structure/fenwick-tree.hpp
-  - src/data-structure/disjoint-set-union.hpp
-  - src/sequence/run-length-encoding.hpp
-  - src/sequence/coordinate-compression.hpp
-  - src/cpp-template/header/make-vector.hpp
+  - src/cpp-template/template.cpp
+  - src/cpp-template/header/io-set.hpp
+  - src/cpp-template/header/vector-ios.hpp
   - src/cpp-template/header/template-header.hpp
   - src/cpp-template/header/rep.hpp
-  - src/cpp-template/header/vector-ios.hpp
-  - src/cpp-template/header/io-set.hpp
   - src/cpp-template/header/input.hpp
-  - src/cpp-template/template.cpp
+  - src/cpp-template/header/make-vector.hpp
+  - src/data-structure/disjoint-set-union.hpp
+  - src/data-structure/fenwick-tree.hpp
+  - src/graph/dijkstra.hpp
+  - src/graph/graph-template.hpp
+  - src/graph/functional-graph-utility.hpp
+  - src/graph/offline-query-lowest-common-ancestor.hpp
+  - src/math/convolution/bitwise-xor-convolution.hpp
+  - src/math/convolution/bitwise-and-convolution.hpp
+  - src/math/convolution/fast-walsh-hadamard-transform.hpp
+  - src/math/modular-arithmetic/static-modint.hpp
+  - src/sequence/run-length-encoding.hpp
+  - src/sequence/coordinate-compression.hpp
   timestamp: '2022-07-16 00:29:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - unit-test/math/modular-arithmetic/static-modint.test.cpp
-  - unit-test/data-structure/fenwick-tree.test.cpp
-  - unit-test/sequence/coordinate-complession.test.cpp
-  - test/library-checker/unionfind.test.cpp
   - test/library-checker/bitwise_and_convolution.test.cpp
+  - test/library-checker/unionfind.test.cpp
   - test/library-checker/bitwise_xor_convolution.test.cpp
-  - test/atcoder/abc177_d.test.cpp
-  - test/atcoder/abc212_h.test.cpp
-  - test/aoj/dsl_2_b.test.cpp
   - test/aoj/grl_1_a.test.cpp
-  - test/aoj/dsl_1_a.test.cpp
-  - test/aoj/itp1_1_a.test.cpp
+  - test/aoj/dsl_2_b.test.cpp
   - test/aoj/grl_5_c.test.cpp
+  - test/aoj/itp1_1_a.test.cpp
+  - test/aoj/dsl_1_a.test.cpp
+  - test/atcoder/abc212_h.test.cpp
+  - test/atcoder/abc177_d.test.cpp
+  - unit-test/data-structure/fenwick-tree.test.cpp
+  - unit-test/math/modular-arithmetic/static-modint.test.cpp
+  - unit-test/sequence/coordinate-complession.test.cpp
 documentation_of: src/cpp-template/header/type-alias.hpp
 layout: document
 title: Type alias

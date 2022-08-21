@@ -27,8 +27,8 @@ data:
   isVerificationFile: false
   path: src/cpp-template/header/fast-ios.hpp
   requiredBy:
-  - src/cpp-template/header/template-header.hpp
   - src/cpp-template/template.cpp
+  - src/cpp-template/header/template-header.hpp
   timestamp: '2022-07-16 04:59:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

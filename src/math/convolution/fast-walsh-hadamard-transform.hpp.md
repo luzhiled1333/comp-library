@@ -50,34 +50,33 @@ data:
     \ usize l) noexcept\n      : f(l - 1), l(std::min(f, l) - 1) {}\n    constexpr\
     \ auto begin() const noexcept { return f; }\n    constexpr auto end() const noexcept\
     \ { return l; }\n  };\n\n} // namespace luz\n#line 5 \"src/math/convolution/fast-walsh-hadamard-transform.hpp\"\
-    \n\n#include <cassert>\n#include <vector>\n\nnamespace luz {\nnamespace impl {\n\
-    \n  template< typename T, typename F >\n  void impl_fwht(std::vector< T > &f,\
-    \ F op) {\n    const usize n = f.size();\n    assert((n & (n - 1)) == 0);\n  \
-    \  usize i = 1;\n    while (i < n) {\n      usize j = 0;\n      while (j < n)\
-    \ {\n        for (usize k: rep(0, i)) {\n          op(f[j + k], f[j + k + i]);\n\
-    \        }\n        j += i << 1;\n      }\n      i <<= 1;\n    }\n  }\n\n} //\
-    \ namespace impl\n} // namespace luz\n\nnamespace luz {\n\n  template< typename\
-    \ T, typename F >\n  void fast_walsh_hadamard_transform(std::vector< T > &f, F\
-    \ op) {\n    impl::impl_fwht(f, op);\n  }\n\n} // namespace luz\n"
-  code: "#pragma once\n\n#include \"src/cpp-template/header/type-alias.hpp\"\n#include\
-    \ \"src/cpp-template/header/rep.hpp\"\n\n#include <cassert>\n#include <vector>\n\
-    \nnamespace luz {\nnamespace impl {\n\n  template< typename T, typename F >\n\
-    \  void impl_fwht(std::vector< T > &f, F op) {\n    const usize n = f.size();\n\
-    \    assert((n & (n - 1)) == 0);\n    usize i = 1;\n    while (i < n) {\n    \
-    \  usize j = 0;\n      while (j < n) {\n        for (usize k: rep(0, i)) {\n \
-    \         op(f[j + k], f[j + k + i]);\n        }\n        j += i << 1;\n     \
-    \ }\n      i <<= 1;\n    }\n  }\n\n} // namespace impl\n} // namespace luz\n\n\
+    \n\n#include <cassert>\n#include <vector>\n\nnamespace luz::impl {\n\n  template<\
+    \ typename T, typename F >\n  void impl_fwht(std::vector< T > &f, F op) {\n  \
+    \  const usize n = f.size();\n    assert((n & (n - 1)) == 0);\n    usize i = 1;\n\
+    \    while (i < n) {\n      usize j = 0;\n      while (j < n) {\n        for (usize\
+    \ k: rep(0, i)) {\n          op(f[j + k], f[j + k + i]);\n        }\n        j\
+    \ += i << 1;\n      }\n      i <<= 1;\n    }\n  }\n} // namespace luz::impl\n\n\
     namespace luz {\n\n  template< typename T, typename F >\n  void fast_walsh_hadamard_transform(std::vector<\
     \ T > &f, F op) {\n    impl::impl_fwht(f, op);\n  }\n\n} // namespace luz\n"
+  code: "#pragma once\n\n#include \"src/cpp-template/header/type-alias.hpp\"\n#include\
+    \ \"src/cpp-template/header/rep.hpp\"\n\n#include <cassert>\n#include <vector>\n\
+    \nnamespace luz::impl {\n\n  template< typename T, typename F >\n  void impl_fwht(std::vector<\
+    \ T > &f, F op) {\n    const usize n = f.size();\n    assert((n & (n - 1)) ==\
+    \ 0);\n    usize i = 1;\n    while (i < n) {\n      usize j = 0;\n      while\
+    \ (j < n) {\n        for (usize k: rep(0, i)) {\n          op(f[j + k], f[j +\
+    \ k + i]);\n        }\n        j += i << 1;\n      }\n      i <<= 1;\n    }\n\
+    \  }\n} // namespace luz::impl\n\nnamespace luz {\n\n  template< typename T, typename\
+    \ F >\n  void fast_walsh_hadamard_transform(std::vector< T > &f, F op) {\n   \
+    \ impl::impl_fwht(f, op);\n  }\n\n} // namespace luz\n"
   dependsOn:
   - src/cpp-template/header/type-alias.hpp
   - src/cpp-template/header/rep.hpp
   isVerificationFile: false
   path: src/math/convolution/fast-walsh-hadamard-transform.hpp
   requiredBy:
-  - src/math/convolution/bitwise-and-convolution.hpp
   - src/math/convolution/bitwise-xor-convolution.hpp
-  timestamp: '2022-08-09 20:57:43+09:00'
+  - src/math/convolution/bitwise-and-convolution.hpp
+  timestamp: '2022-08-22 07:19:34+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/bitwise_and_convolution.test.cpp

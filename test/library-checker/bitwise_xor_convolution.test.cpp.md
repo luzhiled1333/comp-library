@@ -78,16 +78,16 @@ data:
     \ { return l; }\n  };\n\n} // namespace luz\n#line 2 \"src/math/convolution/fast-walsh-hadamard-transform.hpp\"\
     \n\n#line 5 \"src/math/convolution/fast-walsh-hadamard-transform.hpp\"\n\n#line\
     \ 7 \"src/math/convolution/fast-walsh-hadamard-transform.hpp\"\n#include <vector>\n\
-    \nnamespace luz {\nnamespace impl {\n\n  template< typename T, typename F >\n\
-    \  void impl_fwht(std::vector< T > &f, F op) {\n    const usize n = f.size();\n\
-    \    assert((n & (n - 1)) == 0);\n    usize i = 1;\n    while (i < n) {\n    \
-    \  usize j = 0;\n      while (j < n) {\n        for (usize k: rep(0, i)) {\n \
-    \         op(f[j + k], f[j + k + i]);\n        }\n        j += i << 1;\n     \
-    \ }\n      i <<= 1;\n    }\n  }\n\n} // namespace impl\n} // namespace luz\n\n\
-    namespace luz {\n\n  template< typename T, typename F >\n  void fast_walsh_hadamard_transform(std::vector<\
-    \ T > &f, F op) {\n    impl::impl_fwht(f, op);\n  }\n\n} // namespace luz\n#line\
-    \ 6 \"src/math/convolution/bitwise-xor-convolution.hpp\"\n\n#line 9 \"src/math/convolution/bitwise-xor-convolution.hpp\"\
-    \n\nnamespace luz {\n\n  template< typename T >\n  std::vector< T > bitwise_xor_convolution(std::vector<\
+    \nnamespace luz::impl {\n\n  template< typename T, typename F >\n  void impl_fwht(std::vector<\
+    \ T > &f, F op) {\n    const usize n = f.size();\n    assert((n & (n - 1)) ==\
+    \ 0);\n    usize i = 1;\n    while (i < n) {\n      usize j = 0;\n      while\
+    \ (j < n) {\n        for (usize k: rep(0, i)) {\n          op(f[j + k], f[j +\
+    \ k + i]);\n        }\n        j += i << 1;\n      }\n      i <<= 1;\n    }\n\
+    \  }\n} // namespace luz::impl\n\nnamespace luz {\n\n  template< typename T, typename\
+    \ F >\n  void fast_walsh_hadamard_transform(std::vector< T > &f, F op) {\n   \
+    \ impl::impl_fwht(f, op);\n  }\n\n} // namespace luz\n#line 6 \"src/math/convolution/bitwise-xor-convolution.hpp\"\
+    \n\n#line 9 \"src/math/convolution/bitwise-xor-convolution.hpp\"\n\nnamespace\
+    \ luz {\n\n  template< typename T >\n  std::vector< T > bitwise_xor_convolution(std::vector<\
     \ T > f, std::vector< T > g) {\n    assert(f.size() == g.size());\n\n    T inv2\
     \ = T(1) / T(2);\n    auto zeta = [](T& lo, T& hi) {\n      T x = lo + hi;\n \
     \     T y = lo - hi;\n      lo = x;\n      hi = y;\n    };\n    auto mobius =\
@@ -125,7 +125,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/bitwise_xor_convolution.test.cpp
   requiredBy: []
-  timestamp: '2022-08-09 20:57:43+09:00'
+  timestamp: '2022-08-22 07:19:34+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/bitwise_xor_convolution.test.cpp

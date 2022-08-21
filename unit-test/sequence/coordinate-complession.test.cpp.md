@@ -58,7 +58,7 @@ data:
     \ zip = vs;\n    std::sort(zip.begin(), zip.end());\n    zip.erase(std::unique(zip.begin(),\
     \ zip.end()), zip.end());\n\n    for (usize i: rep(0, vs.size())) {\n      res[i]\
     \ = std::lower_bound(zip.begin(), zip.end(), vs[i]) - zip.begin();\n    }\n\n\
-    \    return res;\n  }\n\n}\n#line 11 \"unit-test/sequence/coordinate-complession.test.cpp\"\
+    \    return res;\n  }\n\n} // namespace luz\n#line 11 \"unit-test/sequence/coordinate-complession.test.cpp\"\
     \n\nnamespace luz {\n\n  void main_() {\n    std::vector< int > vs({8, -5, 3,\
     \ 4, 3, 7, 1});\n    std::vector< usize > expected({5, 0, 2, 3, 2, 4, 1});\n\n\
     \    assert(coordinate_compression(vs) == expected);\n\n    std::vector< usize\
@@ -84,7 +84,7 @@ data:
   isVerificationFile: true
   path: unit-test/sequence/coordinate-complession.test.cpp
   requiredBy: []
-  timestamp: '2022-07-23 09:50:15+09:00'
+  timestamp: '2022-08-22 07:19:34+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: unit-test/sequence/coordinate-complession.test.cpp
