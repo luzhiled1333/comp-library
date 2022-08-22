@@ -19,8 +19,9 @@ namespace luz::impl {
         for (usize k: rep(0, i)) {
           op(f[j + k], f[j + k + i]);
         }
-        i <<= 1;
+        j += i << 1;
       }
+      i <<= 1;
     }
   }
 
