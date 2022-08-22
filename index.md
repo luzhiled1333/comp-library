@@ -48,29 +48,29 @@ data:
       title: Fenwick Tree (Binary Indexed Tree, BIT)
   - name: src/geometry/Z2/class
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/geometry/Z2/class/circle.hpp
       title: "\u5186 (\u6574\u6570\u5E7E\u4F55)"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/geometry/Z2/class/point.hpp
       title: "\u683C\u5B50\u70B9 (\u6574\u6570\u5E7E\u4F55)"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/geometry/Z2/class/vector.hpp
       title: "\u30D9\u30AF\u30C8\u30EB (\u6574\u6570\u5E7E\u4F55)"
   - name: src/geometry/Z2/intersect
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
       title: "\u5186\u3068\u5186\u306E\u4EA4\u5DEE\u5224\u5B9A"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/geometry/Z2/intersect/is-intersect-point-circle.hpp
       title: "\u70B9\u3068\u5186\u306E\u4EA4\u5DEE\u5224\u5B9A"
   - name: src/geometry/Z2/operation
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/geometry/Z2/operation/square-norm.hpp
       title: "$\\|v\\|^2 (v \\in {\\mathbb{Z}}^2)$ (norm\u306E2\u4E57)"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/geometry/Z2/operation/square.hpp
       title: $x^2 (x \in \mathbb{Z})$
   - name: src/graph
@@ -109,18 +109,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/sequence/coordinate-compression.hpp
       title: "\u5EA7\u6A19\u5727\u7E2E"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/sequence/run-length-encoding.hpp
       title: "\u30E9\u30F3\u30EC\u30F3\u30B0\u30B9\u5727\u7E2E (\u9023\u9577\u5727\
         \u7E2E, Run Length Encoding, RLE)"
-  - name: test/atcoder
-    pages:
-    - icon: ':warning:'
-      path: test/atcoder/abc259_c.cpp
-      title: test/atcoder/abc259_c.cpp
-    - icon: ':warning:'
-      path: test/atcoder/abc259_d.cpp
-      title: test/atcoder/abc259_d.cpp
   verificationCategories:
   - name: test/aoj
     pages:
@@ -147,6 +139,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/atcoder/abc212_h.test.cpp
       title: test/atcoder/abc212_h.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/atcoder/abc259_c.test.cpp
+      title: test/atcoder/abc259_c.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/atcoder/abc259_d.test.cpp
+      title: test/atcoder/abc259_d.test.cpp
   - name: test/library-checker
     pages:
     - icon: ':heavy_check_mark:'

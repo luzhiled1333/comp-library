@@ -22,6 +22,9 @@ data:
     path: test/atcoder/abc177_d.test.cpp
     title: test/atcoder/abc177_d.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc259_d.test.cpp
+    title: test/atcoder/abc259_d.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/unionfind.test.cpp
     title: test/library-checker/unionfind.test.cpp
   _isVerificationFailed: false
@@ -118,6 +121,7 @@ data:
   - test/library-checker/unionfind.test.cpp
   - test/aoj/grl_5_c.test.cpp
   - test/aoj/dsl_1_a.test.cpp
+  - test/atcoder/abc259_d.test.cpp
   - test/atcoder/abc177_d.test.cpp
 documentation_of: src/data-structure/disjoint-set-union.hpp
 layout: document

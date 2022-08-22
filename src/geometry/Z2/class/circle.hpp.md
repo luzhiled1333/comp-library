@@ -1,26 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/class/point.hpp
     title: "\u683C\u5B50\u70B9 (\u6574\u6570\u5E7E\u4F55)"
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/class/vector.hpp
     title: "\u30D9\u30AF\u30C8\u30EB (\u6574\u6570\u5E7E\u4F55)"
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
     title: "\u5186\u3068\u5186\u306E\u4EA4\u5DEE\u5224\u5B9A"
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/intersect/is-intersect-point-circle.hpp
     title: "\u70B9\u3068\u5186\u306E\u4EA4\u5DEE\u5224\u5B9A"
-  - icon: ':warning:'
-    path: test/atcoder/abc259_d.cpp
-    title: test/atcoder/abc259_d.cpp
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc259_d.test.cpp
+    title: test/atcoder/abc259_d.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/geometry/Z2/class/circle.hpp\"\n\n#line 2 \"src/geometry/Z2/class/point.hpp\"\
@@ -42,32 +42,32 @@ data:
     \n\n#line 6 \"src/geometry/Z2/class/point.hpp\"\n\nnamespace luz::Z2 {\n\n  template\
     \ < typename Z >\n  using Point = Vector< Z >;\n\n  template < typename Z >\n\
     \  using Points = std::vector< Point< Z > >;\n\n} // namespace luz::Z2\n#line\
-    \ 4 \"src/geometry/Z2/class/circle.hpp\"\n\nnamespace luz::Z2 {\n\n  template\
-    \ < typename Z >\n  class Circle {\n\n    Point< Z > o_;\n    Z r_;\n\n   public:\n\
-    \    Circle(): o_(0, 0), r_(0) {}\n\n    Circle(Point< Z > o, Z r): o_(o), r_(r)\
-    \ {\n      assert(r >= 0);\n    }\n\n    Point< Z > center() const {\n      return\
-    \ o_;\n    }\n\n    Z r() const {\n      return r_;\n    }\n  };\n\n  template\
-    \ < typename Z >\n  using Circles = std::vector< Circle< Z > >;\n\n} // namespace\
-    \ luz::Z2\n"
-  code: "#pragma once\n\n#include \"src/geometry/Z2/class/point.hpp\"\n\nnamespace\
-    \ luz::Z2 {\n\n  template < typename Z >\n  class Circle {\n\n    Point< Z > o_;\n\
-    \    Z r_;\n\n   public:\n    Circle(): o_(0, 0), r_(0) {}\n\n    Circle(Point<\
-    \ Z > o, Z r): o_(o), r_(r) {\n      assert(r >= 0);\n    }\n\n    Point< Z >\
-    \ center() const {\n      return o_;\n    }\n\n    Z r() const {\n      return\
-    \ r_;\n    }\n  };\n\n  template < typename Z >\n  using Circles = std::vector<\
-    \ Circle< Z > >;\n\n} // namespace luz::Z2\n"
+    \ 4 \"src/geometry/Z2/class/circle.hpp\"\n\n#include <cassert>\n\nnamespace luz::Z2\
+    \ {\n\n  template < typename Z >\n  class Circle {\n\n    Point< Z > o_;\n   \
+    \ Z r_;\n\n   public:\n    Circle(): o_(0, 0), r_(0) {}\n\n    Circle(Point< Z\
+    \ > o, Z r): o_(o), r_(r) {\n      assert(r >= 0);\n    }\n\n    Point< Z > center()\
+    \ const {\n      return o_;\n    }\n\n    Z r() const {\n      return r_;\n  \
+    \  }\n  };\n\n  template < typename Z >\n  using Circles = std::vector< Circle<\
+    \ Z > >;\n\n} // namespace luz::Z2\n"
+  code: "#pragma once\n\n#include \"src/geometry/Z2/class/point.hpp\"\n\n#include\
+    \ <cassert>\n\nnamespace luz::Z2 {\n\n  template < typename Z >\n  class Circle\
+    \ {\n\n    Point< Z > o_;\n    Z r_;\n\n   public:\n    Circle(): o_(0, 0), r_(0)\
+    \ {}\n\n    Circle(Point< Z > o, Z r): o_(o), r_(r) {\n      assert(r >= 0);\n\
+    \    }\n\n    Point< Z > center() const {\n      return o_;\n    }\n\n    Z r()\
+    \ const {\n      return r_;\n    }\n  };\n\n  template < typename Z >\n  using\
+    \ Circles = std::vector< Circle< Z > >;\n\n} // namespace luz::Z2\n"
   dependsOn:
   - src/geometry/Z2/class/point.hpp
   - src/geometry/Z2/class/vector.hpp
   isVerificationFile: false
   path: src/geometry/Z2/class/circle.hpp
   requiredBy:
-  - test/atcoder/abc259_d.cpp
   - src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
   - src/geometry/Z2/intersect/is-intersect-point-circle.hpp
-  timestamp: '2022-08-22 18:26:45+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2022-08-22 19:09:09+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/atcoder/abc259_d.test.cpp
 documentation_of: src/geometry/Z2/class/circle.hpp
 layout: document
 title: "\u5186 (\u6574\u6570\u5E7E\u4F55)"

@@ -57,16 +57,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/sequence/coordinate-compression.hpp
     title: "\u5EA7\u6A19\u5727\u7E2E"
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/sequence/run-length-encoding.hpp
     title: "\u30E9\u30F3\u30EC\u30F3\u30B0\u30B9\u5727\u7E2E (\u9023\u9577\u5727\u7E2E\
       , Run Length Encoding, RLE)"
-  - icon: ':warning:'
-    path: test/atcoder/abc259_c.cpp
-    title: test/atcoder/abc259_c.cpp
-  - icon: ':warning:'
-    path: test/atcoder/abc259_d.cpp
-    title: test/atcoder/abc259_d.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/dsl_1_a.test.cpp
@@ -89,6 +83,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc212_h.test.cpp
     title: test/atcoder/abc212_h.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc259_c.test.cpp
+    title: test/atcoder/abc259_c.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc259_d.test.cpp
+    title: test/atcoder/abc259_d.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/library-checker/bitwise_and_convolution.test.cpp
     title: test/library-checker/bitwise_and_convolution.test.cpp
@@ -125,8 +125,6 @@ data:
   isVerificationFile: false
   path: src/cpp-template/header/type-alias.hpp
   requiredBy:
-  - test/atcoder/abc259_c.cpp
-  - test/atcoder/abc259_d.cpp
   - src/cpp-template/template.cpp
   - src/cpp-template/header/io-set.hpp
   - src/cpp-template/header/vector-ios.hpp
@@ -157,7 +155,9 @@ data:
   - test/aoj/grl_5_c.test.cpp
   - test/aoj/itp1_1_a.test.cpp
   - test/aoj/dsl_1_a.test.cpp
+  - test/atcoder/abc259_d.test.cpp
   - test/atcoder/abc212_h.test.cpp
+  - test/atcoder/abc259_c.test.cpp
   - test/atcoder/abc177_d.test.cpp
   - unit-test/data-structure/fenwick-tree.test.cpp
   - unit-test/math/modular-arithmetic/static-modint.test.cpp

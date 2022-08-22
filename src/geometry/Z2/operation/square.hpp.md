@@ -2,22 +2,22 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
     title: "\u5186\u3068\u5186\u306E\u4EA4\u5DEE\u5224\u5B9A"
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/intersect/is-intersect-point-circle.hpp
     title: "\u70B9\u3068\u5186\u306E\u4EA4\u5DEE\u5224\u5B9A"
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/operation/square-norm.hpp
     title: "$\\|v\\|^2 (v \\in {\\mathbb{Z}}^2)$ (norm\u306E2\u4E57)"
-  - icon: ':warning:'
-    path: test/atcoder/abc259_d.cpp
-    title: test/atcoder/abc259_d.cpp
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc259_d.test.cpp
+    title: test/atcoder/abc259_d.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/geometry/Z2/operation/square.hpp\"\n\nnamespace luz::Z2\
@@ -29,13 +29,13 @@ data:
   isVerificationFile: false
   path: src/geometry/Z2/operation/square.hpp
   requiredBy:
-  - test/atcoder/abc259_d.cpp
   - src/geometry/Z2/operation/square-norm.hpp
   - src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
   - src/geometry/Z2/intersect/is-intersect-point-circle.hpp
   timestamp: '2022-08-22 18:26:45+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/atcoder/abc259_d.test.cpp
 documentation_of: src/geometry/Z2/operation/square.hpp
 layout: document
 title: $x^2 (x \in \mathbb{Z})$

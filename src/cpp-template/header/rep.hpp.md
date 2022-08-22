@@ -36,12 +36,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/sequence/coordinate-compression.hpp
     title: "\u5EA7\u6A19\u5727\u7E2E"
-  - icon: ':warning:'
-    path: test/atcoder/abc259_c.cpp
-    title: test/atcoder/abc259_c.cpp
-  - icon: ':warning:'
-    path: test/atcoder/abc259_d.cpp
-    title: test/atcoder/abc259_d.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/dsl_1_a.test.cpp
@@ -64,6 +58,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc212_h.test.cpp
     title: test/atcoder/abc212_h.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc259_c.test.cpp
+    title: test/atcoder/abc259_c.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc259_d.test.cpp
+    title: test/atcoder/abc259_d.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/library-checker/bitwise_and_convolution.test.cpp
     title: test/library-checker/bitwise_and_convolution.test.cpp
@@ -129,8 +129,6 @@ data:
   isVerificationFile: false
   path: src/cpp-template/header/rep.hpp
   requiredBy:
-  - test/atcoder/abc259_c.cpp
-  - test/atcoder/abc259_d.cpp
   - src/cpp-template/template.cpp
   - src/cpp-template/header/vector-ios.hpp
   - src/cpp-template/header/template-header.hpp
@@ -152,7 +150,9 @@ data:
   - test/aoj/grl_5_c.test.cpp
   - test/aoj/itp1_1_a.test.cpp
   - test/aoj/dsl_1_a.test.cpp
+  - test/atcoder/abc259_d.test.cpp
   - test/atcoder/abc212_h.test.cpp
+  - test/atcoder/abc259_c.test.cpp
   - test/atcoder/abc177_d.test.cpp
   - unit-test/data-structure/fenwick-tree.test.cpp
   - unit-test/sequence/coordinate-complession.test.cpp

@@ -10,7 +10,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/type-alias.hpp
     title: Type alias
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/sequence/run-length-encoding.hpp
     title: "\u30E9\u30F3\u30EC\u30F3\u30B0\u30B9\u5727\u7E2E (\u9023\u9577\u5727\u7E2E\
       , Run Length Encoding, RLE)"
@@ -18,13 +18,13 @@ data:
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://atcoder.jp/contests/abc259/tasks/abc259_c
     links:
     - https://atcoder.jp/contests/abc259/tasks/abc259_c
-  bundledCode: "#line 1 \"test/atcoder/abc259_c.cpp\"\n// verification-helper: PROBLEM\
-    \ https://atcoder.jp/contests/abc259/tasks/abc259_c\n\n#line 2 \"src/cpp-template/header/change-minmax.hpp\"\
+  bundledCode: "#line 1 \"test/atcoder/abc259_c.test.cpp\"\n// verification-helper:\
+    \ PROBLEM https://atcoder.jp/contests/abc259/tasks/abc259_c\n\n#line 2 \"src/cpp-template/header/change-minmax.hpp\"\
     \n\nnamespace luz {\n\n  template < typename T1, typename T2 >\n  inline bool\
     \ chmax(T1 &a, T2 b) {\n    return a < b and (a = b, true);\n  }\n\n  template\
     \ < typename T1, typename T2 >\n  inline bool chmin(T1 &a, T2 b) {\n    return\
@@ -62,8 +62,8 @@ data:
     \      const std::vector< T > &vs) {\n    return impl::rle(vs);\n  }\n\n  std::vector<\
     \ std::pair< char, usize > > run_length_encoding(\n      const std::string &s)\
     \ {\n    std::vector< char > cs(s.begin(), s.end());\n    return impl::rle(cs);\n\
-    \  }\n\n} // namespace luz\n#line 7 \"test/atcoder/abc259_c.cpp\"\n\n#line 9 \"\
-    test/atcoder/abc259_c.cpp\"\n#include <iostream>\n#line 11 \"test/atcoder/abc259_c.cpp\"\
+    \  }\n\n} // namespace luz\n#line 7 \"test/atcoder/abc259_c.test.cpp\"\n\n#line\
+    \ 9 \"test/atcoder/abc259_c.test.cpp\"\n#include <iostream>\n#line 11 \"test/atcoder/abc259_c.test.cpp\"\
     \n\nnamespace luz {\n\n  void main_() {\n    std::string s, t;\n    std::cin >>\
     \ s >> t;\n\n    auto ss = run_length_encoding(s);\n    auto ts = run_length_encoding(t);\n\
     \n    usize n = std::min(ss.size(), ts.size());\n    for (usize i: rep(0, n))\
@@ -89,16 +89,16 @@ data:
   - src/cpp-template/header/rep.hpp
   - src/cpp-template/header/type-alias.hpp
   - src/sequence/run-length-encoding.hpp
-  isVerificationFile: false
-  path: test/atcoder/abc259_c.cpp
+  isVerificationFile: true
+  path: test/atcoder/abc259_c.test.cpp
   requiredBy: []
-  timestamp: '2022-08-22 18:26:45+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  timestamp: '2022-08-22 19:09:09+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/atcoder/abc259_c.cpp
+documentation_of: test/atcoder/abc259_c.test.cpp
 layout: document
 redirect_from:
-- /library/test/atcoder/abc259_c.cpp
-- /library/test/atcoder/abc259_c.cpp.html
-title: test/atcoder/abc259_c.cpp
+- /verify/test/atcoder/abc259_c.test.cpp
+- /verify/test/atcoder/abc259_c.test.cpp.html
+title: test/atcoder/abc259_c.test.cpp
 ---

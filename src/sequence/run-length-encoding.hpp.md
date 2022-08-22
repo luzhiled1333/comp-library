@@ -4,14 +4,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/type-alias.hpp
     title: Type alias
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: test/atcoder/abc259_c.cpp
-    title: test/atcoder/abc259_c.cpp
-  _extendedVerifiedWith: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc259_c.test.cpp
+    title: test/atcoder/abc259_c.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/sequence/run-length-encoding.hpp\"\n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\
@@ -46,11 +46,11 @@ data:
   - src/cpp-template/header/type-alias.hpp
   isVerificationFile: false
   path: src/sequence/run-length-encoding.hpp
-  requiredBy:
-  - test/atcoder/abc259_c.cpp
+  requiredBy: []
   timestamp: '2022-08-22 18:26:45+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/atcoder/abc259_c.test.cpp
 documentation_of: src/sequence/run-length-encoding.hpp
 layout: document
 title: "\u30E9\u30F3\u30EC\u30F3\u30B0\u30B9\u5727\u7E2E (\u9023\u9577\u5727\u7E2E\
