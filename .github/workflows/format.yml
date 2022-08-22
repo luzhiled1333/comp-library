@@ -19,4 +19,4 @@ jobs:
         sudo apt-get install clang-format-16
     - name: apply formatter
       run: |
-        clang-format-16 --dry-run --Werror $(find . -name "*.hpp")
+        clang-format-16 --dry-run --Werror $(find . -name "*.hpp" -or -name "*.cpp")

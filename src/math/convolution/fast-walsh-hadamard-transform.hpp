@@ -8,7 +8,7 @@
 
 namespace luz::impl {
 
-  template< typename T, typename F >
+  template < typename T, typename F >
   void impl_fwht(std::vector< T > &f, F op) {
     const usize n = f.size();
     assert((n & (n - 1)) == 0);
