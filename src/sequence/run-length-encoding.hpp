@@ -6,25 +6,22 @@
 #include <utility>
 #include <vector>
 
-namespace luz {
-  namespace impl {
+namespace luz::impl {
 
-    template < typename T >
-    std::vector< std::pair< T, usize > > rle(
-        const std::vector< T > &vs) {
-      std::vector< std::pair< T, usize > > result;
-      for (const auto &v: vs) {
-        if (result.empty() or result.back().first != v) {
-          result.emplace_back(v, 0);
-        }
-        result.back().second++;
+  template < typename T >
+  std::vector< std::pair< T, usize > > rle(
+      const std::vector< T > &vs) {
+    std::vector< std::pair< T, usize > > result;
+    for (const auto &v: vs) {
+      if (result.empty() or result.back().first != v) {
+        result.emplace_back(v, 0);
       }
-
-      return result;
+      result.back().second++;
     }
+    return result;
+  }
 
-  } // namespace impl
-} // namespace luz
+} // namespace luz::impl
 
 namespace luz {
 
