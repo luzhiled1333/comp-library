@@ -1,11 +1,11 @@
-#include "src/graph/graph-template.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
+#include "src/graph/graph-template.hpp"
 
 #include <cassert>
 
 namespace luz {
 
-  template< typename cost_type >
+  template < typename cost_type >
   class FunctionalGraph: Graph< cost_type > {
     using Graph< cost_type >::Graph;
     using Graph< cost_type >::g;
@@ -18,7 +18,7 @@ namespace luz {
    public:
     void add_edge(usize from, usize to, cost_type cost = 1) {
       assert(from < size());
-      assert(to   < size());
+      assert(to < size());
       add_directed_edge(from, to, cost);
       assert(g[from].size() == 1);
     }
@@ -44,7 +44,7 @@ namespace luz {
         }
       }
     }
-      
+
     usize jump(usize v, u64 k) {
       if (k == 0) return v;
       for (usize i: rep(0, LOG)) {
@@ -56,7 +56,6 @@ namespace luz {
 
       return v;
     }
-
   };
 
 } // namespace luz

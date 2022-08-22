@@ -1,16 +1,15 @@
 // verification-helper: PROBLEM https://atcoder.jp/contests/abc259/tasks/abc259_d
 // verification-helper: IGNORE
 
-#include "src/cpp-template/header/type-alias.hpp"
 #include "src/cpp-template/header/rep.hpp"
-
-#include "src/geometry/Z2/class/point.hpp"
+#include "src/cpp-template/header/type-alias.hpp"
 #include "src/geometry/Z2/class/circle.hpp"
+#include "src/geometry/Z2/class/point.hpp"
 #include "src/geometry/Z2/intersect/is-intersect-circle-circle.hpp"
 #include "src/geometry/Z2/intersect/is-intersect-point-circle.hpp"
 
-#include <iostream>
 #include <atcoder/dsu>
+#include <iostream>
 
 namespace luz {
 
@@ -29,7 +28,7 @@ namespace luz {
       i64 x, y, r;
       std::cin >> x >> y >> r;
 
-      cs.emplace_back(Point<i64>(x, y), r);
+      cs.emplace_back(Point< i64 >(x, y), r);
     }
 
     atcoder::dsu uf(n + 2);
@@ -44,14 +43,14 @@ namespace luz {
       }
     }
 
-    for (usize i: rep(0, n)) for (usize j: rep(0, i)) {
-      if (is_intersect_cc(cs[i], cs[j])) {
-        uf.merge(i, j);
+    for (usize i: rep(0, n))
+      for (usize j: rep(0, i)) {
+        if (is_intersect_cc(cs[i], cs[j])) {
+          uf.merge(i, j);
+        }
       }
-    }
 
     std::cout << (uf.same(s_idx, t_idx) ? "Yes" : "No") << std::endl;
-
   }
 
 } // namespace luz

@@ -4,7 +4,7 @@
 
 namespace luz::Z2 {
 
-  template< typename Z >
+  template < typename Z >
   class Circle {
 
     Point< Z > o_;
@@ -26,7 +26,7 @@ namespace luz::Z2 {
     }
   };
 
-  template< typename Z >
+  template < typename Z >
   using Circles = std::vector< Circle< Z > >;
 
 } // namespace luz::Z2

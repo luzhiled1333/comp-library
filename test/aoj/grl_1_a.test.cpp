@@ -1,13 +1,12 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/GRL_1_A
 
-#include <iostream>
-
 #include "src/cpp-template/header/input.hpp"
-#include "src/cpp-template/header/type-alias.hpp"
 #include "src/cpp-template/header/rep.hpp"
-
-#include "src/graph/graph-template.hpp"
+#include "src/cpp-template/header/type-alias.hpp"
 #include "src/graph/dijkstra.hpp"
+#include "src/graph/graph-template.hpp"
+
+#include <iostream>
 
 namespace luz {
 

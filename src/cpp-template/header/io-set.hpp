@@ -2,8 +2,8 @@
 
 #include "src/cpp-template/header/type-alias.hpp"
 
-#include <iostream>
 #include <iomanip>
+#include <iostream>
 
 namespace luz {
 

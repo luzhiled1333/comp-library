@@ -1,15 +1,15 @@
 #pragma once
 
-#include "src/geometry/Z2/class/point.hpp"
 #include "src/geometry/Z2/class/circle.hpp"
-#include "src/geometry/Z2/operation/square.hpp"
+#include "src/geometry/Z2/class/point.hpp"
 #include "src/geometry/Z2/operation/square-norm.hpp"
+#include "src/geometry/Z2/operation/square.hpp"
 
 #include <utility>
 
 namespace luz::Z2 {
 
-  template< typename Z >
+  template < typename Z >
   bool is_intersect_cc(Circle< Z > c0, Circle< Z > c1) {
     if (c0.r() > c1.r()) std::swap(c0, c1);
 

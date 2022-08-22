@@ -6,11 +6,10 @@
 
 namespace luz::Z2 {
 
-  template< typename Z >
+  template < typename Z >
   using Point = Vector< Z >;
 
-  template< typename Z >
-  using Points = std::vector< Point<Z> >;
+  template < typename Z >
+  using Points = std::vector< Point< Z > >;
 
 } // namespace luz::Z2
-

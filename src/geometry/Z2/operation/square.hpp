@@ -2,7 +2,7 @@
 
 namespace luz::Z2 {
 
-  template< typename Z >
+  template < typename Z >
   Z square(const Z x) {
     return x * x;
   }
