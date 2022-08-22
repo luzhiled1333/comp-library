@@ -24,12 +24,12 @@ data:
     \n\n#include <cstddef>\n#include <cstdint>\n\nnamespace luz {\n\n  using isize\
     \ = std::ptrdiff_t;\n  using usize = std::size_t;\n\n  using i32 = std::int32_t;\n\
     \  using i64 = std::int64_t;\n  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n\
-    \  \n} // namespace luz\n#line 4 \"src/cpp-template/header/io-set.hpp\"\n\n#include\
-    \ <iostream>\n#include <iomanip>\n\nnamespace luz {\n\n  void io_set(usize precision)\
+    \n} // namespace luz\n#line 4 \"src/cpp-template/header/io-set.hpp\"\n\n#include\
+    \ <iomanip>\n#include <iostream>\n\nnamespace luz {\n\n  void io_set(usize precision)\
     \ {\n    std::cout << std::fixed << std::setprecision(precision);\n    std::cerr\
     \ << std::fixed << std::setprecision(precision);\n  }\n\n} // namespace luz\n"
   code: "#pragma once\n\n#include \"src/cpp-template/header/type-alias.hpp\"\n\n#include\
-    \ <iostream>\n#include <iomanip>\n\nnamespace luz {\n\n  void io_set(usize precision)\
+    \ <iomanip>\n#include <iostream>\n\nnamespace luz {\n\n  void io_set(usize precision)\
     \ {\n    std::cout << std::fixed << std::setprecision(precision);\n    std::cerr\
     \ << std::fixed << std::setprecision(precision);\n  }\n\n} // namespace luz\n"
   dependsOn:
@@ -39,7 +39,7 @@ data:
   requiredBy:
   - src/cpp-template/template.cpp
   - src/cpp-template/header/template-header.hpp
-  timestamp: '2022-07-16 05:05:19+09:00'
+  timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/itp1_1_a.test.cpp

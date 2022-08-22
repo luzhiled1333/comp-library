@@ -21,9 +21,9 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"src/geometry/Z2/operation/square.hpp\"\n\nnamespace luz::Z2\
-    \ {\n\n  template< typename Z >\n  Z square(const Z x) {\n    return x * x;\n\
+    \ {\n\n  template < typename Z >\n  Z square(const Z x) {\n    return x * x;\n\
     \  }\n\n} // namespace luz::Z2\n"
-  code: "#pragma once\n\nnamespace luz::Z2 {\n\n  template< typename Z >\n  Z square(const\
+  code: "#pragma once\n\nnamespace luz::Z2 {\n\n  template < typename Z >\n  Z square(const\
     \ Z x) {\n    return x * x;\n  }\n\n} // namespace luz::Z2\n"
   dependsOn: []
   isVerificationFile: false
@@ -33,7 +33,7 @@ data:
   - src/geometry/Z2/operation/square-norm.hpp
   - src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
   - src/geometry/Z2/intersect/is-intersect-point-circle.hpp
-  timestamp: '2022-08-22 07:19:34+09:00'
+  timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/Z2/operation/square.hpp

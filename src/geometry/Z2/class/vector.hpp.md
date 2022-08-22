@@ -27,34 +27,35 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"src/geometry/Z2/class/vector.hpp\"\n\n#include <vector>\n\
-    \nnamespace luz::Z2 {\n\n  template< typename Z >\n  class Vector {\n\n    Z x_,\
-    \ y_;\n\n   public:\n    Vector(): x_(0), y_(0) {}\n    Vector(Z x, Z y): x_(x),\
-    \ y_(y) {}\n\n    Z x() const {\n      return x_;\n    }\n\n    Z y() const {\n\
-    \      return y_;\n    }\n\n    bool operator==(const Vector &v) const {\n   \
-    \   return x_ == v.x_ and y_ == v.y_;\n    }\n\n    bool operator!=(const Vector\
-    \ &v) const {\n      return x_ != v.x_ or  y_ != v.y_;\n    }\n\n    Vector &operator+=(const\
-    \ Vector &v) {\n      x_ += v.x_; y_ += v.y_;\n      return *this;\n    }\n  \
-    \  Vector &operator-=(const Vector &v) {\n      x_ -= v.x_; y_ -= v.y_;\n    \
-    \  return *this;\n    }\n\n    Vector operator+(const Vector &v) const {\n   \
-    \   return Vector(*this) += v;\n    }\n    Vector operator-(const Vector &v) const\
+    \nnamespace luz::Z2 {\n\n  template < typename Z >\n  class Vector {\n\n    Z\
+    \ x_, y_;\n\n   public:\n    Vector(): x_(0), y_(0) {}\n    Vector(Z x, Z y):\
+    \ x_(x), y_(y) {}\n\n    Z x() const {\n      return x_;\n    }\n\n    Z y() const\
+    \ {\n      return y_;\n    }\n\n    bool operator==(const Vector &v) const {\n\
+    \      return x_ == v.x_ and y_ == v.y_;\n    }\n\n    bool operator!=(const Vector\
+    \ &v) const {\n      return x_ != v.x_ or y_ != v.y_;\n    }\n\n    Vector &operator+=(const\
+    \ Vector &v) {\n      x_ += v.x_;\n      y_ += v.y_;\n      return *this;\n  \
+    \  }\n    Vector &operator-=(const Vector &v) {\n      x_ -= v.x_;\n      y_ -=\
+    \ v.y_;\n      return *this;\n    }\n\n    Vector operator+(const Vector &v) const\
+    \ {\n      return Vector(*this) += v;\n    }\n    Vector operator-(const Vector\
+    \ &v) const {\n      return Vector(*this) -= v;\n    }\n\n    Vector operator+()\
+    \ const {\n      return *this;\n    }\n    Vector operator-() const {\n      return\
+    \ Vector() - *this;\n    }\n  };\n\n  template < typename Z >\n  using Vectors\
+    \ = std::vector< Vector< Z > >;\n\n} // namespace luz::Z2\n"
+  code: "#pragma once\n\n#include <vector>\n\nnamespace luz::Z2 {\n\n  template <\
+    \ typename Z >\n  class Vector {\n\n    Z x_, y_;\n\n   public:\n    Vector():\
+    \ x_(0), y_(0) {}\n    Vector(Z x, Z y): x_(x), y_(y) {}\n\n    Z x() const {\n\
+    \      return x_;\n    }\n\n    Z y() const {\n      return y_;\n    }\n\n   \
+    \ bool operator==(const Vector &v) const {\n      return x_ == v.x_ and y_ ==\
+    \ v.y_;\n    }\n\n    bool operator!=(const Vector &v) const {\n      return x_\
+    \ != v.x_ or y_ != v.y_;\n    }\n\n    Vector &operator+=(const Vector &v) {\n\
+    \      x_ += v.x_;\n      y_ += v.y_;\n      return *this;\n    }\n    Vector\
+    \ &operator-=(const Vector &v) {\n      x_ -= v.x_;\n      y_ -= v.y_;\n     \
+    \ return *this;\n    }\n\n    Vector operator+(const Vector &v) const {\n    \
+    \  return Vector(*this) += v;\n    }\n    Vector operator-(const Vector &v) const\
     \ {\n      return Vector(*this) -= v;\n    }\n\n    Vector operator+() const {\n\
     \      return *this;\n    }\n    Vector operator-() const {\n      return Vector()\
-    \ - *this;\n    }\n\n  };\n\n  template< typename Z >\n  using Vectors = std::vector<\
-    \ Vector<Z> >;\n\n} // namespace luz::Z2\n"
-  code: "#pragma once\n\n#include <vector>\n\nnamespace luz::Z2 {\n\n  template< typename\
-    \ Z >\n  class Vector {\n\n    Z x_, y_;\n\n   public:\n    Vector(): x_(0), y_(0)\
-    \ {}\n    Vector(Z x, Z y): x_(x), y_(y) {}\n\n    Z x() const {\n      return\
-    \ x_;\n    }\n\n    Z y() const {\n      return y_;\n    }\n\n    bool operator==(const\
-    \ Vector &v) const {\n      return x_ == v.x_ and y_ == v.y_;\n    }\n\n    bool\
-    \ operator!=(const Vector &v) const {\n      return x_ != v.x_ or  y_ != v.y_;\n\
-    \    }\n\n    Vector &operator+=(const Vector &v) {\n      x_ += v.x_; y_ += v.y_;\n\
-    \      return *this;\n    }\n    Vector &operator-=(const Vector &v) {\n     \
-    \ x_ -= v.x_; y_ -= v.y_;\n      return *this;\n    }\n\n    Vector operator+(const\
-    \ Vector &v) const {\n      return Vector(*this) += v;\n    }\n    Vector operator-(const\
-    \ Vector &v) const {\n      return Vector(*this) -= v;\n    }\n\n    Vector operator+()\
-    \ const {\n      return *this;\n    }\n    Vector operator-() const {\n      return\
-    \ Vector() - *this;\n    }\n\n  };\n\n  template< typename Z >\n  using Vectors\
-    \ = std::vector< Vector<Z> >;\n\n} // namespace luz::Z2\n"
+    \ - *this;\n    }\n  };\n\n  template < typename Z >\n  using Vectors = std::vector<\
+    \ Vector< Z > >;\n\n} // namespace luz::Z2\n"
   dependsOn: []
   isVerificationFile: false
   path: src/geometry/Z2/class/vector.hpp
@@ -65,7 +66,7 @@ data:
   - src/geometry/Z2/operation/square-norm.hpp
   - src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
   - src/geometry/Z2/intersect/is-intersect-point-circle.hpp
-  timestamp: '2022-08-22 07:19:34+09:00'
+  timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/Z2/class/vector.hpp

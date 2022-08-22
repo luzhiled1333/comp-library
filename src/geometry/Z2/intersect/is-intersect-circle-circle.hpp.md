@@ -27,61 +27,62 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"src/geometry/Z2/intersect/is-intersect-circle-circle.hpp\"\
-    \n\n#line 2 \"src/geometry/Z2/class/point.hpp\"\n\n#line 2 \"src/geometry/Z2/class/vector.hpp\"\
-    \n\n#include <vector>\n\nnamespace luz::Z2 {\n\n  template< typename Z >\n  class\
-    \ Vector {\n\n    Z x_, y_;\n\n   public:\n    Vector(): x_(0), y_(0) {}\n   \
-    \ Vector(Z x, Z y): x_(x), y_(y) {}\n\n    Z x() const {\n      return x_;\n \
-    \   }\n\n    Z y() const {\n      return y_;\n    }\n\n    bool operator==(const\
-    \ Vector &v) const {\n      return x_ == v.x_ and y_ == v.y_;\n    }\n\n    bool\
-    \ operator!=(const Vector &v) const {\n      return x_ != v.x_ or  y_ != v.y_;\n\
-    \    }\n\n    Vector &operator+=(const Vector &v) {\n      x_ += v.x_; y_ += v.y_;\n\
-    \      return *this;\n    }\n    Vector &operator-=(const Vector &v) {\n     \
-    \ x_ -= v.x_; y_ -= v.y_;\n      return *this;\n    }\n\n    Vector operator+(const\
-    \ Vector &v) const {\n      return Vector(*this) += v;\n    }\n    Vector operator-(const\
-    \ Vector &v) const {\n      return Vector(*this) -= v;\n    }\n\n    Vector operator+()\
+    \n\n#line 2 \"src/geometry/Z2/class/circle.hpp\"\n\n#line 2 \"src/geometry/Z2/class/point.hpp\"\
+    \n\n#line 2 \"src/geometry/Z2/class/vector.hpp\"\n\n#include <vector>\n\nnamespace\
+    \ luz::Z2 {\n\n  template < typename Z >\n  class Vector {\n\n    Z x_, y_;\n\n\
+    \   public:\n    Vector(): x_(0), y_(0) {}\n    Vector(Z x, Z y): x_(x), y_(y)\
+    \ {}\n\n    Z x() const {\n      return x_;\n    }\n\n    Z y() const {\n    \
+    \  return y_;\n    }\n\n    bool operator==(const Vector &v) const {\n      return\
+    \ x_ == v.x_ and y_ == v.y_;\n    }\n\n    bool operator!=(const Vector &v) const\
+    \ {\n      return x_ != v.x_ or y_ != v.y_;\n    }\n\n    Vector &operator+=(const\
+    \ Vector &v) {\n      x_ += v.x_;\n      y_ += v.y_;\n      return *this;\n  \
+    \  }\n    Vector &operator-=(const Vector &v) {\n      x_ -= v.x_;\n      y_ -=\
+    \ v.y_;\n      return *this;\n    }\n\n    Vector operator+(const Vector &v) const\
+    \ {\n      return Vector(*this) += v;\n    }\n    Vector operator-(const Vector\
+    \ &v) const {\n      return Vector(*this) -= v;\n    }\n\n    Vector operator+()\
     \ const {\n      return *this;\n    }\n    Vector operator-() const {\n      return\
-    \ Vector() - *this;\n    }\n\n  };\n\n  template< typename Z >\n  using Vectors\
-    \ = std::vector< Vector<Z> >;\n\n} // namespace luz::Z2\n#line 4 \"src/geometry/Z2/class/point.hpp\"\
-    \n\n#line 6 \"src/geometry/Z2/class/point.hpp\"\n\nnamespace luz::Z2 {\n\n  template<\
-    \ typename Z >\n  using Point = Vector< Z >;\n\n  template< typename Z >\n  using\
-    \ Points = std::vector< Point<Z> >;\n\n} // namespace luz::Z2\n\n#line 2 \"src/geometry/Z2/class/circle.hpp\"\
-    \n\n#line 4 \"src/geometry/Z2/class/circle.hpp\"\n\nnamespace luz::Z2 {\n\n  template<\
-    \ typename Z >\n  class Circle {\n\n    Point< Z > o_;\n    Z r_;\n\n   public:\n\
+    \ Vector() - *this;\n    }\n  };\n\n  template < typename Z >\n  using Vectors\
+    \ = std::vector< Vector< Z > >;\n\n} // namespace luz::Z2\n#line 4 \"src/geometry/Z2/class/point.hpp\"\
+    \n\n#line 6 \"src/geometry/Z2/class/point.hpp\"\n\nnamespace luz::Z2 {\n\n  template\
+    \ < typename Z >\n  using Point = Vector< Z >;\n\n  template < typename Z >\n\
+    \  using Points = std::vector< Point< Z > >;\n\n} // namespace luz::Z2\n#line\
+    \ 4 \"src/geometry/Z2/class/circle.hpp\"\n\nnamespace luz::Z2 {\n\n  template\
+    \ < typename Z >\n  class Circle {\n\n    Point< Z > o_;\n    Z r_;\n\n   public:\n\
     \    Circle(): o_(0, 0), r_(0) {}\n\n    Circle(Point< Z > o, Z r): o_(o), r_(r)\
     \ {\n      assert(r >= 0);\n    }\n\n    Point< Z > center() const {\n      return\
-    \ o_;\n    }\n\n    Z r() const {\n      return r_;\n    }\n  };\n\n  template<\
-    \ typename Z >\n  using Circles = std::vector< Circle< Z > >;\n\n} // namespace\
-    \ luz::Z2\n#line 2 \"src/geometry/Z2/operation/square.hpp\"\n\nnamespace luz::Z2\
-    \ {\n\n  template< typename Z >\n  Z square(const Z x) {\n    return x * x;\n\
-    \  }\n\n} // namespace luz::Z2\n#line 2 \"src/geometry/Z2/operation/square-norm.hpp\"\
-    \n\n#line 5 \"src/geometry/Z2/operation/square-norm.hpp\"\n\nnamespace luz::Z2\
-    \ {\n\n  template< typename Z >\n  Z square_norm(Vector< Z > v) {\n    return\
-    \ square(v.x()) + square(v.y());\n  }\n\n} // namespace luz::Z2\n#line 7 \"src/geometry/Z2/intersect/is-intersect-circle-circle.hpp\"\
-    \n\n#include <utility>\n\nnamespace luz::Z2 {\n\n  template< typename Z >\n  bool\
-    \ is_intersect_cc(Circle< Z > c0, Circle< Z > c1) {\n    if (c0.r() > c1.r())\
-    \ std::swap(c0, c1);\n\n    Z sq_dist = square_norm(c0.center() - c1.center());\n\
-    \n    if (sq_dist < square(c1.r() - c0.r())) return false;\n    if (square(c1.r()\
-    \ + c0.r()) < sq_dist) return false;\n    return true;\n  }\n\n} // namespace\
-    \ luz::Z2\n"
-  code: "#pragma once\n\n#include \"src/geometry/Z2/class/point.hpp\"\n#include \"\
-    src/geometry/Z2/class/circle.hpp\"\n#include \"src/geometry/Z2/operation/square.hpp\"\
-    \n#include \"src/geometry/Z2/operation/square-norm.hpp\"\n\n#include <utility>\n\
-    \nnamespace luz::Z2 {\n\n  template< typename Z >\n  bool is_intersect_cc(Circle<\
+    \ o_;\n    }\n\n    Z r() const {\n      return r_;\n    }\n  };\n\n  template\
+    \ < typename Z >\n  using Circles = std::vector< Circle< Z > >;\n\n} // namespace\
+    \ luz::Z2\n#line 2 \"src/geometry/Z2/operation/square-norm.hpp\"\n\n#line 2 \"\
+    src/geometry/Z2/operation/square.hpp\"\n\nnamespace luz::Z2 {\n\n  template <\
+    \ typename Z >\n  Z square(const Z x) {\n    return x * x;\n  }\n\n} // namespace\
+    \ luz::Z2\n#line 5 \"src/geometry/Z2/operation/square-norm.hpp\"\n\nnamespace\
+    \ luz::Z2 {\n\n  template < typename Z >\n  Z square_norm(Vector< Z > v) {\n \
+    \   return square(v.x()) + square(v.y());\n  }\n\n} // namespace luz::Z2\n#line\
+    \ 7 \"src/geometry/Z2/intersect/is-intersect-circle-circle.hpp\"\n\n#include <utility>\n\
+    \nnamespace luz::Z2 {\n\n  template < typename Z >\n  bool is_intersect_cc(Circle<\
+    \ Z > c0, Circle< Z > c1) {\n    if (c0.r() > c1.r()) std::swap(c0, c1);\n\n \
+    \   Z sq_dist = square_norm(c0.center() - c1.center());\n\n    if (sq_dist < square(c1.r()\
+    \ - c0.r())) return false;\n    if (square(c1.r() + c0.r()) < sq_dist) return\
+    \ false;\n    return true;\n  }\n\n} // namespace luz::Z2\n"
+  code: "#pragma once\n\n#include \"src/geometry/Z2/class/circle.hpp\"\n#include \"\
+    src/geometry/Z2/class/point.hpp\"\n#include \"src/geometry/Z2/operation/square-norm.hpp\"\
+    \n#include \"src/geometry/Z2/operation/square.hpp\"\n\n#include <utility>\n\n\
+    namespace luz::Z2 {\n\n  template < typename Z >\n  bool is_intersect_cc(Circle<\
     \ Z > c0, Circle< Z > c1) {\n    if (c0.r() > c1.r()) std::swap(c0, c1);\n\n \
     \   Z sq_dist = square_norm(c0.center() - c1.center());\n\n    if (sq_dist < square(c1.r()\
     \ - c0.r())) return false;\n    if (square(c1.r() + c0.r()) < sq_dist) return\
     \ false;\n    return true;\n  }\n\n} // namespace luz::Z2\n"
   dependsOn:
+  - src/geometry/Z2/class/circle.hpp
   - src/geometry/Z2/class/point.hpp
   - src/geometry/Z2/class/vector.hpp
-  - src/geometry/Z2/class/circle.hpp
-  - src/geometry/Z2/operation/square.hpp
   - src/geometry/Z2/operation/square-norm.hpp
+  - src/geometry/Z2/operation/square.hpp
   isVerificationFile: false
   path: src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
   requiredBy:
   - test/atcoder/abc259_d.cpp
-  timestamp: '2022-08-22 07:19:34+09:00'
+  timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/Z2/intersect/is-intersect-circle-circle.hpp

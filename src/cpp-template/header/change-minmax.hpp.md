@@ -30,14 +30,14 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"src/cpp-template/header/change-minmax.hpp\"\n\nnamespace\
-    \ luz {\n\n  template <typename T1, typename T2>\n  inline bool chmax(T1 &a, T2\
-    \ b) {\n    return a < b and (a = b, true);\n  }\n\n  template <typename T1, typename\
-    \ T2>\n  inline bool chmin(T1 &a, T2 b) {\n    return a > b and (a = b, true);\n\
-    \  }\n\n} // namespace luz\n"
-  code: "#pragma once \n\nnamespace luz {\n\n  template <typename T1, typename T2>\n\
-    \  inline bool chmax(T1 &a, T2 b) {\n    return a < b and (a = b, true);\n  }\n\
-    \n  template <typename T1, typename T2>\n  inline bool chmin(T1 &a, T2 b) {\n\
-    \    return a > b and (a = b, true);\n  }\n\n} // namespace luz\n"
+    \ luz {\n\n  template < typename T1, typename T2 >\n  inline bool chmax(T1 &a,\
+    \ T2 b) {\n    return a < b and (a = b, true);\n  }\n\n  template < typename T1,\
+    \ typename T2 >\n  inline bool chmin(T1 &a, T2 b) {\n    return a > b and (a =\
+    \ b, true);\n  }\n\n} // namespace luz\n"
+  code: "#pragma once\n\nnamespace luz {\n\n  template < typename T1, typename T2\
+    \ >\n  inline bool chmax(T1 &a, T2 b) {\n    return a < b and (a = b, true);\n\
+    \  }\n\n  template < typename T1, typename T2 >\n  inline bool chmin(T1 &a, T2\
+    \ b) {\n    return a > b and (a = b, true);\n  }\n\n} // namespace luz\n"
   dependsOn: []
   isVerificationFile: false
   path: src/cpp-template/header/change-minmax.hpp
@@ -46,7 +46,7 @@ data:
   - src/cpp-template/template.cpp
   - src/cpp-template/header/template-header.hpp
   - src/graph/dijkstra.hpp
-  timestamp: '2022-06-13 01:05:23+09:00'
+  timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/grl_1_a.test.cpp
