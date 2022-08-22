@@ -1,14 +1,13 @@
 // verification-helper: PROBLEM https://atcoder.jp/contests/abc259/tasks/abc259_d
-// verification-helper: IGNORE
 
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
+#include "src/data-structure/disjoint-set-union.hpp"
 #include "src/geometry/Z2/class/circle.hpp"
 #include "src/geometry/Z2/class/point.hpp"
 #include "src/geometry/Z2/intersect/is-intersect-circle-circle.hpp"
 #include "src/geometry/Z2/intersect/is-intersect-point-circle.hpp"
 
-#include <atcoder/dsu>
 #include <iostream>
 
 namespace luz {
@@ -31,7 +30,7 @@ namespace luz {
       cs.emplace_back(Point< i64 >(x, y), r);
     }
 
-    atcoder::dsu uf(n + 2);
+    DisjointSetUnion uf(n + 2);
     usize s_idx = n, t_idx = n + 1;
 
     for (usize i: rep(0, n)) {
