@@ -2,6 +2,8 @@
 
 #include "src/geometry/Z2/class/point.hpp"
 
+#include <cassert>
+
 namespace luz::Z2 {
 
   template < typename Z >
