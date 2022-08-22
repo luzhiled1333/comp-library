@@ -7,18 +7,22 @@
 
 namespace luz {
 
-  template< typename T >
+  template < typename T >
   class addE {
     static constexpr T identity_{};
 
    public:
     using value_type = T;
 
-    static constexpr T operation(T a, T b) { return a + b; }
-    static constexpr T identity() { return identity_; };
+    static constexpr T operation(T a, T b) {
+      return a + b;
+    }
+    static constexpr T identity() {
+      return identity_;
+    };
   };
 
-  template< class M >
+  template < class M >
   class SegmentTreeE {
     using T = typename M::value_type;
 
@@ -28,8 +32,9 @@ namespace luz {
     using value_type = T;
 
     SegmentTreeE() = default;
-    explicit SegmentTreeE(const usize n): tree(n * 2, M::identity()) {}
-    
+    explicit SegmentTreeE(const usize n)
+        : tree(n * 2, M::identity()) {}
+
     usize size() const {
       return tree.size() / 2;
     }
@@ -41,8 +46,8 @@ namespace luz {
 
       while (index != 1) {
         index >>= 1;
-        tree[index] = M::operation(tree[index << 1 | 0],
-                                   tree[index << 1 | 1]);
+        tree[index] =
+            M::operation(tree[index << 1 | 0], tree[index << 1 | 1]);
       }
     }
 
@@ -74,6 +79,5 @@ namespace luz {
     }
   };
 
-  SegmentTreeE< addE<i32> > segment_tree_e(10);
-}
-
+  SegmentTreeE< addE< i32 > > segment_tree_e(10);
+} // namespace luz

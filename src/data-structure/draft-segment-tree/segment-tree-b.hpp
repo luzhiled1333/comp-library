@@ -7,7 +7,7 @@
 
 namespace luz {
 
-  template< class T, class F >
+  template < class T, class F >
   class SegmentTreeB {
     std::vector< T > tree;
     F operation_;
@@ -15,8 +15,10 @@ namespace luz {
 
    public:
     SegmentTreeB() = default;
-    explicit SegmentTreeB(const usize n, T identity, F operation):
-      tree(n * 2, identity), identity_(identity), operation_(operation) {}
+    explicit SegmentTreeB(const usize n, T identity, F operation)
+        : tree(n * 2, identity),
+          identity_(identity),
+          operation_(operation) {}
 
     usize size() const {
       return tree.size() / 2;
@@ -29,7 +31,8 @@ namespace luz {
 
       while (index != 1) {
         index >>= 1;
-        tree[index] = operation_(tree[index << 1 | 0], tree[index << 1 | 1]);
+        tree[index] =
+            operation_(tree[index << 1 | 0], tree[index << 1 | 1]);
       }
     }
 
@@ -58,10 +61,9 @@ namespace luz {
 
       return operation_(fold_l, fold_r);
     }
-
   };
 
-  SegmentTreeB segment_tree_b(10, 0, [](i32 a, i32 b) { return a + b; });
+  SegmentTreeB segment_tree_b(10, 0,
+                              [](i32 a, i32 b) { return a + b; });
 
-}
-
+} // namespace luz

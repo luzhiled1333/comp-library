@@ -3,12 +3,12 @@
 #include "src/cpp-template/header/type-alias.hpp"
 
 #include <cassert>
-#include <vector>
 #include <functional>
+#include <vector>
 
 namespace luz {
 
-  template< class T >
+  template < class T >
   class SegmentTreeA {
     std::vector< T > tree;
     std::function< T(T, T) > operation_;
@@ -16,8 +16,11 @@ namespace luz {
 
    public:
     SegmentTreeA() = default;
-    explicit SegmentTreeA(const usize n, T identity, std::function< T(T, T) > operation):
-      tree(n * 2, identity), identity_(identity), operation_(operation) {}
+    explicit SegmentTreeA(const usize n, T identity,
+                          std::function< T(T, T) > operation)
+        : tree(n * 2, identity),
+          identity_(identity),
+          operation_(operation) {}
 
     usize size() const {
       return tree.size() / 2;
@@ -30,7 +33,8 @@ namespace luz {
 
       while (index != 1) {
         index >>= 1;
-        tree[index] = operation_(tree[index << 1 | 0], tree[index << 1 | 1]);
+        tree[index] =
+            operation_(tree[index << 1 | 0], tree[index << 1 | 1]);
       }
     }
 
@@ -59,11 +63,12 @@ namespace luz {
 
       return operation_(fold_l, fold_r);
     }
-
   };
 
-  i32 addA(i32 a, i32 b) { return a + b; }
+  i32 addA(i32 a, i32 b) {
+    return a + b;
+  }
   std::function< i32(i32, i32) > f = addA;
   SegmentTreeA segment_tree_a(10, 0, f);
 
-}
+} // namespace luz

@@ -7,7 +7,7 @@
 
 namespace luz {
 
-  template< class T >
+  template < class T >
   class addC {
     T identity_{};
     T val_;
@@ -18,12 +18,16 @@ namespace luz {
     addC(): val_(identity_) {}
     addC(T val): val_(val) {}
 
-    addC operator+(addC r) { return addC(val_ + r.val_); }
+    addC operator+(addC r) {
+      return addC(val_ + r.val_);
+    }
 
-    T val() { return val_; }
+    T val() {
+      return val_;
+    }
   };
 
-  template< class M >
+  template < class M >
   class SegmentTreeC {
     using T = typename M::value_type;
 
@@ -72,10 +76,8 @@ namespace luz {
 
       return fold_l + fold_r;
     }
-
   };
 
-  SegmentTreeC< addC<i32> > segment_tree_c(10);
+  SegmentTreeC< addC< i32 > > segment_tree_c(10);
 
-}
-
+} // namespace luz

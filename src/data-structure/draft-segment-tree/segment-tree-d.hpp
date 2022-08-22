@@ -7,18 +7,22 @@
 
 namespace luz {
 
-  template< class T >
+  template < class T >
   class addD {
     T identity_{};
 
    public:
     using value_type = T;
 
-    T operation(T a, T b) { return a + b; }
-    T identity() { return identity_; }
+    T operation(T a, T b) {
+      return a + b;
+    }
+    T identity() {
+      return identity_;
+    }
   };
 
-  template< class M >
+  template < class M >
   class SegmentTreeD {
     using T = typename M::value_type;
 
@@ -27,7 +31,8 @@ namespace luz {
 
    public:
     SegmentTreeD() = default;
-    explicit SegmentTreeD(const usize n): tree(n * 2, monoid.identity()) {}
+    explicit SegmentTreeD(const usize n)
+        : tree(n * 2, monoid.identity()) {}
 
     usize size() const {
       return tree.size() / 2;
@@ -71,10 +76,8 @@ namespace luz {
 
       return monoid.operation(fold_l, fold_r);
     }
-
   };
 
-  SegmentTreeD< addD<i32> > segment_tree_d(10);
+  SegmentTreeD< addD< i32 > > segment_tree_d(10);
 
-}
-
+} // namespace luz
