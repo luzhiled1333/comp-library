@@ -71,10 +71,10 @@ namespace luz {
       dfs(root);
     }
 
-    std::optional< usize > la(usize v, usize l) {
+    std::optional< usize > la(usize v, usize level) {
       bound_check(v);
-      assert(to_qi_[v].count(l));
-      usize qi = to_qi_[v][l];
+      assert(to_qi_[v].count(level));
+      usize qi = to_qi_[v][level];
       return query_results_[qi];
     }
   };
