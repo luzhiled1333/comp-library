@@ -7,23 +7,8 @@
 
 namespace luz {
 
-  template < typename T >
-  class addE {
-    static constexpr T identity_{};
-
-   public:
-    using value_type = T;
-
-    static constexpr T operation(T a, T b) {
-      return a + b;
-    }
-    static constexpr T identity() {
-      return identity_;
-    };
-  };
-
   template < class M >
-  class SegmentTreeE {
+  class PointMappintRangeFoldSegmentTree {
     using T = typename M::value_type;
 
     std::vector< T > tree;
@@ -31,8 +16,8 @@ namespace luz {
    public:
     using value_type = T;
 
-    SegmentTreeE() = default;
-    explicit SegmentTreeE(const usize n)
+    PointMappintRangeFoldSegmentTree() = default;
+    explicit PointMappintRangeFoldSegmentTree(const usize n)
         : tree(n * 2, M::identity()) {}
 
     usize size() const {
@@ -79,5 +64,4 @@ namespace luz {
     }
   };
 
-  SegmentTreeE< addE< i32 > > segment_tree_e(10);
 } // namespace luz
