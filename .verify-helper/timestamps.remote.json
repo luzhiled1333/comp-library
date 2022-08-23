@@ -12,6 +12,5 @@
 "test/library-checker/bitwise_xor_convolution.test.cpp": "2022-08-22 18:26:45 +0900",
 "test/library-checker/unionfind.test.cpp": "2022-08-22 18:26:45 +0900",
 "unit-test/data-structure/fenwick-tree.test.cpp": "2022-08-22 18:26:45 +0900",
-"unit-test/math/modular-arithmetic/static-modint.test.cpp": "2022-08-22 18:26:45 +0900",
-"unit-test/sequence/coordinate-complession.test.cpp": "2022-08-22 18:26:45 +0900"
+"unit-test/math/modular-arithmetic/static-modint.test.cpp": "2022-08-22 18:26:45 +0900"
 }
