@@ -28,7 +28,7 @@ namespace luz {
       }
     }
 
-    std::vector< usize > result_of_compressing_vs() const {
+    std::vector< usize > compressed_vector() const {
       return ziped_vs_;
     }
 

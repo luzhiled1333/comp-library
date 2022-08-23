@@ -16,7 +16,7 @@ namespace luz {
     std::vector< usize > expected({5, 0, 2, 3, 2, 4, 1});
 
     Compressor< int > cp(vs);
-    std::vector< usize > result = cp.result_of_compressing_vs();
+    std::vector< usize > result = cp.compressed_vector();
     assert(result == expected);
 
     std::cerr << "result  : " << result << std::endl;
