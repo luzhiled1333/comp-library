@@ -1,13 +1,13 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/ITP1_1_A
 
-#include <vector>
-#include <ostream>
-#include <cassert>
+#include "src/sequence/compression.hpp"
 
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/cpp-template/header/vector-ios.hpp"
 
-#include "src/sequence/compression.hpp"
+#include <cassert>
+#include <ostream>
+#include <vector>
 
 namespace luz {
 

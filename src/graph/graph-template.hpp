@@ -1,30 +1,33 @@
 #pragma once
 
-#include <vector>
-#include <cassert>
-
 #include "src/cpp-template/header/type-alias.hpp"
+
+#include <cassert>
+#include <vector>
 
 namespace luz {
 
-  template< typename cost_type >
+  template < typename cost_type >
   class Edge {
    public:
     usize from, to;
     cost_type cost;
     usize id;
     Edge() = default;
-    Edge(usize from_, usize to_, cost_type cost_, usize id_):
-      from(from_), to(to_), cost(cost_), id(id_) {}
+    Edge(usize from_, usize to_, cost_type cost_, usize id_)
+        : from(from_),
+          to(to_),
+          cost(cost_),
+          id(id_) {}
   };
 
-  template< typename cost_type >
-  using Edges = std::vector< Edge<cost_type> >;
+  template < typename cost_type >
+  using Edges = std::vector< Edge< cost_type > >;
 
-  template< typename cost_type >
+  template < typename cost_type >
   class Graph {
    protected:
-    std::vector< std::vector<Edge<cost_type>> > g;
+    std::vector< std::vector< Edge< cost_type > > > g;
     usize edge_count;
 
    public:
@@ -37,7 +40,7 @@ namespace luz {
 
     void add_directed_edge(usize from, usize to, cost_type cost = 1) {
       assert(from < size());
-      assert(to   < size());
+      assert(to < size());
       g[from].emplace_back(from, to, cost, edge_count++);
     }
 
@@ -52,9 +55,10 @@ namespace luz {
       return g[v];
     }
 
-    inline const Edges< cost_type > &operator[](const usize &v) const {
+    inline const Edges< cost_type > &operator[](
+        const usize &v) const {
       return g[v];
     }
   };
 
-}
+} // namespace luz

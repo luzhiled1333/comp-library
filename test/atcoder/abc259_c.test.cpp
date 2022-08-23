@@ -1,13 +1,13 @@
 // verification-helper: PROBLEM https://atcoder.jp/contests/abc259/tasks/abc259_c
 
-#include "src/cpp-template/header/type-alias.hpp"
 #include "src/cpp-template/header/change-minmax.hpp"
 #include "src/cpp-template/header/rep.hpp"
+#include "src/cpp-template/header/type-alias.hpp"
 #include "src/sequence/run-length-encoding.hpp"
 
-#include <string>
-#include <iostream>
 #include <algorithm>
+#include <iostream>
+#include <string>
 
 namespace luz {
 
@@ -33,7 +33,6 @@ namespace luz {
     } else {
       std::cout << "No" << std::endl;
     }
-
   }
 
 } // namespace luz

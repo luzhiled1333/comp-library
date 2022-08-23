@@ -1,7 +1,7 @@
 #pragma once
 
-#include "src/cpp-template/header/type-alias.hpp"
 #include "src/cpp-template/header/rep.hpp"
+#include "src/cpp-template/header/type-alias.hpp"
 
 #include <algorithm>
 #include <cassert>
@@ -45,7 +45,8 @@ namespace luz {
     }
 
     usize merge(usize u, usize v) {
-      bound_check(u); bound_check(v);
+      bound_check(u);
+      bound_check(v);
 
       isize x = impl_leader(u);
       isize y = impl_leader(v);
@@ -80,13 +81,11 @@ namespace luz {
         return vs.empty();
       };
       result.erase(
-        std::remove_if(result.begin(), result.end(), empty_check),
-        result.end()
-      );
+          std::remove_if(result.begin(), result.end(), empty_check),
+          result.end());
 
       return result;
     }
-
   };
 
 } // namespace luz

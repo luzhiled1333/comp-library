@@ -1,12 +1,12 @@
 // verification-helper: PROBLEM https://atcoder.jp/contests/abc177/tasks/abc177_d
 
-#include "src/cpp-template/header/type-alias.hpp"
-#include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/change-minmax.hpp"
+#include "src/cpp-template/header/rep.hpp"
+#include "src/cpp-template/header/type-alias.hpp"
 #include "src/data-structure/disjoint-set-union.hpp"
 
-#include <iostream>
 #include <cassert>
+#include <iostream>
 
 namespace luz {
 

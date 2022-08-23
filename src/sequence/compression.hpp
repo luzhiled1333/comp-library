@@ -1,20 +1,25 @@
-#include <algorithm>
-#include <vector>
-#include <functional>
+#pragma once
 
-#include "src/cpp-template/header/type-alias.hpp"
 #include "src/cpp-template/header/rep.hpp"
+#include "src/cpp-template/header/type-alias.hpp"
+
+#include <algorithm>
+#include <functional>
+#include <vector>
 
 namespace luz {
 
-  template< class T, class Compare = std::less< T > >
+  template < class T, class Compare = std::less< T > >
   class Compressor {
     std::vector< T > vs_;
     std::vector< T > zip_;
     std::vector< usize > ziped_vs_;
 
    public:
-    explicit Compressor(std::vector< T > vs): vs_(vs), zip_(vs), ziped_vs_(vs.size()) {
+    explicit Compressor(std::vector< T > vs)
+        : vs_(vs),
+          zip_(vs),
+          ziped_vs_(vs.size()) {
       std::sort(zip_.begin(), zip_.end(), Compare());
       zip_.erase(std::unique(zip_.begin(), zip_.end()), zip_.end());
       for (usize i: rep(0, vs.size())) {
@@ -38,4 +43,4 @@ namespace luz {
     }
   };
 
-}
+} // namespace luz
