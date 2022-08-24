@@ -8,13 +8,10 @@ data:
     path: src/cpp-template/header/type-alias.hpp
     title: Type alias
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: unit-test/sequence/coordinate-complession.test.cpp
-    title: unit-test/sequence/coordinate-complession.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/cpp-template/header/rep.hpp\"\n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\
@@ -61,9 +58,8 @@ data:
   path: src/sequence/coordinate-compression.hpp
   requiredBy: []
   timestamp: '2022-08-22 18:26:45+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - unit-test/sequence/coordinate-complession.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: src/sequence/coordinate-compression.hpp
 layout: document
 title: "\u5EA7\u6A19\u5727\u7E2E"

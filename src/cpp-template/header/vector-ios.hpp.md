@@ -19,8 +19,8 @@ data:
     path: test/aoj/itp1_1_a.test.cpp
     title: test/aoj/itp1_1_a.test.cpp
   - icon: ':heavy_check_mark:'
-    path: unit-test/sequence/coordinate-complession.test.cpp
-    title: unit-test/sequence/coordinate-complession.test.cpp
+    path: unit-test/sequence/compression.test.cpp
+    title: unit-test/sequence/compression.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -76,7 +76,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/itp1_1_a.test.cpp
-  - unit-test/sequence/coordinate-complession.test.cpp
+  - unit-test/sequence/compression.test.cpp
 documentation_of: src/cpp-template/header/vector-ios.hpp
 layout: document
 title: vector I/O

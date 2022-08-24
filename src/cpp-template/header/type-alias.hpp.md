@@ -55,6 +55,9 @@ data:
     path: src/math/modular-arithmetic/static-modint.hpp
     title: src/math/modular-arithmetic/static-modint.hpp
   - icon: ':heavy_check_mark:'
+    path: src/sequence/compression.hpp
+    title: src/sequence/compression.hpp
+  - icon: ':warning:'
     path: src/sequence/coordinate-compression.hpp
     title: "\u5EA7\u6A19\u5727\u7E2E"
   - icon: ':heavy_check_mark:'
@@ -105,8 +108,8 @@ data:
     path: unit-test/math/modular-arithmetic/static-modint.test.cpp
     title: unit-test/math/modular-arithmetic/static-modint.test.cpp
   - icon: ':heavy_check_mark:'
-    path: unit-test/sequence/coordinate-complession.test.cpp
-    title: unit-test/sequence/coordinate-complession.test.cpp
+    path: unit-test/sequence/compression.test.cpp
+    title: unit-test/sequence/compression.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -142,6 +145,7 @@ data:
   - src/math/convolution/bitwise-and-convolution.hpp
   - src/math/convolution/fast-walsh-hadamard-transform.hpp
   - src/math/modular-arithmetic/static-modint.hpp
+  - src/sequence/compression.hpp
   - src/sequence/run-length-encoding.hpp
   - src/sequence/coordinate-compression.hpp
   timestamp: '2022-08-22 18:26:45+09:00'
@@ -161,7 +165,7 @@ data:
   - test/atcoder/abc177_d.test.cpp
   - unit-test/data-structure/fenwick-tree.test.cpp
   - unit-test/math/modular-arithmetic/static-modint.test.cpp
-  - unit-test/sequence/coordinate-complession.test.cpp
+  - unit-test/sequence/compression.test.cpp
 documentation_of: src/cpp-template/header/type-alias.hpp
 layout: document
 title: Type alias

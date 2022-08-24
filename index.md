@@ -107,6 +107,9 @@ data:
   - name: src/sequence
     pages:
     - icon: ':heavy_check_mark:'
+      path: src/sequence/compression.hpp
+      title: src/sequence/compression.hpp
+    - icon: ':warning:'
       path: src/sequence/coordinate-compression.hpp
       title: "\u5EA7\u6A19\u5727\u7E2E"
     - icon: ':heavy_check_mark:'
@@ -169,7 +172,7 @@ data:
   - name: unit-test/sequence
     pages:
     - icon: ':heavy_check_mark:'
-      path: unit-test/sequence/coordinate-complession.test.cpp
-      title: unit-test/sequence/coordinate-complession.test.cpp
+      path: unit-test/sequence/compression.test.cpp
+      title: unit-test/sequence/compression.test.cpp
 layout: toppage
 ---

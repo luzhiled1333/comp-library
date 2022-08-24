@@ -34,6 +34,9 @@ data:
     title: "\u9AD8\u901F\u30A6\u30A9\u30EB\u30B7\u30E5-\u30A2\u30C0\u30DE\u30FC\u30EB\
       \u5909\u63DB/\u9006\u5909\u63DB (Fast Walsh Hadamard Transform / Inverse Transform)"
   - icon: ':heavy_check_mark:'
+    path: src/sequence/compression.hpp
+    title: src/sequence/compression.hpp
+  - icon: ':warning:'
     path: src/sequence/coordinate-compression.hpp
     title: "\u5EA7\u6A19\u5727\u7E2E"
   _extendedVerifiedWith:
@@ -77,8 +80,8 @@ data:
     path: unit-test/data-structure/fenwick-tree.test.cpp
     title: unit-test/data-structure/fenwick-tree.test.cpp
   - icon: ':heavy_check_mark:'
-    path: unit-test/sequence/coordinate-complession.test.cpp
-    title: unit-test/sequence/coordinate-complession.test.cpp
+    path: unit-test/sequence/compression.test.cpp
+    title: unit-test/sequence/compression.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -138,6 +141,7 @@ data:
   - src/math/convolution/bitwise-xor-convolution.hpp
   - src/math/convolution/bitwise-and-convolution.hpp
   - src/math/convolution/fast-walsh-hadamard-transform.hpp
+  - src/sequence/compression.hpp
   - src/sequence/coordinate-compression.hpp
   timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
@@ -155,7 +159,7 @@ data:
   - test/atcoder/abc259_c.test.cpp
   - test/atcoder/abc177_d.test.cpp
   - unit-test/data-structure/fenwick-tree.test.cpp
-  - unit-test/sequence/coordinate-complession.test.cpp
+  - unit-test/sequence/compression.test.cpp
 documentation_of: src/cpp-template/header/rep.hpp
 layout: document
 title: "rep \u69CB\u9020\u4F53"
