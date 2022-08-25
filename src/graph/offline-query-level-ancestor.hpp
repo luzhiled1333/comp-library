@@ -32,7 +32,7 @@ namespace luz {
 
     void dfs(usize v) {
       visited_[v] = true;
-      path_.push_back(v);
+      path_.emplace_back(v);
 
       for (const auto &[level, qi]: qs_[v]) {
         if (level < path_.size()) {
@@ -74,7 +74,7 @@ namespace luz {
     std::optional< usize > la(usize v, usize level) {
       bound_check(v);
       assert(to_qi_[v].count(level));
-      usize qi = to_qi_[v][level];
+      usize qi = (*to_qi_[v].find(level)).second;
       return query_results_[qi];
     }
   };
