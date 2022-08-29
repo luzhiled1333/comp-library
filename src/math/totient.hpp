@@ -4,8 +4,9 @@
 
 namespace luz {
 
-  u64 totient(u64 n) {
-    u64 t = n, p = 2;
+  template < typename T >
+  T totient(T n) {
+    T t = n, p = 2;
     while (p * p <= n) {
       if (n % p == 0) {
         t -= t / p;
