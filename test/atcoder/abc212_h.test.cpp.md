@@ -54,24 +54,22 @@ data:
     \ auto begin() const noexcept {\n      return f;\n    }\n    constexpr auto end()\
     \ const noexcept {\n      return l;\n    }\n  };\n\n} // namespace luz\n#line\
     \ 2 \"src/math/convolution/fast-walsh-hadamard-transform.hpp\"\n\n#line 5 \"src/math/convolution/fast-walsh-hadamard-transform.hpp\"\
-    \n\n#include <cassert>\n#include <vector>\n\nnamespace luz::impl {\n\n  template\
-    \ < typename T, typename F >\n  void impl_fwht(std::vector< T > &f, F op) {\n\
-    \    const usize n = f.size();\n    assert((n & (n - 1)) == 0);\n    usize i =\
-    \ 1;\n    while (i < n) {\n      usize j = 0;\n      while (j < n) {\n       \
-    \ for (usize k: rep(0, i)) {\n          op(f[j + k], f[j + k + i]);\n        }\n\
-    \        j += i << 1;\n      }\n      i <<= 1;\n    }\n  }\n\n} // namespace luz::impl\n\
-    \nnamespace luz {\n\n  template < typename T, typename F >\n  void fast_walsh_hadamard_transform(std::vector<\
-    \ T > &f, F op) {\n    impl::impl_fwht(f, op);\n  }\n\n} // namespace luz\n#line\
-    \ 2 \"src/math/modular-arithmetic/static-modint.hpp\"\n\n#line 4 \"src/math/modular-arithmetic/static-modint.hpp\"\
-    \n\n#line 6 \"src/math/modular-arithmetic/static-modint.hpp\"\n\nnamespace luz\
-    \ {\n\n  template < u32 mod >\n  class StaticPrimeModInt {\n    using mint = StaticPrimeModInt;\n\
-    \    u32 v_;\n\n   public:\n    StaticPrimeModInt(): v_(0) {}\n\n    template\
-    \ < typename T >\n    StaticPrimeModInt(T v) {\n      i64 x = (i64)(v % (i64)mod);\n\
-    \      if (x < 0) x += mod;\n      v_ = (u32)x;\n    }\n\n    u32 val() const\
-    \ {\n      return v_;\n    }\n\n    mint &operator+=(const mint &rhs) {\n    \
-    \  v_ += rhs.v_;\n      if (v_ >= mod) v_ -= mod;\n      return *this;\n    }\n\
-    \    mint &operator-=(const mint &rhs) {\n      v_ += mod - rhs.v_;\n      if\
-    \ (v_ >= mod) v_ -= mod;\n      return *this;\n    }\n    mint &operator*=(const\
+    \n\n#include <cassert>\n#include <vector>\n\nnamespace luz {\n\n  template < typename\
+    \ T, typename F >\n  void fast_walsh_hadamard_transform(std::vector< T > &f, F\
+    \ op) {\n    const usize n = f.size();\n    assert((n & (n - 1)) == 0);\n    usize\
+    \ i = 1;\n    while (i < n) {\n      usize j = 0;\n      while (j < n) {\n   \
+    \     for (usize k: rep(0, i)) {\n          op(f[j + k], f[j + k + i]);\n    \
+    \    }\n        j += i << 1;\n      }\n      i <<= 1;\n    }\n  }\n\n} // namespace\
+    \ luz\n#line 2 \"src/math/modular-arithmetic/static-modint.hpp\"\n\n#line 4 \"\
+    src/math/modular-arithmetic/static-modint.hpp\"\n\n#line 6 \"src/math/modular-arithmetic/static-modint.hpp\"\
+    \n\nnamespace luz {\n\n  template < u32 mod >\n  class StaticPrimeModInt {\n \
+    \   using mint = StaticPrimeModInt;\n    u32 v_;\n\n   public:\n    StaticPrimeModInt():\
+    \ v_(0) {}\n\n    template < typename T >\n    StaticPrimeModInt(T v) {\n    \
+    \  i64 x = (i64)(v % (i64)mod);\n      if (x < 0) x += mod;\n      v_ = (u32)x;\n\
+    \    }\n\n    u32 val() const {\n      return v_;\n    }\n\n    mint &operator+=(const\
+    \ mint &rhs) {\n      v_ += rhs.v_;\n      if (v_ >= mod) v_ -= mod;\n      return\
+    \ *this;\n    }\n    mint &operator-=(const mint &rhs) {\n      v_ += mod - rhs.v_;\n\
+    \      if (v_ >= mod) v_ -= mod;\n      return *this;\n    }\n    mint &operator*=(const\
     \ mint &rhs) {\n      v_ = (u32)(u64(1) * v_ * rhs.v_ % mod);\n      return *this;\n\
     \    }\n    mint &operator/=(const mint &rhs) {\n      *this *= rhs.inverse();\n\
     \      return *this;\n    }\n\n    mint operator+() const {\n      return *this;\n\
@@ -136,7 +134,7 @@ data:
   isVerificationFile: true
   path: test/atcoder/abc212_h.test.cpp
   requiredBy: []
-  timestamp: '2022-08-22 18:26:45+09:00'
+  timestamp: '2022-08-29 17:30:36+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/atcoder/abc212_h.test.cpp
