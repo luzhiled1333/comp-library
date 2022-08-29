@@ -71,7 +71,7 @@ namespace luz {
       dfs(root);
     }
 
-    std::optional< usize > la(usize v, usize level) {
+    std::optional< usize > la(usize v, usize level) const {
       bound_check(v);
       assert(to_qi_[v].count(level));
       usize qi = (*to_qi_[v].find(level)).second;
