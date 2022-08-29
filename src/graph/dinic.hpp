@@ -12,7 +12,7 @@
 namespace luz {
 
   template < typename cap_type >
-  class Dinic {
+  class MaxFlowGraph {
     static constexpr cap_type INF_ =
         std::numeric_limits< cap_type >::max();
 
