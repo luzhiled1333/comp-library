@@ -3,7 +3,7 @@
 #include "src/cpp-template/header/input.hpp"
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
-#include "src/graph/dinic.hpp"
+#include "src/graph/max-flow.hpp"
 
 #include <iostream>
 
