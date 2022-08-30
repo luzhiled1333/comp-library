@@ -13,7 +13,7 @@ namespace luz {
     usize n, m;
     std::cin >> n >> m;
 
-    Dinic< u32 > g(n);
+    MaxFlowGraph< u32 > g(n);
     for ([[maybe_unused]] usize _: rep(0, m)) {
       usize u, v;
       u32 c;
