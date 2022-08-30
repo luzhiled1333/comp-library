@@ -81,14 +81,6 @@ namespace luz {
       graph_[to].emplace_back(from, 0, graph_[from].size() - 1);
     }
 
-    void add_undirected_edge(usize u, usize v, cap_type cap) {
-      assert(u < g_size_);
-      assert(v < g_size_);
-      assert(u != v);
-      graph_[u].emplace_back(v, cap, graph_[v].size());
-      graph_[v].emplace_back(u, cap, graph_[u].size() - 1);
-    }
-
     inline cap_type inf() const {
       return INF_;
     }
