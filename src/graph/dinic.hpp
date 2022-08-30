@@ -69,9 +69,9 @@ namespace luz {
     }
 
    public:
-    Dinic() = default;
+    MaxFlowGraph() = default;
 
-    explicit Dinic(usize n): g_size_(n), graph_(n) {}
+    explicit MaxFlowGraph(usize n): g_size_(n), graph_(n) {}
 
     void add_directed_edge(usize from, usize to, cap_type cap) {
       assert(from < g_size_);
