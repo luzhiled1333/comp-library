@@ -8,4 +8,4 @@ documentation_of: //src/math/totient.hpp
 T totient(T n)
 ```
 
-正の整数 $n$ に対し、$n$ と互いに素であるような $1$ 以上 $n$ 以下の自然数の個数 $\phi (n)$ を返す。
+非負整数 $n$ に対し、$n$ と互いに素であるような $1$ 以上 $n$ 以下の自然数の個数 $\phi (n)$ を返す。
