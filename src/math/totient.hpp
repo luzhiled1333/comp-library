@@ -9,7 +9,8 @@ namespace luz {
 
   template < typename T >
   T totient(T n) {
-    static_assert(std::numeric_limits<T>::is_integer, "T must be integer");
+    static_assert(std::numeric_limits< T >::is_integer,
+                  "T must be integer");
     assert(n >= 0);
     T t = n, p = 2;
     while (p * p <= n) {
