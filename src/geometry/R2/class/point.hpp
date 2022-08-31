@@ -4,14 +4,12 @@
 
 #include <vector>
 
-namespace luz {
-  namespace R2 {
+namespace luz::R2 {
 
-    template < typename Z >
-    using Point = Vector< Z >;
+  template < typename Z >
+  using Point = Vector< Z >;
 
-    template < typename Z >
-    using Points = std::vector< Point< Z > >;
+  template < typename Z >
+  using Points = std::vector< Point< Z > >;
 
-  } // namespace R2
-} // namespace luz
+} // namespace luz::R2
