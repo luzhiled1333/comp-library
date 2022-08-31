@@ -7,8 +7,12 @@
 
 namespace luz {
 
-  std::vector< u32 > enumerate_totient(u32 n) {
-    std::vector< u32 > totient(n);
+  template< typename T >
+  std::vector< T > enumerate_totient(T n) {
+    static_assert(std::numeric_limits< T >::is_integer,
+                  "T must be integer");
+    assert(n >= 0);
+    std::vector< T > totient(n);
     for (u32 i: rep(0, n)) {
       totient[i] = i;
     }
