@@ -8,7 +8,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/graph/dijkstra.hpp
     title: Dijkstra's Algorithm
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/graph/functional-graph-utility.hpp
     title: src/graph/functional-graph-utility.hpp
   - icon: ':heavy_check_mark:'
@@ -21,6 +21,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/grl_5_c.test.cpp
     title: test/aoj/grl_5_c.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc258_e.test.cpp
+    title: test/atcoder/abc258_e.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -81,6 +84,7 @@ data:
   verifiedWith:
   - test/aoj/grl_1_a.test.cpp
   - test/aoj/grl_5_c.test.cpp
+  - test/atcoder/abc258_e.test.cpp
 documentation_of: src/graph/graph-template.hpp
 layout: document
 title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"

@@ -8,10 +8,13 @@ data:
     path: src/graph/graph-template.hpp
     title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc258_e.test.cpp
+    title: test/atcoder/abc258_e.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/cpp-template/header/type-alias.hpp\"\n\n#include <cstddef>\n\
@@ -83,8 +86,9 @@ data:
   path: src/graph/functional-graph-utility.hpp
   requiredBy: []
   timestamp: '2022-08-22 18:26:45+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/atcoder/abc258_e.test.cpp
 documentation_of: src/graph/functional-graph-utility.hpp
 layout: document
 redirect_from:

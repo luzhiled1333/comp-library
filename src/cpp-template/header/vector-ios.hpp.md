@@ -19,6 +19,9 @@ data:
     path: test/aoj/itp1_1_a.test.cpp
     title: test/aoj/itp1_1_a.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc258_e.test.cpp
+    title: test/atcoder/abc258_e.test.cpp
+  - icon: ':heavy_check_mark:'
     path: unit-test/sequence/compression.test.cpp
     title: unit-test/sequence/compression.test.cpp
   _isVerificationFailed: false
@@ -76,6 +79,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/itp1_1_a.test.cpp
+  - test/atcoder/abc258_e.test.cpp
   - unit-test/sequence/compression.test.cpp
 documentation_of: src/cpp-template/header/vector-ios.hpp
 layout: document

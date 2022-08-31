@@ -78,7 +78,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/graph/dijkstra.hpp
       title: Dijkstra's Algorithm
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/graph/functional-graph-utility.hpp
       title: src/graph/functional-graph-utility.hpp
     - icon: ':heavy_check_mark:'
@@ -142,6 +142,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/atcoder/abc212_h.test.cpp
       title: test/atcoder/abc212_h.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/atcoder/abc258_e.test.cpp
+      title: test/atcoder/abc258_e.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/atcoder/abc259_c.test.cpp
       title: test/atcoder/abc259_c.test.cpp

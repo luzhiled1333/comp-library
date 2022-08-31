@@ -62,6 +62,9 @@ data:
     path: test/atcoder/abc212_h.test.cpp
     title: test/atcoder/abc212_h.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc258_e.test.cpp
+    title: test/atcoder/abc258_e.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc259_c.test.cpp
     title: test/atcoder/abc259_c.test.cpp
   - icon: ':heavy_check_mark:'
@@ -156,6 +159,7 @@ data:
   - test/aoj/dsl_1_a.test.cpp
   - test/atcoder/abc259_d.test.cpp
   - test/atcoder/abc212_h.test.cpp
+  - test/atcoder/abc258_e.test.cpp
   - test/atcoder/abc259_c.test.cpp
   - test/atcoder/abc177_d.test.cpp
   - unit-test/data-structure/fenwick-tree.test.cpp
