@@ -8,7 +8,7 @@
 namespace luz {
 
   void main_() {
-    u64 n;
+    u32 n;
     std::cin >> n;
     std::cout << totient(n) << std::endl;
   }
