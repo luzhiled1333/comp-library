@@ -6,15 +6,23 @@
 
 #include <cassert>
 #include <iostream>
+#include <numeric>
 
 namespace luz {
+
+  u32 naive_totient(u32 n) {
+    u32 result = 0;
+    for (u32 m: rep(1, n + 1)) {
+      if (std::gcd(n, m) == 1) result++;
+    }
+    return result;
+  }
 
   void main_() {
 
     // small
-    u64 totients[] = {0, 1, 1, 2, 2, 4, 2, 6, 4, 6};
-    for (u64 i: rep(0, 10)) {
-      assert(totient(i) == totients[i]);
+    for (u32 i: rep(0, 1000)) {
+      assert(totient(i) == naive_totient(i));
     }
 
     // large
