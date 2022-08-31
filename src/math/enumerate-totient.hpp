@@ -13,17 +13,17 @@ namespace luz {
     static_assert(std::numeric_limits< T >::is_integer,
                   "T must be integer");
     assert(n >= 0);
-    std::vector< T > totient(n);
+    std::vector< T > totients(n);
     for (T i: rep(0, n)) {
-      totient[i] = i;
+      totients[i] = i;
     }
     for (T i: rep(2, n)) {
-      if (totient[i] != i) continue;
+      if (totients[i] != i) continue;
       for (T j = i; j < n; j += i) {
-        totient[j] = totient[j] / i * (i - 1);
+        totients[j] = totients[j] / i * (i - 1);
       }
     }
-    return totient;
+    return totients;
   }
 
 } // namespace luz
