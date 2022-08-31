@@ -10,7 +10,7 @@
 namespace luz {
 
   void main_() {
-    constexpr int MAX_N      = 1000000;
+    constexpr u32 MAX_N      = 1000000;
     std::vector< u32 > euler = enumerate_totient(MAX_N + 1);
     std::vector< u64 > S(MAX_N + 1);
     for (u32 i: rep(2, MAX_N + 1)) {

@@ -3,11 +3,12 @@
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
 
+#include <cassert>
 #include <vector>
 
 namespace luz {
 
-  template< typename T >
+  template < typename T >
   std::vector< T > enumerate_totient(T n) {
     static_assert(std::numeric_limits< T >::is_integer,
                   "T must be integer");
