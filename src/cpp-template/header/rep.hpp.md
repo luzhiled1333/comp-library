@@ -83,6 +83,9 @@ data:
     path: unit-test/data-structure/fenwick-tree.test.cpp
     title: unit-test/data-structure/fenwick-tree.test.cpp
   - icon: ':heavy_check_mark:'
+    path: unit-test/math/totient.test.cpp
+    title: unit-test/math/totient.test.cpp
+  - icon: ':heavy_check_mark:'
     path: unit-test/sequence/compression.test.cpp
     title: unit-test/sequence/compression.test.cpp
   _isVerificationFailed: false
@@ -163,6 +166,7 @@ data:
   - test/atcoder/abc259_c.test.cpp
   - test/atcoder/abc177_d.test.cpp
   - unit-test/data-structure/fenwick-tree.test.cpp
+  - unit-test/math/totient.test.cpp
   - unit-test/sequence/compression.test.cpp
 documentation_of: src/cpp-template/header/rep.hpp
 layout: document

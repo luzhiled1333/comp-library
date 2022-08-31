@@ -104,6 +104,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/math/modular-arithmetic/static-modint.hpp
       title: src/math/modular-arithmetic/static-modint.hpp
+  - name: src/math
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/math/totient.hpp
+      title: "\u30AA\u30A4\u30E9\u30FC\u306E\u30C8\u30FC\u30B7\u30A7\u30F3\u30C8\u95A2\
+        \u6570 (\u30AA\u30A4\u30E9\u30FC\u306E $\\phi$ \u95A2\u6570, Euler's totient\
+        \ function)"
   - name: src/sequence
     pages:
     - icon: ':heavy_check_mark:'
@@ -134,6 +141,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/itp1_1_a.test.cpp
       title: test/aoj/itp1_1_a.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/ntl_1_d.test.cpp
+      title: test/aoj/ntl_1_d.test.cpp
   - name: test/atcoder
     pages:
     - icon: ':heavy_check_mark:'
@@ -172,6 +182,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: unit-test/math/modular-arithmetic/static-modint.test.cpp
       title: unit-test/math/modular-arithmetic/static-modint.test.cpp
+  - name: unit-test/math
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: unit-test/math/totient.test.cpp
+      title: unit-test/math/totient.test.cpp
   - name: unit-test/sequence
     pages:
     - icon: ':heavy_check_mark:'
