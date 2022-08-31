@@ -2,13 +2,13 @@
 
 #include "src/math/modular-arithmetic/static-modint.hpp"
 
-#include <iostream>
 #include <cassert>
+#include <iostream>
 
 namespace luz {
 
   void main_() {
-    using mint = StaticPrimeModInt<11>;
+    using mint = StaticPrimeModInt< 11 >;
 
     mint a = 10;
     mint b(3);
@@ -46,11 +46,11 @@ namespace luz {
 
     // @=
     a += b;
-    assert(a ==  2 and b == 3);
+    assert(a == 2 and b == 3);
     a -= b;
     assert(a == 10 and b == 3);
     a *= b;
-    assert(a ==  8 and b == 3);
+    assert(a == 8 and b == 3);
     a /= b;
     assert(a == 10 and b == 3);
 

@@ -2,9 +2,7 @@
 
 namespace luz {
 
-  void main_() {
-
-  }
+  void main_() {}
 
 } // namespace luz
 

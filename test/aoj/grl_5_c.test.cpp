@@ -1,7 +1,7 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/GRL_5_C
 
-#include "src/cpp-template/header/type-alias.hpp"
 #include "src/cpp-template/header/rep.hpp"
+#include "src/cpp-template/header/type-alias.hpp"
 #include "src/graph/graph-template.hpp"
 #include "src/graph/offline-query-lowest-common-ancestor.hpp"
 
@@ -40,7 +40,6 @@ namespace luz {
     for (const auto &[u, v]: qs) {
       std::cout << offline_lcas.lca(u, v) << std::endl;
     }
-
   }
 
 } // namespace luz

@@ -1,7 +1,7 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/DSL_1_A
 
-#include "src/cpp-template/header/type-alias.hpp"
 #include "src/cpp-template/header/rep.hpp"
+#include "src/cpp-template/header/type-alias.hpp"
 #include "src/data-structure/disjoint-set-union.hpp"
 
 #include <iostream>
@@ -23,7 +23,6 @@ namespace luz {
         std::cout << (d.same(x, y)) << std::endl;
       }
     }
-
   }
 
 } // namespace luz
