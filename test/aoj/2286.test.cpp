@@ -10,18 +10,20 @@
 namespace luz {
 
   void main_() {
-    constexpr u32 MAX_N      = 1000000;
-    std::vector< u32 > euler = enumerate_totient(MAX_N + 1);
-    std::vector< u64 > S(MAX_N + 1);
-    for (u32 i: rep(2, MAX_N + 1)) {
-      S[i] = S[i - 1] + euler[i];
+    constexpr u32 MAX_N = 1000000;
+
+    std::vector< u64 > rs = enumerate_totient<u64>(MAX_N + 1);
+    for (usize i: rep(2, rs.size())) {
+      rs[i] += rs[i - 1];
     }
-    u32 T;
-    std::cin >> T;
-    for ([[maybe_unused]] u32 _: rep(0, T)) {
-      u32 N;
-      std::cin >> N;
-      std::cout << S[N] + 2 << std::endl;
+
+    usize t;
+    std::cin >> t;
+    for ([[maybe_unused]] usize _: rep(0, t)) {
+      usize n;
+      std::cin >> n;
+
+      std::cout << rs[n] + 1 << std::endl;
     }
   }
 
