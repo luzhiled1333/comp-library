@@ -18,10 +18,9 @@ namespace luz {
       totient[i] = i;
     }
     for (T i: rep(2, n)) {
-      if (totient[i] == i) {
-        for (T j = i; j < n; j += i) {
-          totient[j] = totient[j] / i * (i - 1);
-        }
+      if (totient[i] != i) continue;
+      for (T j = i; j < n; j += i) {
+        totient[j] = totient[j] / i * (i - 1);
       }
     }
     return totient;
