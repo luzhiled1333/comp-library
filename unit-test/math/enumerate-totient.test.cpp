@@ -8,6 +8,7 @@
 #include <cassert>
 #include <iostream>
 #include <numeric>
+#include <vector>
 
 namespace luz {
 
