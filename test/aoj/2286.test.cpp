@@ -12,7 +12,7 @@ namespace luz {
   void main_() {
     constexpr u32 MAX_N = 1000000;
 
-    std::vector< u64 > rs = totient_enumeration< u64 >(MAX_N + 1);
+    std::vector< u64 > rs = totient_enumeration< u64 >(MAX_N);
     for (usize i: rep(2, rs.size())) {
       rs[i] += rs[i - 1];
     }

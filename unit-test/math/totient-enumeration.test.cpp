@@ -23,7 +23,7 @@ namespace luz {
   void main_() {
     std::vector< u32 > totients = totient_enumeration((u32)1000);
 
-    for (u32 i: rep(0, 1000)) {
+    for (u32 i: rep(0, 1001)) {
       assert(totients[i] == naive_totient(i));
     }
 
