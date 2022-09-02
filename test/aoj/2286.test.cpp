@@ -2,7 +2,7 @@
 
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
-#include "src/math/enumerate-totient.hpp"
+#include "src/math/totient-enumeration.hpp"
 
 #include <iostream>
 #include <vector>
@@ -12,7 +12,7 @@ namespace luz {
   void main_() {
     constexpr u32 MAX_N = 1000000;
 
-    std::vector< u64 > rs = enumerate_totient< u64 >(MAX_N + 1);
+    std::vector< u64 > rs = totient_enumeration< u64 >(MAX_N + 1);
     for (usize i: rep(2, rs.size())) {
       rs[i] += rs[i - 1];
     }
