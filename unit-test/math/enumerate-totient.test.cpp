@@ -1,6 +1,6 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/ITP1_1_A
 
-#include "src/math/enumerate-totient.hpp"
+#include "src/math/totient-enumeration.hpp"
 
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
@@ -21,7 +21,7 @@ namespace luz {
   }
 
   void main_() {
-    std::vector< u32 > totients = enumerate_totient((u32)1000);
+    std::vector< u32 > totients = totient_enumeration((u32)1000);
 
     for (u32 i: rep(0, 1000)) {
       assert(totients[i] == naive_totient(i));
