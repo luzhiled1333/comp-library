@@ -1,5 +1,6 @@
 // verification-helper: PROBLEM https://judge.yosupo.jp/problem/jump_on_tree
 
+#include "src/cpp-template/header/fast-ios.hpp"
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/graph/offline-query-level-ancestor.hpp"
@@ -79,5 +80,7 @@ namespace luz {
 } // namespace luz
 
 int main() {
+  luz::set_fast_ios();
+
   luz::main_();
 }
