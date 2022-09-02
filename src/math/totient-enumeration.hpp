@@ -9,7 +9,7 @@
 namespace luz {
 
   template < typename T >
-  std::vector< T > enumerate_totient(T n) {
+  std::vector< T > totient_enumeration(T n) {
     static_assert(std::numeric_limits< T >::is_integer,
                   "T must be integer");
     assert(n >= 0);
