@@ -10,6 +10,8 @@ Compressor<T, Compare>(std::vector<T> vs)
 
 引数で与えられた `vector` を 0-indexed で座標圧縮する。
 
+簡単のため、以下では与えられた `vector` のサイズを $n$ とし、重複を除いた要素数を $m$ とする。
+
 ### Compare について
 `Compare` にはデフォルトで `std::less` が与えられている。
 
@@ -22,32 +24,43 @@ Compressor<T, Compare>(std::vector<T> vs)
 座標圧縮後の要素 `a, b` の `a < b` の結果と `Compare()(a, b)` の結果は一致するようになっている。
 
 ### 計算量
-- `T` の比較を $O(1)$、`vs` のサイズを $n$ として $O(n \log n)$
+- `Compare()` を $O(1)$ として $O(n \log n)$
+
 
 ## compressed_vector
 ```
 std::vector< usize > compressed_vector() const
 ```
-座標圧縮後の `vs` を返す。
+
+コンストラクタに与えられた `vector` を座標圧縮した結果を返す。
 
 ### 計算量
 - $O(n)$
+
 
 ## compress
 ```
 usize compress(T v) const
 ```
 
+座標圧縮の結果、$v$ がどこに mapping されたかを再計算して返す。
+
+### 制約
+- $v$ はコンストラクタに与えられた `vector` の要素である。
+
 ### 計算量
 - $O(\log n)$
+
 
 ## expand
 ```
 T expand(usize i) const
 ```
 
+$i$ に対応する座標圧縮前の要素を返す。
+
 ### 制約
-- 座標圧縮後の配列のサイズを $m$ として $i \lt m$
+- $0 \leq i \lt m$
 
 ### 計算量
 - $O(1)$
