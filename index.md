@@ -85,6 +85,9 @@ data:
       path: src/graph/graph-template.hpp
       title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
     - icon: ':heavy_check_mark:'
+      path: src/graph/max-flow.hpp
+      title: src/graph/max-flow.hpp
+    - icon: ':heavy_check_mark:'
       path: src/graph/offline-query-lowest-common-ancestor.hpp
       title: src/graph/offline-query-lowest-common-ancestor.hpp
   - name: src/math/convolution
@@ -142,6 +145,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/grl_5_c.test.cpp
       title: test/aoj/grl_5_c.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/grl_6_a.test.cpp
+      title: test/aoj/grl_6_a.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/itp1_1_a.test.cpp
       title: test/aoj/itp1_1_a.test.cpp

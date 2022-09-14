@@ -39,6 +39,9 @@ data:
     path: src/graph/graph-template.hpp
     title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
   - icon: ':heavy_check_mark:'
+    path: src/graph/max-flow.hpp
+    title: src/graph/max-flow.hpp
+  - icon: ':heavy_check_mark:'
     path: src/graph/offline-query-lowest-common-ancestor.hpp
     title: src/graph/offline-query-lowest-common-ancestor.hpp
   - icon: ':heavy_check_mark:'
@@ -86,6 +89,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/grl_5_c.test.cpp
     title: test/aoj/grl_5_c.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/grl_6_a.test.cpp
+    title: test/aoj/grl_6_a.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/itp1_1_a.test.cpp
     title: test/aoj/itp1_1_a.test.cpp
@@ -162,6 +168,7 @@ data:
   - src/graph/graph-template.hpp
   - src/graph/functional-graph-utility.hpp
   - src/graph/offline-query-lowest-common-ancestor.hpp
+  - src/graph/max-flow.hpp
   - src/math/convolution/bitwise-xor-convolution.hpp
   - src/math/convolution/bitwise-and-convolution.hpp
   - src/math/convolution/fast-walsh-hadamard-transform.hpp
@@ -176,6 +183,7 @@ data:
   - test/library-checker/bitwise_and_convolution.test.cpp
   - test/library-checker/unionfind.test.cpp
   - test/library-checker/bitwise_xor_convolution.test.cpp
+  - test/aoj/grl_6_a.test.cpp
   - test/aoj/grl_1_a.test.cpp
   - test/aoj/2286.test.cpp
   - test/aoj/dsl_2_b.test.cpp
