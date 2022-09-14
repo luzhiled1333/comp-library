@@ -12,7 +12,7 @@ data:
     title: vector I/O
   - icon: ':heavy_check_mark:'
     path: src/sequence/compression.hpp
-    title: src/sequence/compression.hpp
+    title: "\u5EA7\u6A19\u5727\u7E2E"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

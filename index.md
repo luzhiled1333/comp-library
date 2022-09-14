@@ -107,6 +107,10 @@ data:
   - name: src/math
     pages:
     - icon: ':heavy_check_mark:'
+      path: src/math/totient-enumeration.hpp
+      title: "\u30AA\u30A4\u30E9\u30FC\u306E\u30C8\u30FC\u30B7\u30A7\u30F3\u30C8\u95A2\
+        \u6570\u306E\u5217\u6319"
+    - icon: ':heavy_check_mark:'
       path: src/math/totient.hpp
       title: "\u30AA\u30A4\u30E9\u30FC\u306E\u30C8\u30FC\u30B7\u30A7\u30F3\u30C8\u95A2\
         \u6570 (\u30AA\u30A4\u30E9\u30FC\u306E $\\phi$ \u95A2\u6570, Euler's totient\
@@ -115,9 +119,6 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: src/sequence/compression.hpp
-      title: src/sequence/compression.hpp
-    - icon: ':warning:'
-      path: src/sequence/coordinate-compression.hpp
       title: "\u5EA7\u6A19\u5727\u7E2E"
     - icon: ':heavy_check_mark:'
       path: src/sequence/run-length-encoding.hpp
@@ -126,6 +127,9 @@ data:
   verificationCategories:
   - name: test/aoj
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/2286.test.cpp
+      title: test/aoj/2286.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/dsl_1_a.test.cpp
       title: test/aoj/dsl_1_a.test.cpp
@@ -184,6 +188,9 @@ data:
       title: unit-test/math/modular-arithmetic/static-modint.test.cpp
   - name: unit-test/math
     pages:
+    - icon: ':heavy_check_mark:'
+      path: unit-test/math/totient-enumeration.test.cpp
+      title: unit-test/math/totient-enumeration.test.cpp
     - icon: ':heavy_check_mark:'
       path: unit-test/math/totient.test.cpp
       title: unit-test/math/totient.test.cpp

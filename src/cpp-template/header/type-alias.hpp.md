@@ -55,21 +55,25 @@ data:
     path: src/math/modular-arithmetic/static-modint.hpp
     title: src/math/modular-arithmetic/static-modint.hpp
   - icon: ':heavy_check_mark:'
+    path: src/math/totient-enumeration.hpp
+    title: "\u30AA\u30A4\u30E9\u30FC\u306E\u30C8\u30FC\u30B7\u30A7\u30F3\u30C8\u95A2\
+      \u6570\u306E\u5217\u6319"
+  - icon: ':heavy_check_mark:'
     path: src/math/totient.hpp
     title: "\u30AA\u30A4\u30E9\u30FC\u306E\u30C8\u30FC\u30B7\u30A7\u30F3\u30C8\u95A2\
       \u6570 (\u30AA\u30A4\u30E9\u30FC\u306E $\\phi$ \u95A2\u6570, Euler's totient\
       \ function)"
   - icon: ':heavy_check_mark:'
     path: src/sequence/compression.hpp
-    title: src/sequence/compression.hpp
-  - icon: ':warning:'
-    path: src/sequence/coordinate-compression.hpp
     title: "\u5EA7\u6A19\u5727\u7E2E"
   - icon: ':heavy_check_mark:'
     path: src/sequence/run-length-encoding.hpp
     title: "\u30E9\u30F3\u30EC\u30F3\u30B0\u30B9\u5727\u7E2E (\u9023\u9577\u5727\u7E2E\
       , Run Length Encoding, RLE)"
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2286.test.cpp
+    title: test/aoj/2286.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/dsl_1_a.test.cpp
     title: test/aoj/dsl_1_a.test.cpp
@@ -119,6 +123,9 @@ data:
     path: unit-test/math/modular-arithmetic/static-modint.test.cpp
     title: unit-test/math/modular-arithmetic/static-modint.test.cpp
   - icon: ':heavy_check_mark:'
+    path: unit-test/math/totient-enumeration.test.cpp
+    title: unit-test/math/totient-enumeration.test.cpp
+  - icon: ':heavy_check_mark:'
     path: unit-test/math/totient.test.cpp
     title: unit-test/math/totient.test.cpp
   - icon: ':heavy_check_mark:'
@@ -159,10 +166,10 @@ data:
   - src/math/convolution/bitwise-and-convolution.hpp
   - src/math/convolution/fast-walsh-hadamard-transform.hpp
   - src/math/totient.hpp
+  - src/math/totient-enumeration.hpp
   - src/math/modular-arithmetic/static-modint.hpp
   - src/sequence/compression.hpp
   - src/sequence/run-length-encoding.hpp
-  - src/sequence/coordinate-compression.hpp
   timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
@@ -170,6 +177,7 @@ data:
   - test/library-checker/unionfind.test.cpp
   - test/library-checker/bitwise_xor_convolution.test.cpp
   - test/aoj/grl_1_a.test.cpp
+  - test/aoj/2286.test.cpp
   - test/aoj/dsl_2_b.test.cpp
   - test/aoj/grl_5_c.test.cpp
   - test/aoj/itp1_1_a.test.cpp
@@ -182,6 +190,7 @@ data:
   - test/atcoder/abc177_d.test.cpp
   - unit-test/data-structure/fenwick-tree.test.cpp
   - unit-test/math/totient.test.cpp
+  - unit-test/math/totient-enumeration.test.cpp
   - unit-test/math/modular-arithmetic/static-modint.test.cpp
   - unit-test/sequence/compression.test.cpp
 documentation_of: src/cpp-template/header/type-alias.hpp
