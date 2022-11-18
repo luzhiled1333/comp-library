@@ -14,7 +14,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/intersect/is-intersect-point-circle.hpp
     title: "\u70B9\u3068\u5186\u306E\u4EA4\u5DEE\u5224\u5B9A"
+  - icon: ':heavy_check_mark:'
+    path: src/geometry/Z2/operation/ccw.hpp
+    title: src/geometry/Z2/operation/ccw.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/geometry/Z2/segment-function/counterbalance-segments.hpp
+    title: src/geometry/Z2/segment-function/counterbalance-segments.hpp
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/4011.test.cpp
+    title: test/aoj/4011.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc259_d.test.cpp
     title: test/atcoder/abc259_d.test.cpp
@@ -53,11 +62,14 @@ data:
   isVerificationFile: false
   path: src/geometry/Z2/operation/square-norm.hpp
   requiredBy:
-  - src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
+  - src/geometry/Z2/segment-function/counterbalance-segments.hpp
   - src/geometry/Z2/intersect/is-intersect-point-circle.hpp
+  - src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
+  - src/geometry/Z2/operation/ccw.hpp
   timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/4011.test.cpp
   - test/atcoder/abc259_d.test.cpp
 documentation_of: src/geometry/Z2/operation/square-norm.hpp
 layout: document

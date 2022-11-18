@@ -76,14 +76,14 @@ data:
   isVerificationFile: false
   path: src/graph/graph-template.hpp
   requiredBy:
-  - src/graph/dijkstra.hpp
   - src/graph/functional-graph-utility.hpp
   - src/graph/offline-query-lowest-common-ancestor.hpp
+  - src/graph/dijkstra.hpp
   timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/grl_1_a.test.cpp
   - test/aoj/grl_5_c.test.cpp
+  - test/aoj/grl_1_a.test.cpp
   - test/atcoder/abc258_e.test.cpp
 documentation_of: src/graph/graph-template.hpp
 layout: document

@@ -6,8 +6,23 @@ data:
     path: src/geometry/Z2/class/circle.hpp
     title: "\u5186 (\u6574\u6570\u5E7E\u4F55)"
   - icon: ':heavy_check_mark:'
+    path: src/geometry/Z2/class/line.hpp
+    title: src/geometry/Z2/class/line.hpp
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/class/point.hpp
     title: "\u683C\u5B50\u70B9 (\u6574\u6570\u5E7E\u4F55)"
+  - icon: ':heavy_check_mark:'
+    path: src/geometry/Z2/class/polygon.hpp
+    title: src/geometry/Z2/class/polygon.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/geometry/Z2/class/segment.hpp
+    title: src/geometry/Z2/class/segment.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/geometry/Z2/compare/compare-xy.hpp
+    title: src/geometry/Z2/compare/compare-xy.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/geometry/Z2/compare/compare-yx.hpp
+    title: src/geometry/Z2/compare/compare-yx.hpp
   - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
     title: "\u5186\u3068\u5186\u306E\u4EA4\u5DEE\u5224\u5B9A"
@@ -15,9 +30,30 @@ data:
     path: src/geometry/Z2/intersect/is-intersect-point-circle.hpp
     title: "\u70B9\u3068\u5186\u306E\u4EA4\u5DEE\u5224\u5B9A"
   - icon: ':heavy_check_mark:'
+    path: src/geometry/Z2/normalize/line-normalize.hpp
+    title: src/geometry/Z2/normalize/line-normalize.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/geometry/Z2/operation/ccw.hpp
+    title: src/geometry/Z2/operation/ccw.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/geometry/Z2/operation/cross-product.hpp
+    title: src/geometry/Z2/operation/cross-product.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/geometry/Z2/operation/inner-product.hpp
+    title: src/geometry/Z2/operation/inner-product.hpp
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/operation/square-norm.hpp
     title: "$\\|v\\|^2 (v \\in {\\mathbb{Z}}^2)$ (norm\u306E2\u4E57)"
+  - icon: ':heavy_check_mark:'
+    path: src/geometry/Z2/segment-function/counterbalance-segments.hpp
+    title: src/geometry/Z2/segment-function/counterbalance-segments.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/geometry/Z2/utility/polygon-to-segments.hpp
+    title: src/geometry/Z2/utility/polygon-to-segments.hpp
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/4011.test.cpp
+    title: test/aoj/4011.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc259_d.test.cpp
     title: test/atcoder/abc259_d.test.cpp
@@ -60,14 +96,26 @@ data:
   isVerificationFile: false
   path: src/geometry/Z2/class/vector.hpp
   requiredBy:
+  - src/geometry/Z2/segment-function/counterbalance-segments.hpp
+  - src/geometry/Z2/intersect/is-intersect-point-circle.hpp
+  - src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
+  - src/geometry/Z2/utility/polygon-to-segments.hpp
+  - src/geometry/Z2/compare/compare-xy.hpp
+  - src/geometry/Z2/compare/compare-yx.hpp
+  - src/geometry/Z2/normalize/line-normalize.hpp
+  - src/geometry/Z2/class/polygon.hpp
   - src/geometry/Z2/class/point.hpp
   - src/geometry/Z2/class/circle.hpp
+  - src/geometry/Z2/class/segment.hpp
+  - src/geometry/Z2/class/line.hpp
+  - src/geometry/Z2/operation/cross-product.hpp
+  - src/geometry/Z2/operation/ccw.hpp
+  - src/geometry/Z2/operation/inner-product.hpp
   - src/geometry/Z2/operation/square-norm.hpp
-  - src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
-  - src/geometry/Z2/intersect/is-intersect-point-circle.hpp
   timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/4011.test.cpp
   - test/atcoder/abc259_d.test.cpp
 documentation_of: src/geometry/Z2/class/vector.hpp
 layout: document

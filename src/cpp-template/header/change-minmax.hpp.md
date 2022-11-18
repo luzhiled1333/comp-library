@@ -42,9 +42,9 @@ data:
   isVerificationFile: false
   path: src/cpp-template/header/change-minmax.hpp
   requiredBy:
+  - src/graph/dijkstra.hpp
   - src/cpp-template/template.cpp
   - src/cpp-template/header/template-header.hpp
-  - src/graph/dijkstra.hpp
   timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

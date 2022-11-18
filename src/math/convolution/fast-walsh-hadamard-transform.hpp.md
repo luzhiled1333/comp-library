@@ -78,8 +78,8 @@ data:
   timestamp: '2022-08-29 17:30:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/library-checker/bitwise_and_convolution.test.cpp
   - test/library-checker/bitwise_xor_convolution.test.cpp
+  - test/library-checker/bitwise_and_convolution.test.cpp
   - test/atcoder/abc212_h.test.cpp
 documentation_of: src/math/convolution/fast-walsh-hadamard-transform.hpp
 layout: document

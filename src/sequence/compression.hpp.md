@@ -7,8 +7,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/type-alias.hpp
     title: Type alias
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: src/geometry/Z2/segment-function/counterbalance-segments.hpp
+    title: src/geometry/Z2/segment-function/counterbalance-segments.hpp
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/4011.test.cpp
+    title: test/aoj/4011.test.cpp
   - icon: ':heavy_check_mark:'
     path: unit-test/sequence/compression.test.cpp
     title: unit-test/sequence/compression.test.cpp
@@ -73,10 +79,12 @@ data:
   - src/cpp-template/header/type-alias.hpp
   isVerificationFile: false
   path: src/sequence/compression.hpp
-  requiredBy: []
+  requiredBy:
+  - src/geometry/Z2/segment-function/counterbalance-segments.hpp
   timestamp: '2022-08-24 11:33:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/4011.test.cpp
   - unit-test/sequence/compression.test.cpp
 documentation_of: src/sequence/compression.hpp
 layout: document

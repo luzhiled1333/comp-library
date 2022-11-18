@@ -51,9 +51,9 @@ data:
   timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/grl_6_a.test.cpp
   - test/aoj/grl_1_a.test.cpp
   - test/aoj/itp1_1_a.test.cpp
+  - test/aoj/grl_6_a.test.cpp
   - test/atcoder/abc212_h.test.cpp
 documentation_of: src/cpp-template/header/input.hpp
 layout: document
