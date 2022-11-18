@@ -8,8 +8,9 @@
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/geometry/Z2/class/segment.hpp"
 #include "src/geometry/Z2/normalize/line-normalize.hpp"
-#include "src/geometry/Z2/operation/compare-xy.hpp"
+#include "src/geometry/Z2/compare/compare-xy.hpp"
 #include "src/geometry/Z2/operation/ccw.hpp"
+#include "src/geometry/Z2/utility/next-idx.hpp"
 
 namespace luz::Z2 {
 
@@ -22,7 +23,8 @@ namespace luz::Z2 {
       normalized_lines[i] = normalize_l(Line(segments[i].p0(), segments[i].p1()));
     }
 
-    std::vector< usize > line_idxs = Compressor(normalized_lines).compressed_vector();
+    Compressor compressor(normalized_lines);
+    std::vector< usize > line_idxs = compressor.compressed_vector();
     usize line_count = (*std::max_element(line_idxs.begin(), line_idxs.end())) + 1;
 
     using event_type = std::pair< Point<Z>, i32 >;
@@ -34,7 +36,8 @@ namespace luz::Z2 {
     }
 
     auto cmp = [](const event_type &e0, const event_type &e1) {
-      if (e0.first != e1.first) return compare_xy(e0.first, e1.first);
+      CompareXY<Z> comp;
+      if (e0.first != e1.first) return comp(e0.first, e1.first);
       return e0.second < e1.second;
     };
 
