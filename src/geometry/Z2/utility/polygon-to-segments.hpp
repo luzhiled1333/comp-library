@@ -1,3 +1,5 @@
+#pragma once
+
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/geometry/Z2/class/polygon.hpp"

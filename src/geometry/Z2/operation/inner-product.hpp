@@ -1,3 +1,5 @@
+#pragma once
+
 #include "src/geometry/Z2/class/vector.hpp"
 
 namespace luz::Z2 {

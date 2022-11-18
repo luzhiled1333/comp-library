@@ -1,3 +1,5 @@
+#pragma once
+
 #include "src/geometry/Z2/class/line.hpp"
 
 #include <algorithm>
