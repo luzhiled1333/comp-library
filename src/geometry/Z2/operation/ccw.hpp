@@ -1,16 +1,16 @@
 #include "src/cpp-template/header/type-alias.hpp"
+#include "src/geometry/Z2/class/vector.hpp"
 #include "src/geometry/Z2/constants/ccw-constants.hpp"
-#include "src/geometry/Z2/operation/square-norm.hpp"
 #include "src/geometry/Z2/operation/cross-product.hpp"
 #include "src/geometry/Z2/operation/inner-product.hpp"
-#include "src/geometry/Z2/class/vector.hpp"
+#include "src/geometry/Z2/operation/square-norm.hpp"
 
 namespace luz::Z2::impl_ccw {
-  
+
   using namespace constants::ccw;
 
-  template< typename Z >
-  i32 ccw(const Vector<Z> &a, Vector<Z> b, Vector<Z> c) {
+  template < typename Z >
+  i32 ccw(const Vector< Z > &a, Vector< Z > b, Vector< Z > c) {
     b -= a;
     c -= a;
 
@@ -22,13 +22,14 @@ namespace luz::Z2::impl_ccw {
     return ON_SEGMENT;
   }
 
-}
+} // namespace luz::Z2::impl_ccw
 
 namespace luz::Z2 {
 
-  template< typename Z >
-  i32 ccw(const Vector<Z> &a, const Vector<Z> &b, const Vector<Z> &c) {
+  template < typename Z >
+  i32 ccw(const Vector< Z > &a, const Vector< Z > &b,
+          const Vector< Z > &c) {
     return impl_ccw::ccw(a, b, c);
   }
 
-}
+} // namespace luz::Z2

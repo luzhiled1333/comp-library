@@ -1,15 +1,15 @@
+#include "src/geometry/Z2/class/line.hpp"
+
 #include <algorithm>
 #include <numeric>
 #include <tuple>
 #include <type_traits>
 
-#include "src/geometry/Z2/class/line.hpp"
-
 namespace luz::Z2 {
 
-  template< typename Z >
-  std::tuple< Z, Z, Z > normalize_l(const Line<Z> &l) {
-    static_assert(std::is_signed<Z>::value == true);
+  template < typename Z >
+  std::tuple< Z, Z, Z > normalize_l(const Line< Z > &l) {
+    static_assert(std::is_signed< Z >::value == true);
     Z a = l.p1().y() - l.p0().y();
     Z b = l.p0().x() - l.p1().x();
     {
