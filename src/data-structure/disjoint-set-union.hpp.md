@@ -130,7 +130,7 @@ title: Disjoint Set Union (Union Find)
 
 ## コンストラクタ
 ```
-DisjointSetUnion<T>(usize n)
+DisjointSetUnion(usize n)
 ```
 
 $1$ 要素の集合 $n$ 個で集合を初期化する。
