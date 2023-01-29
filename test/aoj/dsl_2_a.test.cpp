@@ -5,14 +5,15 @@
 #include "src/data-structure/segment-tree/point-mapping-range-fold-segment-tree.hpp"
 
 #include <iostream>
+#include <limits>
 
 namespace luz {
 
-  template< typename T >
+  template < typename T >
   class Monoid {
-    static constexpr T identity_{ std::numeric_limits< T >::max() };
+    static constexpr T identity_{std::numeric_limits< T >::max()};
 
-    public:
+   public:
     using value_type = T;
 
     static constexpr T operation(T a, T b) {
@@ -27,7 +28,6 @@ namespace luz {
   void main_() {
     usize n, q;
     std::cin >> n >> q;
-
 
     PointMappingRangeFoldSegmentTree< Monoid< i32 > > seg(n);
     for ([[maybe_unused]] usize _: rep(0, q)) {
