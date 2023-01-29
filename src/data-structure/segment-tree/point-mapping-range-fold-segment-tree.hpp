@@ -8,7 +8,7 @@
 namespace luz {
 
   template < class M >
-  class PointMappintRangeFoldSegmentTree {
+  class PointMappingRangeFoldSegmentTree {
     using T = typename M::value_type;
 
     std::vector< T > tree;
@@ -16,8 +16,8 @@ namespace luz {
    public:
     using value_type = T;
 
-    PointMappintRangeFoldSegmentTree() = default;
-    explicit PointMappintRangeFoldSegmentTree(const usize n)
+    PointMappingRangeFoldSegmentTree() = default;
+    explicit PointMappingRangeFoldSegmentTree(const usize n)
         : tree(n * 2, M::identity()) {}
 
     usize size() const {
