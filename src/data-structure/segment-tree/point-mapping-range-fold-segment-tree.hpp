@@ -53,6 +53,12 @@ namespace luz {
       }
     }
 
+    T fold(usize index) const {
+      assert(index < size());
+
+      return tree[index + size()];
+    }
+
     T fold(usize first, usize last) const {
       assert(first <= last);
       assert(last <= size());
@@ -78,6 +84,10 @@ namespace luz {
       }
 
       return M::operation(fold_l, fold_r);
+    }
+
+    T fold_all() const {
+      return tree[1];
     }
   };
 
