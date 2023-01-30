@@ -8,15 +8,16 @@
 
 namespace luz {
 
-  template < class M >
+  template < class value_structure >
   class PointMappingRangeFoldSegmentTree {
-    using T = typename M::value_type;
+    using V = value_structure;
+    using T = typename V::value_type;
 
     std::vector< T > tree;
 
     void evaluate(usize index) {
       tree[index] =
-          M::operation(tree[index << 1 | 0], tree[index << 1 | 1]);
+          V::operation(tree[index << 1 | 0], tree[index << 1 | 1]);
     }
 
    public:
@@ -24,7 +25,7 @@ namespace luz {
 
     PointMappingRangeFoldSegmentTree() = default;
     explicit PointMappingRangeFoldSegmentTree(const usize n)
-        : tree(n * 2, M::identity()) {}
+        : tree(n * 2, V::identity()) {}
     explicit PointMappingRangeFoldSegmentTree(
         const std::vector< T > &vs)
         : PointMappingRangeFoldSegmentTree(vs.size()) {
@@ -68,24 +69,24 @@ namespace luz {
       first += size();
       last += size();
 
-      T fold_l = M::identity();
-      T fold_r = M::identity();
+      T fold_l = V::identity();
+      T fold_r = V::identity();
 
       while (first != last) {
         if (first & 1) {
-          fold_l = M::operation(fold_l, tree[first]);
+          fold_l = V::operation(fold_l, tree[first]);
           first += 1;
         }
         first >>= 1;
 
         if (last & 1) {
           last -= 1;
-          fold_r = M::operation(tree[last], fold_r);
+          fold_r = V::operation(tree[last], fold_r);
         }
         last >>= 1;
       }
 
-      return M::operation(fold_l, fold_r);
+      return V::operation(fold_l, fold_r);
     }
 
     T fold_all() const {
