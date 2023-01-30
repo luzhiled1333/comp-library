@@ -42,7 +42,7 @@ namespace luz {
       return tree.size() / 2;
     }
 
-    void update(usize index, const T x) {
+    void set(usize index, const T x) {
       assert(index < size());
       index += size();
       tree[index] = x;

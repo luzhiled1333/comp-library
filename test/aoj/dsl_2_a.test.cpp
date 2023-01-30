@@ -35,7 +35,7 @@ namespace luz {
       std::cin >> com >> x >> y;
 
       if (not com) {
-        seg.update(x, y);
+        seg.set(x, y);
       } else {
         std::cout << seg.fold(x, y + 1) << std::endl;
       }
