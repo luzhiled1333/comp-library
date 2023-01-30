@@ -1,7 +1,7 @@
 #pragma once
 
-#include "src/cpp-template/header/type-alias.hpp"
 #include "src/cpp-template/header/rep.hpp"
+#include "src/cpp-template/header/type-alias.hpp"
 
 #include <cassert>
 #include <vector>
@@ -15,7 +15,8 @@ namespace luz {
     std::vector< T > tree;
 
     void evaluate(usize index) {
-      tree[index] = M::operation(tree[index << 1 | 0], tree[index << 1 | 1]);
+      tree[index] =
+          M::operation(tree[index << 1 | 0], tree[index << 1 | 1]);
     }
 
    public:
@@ -24,7 +25,8 @@ namespace luz {
     PointMappingRangeFoldSegmentTree() = default;
     explicit PointMappingRangeFoldSegmentTree(const usize n)
         : tree(n * 2, M::identity()) {}
-    explicit PointMappingRangeFoldSegmentTree(const std::vector< T > &vs)
+    explicit PointMappingRangeFoldSegmentTree(
+        const std::vector< T > &vs)
         : PointMappingRangeFoldSegmentTree(vs.size()) {
       build(vs);
     }
