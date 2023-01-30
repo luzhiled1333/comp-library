@@ -1,6 +1,7 @@
 #pragma once
 
 #include "src/cpp-template/header/type-alias.hpp"
+#include "src/cpp-template/header/rep.hpp"
 
 #include <cassert>
 #include <vector>
@@ -13,12 +14,29 @@ namespace luz {
 
     std::vector< T > tree;
 
+    void evaluate(usize index) {
+      tree[index] = M::operation(tree[index << 1 | 0], tree[index << 1 | 1]);
+    }
+
    public:
     using value_type = T;
 
     PointMappingRangeFoldSegmentTree() = default;
     explicit PointMappingRangeFoldSegmentTree(const usize n)
         : tree(n * 2, M::identity()) {}
+    explicit PointMappingRangeFoldSegmentTree(const std::vector< T > &vs)
+        : PointMappingRangeFoldSegmentTree(vs.size()) {
+      build(vs);
+    }
+
+    void build(const std::vector< T > &vs) {
+      usize n = vs.size();
+      assert(2 * n == tree.size());
+      std::copy(vs.begin(), vs.end(), tree.begin() + n);
+      for (usize index: rrep(1, n)) {
+        evaluate(index);
+      }
+    }
 
     usize size() const {
       return tree.size() / 2;
@@ -31,8 +49,7 @@ namespace luz {
 
       while (index != 1) {
         index >>= 1;
-        tree[index] =
-            M::operation(tree[index << 1 | 0], tree[index << 1 | 1]);
+        evaluate(index);
       }
     }
 
