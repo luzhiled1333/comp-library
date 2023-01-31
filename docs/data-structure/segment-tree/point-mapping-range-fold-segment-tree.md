@@ -3,6 +3,7 @@ title: 一点更新+区間取得 セグメント木
 documentation_of: //src/data-structure/segment-tree/point-mapping-range-fold-segment-tree.hpp
 ---
 
+## Appendix
 [Segment Tree の細かい仕様について](/appendix-segment-tree)
 
 ## コンストラクタ
