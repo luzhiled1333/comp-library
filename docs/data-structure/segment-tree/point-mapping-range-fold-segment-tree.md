@@ -68,7 +68,7 @@ $a_i$ を $x$ で更新する。
 ```
 
 1. $a_i$ を返す。
-2. $a_l \cdot a_{l+1} \cdot \dotsm \cdot a_{r}$ を返す。$l = r$ のとき `V::identity()` が返る。
+2. $a_l \cdot a_{l+1} \cdot \dotsm \cdot a_{r-1}$ を返す。$l = r$ のとき `V::identity()` が返る。
 3. $a_0 \cdot a_1 \cdot \dotsm \cdot a_{n-1}$ を返す。
 
 ### 計算量
