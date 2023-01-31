@@ -10,10 +10,10 @@ namespace luz {
 
   template < class value_structure >
   class PointMappingRangeFoldSegmentTree {
-    using V = value_structure;
-    using T = typename V::value_type;
+    using V  = value_structure;
+    using VT = typename V::value_type;
 
-    std::vector< T > tree;
+    std::vector< VT > tree;
 
     void evaluate(usize index) {
       tree[index] =
@@ -21,18 +21,18 @@ namespace luz {
     }
 
    public:
-    using value_type = T;
+    using value_type = VT;
 
     PointMappingRangeFoldSegmentTree() = default;
     explicit PointMappingRangeFoldSegmentTree(const usize n)
         : tree(n * 2, V::identity()) {}
     explicit PointMappingRangeFoldSegmentTree(
-        const std::vector< T > &vs)
+        const std::vector< VT > &vs)
         : PointMappingRangeFoldSegmentTree(vs.size()) {
       build(vs);
     }
 
-    void build(const std::vector< T > &vs) {
+    void build(const std::vector< VT > &vs) {
       usize n = vs.size();
       assert(2 * n == tree.size());
       std::copy(vs.begin(), vs.end(), tree.begin() + n);
@@ -45,7 +45,7 @@ namespace luz {
       return tree.size() / 2;
     }
 
-    void set(usize index, const T x) {
+    void set(usize index, const VT x) {
       assert(index < size());
       index += size();
       tree[index] = x;
@@ -56,21 +56,21 @@ namespace luz {
       }
     }
 
-    T fold(usize index) const {
+    VT fold(usize index) const {
       assert(index < size());
 
       return tree[index + size()];
     }
 
-    T fold(usize first, usize last) const {
+    VT fold(usize first, usize last) const {
       assert(first <= last);
       assert(last <= size());
 
       first += size();
       last += size();
 
-      T fold_l = V::identity();
-      T fold_r = V::identity();
+      VT fold_l = V::identity();
+      VT fold_r = V::identity();
 
       while (first != last) {
         if (first & 1) {
@@ -89,7 +89,7 @@ namespace luz {
       return V::operation(fold_l, fold_r);
     }
 
-    T fold_all() const {
+    VT fold_all() const {
       return (size() ? tree[1] : V::identity());
     }
   };
