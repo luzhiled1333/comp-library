@@ -120,7 +120,7 @@ title: "\u4E00\u70B9\u66F4\u65B0+\u533A\u9593\u53D6\u5F97 \u30BB\u30B0\u30E1\u30
 ---
 
 ## Appendix
-[Segment Tree の細かい仕様について](/appendix-segment-tree)
+[Segment Tree の細かい仕様について]({{ site.baseurl }}/appendix-segment-tree)
 
 ## コンストラクタ
 `PointMappingRangeFoldSegmentTree` のエイリアスとして `SegmentTree` を提供している。
