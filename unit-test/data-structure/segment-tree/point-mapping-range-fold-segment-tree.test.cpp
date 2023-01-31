@@ -4,9 +4,9 @@
 
 #include "src/cpp-template/header/type-alias.hpp"
 
-#include <numeric>
 #include <cassert>
 #include <iostream>
+#include <numeric>
 
 namespace luz {
 
@@ -26,11 +26,11 @@ namespace luz {
     }
   };
 
-  constexpr usize small = (usize)1 << 3;
+  constexpr usize small  = (usize)1 << 3;
   constexpr usize medium = (usize)1 << 8;
-  constexpr usize large = (usize)1 << 24;
+  constexpr usize large  = (usize)1 << 24;
 
-  template< typename V >
+  template < typename V >
   void unit_test(usize n) {
     std::vector< i32 > as(n);
     std::iota(as.begin(), as.end(), 0);
@@ -59,13 +59,14 @@ namespace luz {
 
     if (n <= medium + 1) {
       std::cerr << "    fold(l, r) : " << std::flush;
-      for (usize l: rep(0, n)) for (usize r: rep(l, n + 1)) {
-        i32 sum = V::identity();
-        for (usize i: rep(l, r)) {
-          sum = V::operation(sum, as[i]);
+      for (usize l: rep(0, n))
+        for (usize r: rep(l, n + 1)) {
+          i32 sum = V::identity();
+          for (usize i: rep(l, r)) {
+            sum = V::operation(sum, as[i]);
+          }
+          assert(seg.fold(l, r) == sum);
         }
-        assert(seg.fold(l, r) == sum);
-      }
       std::cerr << "done" << std::endl;
     }
 
@@ -74,24 +75,22 @@ namespace luz {
     std::cerr << "done" << std::endl;
   }
 
-  template< class value_type >
+  template < class value_type >
   void unit_test() {
-    std::vector< usize > ns({
-        small - 1, small, small + 1,
-        medium - 1, medium, medium + 1,
-        large - 1, large, large + 1
-        });
+    std::vector< usize > ns({small - 1, small, small + 1, medium - 1,
+                             medium, medium + 1, large - 1, large,
+                             large + 1});
 
     std::cerr << "type : " << typeid(value_type).name() << std::endl;
     for (const usize &n: ns) {
       std::cerr << "  n = " << n << " : " << std::endl;
-      unit_test<value_type>(n);
+      unit_test< value_type >(n);
       std::cerr << "  done" << std::endl;
     }
   }
 
   void main_() {
-    unit_test<Monoid<i32>>();
+    unit_test< Monoid< i32 > >();
 
     std::cout << "Hello World" << std::endl;
   }
