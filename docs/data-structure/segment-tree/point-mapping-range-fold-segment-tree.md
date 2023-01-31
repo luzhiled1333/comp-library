@@ -4,7 +4,7 @@ documentation_of: //src/data-structure/segment-tree/point-mapping-range-fold-seg
 ---
 
 ## Appendix
-[Segment Tree の細かい仕様について](/appendix-segment-tree)
+[Segment Tree の細かい仕様について]({{ site.baseurl }}/appendix-segment-tree)
 
 ## コンストラクタ
 `PointMappingRangeFoldSegmentTree` のエイリアスとして `SegmentTree` を提供している。
