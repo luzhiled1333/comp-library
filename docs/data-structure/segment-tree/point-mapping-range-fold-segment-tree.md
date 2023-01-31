@@ -3,25 +3,7 @@ title: 一点更新+区間取得 セグメント木
 documentation_of: //src/data-structure/segment-tree/point-mapping-range-fold-segment-tree.hpp
 ---
 
-モノイドの列 $a = (a_0, a_1, \dots, a_{n-1})$ を扱うデータ構造。
-
-各種演算の計算量と亜種が提供する演算の表は以下の通り。
-
-|                         | Normal(This) | Lazy | Dual |
-| ----------------------- | ------------ | ---- | ---- |
-| コンストラクタ          | $O(n)$       | o    | o    |
-| `build(vs)`             | $O(n)$       | o    | o    |
-| `size()`                | $O(1)$       | o    | o    |
-| `set(index, x)`         | $O(\log(n))$ | o    | o    |
-| `apply(index, x)`       | x            | o    | o    |
-| `apply(first, last, x)` | x            | o    | o    |
-| `fold(index)`           | $O(1)$       | o    | o    |
-| `fold(first, last)`     | $O(\log(n))$ | o    | x    |
-| `fold_all()`            | $O(1)$       | o    | x    |
-| `max_right(l, fn)`      | -            | o    | x    |
-| `min_left(r, fn)`       | -            | o    | x    |
-
-以下では `value_structure` を `V`、`value_structure::value_type` を `T` とする。
+[Segment Tree の細かい仕様について](/appendix-segment-tree)
 
 ## コンストラクタ
 `PointMappingRangeFoldSegmentTree` のエイリアスとして `SegmentTree` を提供している。
