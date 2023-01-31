@@ -85,7 +85,7 @@ $a_i$ を $x$ で更新する。
 ```
 
 1. $a_i$ を返す。
-2. $a_l \cdot a_{l+1} \cdot \dotsm \cdot a_{r}$ を返す。
+2. $a_l \cdot a_{l+1} \cdot \dotsm \cdot a_{r}$ を返す。$l = r$ のとき `V::identity()` が返る。
 3. $a_0 \cdot a_1 \cdot \dotsm \cdot a_{n-1}$ を返す。
 
 ### 計算量
@@ -94,6 +94,10 @@ $a_i$ を $x$ で更新する。
   - $O(\log(n))$
   - $d = r - l$ として $O(\log(d))$
 - (3): $O(1)$
+
+### 制約
+1. $0 \leq i < n$
+2. $0 \leq l \leq r \leq n$
 
 ## max_right
 気が向いたらそのうち実装する
