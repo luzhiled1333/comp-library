@@ -10,7 +10,7 @@ documentation_of: //src/data-structure/segment-tree/point-mapping-range-fold-seg
 
 ```
 (1) SegmentTree< V >(usize n)
-(2) SegmentTree< V >(vector< T > vs)
+(2) SegmentTree< V >(vector< VT > vs)
 ```
 
 1. 列 $a$ を長さ $n$ の列で初期化する。各要素の初期値は `V::identity()` となる。
@@ -25,7 +25,7 @@ documentation_of: //src/data-structure/segment-tree/point-mapping-range-fold-seg
 
 ## build
 ```
-void build(vector< T > vs)
+void build(vector< VT > vs)
 ```
 
 列 $(a_0, a_1, \dots, a_{n-1})$ を `vs` で初期化して再構築する。
@@ -50,7 +50,7 @@ usize size() const
 
 ## set
 ```
-void set(usize i, T x)
+void set(usize i, VT x)
 ```
 
 $a_i$ を $x$ で更新する。
@@ -61,9 +61,9 @@ $a_i$ を $x$ で更新する。
 
 ## fold
 ```
-(1) T fold(usize i) const
-(2) T fold(usize l, usize r) const
-(3) T fold_all() const
+(1) VT fold(usize i) const
+(2) VT fold(usize l, usize r) const
+(3) VT fold_all() const
 ```
 
 1. $a_i$ を返す。
