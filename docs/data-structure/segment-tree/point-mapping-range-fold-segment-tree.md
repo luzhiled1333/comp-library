@@ -32,7 +32,7 @@ documentation_of: //src/data-structure/segment-tree/point-mapping-range-fold-seg
 ```
 
 1. 列 $a$ を長さ $n$ の列で初期化する。各要素の初期値は `V::identity()` となる。
-2. 列 $a$ を $vs$ で初期化する。
+2. 列 $a$ を `vs` で初期化する。
 
 ### 制約
 - $0 \leq n$
