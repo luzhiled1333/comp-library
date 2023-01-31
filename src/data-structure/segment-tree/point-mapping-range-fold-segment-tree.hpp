@@ -94,7 +94,8 @@ namespace luz {
     }
   };
 
-  template< class value_structure >
-  using SegmentTree = PointMappingRangeFoldSegmentTree< value_structure >;
+  template < class value_structure >
+  using SegmentTree =
+      PointMappingRangeFoldSegmentTree< value_structure >;
 
 } // namespace luz
