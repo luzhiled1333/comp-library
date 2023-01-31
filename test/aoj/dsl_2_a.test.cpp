@@ -4,6 +4,7 @@
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/data-structure/segment-tree/point-mapping-range-fold-segment-tree.hpp"
 
+#include <algorithm>
 #include <iostream>
 #include <limits>
 
