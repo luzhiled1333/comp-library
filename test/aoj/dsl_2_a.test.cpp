@@ -29,7 +29,7 @@ namespace luz {
     usize n, q;
     std::cin >> n >> q;
 
-    PointMappingRangeFoldSegmentTree< Monoid< i32 > > seg(n);
+    SegmentTree< Monoid< i32 > > seg(n);
     for ([[maybe_unused]] usize _: rep(0, q)) {
       usize com, x, y;
       std::cin >> com >> x >> y;

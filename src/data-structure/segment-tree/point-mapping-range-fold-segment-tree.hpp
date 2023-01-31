@@ -90,8 +90,11 @@ namespace luz {
     }
 
     T fold_all() const {
-      return tree[1];
+      return (size() ? tree[1] : V::identity());
     }
   };
+
+  template< class value_structure >
+  using SegmentTree = PointMappingRangeFoldSegmentTree< value_structure >;
 
 } // namespace luz
