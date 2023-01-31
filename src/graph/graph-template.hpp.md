@@ -77,8 +77,8 @@ data:
   path: src/graph/graph-template.hpp
   requiredBy:
   - src/graph/functional-graph-utility.hpp
-  - src/graph/offline-query-lowest-common-ancestor.hpp
   - src/graph/dijkstra.hpp
+  - src/graph/offline-query-lowest-common-ancestor.hpp
   timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

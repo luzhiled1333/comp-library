@@ -46,6 +46,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/data-structure/fenwick-tree.hpp
       title: Fenwick Tree (Binary Indexed Tree, BIT)
+  - name: src/data-structure/segment-tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/segment-tree/point-mapping-range-fold-segment-tree.hpp
+      title: "\u4E00\u70B9\u66F4\u65B0+\u533A\u9593\u53D6\u5F97 \u30BB\u30B0\u30E1\
+        \u30F3\u30C8\u6728"
   - name: src/geometry/Z2/class
     pages:
     - icon: ':heavy_check_mark:'
@@ -189,6 +195,9 @@ data:
       path: test/aoj/dsl_1_a.test.cpp
       title: test/aoj/dsl_1_a.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/aoj/dsl_2_a.test.cpp
+      title: test/aoj/dsl_2_a.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/aoj/dsl_2_b.test.cpp
       title: test/aoj/dsl_2_b.test.cpp
     - icon: ':heavy_check_mark:'
@@ -239,6 +248,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: unit-test/data-structure/fenwick-tree.test.cpp
       title: unit-test/data-structure/fenwick-tree.test.cpp
+  - name: unit-test/data-structure/segment-tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: unit-test/data-structure/segment-tree/point-mapping-range-fold-segment-tree.test.cpp
+      title: unit-test/data-structure/segment-tree/point-mapping-range-fold-segment-tree.test.cpp
   - name: unit-test/math/modular-arithmetic
     pages:
     - icon: ':heavy_check_mark:'

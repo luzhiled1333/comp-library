@@ -30,6 +30,10 @@ data:
     path: src/data-structure/fenwick-tree.hpp
     title: Fenwick Tree (Binary Indexed Tree, BIT)
   - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/point-mapping-range-fold-segment-tree.hpp
+    title: "\u4E00\u70B9\u66F4\u65B0+\u533A\u9593\u53D6\u5F97 \u30BB\u30B0\u30E1\u30F3\
+      \u30C8\u6728"
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/constants/ccw-constants.hpp
     title: src/geometry/Z2/constants/ccw-constants.hpp
   - icon: ':heavy_check_mark:'
@@ -99,6 +103,9 @@ data:
     path: test/aoj/dsl_1_a.test.cpp
     title: test/aoj/dsl_1_a.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/dsl_2_a.test.cpp
+    title: test/aoj/dsl_2_a.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/dsl_2_b.test.cpp
     title: test/aoj/dsl_2_b.test.cpp
   - icon: ':heavy_check_mark:'
@@ -144,6 +151,9 @@ data:
     path: unit-test/data-structure/fenwick-tree.test.cpp
     title: unit-test/data-structure/fenwick-tree.test.cpp
   - icon: ':heavy_check_mark:'
+    path: unit-test/data-structure/segment-tree/point-mapping-range-fold-segment-tree.test.cpp
+    title: unit-test/data-structure/segment-tree/point-mapping-range-fold-segment-tree.test.cpp
+  - icon: ':heavy_check_mark:'
     path: unit-test/math/modular-arithmetic/static-modint.test.cpp
     title: unit-test/math/modular-arithmetic/static-modint.test.cpp
   - icon: ':heavy_check_mark:'
@@ -173,58 +183,61 @@ data:
   isVerificationFile: false
   path: src/cpp-template/header/type-alias.hpp
   requiredBy:
-  - src/sequence/run-length-encoding.hpp
   - src/sequence/compression.hpp
-  - src/math/convolution/bitwise-xor-convolution.hpp
-  - src/math/convolution/fast-walsh-hadamard-transform.hpp
-  - src/math/convolution/bitwise-and-convolution.hpp
-  - src/math/modular-arithmetic/static-modint.hpp
-  - src/math/totient.hpp
-  - src/math/totient-enumeration.hpp
+  - src/sequence/run-length-encoding.hpp
   - src/graph/graph-template.hpp
   - src/graph/functional-graph-utility.hpp
+  - src/graph/dijkstra.hpp
   - src/graph/offline-query-lowest-common-ancestor.hpp
   - src/graph/max-flow.hpp
-  - src/graph/dijkstra.hpp
-  - src/cpp-template/template.cpp
-  - src/cpp-template/header/rep.hpp
-  - src/cpp-template/header/vector-ios.hpp
-  - src/cpp-template/header/template-header.hpp
-  - src/cpp-template/header/io-set.hpp
-  - src/cpp-template/header/make-vector.hpp
-  - src/cpp-template/header/input.hpp
-  - src/data-structure/fenwick-tree.hpp
-  - src/data-structure/disjoint-set-union.hpp
   - src/geometry/Z2/segment-function/counterbalance-segments.hpp
+  - src/geometry/Z2/operation/ccw.hpp
+  - src/geometry/Z2/constants/ccw-constants.hpp
   - src/geometry/Z2/utility/polygon-to-segments.hpp
   - src/geometry/Z2/utility/next-idx.hpp
-  - src/geometry/Z2/constants/ccw-constants.hpp
-  - src/geometry/Z2/operation/ccw.hpp
+  - src/data-structure/fenwick-tree.hpp
+  - src/data-structure/disjoint-set-union.hpp
+  - src/data-structure/segment-tree/point-mapping-range-fold-segment-tree.hpp
+  - src/math/totient-enumeration.hpp
+  - src/math/modular-arithmetic/static-modint.hpp
+  - src/math/totient.hpp
+  - src/math/convolution/fast-walsh-hadamard-transform.hpp
+  - src/math/convolution/bitwise-and-convolution.hpp
+  - src/math/convolution/bitwise-xor-convolution.hpp
+  - src/cpp-template/header/io-set.hpp
+  - src/cpp-template/header/vector-ios.hpp
+  - src/cpp-template/header/template-header.hpp
+  - src/cpp-template/header/input.hpp
+  - src/cpp-template/header/rep.hpp
+  - src/cpp-template/header/make-vector.hpp
+  - src/cpp-template/template.cpp
   timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/library-checker/bitwise_xor_convolution.test.cpp
-  - test/library-checker/bitwise_and_convolution.test.cpp
-  - test/library-checker/unionfind.test.cpp
-  - test/aoj/grl_5_c.test.cpp
+  - test/aoj/itp1_1_a.test.cpp
+  - test/aoj/2286.test.cpp
   - test/aoj/ntl_1_d.test.cpp
+  - test/aoj/grl_5_c.test.cpp
+  - test/aoj/dsl_2_b.test.cpp
   - test/aoj/4011.test.cpp
   - test/aoj/grl_1_a.test.cpp
-  - test/aoj/2286.test.cpp
-  - test/aoj/dsl_2_b.test.cpp
+  - test/aoj/dsl_2_a.test.cpp
   - test/aoj/dsl_1_a.test.cpp
-  - test/aoj/itp1_1_a.test.cpp
   - test/aoj/grl_6_a.test.cpp
-  - test/atcoder/abc259_c.test.cpp
+  - test/library-checker/bitwise_and_convolution.test.cpp
+  - test/library-checker/unionfind.test.cpp
+  - test/library-checker/bitwise_xor_convolution.test.cpp
   - test/atcoder/abc259_d.test.cpp
-  - test/atcoder/abc258_e.test.cpp
-  - test/atcoder/abc212_h.test.cpp
+  - test/atcoder/abc259_c.test.cpp
   - test/atcoder/abc177_d.test.cpp
+  - test/atcoder/abc212_h.test.cpp
+  - test/atcoder/abc258_e.test.cpp
   - unit-test/sequence/compression.test.cpp
-  - unit-test/math/totient.test.cpp
-  - unit-test/math/modular-arithmetic/static-modint.test.cpp
-  - unit-test/math/totient-enumeration.test.cpp
+  - unit-test/data-structure/segment-tree/point-mapping-range-fold-segment-tree.test.cpp
   - unit-test/data-structure/fenwick-tree.test.cpp
+  - unit-test/math/totient.test.cpp
+  - unit-test/math/totient-enumeration.test.cpp
+  - unit-test/math/modular-arithmetic/static-modint.test.cpp
 documentation_of: src/cpp-template/header/type-alias.hpp
 layout: document
 title: Type alias

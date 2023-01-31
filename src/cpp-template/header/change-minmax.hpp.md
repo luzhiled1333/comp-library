@@ -43,13 +43,13 @@ data:
   path: src/cpp-template/header/change-minmax.hpp
   requiredBy:
   - src/graph/dijkstra.hpp
-  - src/cpp-template/template.cpp
   - src/cpp-template/header/template-header.hpp
+  - src/cpp-template/template.cpp
   timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/grl_1_a.test.cpp
   - test/aoj/itp1_1_a.test.cpp
+  - test/aoj/grl_1_a.test.cpp
   - test/atcoder/abc259_c.test.cpp
   - test/atcoder/abc177_d.test.cpp
 documentation_of: src/cpp-template/header/change-minmax.hpp
