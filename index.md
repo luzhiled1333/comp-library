@@ -52,6 +52,48 @@ data:
       path: src/data-structure/segment-tree/point-mapping-range-fold-segment-tree.hpp
       title: "\u4E00\u70B9\u66F4\u65B0+\u533A\u9593\u53D6\u5F97 \u30BB\u30B0\u30E1\
         \u30F3\u30C8\u6728"
+  - name: src/geometry/R2/class
+    pages:
+    - icon: ':warning:'
+      path: src/geometry/R2/class/circle.hpp
+      title: src/geometry/R2/class/circle.hpp
+    - icon: ':warning:'
+      path: src/geometry/R2/class/line.hpp
+      title: src/geometry/R2/class/line.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/geometry/R2/class/point.hpp
+      title: src/geometry/R2/class/point.hpp
+    - icon: ':warning:'
+      path: src/geometry/R2/class/polygon.hpp
+      title: src/geometry/R2/class/polygon.hpp
+    - icon: ':warning:'
+      path: src/geometry/R2/class/segment.hpp
+      title: src/geometry/R2/class/segment.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/geometry/R2/class/vector.hpp
+      title: src/geometry/R2/class/vector.hpp
+  - name: src/geometry/R2/numbers
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/geometry/R2/numbers/eps.hpp
+      title: src/geometry/R2/numbers/eps.hpp
+    - icon: ':warning:'
+      path: src/geometry/R2/numbers/pi.hpp
+      title: src/geometry/R2/numbers/pi.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/geometry/R2/numbers/sign.hpp
+      title: src/geometry/R2/numbers/sign.hpp
+  - name: src/geometry/R2/utility
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/geometry/R2/utility/equals.hpp
+      title: src/geometry/R2/utility/equals.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/geometry/R2/utility/is-fp-exception.hpp
+      title: src/geometry/R2/utility/is-fp-exception.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/geometry/R2/utility/sign.hpp
+      title: src/geometry/R2/utility/sign.hpp
   - name: src/geometry/Z2/class
     pages:
     - icon: ':heavy_check_mark:'
@@ -253,6 +295,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: unit-test/data-structure/segment-tree/point-mapping-range-fold-segment-tree.test.cpp
       title: unit-test/data-structure/segment-tree/point-mapping-range-fold-segment-tree.test.cpp
+  - name: unit-test/geometry/R2/class
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: unit-test/geometry/R2/class/vector-and-point.test.cpp
+      title: unit-test/geometry/R2/class/vector-and-point.test.cpp
   - name: unit-test/math/modular-arithmetic
     pages:
     - icon: ':heavy_check_mark:'

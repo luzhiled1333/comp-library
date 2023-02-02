@@ -33,6 +33,30 @@ data:
     path: src/data-structure/segment-tree/point-mapping-range-fold-segment-tree.hpp
     title: "\u4E00\u70B9\u66F4\u65B0+\u533A\u9593\u53D6\u5F97 \u30BB\u30B0\u30E1\u30F3\
       \u30C8\u6728"
+  - icon: ':warning:'
+    path: src/geometry/R2/class/circle.hpp
+    title: src/geometry/R2/class/circle.hpp
+  - icon: ':warning:'
+    path: src/geometry/R2/class/line.hpp
+    title: src/geometry/R2/class/line.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/geometry/R2/class/point.hpp
+    title: src/geometry/R2/class/point.hpp
+  - icon: ':warning:'
+    path: src/geometry/R2/class/polygon.hpp
+    title: src/geometry/R2/class/polygon.hpp
+  - icon: ':warning:'
+    path: src/geometry/R2/class/segment.hpp
+    title: src/geometry/R2/class/segment.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/geometry/R2/class/vector.hpp
+    title: src/geometry/R2/class/vector.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/geometry/R2/utility/equals.hpp
+    title: src/geometry/R2/utility/equals.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/geometry/R2/utility/sign.hpp
+    title: src/geometry/R2/utility/sign.hpp
   - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/constants/ccw-constants.hpp
     title: src/geometry/Z2/constants/ccw-constants.hpp
@@ -154,6 +178,9 @@ data:
     path: unit-test/data-structure/segment-tree/point-mapping-range-fold-segment-tree.test.cpp
     title: unit-test/data-structure/segment-tree/point-mapping-range-fold-segment-tree.test.cpp
   - icon: ':heavy_check_mark:'
+    path: unit-test/geometry/R2/class/vector-and-point.test.cpp
+    title: unit-test/geometry/R2/class/vector-and-point.test.cpp
+  - icon: ':heavy_check_mark:'
     path: unit-test/math/modular-arithmetic/static-modint.test.cpp
     title: unit-test/math/modular-arithmetic/static-modint.test.cpp
   - icon: ':heavy_check_mark:'
@@ -190,6 +217,14 @@ data:
   - src/graph/dijkstra.hpp
   - src/graph/offline-query-lowest-common-ancestor.hpp
   - src/graph/max-flow.hpp
+  - src/geometry/R2/class/line.hpp
+  - src/geometry/R2/class/point.hpp
+  - src/geometry/R2/class/segment.hpp
+  - src/geometry/R2/class/vector.hpp
+  - src/geometry/R2/class/circle.hpp
+  - src/geometry/R2/class/polygon.hpp
+  - src/geometry/R2/utility/sign.hpp
+  - src/geometry/R2/utility/equals.hpp
   - src/geometry/Z2/segment-function/counterbalance-segments.hpp
   - src/geometry/Z2/operation/ccw.hpp
   - src/geometry/Z2/constants/ccw-constants.hpp
@@ -233,6 +268,7 @@ data:
   - test/atcoder/abc212_h.test.cpp
   - test/atcoder/abc258_e.test.cpp
   - unit-test/sequence/compression.test.cpp
+  - unit-test/geometry/R2/class/vector-and-point.test.cpp
   - unit-test/data-structure/segment-tree/point-mapping-range-fold-segment-tree.test.cpp
   - unit-test/data-structure/fenwick-tree.test.cpp
   - unit-test/math/totient.test.cpp
