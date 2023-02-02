@@ -1,5 +1,7 @@
 #pragma once
 
+#include "src/geometry/R2/utility/equals.hpp"
+
 #include <vector>
 
 namespace luz::R2 {
@@ -21,13 +23,9 @@ namespace luz::R2 {
       return y_;
     }
 
-    // TODO: consider EPS
-    // bool operator==(const Vector &v) const {
-    //   return x_ == v.x_ and y_ == v.y_;
-    // }
-    // bool operator!=(const Vector &v) const {
-    //   return x_ != v.x_ or  y_ != v.y_;
-    // }
+    friend bool equals(const Vector &v0, const Vector &v1) {
+      return equals(v0.x(), v1.x()) and equals(v0.y(), v1.y());
+    }
 
     Vector &operator+=(const Vector &v) {
       x_ += v.x_;
