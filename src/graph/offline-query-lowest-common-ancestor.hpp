@@ -3,14 +3,14 @@
 #include "src/data-structure/disjoint-set-union.hpp"
 #include "src/graph/graph-template.hpp"
 
-#include <vector>
-#include <utility>
-#include <unordered_map>
 #include <cassert>
+#include <unordered_map>
+#include <utility>
+#include <vector>
 
 namespace luz {
 
-  template< typename cost_type >
+  template < typename cost_type >
   class OfflineLCAQuery {
     usize g_size_;
     Graph< cost_type > g_;
@@ -31,7 +31,7 @@ namespace luz {
     }
 
     void dfs(usize v) {
-      visited_[v] = true;
+      visited_[v]   = true;
       ancestors_[v] = v;
 
       for (const auto &e: g_[v]) {
@@ -50,10 +50,15 @@ namespace luz {
    public:
     using Queries = std::vector< std::pair< usize, usize > >;
 
-    OfflineLCAQuery(Graph< cost_type > &g):
-      g_size_(g.size()), g_(g),
-      query_count_(0), qs_(g_size_), to_qi_(g_size_),
-      dsu_(g_size_), visited_(g_size_, false), ancestors_(g_size_) {}
+    OfflineLCAQuery(Graph< cost_type > &g)
+        : g_size_(g.size()),
+          g_(g),
+          query_count_(0),
+          qs_(g_size_),
+          to_qi_(g_size_),
+          dsu_(g_size_),
+          visited_(g_size_, false),
+          ancestors_(g_size_) {}
 
     usize add_query(usize u, usize v) {
       bound_check(u);
@@ -77,7 +82,6 @@ namespace luz {
       usize qi = to_qi_[u][v];
       return query_results_[qi];
     }
-
   };
 
 } // namespace luz

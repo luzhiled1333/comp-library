@@ -2,10 +2,9 @@
 
 #include <vector>
 
-namespace luz {
-namespace R2 {
+namespace luz::R2 {
 
-  template< typename R >
+  template < typename R >
   class Vector {
 
     R x_, y_;
@@ -31,11 +30,13 @@ namespace R2 {
     // }
 
     Vector &operator+=(const Vector &v) {
-      x_ += v.x_; y_ += v.y_;
+      x_ += v.x_;
+      y_ += v.y_;
       return *this;
     }
     Vector &operator-=(const Vector &v) {
-      x_ -= v.x_; y_ -= v.y_;
+      x_ -= v.x_;
+      y_ -= v.y_;
       return *this;
     }
 
@@ -54,11 +55,13 @@ namespace R2 {
     }
 
     Vector &operator*=(const R r) {
-      x_ *= r; y_ *= r;
+      x_ *= r;
+      y_ *= r;
       return *this;
     }
     Vector &operator/=(const R r) {
-      x_ /= r; y_ /= r;
+      x_ /= r;
+      y_ /= r;
       return *this;
     }
 
@@ -68,11 +71,9 @@ namespace R2 {
     Vector operator/(const R r) const {
       return Vector(*this) /= r;
     }
-
   };
 
-  template< typename R >
-  using Vectors = std::vector< Vector<R> >;
+  template < typename R >
+  using Vectors = std::vector< Vector< R > >;
 
-} // namespace R2
-} // namespace luz
+} // namespace luz::R2

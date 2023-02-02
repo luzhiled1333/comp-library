@@ -2,11 +2,11 @@
 
 #include "src/geometry/Z2/class/point.hpp"
 
-namespace luz {
+#include <cassert>
 
-namespace Z2 {
+namespace luz::Z2 {
 
-  template< typename Z >
+  template < typename Z >
   class Circle {
 
     Point< Z > o_;
@@ -28,9 +28,7 @@ namespace Z2 {
     }
   };
 
-  template< typename Z >
+  template < typename Z >
   using Circles = std::vector< Circle< Z > >;
 
-} // namespace Z2
-
-} // namespace luz
+} // namespace luz::Z2

@@ -1,10 +1,10 @@
 // verification-helper: PROBLEM https://judge.yosupo.jp/problem/bitwise_xor_convolution
 
-#include "src/math/modular-arithmetic/static-modint.hpp"
 #include "src/math/convolution/bitwise-xor-convolution.hpp"
+#include "src/math/modular-arithmetic/static-modint.hpp"
 
-#include <vector>
 #include <iostream>
+#include <vector>
 
 namespace luz {
 
@@ -29,9 +29,9 @@ namespace luz {
 
     auto cs = bitwise_xor_convolution(as, bs);
     for (usize i: rep(0, 1 << n)) {
-      std::cout << cs[i].val() << (i + 1 == (usize(1) << n) ? "\n" : " ");
+      std::cout << cs[i].val()
+                << (i + 1 == (usize(1) << n) ? "\n" : " ");
     }
-
   }
 
 } // namespace luz

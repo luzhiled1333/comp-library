@@ -2,13 +2,11 @@
 
 #include <cmath>
 
-namespace luz {
-namespace R2 {
+namespace luz::R2 {
 
   long double pi() {
     static long double PI = acosl(-1);
     return PI;
   }
 
-} // namespace R2
-} // namespace luz
+} // namespace luz::R2
