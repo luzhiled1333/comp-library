@@ -8,7 +8,7 @@
 namespace luz {
 
   void main_() {
-    using R      = double;
+    using R = double;
 
     using Vector = R2::Vector< R >;
     Vector a(3.0, 2.5);
