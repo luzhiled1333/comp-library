@@ -1,6 +1,7 @@
 #pragma once
 
 #include "src/geometry/R2/utility/equals.hpp"
+#include "src/geometry/R2/utility/is-fp-exception.hpp"
 
 #include <vector>
 
@@ -13,7 +14,9 @@ namespace luz::R2 {
 
    public:
     Vector(): x_(0), y_(0) {}
-    Vector(R x, R y): x_(x), y_(y) {}
+    Vector(R x, R y): x_(x), y_(y) {
+      assert(not is_fp_exception(x_) and not is_fp_exception(y_));
+    }
 
     R x() const {
       return x_;

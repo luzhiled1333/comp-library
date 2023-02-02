@@ -1,6 +1,7 @@
 #pragma once
 
 #include "src/geometry/R2/class/point.hpp"
+#include "src/geometry/R2/utility/is-fp-exception.hpp"
 
 #include <cassert>
 #include <cmath>
@@ -18,8 +19,7 @@ namespace luz::R2 {
     Circle() {}
 
     Circle(Point< R > o, R r): o_(o), r_(r) {
-      auto fpc = std::fpclassify(r_);
-      assert(fpc != FP_INFINITE and fpc != FP_NAN);
+      assert(not is_fp_exception(r_));
       assert(not std::signbit(r_));
     }
 
