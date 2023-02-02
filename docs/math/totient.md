@@ -12,3 +12,6 @@ T totient(T n)
 
 ### 計算量
 - $O(\sqrt n)$
+
+## 関連
+`math/totient-enumeration` を用いることで、 $n$ 以下の任意の $i$ について $\phi(i)$ を $O(n \log \log n)$ で計算することができる。
