@@ -3,6 +3,7 @@
 #include "src/geometry/R2/utility/equals.hpp"
 #include "src/geometry/R2/utility/is-fp-exception.hpp"
 
+#include <cassert>
 #include <vector>
 
 namespace luz::R2 {
