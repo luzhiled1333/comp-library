@@ -1,5 +1,7 @@
 #pragma once
 
+#include "src/geometry/R2/class/point.hpp"
+
 #include <cassert>
 #include <cmath>
 #include <vector>
