@@ -19,6 +19,7 @@
 "test/library-checker/unionfind.test.cpp": "2022-08-22 18:26:45 +0900",
 "unit-test/data-structure/fenwick-tree.test.cpp": "2022-08-22 18:26:45 +0900",
 "unit-test/data-structure/segment-tree/point-mapping-range-fold-segment-tree.test.cpp": "2023-01-31 16:32:36 +0900",
+"unit-test/geometry/R2/class/vector-and-point.test.cpp": "2023-02-03 00:11:50 +0900",
 "unit-test/math/modular-arithmetic/static-modint.test.cpp": "2022-08-22 18:26:45 +0900",
 "unit-test/math/totient-enumeration.test.cpp": "2022-09-14 04:18:33 +0900",
 "unit-test/math/totient.test.cpp": "2022-08-31 12:35:14 +0900",
