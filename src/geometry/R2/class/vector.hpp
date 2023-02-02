@@ -71,6 +71,10 @@ namespace luz::R2 {
     Vector operator/(const R r) const {
       return Vector(*this) /= r;
     }
+
+    friend Vector operator*(const R r, const Vector &v) {
+      return Vector(v) *= r;
+    }
   };
 
   template < typename R >
