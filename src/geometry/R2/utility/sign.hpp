@@ -8,7 +8,6 @@ namespace luz::R2 {
 
   template < typename R >
   i32 sign(R r) {
-    set_eps(1e-10);
     if (r < -eps()) return numbers::sign::negative;
     if (r > +eps()) return numbers::sign::positive;
     return numbers::sign::zero;
