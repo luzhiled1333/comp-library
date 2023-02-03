@@ -41,7 +41,7 @@ namespace luz {
 
       lca_.build(root);
       std::vector< usize > depths =
-          distance_on_undirected_graph(g_, root);
+          distances_on_unweighted_graph(g_, root);
     }
 
     std::optional< usize > jump_on_tree(usize start, usize end,
