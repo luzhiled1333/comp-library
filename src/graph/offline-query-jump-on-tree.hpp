@@ -1,7 +1,7 @@
 #pragma once
 
 #include "src/cpp-template/header/type-alias.hpp"
-#include "src/graph/distances_on_undirected_graph.hpp"
+#include "src/graph/distances-on-unweighted-graph.hpp"
 #include "src/graph/graph-template.hpp"
 #include "src/graph/offline-query-level-ancestor.hpp"
 #include "src/graph/offline-query-lowest-common-ancestor.hpp"
