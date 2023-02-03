@@ -24,11 +24,11 @@ namespace luz {
 
    public:
     explicit OfflineJumpOnTreeQuery(Graph< cost_type > &g)
-      : g_size_(g.size()),
-        g_(g),
-        lca_(g),
-        la_(g),
-        query_count_(0) {}
+        : g_size_(g.size()),
+          g_(g),
+          lca_(g),
+          la_(g),
+          query_count_(0) {}
 
     usize add_query(usize start, usize end, usize distance) {
       qs_.emplace_back(start, end, distance);
@@ -40,7 +40,8 @@ namespace luz {
       }
 
       lca_.build(root);
-      std::vector< usize > depths = distance_on_undirected_graph(g_, root);
+      std::vector< usize > depths =
+          distance_on_undirected_graph(g_, root);
     }
 
     std::optional< usize > jump_on_tree(usize start, usize end,
