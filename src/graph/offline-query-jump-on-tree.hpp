@@ -7,7 +7,7 @@
 #include "src/graph/offline-query-lowest-common-ancestor.hpp"
 
 #include <vector>
-
+#include <optional>
 namespace luz {
 
   template < typename cost_type >
