@@ -31,7 +31,7 @@ namespace luz {
     std::vector< query_type > converted_qs_;
     std::unordered_map< query_type, std::optional< usize >,
                         TupleHash >
-        result;
+        results_;
 
     void bound_check(usize v) const {
       assert(v < g_size_);
@@ -63,7 +63,7 @@ namespace luz {
           distances_on_unweighted_graph(g_, root);
 
       converted_qs_.reserve(query_count_);
-      result.reserve(query_count_);
+      results_.reserve(query_count_);
 
       for (usize i: rep(0, qs_.size())) {
         const auto &[s, t, d] = qs_[i];
@@ -78,7 +78,7 @@ namespace luz {
           converted_qs_.emplace_back(i, t,
                                      depths[r] + d - distance_sr);
         } else {
-          result[qs_[i]] = std::nullopt;
+          results_[qs_[i]] = std::nullopt;
         }
       }
 
@@ -89,17 +89,17 @@ namespace luz {
       la_.build(root);
 
       for (const auto &[i, v, k]: converted_qs_) {
-        result[qs_[i]] = la_.la(v, k);
+        results_[qs_[i]] = la_.la(v, k);
       }
     }
 
     std::optional< usize > jump_on_tree(usize start, usize end,
-                                        usize distance) {
+                                        usize distance) const {
       bound_check(start);
       bound_check(end);
       query_type qi(start, end, distance);
-      assert(result.count(qi));
-      return result[qi];
+      assert(results_.count(qi));
+      return (*results_.find(qi)).second;
     }
   };
 
