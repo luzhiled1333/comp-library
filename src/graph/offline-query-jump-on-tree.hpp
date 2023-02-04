@@ -9,9 +9,9 @@
 
 #include <cassert>
 #include <optional>
-#include <vector>
-#include <unordered_map>
 #include <tuple>
+#include <unordered_map>
+#include <vector>
 
 namespace luz {
 
@@ -63,7 +63,7 @@ namespace luz {
       result.reserve(query_count_);
 
       for (const auto &[s, t, d]: qs_) {
-        usize st_lca = lca_.lca(s, t);
+        usize st_lca      = lca_.lca(s, t);
         usize distance_sr = depths[s] - depths[r];
         usize distance_rt = depths[t] - depths[r];
 
@@ -83,7 +83,7 @@ namespace luz {
       la_.build(root);
 
       for (const auto &[i, v, k]: converted_qs_) {
-        auto qi = qs_[i];
+        auto qi    = qs_[i];
         result[qi] = la_.la(v, k).value();
       }
     }
