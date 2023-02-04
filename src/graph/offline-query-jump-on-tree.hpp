@@ -6,8 +6,8 @@
 #include "src/graph/offline-query-level-ancestor.hpp"
 #include "src/graph/offline-query-lowest-common-ancestor.hpp"
 
-#include <vector>
 #include <optional>
+#include <vector>
 namespace luz {
 
   template < typename cost_type >
@@ -22,6 +22,10 @@ namespace luz {
 
     std::vector< std::pair< usize, usize > > converted_qs_;
 
+    void bound_check(usize v) const {
+      assert(v < g_size_);
+    }
+
    public:
     explicit OfflineJumpOnTreeQuery(Graph< cost_type > &g)
         : g_size_(g.size()),
@@ -31,10 +35,13 @@ namespace luz {
           query_count_(0) {}
 
     usize add_query(usize start, usize end, usize distance) {
+      bound_check(start);
+      bound_check(end);
       qs_.emplace_back(start, end, distance);
     }
 
     void build(usize root) {
+      bound_check(root);
       for (auto &[s, t, _]: qs_) {
         lca_.add_query(s, t);
       }
@@ -45,7 +52,10 @@ namespace luz {
     }
 
     std::optional< usize > jump_on_tree(usize start, usize end,
-                                        usize distance) {}
+                                        usize distance) {
+      bound_check(start);
+      bound_check(end);
+    }
   };
 
 } // namespace luz
