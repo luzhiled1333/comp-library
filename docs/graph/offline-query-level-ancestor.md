@@ -32,6 +32,9 @@ void build(usize root)
 
 頂点 `root` を根とする根付き木上での Level ancestor を計算する。
 
+### 制約
+- $0 \leq root < \|V\|$
+
 ### 計算量
 - $O((\|V\| + Q))$
   - 追加されたクエリの数を $Q$ とする
