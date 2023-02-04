@@ -23,7 +23,7 @@ namespace luz {
     OfflineLCAQuery< cost_type > lca_;
     OfflineLAQuery< cost_type > la_;
 
-    using query_type = std::tuple < std::tuple< usize, usize, usize >;
+    using query_type = std::tuple< usize, usize, usize >;
 
     usize query_count_;
     std::vector< query_type > qs_;
