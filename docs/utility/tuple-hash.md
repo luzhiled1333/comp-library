@@ -11,9 +11,11 @@ documentation_of: //src/utility/tuple-hash.hpp
 再帰で実装されている都合上、`std::tuple` のもつ型が多くなるとコンパイルができなくなることがあります。
 
 ## usage
-以下のようにして使います。
+`Tuple` は、 `std::hash< T >()(x)` が動作するような型 `T` の列 `(Args...)` によって構成された `std::tuple< Args... >` に対して動作します。
 
-`Args...` として許容される型は `int`, `short`, `bool`, `long long`, `char` などの組み込み型です。例として、`std::tuple< bool, char, short, int, long, long logn >` のような型でも動作します。
+ユーザ定義の構造体については、`std::hash` のオーバーロードをすることによって動作させることができます。
+
+例として、`std::tuple< bool, char, short, int, long, long logn >` のような型で動作します。
 
 ### `std::unordered_map`
 ```cpp

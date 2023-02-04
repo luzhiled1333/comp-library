@@ -9,9 +9,11 @@ documentation_of: //src/utility/pair-hash.hpp
 そのままで使うことはおそらく多くなく、以下のように `std::unordered_map` や `std::unordered_set` などと組み合わせて使うことになるかと思います。
 
 ## usage
-以下のようにして使います。
+`PairHash` は、 `std::hash< T >()(x)` が動作するような型 `T` の組 `(F, S)` によって構成された `std::pair< F, S >` に対して動作します。
 
-`F`, `S` として許容される型は `int`, `short`, `bool`, `long long`, `char` などの組み込み型です。`std::pair` の入れ子のような型では動かないため、`std::tuple` の Hash を使用するようにしてください。
+ユーザ定義の構造体については、`std::hash` のオーバーロードをすることによって動作させることができます。
+
+`std::pair` の入れ子のような型では動作しないため、`std::tuple` とその Hash を使用するようにしてください。
 
 ### `std::unordered_map`
 ```cpp
