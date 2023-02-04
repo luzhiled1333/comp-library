@@ -12,7 +12,7 @@ namespace luz {
   template < typename cost_type >
   std::vector< usize > distances_on_unweighted_graph(
       const Graph< cost_type > &g, usize root) {
-    cost_type not_reached = std::numeric_limits< cost_type >::max();
+    usize not_reached = std::numeric_limits< usize >::max();
     std::vector< usize > distances(g.size(), not_reached);
     distances[root] = 0;
 

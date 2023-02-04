@@ -1,5 +1,6 @@
 #pragma once
 
+#include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/graph/distances-on-unweighted-graph.hpp"
 #include "src/graph/graph-template.hpp"
@@ -28,7 +29,9 @@ namespace luz {
     std::vector< std::tuple< usize, usize, usize > > converted_qs_;
 
     using result_key = std::tuple< usize, usize, usize >;
-    std::unordered_map< result_key, usize, TupleHash > result;
+    std::unordered_map< result_key, std::optional< usize >,
+                        TupleHash >
+        result;
 
     void bound_check(usize v) const {
       assert(v < g_size_);
@@ -42,7 +45,7 @@ namespace luz {
           la_(g),
           query_count_(0) {}
 
-    usize add_query(usize start, usize end, usize distance) {
+    void add_query(usize start, usize end, usize distance) {
       bound_check(start);
       bound_check(end);
       qs_.emplace_back(start, end, distance);
@@ -62,17 +65,20 @@ namespace luz {
       converted_qs_.reserve(query_count_);
       result.reserve(query_count_);
 
-      for (const auto &[s, t, d]: qs_) {
-        usize st_lca      = lca_.lca(s, t);
-        usize distance_sr = depths[s] - depths[r];
-        usize distance_rt = depths[t] - depths[r];
+      for (usize i: rep(0, qs_.size())) {
+        const auto &[s, t, d] = qs_[i];
+        usize r               = lca_.lca(s, t);
+        usize distance_sr     = depths[s] - depths[r];
+        usize distance_rt     = depths[t] - depths[r];
 
-        if (k <= sr_dist) {
-          converted_qs_.emplace_back(i, s, depth[r] + sr_dist - k);
-        } else if (k <= sr_dist + rt_dist) {
-          converted_qs_.emplace_back(i, t, depth[r] + k - sr_dist);
+        if (d <= distance_sr) {
+          converted_qs_.emplace_back(i, s,
+                                     depths[r] + distance_sr - d);
+        } else if (d <= distance_sr + distance_rt) {
+          converted_qs_.emplace_back(i, t,
+                                     depths[r] + d - distance_sr);
         } else {
-          result[result_key(s, t, d)] = std::nullopt;
+          result[qs_[i]] = std::nullopt;
         }
       }
 
@@ -84,7 +90,7 @@ namespace luz {
 
       for (const auto &[i, v, k]: converted_qs_) {
         auto qi    = qs_[i];
-        result[qi] = la_.la(v, k).value();
+        result[qi] = la_.la(v, k);
       }
     }
 
@@ -92,7 +98,8 @@ namespace luz {
                                         usize distance) {
       bound_check(start);
       bound_check(end);
-      return result[result_key(start, end, distance)];
+      result_key qi(start, end, distance);
+      return result[qi];
     }
   };
 
