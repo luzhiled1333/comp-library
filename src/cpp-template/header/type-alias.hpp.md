@@ -116,6 +116,12 @@ data:
     path: src/sequence/run-length-encoding.hpp
     title: "\u30E9\u30F3\u30EC\u30F3\u30B0\u30B9\u5727\u7E2E (\u9023\u9577\u5727\u7E2E\
       , Run Length Encoding, RLE)"
+  - icon: ':heavy_check_mark:'
+    path: src/utility/pair-hash.hpp
+    title: "std::pair \u306E Hash"
+  - icon: ':heavy_check_mark:'
+    path: src/utility/tuple-hash.hpp
+    title: "std::tuple \u306E Hash"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2286.test.cpp
@@ -192,6 +198,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: unit-test/sequence/compression.test.cpp
     title: unit-test/sequence/compression.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: unit-test/utility/pair-hash.test.cpp
+    title: unit-test/utility/pair-hash.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: unit-test/utility/tuple-hash.test.cpp
+    title: unit-test/utility/tuple-hash.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -246,6 +258,8 @@ data:
   - src/cpp-template/header/rep.hpp
   - src/cpp-template/header/make-vector.hpp
   - src/cpp-template/template.cpp
+  - src/utility/tuple-hash.hpp
+  - src/utility/pair-hash.hpp
   timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
@@ -274,6 +288,8 @@ data:
   - unit-test/math/totient.test.cpp
   - unit-test/math/totient-enumeration.test.cpp
   - unit-test/math/modular-arithmetic/static-modint.test.cpp
+  - unit-test/utility/pair-hash.test.cpp
+  - unit-test/utility/tuple-hash.test.cpp
 documentation_of: src/cpp-template/header/type-alias.hpp
 layout: document
 title: Type alias

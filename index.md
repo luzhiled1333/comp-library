@@ -224,6 +224,14 @@ data:
       path: src/sequence/run-length-encoding.hpp
       title: "\u30E9\u30F3\u30EC\u30F3\u30B0\u30B9\u5727\u7E2E (\u9023\u9577\u5727\
         \u7E2E, Run Length Encoding, RLE)"
+  - name: src/utility
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/utility/pair-hash.hpp
+      title: "std::pair \u306E Hash"
+    - icon: ':heavy_check_mark:'
+      path: src/utility/tuple-hash.hpp
+      title: "std::tuple \u306E Hash"
   verificationCategories:
   - name: test/aoj
     pages:
@@ -318,5 +326,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: unit-test/sequence/compression.test.cpp
       title: unit-test/sequence/compression.test.cpp
+  - name: unit-test/utility
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: unit-test/utility/pair-hash.test.cpp
+      title: unit-test/utility/pair-hash.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: unit-test/utility/tuple-hash.test.cpp
+      title: unit-test/utility/tuple-hash.test.cpp
 layout: toppage
 ---
