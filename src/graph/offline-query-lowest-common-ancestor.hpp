@@ -4,6 +4,7 @@
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/data-structure/disjoint-set-union.hpp"
 #include "src/graph/graph-template.hpp"
+#include "src/utility/pair-hash.hpp"
 
 #include <cassert>
 #include <unordered_map>
@@ -20,13 +21,12 @@ namespace luz {
     usize query_count_;
     std::vector< std::vector< std::pair< usize, usize > > > qs_;
 
-    std::vector< std::unordered_map< usize, usize > > to_qi_;
-
     DisjointSetUnion dsu_;
     std::vector< bool > visited_;
     std::vector< usize > ancestors_;
 
-    std::vector< usize > query_results_;
+    using query_type = std::pair< usize, usize >;
+    std::unordered_map< query_type, usize, PairHash > results_;
 
     void bound_check(usize v) const {
       assert(v < g_size_);
@@ -45,7 +45,8 @@ namespace luz {
 
       for (const auto &[u, qi]: qs_[v]) {
         if (not visited_[u]) continue;
-        query_results_[qi] = ancestors_[dsu_.leader(u)];
+        results_[query_type(u, v)] = results_[query_type(v, u)] =
+            ancestors_[dsu_.leader(u)];
       }
     }
 
@@ -57,32 +58,29 @@ namespace luz {
           g_(g),
           query_count_(0),
           qs_(g_size_),
-          to_qi_(g_size_),
           dsu_(g_size_),
           visited_(g_size_, false),
           ancestors_(g_size_) {}
 
-    usize add_query(usize u, usize v) {
+    void add_query(usize u, usize v) {
       bound_check(u);
       bound_check(v);
       qs_[u].emplace_back(v, query_count_);
       qs_[v].emplace_back(u, query_count_);
-      to_qi_[u][v] = to_qi_[v][u] = query_count_;
-      return query_count_++;
     }
 
     void build(usize root) {
       bound_check(root);
-      query_results_.resize(query_count_);
+      results_.reserve(2 * query_count_);
       dfs(root);
     }
 
     usize lca(usize u, usize v) {
       bound_check(u);
       bound_check(v);
-      assert(to_qi_[u].count(v));
-      usize qi = to_qi_[u][v];
-      return query_results_[qi];
+      query_type qi(u, v);
+      assert(results_.count(qi));
+      return results_[qi];
     }
   };
 
