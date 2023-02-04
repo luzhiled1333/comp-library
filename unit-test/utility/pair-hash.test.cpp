@@ -7,9 +7,9 @@
 #include <algorithm>
 #include <cassert>
 #include <iostream>
+#include <set>
 #include <unordered_map>
 #include <unordered_set>
-#include <set>
 #include <utility>
 #include <vector>
 
@@ -17,12 +17,12 @@ namespace luz {
 
   void main_() {
     {
-      using Pair = std::pair< i32, i64 >;
+      using Pair       = std::pair< i32, i64 >;
       i64 large_number = 998244353ll * 512;
 
-      std::vector< Pair > ps({ {998244353, large_number},
-          {998244352, large_number},
-          {998244353, large_number + 1} });
+      std::vector< Pair > ps({{998244353, large_number},
+                              {998244352, large_number},
+                              {998244353, large_number + 1}});
       std::set< usize > hs;
       for (Pair &p: ps) {
         hs.emplace(PairHash()(p));
