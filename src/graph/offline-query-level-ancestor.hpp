@@ -3,10 +3,12 @@
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/graph/graph-template.hpp"
+#include "src/utility/pair-hash.hpp"
 
 #include <cassert>
 #include <optional>
 #include <unordered_map>
+#include <utility>
 #include <vector>
 
 namespace luz {
@@ -19,12 +21,12 @@ namespace luz {
     usize query_count_;
     std::vector< std::vector< std::pair< usize, usize > > > qs_;
 
-    std::vector< std::unordered_map< usize, usize > > to_qi_;
-
     std::vector< bool > visited_;
     std::vector< usize > path_;
 
-    std::vector< std::optional< usize > > query_results_;
+    using query_type = std::pair< usize, usize >;
+    std::unordered_map< query_type, std::optional< usize >, PairHash >
+        results_;
 
     void bound_check(usize v) const {
       assert(v < g_size_);
@@ -36,7 +38,7 @@ namespace luz {
 
       for (const auto &[level, qi]: qs_[v]) {
         if (level < path_.size()) {
-          query_results_[qi] = path_[level];
+          results_[query_type(v, level)] = path_[level];
         }
       }
 
@@ -54,28 +56,25 @@ namespace luz {
           g_(g),
           query_count_(0),
           qs_(g_size_),
-          to_qi_(g_size_),
           visited_(g_size_, false) {}
 
-    usize add_query(usize v, usize level) {
+    void add_query(usize v, usize level) {
       bound_check(v);
       qs_[v].emplace_back(level, query_count_);
-      to_qi_[v][level] = query_count_;
-      return query_count_++;
     }
 
     void build(usize root) {
       bound_check(root);
-      query_results_.resize(query_count_);
+      results_.reserve(query_count_);
       path_.reserve(g_size_);
       dfs(root);
     }
 
     std::optional< usize > la(usize v, usize level) const {
       bound_check(v);
-      assert(to_qi_[v].count(level));
-      usize qi = (*to_qi_[v].find(level)).second;
-      return query_results_[qi];
+      query_type qi(v, level);
+      assert(results_.count(qi));
+      return (*results_.find(qi)).second;
     }
   };
 
