@@ -23,13 +23,13 @@ namespace luz {
     OfflineLCAQuery< cost_type > lca_;
     OfflineLAQuery< cost_type > la_;
 
+    using query_type = std::tuple < std::tuple< usize, usize, usize >;
+
     usize query_count_;
-    std::vector< std::tuple< usize, usize, usize > > qs_;
+    std::vector< query_type > qs_;
 
-    std::vector< std::tuple< usize, usize, usize > > converted_qs_;
-
-    using result_key = std::tuple< usize, usize, usize >;
-    std::unordered_map< result_key, std::optional< usize >,
+    std::vector< query_type > converted_qs_;
+    std::unordered_map< query_type, std::optional< usize >,
                         TupleHash >
         result;
 
@@ -89,8 +89,7 @@ namespace luz {
       la_.build(root);
 
       for (const auto &[i, v, k]: converted_qs_) {
-        auto qi    = qs_[i];
-        result[qi] = la_.la(v, k);
+        result[qs_[i]] = la_.la(v, k);
       }
     }
 
@@ -98,7 +97,8 @@ namespace luz {
                                         usize distance) {
       bound_check(start);
       bound_check(end);
-      result_key qi(start, end, distance);
+      query_type qi(start, end, distance);
+      assert(result.count(qi));
       return result[qi];
     }
   };
