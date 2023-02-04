@@ -5,7 +5,7 @@ documentation_of: //src/data-structure/disjoint-set-union.hpp
 
 ## コンストラクタ
 ```
-DisjointSetUnion<T>(usize n)
+DisjointSetUnion(usize n)
 ```
 
 $1$ 要素の集合 $n$ 個で集合を初期化する。
