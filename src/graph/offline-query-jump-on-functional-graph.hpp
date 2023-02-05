@@ -4,6 +4,7 @@
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/graph/graph-template.hpp"
 #include "src/graph/offline-query-level-ancestor.hpp"
+#include "src/utility/pair-hash.hpp"
 
 #include <unordered_map>
 #include <utility>
@@ -122,7 +123,7 @@ namespace luz {
     usize jump(usize v, u64 k) const {
       query_type qi(v, k);
       assert(results_.count(qi));
-      return results_[qi];
+      return results_.find(qi)->second;
     }
   };
 } // namespace luz
