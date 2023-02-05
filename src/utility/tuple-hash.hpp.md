@@ -4,8 +4,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/type-alias.hpp
     title: Type alias
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: src/graph/offline-query-jump-on-tree.hpp
+    title: "(offine) \u6728\u306E\u30D1\u30B9 $u-v$ \u4E0A\u306E $k$ \u756A\u76EE\u306E\
+      \u9802\u70B9 (Offline Jump On Tree)"
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/jump_on_tree.test.cpp
+    title: test/library-checker/jump_on_tree.test.cpp
   - icon: ':heavy_check_mark:'
     path: unit-test/utility/tuple-hash.test.cpp
     title: unit-test/utility/tuple-hash.test.cpp
@@ -54,10 +61,12 @@ data:
   - src/cpp-template/header/type-alias.hpp
   isVerificationFile: false
   path: src/utility/tuple-hash.hpp
-  requiredBy: []
+  requiredBy:
+  - src/graph/offline-query-jump-on-tree.hpp
   timestamp: '2023-02-04 15:43:38+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/library-checker/jump_on_tree.test.cpp
   - unit-test/utility/tuple-hash.test.cpp
 documentation_of: src/utility/tuple-hash.hpp
 layout: document

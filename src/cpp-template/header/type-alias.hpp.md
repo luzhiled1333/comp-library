@@ -76,6 +76,9 @@ data:
     path: src/graph/dijkstra.hpp
     title: Dijkstra's Algorithm
   - icon: ':heavy_check_mark:'
+    path: src/graph/distances-on-unweighted-graph.hpp
+    title: src/graph/distances-on-unweighted-graph.hpp
+  - icon: ':heavy_check_mark:'
     path: src/graph/functional-graph-utility.hpp
     title: src/graph/functional-graph-utility.hpp
   - icon: ':heavy_check_mark:'
@@ -85,8 +88,16 @@ data:
     path: src/graph/max-flow.hpp
     title: src/graph/max-flow.hpp
   - icon: ':heavy_check_mark:'
+    path: src/graph/offline-query-jump-on-tree.hpp
+    title: "(offine) \u6728\u306E\u30D1\u30B9 $u-v$ \u4E0A\u306E $k$ \u756A\u76EE\u306E\
+      \u9802\u70B9 (Offline Jump On Tree)"
+  - icon: ':heavy_check_mark:'
+    path: src/graph/offline-query-level-ancestor.hpp
+    title: "\u30AA\u30D5\u30E9\u30A4\u30F3 Level Ancestor (Offline Level Ancestor)"
+  - icon: ':heavy_check_mark:'
     path: src/graph/offline-query-lowest-common-ancestor.hpp
-    title: src/graph/offline-query-lowest-common-ancestor.hpp
+    title: "\u30AA\u30D5\u30E9\u30A4\u30F3\u6700\u5C0F\u5171\u901A\u7956\u5148 (Offline\
+      \ Lowest Common Ancestor)"
   - icon: ':heavy_check_mark:'
     path: src/math/convolution/bitwise-and-convolution.hpp
     title: src/math/convolution/bitwise-and-convolution.hpp
@@ -175,6 +186,9 @@ data:
     path: test/library-checker/bitwise_xor_convolution.test.cpp
     title: test/library-checker/bitwise_xor_convolution.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/library-checker/jump_on_tree.test.cpp
+    title: test/library-checker/jump_on_tree.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/unionfind.test.cpp
     title: test/library-checker/unionfind.test.cpp
   - icon: ':heavy_check_mark:'
@@ -225,8 +239,11 @@ data:
   - src/sequence/compression.hpp
   - src/sequence/run-length-encoding.hpp
   - src/graph/graph-template.hpp
+  - src/graph/distances-on-unweighted-graph.hpp
+  - src/graph/offline-query-level-ancestor.hpp
   - src/graph/functional-graph-utility.hpp
   - src/graph/dijkstra.hpp
+  - src/graph/offline-query-jump-on-tree.hpp
   - src/graph/offline-query-lowest-common-ancestor.hpp
   - src/graph/max-flow.hpp
   - src/geometry/R2/class/line.hpp
@@ -275,6 +292,7 @@ data:
   - test/aoj/grl_6_a.test.cpp
   - test/library-checker/bitwise_and_convolution.test.cpp
   - test/library-checker/unionfind.test.cpp
+  - test/library-checker/jump_on_tree.test.cpp
   - test/library-checker/bitwise_xor_convolution.test.cpp
   - test/atcoder/abc259_d.test.cpp
   - test/atcoder/abc259_c.test.cpp

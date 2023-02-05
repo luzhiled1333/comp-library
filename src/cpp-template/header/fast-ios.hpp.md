@@ -12,6 +12,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/itp1_1_a.test.cpp
     title: test/aoj/itp1_1_a.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/jump_on_tree.test.cpp
+    title: test/library-checker/jump_on_tree.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -33,6 +36,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/itp1_1_a.test.cpp
+  - test/library-checker/jump_on_tree.test.cpp
 documentation_of: src/cpp-template/header/fast-ios.hpp
 layout: document
 title: Fast I/O

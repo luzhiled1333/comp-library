@@ -34,8 +34,16 @@ data:
     path: src/graph/max-flow.hpp
     title: src/graph/max-flow.hpp
   - icon: ':heavy_check_mark:'
+    path: src/graph/offline-query-jump-on-tree.hpp
+    title: "(offine) \u6728\u306E\u30D1\u30B9 $u-v$ \u4E0A\u306E $k$ \u756A\u76EE\u306E\
+      \u9802\u70B9 (Offline Jump On Tree)"
+  - icon: ':heavy_check_mark:'
+    path: src/graph/offline-query-level-ancestor.hpp
+    title: "\u30AA\u30D5\u30E9\u30A4\u30F3 Level Ancestor (Offline Level Ancestor)"
+  - icon: ':heavy_check_mark:'
     path: src/graph/offline-query-lowest-common-ancestor.hpp
-    title: src/graph/offline-query-lowest-common-ancestor.hpp
+    title: "\u30AA\u30D5\u30E9\u30A4\u30F3\u6700\u5C0F\u5171\u901A\u7956\u5148 (Offline\
+      \ Lowest Common Ancestor)"
   - icon: ':heavy_check_mark:'
     path: src/math/convolution/bitwise-and-convolution.hpp
     title: src/math/convolution/bitwise-and-convolution.hpp
@@ -102,6 +110,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/bitwise_xor_convolution.test.cpp
     title: test/library-checker/bitwise_xor_convolution.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/jump_on_tree.test.cpp
+    title: test/library-checker/jump_on_tree.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/library-checker/unionfind.test.cpp
     title: test/library-checker/unionfind.test.cpp
@@ -177,6 +188,8 @@ data:
   path: src/cpp-template/header/rep.hpp
   requiredBy:
   - src/sequence/compression.hpp
+  - src/graph/offline-query-level-ancestor.hpp
+  - src/graph/offline-query-jump-on-tree.hpp
   - src/graph/offline-query-lowest-common-ancestor.hpp
   - src/graph/max-flow.hpp
   - src/geometry/Z2/segment-function/counterbalance-segments.hpp
@@ -205,6 +218,7 @@ data:
   - test/aoj/grl_6_a.test.cpp
   - test/library-checker/bitwise_and_convolution.test.cpp
   - test/library-checker/unionfind.test.cpp
+  - test/library-checker/jump_on_tree.test.cpp
   - test/library-checker/bitwise_xor_convolution.test.cpp
   - test/atcoder/abc259_d.test.cpp
   - test/atcoder/abc259_c.test.cpp

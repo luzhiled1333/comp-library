@@ -176,6 +176,9 @@ data:
       path: src/graph/dijkstra.hpp
       title: Dijkstra's Algorithm
     - icon: ':heavy_check_mark:'
+      path: src/graph/distances-on-unweighted-graph.hpp
+      title: src/graph/distances-on-unweighted-graph.hpp
+    - icon: ':heavy_check_mark:'
       path: src/graph/functional-graph-utility.hpp
       title: src/graph/functional-graph-utility.hpp
     - icon: ':heavy_check_mark:'
@@ -185,8 +188,16 @@ data:
       path: src/graph/max-flow.hpp
       title: src/graph/max-flow.hpp
     - icon: ':heavy_check_mark:'
+      path: src/graph/offline-query-jump-on-tree.hpp
+      title: "(offine) \u6728\u306E\u30D1\u30B9 $u-v$ \u4E0A\u306E $k$ \u756A\u76EE\
+        \u306E\u9802\u70B9 (Offline Jump On Tree)"
+    - icon: ':heavy_check_mark:'
+      path: src/graph/offline-query-level-ancestor.hpp
+      title: "\u30AA\u30D5\u30E9\u30A4\u30F3 Level Ancestor (Offline Level Ancestor)"
+    - icon: ':heavy_check_mark:'
       path: src/graph/offline-query-lowest-common-ancestor.hpp
-      title: src/graph/offline-query-lowest-common-ancestor.hpp
+      title: "\u30AA\u30D5\u30E9\u30A4\u30F3\u6700\u5C0F\u5171\u901A\u7956\u5148 (Offline\
+        \ Lowest Common Ancestor)"
   - name: src/math/convolution
     pages:
     - icon: ':heavy_check_mark:'
@@ -290,6 +301,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/library-checker/bitwise_xor_convolution.test.cpp
       title: test/library-checker/bitwise_xor_convolution.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/library-checker/jump_on_tree.test.cpp
+      title: test/library-checker/jump_on_tree.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/library-checker/unionfind.test.cpp
       title: test/library-checker/unionfind.test.cpp
