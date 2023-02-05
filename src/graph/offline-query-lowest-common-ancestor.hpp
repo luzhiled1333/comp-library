@@ -19,7 +19,7 @@ namespace luz {
     Graph< cost_type > g_;
 
     usize query_count_;
-    std::vector< std::vector< std::pair< usize, usize > > > qs_;
+    std::vector< std::vector< usize > > qs_;
 
     DisjointSetUnion dsu_;
     std::vector< bool > visited_;
@@ -43,7 +43,7 @@ namespace luz {
         ancestors_[dsu_.leader(v)] = v;
       }
 
-      for (const auto &[u, qi]: qs_[v]) {
+      for (const auto &u: qs_[v]) {
         if (not visited_[u]) continue;
         results_[query_type(u, v)] = results_[query_type(v, u)] =
             ancestors_[dsu_.leader(u)];
@@ -65,8 +65,9 @@ namespace luz {
     void add_query(usize u, usize v) {
       bound_check(u);
       bound_check(v);
-      qs_[u].emplace_back(v, query_count_);
-      qs_[v].emplace_back(u, query_count_);
+      qs_[u].emplace_back(v);
+      qs_[v].emplace_back(u);
+      query_count_++;
     }
 
     void build(usize root) {

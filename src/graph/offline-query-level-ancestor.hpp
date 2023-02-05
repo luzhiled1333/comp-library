@@ -19,7 +19,7 @@ namespace luz {
     Graph< cost_type > g_;
 
     usize query_count_;
-    std::vector< std::vector< std::pair< usize, usize > > > qs_;
+    std::vector< std::vector< usize > > qs_;
 
     std::vector< bool > visited_;
     std::vector< usize > path_;
@@ -36,7 +36,7 @@ namespace luz {
       visited_[v] = true;
       path_.emplace_back(v);
 
-      for (const auto &[level, qi]: qs_[v]) {
+      for (const auto &level: qs_[v]) {
         if (level < path_.size()) {
           results_[query_type(v, level)] = path_[level];
         }
@@ -60,7 +60,8 @@ namespace luz {
 
     void add_query(usize v, usize level) {
       bound_check(v);
-      qs_[v].emplace_back(level, query_count_);
+      qs_[v].emplace_back(level);
+      query_count_++;
     }
 
     void build(usize root) {
