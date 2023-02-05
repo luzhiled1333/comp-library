@@ -36,7 +36,7 @@ void build(usize root)
 - $0 \leq root < \|V\|$
 
 ### 計算量
-- $O((\|V\| + Q))$
+- $O(\|V\| + Q)$
   - 追加されたクエリの数を $Q$ とする
 
 ## la
