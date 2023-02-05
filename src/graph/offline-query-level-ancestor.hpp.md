@@ -79,19 +79,19 @@ data:
     \n#include <optional>\n#include <unordered_map>\n#line 13 \"src/graph/offline-query-level-ancestor.hpp\"\
     \n\nnamespace luz {\n\n  template < typename cost_type >\n  class OfflineLAQuery\
     \ {\n    usize g_size_;\n    Graph< cost_type > g_;\n\n    usize query_count_;\n\
-    \    std::vector< std::vector< std::pair< usize, usize > > > qs_;\n\n    std::vector<\
-    \ bool > visited_;\n    std::vector< usize > path_;\n\n    using query_type =\
-    \ std::pair< usize, usize >;\n    std::unordered_map< query_type, std::optional<\
-    \ usize >, PairHash >\n        results_;\n\n    void bound_check(usize v) const\
-    \ {\n      assert(v < g_size_);\n    }\n\n    void dfs(usize v) {\n      visited_[v]\
-    \ = true;\n      path_.emplace_back(v);\n\n      for (const auto &[level, qi]:\
-    \ qs_[v]) {\n        if (level < path_.size()) {\n          results_[query_type(v,\
-    \ level)] = path_[level];\n        }\n      }\n\n      for (const auto &e: g_[v])\
-    \ {\n        if (visited_[e.to]) continue;\n        dfs(e.to);\n      }\n\n  \
-    \    path_.pop_back();\n    }\n\n   public:\n    explicit OfflineLAQuery(Graph<\
-    \ cost_type > &g)\n        : g_size_(g.size()),\n          g_(g),\n          query_count_(0),\n\
-    \          qs_(g_size_),\n          visited_(g_size_, false) {}\n\n    void add_query(usize\
-    \ v, usize level) {\n      bound_check(v);\n      qs_[v].emplace_back(level, query_count_);\n\
+    \    std::vector< std::vector< usize > > qs_;\n\n    std::vector< bool > visited_;\n\
+    \    std::vector< usize > path_;\n\n    using query_type = std::pair< usize, usize\
+    \ >;\n    std::unordered_map< query_type, std::optional< usize >, PairHash >\n\
+    \        results_;\n\n    void bound_check(usize v) const {\n      assert(v <\
+    \ g_size_);\n    }\n\n    void dfs(usize v) {\n      visited_[v] = true;\n   \
+    \   path_.emplace_back(v);\n\n      for (const auto &level: qs_[v]) {\n      \
+    \  if (level < path_.size()) {\n          results_[query_type(v, level)] = path_[level];\n\
+    \        }\n      }\n\n      for (const auto &e: g_[v]) {\n        if (visited_[e.to])\
+    \ continue;\n        dfs(e.to);\n      }\n\n      path_.pop_back();\n    }\n\n\
+    \   public:\n    explicit OfflineLAQuery(Graph< cost_type > &g)\n        : g_size_(g.size()),\n\
+    \          g_(g),\n          query_count_(0),\n          qs_(g_size_),\n     \
+    \     visited_(g_size_, false) {}\n\n    void add_query(usize v, usize level)\
+    \ {\n      bound_check(v);\n      qs_[v].emplace_back(level);\n      query_count_++;\n\
     \    }\n\n    void build(usize root) {\n      bound_check(root);\n      results_.reserve(query_count_);\n\
     \      path_.reserve(g_size_);\n      dfs(root);\n    }\n\n    std::optional<\
     \ usize > la(usize v, usize level) const {\n      bound_check(v);\n      query_type\
@@ -103,19 +103,19 @@ data:
     #include <unordered_map>\n#include <utility>\n#include <vector>\n\nnamespace luz\
     \ {\n\n  template < typename cost_type >\n  class OfflineLAQuery {\n    usize\
     \ g_size_;\n    Graph< cost_type > g_;\n\n    usize query_count_;\n    std::vector<\
-    \ std::vector< std::pair< usize, usize > > > qs_;\n\n    std::vector< bool > visited_;\n\
-    \    std::vector< usize > path_;\n\n    using query_type = std::pair< usize, usize\
-    \ >;\n    std::unordered_map< query_type, std::optional< usize >, PairHash >\n\
-    \        results_;\n\n    void bound_check(usize v) const {\n      assert(v <\
-    \ g_size_);\n    }\n\n    void dfs(usize v) {\n      visited_[v] = true;\n   \
-    \   path_.emplace_back(v);\n\n      for (const auto &[level, qi]: qs_[v]) {\n\
-    \        if (level < path_.size()) {\n          results_[query_type(v, level)]\
-    \ = path_[level];\n        }\n      }\n\n      for (const auto &e: g_[v]) {\n\
-    \        if (visited_[e.to]) continue;\n        dfs(e.to);\n      }\n\n      path_.pop_back();\n\
-    \    }\n\n   public:\n    explicit OfflineLAQuery(Graph< cost_type > &g)\n   \
-    \     : g_size_(g.size()),\n          g_(g),\n          query_count_(0),\n   \
-    \       qs_(g_size_),\n          visited_(g_size_, false) {}\n\n    void add_query(usize\
-    \ v, usize level) {\n      bound_check(v);\n      qs_[v].emplace_back(level, query_count_);\n\
+    \ std::vector< usize > > qs_;\n\n    std::vector< bool > visited_;\n    std::vector<\
+    \ usize > path_;\n\n    using query_type = std::pair< usize, usize >;\n    std::unordered_map<\
+    \ query_type, std::optional< usize >, PairHash >\n        results_;\n\n    void\
+    \ bound_check(usize v) const {\n      assert(v < g_size_);\n    }\n\n    void\
+    \ dfs(usize v) {\n      visited_[v] = true;\n      path_.emplace_back(v);\n\n\
+    \      for (const auto &level: qs_[v]) {\n        if (level < path_.size()) {\n\
+    \          results_[query_type(v, level)] = path_[level];\n        }\n      }\n\
+    \n      for (const auto &e: g_[v]) {\n        if (visited_[e.to]) continue;\n\
+    \        dfs(e.to);\n      }\n\n      path_.pop_back();\n    }\n\n   public:\n\
+    \    explicit OfflineLAQuery(Graph< cost_type > &g)\n        : g_size_(g.size()),\n\
+    \          g_(g),\n          query_count_(0),\n          qs_(g_size_),\n     \
+    \     visited_(g_size_, false) {}\n\n    void add_query(usize v, usize level)\
+    \ {\n      bound_check(v);\n      qs_[v].emplace_back(level);\n      query_count_++;\n\
     \    }\n\n    void build(usize root) {\n      bound_check(root);\n      results_.reserve(query_count_);\n\
     \      path_.reserve(g_size_);\n      dfs(root);\n    }\n\n    std::optional<\
     \ usize > la(usize v, usize level) const {\n      bound_check(v);\n      query_type\
@@ -130,7 +130,7 @@ data:
   path: src/graph/offline-query-level-ancestor.hpp
   requiredBy:
   - src/graph/offline-query-jump-on-tree.hpp
-  timestamp: '2023-02-05 12:10:13+09:00'
+  timestamp: '2023-02-06 00:46:03+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/jump_on_tree.test.cpp
@@ -172,7 +172,7 @@ void build(usize root)
 - $0 \leq root < \|V\|$
 
 ### 計算量
-- $O((\|V\| + Q))$
+- $O(\|V\| + Q)$
   - 追加されたクエリの数を $Q$ とする
 
 ## la

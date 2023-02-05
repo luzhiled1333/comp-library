@@ -109,37 +109,36 @@ data:
     #line 13 \"src/graph/offline-query-lowest-common-ancestor.hpp\"\n\nnamespace luz\
     \ {\n\n  template < typename cost_type >\n  class OfflineLCAQuery {\n    usize\
     \ g_size_;\n    Graph< cost_type > g_;\n\n    usize query_count_;\n    std::vector<\
-    \ std::vector< std::pair< usize, usize > > > qs_;\n\n    DisjointSetUnion dsu_;\n\
-    \    std::vector< bool > visited_;\n    std::vector< usize > ancestors_;\n\n \
-    \   using query_type = std::pair< usize, usize >;\n    std::unordered_map< query_type,\
-    \ usize, PairHash > results_;\n\n    void bound_check(usize v) const {\n     \
-    \ assert(v < g_size_);\n    }\n\n    void dfs(usize v) {\n      visited_[v]  \
-    \ = true;\n      ancestors_[v] = v;\n\n      for (const auto &e: g_[v]) {\n  \
-    \      if (visited_[e.to]) continue;\n        dfs(e.to);\n        dsu_.merge(v,\
-    \ e.to);\n        ancestors_[dsu_.leader(v)] = v;\n      }\n\n      for (const\
-    \ auto &[u, qi]: qs_[v]) {\n        if (not visited_[u]) continue;\n        results_[query_type(u,\
-    \ v)] = results_[query_type(v, u)] =\n            ancestors_[dsu_.leader(u)];\n\
-    \      }\n    }\n\n   public:\n    using Queries = std::vector< std::pair< usize,\
-    \ usize > >;\n\n    OfflineLCAQuery(Graph< cost_type > &g)\n        : g_size_(g.size()),\n\
-    \          g_(g),\n          query_count_(0),\n          qs_(g_size_),\n     \
-    \     dsu_(g_size_),\n          visited_(g_size_, false),\n          ancestors_(g_size_)\
-    \ {}\n\n    void add_query(usize u, usize v) {\n      bound_check(u);\n      bound_check(v);\n\
-    \      qs_[u].emplace_back(v, query_count_);\n      qs_[v].emplace_back(u, query_count_);\n\
-    \    }\n\n    void build(usize root) {\n      bound_check(root);\n      results_.reserve(2\
-    \ * query_count_);\n      dfs(root);\n    }\n\n    usize lca(usize u, usize v)\
-    \ {\n      bound_check(u);\n      bound_check(v);\n      query_type qi(u, v);\n\
-    \      assert(results_.count(qi));\n      return results_[qi];\n    }\n  };\n\n\
-    } // namespace luz\n#line 7 \"test/aoj/grl_5_c.test.cpp\"\n\n#include <iostream>\n\
-    \nnamespace luz {\n\n  void main_() {\n    usize n;\n    std::cin >> n;\n\n  \
-    \  Graph< i32 > g(n);\n    for (usize v: rep(0, n)) {\n      usize k;\n      std::cin\
-    \ >> k;\n\n      for ([[maybe_unused]] usize _: rep(0, k)) {\n        usize u;\n\
-    \        std::cin >> u;\n        g.add_undirected_edge(u, v);\n      }\n    }\n\
-    \n    OfflineLCAQuery offline_lcas(g);\n\n    usize q;\n    std::cin >> q;\n\n\
-    \    std::vector< std::pair< usize, usize > > qs(q);\n    for (auto &[u, v]: qs)\
-    \ {\n      std::cin >> u >> v;\n      offline_lcas.add_query(u, v);\n    }\n\n\
-    \    offline_lcas.build(0);\n    for (const auto &[u, v]: qs) {\n      std::cout\
-    \ << offline_lcas.lca(u, v) << std::endl;\n    }\n  }\n\n} // namespace luz\n\n\
-    int main() {\n  luz::main_();\n}\n"
+    \ std::vector< usize > > qs_;\n\n    DisjointSetUnion dsu_;\n    std::vector<\
+    \ bool > visited_;\n    std::vector< usize > ancestors_;\n\n    using query_type\
+    \ = std::pair< usize, usize >;\n    std::unordered_map< query_type, usize, PairHash\
+    \ > results_;\n\n    void bound_check(usize v) const {\n      assert(v < g_size_);\n\
+    \    }\n\n    void dfs(usize v) {\n      visited_[v]   = true;\n      ancestors_[v]\
+    \ = v;\n\n      for (const auto &e: g_[v]) {\n        if (visited_[e.to]) continue;\n\
+    \        dfs(e.to);\n        dsu_.merge(v, e.to);\n        ancestors_[dsu_.leader(v)]\
+    \ = v;\n      }\n\n      for (const auto &u: qs_[v]) {\n        if (not visited_[u])\
+    \ continue;\n        results_[query_type(u, v)] = results_[query_type(v, u)] =\n\
+    \            ancestors_[dsu_.leader(u)];\n      }\n    }\n\n   public:\n    using\
+    \ Queries = std::vector< std::pair< usize, usize > >;\n\n    OfflineLCAQuery(Graph<\
+    \ cost_type > &g)\n        : g_size_(g.size()),\n          g_(g),\n          query_count_(0),\n\
+    \          qs_(g_size_),\n          dsu_(g_size_),\n          visited_(g_size_,\
+    \ false),\n          ancestors_(g_size_) {}\n\n    void add_query(usize u, usize\
+    \ v) {\n      bound_check(u);\n      bound_check(v);\n      qs_[u].emplace_back(v);\n\
+    \      qs_[v].emplace_back(u);\n      query_count_++;\n    }\n\n    void build(usize\
+    \ root) {\n      bound_check(root);\n      results_.reserve(2 * query_count_);\n\
+    \      dfs(root);\n    }\n\n    usize lca(usize u, usize v) {\n      bound_check(u);\n\
+    \      bound_check(v);\n      query_type qi(u, v);\n      assert(results_.count(qi));\n\
+    \      return results_[qi];\n    }\n  };\n\n} // namespace luz\n#line 7 \"test/aoj/grl_5_c.test.cpp\"\
+    \n\n#include <iostream>\n\nnamespace luz {\n\n  void main_() {\n    usize n;\n\
+    \    std::cin >> n;\n\n    Graph< i32 > g(n);\n    for (usize v: rep(0, n)) {\n\
+    \      usize k;\n      std::cin >> k;\n\n      for ([[maybe_unused]] usize _:\
+    \ rep(0, k)) {\n        usize u;\n        std::cin >> u;\n        g.add_undirected_edge(u,\
+    \ v);\n      }\n    }\n\n    OfflineLCAQuery offline_lcas(g);\n\n    usize q;\n\
+    \    std::cin >> q;\n\n    std::vector< std::pair< usize, usize > > qs(q);\n \
+    \   for (auto &[u, v]: qs) {\n      std::cin >> u >> v;\n      offline_lcas.add_query(u,\
+    \ v);\n    }\n\n    offline_lcas.build(0);\n    for (const auto &[u, v]: qs) {\n\
+    \      std::cout << offline_lcas.lca(u, v) << std::endl;\n    }\n  }\n\n} // namespace\
+    \ luz\n\nint main() {\n  luz::main_();\n}\n"
   code: "// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/GRL_5_C\n\
     \n#include \"src/cpp-template/header/rep.hpp\"\n#include \"src/cpp-template/header/type-alias.hpp\"\
     \n#include \"src/graph/graph-template.hpp\"\n#include \"src/graph/offline-query-lowest-common-ancestor.hpp\"\
@@ -163,7 +162,7 @@ data:
   isVerificationFile: true
   path: test/aoj/grl_5_c.test.cpp
   requiredBy: []
-  timestamp: '2023-02-05 12:10:13+09:00'
+  timestamp: '2023-02-06 00:46:03+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/grl_5_c.test.cpp

@@ -102,19 +102,19 @@ data:
     \n#include <optional>\n#include <unordered_map>\n#line 13 \"src/graph/offline-query-level-ancestor.hpp\"\
     \n\nnamespace luz {\n\n  template < typename cost_type >\n  class OfflineLAQuery\
     \ {\n    usize g_size_;\n    Graph< cost_type > g_;\n\n    usize query_count_;\n\
-    \    std::vector< std::vector< std::pair< usize, usize > > > qs_;\n\n    std::vector<\
-    \ bool > visited_;\n    std::vector< usize > path_;\n\n    using query_type =\
-    \ std::pair< usize, usize >;\n    std::unordered_map< query_type, std::optional<\
-    \ usize >, PairHash >\n        results_;\n\n    void bound_check(usize v) const\
-    \ {\n      assert(v < g_size_);\n    }\n\n    void dfs(usize v) {\n      visited_[v]\
-    \ = true;\n      path_.emplace_back(v);\n\n      for (const auto &[level, qi]:\
-    \ qs_[v]) {\n        if (level < path_.size()) {\n          results_[query_type(v,\
-    \ level)] = path_[level];\n        }\n      }\n\n      for (const auto &e: g_[v])\
-    \ {\n        if (visited_[e.to]) continue;\n        dfs(e.to);\n      }\n\n  \
-    \    path_.pop_back();\n    }\n\n   public:\n    explicit OfflineLAQuery(Graph<\
-    \ cost_type > &g)\n        : g_size_(g.size()),\n          g_(g),\n          query_count_(0),\n\
-    \          qs_(g_size_),\n          visited_(g_size_, false) {}\n\n    void add_query(usize\
-    \ v, usize level) {\n      bound_check(v);\n      qs_[v].emplace_back(level, query_count_);\n\
+    \    std::vector< std::vector< usize > > qs_;\n\n    std::vector< bool > visited_;\n\
+    \    std::vector< usize > path_;\n\n    using query_type = std::pair< usize, usize\
+    \ >;\n    std::unordered_map< query_type, std::optional< usize >, PairHash >\n\
+    \        results_;\n\n    void bound_check(usize v) const {\n      assert(v <\
+    \ g_size_);\n    }\n\n    void dfs(usize v) {\n      visited_[v] = true;\n   \
+    \   path_.emplace_back(v);\n\n      for (const auto &level: qs_[v]) {\n      \
+    \  if (level < path_.size()) {\n          results_[query_type(v, level)] = path_[level];\n\
+    \        }\n      }\n\n      for (const auto &e: g_[v]) {\n        if (visited_[e.to])\
+    \ continue;\n        dfs(e.to);\n      }\n\n      path_.pop_back();\n    }\n\n\
+    \   public:\n    explicit OfflineLAQuery(Graph< cost_type > &g)\n        : g_size_(g.size()),\n\
+    \          g_(g),\n          query_count_(0),\n          qs_(g_size_),\n     \
+    \     visited_(g_size_, false) {}\n\n    void add_query(usize v, usize level)\
+    \ {\n      bound_check(v);\n      qs_[v].emplace_back(level);\n      query_count_++;\n\
     \    }\n\n    void build(usize root) {\n      bound_check(root);\n      results_.reserve(query_count_);\n\
     \      path_.reserve(g_size_);\n      dfs(root);\n    }\n\n    std::optional<\
     \ usize > la(usize v, usize level) const {\n      bound_check(v);\n      query_type\
@@ -149,73 +149,72 @@ data:
     \n\n#line 13 \"src/graph/offline-query-lowest-common-ancestor.hpp\"\n\nnamespace\
     \ luz {\n\n  template < typename cost_type >\n  class OfflineLCAQuery {\n    usize\
     \ g_size_;\n    Graph< cost_type > g_;\n\n    usize query_count_;\n    std::vector<\
-    \ std::vector< std::pair< usize, usize > > > qs_;\n\n    DisjointSetUnion dsu_;\n\
-    \    std::vector< bool > visited_;\n    std::vector< usize > ancestors_;\n\n \
-    \   using query_type = std::pair< usize, usize >;\n    std::unordered_map< query_type,\
-    \ usize, PairHash > results_;\n\n    void bound_check(usize v) const {\n     \
-    \ assert(v < g_size_);\n    }\n\n    void dfs(usize v) {\n      visited_[v]  \
-    \ = true;\n      ancestors_[v] = v;\n\n      for (const auto &e: g_[v]) {\n  \
-    \      if (visited_[e.to]) continue;\n        dfs(e.to);\n        dsu_.merge(v,\
-    \ e.to);\n        ancestors_[dsu_.leader(v)] = v;\n      }\n\n      for (const\
-    \ auto &[u, qi]: qs_[v]) {\n        if (not visited_[u]) continue;\n        results_[query_type(u,\
-    \ v)] = results_[query_type(v, u)] =\n            ancestors_[dsu_.leader(u)];\n\
-    \      }\n    }\n\n   public:\n    using Queries = std::vector< std::pair< usize,\
-    \ usize > >;\n\n    OfflineLCAQuery(Graph< cost_type > &g)\n        : g_size_(g.size()),\n\
-    \          g_(g),\n          query_count_(0),\n          qs_(g_size_),\n     \
-    \     dsu_(g_size_),\n          visited_(g_size_, false),\n          ancestors_(g_size_)\
-    \ {}\n\n    void add_query(usize u, usize v) {\n      bound_check(u);\n      bound_check(v);\n\
-    \      qs_[u].emplace_back(v, query_count_);\n      qs_[v].emplace_back(u, query_count_);\n\
-    \    }\n\n    void build(usize root) {\n      bound_check(root);\n      results_.reserve(2\
-    \ * query_count_);\n      dfs(root);\n    }\n\n    usize lca(usize u, usize v)\
-    \ {\n      bound_check(u);\n      bound_check(v);\n      query_type qi(u, v);\n\
-    \      assert(results_.count(qi));\n      return results_[qi];\n    }\n  };\n\n\
-    } // namespace luz\n#line 2 \"src/utility/tuple-hash.hpp\"\n\n#line 4 \"src/utility/tuple-hash.hpp\"\
-    \n\n#line 6 \"src/utility/tuple-hash.hpp\"\n#include <tuple>\n#line 8 \"src/utility/tuple-hash.hpp\"\
-    \n\nnamespace luz::impl_tuple_hash {\n\n  template < usize Index >\n  class ImplTupleHash\
-    \ {\n   public:\n    template < typename T >\n    usize hash_combine(const T &x,\
-    \ usize hr) const {\n      usize h = std::hash< T >()(x);\n      return hr ^ (h\
-    \ + (hr << 11) + (hr >> 13));\n    }\n\n    template < class Tuple >\n    usize\
-    \ operator()(const Tuple &t) const noexcept {\n      usize hr = ImplTupleHash<\
-    \ Index - 1 >()(t);\n      return hash_combine(std::get< Index - 1 >(t), hr);\n\
-    \    }\n  };\n\n  template <>\n  class ImplTupleHash< 0 > {\n   public:\n    template\
-    \ < class Tuple >\n    usize operator()([[maybe_unused]] const Tuple &_) const\
-    \ noexcept {\n      return 0;\n    }\n  };\n\n} // namespace luz::impl_tuple_hash\n\
-    \nnamespace luz {\n\n  class TupleHash {\n    template < usize Index >\n    using\
-    \ ImplTupleHash = impl_tuple_hash::ImplTupleHash< Index >;\n\n   public:\n   \
-    \ template < class... Args >\n    usize operator()(const std::tuple< Args... >\
-    \ &t) const {\n      using Tuple = std::tuple< Args... >;\n      return ImplTupleHash<\
-    \ std::tuple_size< Tuple >::value >()(t);\n    }\n  };\n\n} // namespace luz\n\
-    #line 10 \"src/graph/offline-query-jump-on-tree.hpp\"\n\n#line 16 \"src/graph/offline-query-jump-on-tree.hpp\"\
-    \n\nnamespace luz {\n\n  template < typename cost_type >\n  class OfflineJumpOnTreeQuery\
-    \ {\n    usize g_size_;\n    Graph< cost_type > g_;\n    OfflineLCAQuery< cost_type\
-    \ > lca_;\n    OfflineLAQuery< cost_type > la_;\n\n    using query_type = std::tuple<\
-    \ usize, usize, usize >;\n\n    usize query_count_;\n    std::vector< query_type\
-    \ > qs_;\n\n    std::vector< query_type > converted_qs_;\n    std::unordered_map<\
-    \ query_type, std::optional< usize >,\n                        TupleHash >\n \
-    \       results_;\n\n    void bound_check(usize v) const {\n      assert(v < g_size_);\n\
-    \    }\n\n   public:\n    explicit OfflineJumpOnTreeQuery(Graph< cost_type > &g)\n\
-    \        : g_size_(g.size()),\n          g_(g),\n          lca_(g),\n        \
-    \  la_(g),\n          query_count_(0) {}\n\n    void add_query(usize start, usize\
-    \ end, usize distance) {\n      bound_check(start);\n      bound_check(end);\n\
-    \      qs_.emplace_back(start, end, distance);\n    }\n\n    void build(usize\
-    \ root) {\n      bound_check(root);\n      for (const auto &[s, t, _]: qs_) {\n\
-    \        lca_.add_query(s, t);\n      }\n\n      lca_.build(root);\n\n      std::vector<\
-    \ usize > depths =\n          distances_on_unweighted_graph(g_, root);\n\n   \
-    \   converted_qs_.reserve(query_count_);\n      results_.reserve(query_count_);\n\
-    \n      for (usize i: rep(0, qs_.size())) {\n        const auto &[s, t, d] = qs_[i];\n\
-    \        usize r               = lca_.lca(s, t);\n        usize distance_sr  \
-    \   = depths[s] - depths[r];\n        usize distance_rt     = depths[t] - depths[r];\n\
-    \n        if (d <= distance_sr) {\n          converted_qs_.emplace_back(i, s,\n\
-    \                                     depths[r] + distance_sr - d);\n        }\
-    \ else if (d <= distance_sr + distance_rt) {\n          converted_qs_.emplace_back(i,\
-    \ t,\n                                     depths[r] + d - distance_sr);\n   \
-    \     } else {\n          results_[qs_[i]] = std::nullopt;\n        }\n      }\n\
-    \n      for (const auto &[_, v, k]: converted_qs_) {\n        la_.add_query(v,\
-    \ k);\n      }\n\n      la_.build(root);\n\n      for (const auto &[i, v, k]:\
-    \ converted_qs_) {\n        results_[qs_[i]] = la_.la(v, k);\n      }\n    }\n\
-    \n    std::optional< usize > jump_on_tree(usize start, usize end,\n          \
-    \                              usize distance) const {\n      bound_check(start);\n\
-    \      bound_check(end);\n      query_type qi(start, end, distance);\n      assert(results_.count(qi));\n\
+    \ std::vector< usize > > qs_;\n\n    DisjointSetUnion dsu_;\n    std::vector<\
+    \ bool > visited_;\n    std::vector< usize > ancestors_;\n\n    using query_type\
+    \ = std::pair< usize, usize >;\n    std::unordered_map< query_type, usize, PairHash\
+    \ > results_;\n\n    void bound_check(usize v) const {\n      assert(v < g_size_);\n\
+    \    }\n\n    void dfs(usize v) {\n      visited_[v]   = true;\n      ancestors_[v]\
+    \ = v;\n\n      for (const auto &e: g_[v]) {\n        if (visited_[e.to]) continue;\n\
+    \        dfs(e.to);\n        dsu_.merge(v, e.to);\n        ancestors_[dsu_.leader(v)]\
+    \ = v;\n      }\n\n      for (const auto &u: qs_[v]) {\n        if (not visited_[u])\
+    \ continue;\n        results_[query_type(u, v)] = results_[query_type(v, u)] =\n\
+    \            ancestors_[dsu_.leader(u)];\n      }\n    }\n\n   public:\n    using\
+    \ Queries = std::vector< std::pair< usize, usize > >;\n\n    OfflineLCAQuery(Graph<\
+    \ cost_type > &g)\n        : g_size_(g.size()),\n          g_(g),\n          query_count_(0),\n\
+    \          qs_(g_size_),\n          dsu_(g_size_),\n          visited_(g_size_,\
+    \ false),\n          ancestors_(g_size_) {}\n\n    void add_query(usize u, usize\
+    \ v) {\n      bound_check(u);\n      bound_check(v);\n      qs_[u].emplace_back(v);\n\
+    \      qs_[v].emplace_back(u);\n      query_count_++;\n    }\n\n    void build(usize\
+    \ root) {\n      bound_check(root);\n      results_.reserve(2 * query_count_);\n\
+    \      dfs(root);\n    }\n\n    usize lca(usize u, usize v) {\n      bound_check(u);\n\
+    \      bound_check(v);\n      query_type qi(u, v);\n      assert(results_.count(qi));\n\
+    \      return results_[qi];\n    }\n  };\n\n} // namespace luz\n#line 2 \"src/utility/tuple-hash.hpp\"\
+    \n\n#line 4 \"src/utility/tuple-hash.hpp\"\n\n#line 6 \"src/utility/tuple-hash.hpp\"\
+    \n#include <tuple>\n#line 8 \"src/utility/tuple-hash.hpp\"\n\nnamespace luz::impl_tuple_hash\
+    \ {\n\n  template < usize Index >\n  class ImplTupleHash {\n   public:\n    template\
+    \ < typename T >\n    usize hash_combine(const T &x, usize hr) const {\n     \
+    \ usize h = std::hash< T >()(x);\n      return hr ^ (h + (hr << 11) + (hr >> 13));\n\
+    \    }\n\n    template < class Tuple >\n    usize operator()(const Tuple &t) const\
+    \ noexcept {\n      usize hr = ImplTupleHash< Index - 1 >()(t);\n      return\
+    \ hash_combine(std::get< Index - 1 >(t), hr);\n    }\n  };\n\n  template <>\n\
+    \  class ImplTupleHash< 0 > {\n   public:\n    template < class Tuple >\n    usize\
+    \ operator()([[maybe_unused]] const Tuple &_) const noexcept {\n      return 0;\n\
+    \    }\n  };\n\n} // namespace luz::impl_tuple_hash\n\nnamespace luz {\n\n  class\
+    \ TupleHash {\n    template < usize Index >\n    using ImplTupleHash = impl_tuple_hash::ImplTupleHash<\
+    \ Index >;\n\n   public:\n    template < class... Args >\n    usize operator()(const\
+    \ std::tuple< Args... > &t) const {\n      using Tuple = std::tuple< Args... >;\n\
+    \      return ImplTupleHash< std::tuple_size< Tuple >::value >()(t);\n    }\n\
+    \  };\n\n} // namespace luz\n#line 10 \"src/graph/offline-query-jump-on-tree.hpp\"\
+    \n\n#line 16 \"src/graph/offline-query-jump-on-tree.hpp\"\n\nnamespace luz {\n\
+    \n  template < typename cost_type >\n  class OfflineJumpOnTreeQuery {\n    usize\
+    \ g_size_;\n    Graph< cost_type > g_;\n    OfflineLCAQuery< cost_type > lca_;\n\
+    \    OfflineLAQuery< cost_type > la_;\n\n    using query_type = std::tuple< usize,\
+    \ usize, usize >;\n\n    std::vector< query_type > qs_;\n\n    std::vector< query_type\
+    \ > converted_qs_;\n    std::unordered_map< query_type, std::optional< usize >,\n\
+    \                        TupleHash >\n        results_;\n\n    void bound_check(usize\
+    \ v) const {\n      assert(v < g_size_);\n    }\n\n   public:\n    explicit OfflineJumpOnTreeQuery(Graph<\
+    \ cost_type > &g)\n        : g_size_(g.size()),\n          g_(g),\n          lca_(g),\n\
+    \          la_(g) {}\n\n    void add_query(usize start, usize end, usize distance)\
+    \ {\n      bound_check(start);\n      bound_check(end);\n      qs_.emplace_back(start,\
+    \ end, distance);\n    }\n\n    void build(usize root) {\n      bound_check(root);\n\
+    \      for (const auto &[s, t, _]: qs_) {\n        lca_.add_query(s, t);\n   \
+    \   }\n\n      lca_.build(root);\n\n      std::vector< usize > depths =\n    \
+    \      distances_on_unweighted_graph(g_, root);\n\n      converted_qs_.reserve(qs_.size());\n\
+    \      results_.reserve(qs_.size());\n\n      for (usize i: rep(0, qs_.size()))\
+    \ {\n        const auto &[s, t, d] = qs_[i];\n        usize r               =\
+    \ lca_.lca(s, t);\n        usize distance_sr     = depths[s] - depths[r];\n  \
+    \      usize distance_rt     = depths[t] - depths[r];\n\n        if (d <= distance_sr)\
+    \ {\n          converted_qs_.emplace_back(i, s,\n                            \
+    \         depths[r] + distance_sr - d);\n        } else if (d <= distance_sr +\
+    \ distance_rt) {\n          converted_qs_.emplace_back(i, t,\n               \
+    \                      depths[r] + d - distance_sr);\n        } else {\n     \
+    \     results_[qs_[i]] = std::nullopt;\n        }\n      }\n\n      for (const\
+    \ auto &[_, v, k]: converted_qs_) {\n        la_.add_query(v, k);\n      }\n\n\
+    \      la_.build(root);\n\n      for (const auto &[i, v, k]: converted_qs_) {\n\
+    \        results_[qs_[i]] = la_.la(v, k);\n      }\n    }\n\n    std::optional<\
+    \ usize > jump_on_tree(usize start, usize end,\n                             \
+    \           usize distance) const {\n      bound_check(start);\n      bound_check(end);\n\
+    \      query_type qi(start, end, distance);\n      assert(results_.count(qi));\n\
     \      return (*results_.find(qi)).second;\n    }\n  };\n\n} // namespace luz\n"
   code: "#pragma once\n\n#include \"src/cpp-template/header/rep.hpp\"\n#include \"\
     src/cpp-template/header/type-alias.hpp\"\n#include \"src/graph/distances-on-unweighted-graph.hpp\"\
@@ -226,19 +225,18 @@ data:
     \  template < typename cost_type >\n  class OfflineJumpOnTreeQuery {\n    usize\
     \ g_size_;\n    Graph< cost_type > g_;\n    OfflineLCAQuery< cost_type > lca_;\n\
     \    OfflineLAQuery< cost_type > la_;\n\n    using query_type = std::tuple< usize,\
-    \ usize, usize >;\n\n    usize query_count_;\n    std::vector< query_type > qs_;\n\
-    \n    std::vector< query_type > converted_qs_;\n    std::unordered_map< query_type,\
-    \ std::optional< usize >,\n                        TupleHash >\n        results_;\n\
-    \n    void bound_check(usize v) const {\n      assert(v < g_size_);\n    }\n\n\
-    \   public:\n    explicit OfflineJumpOnTreeQuery(Graph< cost_type > &g)\n    \
-    \    : g_size_(g.size()),\n          g_(g),\n          lca_(g),\n          la_(g),\n\
-    \          query_count_(0) {}\n\n    void add_query(usize start, usize end, usize\
-    \ distance) {\n      bound_check(start);\n      bound_check(end);\n      qs_.emplace_back(start,\
+    \ usize, usize >;\n\n    std::vector< query_type > qs_;\n\n    std::vector< query_type\
+    \ > converted_qs_;\n    std::unordered_map< query_type, std::optional< usize >,\n\
+    \                        TupleHash >\n        results_;\n\n    void bound_check(usize\
+    \ v) const {\n      assert(v < g_size_);\n    }\n\n   public:\n    explicit OfflineJumpOnTreeQuery(Graph<\
+    \ cost_type > &g)\n        : g_size_(g.size()),\n          g_(g),\n          lca_(g),\n\
+    \          la_(g) {}\n\n    void add_query(usize start, usize end, usize distance)\
+    \ {\n      bound_check(start);\n      bound_check(end);\n      qs_.emplace_back(start,\
     \ end, distance);\n    }\n\n    void build(usize root) {\n      bound_check(root);\n\
     \      for (const auto &[s, t, _]: qs_) {\n        lca_.add_query(s, t);\n   \
     \   }\n\n      lca_.build(root);\n\n      std::vector< usize > depths =\n    \
-    \      distances_on_unweighted_graph(g_, root);\n\n      converted_qs_.reserve(query_count_);\n\
-    \      results_.reserve(query_count_);\n\n      for (usize i: rep(0, qs_.size()))\
+    \      distances_on_unweighted_graph(g_, root);\n\n      converted_qs_.reserve(qs_.size());\n\
+    \      results_.reserve(qs_.size());\n\n      for (usize i: rep(0, qs_.size()))\
     \ {\n        const auto &[s, t, d] = qs_[i];\n        usize r               =\
     \ lca_.lca(s, t);\n        usize distance_sr     = depths[s] - depths[r];\n  \
     \      usize distance_rt     = depths[t] - depths[r];\n\n        if (d <= distance_sr)\
@@ -267,7 +265,7 @@ data:
   isVerificationFile: false
   path: src/graph/offline-query-jump-on-tree.hpp
   requiredBy: []
-  timestamp: '2023-02-05 12:10:13+09:00'
+  timestamp: '2023-02-06 00:46:03+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/jump_on_tree.test.cpp
@@ -277,9 +275,9 @@ title: "(offine) \u6728\u306E\u30D1\u30B9 $u-v$ \u4E0A\u306E $k$ \u756A\u76EE\u3
   \u9802\u70B9 (Offline Jump On Tree)"
 ---
 
-静的木上のパス $u-v$ 上の頂点のうち $u$ からの距離が $k$ であるような頂点を求めるクエリをオフラインで処理する。
+以下では、静的で辺重みのない木について考える。特に断りがない場合、頂点 $u$ と $v$ の距離は $u$, $v$ 間を経由する最小の辺数とする。
 
-このドキュメントでは、このようなクエリを $jump(u, v, k)$ と表記する。
+木上のパス $u-v$ 上の頂点のうち $u$ からの距離が $k$ であるような頂点を求めるクエリをオフラインで処理する。このようなクエリを $jump(u, v, k)$ と表記する。
 
 ## コンストラクタ
 ```

@@ -111,22 +111,22 @@ data:
     \ <unordered_map>\n#line 13 \"src/graph/offline-query-lowest-common-ancestor.hpp\"\
     \n\nnamespace luz {\n\n  template < typename cost_type >\n  class OfflineLCAQuery\
     \ {\n    usize g_size_;\n    Graph< cost_type > g_;\n\n    usize query_count_;\n\
-    \    std::vector< std::vector< std::pair< usize, usize > > > qs_;\n\n    DisjointSetUnion\
-    \ dsu_;\n    std::vector< bool > visited_;\n    std::vector< usize > ancestors_;\n\
-    \n    using query_type = std::pair< usize, usize >;\n    std::unordered_map< query_type,\
+    \    std::vector< std::vector< usize > > qs_;\n\n    DisjointSetUnion dsu_;\n\
+    \    std::vector< bool > visited_;\n    std::vector< usize > ancestors_;\n\n \
+    \   using query_type = std::pair< usize, usize >;\n    std::unordered_map< query_type,\
     \ usize, PairHash > results_;\n\n    void bound_check(usize v) const {\n     \
     \ assert(v < g_size_);\n    }\n\n    void dfs(usize v) {\n      visited_[v]  \
     \ = true;\n      ancestors_[v] = v;\n\n      for (const auto &e: g_[v]) {\n  \
     \      if (visited_[e.to]) continue;\n        dfs(e.to);\n        dsu_.merge(v,\
     \ e.to);\n        ancestors_[dsu_.leader(v)] = v;\n      }\n\n      for (const\
-    \ auto &[u, qi]: qs_[v]) {\n        if (not visited_[u]) continue;\n        results_[query_type(u,\
+    \ auto &u: qs_[v]) {\n        if (not visited_[u]) continue;\n        results_[query_type(u,\
     \ v)] = results_[query_type(v, u)] =\n            ancestors_[dsu_.leader(u)];\n\
     \      }\n    }\n\n   public:\n    using Queries = std::vector< std::pair< usize,\
     \ usize > >;\n\n    OfflineLCAQuery(Graph< cost_type > &g)\n        : g_size_(g.size()),\n\
     \          g_(g),\n          query_count_(0),\n          qs_(g_size_),\n     \
     \     dsu_(g_size_),\n          visited_(g_size_, false),\n          ancestors_(g_size_)\
     \ {}\n\n    void add_query(usize u, usize v) {\n      bound_check(u);\n      bound_check(v);\n\
-    \      qs_[u].emplace_back(v, query_count_);\n      qs_[v].emplace_back(u, query_count_);\n\
+    \      qs_[u].emplace_back(v);\n      qs_[v].emplace_back(u);\n      query_count_++;\n\
     \    }\n\n    void build(usize root) {\n      bound_check(root);\n      results_.reserve(2\
     \ * query_count_);\n      dfs(root);\n    }\n\n    usize lca(usize u, usize v)\
     \ {\n      bound_check(u);\n      bound_check(v);\n      query_type qi(u, v);\n\
@@ -138,22 +138,22 @@ data:
     \n\n#include <cassert>\n#include <unordered_map>\n#include <utility>\n#include\
     \ <vector>\n\nnamespace luz {\n\n  template < typename cost_type >\n  class OfflineLCAQuery\
     \ {\n    usize g_size_;\n    Graph< cost_type > g_;\n\n    usize query_count_;\n\
-    \    std::vector< std::vector< std::pair< usize, usize > > > qs_;\n\n    DisjointSetUnion\
-    \ dsu_;\n    std::vector< bool > visited_;\n    std::vector< usize > ancestors_;\n\
-    \n    using query_type = std::pair< usize, usize >;\n    std::unordered_map< query_type,\
+    \    std::vector< std::vector< usize > > qs_;\n\n    DisjointSetUnion dsu_;\n\
+    \    std::vector< bool > visited_;\n    std::vector< usize > ancestors_;\n\n \
+    \   using query_type = std::pair< usize, usize >;\n    std::unordered_map< query_type,\
     \ usize, PairHash > results_;\n\n    void bound_check(usize v) const {\n     \
     \ assert(v < g_size_);\n    }\n\n    void dfs(usize v) {\n      visited_[v]  \
     \ = true;\n      ancestors_[v] = v;\n\n      for (const auto &e: g_[v]) {\n  \
     \      if (visited_[e.to]) continue;\n        dfs(e.to);\n        dsu_.merge(v,\
     \ e.to);\n        ancestors_[dsu_.leader(v)] = v;\n      }\n\n      for (const\
-    \ auto &[u, qi]: qs_[v]) {\n        if (not visited_[u]) continue;\n        results_[query_type(u,\
+    \ auto &u: qs_[v]) {\n        if (not visited_[u]) continue;\n        results_[query_type(u,\
     \ v)] = results_[query_type(v, u)] =\n            ancestors_[dsu_.leader(u)];\n\
     \      }\n    }\n\n   public:\n    using Queries = std::vector< std::pair< usize,\
     \ usize > >;\n\n    OfflineLCAQuery(Graph< cost_type > &g)\n        : g_size_(g.size()),\n\
     \          g_(g),\n          query_count_(0),\n          qs_(g_size_),\n     \
     \     dsu_(g_size_),\n          visited_(g_size_, false),\n          ancestors_(g_size_)\
     \ {}\n\n    void add_query(usize u, usize v) {\n      bound_check(u);\n      bound_check(v);\n\
-    \      qs_[u].emplace_back(v, query_count_);\n      qs_[v].emplace_back(u, query_count_);\n\
+    \      qs_[u].emplace_back(v);\n      qs_[v].emplace_back(u);\n      query_count_++;\n\
     \    }\n\n    void build(usize root) {\n      bound_check(root);\n      results_.reserve(2\
     \ * query_count_);\n      dfs(root);\n    }\n\n    usize lca(usize u, usize v)\
     \ {\n      bound_check(u);\n      bound_check(v);\n      query_type qi(u, v);\n\
@@ -169,7 +169,7 @@ data:
   path: src/graph/offline-query-lowest-common-ancestor.hpp
   requiredBy:
   - src/graph/offline-query-jump-on-tree.hpp
-  timestamp: '2023-02-05 12:10:13+09:00'
+  timestamp: '2023-02-06 00:46:03+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/grl_5_c.test.cpp
