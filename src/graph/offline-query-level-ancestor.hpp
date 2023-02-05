@@ -2,11 +2,11 @@
 
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
-#include "src/data-structure/disjoint-set-union.hpp"
 #include "src/graph/graph-template.hpp"
 #include "src/utility/pair-hash.hpp"
 
 #include <cassert>
+#include <optional>
 #include <unordered_map>
 #include <utility>
 #include <vector>
@@ -14,73 +14,67 @@
 namespace luz {
 
   template < typename cost_type >
-  class OfflineLCAQuery {
+  class OfflineLAQuery {
     usize g_size_;
     Graph< cost_type > g_;
 
     usize query_count_;
     std::vector< std::vector< std::pair< usize, usize > > > qs_;
 
-    DisjointSetUnion dsu_;
     std::vector< bool > visited_;
-    std::vector< usize > ancestors_;
+    std::vector< usize > path_;
 
     using query_type = std::pair< usize, usize >;
-    std::unordered_map< query_type, usize, PairHash > results_;
+    std::unordered_map< query_type, std::optional< usize >, PairHash >
+        results_;
 
     void bound_check(usize v) const {
       assert(v < g_size_);
     }
 
     void dfs(usize v) {
-      visited_[v]   = true;
-      ancestors_[v] = v;
+      visited_[v] = true;
+      path_.emplace_back(v);
+
+      for (const auto &[level, qi]: qs_[v]) {
+        if (level < path_.size()) {
+          results_[query_type(v, level)] = path_[level];
+        }
+      }
 
       for (const auto &e: g_[v]) {
         if (visited_[e.to]) continue;
         dfs(e.to);
-        dsu_.merge(v, e.to);
-        ancestors_[dsu_.leader(v)] = v;
       }
 
-      for (const auto &[u, qi]: qs_[v]) {
-        if (not visited_[u]) continue;
-        results_[query_type(u, v)] = results_[query_type(v, u)] =
-            ancestors_[dsu_.leader(u)];
-      }
+      path_.pop_back();
     }
 
    public:
-    using Queries = std::vector< std::pair< usize, usize > >;
-
-    OfflineLCAQuery(Graph< cost_type > &g)
+    explicit OfflineLAQuery(Graph< cost_type > &g)
         : g_size_(g.size()),
           g_(g),
           query_count_(0),
           qs_(g_size_),
-          dsu_(g_size_),
-          visited_(g_size_, false),
-          ancestors_(g_size_) {}
+          visited_(g_size_, false) {}
 
-    void add_query(usize u, usize v) {
-      bound_check(u);
+    void add_query(usize v, usize level) {
       bound_check(v);
-      qs_[u].emplace_back(v, query_count_);
-      qs_[v].emplace_back(u, query_count_);
+      qs_[v].emplace_back(level, query_count_);
     }
 
     void build(usize root) {
       bound_check(root);
-      results_.reserve(2 * query_count_);
+      results_.reserve(query_count_);
+      path_.reserve(g_size_);
       dfs(root);
     }
 
-    usize lca(usize u, usize v) {
-      bound_check(u);
+    std::optional< usize > la(usize v, usize level) const {
       bound_check(v);
-      query_type qi(u, v);
+      query_type qi(v, level);
       assert(results_.count(qi));
-      return results_[qi];
+      return (*results_.find(qi)).second;
     }
   };
 
