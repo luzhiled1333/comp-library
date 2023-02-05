@@ -18,8 +18,7 @@ namespace luz {
     usize g_size_;
     Graph< cost_type > g_;
 
-    usize query_count_;
-    std::vector< std::vector< std::pair< usize, usize > > > qs_;
+    std::vector< std::vector< usize > > qs_;
 
     std::vector< bool > visited_;
     std::vector< usize > path_;
@@ -36,7 +35,7 @@ namespace luz {
       visited_[v] = true;
       path_.emplace_back(v);
 
-      for (const auto &[level, qi]: qs_[v]) {
+      for (const auto &level: qs_[v]) {
         if (level < path_.size()) {
           results_[query_type(v, level)] = path_[level];
         }
@@ -54,18 +53,17 @@ namespace luz {
     explicit OfflineLAQuery(Graph< cost_type > &g)
         : g_size_(g.size()),
           g_(g),
-          query_count_(0),
           qs_(g_size_),
           visited_(g_size_, false) {}
 
     void add_query(usize v, usize level) {
       bound_check(v);
-      qs_[v].emplace_back(level, query_count_);
+      qs_[v].emplace_back(level);
     }
 
     void build(usize root) {
       bound_check(root);
-      results_.reserve(query_count_);
+      results_.reserve(qs_.size());
       path_.reserve(g_size_);
       dfs(root);
     }

@@ -25,7 +25,6 @@ namespace luz {
 
     using query_type = std::tuple< usize, usize, usize >;
 
-    usize query_count_;
     std::vector< query_type > qs_;
 
     std::vector< query_type > converted_qs_;
@@ -42,8 +41,7 @@ namespace luz {
         : g_size_(g.size()),
           g_(g),
           lca_(g),
-          la_(g),
-          query_count_(0) {}
+          la_(g) {}
 
     void add_query(usize start, usize end, usize distance) {
       bound_check(start);
@@ -62,8 +60,8 @@ namespace luz {
       std::vector< usize > depths =
           distances_on_unweighted_graph(g_, root);
 
-      converted_qs_.reserve(query_count_);
-      results_.reserve(query_count_);
+      converted_qs_.reserve(qs_.size());
+      results_.reserve(qs_.size());
 
       for (usize i: rep(0, qs_.size())) {
         const auto &[s, t, d] = qs_[i];
