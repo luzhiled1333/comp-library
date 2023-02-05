@@ -10,10 +10,6 @@
 #include <numeric>
 #include <vector>
 
-#include <iostream>
-#include <numeric>
-#include <vector>
-
 namespace luz {
 
   void main_() {
@@ -47,7 +43,8 @@ namespace luz {
     }
 
     std::vector< u64 > qs(q);
-    OfflineJumpOnFunctionalGraphQuery offline_jump_on_functional_graph_solver(fg);
+    OfflineJumpOnFunctionalGraphQuery
+        offline_jump_on_functional_graph_solver(fg);
     for (usize i: rep(0, q)) {
       std::cin >> qs[i];
       --qs[i];
@@ -55,7 +52,9 @@ namespace luz {
     }
     offline_jump_on_functional_graph_solver.build();
     for (usize i: rep(0, q)) {
-      std::cout << ans[offline_jump_on_functional_graph_solver.jump(0, qs[i])] << std::endl;
+      std::cout << ans[offline_jump_on_functional_graph_solver.jump(
+                       0, qs[i])]
+                << std::endl;
     }
   }
 
