@@ -54,6 +54,7 @@ namespace luz {
         degs[g_[v][0].to]++;
       }
       std::vector< usize > que;
+      que.reserve(g_size_);
       for (usize v: rep(0, g_size_)) {
         if (degs[v] == 0) {
           que.emplace_back(v);
@@ -98,6 +99,7 @@ namespace luz {
         }
       }
       OfflineLAQuery< usize > la(tree_);
+      results_.reserve(qs_.size());
       for (auto [v, k]: qs_) {
         if (k < tree_depth_[v]) {
           la.add_query(v, tree_depth_[v] - k + 1);
