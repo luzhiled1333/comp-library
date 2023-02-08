@@ -15,11 +15,15 @@ namespace luz {
   class OfflineJumpOnFunctionalGraphQuery {
     usize g_size;
     Graph< cost_type > g;
+
     Graph< usize > tree;
     std::vector< usize > tree_depth, tree_root;
+
     OfflineLAQuery< usize > la;
+
     std::vector< usize > loop_id, loop_size, loop_pos;
     std::vector< std::vector< usize > > loops;
+
     using query_type = std::pair< usize, u64 >;
     std::vector< query_type > qs;
     std::unordered_map< query_type, usize, PairHash > result;
@@ -59,12 +63,14 @@ namespace luz {
       for (usize v: rep(0, g_size)) {
         degs[g[v][0].to]++;
       }
+
       std::vector< usize > que;
       que.reserve(g_size);
       for (usize v: rep(0, g_size)) {
-        if (degs[v] == 0) {
-          que.emplace_back(v);
+        if (degs[v] > 0) {
+          continue;
         }
+        que.emplace_back(v);
       }
       while (not que.empty()) {
         usize v = que.back();
@@ -76,31 +82,35 @@ namespace luz {
           que.emplace_back(u);
         }
       }
+
       for (usize v: rep(0, g_size)) {
-        if (degs[v] != 0) {
-          tree_root[v] = v;
-          tree.add_undirected_edge(g_size, v);
-          dfs_on_tree(v, g_size);
+        if (degs[v] == 0) {
+          continue;
         }
+        tree_root[v] = v;
+        tree.add_undirected_edge(g_size, v);
+        dfs_on_tree(v, g_size);
       }
       for (usize v: rep(0, g_size)) {
-        if (degs[v] != 0) {
-          usize cur = v;
-          std::vector< usize > loop;
-          do {
-            loop_id[cur]  = loops.size();
-            loop_pos[cur] = loop.size();
-            loop.emplace_back(cur);
-            degs[cur] = 0;
-            cur       = g[cur][0].to;
-          } while (cur != v);
-          do {
-            loop_size[cur] = loop.size();
-            cur            = g[cur][0].to;
-          } while (cur != v);
-          loops.emplace_back(std::move(loop));
+        if (degs[v] == 0) {
+          continue;
         }
+        usize cur = v;
+        std::vector< usize > loop;
+        do {
+          loop_id[cur]  = loops.size();
+          loop_pos[cur] = loop.size();
+          loop.emplace_back(cur);
+          degs[cur] = 0;
+          cur       = g[cur][0].to;
+        } while (cur != v);
+        do {
+          loop_size[cur] = loop.size();
+          cur            = g[cur][0].to;
+        } while (cur != v);
+        loops.emplace_back(std::move(loop));
       }
+
       la = OfflineLAQuery(tree);
       result.reserve(qs.size());
       for (auto [v, k]: qs) {
@@ -117,11 +127,13 @@ namespace luz {
         }
       }
       la.build(g_size);
+
       for (auto [v, k]: qs) {
-        if (k < tree_depth[v]) {
-          query_type qi(v, k);
-          result[qi] = la.la(v, tree_depth[v] - k + 1).value();
+        if (tree_depth[v] <= k) {
+          continue;
         }
+        query_type qi(v, k);
+        result[qi] = la.la(v, tree_depth[v] - k + 1).value();
       }
     }
 
