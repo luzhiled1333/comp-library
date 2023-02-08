@@ -38,13 +38,13 @@ namespace luz {
     explicit OfflineJumpOnFunctionalGraphQuery(
         const Graph< cost_type > &g_)
         : g_size(g_.size()),
-          tree(g_.size() + 1),
-          tree_depth(g_.size()),
-          tree_root(g_.size()),
-          loop_id(g_.size()),
-          loop_size(g_.size()),
-          loop_pos(g_.size()),
-          g(g_) {
+          g(g_),
+          tree(g_size + 1),
+          tree_depth(g_size),
+          tree_root(g_size),
+          loop_id(g_size),
+          loop_size(g_size),
+          loop_pos(g_size) {
       for (usize v: rep(0, g_size)) {
         assert(g[v].size() == 1);
       }
