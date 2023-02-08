@@ -1,3 +1,15 @@
+#pragma once
+
+#include "src/cpp-template/header/rep.hpp"
+#include "src/cpp-template/header/type-alias.hpp"
+#include "src/graph/graph-template.hpp"
+#include "src/graph/offline-query-level-ancestor.hpp"
+#include "src/utility/pair-hash.hpp"
+
+#include <unordered_map>
+#include <utility>
+#include <vector>
+
 namespace luz {
   template < typename cost_type >
   class OfflineJumpOnFunctionalGraphQuery {
