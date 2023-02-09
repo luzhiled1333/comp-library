@@ -1,3 +1,5 @@
+#pragma once
+
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/graph/graph-template.hpp"
 
@@ -6,22 +8,17 @@
 namespace luz {
 
   template < typename cost_type >
-  class FunctionalGraph: Graph< cost_type > {
-    using Graph< cost_type >::Graph;
-    using Graph< cost_type >::g;
-    using Graph< cost_type >::size;
-    using Graph< cost_type >::add_directed_edge;
+  class OnlineJumpOnFunctionalGraphQuery {
+    usize g_size;
+    Graph< cost_type > g;
 
     usize LOG;
     std::vector< std::vector< usize > > doubling_table;
 
    public:
-    void add_edge(usize from, usize to, cost_type cost = 1) {
-      assert(from < size());
-      assert(to < size());
-      add_directed_edge(from, to, cost);
-      assert(g[from].size() == 1);
-    }
+    OnlineJumpOnFunctionalGraphQuery(const Graph< cost_type > &g_) {
+      g_size(g_.size());
+      g(g_) {}
 
     void initialize_jump(const u64 MAX_K) {
       LOG = 0;
