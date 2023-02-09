@@ -1,5 +1,5 @@
 ---
-title: (offine) 適当なタイトルをつけてください (Offline Jump On Functional Graph)
+title: (offine) Functional Graph 上の頂点 $v$ から $k$ 回移動した先の頂点 (Offline Jump On Functional Graph)
 documentation_of: //src/graph/offline-query-jump-on-functional-graph.hpp
 ---
 
@@ -7,8 +7,21 @@ Functional Graph において、頂点 $v$ からちょうど $k$ 本の辺を�
 
 ## コンストラクタ
 ```
-OfflineJumpOnFunctionalGraphQuery(const Graph<cost_type> &g)
+OfflineJumpOnFunctionalGraphQuery(
+  const Graph<cost_type> &g
+)
 ```
+
+$jump$ クエリを求めるグラフ $g$ を渡す。
+
+内部では $g$ を loop と tree に分解している。
+
+### 制約
+- $g$ は Functional Graph である。
+  - $g$ の任意の任意の頂点の出次数は $1$ であるとも言い換えられる。
+
+### 計算量
+- $O(\|V\|)$
 
 ## add_query
 ```
