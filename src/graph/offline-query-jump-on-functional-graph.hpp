@@ -64,22 +64,22 @@ namespace luz {
         degs[g[v][0].to]++;
       }
 
-      std::vector< usize > que;
-      que.reserve(g_size);
+      std::vector< usize > leaves;
+      leaves.reserve(g_size);
       for (usize v: rep(0, g_size)) {
         if (degs[v] > 0) {
           continue;
         }
-        que.emplace_back(v);
+        leaves.emplace_back(v);
       }
-      while (not que.empty()) {
-        usize v = que.back();
-        que.pop_back();
+      while (not leaves.empty()) {
+        usize v = leaves.back();
+        leaves.pop_back();
         usize u = g[v][0].to;
         degs[u]--;
         tree.add_undirected_edge(u, v);
         if (degs[u] == 0) {
-          que.emplace_back(u);
+          leaves.emplace_back(u);
         }
       }
 
