@@ -51,6 +51,8 @@ namespace luz {
     }
 
    public:
+    explicit OfflineLAQuery() = default;
+
     explicit OfflineLAQuery(Graph< cost_type > &g)
         : g_size_(g.size()),
           g_(g),
