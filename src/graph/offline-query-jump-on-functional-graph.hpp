@@ -27,13 +27,13 @@ namespace luz {
     std::vector< query_type > qs;
     std::unordered_map< query_type, usize, PairHash > result;
 
-    void dfs_on_tree(usize v, usize p) {
+    void dfs_on_subtree(usize v, usize p) {
       for (auto &e: tree[v]) {
         usize u = e.to;
         if (u == p) continue;
         subtree_roots[u] = subtree_roots[v];
         tree_depth[u]    = tree_depth[v] + 1;
-        dfs_on_tree(u, v);
+        dfs_on_subtree(u, v);
       }
     }
 
@@ -76,7 +76,7 @@ namespace luz {
         }
         subtree_roots[v] = v;
         tree.add_undirected_edge(tree_root, v);
-        dfs_on_tree(v, tree_root);
+        dfs_on_subtree(v, tree_root);
       }
     }
 
