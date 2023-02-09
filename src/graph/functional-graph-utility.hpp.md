@@ -10,8 +10,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/atcoder/abc258_e.test.cpp
-    title: test/atcoder/abc258_e.test.cpp
+    path: test/atcoder/abc258_e/online-algorithm.test.cpp
+    title: test/atcoder/abc258_e/online-algorithm.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -88,7 +88,7 @@ data:
   timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/atcoder/abc258_e.test.cpp
+  - test/atcoder/abc258_e/online-algorithm.test.cpp
 documentation_of: src/graph/functional-graph-utility.hpp
 layout: document
 redirect_from:

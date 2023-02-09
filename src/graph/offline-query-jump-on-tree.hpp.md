@@ -111,50 +111,51 @@ data:
     \  if (level < path_.size()) {\n          results_[query_type(v, level)] = path_[level];\n\
     \        }\n      }\n\n      for (const auto &e: g_[v]) {\n        if (visited_[e.to])\
     \ continue;\n        dfs(e.to);\n      }\n\n      path_.pop_back();\n    }\n\n\
-    \   public:\n    explicit OfflineLAQuery(Graph< cost_type > &g)\n        : g_size_(g.size()),\n\
-    \          g_(g),\n          query_count_(0),\n          qs_(g_size_),\n     \
-    \     visited_(g_size_, false) {}\n\n    void add_query(usize v, usize level)\
-    \ {\n      bound_check(v);\n      qs_[v].emplace_back(level);\n      query_count_++;\n\
-    \    }\n\n    void build(usize root) {\n      bound_check(root);\n      results_.reserve(query_count_);\n\
-    \      path_.reserve(g_size_);\n      dfs(root);\n    }\n\n    std::optional<\
-    \ usize > la(usize v, usize level) const {\n      bound_check(v);\n      query_type\
-    \ qi(v, level);\n      assert(results_.count(qi));\n      return (*results_.find(qi)).second;\n\
-    \    }\n  };\n\n} // namespace luz\n#line 2 \"src/graph/offline-query-lowest-common-ancestor.hpp\"\
-    \n\n#line 2 \"src/data-structure/disjoint-set-union.hpp\"\n\n#line 5 \"src/data-structure/disjoint-set-union.hpp\"\
-    \n\n#line 9 \"src/data-structure/disjoint-set-union.hpp\"\n\nnamespace luz {\n\
-    \n  class DisjointSetUnion {\n    usize n_;\n\n    // vals_[v] :=\n    //   if\
-    \ v is root node: -1 * component size\n    //   otherwise: parent node\n    std::vector<\
-    \ isize > vals_;\n\n    void bound_check(usize v) const {\n      assert(v < n_);\n\
-    \    }\n\n    usize impl_leader(usize v) {\n      if (vals_[v] < 0) return v;\n\
-    \      return vals_[v] = leader(vals_[v]);\n    }\n\n   public:\n    DisjointSetUnion()\
-    \ = default;\n    explicit DisjointSetUnion(usize n): n_(n), vals_(n, -1) {}\n\
-    \n    usize size() const {\n      return n_;\n    }\n\n    usize leader(usize\
-    \ v) {\n      bound_check(v);\n      return impl_leader(v);\n    }\n\n    bool\
-    \ same(usize u, usize v) {\n      bound_check(u), bound_check(v);\n      return\
-    \ impl_leader(u) == impl_leader(v);\n    }\n\n    usize merge(usize u, usize v)\
-    \ {\n      bound_check(u);\n      bound_check(v);\n\n      isize x = impl_leader(u);\n\
-    \      isize y = impl_leader(v);\n      if (x == y) return x;\n      if (-vals_[x]\
-    \ < -vals_[y]) std::swap(x, y);\n      vals_[x] += vals_[y];\n      vals_[y] =\
-    \ x;\n      return x;\n    }\n\n    usize group_size(usize v) {\n      bound_check(v);\n\
-    \      return -vals_[impl_leader(v)];\n    }\n\n    std::vector< std::vector<\
-    \ usize > > groups() {\n      std::vector< std::vector< usize > > result(n_);\n\
-    \n      std::vector< usize > leaders(n_), g_sizes(n_);\n      for (usize v: rep(0,\
-    \ n_)) {\n        leaders[v] = impl_leader(v);\n        g_sizes[leaders[v]]++;\n\
-    \      }\n      for (usize v: rep(0, n_)) {\n        result[v].reserve(g_sizes[v]);\n\
-    \      }\n      for (usize v: rep(0, n_)) {\n        result[leaders[v]].emplace_back(v);\n\
-    \      }\n\n      auto empty_check = [](const std::vector< usize > &vs) {\n  \
-    \      return vs.empty();\n      };\n      result.erase(\n          std::remove_if(result.begin(),\
-    \ result.end(), empty_check),\n          result.end());\n\n      return result;\n\
-    \    }\n  };\n\n} // namespace luz\n#line 8 \"src/graph/offline-query-lowest-common-ancestor.hpp\"\
-    \n\n#line 13 \"src/graph/offline-query-lowest-common-ancestor.hpp\"\n\nnamespace\
-    \ luz {\n\n  template < typename cost_type >\n  class OfflineLCAQuery {\n    usize\
-    \ g_size_;\n    Graph< cost_type > g_;\n\n    usize query_count_;\n    std::vector<\
-    \ std::vector< usize > > qs_;\n\n    DisjointSetUnion dsu_;\n    std::vector<\
-    \ bool > visited_;\n    std::vector< usize > ancestors_;\n\n    using query_type\
-    \ = std::pair< usize, usize >;\n    std::unordered_map< query_type, usize, PairHash\
-    \ > results_;\n\n    void bound_check(usize v) const {\n      assert(v < g_size_);\n\
-    \    }\n\n    void dfs(usize v) {\n      visited_[v]   = true;\n      ancestors_[v]\
-    \ = v;\n\n      for (const auto &e: g_[v]) {\n        if (visited_[e.to]) continue;\n\
+    \   public:\n    explicit OfflineLAQuery() = default;\n\n    explicit OfflineLAQuery(Graph<\
+    \ cost_type > &g)\n        : g_size_(g.size()),\n          g_(g),\n          query_count_(0),\n\
+    \          qs_(g_size_),\n          visited_(g_size_, false) {}\n\n    void add_query(usize\
+    \ v, usize level) {\n      bound_check(v);\n      qs_[v].emplace_back(level);\n\
+    \      query_count_++;\n    }\n\n    void build(usize root) {\n      bound_check(root);\n\
+    \      results_.reserve(query_count_);\n      path_.reserve(g_size_);\n      dfs(root);\n\
+    \    }\n\n    std::optional< usize > la(usize v, usize level) const {\n      bound_check(v);\n\
+    \      query_type qi(v, level);\n      assert(results_.count(qi));\n      return\
+    \ (*results_.find(qi)).second;\n    }\n  };\n\n} // namespace luz\n#line 2 \"\
+    src/graph/offline-query-lowest-common-ancestor.hpp\"\n\n#line 2 \"src/data-structure/disjoint-set-union.hpp\"\
+    \n\n#line 5 \"src/data-structure/disjoint-set-union.hpp\"\n\n#line 9 \"src/data-structure/disjoint-set-union.hpp\"\
+    \n\nnamespace luz {\n\n  class DisjointSetUnion {\n    usize n_;\n\n    // vals_[v]\
+    \ :=\n    //   if v is root node: -1 * component size\n    //   otherwise: parent\
+    \ node\n    std::vector< isize > vals_;\n\n    void bound_check(usize v) const\
+    \ {\n      assert(v < n_);\n    }\n\n    usize impl_leader(usize v) {\n      if\
+    \ (vals_[v] < 0) return v;\n      return vals_[v] = leader(vals_[v]);\n    }\n\
+    \n   public:\n    DisjointSetUnion() = default;\n    explicit DisjointSetUnion(usize\
+    \ n): n_(n), vals_(n, -1) {}\n\n    usize size() const {\n      return n_;\n \
+    \   }\n\n    usize leader(usize v) {\n      bound_check(v);\n      return impl_leader(v);\n\
+    \    }\n\n    bool same(usize u, usize v) {\n      bound_check(u), bound_check(v);\n\
+    \      return impl_leader(u) == impl_leader(v);\n    }\n\n    usize merge(usize\
+    \ u, usize v) {\n      bound_check(u);\n      bound_check(v);\n\n      isize x\
+    \ = impl_leader(u);\n      isize y = impl_leader(v);\n      if (x == y) return\
+    \ x;\n      if (-vals_[x] < -vals_[y]) std::swap(x, y);\n      vals_[x] += vals_[y];\n\
+    \      vals_[y] = x;\n      return x;\n    }\n\n    usize group_size(usize v)\
+    \ {\n      bound_check(v);\n      return -vals_[impl_leader(v)];\n    }\n\n  \
+    \  std::vector< std::vector< usize > > groups() {\n      std::vector< std::vector<\
+    \ usize > > result(n_);\n\n      std::vector< usize > leaders(n_), g_sizes(n_);\n\
+    \      for (usize v: rep(0, n_)) {\n        leaders[v] = impl_leader(v);\n   \
+    \     g_sizes[leaders[v]]++;\n      }\n      for (usize v: rep(0, n_)) {\n   \
+    \     result[v].reserve(g_sizes[v]);\n      }\n      for (usize v: rep(0, n_))\
+    \ {\n        result[leaders[v]].emplace_back(v);\n      }\n\n      auto empty_check\
+    \ = [](const std::vector< usize > &vs) {\n        return vs.empty();\n      };\n\
+    \      result.erase(\n          std::remove_if(result.begin(), result.end(), empty_check),\n\
+    \          result.end());\n\n      return result;\n    }\n  };\n\n} // namespace\
+    \ luz\n#line 8 \"src/graph/offline-query-lowest-common-ancestor.hpp\"\n\n#line\
+    \ 13 \"src/graph/offline-query-lowest-common-ancestor.hpp\"\n\nnamespace luz {\n\
+    \n  template < typename cost_type >\n  class OfflineLCAQuery {\n    usize g_size_;\n\
+    \    Graph< cost_type > g_;\n\n    usize query_count_;\n    std::vector< std::vector<\
+    \ usize > > qs_;\n\n    DisjointSetUnion dsu_;\n    std::vector< bool > visited_;\n\
+    \    std::vector< usize > ancestors_;\n\n    using query_type = std::pair< usize,\
+    \ usize >;\n    std::unordered_map< query_type, usize, PairHash > results_;\n\n\
+    \    void bound_check(usize v) const {\n      assert(v < g_size_);\n    }\n\n\
+    \    void dfs(usize v) {\n      visited_[v]   = true;\n      ancestors_[v] = v;\n\
+    \n      for (const auto &e: g_[v]) {\n        if (visited_[e.to]) continue;\n\
     \        dfs(e.to);\n        dsu_.merge(v, e.to);\n        ancestors_[dsu_.leader(v)]\
     \ = v;\n      }\n\n      for (const auto &u: qs_[v]) {\n        if (not visited_[u])\
     \ continue;\n        results_[query_type(u, v)] = results_[query_type(v, u)] =\n\
@@ -265,7 +266,7 @@ data:
   isVerificationFile: false
   path: src/graph/offline-query-jump-on-tree.hpp
   requiredBy: []
-  timestamp: '2023-02-06 00:46:03+09:00'
+  timestamp: '2023-02-10 00:06:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/jump_on_tree.test.cpp

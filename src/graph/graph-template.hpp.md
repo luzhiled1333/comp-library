@@ -15,6 +15,11 @@ data:
     path: src/graph/functional-graph-utility.hpp
     title: src/graph/functional-graph-utility.hpp
   - icon: ':heavy_check_mark:'
+    path: src/graph/offline-query-jump-on-functional-graph.hpp
+    title: "(offine) Functional Graph \u4E0A\u306E\u9802\u70B9 $v$ \u304B\u3089 $k$\
+      \ \u56DE\u79FB\u52D5\u3057\u305F\u5148\u306E\u9802\u70B9 (Offline Jump On Functional\
+      \ Graph)"
+  - icon: ':heavy_check_mark:'
     path: src/graph/offline-query-jump-on-tree.hpp
     title: "(offine) \u6728\u306E\u30D1\u30B9 $u-v$ \u4E0A\u306E $k$ \u756A\u76EE\u306E\
       \u9802\u70B9 (Offline Jump On Tree)"
@@ -33,11 +38,17 @@ data:
     path: test/aoj/grl_5_c.test.cpp
     title: test/aoj/grl_5_c.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/atcoder/abc258_e.test.cpp
-    title: test/atcoder/abc258_e.test.cpp
+    path: test/atcoder/abc258_e/offline-algorithm.test.cpp
+    title: test/atcoder/abc258_e/offline-algorithm.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc258_e/online-algorithm.test.cpp
+    title: test/atcoder/abc258_e/online-algorithm.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/library-checker/jump_on_tree.test.cpp
     title: test/library-checker/jump_on_tree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
+    title: unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -96,13 +107,16 @@ data:
   - src/graph/dijkstra.hpp
   - src/graph/offline-query-jump-on-tree.hpp
   - src/graph/offline-query-lowest-common-ancestor.hpp
+  - src/graph/offline-query-jump-on-functional-graph.hpp
   timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/grl_5_c.test.cpp
   - test/aoj/grl_1_a.test.cpp
   - test/library-checker/jump_on_tree.test.cpp
-  - test/atcoder/abc258_e.test.cpp
+  - test/atcoder/abc258_e/online-algorithm.test.cpp
+  - test/atcoder/abc258_e/offline-algorithm.test.cpp
+  - unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
 documentation_of: src/graph/graph-template.hpp
 layout: document
 title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"

@@ -25,7 +25,7 @@ data:
     PROBLEM: https://atcoder.jp/contests/abc258/tasks/abc259_e
     links:
     - https://atcoder.jp/contests/abc258/tasks/abc259_e
-  bundledCode: "#line 1 \"test/atcoder/abc258_e.test.cpp\"\n// verification-helper:\
+  bundledCode: "#line 1 \"test/atcoder/abc258_e/online-algorithm.test.cpp\"\n// verification-helper:\
     \ PROBLEM https://atcoder.jp/contests/abc258/tasks/abc259_e\n\n#line 2 \"src/cpp-template/header/rep.hpp\"\
     \n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\n\n#include <cstddef>\n\
     #include <cstdint>\n\nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using\
@@ -94,10 +94,11 @@ data:
     \ usize jump(usize v, u64 k) {\n      if (k == 0) return v;\n      for (usize\
     \ i: rep(0, LOG)) {\n        if ((k & 1) == 1) {\n          v = doubling_table[i][v];\n\
     \        }\n        k >>= 1;\n      }\n\n      return v;\n    }\n  };\n\n} //\
-    \ namespace luz\n#line 7 \"test/atcoder/abc258_e.test.cpp\"\n\n#line 9 \"test/atcoder/abc258_e.test.cpp\"\
-    \n#include <numeric>\n#line 11 \"test/atcoder/abc258_e.test.cpp\"\n\nnamespace\
-    \ luz {\n\n  void main_() {\n    usize n, q, x;\n    std::cin >> n >> q >> x;\n\
-    \n    std::vector< i64 > ws(n);\n    std::cin >> ws;\n\n    i64 sum_w = std::accumulate(ws.begin(),\
+    \ namespace luz\n#line 7 \"test/atcoder/abc258_e/online-algorithm.test.cpp\"\n\
+    \n#line 9 \"test/atcoder/abc258_e/online-algorithm.test.cpp\"\n#include <numeric>\n\
+    #line 11 \"test/atcoder/abc258_e/online-algorithm.test.cpp\"\n\nnamespace luz\
+    \ {\n\n  void main_() {\n    usize n, q, x;\n    std::cin >> n >> q >> x;\n\n\
+    \    std::vector< i64 > ws(n);\n    std::cin >> ws;\n\n    i64 sum_w = std::accumulate(ws.begin(),\
     \ ws.end(), i64());\n    i64 xp    = x % sum_w;\n    std::vector< i64 > ans(n,\
     \ x / sum_w * n);\n\n    ws.resize(2 * n + 1);\n    for (usize i: rep(0, n)) {\n\
     \      ws[n + i] = ws[i];\n    }\n    for (usize i: rrep(0, 2 * n)) {\n      ws[i]\
@@ -131,15 +132,15 @@ data:
   - src/graph/functional-graph-utility.hpp
   - src/graph/graph-template.hpp
   isVerificationFile: true
-  path: test/atcoder/abc258_e.test.cpp
+  path: test/atcoder/abc258_e/online-algorithm.test.cpp
   requiredBy: []
-  timestamp: '2022-08-31 11:28:16+09:00'
+  timestamp: '2023-02-10 00:06:04+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/atcoder/abc258_e.test.cpp
+documentation_of: test/atcoder/abc258_e/online-algorithm.test.cpp
 layout: document
 redirect_from:
-- /verify/test/atcoder/abc258_e.test.cpp
-- /verify/test/atcoder/abc258_e.test.cpp.html
-title: test/atcoder/abc258_e.test.cpp
+- /verify/test/atcoder/abc258_e/online-algorithm.test.cpp
+- /verify/test/atcoder/abc258_e/online-algorithm.test.cpp.html
+title: test/atcoder/abc258_e/online-algorithm.test.cpp
 ---

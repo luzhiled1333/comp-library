@@ -88,6 +88,11 @@ data:
     path: src/graph/max-flow.hpp
     title: src/graph/max-flow.hpp
   - icon: ':heavy_check_mark:'
+    path: src/graph/offline-query-jump-on-functional-graph.hpp
+    title: "(offine) Functional Graph \u4E0A\u306E\u9802\u70B9 $v$ \u304B\u3089 $k$\
+      \ \u56DE\u79FB\u52D5\u3057\u305F\u5148\u306E\u9802\u70B9 (Offline Jump On Functional\
+      \ Graph)"
+  - icon: ':heavy_check_mark:'
     path: src/graph/offline-query-jump-on-tree.hpp
     title: "(offine) \u6728\u306E\u30D1\u30B9 $u-v$ \u4E0A\u306E $k$ \u756A\u76EE\u306E\
       \u9802\u70B9 (Offline Jump On Tree)"
@@ -171,8 +176,11 @@ data:
     path: test/atcoder/abc212_h.test.cpp
     title: test/atcoder/abc212_h.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/atcoder/abc258_e.test.cpp
-    title: test/atcoder/abc258_e.test.cpp
+    path: test/atcoder/abc258_e/offline-algorithm.test.cpp
+    title: test/atcoder/abc258_e/offline-algorithm.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc258_e/online-algorithm.test.cpp
+    title: test/atcoder/abc258_e/online-algorithm.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc259_c.test.cpp
     title: test/atcoder/abc259_c.test.cpp
@@ -200,6 +208,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: unit-test/geometry/R2/class/vector-and-point.test.cpp
     title: unit-test/geometry/R2/class/vector-and-point.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
+    title: unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
   - icon: ':heavy_check_mark:'
     path: unit-test/math/modular-arithmetic/static-modint.test.cpp
     title: unit-test/math/modular-arithmetic/static-modint.test.cpp
@@ -246,6 +257,7 @@ data:
   - src/graph/offline-query-jump-on-tree.hpp
   - src/graph/offline-query-lowest-common-ancestor.hpp
   - src/graph/max-flow.hpp
+  - src/graph/offline-query-jump-on-functional-graph.hpp
   - src/geometry/R2/class/line.hpp
   - src/geometry/R2/class/point.hpp
   - src/geometry/R2/class/segment.hpp
@@ -294,12 +306,14 @@ data:
   - test/library-checker/unionfind.test.cpp
   - test/library-checker/jump_on_tree.test.cpp
   - test/library-checker/bitwise_xor_convolution.test.cpp
+  - test/atcoder/abc258_e/online-algorithm.test.cpp
+  - test/atcoder/abc258_e/offline-algorithm.test.cpp
   - test/atcoder/abc259_d.test.cpp
   - test/atcoder/abc259_c.test.cpp
   - test/atcoder/abc177_d.test.cpp
   - test/atcoder/abc212_h.test.cpp
-  - test/atcoder/abc258_e.test.cpp
   - unit-test/sequence/compression.test.cpp
+  - unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
   - unit-test/geometry/R2/class/vector-and-point.test.cpp
   - unit-test/data-structure/segment-tree/point-mapping-range-fold-segment-tree.test.cpp
   - unit-test/data-structure/fenwick-tree.test.cpp

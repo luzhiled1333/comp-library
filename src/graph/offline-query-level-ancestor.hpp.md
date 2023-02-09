@@ -15,13 +15,24 @@ data:
     title: "std::pair \u306E Hash"
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: src/graph/offline-query-jump-on-functional-graph.hpp
+    title: "(offine) Functional Graph \u4E0A\u306E\u9802\u70B9 $v$ \u304B\u3089 $k$\
+      \ \u56DE\u79FB\u52D5\u3057\u305F\u5148\u306E\u9802\u70B9 (Offline Jump On Functional\
+      \ Graph)"
+  - icon: ':heavy_check_mark:'
     path: src/graph/offline-query-jump-on-tree.hpp
     title: "(offine) \u6728\u306E\u30D1\u30B9 $u-v$ \u4E0A\u306E $k$ \u756A\u76EE\u306E\
       \u9802\u70B9 (Offline Jump On Tree)"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc258_e/offline-algorithm.test.cpp
+    title: test/atcoder/abc258_e/offline-algorithm.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/jump_on_tree.test.cpp
     title: test/library-checker/jump_on_tree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
+    title: unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -88,15 +99,15 @@ data:
     \  if (level < path_.size()) {\n          results_[query_type(v, level)] = path_[level];\n\
     \        }\n      }\n\n      for (const auto &e: g_[v]) {\n        if (visited_[e.to])\
     \ continue;\n        dfs(e.to);\n      }\n\n      path_.pop_back();\n    }\n\n\
-    \   public:\n    explicit OfflineLAQuery(Graph< cost_type > &g)\n        : g_size_(g.size()),\n\
-    \          g_(g),\n          query_count_(0),\n          qs_(g_size_),\n     \
-    \     visited_(g_size_, false) {}\n\n    void add_query(usize v, usize level)\
-    \ {\n      bound_check(v);\n      qs_[v].emplace_back(level);\n      query_count_++;\n\
-    \    }\n\n    void build(usize root) {\n      bound_check(root);\n      results_.reserve(query_count_);\n\
-    \      path_.reserve(g_size_);\n      dfs(root);\n    }\n\n    std::optional<\
-    \ usize > la(usize v, usize level) const {\n      bound_check(v);\n      query_type\
-    \ qi(v, level);\n      assert(results_.count(qi));\n      return (*results_.find(qi)).second;\n\
-    \    }\n  };\n\n} // namespace luz\n"
+    \   public:\n    explicit OfflineLAQuery() = default;\n\n    explicit OfflineLAQuery(Graph<\
+    \ cost_type > &g)\n        : g_size_(g.size()),\n          g_(g),\n          query_count_(0),\n\
+    \          qs_(g_size_),\n          visited_(g_size_, false) {}\n\n    void add_query(usize\
+    \ v, usize level) {\n      bound_check(v);\n      qs_[v].emplace_back(level);\n\
+    \      query_count_++;\n    }\n\n    void build(usize root) {\n      bound_check(root);\n\
+    \      results_.reserve(query_count_);\n      path_.reserve(g_size_);\n      dfs(root);\n\
+    \    }\n\n    std::optional< usize > la(usize v, usize level) const {\n      bound_check(v);\n\
+    \      query_type qi(v, level);\n      assert(results_.count(qi));\n      return\
+    \ (*results_.find(qi)).second;\n    }\n  };\n\n} // namespace luz\n"
   code: "#pragma once\n\n#include \"src/cpp-template/header/rep.hpp\"\n#include \"\
     src/cpp-template/header/type-alias.hpp\"\n#include \"src/graph/graph-template.hpp\"\
     \n#include \"src/utility/pair-hash.hpp\"\n\n#include <cassert>\n#include <optional>\n\
@@ -112,15 +123,15 @@ data:
     \          results_[query_type(v, level)] = path_[level];\n        }\n      }\n\
     \n      for (const auto &e: g_[v]) {\n        if (visited_[e.to]) continue;\n\
     \        dfs(e.to);\n      }\n\n      path_.pop_back();\n    }\n\n   public:\n\
-    \    explicit OfflineLAQuery(Graph< cost_type > &g)\n        : g_size_(g.size()),\n\
-    \          g_(g),\n          query_count_(0),\n          qs_(g_size_),\n     \
-    \     visited_(g_size_, false) {}\n\n    void add_query(usize v, usize level)\
-    \ {\n      bound_check(v);\n      qs_[v].emplace_back(level);\n      query_count_++;\n\
-    \    }\n\n    void build(usize root) {\n      bound_check(root);\n      results_.reserve(query_count_);\n\
-    \      path_.reserve(g_size_);\n      dfs(root);\n    }\n\n    std::optional<\
-    \ usize > la(usize v, usize level) const {\n      bound_check(v);\n      query_type\
-    \ qi(v, level);\n      assert(results_.count(qi));\n      return (*results_.find(qi)).second;\n\
-    \    }\n  };\n\n} // namespace luz\n"
+    \    explicit OfflineLAQuery() = default;\n\n    explicit OfflineLAQuery(Graph<\
+    \ cost_type > &g)\n        : g_size_(g.size()),\n          g_(g),\n          query_count_(0),\n\
+    \          qs_(g_size_),\n          visited_(g_size_, false) {}\n\n    void add_query(usize\
+    \ v, usize level) {\n      bound_check(v);\n      qs_[v].emplace_back(level);\n\
+    \      query_count_++;\n    }\n\n    void build(usize root) {\n      bound_check(root);\n\
+    \      results_.reserve(query_count_);\n      path_.reserve(g_size_);\n      dfs(root);\n\
+    \    }\n\n    std::optional< usize > la(usize v, usize level) const {\n      bound_check(v);\n\
+    \      query_type qi(v, level);\n      assert(results_.count(qi));\n      return\
+    \ (*results_.find(qi)).second;\n    }\n  };\n\n} // namespace luz\n"
   dependsOn:
   - src/cpp-template/header/rep.hpp
   - src/cpp-template/header/type-alias.hpp
@@ -130,10 +141,13 @@ data:
   path: src/graph/offline-query-level-ancestor.hpp
   requiredBy:
   - src/graph/offline-query-jump-on-tree.hpp
-  timestamp: '2023-02-06 00:46:03+09:00'
+  - src/graph/offline-query-jump-on-functional-graph.hpp
+  timestamp: '2023-02-10 00:06:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/jump_on_tree.test.cpp
+  - test/atcoder/abc258_e/offline-algorithm.test.cpp
+  - unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
 documentation_of: src/graph/offline-query-level-ancestor.hpp
 layout: document
 title: "\u30AA\u30D5\u30E9\u30A4\u30F3 Level Ancestor (Offline Level Ancestor)"
