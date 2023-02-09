@@ -17,9 +17,8 @@ namespace luz {
     Graph< cost_type > g;
 
     Graph< usize > tree;
-    std::vector< usize > tree_depth, tree_root;
-
-    OfflineLAQuery< usize > la;
+    usize tree_root;
+    std::vector< usize > tree_depth, subtree_roots;
 
     std::vector< usize > loop_id, loop_size, loop_pos;
     std::vector< std::vector< usize > > loops;
@@ -32,9 +31,77 @@ namespace luz {
       for (auto &e: tree[v]) {
         usize u = e.to;
         if (u == p) continue;
-        tree_root[u]  = tree_root[v];
-        tree_depth[u] = tree_depth[v] + 1;
+        subtree_roots[u] = subtree_roots[v];
+        tree_depth[u]    = tree_depth[v] + 1;
         dfs_on_tree(u, v);
+      }
+    }
+
+    std::vector< usize > get_indegrees() const {
+      std::vector< usize > indegrees(g_size);
+      for (usize v: rep(0, g_size)) {
+        indegrees[g[v][0].to]++;
+      }
+      return indegrees;
+    }
+
+    void construct_tree(std::vector< usize > &indegrees) {
+      std::vector< usize > leaves;
+      leaves.reserve(g_size);
+
+      for (usize v: rep(0, g_size)) {
+        if (indegrees[v] > 0) {
+          continue;
+        }
+        leaves.emplace_back(v);
+      }
+
+      while (not leaves.empty()) {
+        usize child = leaves.back();
+        leaves.pop_back();
+
+        usize parent = g[child][0].to;
+        indegrees[parent]--;
+
+        tree.add_undirected_edge(parent, child);
+
+        if (indegrees[parent] == 0) {
+          leaves.emplace_back(parent);
+        }
+      }
+
+      for (usize v: rep(0, g_size)) {
+        if (indegrees[v] == 0) {
+          continue;
+        }
+        subtree_roots[v] = v;
+        tree.add_undirected_edge(tree_root, v);
+        dfs_on_tree(v, tree_root);
+      }
+    }
+
+    void construct_loops(std::vector< usize > &indegrees) {
+      for (usize v: rep(0, g_size)) {
+        if (indegrees[v] == 0) {
+          continue;
+        }
+
+        usize cur = v;
+        std::vector< usize > loop;
+        do {
+          loop_id[cur]  = loops.size();
+          loop_pos[cur] = loop.size();
+          loop.emplace_back(cur);
+          indegrees[cur] = 0;
+          cur            = g[cur][0].to;
+        } while (cur != v);
+
+        do {
+          loop_size[cur] = loop.size();
+          cur            = g[cur][0].to;
+        } while (cur != v);
+
+        loops.emplace_back(std::move(loop));
       }
     }
 
@@ -44,14 +111,19 @@ namespace luz {
         : g_size(g_.size()),
           g(g_),
           tree(g_size + 1),
-          tree_depth(g_size),
           tree_root(g_size),
+          tree_depth(g_size),
+          subtree_roots(g_size),
           loop_id(g_size),
           loop_size(g_size),
           loop_pos(g_size) {
       for (usize v: rep(0, g_size)) {
         assert(g[v].size() == 1);
       }
+
+      std::vector< usize > indegrees = get_indegrees();
+      construct_tree(indegrees);
+      construct_loops(indegrees);
     }
 
     void add_query(usize v, u64 k) {
@@ -59,81 +131,29 @@ namespace luz {
     }
 
     void build() {
-      std::vector< usize > degs(g_size);
-      for (usize v: rep(0, g_size)) {
-        degs[g[v][0].to]++;
-      }
-
-      std::vector< usize > leaves;
-      leaves.reserve(g_size);
-      for (usize v: rep(0, g_size)) {
-        if (degs[v] > 0) {
-          continue;
-        }
-        leaves.emplace_back(v);
-      }
-      while (not leaves.empty()) {
-        usize v = leaves.back();
-        leaves.pop_back();
-        usize u = g[v][0].to;
-        degs[u]--;
-        tree.add_undirected_edge(u, v);
-        if (degs[u] == 0) {
-          leaves.emplace_back(u);
-        }
-      }
-
-      for (usize v: rep(0, g_size)) {
-        if (degs[v] == 0) {
-          continue;
-        }
-        tree_root[v] = v;
-        tree.add_undirected_edge(g_size, v);
-        dfs_on_tree(v, g_size);
-      }
-      for (usize v: rep(0, g_size)) {
-        if (degs[v] == 0) {
-          continue;
-        }
-        usize cur = v;
-        std::vector< usize > loop;
-        do {
-          loop_id[cur]  = loops.size();
-          loop_pos[cur] = loop.size();
-          loop.emplace_back(cur);
-          degs[cur] = 0;
-          cur       = g[cur][0].to;
-        } while (cur != v);
-        do {
-          loop_size[cur] = loop.size();
-          cur            = g[cur][0].to;
-        } while (cur != v);
-        loops.emplace_back(std::move(loop));
-      }
-
-      la = OfflineLAQuery(tree);
+      OfflineLAQuery la_solver(tree);
       result.reserve(qs.size());
       for (auto [v, k]: qs) {
         if (k < tree_depth[v]) {
-          la.add_query(v, tree_depth[v] - k + 1);
+          la_solver.add_query(v, tree_depth[v] - k + 1);
         } else {
           query_type qi(v, k);
           k -= tree_depth[v];
-          usize root       = tree_root[v];
+          usize root       = subtree_roots[v];
           const auto &loop = loops[loop_id[root]];
           k += loop_pos[root];
           k %= loop_size[root];
           result[qi] = loop[k];
         }
       }
-      la.build(g_size);
+      la_solver.build(g_size);
 
       for (auto [v, k]: qs) {
         if (tree_depth[v] <= k) {
           continue;
         }
         query_type qi(v, k);
-        result[qi] = la.la(v, tree_depth[v] - k + 1).value();
+        result[qi] = la_solver.la(v, tree_depth[v] - k + 1).value();
       }
     }
 
