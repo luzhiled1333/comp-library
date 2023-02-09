@@ -119,7 +119,7 @@ namespace luz {
         } else {
           query_type qi(v, k);
           k -= tree_depth[v];
-          usize root = tree_root[v];
+          usize root       = tree_root[v];
           const auto &loop = loops[loop_id[root]];
           k += loop_pos[root];
           k %= loop_size[root];
