@@ -19,4 +19,4 @@ namespace luz {
     return x * 0x0101010101010101 >> 56 & 0x7f;
   }
 
-}
+} // namespace luz

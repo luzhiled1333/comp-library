@@ -1,7 +1,8 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/ITP1_1_A
 
-#include "src/cpp-template/header/rep.hpp"
 #include "src/utility/bit/popcount.hpp"
+
+#include "src/cpp-template/header/rep.hpp"
 
 #include <cassert>
 #include <iostream>
