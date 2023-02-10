@@ -38,7 +38,7 @@ namespace luz::sssp {
           ds[u] = ds[v] + 1;
           que.emplace(u);
           parents[u] = v;
-          ids[u]   = e.id;
+          ids[u]     = e.id;
         }
       }
     }
