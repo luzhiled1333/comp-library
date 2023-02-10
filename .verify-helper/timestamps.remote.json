@@ -27,6 +27,10 @@
 "unit-test/math/totient-enumeration.test.cpp": "2022-09-14 04:18:33 +0900",
 "unit-test/math/totient.test.cpp": "2022-08-31 12:35:14 +0900",
 "unit-test/sequence/compression.test.cpp": "2022-08-24 11:33:48 +0900",
+"unit-test/utility/bit/bit-width.test.cpp": "2023-02-10 17:57:59 +0900",
+"unit-test/utility/bit/count-leading-0s.test.cpp": "2023-02-10 17:57:59 +0900",
+"unit-test/utility/bit/count-trailing-0s.test.cpp": "2023-02-10 17:57:59 +0900",
+"unit-test/utility/bit/popcount.test.cpp": "2023-02-10 17:57:59 +0900",
 "unit-test/utility/pair-hash.test.cpp": "2023-02-04 15:43:38 +0900",
 "unit-test/utility/tuple-hash.test.cpp": "2023-02-04 15:43:38 +0900"
 }
