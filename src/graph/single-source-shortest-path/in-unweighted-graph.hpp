@@ -17,7 +17,7 @@ namespace luz::sssp {
     usize g_size;
     usize source;
 
-    std::vector< usize > ds, froms, ids;
+    std::vector< usize > ds, parents, ids;
 
     void bfs(usize s) {
       std::queue< usize > que;
@@ -37,7 +37,7 @@ namespace luz::sssp {
 
           ds[u] = ds[v] + 1;
           que.emplace(u);
-          froms[u] = v;
+          parents[u] = v;
           ids[u]   = e.id;
         }
       }
@@ -49,14 +49,13 @@ namespace luz::sssp {
           g_size(g.size()),
           source(source_),
           ds(g_size, inf()),
-          froms(g_size, undefined()),
+          parents(g_size, undefined()),
           ids(g_size, undefined()) {
       bfs(source);
     }
 
-    static inline usize undefined() {
-      static usize undefined_ = std::numeric_limits< usize >::max();
-      return undefined_;
+    graph get_original_graph() const {
+      return g;
     }
 
     static inline usize inf() {
@@ -64,28 +63,29 @@ namespace luz::sssp {
       return inf_;
     }
 
-    inline usize dist(const usize v) const {
+    inline usize distance(const usize v) const {
       return ds[v];
-    }
-
-    inline usize from_on_shortest_path_tree(const usize v) const {
-      return froms[v];
-    }
-
-    inline usize edge_label(const usize v) const {
-      return ids[v];
-    }
-
-    graph get_original_graph() const {
-      return g;
     }
 
     inline std::vector< usize > get_distances() const {
       return ds;
     }
 
-    inline std::vector< usize > get_shortest_path_tree() const {
-      return froms;
+    static inline usize undefined() {
+      static usize undefined_ = std::numeric_limits< usize >::max();
+      return undefined_;
+    }
+
+    inline usize parent(const usize v) const {
+      return parents[v];
+    }
+
+    inline std::vector< usize > get_parent() const {
+      return parents;
+    }
+
+    inline usize edge_label(const usize v) const {
+      return ids[v];
     }
 
     inline std::vector< usize > get_edge_labels() const {
