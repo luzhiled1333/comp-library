@@ -5,12 +5,12 @@ documentation_of: //src/utility/bit/count-trailing-0s.hpp
 
 ## countr_zero
 ```
-usize countr_zero(u64 x)
+usize countr_zero(u64 n)
 ```
 
-`x` を二進表記したとき、右からいくつ連続した 0 が続くかを返す。
+`n` を二進表記したとき、右からいくつ連続した 0 が続くかを返す。
 
-$x = 0$ のときは $64$ が返る。
+$n = 0$ のときは $64$ が返る。
 
 ### 計算量
 - $O(\log \log n)$
@@ -18,4 +18,4 @@ $x = 0$ のときは $64$ が返る。
 ### 制約
 - C++17 以前であること。
 
-C++20 以降では `std::countr_zero(T x)` を使用すること。
+C++20 以降では `std::countr_zero(T n)` を使用すること。
