@@ -129,6 +129,8 @@ namespace luz {
     }
 
     usize jump(usize v, u64 k) {
+      assert(v < g_size);
+
       if (k == 0) {
         return v;
       }
