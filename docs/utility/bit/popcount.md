@@ -1,5 +1,5 @@
 ---
-title: population count (popcount)
+title: 立っている bit の数 (population count, popcount)
 documentation_of: //src/utility/bit/popcount.hpp
 ---
 
