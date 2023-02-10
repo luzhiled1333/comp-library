@@ -143,6 +143,18 @@ data:
     path: unit-test/sequence/compression.test.cpp
     title: unit-test/sequence/compression.test.cpp
   - icon: ':heavy_check_mark:'
+    path: unit-test/utility/bit/bit-width.test.cpp
+    title: unit-test/utility/bit/bit-width.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: unit-test/utility/bit/count-leading-0s.test.cpp
+    title: unit-test/utility/bit/count-leading-0s.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: unit-test/utility/bit/count-trailing-0s.test.cpp
+    title: unit-test/utility/bit/count-trailing-0s.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: unit-test/utility/bit/popcount.test.cpp
+    title: unit-test/utility/bit/popcount.test.cpp
+  - icon: ':heavy_check_mark:'
     path: unit-test/utility/pair-hash.test.cpp
     title: unit-test/utility/pair-hash.test.cpp
   - icon: ':heavy_check_mark:'
@@ -245,6 +257,10 @@ data:
   - unit-test/math/totient.test.cpp
   - unit-test/math/totient-enumeration.test.cpp
   - unit-test/utility/pair-hash.test.cpp
+  - unit-test/utility/bit/popcount.test.cpp
+  - unit-test/utility/bit/count-trailing-0s.test.cpp
+  - unit-test/utility/bit/bit-width.test.cpp
+  - unit-test/utility/bit/count-leading-0s.test.cpp
   - unit-test/utility/tuple-hash.test.cpp
 documentation_of: src/cpp-template/header/rep.hpp
 layout: document

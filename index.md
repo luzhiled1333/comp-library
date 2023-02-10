@@ -240,6 +240,23 @@ data:
       path: src/sequence/run-length-encoding.hpp
       title: "\u30E9\u30F3\u30EC\u30F3\u30B0\u30B9\u5727\u7E2E (\u9023\u9577\u5727\
         \u7E2E, Run Length Encoding, RLE)"
+  - name: src/utility/bit
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/utility/bit/bit-width.hpp
+      title: "\u5024\u3092\u8868\u73FE\u3059\u308B\u305F\u3081\u306B\u5FC5\u8981\u306A\
+        \u6700\u5C0F\u306Ebit\u5E45 (bit_width)"
+    - icon: ':heavy_check_mark:'
+      path: src/utility/bit/count-leading-0s.hpp
+      title: "\u6700\u4E0A\u4F4Dbit\u304B\u3089\u9023\u7D9A\u3059\u308B 0 \u306E\u6570\
+        \ (counting leading 0s, countl_zero)"
+    - icon: ':heavy_check_mark:'
+      path: src/utility/bit/count-trailing-0s.hpp
+      title: "\u6700\u4E0B\u4F4Dbit\u304B\u3089\u9023\u7D9A\u3059\u308B 0 \u306E\u6570\
+        \ (counting trailing 0s, countr_zero)"
+    - icon: ':heavy_check_mark:'
+      path: src/utility/bit/popcount.hpp
+      title: "\u7ACB\u3063\u3066\u3044\u308B bit \u306E\u6570 (population count, popcount)"
   - name: src/utility
     pages:
     - icon: ':heavy_check_mark:'
@@ -355,6 +372,20 @@ data:
     - icon: ':heavy_check_mark:'
       path: unit-test/sequence/compression.test.cpp
       title: unit-test/sequence/compression.test.cpp
+  - name: unit-test/utility/bit
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: unit-test/utility/bit/bit-width.test.cpp
+      title: unit-test/utility/bit/bit-width.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: unit-test/utility/bit/count-leading-0s.test.cpp
+      title: unit-test/utility/bit/count-leading-0s.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: unit-test/utility/bit/count-trailing-0s.test.cpp
+      title: unit-test/utility/bit/count-trailing-0s.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: unit-test/utility/bit/popcount.test.cpp
+      title: unit-test/utility/bit/popcount.test.cpp
   - name: unit-test/utility
     pages:
     - icon: ':heavy_check_mark:'
