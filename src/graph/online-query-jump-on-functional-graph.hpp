@@ -22,7 +22,7 @@ namespace luz {
     std::vector< usize > loop_id, loop_size, loop_pos;
     std::vector< std::vector< usize > > loops;
 
-    void check_functional_graph() {
+    void check_functional_graph() const {
       for (usize v: rep(0, g_size)) {
         assert(g[v].size() == 1);
       }
