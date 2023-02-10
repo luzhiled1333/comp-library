@@ -1,13 +1,13 @@
 #pragma once
 
+#include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/graph/graph-template.hpp"
 #include "src/utility/bit/bit-width.hpp"
-#include "src/cpp-template/header/rep.hpp"
 
 #include <cassert>
-#include <vector>
 #include <utility>
+#include <vector>
 
 namespace luz {
 
@@ -34,7 +34,7 @@ namespace luz {
       }
       for (usize k: rep(1, LOG)) {
         for (usize v: rep(0, g_size)) {
-          usize pv = doubling_table[k - 1][v];
+          usize pv             = doubling_table[k - 1][v];
           doubling_table[k][v] = doubling_table[k - 1][pv];
         }
       }
@@ -85,16 +85,16 @@ namespace luz {
         std::vector< usize > loop;
 
         do {
-          loop_id[cur] = loops.size();
+          loop_id[cur]  = loops.size();
           loop_pos[cur] = loop.size();
           loop.emplace_back(cur);
           indegrees[cur] = 0;
-          cur = g[cur][0].to;
+          cur            = g[cur][0].to;
         } while (cur != v);
 
         do {
           loop_size[cur] = loop.size();
-          cur = g[cur][0].to;
+          cur            = g[cur][0].to;
         } while (cur != v);
 
         loops.emplace_back(std::move(loop));
@@ -114,19 +114,19 @@ namespace luz {
     }
 
    public:
-    OnlineJumpOnFunctionalGraphQuery(const Graph< cost_type > &g_) :
-      g_size(g_.size()),
-      g(g_),
-      LOG(bit_width(g_size - 1)),
-      doubling_table(LOG, std::vector< usize >(g_size)),
-      loop_id(g_size, -1),
-      loop_size(g_size),
-      loop_pos(g_size, -1) {
-        check_functional_graph();
+    OnlineJumpOnFunctionalGraphQuery(const Graph< cost_type > &g_)
+        : g_size(g_.size()),
+          g(g_),
+          LOG(bit_width(g_size - 1)),
+          doubling_table(LOG, std::vector< usize >(g_size)),
+          loop_id(g_size, -1),
+          loop_size(g_size),
+          loop_pos(g_size, -1) {
+      check_functional_graph();
 
-        build_doubling_table();
-        construct_loops();
-      }
+      build_doubling_table();
+      construct_loops();
+    }
 
     usize jump(usize v, u64 k) {
       if (k == 0) {
