@@ -76,7 +76,7 @@ namespace luz::sssp {
       return ids[v];
     }
 
-    Graph< cost_type > get_original_graph() const {
+    graph get_original_graph() const {
       return g;
     }
 
