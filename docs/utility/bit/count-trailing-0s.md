@@ -8,7 +8,7 @@ documentation_of: //src/utility/bit/count-trailing-0s.hpp
 usize countr_zero(u64 n)
 ```
 
-`n` を二進表記したとき、右からいくつ連続した 0 が続くかを返す。
+`n` を二進表記したとき、右からいくつ連続した $0$ が続くかを返す。
 
 $n = 0$ のときは $64$ が返る。
 
