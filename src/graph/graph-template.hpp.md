@@ -12,9 +12,6 @@ data:
     path: src/graph/distances-on-unweighted-graph.hpp
     title: src/graph/distances-on-unweighted-graph.hpp
   - icon: ':heavy_check_mark:'
-    path: src/graph/functional-graph-utility.hpp
-    title: src/graph/functional-graph-utility.hpp
-  - icon: ':heavy_check_mark:'
     path: src/graph/offline-query-jump-on-functional-graph.hpp
     title: "(offine) Functional Graph \u4E0A\u306E\u9802\u70B9 $v$ \u304B\u3089 $k$\
       \ \u56DE\u79FB\u52D5\u3057\u305F\u5148\u306E\u9802\u70B9 (Offline Jump On Functional\
@@ -30,6 +27,11 @@ data:
     path: src/graph/offline-query-lowest-common-ancestor.hpp
     title: "\u30AA\u30D5\u30E9\u30A4\u30F3\u6700\u5C0F\u5171\u901A\u7956\u5148 (Offline\
       \ Lowest Common Ancestor)"
+  - icon: ':heavy_check_mark:'
+    path: src/graph/online-query-jump-on-functional-graph.hpp
+    title: "(online) Functional Graph \u4E0A\u306E\u9802\u70B9 $v$ \u304B\u3089 $k$\
+      \ \u56DE\u79FB\u52D5\u3057\u305F\u5148\u306E\u9802\u70B9 (Online Jump On Functional\
+      \ Graph)"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/grl_1_a.test.cpp
@@ -49,6 +51,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
     title: unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: unit-test/graph/online-query-jump-on-functional-graph.test.cpp
+    title: unit-test/graph/online-query-jump-on-functional-graph.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -103,9 +108,9 @@ data:
   requiredBy:
   - src/graph/distances-on-unweighted-graph.hpp
   - src/graph/offline-query-level-ancestor.hpp
-  - src/graph/functional-graph-utility.hpp
   - src/graph/dijkstra.hpp
   - src/graph/offline-query-jump-on-tree.hpp
+  - src/graph/online-query-jump-on-functional-graph.hpp
   - src/graph/offline-query-lowest-common-ancestor.hpp
   - src/graph/offline-query-jump-on-functional-graph.hpp
   timestamp: '2022-08-22 18:26:45+09:00'
@@ -117,6 +122,7 @@ data:
   - test/atcoder/abc258_e/online-algorithm.test.cpp
   - test/atcoder/abc258_e/offline-algorithm.test.cpp
   - unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
+  - unit-test/graph/online-query-jump-on-functional-graph.test.cpp
 documentation_of: src/graph/graph-template.hpp
 layout: document
 title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"

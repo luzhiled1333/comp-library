@@ -7,8 +7,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/utility/bit/popcount.hpp
     title: "\u7ACB\u3063\u3066\u3044\u308B bit \u306E\u6570 (population count, popcount)"
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: src/graph/online-query-jump-on-functional-graph.hpp
+    title: "(online) Functional Graph \u4E0A\u306E\u9802\u70B9 $v$ \u304B\u3089 $k$\
+      \ \u56DE\u79FB\u52D5\u3057\u305F\u5148\u306E\u9802\u70B9 (Online Jump On Functional\
+      \ Graph)"
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc258_e/online-algorithm.test.cpp
+    title: test/atcoder/abc258_e/online-algorithm.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: unit-test/graph/online-query-jump-on-functional-graph.test.cpp
+    title: unit-test/graph/online-query-jump-on-functional-graph.test.cpp
   - icon: ':heavy_check_mark:'
     path: unit-test/utility/bit/bit-width.test.cpp
     title: unit-test/utility/bit/bit-width.test.cpp
@@ -45,10 +56,13 @@ data:
   - src/cpp-template/header/type-alias.hpp
   isVerificationFile: false
   path: src/utility/bit/bit-width.hpp
-  requiredBy: []
+  requiredBy:
+  - src/graph/online-query-jump-on-functional-graph.hpp
   timestamp: '2023-02-10 17:57:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/atcoder/abc258_e/online-algorithm.test.cpp
+  - unit-test/graph/online-query-jump-on-functional-graph.test.cpp
   - unit-test/utility/bit/bit-width.test.cpp
 documentation_of: src/utility/bit/bit-width.hpp
 layout: document

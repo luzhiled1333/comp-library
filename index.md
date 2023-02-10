@@ -179,9 +179,6 @@ data:
       path: src/graph/distances-on-unweighted-graph.hpp
       title: src/graph/distances-on-unweighted-graph.hpp
     - icon: ':heavy_check_mark:'
-      path: src/graph/functional-graph-utility.hpp
-      title: src/graph/functional-graph-utility.hpp
-    - icon: ':heavy_check_mark:'
       path: src/graph/graph-template.hpp
       title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
     - icon: ':heavy_check_mark:'
@@ -203,6 +200,11 @@ data:
       path: src/graph/offline-query-lowest-common-ancestor.hpp
       title: "\u30AA\u30D5\u30E9\u30A4\u30F3\u6700\u5C0F\u5171\u901A\u7956\u5148 (Offline\
         \ Lowest Common Ancestor)"
+    - icon: ':heavy_check_mark:'
+      path: src/graph/online-query-jump-on-functional-graph.hpp
+      title: "(online) Functional Graph \u4E0A\u306E\u9802\u70B9 $v$ \u304B\u3089\
+        \ $k$ \u56DE\u79FB\u52D5\u3057\u305F\u5148\u306E\u9802\u70B9 (Online Jump\
+        \ On Functional Graph)"
   - name: src/math/convolution
     pages:
     - icon: ':heavy_check_mark:'
@@ -354,6 +356,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
       title: unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: unit-test/graph/online-query-jump-on-functional-graph.test.cpp
+      title: unit-test/graph/online-query-jump-on-functional-graph.test.cpp
   - name: unit-test/math/modular-arithmetic
     pages:
     - icon: ':heavy_check_mark:'

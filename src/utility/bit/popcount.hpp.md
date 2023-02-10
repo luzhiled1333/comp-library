@@ -6,6 +6,11 @@ data:
     title: Type alias
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: src/graph/online-query-jump-on-functional-graph.hpp
+    title: "(online) Functional Graph \u4E0A\u306E\u9802\u70B9 $v$ \u304B\u3089 $k$\
+      \ \u56DE\u79FB\u52D5\u3057\u305F\u5148\u306E\u9802\u70B9 (Online Jump On Functional\
+      \ Graph)"
+  - icon: ':heavy_check_mark:'
     path: src/utility/bit/bit-width.hpp
     title: "\u5024\u3092\u8868\u73FE\u3059\u308B\u305F\u3081\u306B\u5FC5\u8981\u306A\
       \u6700\u5C0F\u306Ebit\u5E45 (bit_width)"
@@ -18,6 +23,12 @@ data:
     title: "\u6700\u4E0B\u4F4Dbit\u304B\u3089\u9023\u7D9A\u3059\u308B 0 \u306E\u6570\
       \ (counting trailing 0s, countr_zero)"
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc258_e/online-algorithm.test.cpp
+    title: test/atcoder/abc258_e/online-algorithm.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: unit-test/graph/online-query-jump-on-functional-graph.test.cpp
+    title: unit-test/graph/online-query-jump-on-functional-graph.test.cpp
   - icon: ':heavy_check_mark:'
     path: unit-test/utility/bit/bit-width.test.cpp
     title: unit-test/utility/bit/bit-width.test.cpp
@@ -56,12 +67,15 @@ data:
   isVerificationFile: false
   path: src/utility/bit/popcount.hpp
   requiredBy:
+  - src/graph/online-query-jump-on-functional-graph.hpp
   - src/utility/bit/bit-width.hpp
   - src/utility/bit/count-trailing-0s.hpp
   - src/utility/bit/count-leading-0s.hpp
   timestamp: '2023-02-10 17:57:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/atcoder/abc258_e/online-algorithm.test.cpp
+  - unit-test/graph/online-query-jump-on-functional-graph.test.cpp
   - unit-test/utility/bit/popcount.test.cpp
   - unit-test/utility/bit/count-trailing-0s.test.cpp
   - unit-test/utility/bit/bit-width.test.cpp

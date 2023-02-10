@@ -50,6 +50,11 @@ data:
     title: "\u30AA\u30D5\u30E9\u30A4\u30F3\u6700\u5C0F\u5171\u901A\u7956\u5148 (Offline\
       \ Lowest Common Ancestor)"
   - icon: ':heavy_check_mark:'
+    path: src/graph/online-query-jump-on-functional-graph.hpp
+    title: "(online) Functional Graph \u4E0A\u306E\u9802\u70B9 $v$ \u304B\u3089 $k$\
+      \ \u56DE\u79FB\u52D5\u3057\u305F\u5148\u306E\u9802\u70B9 (Online Jump On Functional\
+      \ Graph)"
+  - icon: ':heavy_check_mark:'
     path: src/math/convolution/bitwise-and-convolution.hpp
     title: src/math/convolution/bitwise-and-convolution.hpp
   - icon: ':heavy_check_mark:'
@@ -134,6 +139,9 @@ data:
     path: unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
     title: unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
   - icon: ':heavy_check_mark:'
+    path: unit-test/graph/online-query-jump-on-functional-graph.test.cpp
+    title: unit-test/graph/online-query-jump-on-functional-graph.test.cpp
+  - icon: ':heavy_check_mark:'
     path: unit-test/math/totient-enumeration.test.cpp
     title: unit-test/math/totient-enumeration.test.cpp
   - icon: ':heavy_check_mark:'
@@ -213,6 +221,7 @@ data:
   - src/sequence/compression.hpp
   - src/graph/offline-query-level-ancestor.hpp
   - src/graph/offline-query-jump-on-tree.hpp
+  - src/graph/online-query-jump-on-functional-graph.hpp
   - src/graph/offline-query-lowest-common-ancestor.hpp
   - src/graph/max-flow.hpp
   - src/graph/offline-query-jump-on-functional-graph.hpp
@@ -252,6 +261,7 @@ data:
   - test/atcoder/abc212_h.test.cpp
   - unit-test/sequence/compression.test.cpp
   - unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
+  - unit-test/graph/online-query-jump-on-functional-graph.test.cpp
   - unit-test/data-structure/segment-tree/point-mapping-range-fold-segment-tree.test.cpp
   - unit-test/data-structure/fenwick-tree.test.cpp
   - unit-test/math/totient.test.cpp
