@@ -3,6 +3,7 @@
 #include "src/utility/bit/count-trailing-0s.hpp"
 
 #include "src/cpp-template/header/rep.hpp"
+#include "src/cpp-template/header/type-alias.hpp"
 
 #include <cassert>
 #include <iostream>
