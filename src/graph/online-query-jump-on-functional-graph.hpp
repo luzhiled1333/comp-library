@@ -29,13 +29,11 @@ namespace luz {
     }
 
     void build_doubling_table() {
-      for (usize v: rep(0, g_size)) {
-        doubling_table[0][v] = g[v][0].to;
-      }
-      for (usize k: rep(1, LOG)) {
+      for (usize k: rep(0, LOG)) {
         for (usize v: rep(0, g_size)) {
-          usize pv             = doubling_table[k - 1][v];
-          doubling_table[k][v] = doubling_table[k - 1][pv];
+          doubling_table[k][v] =
+              (k ? doubling_table[k - 1][doubling_table[k - 1][v]]
+                 : g[v][0].to);
         }
       }
     }
@@ -123,6 +121,7 @@ namespace luz {
           loop_size(g_size),
           loop_pos(g_size, -1) {
       check_functional_graph();
+      assert(g_size != 0);
 
       build_doubling_table();
       construct_loops();
