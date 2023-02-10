@@ -128,7 +128,7 @@ namespace luz {
       construct_loops();
     }
 
-    usize jump(usize v, u64 k) {
+    usize jump(usize v, u64 k) const {
       assert(v < g_size);
 
       if (k == 0) {
