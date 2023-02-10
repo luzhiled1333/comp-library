@@ -101,7 +101,7 @@ namespace luz {
       }
     }
 
-    usize jump_small(usize v, usize k) {
+    usize jump_small(usize v, usize k) const {
       assert(k < g_size);
 
       for (usize i: rep(0, LOG)) {
