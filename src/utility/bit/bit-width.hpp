@@ -9,6 +9,14 @@ namespace luz {
   usize bit_width(u64 x) {
     assert(__cplusplus <= 201703L);
 
+    if (x == 0) {
+      return 0;
+    }
+
+#ifdef __GNUC__
+    return 64 - __builtin_clzll(x);
+#endif
+
     x |= x >> 1;
     x |= x >> 2;
     x |= x >> 4;
