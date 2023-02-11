@@ -176,9 +176,6 @@ data:
       path: src/graph/dijkstra.hpp
       title: Dijkstra's Algorithm
     - icon: ':heavy_check_mark:'
-      path: src/graph/distances-on-unweighted-graph.hpp
-      title: src/graph/distances-on-unweighted-graph.hpp
-    - icon: ':heavy_check_mark:'
       path: src/graph/graph-template.hpp
       title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
     - icon: ':heavy_check_mark:'
@@ -205,6 +202,12 @@ data:
       title: "(online) Functional Graph \u4E0A\u306E\u9802\u70B9 $v$ \u304B\u3089\
         \ $k$ \u56DE\u79FB\u52D5\u3057\u305F\u5148\u306E\u9802\u70B9 (Online Jump\
         \ On Functional Graph)"
+  - name: src/graph/single-source-shortest-path
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/graph/single-source-shortest-path/in-unweighted-graph.hpp
+      title: "\u91CD\u307F\u306A\u3057\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u7D4C\u8DEF\
+        \ (Single Source Shortest Path in Unweighted Graph, BFS)"
   - name: src/math/convolution
     pages:
     - icon: ':heavy_check_mark:'
