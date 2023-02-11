@@ -2,10 +2,10 @@
 
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
-#include "src/graph/distances-on-unweighted-graph.hpp"
 #include "src/graph/graph-template.hpp"
 #include "src/graph/offline-query-level-ancestor.hpp"
 #include "src/graph/offline-query-lowest-common-ancestor.hpp"
+#include "src/graph/single-source-shortest-path/in-unweighted-graph.hpp"
 #include "src/utility/tuple-hash.hpp"
 
 #include <cassert>
@@ -57,8 +57,8 @@ namespace luz {
 
       lca_.build(root);
 
-      std::vector< usize > depths =
-          distances_on_unweighted_graph(g_, root);
+      sssp::InUnweightedGraph sssp_solver(g_, root);
+      std::vector< usize > depths = sssp_solver.get_distances();
 
       converted_qs_.reserve(qs_.size());
       results_.reserve(qs_.size());
