@@ -16,7 +16,6 @@ namespace luz::sssp {
     graph g;
     usize g_size;
     usize source;
-    bool detected_negative_cycle;
 
     std::vector< cost_type > ds;
     std::vector< usize > parents, ids;
@@ -50,11 +49,14 @@ namespace luz::sssp {
           }
           in_que[u] = true;
           ds_update_cnt[u]++;
-          if (ds_update_cnt[u] >= g_size) {
-            detected_negative_cycle = true;
-            return;
+          if (ds_update_cnt[u] < 2 * g_size) {
+            que.emplace(u);
           }
-          que.emplace(u);
+        }
+      }
+      for (usize v: rep(0, g_size)) {
+        if (ds_update_cnt[v] >= g_size) {
+          ds[v] = negative_inf();
         }
       }
     }
@@ -64,7 +66,6 @@ namespace luz::sssp {
         : g(g_),
           g_size(g.size()),
           source(source_),
-          detected_negative_cycle(false),
           ds(g_size, inf()),
           parents(g_size, undefined()),
           ids(g_size, undefined()) {
@@ -73,6 +74,12 @@ namespace luz::sssp {
 
     graph get_original_graph() const {
       return g;
+    }
+
+    static inline cost_type negative_inf() {
+      static cost_type negative_inf_ =
+          std::numeric_limits< cost_type >::min();
+      return negative_inf_;
     }
 
     static inline cost_type inf() {
@@ -107,10 +114,6 @@ namespace luz::sssp {
 
     inline std::vector< usize > get_edge_labels() const {
       return ids;
-    }
-
-    inline bool is_negative_cycle() const {
-      return detected_negative_cycle;
     }
   };
 

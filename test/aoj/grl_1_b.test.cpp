@@ -21,16 +21,18 @@ namespace luz {
     }
 
     sssp::InWeightedGraph sssp(G, source);
-    if (sssp.is_negative_cycle()) {
-      std::cout << "NEGATIVE CYCLE" << std::endl;
-    } else {
-      auto dists = sssp.get_distances();
-      for (auto &dist: dists) {
-        if (dist == sssp::InWeightedGraph< i32 >::inf()) {
-          std::cout << "INF" << std::endl;
-        } else {
-          std::cout << dist << std::endl;
-        }
+    auto dists = sssp.get_distances();
+    for (const auto& dist: dists) {
+      if (dist == sssp::InWeightedGraph< i32 >::negative_inf()) {
+        std::cout << "NEGATIVE CYCLE" << std::endl;
+        return;
+      }
+    }
+    for (const auto& dist: dists) {
+      if (dist == sssp::InWeightedGraph< i32 >::inf()) {
+        std::cout << "INF" << std::endl;
+      } else {
+        std::cout << dist << std::endl;
       }
     }
   }
