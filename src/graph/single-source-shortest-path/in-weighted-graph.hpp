@@ -27,7 +27,7 @@ namespace luz::sssp {
 
       ds[s]            = 0;
       in_que[s]        = true;
-      ds_update_cnt[s] = 1;
+      ds_update_cnt[s] = 0;
       que.emplace(s);
 
       while (not que.empty()) {
