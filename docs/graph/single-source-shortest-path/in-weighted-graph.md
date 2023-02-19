@@ -39,6 +39,16 @@ $s$ からの経路が存在しないような頂点 $v$ への $s$ からの最
 
 内部では `std::numeric_limits< cost_type >::max()` によって定義されている。
 
+## negative_inf
+```
+static cost_type negative_inf()
+```
+
+$s$ から $v$ への経路に負閉路が含まれる場合の最短経路のコストとして定義されている値を返す。
+
+
+内部では `std::numeric_limits< cost_type >::min()` によって定義されている。
+
 ## distance
 ```
 cost_type distance(const usize v) const
@@ -60,7 +70,7 @@ $s$ からの経路が存在しないような頂点へのコストは `inf()` �
 static usize undefined()
 ```
 
-構成された最短経路木において親が存在しないときに返される値。
+構成された最短経路木において親が存在しない、または経路上に負閉路が含まれるときに返される値。
 
 内部では `std::numeric_limits< usize >::max()` によって定義されている。
 
@@ -71,7 +81,8 @@ usize parent(const usize v) const
 
 構成された最短経路木においての `v` の親を返す。
 
-親が存在しない場合 `undefined()` が返される。
+親が存在しない、または経路上に負閉路が含まれる場合 `undefined()` が返される。
+
 
 ## get_parents 
 ```
@@ -80,7 +91,7 @@ std::vector< usize > get_parents() const
 
 各頂点に対する `parent` を `std::vector` で wrap して返す。`parent(v)` は `v` 番目の要素として表される。
 
-親が存在しないような頂点の場合は `undefined()` となる。
+親が存在しない、または経路上に負閉路が含まれる頂点に対応する要素は `undefined()` となる。
 
 ## edge_label
 ```
@@ -89,7 +100,7 @@ usize edge_label(const usize v)
 
 構成された最短経路木における `v` とその親との間にある辺の、もとのグラフでの辺番号を返す。
 
-親が存在しない場合 `undefined()` が返される。
+親が存在しない、または経路上に負閉路が含まれる場合 `undefined()` が返される。
 
 ## get_edge_labels
 ```
@@ -98,4 +109,4 @@ usize get_edge_labels()
 
 各頂点に対する `edge_label(v)` を `std::vector` で wrap して返す。`edge_label(v)` は `v` 番目の要素として表される。
 
-親が存在しないような頂点に対応する要素は `undefined()` となる。
+親が存在しない、または経路上に負閉路が含まれる頂点に対応する要素は `undefined()` となる。
