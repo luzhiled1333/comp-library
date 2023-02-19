@@ -57,6 +57,8 @@ namespace luz::sssp {
       for (usize v: rep(0, g_size)) {
         if (ds_update_cnt[v] >= g_size) {
           ds[v] = negative_inf();
+          parents[v] = undefined();
+          ids[v] = undefined();
         }
       }
     }
