@@ -2,7 +2,7 @@
 
 #include <vector>
 
-template< typename mint >
+template < typename mint >
 class Combinatorics {
   static usize bound;
   static std::vector< mint > fact, finv, inv;
@@ -34,7 +34,6 @@ class Combinatorics {
   }
 
  public:
-
   explicit Combinatorics(usize n) {
     expand(n);
   }
