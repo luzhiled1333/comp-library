@@ -1,4 +1,5 @@
 #include "src/cpp-template/header/type-alias.hpp"
+#include "src/cpp-template/header/rep.hpp"
 
 #include <vector>
 
@@ -36,7 +37,7 @@ namespace luz {
     }
 
    public:
-    explicit Combinatorics(usize n) {
+    explicit Combinatorics(usize n = 0) {
       expand(n);
     }
 
