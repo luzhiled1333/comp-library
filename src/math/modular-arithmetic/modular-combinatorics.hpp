@@ -1,5 +1,5 @@
-#include "src/cpp-template/header/type-alias.hpp"
 #include "src/cpp-template/header/rep.hpp"
+#include "src/cpp-template/header/type-alias.hpp"
 
 #include <vector>
 
@@ -76,16 +76,19 @@ namespace luz {
     }
   };
 
-  template< typename mint >
+  template < typename mint >
   usize Combinatorics< mint >::bound = 0;
 
-  template< typename mint >
-  std::vector< mint > Combinatorics< mint >::fact = std::vector< mint >();
+  template < typename mint >
+  std::vector< mint > Combinatorics< mint >::fact =
+      std::vector< mint >();
 
-  template< typename mint >
-  std::vector< mint > Combinatorics< mint >::finv = std::vector< mint >();
+  template < typename mint >
+  std::vector< mint > Combinatorics< mint >::finv =
+      std::vector< mint >();
 
-  template< typename mint >
-  std::vector< mint > Combinatorics< mint >::inv = std::vector< mint >();
+  template < typename mint >
+  std::vector< mint > Combinatorics< mint >::inv =
+      std::vector< mint >();
 
 } // namespace luz
