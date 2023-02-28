@@ -2,73 +2,89 @@
 
 #include <vector>
 
-template < typename mint >
-class Combinatorics {
-  static usize bound;
-  static std::vector< mint > fact, finv, inv;
+namespace luz {
 
-  static void expand(usize n) {
-    n += 1;
-    if (fact.size() >= n) return;
+  template < typename mint >
+  class Combinatorics {
+    static usize bound;
+    static std::vector< mint > fact, finv, inv;
 
-    if (bound == 0) bound = 1;
+    static void expand(usize n) {
+      n += 1;
+      if (fact.size() >= n) return;
 
-    fact.resize(n, mint(1));
-    finv.resize(n, mint(1));
-    inv.resize(n, mint(1));
+      if (bound == 0) bound = 1;
 
-    for (usize i: rep(bound, n)) {
-      fact[i] = fact[i - 1] * i;
+      fact.resize(n, mint(1));
+      finv.resize(n, mint(1));
+      inv.resize(n, mint(1));
+
+      for (usize i: rep(bound, n)) {
+        fact[i] = fact[i - 1] * i;
+      }
+
+      finv.back() = mint(1) / fact.back();
+      for (usize i: rrep(bound, n)) {
+        finv[i - 1] = finv[i] * i;
+      }
+
+      for (usize i: rep(bound, n)) {
+        inv[i] = finv[i] * fact[i - 1];
+      }
+
+      bound = n;
     }
 
-    finv.back() = 1 / fact.back();
-    for (usize i: rrep(bound, n)) {
-      finv[i - 1] = finv[i] * i;
+   public:
+    explicit Combinatorics(usize n) {
+      expand(n);
     }
 
-    for (usize i: rep(bound, n)) {
-      inv[i] = finv[i] * fact[i - 1];
+    static mint factorial(usize n) {
+      expand(n);
+      return fact[n];
     }
 
-    bound = n;
-  }
+    static mint factorial_inverse(usize n) {
+      expand(n);
+      return finv[n];
+    }
 
- public:
-  explicit Combinatorics(usize n) {
-    expand(n);
-  }
+    static mint inverse(usize n) {
+      expand(n);
+      return inv[n];
+    }
 
-  static mint factorial(usize n) {
-    expand(n);
-    return fact[n];
-  }
+    static mint permutation(isize n, isize r) {
+      if (r < 0 or n < r) return 0;
 
-  static mint factorial_inverse(usize n) {
-    expand(n);
-    return finv[n];
-  }
+      expand(n);
+      return fact[n] * finv[n - r];
+    }
 
-  static mint inverse(usize n) {
-    expand(n);
-    return inv[n];
-  }
+    static mint combination(isize n, isize r) {
+      if (r < 0 or n < r) return 0;
 
-  static mint permutation(isize n, isize r) {
-    if (r < 0 or n < r) return 0;
+      expand(n);
+      return fact[n] * finv[r] * finv[n - r];
+    }
 
-    expand(n);
-    return fact[n] * finv[n - r];
-  }
+    static mint combination_with_repetitions(isize n, isize r) {
+      if (n < 0 or r < 0) return 0;
+      return (r ? combination(n + r - 1, r) : 1);
+    }
+  };
 
-  static mint combination(isize n, isize r) {
-    if (r < 0 or n < r) return 0;
+  template< typename mint >
+  usize Combinatorics< mint >::bound = 0;
 
-    expand(n);
-    return fact[n] * finv[r] * finv[n - r];
-  }
+  template< typename mint >
+  std::vector< mint > Combinatorics< mint >::fact = std::vector< mint >();
 
-  static mint combination_with_repetitions(isize n, isize r) {
-    if (n < 0 or r < 0) return 0;
-    return (r ? combination(n + r - 1, r) : 1);
-  }
-};
+  template< typename mint >
+  std::vector< mint > Combinatorics< mint >::finv = std::vector< mint >();
+
+  template< typename mint >
+  std::vector< mint > Combinatorics< mint >::inv = std::vector< mint >();
+
+} // namespace luz
