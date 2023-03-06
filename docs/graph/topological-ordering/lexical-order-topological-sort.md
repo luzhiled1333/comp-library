@@ -25,6 +25,7 @@ lexical_order_topological_sort< cost_type, std::less< usize > >(g)
 ```
 
 ### 制約
+- グラフ `g` は DAG であること
 - `Compare` には `std::greater< usize >` または `std::less< usize >` が渡されること。
 
 ### 計算量
