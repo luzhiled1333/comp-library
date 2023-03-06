@@ -5,8 +5,9 @@
 
 namespace luz {
 
-  template< typename T, class Compare >
-  std::vector< usize > lexical_order_topological_sort(const Graph< T > &g) {
+  template < typename T, class Compare >
+  std::vector< usize > lexical_order_topological_sort(
+      const Graph< T > &g) {
     usize n = g.size();
 
     std::vector< usize > indegrees(n);
@@ -16,7 +17,7 @@ namespace luz {
       }
     }
 
-    std::priority_queue< usize, std::vector< usize >, Compare> pq;
+    std::priority_queue< usize, std::vector< usize >, Compare > pq;
     for (usize v: rep(0, n)) {
       if (indegrees[v]) continue;
       pq.emplace(v);
@@ -37,4 +38,4 @@ namespace luz {
     return result;
   }
 
-}
+} // namespace luz
