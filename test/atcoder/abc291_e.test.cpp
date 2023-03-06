@@ -2,26 +2,34 @@
 // verification-helper: PROBLEM https://atcoder.jp/contests/abc291/tasks/abc291_e
 
 #include "src/cpp-template/header/rep.hpp"
+#include "src/cpp-template/header/vector-ios.hpp"
 #include "src/graph/graph-template.hpp"
 #include "src/graph/topological-ordering/lexical-order-topological-sort.hpp"
 
 #include <functional>
+#include <iostream>
 
 namespace luz {
 
   void main_() {
     using graph = Graph< usize >;
 
-    usize n = input(), m = input();
+    usize n, m;
+    std::cin >> n >> m;
 
     graph g(n);
     for ([[maybe_unused]] usize _: rep(0, m)) {
-      usize t = input() - 1, f = input() - 1;
-      g.add_directed_edge(t, f);
+      usize t, f;
+      std::cin >> t >> f;
+      g.add_directed_edge(t - 1, f - 1);
     }
 
-    auto ord = topological_sort< usize, std::greater< usize > >(g);
-    auto rev = topological_sort< usize, std::less< usize > >(g);
+    auto ord =
+        lexical_order_topological_sort< usize,
+                                        std::greater< usize > >(g);
+    auto rev =
+        lexical_order_topological_sort< usize, std::less< usize > >(
+            g);
 
     if (ord == rev) {
       std::cout << "Yes" << std::endl;
