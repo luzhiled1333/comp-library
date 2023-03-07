@@ -29,4 +29,4 @@ lexical_order_topological_sort< cost_type, std::less< usize > >(g)
 - `Compare` には `std::greater< usize >` または `std::less< usize >` が渡されること。
 
 ### 計算量
-- $O(E + V \log V)$
+- $O(\|E\| + \|V\| \log \|V\|)$
