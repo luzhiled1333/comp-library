@@ -24,6 +24,7 @@ namespace luz {
     }
 
     std::vector< usize > result;
+    result.reserve(n);
     while (not pq.empty()) {
       auto v = pq.top();
       pq.pop();
