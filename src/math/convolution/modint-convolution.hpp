@@ -3,7 +3,6 @@
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/utility/bit/bit-width.hpp"
-#include "src/utility/bit/count-trailing-0s.hpp"
 
 #include <cassert>
 #include <vector>
@@ -70,7 +69,7 @@ namespace luz::internal {
   void butterfly(std::vector< mint > &vs) {
     usize n = vs.size();
     assert((n & (n - 1)) == 0);
-    usize h = countr_zero(n);
+    usize h = bit_width(n) - 1;
     ButterflyInfo< mint > info;
     assert(h < info.iroots.size());
     usize len = 0;
@@ -129,7 +128,7 @@ namespace luz::internal {
   void butterfly_inv(std::vector< mint > &vs) {
     usize n = vs.size();
     assert((n & (n - 1)) == 0);
-    usize h = countr_zero(n);
+    usize h = bit_width(n) - 1;
     ButterflyInfo< mint > info;
     assert(h < info.iroots.size());
     usize len  = h;
@@ -187,23 +186,23 @@ namespace luz::internal {
 
 namespace luz {
 
-  template < typename T >
-  std::vector< T > modint_convolution(std::vector< T > xs,
-                                      std::vector< T > ys) {
-    assert(not xs.empty() and not ys.empty());
-    usize n = xs.size(), m = ys.size();
+  template < typename modint >
+  std::vector< modint > modint_convolution(std::vector< modint > f,
+                                           std::vector< modint > g) {
+    assert(not f.empty() and not g.empty());
+    usize n = f.size(), m = g.size();
     usize s = 1 << bit_width(n + m - 2);
-    xs.resize(s);
-    ys.resize(s);
-    internal::butterfly(xs);
-    internal::butterfly(ys);
-    T s_inv = T(1) / s;
+    f.resize(s);
+    g.resize(s);
+    internal::butterfly(f);
+    internal::butterfly(g);
+    modint s_inv = modint(1) / s;
     for (usize i: rep(0, s)) {
-      xs[i] *= ys[i] * s_inv;
+      f[i] *= g[i] * s_inv;
     }
-    internal::butterfly_inv(xs);
-    xs.resize(n + m - 1);
-    return xs;
+    internal::butterfly_inv(f);
+    f.resize(n + m - 1);
+    return f;
   }
 
 } // namespace luz
