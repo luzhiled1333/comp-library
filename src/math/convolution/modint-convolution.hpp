@@ -9,7 +9,7 @@
 
 namespace luz::internal {
 
-  template < class modint >
+  template < typename modint >
   class ButterflyInfo {
    public:
     ButterflyInfo() {
