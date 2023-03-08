@@ -1,5 +1,8 @@
 #pragma once
 
+#include "src/cpp-template/header/type-alias.hpp"
+#include "src/cpp-template/header/rep.hpp"
+
 #include <cassert>
 #include <vector>
 
@@ -175,12 +178,13 @@ namespace luz::internal {
       }
     }
   }
+
 } // namespace luz::internal
 
 namespace luz {
 
   template < typename T >
-  std::vector< T > convolution(std::vector< T > f,
+  std::vector< T > modint_convolution(std::vector< T > f,
                                std::vector< T > g) {
     assert(not f.empty() and not g.empty());
     usize n = f.size(), m = g.size();
