@@ -8,7 +8,7 @@ namespace luz {
 
   template < u32 mod >
   class StaticPrimeModInt {
-    using mint = StaticPrimeModInt;
+    using modint = StaticPrimeModInt;
 
     u32 v;
 
@@ -26,63 +26,63 @@ namespace luz {
       return v;
     }
 
-    mint &operator+=(const mint &rhs) {
+    modint &operator+=(const modint &rhs) {
       v += rhs.v;
       if (v >= mod) v -= mod;
       return *this;
     }
 
-    mint &operator-=(const mint &rhs) {
+    modint &operator-=(const modint &rhs) {
       v += mod - rhs.v;
       if (v >= mod) v -= mod;
       return *this;
     }
 
-    mint &operator*=(const mint &rhs) {
+    modint &operator*=(const modint &rhs) {
       v = (u32)(u64(1) * v * rhs.v % mod);
       return *this;
     }
 
-    mint &operator/=(const mint &rhs) {
+    modint &operator/=(const modint &rhs) {
       *this *= rhs.inverse();
       return *this;
     }
 
-    mint operator+() const {
+    modint operator+() const {
       return *this;
     }
 
-    mint operator-() const {
-      return mint() - *this;
+    modint operator-() const {
+      return modint() - *this;
     }
 
-    friend mint operator+(const mint &lhs, const mint &rhs) {
-      return mint(lhs) += rhs;
+    friend modint operator+(const modint &lhs, const modint &rhs) {
+      return modint(lhs) += rhs;
     }
 
-    friend mint operator-(const mint &lhs, const mint &rhs) {
-      return mint(lhs) -= rhs;
+    friend modint operator-(const modint &lhs, const modint &rhs) {
+      return modint(lhs) -= rhs;
     }
 
-    friend mint operator*(const mint &lhs, const mint &rhs) {
-      return mint(lhs) *= rhs;
+    friend modint operator*(const modint &lhs, const modint &rhs) {
+      return modint(lhs) *= rhs;
     }
 
-    friend mint operator/(const mint &lhs, const mint &rhs) {
-      return mint(lhs) /= rhs;
+    friend modint operator/(const modint &lhs, const modint &rhs) {
+      return modint(lhs) /= rhs;
     }
 
-    friend bool operator==(const mint &lhs, const mint &rhs) {
+    friend bool operator==(const modint &lhs, const modint &rhs) {
       return lhs.v == rhs.v;
     }
 
-    friend bool operator!=(const mint &lhs, const mint &rhs) {
+    friend bool operator!=(const modint &lhs, const modint &rhs) {
       return lhs.v != rhs.v;
     }
 
-    mint pow(i64 n) const {
+    modint pow(i64 n) const {
       assert(0 <= n);
-      mint x = *this, r = 1;
+      modint x = *this, r = 1;
       while (n) {
         if (n & 1) r *= x;
         x *= x;
@@ -91,7 +91,7 @@ namespace luz {
       return r;
     }
 
-    mint inverse() const {
+    modint inverse() const {
       assert(v != 0);
       return pow(mod - 2);
     }

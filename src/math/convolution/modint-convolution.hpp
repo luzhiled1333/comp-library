@@ -52,18 +52,18 @@ namespace luz::internal {
     }
     static std::vector< modint > roots, iroots, rate3, irate3;
   };
-  template < typename mint >
-  std::vector< mint > ButterflyInfo< mint >::roots =
-      std::vector< mint >();
-  template < typename mint >
-  std::vector< mint > ButterflyInfo< mint >::iroots =
-      std::vector< mint >();
-  template < typename mint >
-  std::vector< mint > ButterflyInfo< mint >::rate3 =
-      std::vector< mint >();
-  template < typename mint >
-  std::vector< mint > ButterflyInfo< mint >::irate3 =
-      std::vector< mint >();
+  template < typename modint >
+  std::vector< modint > ButterflyInfo< modint >::roots =
+      std::vector< modint >();
+  template < typename modint >
+  std::vector< modint > ButterflyInfo< modint >::iroots =
+      std::vector< modint >();
+  template < typename modint >
+  std::vector< modint > ButterflyInfo< modint >::rate3 =
+      std::vector< modint >();
+  template < typename modint >
+  std::vector< modint > ButterflyInfo< modint >::irate3 =
+      std::vector< modint >();
 
   template < typename modint >
   void butterfly(std::vector< modint > &vs) {
