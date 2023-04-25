@@ -111,8 +111,8 @@ data:
   timestamp: '2023-01-31 16:32:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/dsl_2_a.test.cpp
   - unit-test/data-structure/segment-tree/point-mapping-range-fold-segment-tree.test.cpp
+  - test/aoj/dsl_2_a.test.cpp
 documentation_of: src/data-structure/segment-tree/point-mapping-range-fold-segment-tree.hpp
 layout: document
 title: "\u4E00\u70B9\u66F4\u65B0+\u533A\u9593\u53D6\u5F97 \u30BB\u30B0\u30E1\u30F3\

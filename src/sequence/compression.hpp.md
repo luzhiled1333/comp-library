@@ -84,8 +84,8 @@ data:
   timestamp: '2022-08-24 11:33:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/4011.test.cpp
   - unit-test/sequence/compression.test.cpp
+  - test/aoj/4011.test.cpp
 documentation_of: src/sequence/compression.hpp
 layout: document
 title: "\u5EA7\u6A19\u5727\u7E2E"

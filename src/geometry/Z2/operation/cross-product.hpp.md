@@ -48,8 +48,8 @@ data:
   isVerificationFile: false
   path: src/geometry/Z2/operation/cross-product.hpp
   requiredBy:
-  - src/geometry/Z2/operation/ccw.hpp
   - src/geometry/Z2/segment-function/counterbalance-segments.hpp
+  - src/geometry/Z2/operation/ccw.hpp
   timestamp: '2022-11-18 16:59:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

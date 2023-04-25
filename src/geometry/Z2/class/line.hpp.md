@@ -62,8 +62,8 @@ data:
   isVerificationFile: false
   path: src/geometry/Z2/class/line.hpp
   requiredBy:
-  - src/geometry/Z2/segment-function/counterbalance-segments.hpp
   - src/geometry/Z2/normalize/line-normalize.hpp
+  - src/geometry/Z2/segment-function/counterbalance-segments.hpp
   timestamp: '2022-11-18 16:59:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

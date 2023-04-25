@@ -78,9 +78,9 @@ data:
   timestamp: '2022-08-29 17:30:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/atcoder/abc212_h.test.cpp
   - test/library-checker/bitwise_xor_convolution.test.cpp
   - test/library-checker/bitwise_and_convolution.test.cpp
-  - test/atcoder/abc212_h.test.cpp
 documentation_of: src/math/convolution/fast-walsh-hadamard-transform.hpp
 layout: document
 title: "\u9AD8\u901F\u30A6\u30A9\u30EB\u30B7\u30E5-\u30A2\u30C0\u30DE\u30FC\u30EB\u5909\

@@ -61,9 +61,9 @@ data:
   timestamp: '2023-02-10 17:57:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/atcoder/abc258_e/online-algorithm.test.cpp
   - unit-test/graph/online-query-jump-on-functional-graph.test.cpp
   - unit-test/utility/bit/bit-width.test.cpp
+  - test/atcoder/abc258_e/online-algorithm.test.cpp
 documentation_of: src/utility/bit/bit-width.hpp
 layout: document
 title: "\u5024\u3092\u8868\u73FE\u3059\u308B\u305F\u3081\u306B\u5FC5\u8981\u306A\u6700\

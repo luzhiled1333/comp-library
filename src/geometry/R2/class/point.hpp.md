@@ -105,9 +105,9 @@ data:
   path: src/geometry/R2/class/point.hpp
   requiredBy:
   - src/geometry/R2/class/line.hpp
+  - src/geometry/R2/class/circle.hpp
   - src/geometry/R2/class/segment.hpp
   - src/geometry/R2/class/polygon.hpp
-  - src/geometry/R2/class/circle.hpp
   timestamp: '2023-02-03 00:11:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

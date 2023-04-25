@@ -223,6 +223,9 @@ data:
   - name: src/math/modular-arithmetic
     pages:
     - icon: ':heavy_check_mark:'
+      path: src/math/modular-arithmetic/modular-combinatorics.hpp
+      title: "mod \u7D44\u5408\u305B (mod combinatorics)"
+    - icon: ':heavy_check_mark:'
       path: src/math/modular-arithmetic/static-modint.hpp
       title: src/math/modular-arithmetic/static-modint.hpp
   - name: src/math
@@ -305,6 +308,9 @@ data:
       title: test/aoj/ntl_1_d.test.cpp
   - name: test/atcoder
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/atcoder/abc132_d.test.cpp
+      title: test/atcoder/abc132_d.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/atcoder/abc177_d.test.cpp
       title: test/atcoder/abc177_d.test.cpp

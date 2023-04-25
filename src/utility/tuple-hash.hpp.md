@@ -66,8 +66,8 @@ data:
   timestamp: '2023-02-04 15:43:38+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/library-checker/jump_on_tree.test.cpp
   - unit-test/utility/tuple-hash.test.cpp
+  - test/library-checker/jump_on_tree.test.cpp
 documentation_of: src/utility/tuple-hash.hpp
 layout: document
 title: "std::tuple \u306E Hash"

@@ -7,6 +7,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc132_d.test.cpp
+    title: test/atcoder/abc132_d.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc212_h.test.cpp
     title: test/atcoder/abc212_h.test.cpp
   - icon: ':heavy_check_mark:'
@@ -93,11 +96,12 @@ data:
   timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/library-checker/bitwise_xor_convolution.test.cpp
-  - test/library-checker/bitwise_and_convolution.test.cpp
-  - test/atcoder/abc212_h.test.cpp
   - unit-test/math/modular-arithmetic/static-modint.test.cpp
   - unit-test/data-structure/fenwick-tree.test.cpp
+  - test/atcoder/abc212_h.test.cpp
+  - test/atcoder/abc132_d.test.cpp
+  - test/library-checker/bitwise_xor_convolution.test.cpp
+  - test/library-checker/bitwise_and_convolution.test.cpp
 documentation_of: src/math/modular-arithmetic/static-modint.hpp
 layout: document
 redirect_from:
