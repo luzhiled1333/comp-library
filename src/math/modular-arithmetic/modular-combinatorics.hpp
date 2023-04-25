@@ -76,6 +76,18 @@ namespace luz {
       if (n < 0 or r < 0) return 0;
       return (r ? combination(n + r - 1, r) : 1);
     }
+
+    static mint P(isize n, isize r) {
+      return permutation(n, r);
+    }
+
+    static mint C(isize n, isize r) {
+      return combination(n, r);
+    }
+
+    static mint H(isize n, isize r) {
+      return combination_with_repetitions(n, r);
+    }
   };
 
   template < typename mint >
