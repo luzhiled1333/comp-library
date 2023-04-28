@@ -1,9 +1,9 @@
 ---
 title: Number Theoretic Transform
-documentation_of: //src/math/convolution/mod-convoltion.hpp
+documentation_of: //src/math/convolution/modint-convoltion.hpp
 ---
 
-## mod_convolution
+## modint_convolution
 
 ```cpp
 std::vector< modint > modint_convolution(std::vector< modint > f, std::vector< modint > g)
