@@ -58,36 +58,36 @@ namespace luz::sssp {
       dijkstra(source);
     }
 
-    inline usize undefined() const {
-      return undefined_;
+    inline Graph< cost_type > get_original_graph() const {
+      return g;
     }
 
     inline cost_type inf() const {
       return inf_;
     }
 
-    inline cost_type dist(const usize v) const {
+    inline cost_type distance(const usize v) const {
       return ds[v];
-    }
-
-    inline usize from_on_shortest_path_tree(const usize v) const {
-      return froms[v];
-    }
-
-    inline usize edge_label(const usize v) const {
-      return ids[v];
-    }
-
-    inline Graph< cost_type > get_original_graph() const {
-      return g;
     }
 
     inline std::vector< cost_type > get_distances() const {
       return ds;
     }
 
-    inline std::vector< usize > get_shortest_path_tree() const {
+    inline usize undefined() const {
+      return undefined_;
+    }
+
+    inline usize parent(const usize v) const {
+      return froms[v];
+    }
+
+    inline std::vector< usize > get_parents() const {
       return froms;
+    }
+
+    inline usize edge_label(const usize v) const {
+      return ids[v];
     }
 
     inline std::vector< usize > get_edge_labels() const {
