@@ -80,7 +80,7 @@ namespace luz::sssp {
       return parents[v];
     }
 
-    inline std::vector< usize > get_parent() const {
+    inline std::vector< usize > get_parents() const {
       return parents;
     }
 
