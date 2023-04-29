@@ -27,6 +27,22 @@ sssp::InNonNegativeWeightedGraph(const Graph<cost_type> &g, usize s)
 ### 計算量
 - $O(\|E\| + \|V\| \log \|V\|)$
 
+## get_original_graph
+```
+Graph< cost_type > get_original_graph() const
+```
+
+もとのグラフを返す。
+
+## inf
+```
+cost_type inf() const
+```
+
+$s$ からの経路が存在しないような頂点 $v$ への $s$ からの最短経路のコストとして定義されている値を返す。
+
+内部では `std::numeric_limits< cost_type >::max()` によって定義されている。
+
 ## distance
 ```
 cost_type distance(const usize v) const
@@ -42,6 +58,15 @@ std::vector< cost_type > get_distances() const
 各頂点に対する `distance` を `std::vector` で wrap して返す。`distance(v)` は `v` 番目の要素として表される。
 
 $s$ からの経路が存在しないような頂点へのコストは `inf()` として定義されている。
+
+## undefined
+```
+usize undefined() const
+```
+
+構成された最短経路木において親が存在しないときに返される値。
+
+内部では `std::numeric_limits< usize >::max()` によって定義されている。
 
 ## parent
 ```
@@ -78,29 +103,4 @@ usize get_edge_labels() const
 各頂点に対する `edge_label(v)` を `std::vector` で wrap して返す。`edge_label(v)` は `v` 番目の要素として表される。
 
 親が存在しないような頂点に対応する要素は `undefined()` となる。
-
-## get_original_graph
-```
-Graph< cost_type > get_original_graph() const
-```
-
-もとのグラフを返す。
-
-## inf
-```
-cost_type inf() const
-```
-
-$s$ からの経路が存在しないような頂点 $v$ への $s$ からの最短経路のコストとして定義されている値を返す。
-
-内部では `std::numeric_limits< cost_type >::max()` によって定義されている。
-
-## undefined
-```
-usize undefined() const
-```
-
-構成された最短経路木において親が存在しないときに返される値。
-
-内部では `std::numeric_limits< usize >::max()` によって定義されている。
 
