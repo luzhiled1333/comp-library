@@ -1,4 +1,3 @@
-// verification-helper: IGNORE
 // verification-helper: PROBLEM https://atcoder.jp/contests/abc291/tasks/abc291_e
 
 #include "src/cpp-template/header/rep.hpp"
