@@ -1,5 +1,5 @@
 ---
-title: Dijkstra's Algorithm
+title: 非負重み単一始点最短経路 (Single Source Shortest Path in Non-negative Weighted Graph, Dijkstra's Algorithm)
 documentation_of: //src/graph/single-source-shortest-path/in-non-negative-weighted-graph.hpp
 ---
 
