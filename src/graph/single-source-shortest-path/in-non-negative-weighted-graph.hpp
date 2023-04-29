@@ -22,7 +22,7 @@ namespace luz::sssp {
     Graph< cost_type > g;
     usize g_size;
     std::vector< cost_type > ds;
-    std::vector< usize > froms, ids;
+    std::vector< usize > parents, ids;
 
     void dijkstra(usize s) {
       using pq_type = std::pair< cost_type, usize >;
@@ -41,7 +41,7 @@ namespace luz::sssp {
         for (auto &e: g[v]) {
           if (chmin(ds[e.to], cost + e.cost)) {
             pq.emplace(ds[e.to], e.to);
-            froms[e.to] = v;
+            parents[e.to] = v;
             ids[e.to]   = e.id;
           }
         }
@@ -53,7 +53,7 @@ namespace luz::sssp {
         : g(g_),
           g_size(g.size()),
           ds(g_size, inf_),
-          froms(g_size, undefined_),
+          parents(g_size, undefined_),
           ids(g_size, undefined_) {
       dijkstra(source);
     }
@@ -79,11 +79,11 @@ namespace luz::sssp {
     }
 
     inline usize parent(const usize v) const {
-      return froms[v];
+      return parents[v];
     }
 
     inline std::vector< usize > get_parents() const {
-      return froms;
+      return parents;
     }
 
     inline usize edge_label(const usize v) const {
