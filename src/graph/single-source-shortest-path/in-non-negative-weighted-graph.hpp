@@ -42,14 +42,15 @@ namespace luz::sssp {
           if (chmin(ds[e.to], cost + e.cost)) {
             pq.emplace(ds[e.to], e.to);
             parents[e.to] = v;
-            ids[e.to]   = e.id;
+            ids[e.to]     = e.id;
           }
         }
       }
     }
 
    public:
-    explicit InNonNegativeWeightedGraph(const Graph< cost_type > &g_, usize source)
+    explicit InNonNegativeWeightedGraph(const Graph< cost_type > &g_,
+                                        usize source)
         : g(g_),
           g_size(g.size()),
           ds(g_size, inf_),
@@ -95,4 +96,4 @@ namespace luz::sssp {
     }
   };
 
-} // namespace luz
+} // namespace luz::sssp

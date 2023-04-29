@@ -12,7 +12,8 @@ namespace luz::sssp {
   template < typename cost_type >
   class InUnweightedGraph {
 
-    static constexpr usize undefined_ = std::numeric_limits< usize >::max();
+    static constexpr usize undefined_ =
+        std::numeric_limits< usize >::max();
     static constexpr usize inf_ = std::numeric_limits< usize >::max();
 
     using graph = Graph< cost_type >;
