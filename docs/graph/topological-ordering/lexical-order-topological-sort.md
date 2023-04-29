@@ -13,6 +13,8 @@ lexical_order_topological_sort(
 
 辞書順最大、または辞書順最小のトポロジカル順序を求める。
 
+非連結な場合や DAG でない場合は空の `std::vector` が返る。
+
 ### usage
 #### 辞書順最小を求める場合
 ```cpp

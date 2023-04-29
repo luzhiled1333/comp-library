@@ -36,6 +36,10 @@ namespace luz {
       }
     }
 
+    if (result.size() != n) {
+      return {};
+    }
+
     return result;
   }
 
