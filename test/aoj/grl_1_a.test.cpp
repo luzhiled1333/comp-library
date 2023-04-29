@@ -3,8 +3,8 @@
 #include "src/cpp-template/header/input.hpp"
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
-#include "src/graph/single-source-shortest-path/in-non-negative-weighted-graph.hpp"
 #include "src/graph/graph-template.hpp"
+#include "src/graph/single-source-shortest-path/in-non-negative-weighted-graph.hpp"
 
 #include <iostream>
 
