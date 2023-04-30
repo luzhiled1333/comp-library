@@ -32,4 +32,4 @@ namespace luz {
   using RangeMaximumQuerySolver =
       SegmentTree< monoid::RangeMaximumQueryMonoid< T > >;
 
-}
+} // namespace luz

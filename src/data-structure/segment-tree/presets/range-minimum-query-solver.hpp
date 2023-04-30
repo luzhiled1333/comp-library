@@ -32,4 +32,4 @@ namespace luz {
   using RangeMinimumQuerySolver =
       SegmentTree< monoid::RangeMinimumQueryMonoid< T > >;
 
-}
+} // namespace luz
