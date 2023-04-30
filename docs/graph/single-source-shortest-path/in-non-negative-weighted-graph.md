@@ -11,7 +11,7 @@ documentation_of: //src/graph/single-source-shortest-path/in-non-negative-weight
 sssp::InNonNegativeWeightedGraph(const Graph<cost_type> &g, usize s)
 ```
 
-不辺がないようなグラフ $G$ において、頂点 $s$ からの単一始点最短経路問題を解く。
+負辺がないようなグラフ $G$ において、頂点 $s$ からの単一始点最短経路問題を解く。
 
 コンストラクタ内部では以下が行われている。
 
@@ -25,7 +25,7 @@ sssp::InNonNegativeWeightedGraph(const Graph<cost_type> &g, usize s)
 - 任意の頂点について $s$ からの最短経路のコストが `cost_type` に収まる。
 
 ### 計算量
-- $O(\|E\| + \|V\| \log \|V\|)$
+- $O((\|E\| + \|V\|) \log \|V\|)$
 
 ## get_original_graph
 ```
