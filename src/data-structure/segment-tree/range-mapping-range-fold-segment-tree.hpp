@@ -39,8 +39,8 @@ namespace luz {
     }
 
     void recalc(usize index) {
-      tree[index].value =
-          V::operation(tree[index << 1 | 0].get(), tree[index << 1 | 1].get());
+      tree[index].value = V::operation(tree[index << 1 | 0].get(),
+                                       tree[index << 1 | 1].get());
     }
 
     void recalc_bound(usize index) {
