@@ -1,6 +1,6 @@
 ---
-title: 重みなし単一始点最短経路 (Single Source Shortest Path in Unweighted Graph, BFS)
-documentation_of: //src/graph/single-source-shortest-path/in-unweighted-graph.hpp
+title: 非負重み単一始点最短経路 (Single Source Shortest Path in Non-negative Weighted Graph, Dijkstra's Algorithm)
+documentation_of: //src/graph/single-source-shortest-path/in-non-negative-weighted-graph.hpp
 ---
 
 ## Appendix
@@ -8,12 +8,10 @@ documentation_of: //src/graph/single-source-shortest-path/in-unweighted-graph.hp
 
 ## コンストラクタ
 ```
-sssp::InUnweightedGraph(const Graph<cost_type> &g, usize s)
+sssp::InNonNegativeWeightedGraph(const Graph<cost_type> &g, usize s)
 ```
 
-頂点 $s$ からの重みなし単一始点最短経路問題を解く。
-
-コンストラクタに渡されるグラフ $G$ の各辺は重みをもつことが可能であるが、内部では辺の存在のみを用いて最短経路を計算している。このため、例えば任意の辺の重みが正の定数 $c$ であったとすると、最短経路のコストが $\frac{1}{c}$ 倍された値が計算されることになる。
+負辺がないようなグラフ $G$ において、頂点 $s$ からの単一始点最短経路問題を解く。
 
 コンストラクタ内部では以下が行われている。
 
@@ -22,8 +20,12 @@ sssp::InUnweightedGraph(const Graph<cost_type> &g, usize s)
   - 親の頂点番号
   - 親との間にある辺の辺番号
 
+### 制約
+- 各辺のコストは非負整数である。
+- 任意の頂点について $s$ からの最短経路のコストが `cost_type` に収まる。
+
 ### 計算量
-- $O(\|V\| + \|E\|)$
+- $O((\|E\| + \|V\|) \log \|V\|)$
 
 ## get_original_graph
 ```
@@ -34,36 +36,32 @@ Graph< cost_type > get_original_graph() const
 
 ## inf
 ```
-static usize inf() const
+cost_type inf() const
 ```
 
 $s$ からの経路が存在しないような頂点 $v$ への $s$ からの最短経路のコストとして定義されている値を返す。
 
-内部では `std::numeric_limits< usize >::max()` によって定義されている。
+内部では `std::numeric_limits< cost_type >::max()` によって定義されている。
 
 ## distance
 ```
-usize distance(const usize v) const
+cost_type distance(const usize v) const
 ```
 
 $s$ から $v$ への最短経路のコストを返す。経路が存在しない場合のコストは `inf()` として定義されている。
 
-戻り値の型が `cost_type` ではなく `usize` であることに注意。
-
 ## get_distances
 ```
-std::vector< usize > get_distances() const
+std::vector< cost_type > get_distances() const
 ```
 
 各頂点に対する `distance` を `std::vector` で wrap して返す。`distance(v)` は `v` 番目の要素として表される。
 
 $s$ からの経路が存在しないような頂点へのコストは `inf()` として定義されている。
 
-戻り値の型が `std::vector< cost_type >` ではなく `std::vector< usize >` であることに注意。
-
 ## undefined
 ```
-static usize undefined() const
+usize undefined() const
 ```
 
 構成された最短経路木において親が存在しないときに返される値。
@@ -79,7 +77,7 @@ usize parent(const usize v) const
 
 親が存在しない場合 `undefined()` が返される。
 
-## get_parents 
+## get_parents
 ```
 std::vector< usize > get_parents() const
 ```
@@ -105,3 +103,4 @@ usize get_edge_labels() const
 各頂点に対する `edge_label(v)` を `std::vector` で wrap して返す。`edge_label(v)` は `v` 番目の要素として表される。
 
 親が存在しないような頂点に対応する要素は `undefined()` となる。
+
