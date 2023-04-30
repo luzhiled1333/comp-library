@@ -47,12 +47,12 @@ data:
   requiredBy:
   - src/geometry/R2/utility/equals.hpp
   - src/geometry/R2/utility/sign.hpp
-  - src/geometry/R2/class/line.hpp
   - src/geometry/R2/class/vector.hpp
-  - src/geometry/R2/class/circle.hpp
-  - src/geometry/R2/class/point.hpp
-  - src/geometry/R2/class/segment.hpp
   - src/geometry/R2/class/polygon.hpp
+  - src/geometry/R2/class/circle.hpp
+  - src/geometry/R2/class/line.hpp
+  - src/geometry/R2/class/segment.hpp
+  - src/geometry/R2/class/point.hpp
   timestamp: '2023-02-03 00:11:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

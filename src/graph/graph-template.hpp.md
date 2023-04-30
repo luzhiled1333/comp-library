@@ -33,6 +33,10 @@ data:
     path: src/graph/single-source-shortest-path/in-unweighted-graph.hpp
     title: "\u91CD\u307F\u306A\u3057\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u7D4C\u8DEF\
       \ (Single Source Shortest Path in Unweighted Graph, BFS)"
+  - icon: ':heavy_check_mark:'
+    path: src/graph/topological-ordering/lexical-order-topological-sort.hpp
+    title: "\u8F9E\u66F8\u9806\u6700\u5927/\u6700\u5C0F\u306E\u30C8\u30DD\u30ED\u30B8\
+      \u30AB\u30EB\u30BD\u30FC\u30C8"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/grl_1_a.test.cpp
@@ -46,6 +50,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc258_e/online-algorithm.test.cpp
     title: test/atcoder/abc258_e/online-algorithm.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc291_e.test.cpp
+    title: test/atcoder/abc291_e.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/library-checker/jump_on_tree.test.cpp
     title: test/library-checker/jump_on_tree.test.cpp
@@ -107,23 +114,25 @@ data:
   isVerificationFile: false
   path: src/graph/graph-template.hpp
   requiredBy:
+  - src/graph/online-query-jump-on-functional-graph.hpp
+  - src/graph/topological-ordering/lexical-order-topological-sort.hpp
+  - src/graph/offline-query-level-ancestor.hpp
+  - src/graph/offline-query-jump-on-tree.hpp
+  - src/graph/offline-query-lowest-common-ancestor.hpp
+  - src/graph/dijkstra.hpp
   - src/graph/single-source-shortest-path/in-unweighted-graph.hpp
   - src/graph/offline-query-jump-on-functional-graph.hpp
-  - src/graph/offline-query-level-ancestor.hpp
-  - src/graph/dijkstra.hpp
-  - src/graph/offline-query-lowest-common-ancestor.hpp
-  - src/graph/online-query-jump-on-functional-graph.hpp
-  - src/graph/offline-query-jump-on-tree.hpp
   timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - unit-test/graph/online-query-jump-on-functional-graph.test.cpp
   - unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
-  - test/atcoder/abc258_e/offline-algorithm.test.cpp
   - test/atcoder/abc258_e/online-algorithm.test.cpp
-  - test/library-checker/jump_on_tree.test.cpp
-  - test/aoj/grl_1_a.test.cpp
+  - test/atcoder/abc258_e/offline-algorithm.test.cpp
+  - test/atcoder/abc291_e.test.cpp
   - test/aoj/grl_5_c.test.cpp
+  - test/aoj/grl_1_a.test.cpp
+  - test/library-checker/jump_on_tree.test.cpp
 documentation_of: src/graph/graph-template.hpp
 layout: document
 title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"

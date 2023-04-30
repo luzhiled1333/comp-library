@@ -67,18 +67,18 @@ data:
   isVerificationFile: false
   path: src/utility/bit/popcount.hpp
   requiredBy:
-  - src/graph/online-query-jump-on-functional-graph.hpp
   - src/utility/bit/count-trailing-0s.hpp
   - src/utility/bit/bit-width.hpp
   - src/utility/bit/count-leading-0s.hpp
+  - src/graph/online-query-jump-on-functional-graph.hpp
   timestamp: '2023-02-10 17:57:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - unit-test/graph/online-query-jump-on-functional-graph.test.cpp
-  - unit-test/utility/bit/count-leading-0s.test.cpp
-  - unit-test/utility/bit/count-trailing-0s.test.cpp
   - unit-test/utility/bit/bit-width.test.cpp
   - unit-test/utility/bit/popcount.test.cpp
+  - unit-test/utility/bit/count-leading-0s.test.cpp
+  - unit-test/utility/bit/count-trailing-0s.test.cpp
+  - unit-test/graph/online-query-jump-on-functional-graph.test.cpp
   - test/atcoder/abc258_e/online-algorithm.test.cpp
 documentation_of: src/utility/bit/popcount.hpp
 layout: document

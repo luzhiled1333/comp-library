@@ -208,6 +208,12 @@ data:
       path: src/graph/single-source-shortest-path/in-unweighted-graph.hpp
       title: "\u91CD\u307F\u306A\u3057\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u7D4C\u8DEF\
         \ (Single Source Shortest Path in Unweighted Graph, BFS)"
+  - name: src/graph/topological-ordering
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/graph/topological-ordering/lexical-order-topological-sort.hpp
+      title: "\u8F9E\u66F8\u9806\u6700\u5927/\u6700\u5C0F\u306E\u30C8\u30DD\u30ED\u30B8\
+        \u30AB\u30EB\u30BD\u30FC\u30C8"
   - name: src/math/convolution
     pages:
     - icon: ':heavy_check_mark:'
@@ -323,6 +329,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/atcoder/abc259_d.test.cpp
       title: test/atcoder/abc259_d.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/atcoder/abc291_e.test.cpp
+      title: test/atcoder/abc291_e.test.cpp
   - name: test/atcoder/abc258_e
     pages:
     - icon: ':heavy_check_mark:'

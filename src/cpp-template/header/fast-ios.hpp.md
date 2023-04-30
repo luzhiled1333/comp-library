@@ -35,8 +35,8 @@ data:
   timestamp: '2022-07-16 04:59:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/library-checker/jump_on_tree.test.cpp
   - test/aoj/itp1_1_a.test.cpp
+  - test/library-checker/jump_on_tree.test.cpp
 documentation_of: src/cpp-template/header/fast-ios.hpp
 layout: document
 title: Fast I/O

@@ -73,8 +73,8 @@ data:
   isVerificationFile: false
   path: src/math/convolution/fast-walsh-hadamard-transform.hpp
   requiredBy:
-  - src/math/convolution/bitwise-and-convolution.hpp
   - src/math/convolution/bitwise-xor-convolution.hpp
+  - src/math/convolution/bitwise-and-convolution.hpp
   timestamp: '2022-08-29 17:30:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

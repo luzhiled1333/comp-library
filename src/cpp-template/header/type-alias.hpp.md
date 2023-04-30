@@ -107,6 +107,10 @@ data:
     title: "\u91CD\u307F\u306A\u3057\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u7D4C\u8DEF\
       \ (Single Source Shortest Path in Unweighted Graph, BFS)"
   - icon: ':heavy_check_mark:'
+    path: src/graph/topological-ordering/lexical-order-topological-sort.hpp
+    title: "\u8F9E\u66F8\u9806\u6700\u5927/\u6700\u5C0F\u306E\u30C8\u30DD\u30ED\u30B8\
+      \u30AB\u30EB\u30BD\u30FC\u30C8"
+  - icon: ':heavy_check_mark:'
     path: src/math/convolution/bitwise-and-convolution.hpp
     title: src/math/convolution/bitwise-and-convolution.hpp
   - icon: ':heavy_check_mark:'
@@ -212,6 +216,9 @@ data:
     path: test/atcoder/abc259_d.test.cpp
     title: test/atcoder/abc259_d.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc291_e.test.cpp
+    title: test/atcoder/abc291_e.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/bitwise_and_convolution.test.cpp
     title: test/library-checker/bitwise_and_convolution.test.cpp
   - icon: ':heavy_check_mark:'
@@ -286,92 +293,94 @@ data:
   isVerificationFile: false
   path: src/cpp-template/header/type-alias.hpp
   requiredBy:
-  - src/graph/single-source-shortest-path/in-unweighted-graph.hpp
-  - src/graph/offline-query-jump-on-functional-graph.hpp
-  - src/graph/graph-template.hpp
-  - src/graph/offline-query-level-ancestor.hpp
-  - src/graph/dijkstra.hpp
-  - src/graph/offline-query-lowest-common-ancestor.hpp
-  - src/graph/max-flow.hpp
-  - src/graph/online-query-jump-on-functional-graph.hpp
-  - src/graph/offline-query-jump-on-tree.hpp
-  - src/sequence/compression.hpp
-  - src/sequence/run-length-encoding.hpp
-  - src/geometry/Z2/constants/ccw-constants.hpp
-  - src/geometry/Z2/segment-function/counterbalance-segments.hpp
-  - src/geometry/Z2/operation/ccw.hpp
-  - src/geometry/Z2/utility/next-idx.hpp
-  - src/geometry/Z2/utility/polygon-to-segments.hpp
-  - src/geometry/R2/utility/equals.hpp
-  - src/geometry/R2/utility/sign.hpp
-  - src/geometry/R2/class/line.hpp
-  - src/geometry/R2/class/vector.hpp
-  - src/geometry/R2/class/circle.hpp
-  - src/geometry/R2/class/point.hpp
-  - src/geometry/R2/class/segment.hpp
-  - src/geometry/R2/class/polygon.hpp
   - src/cpp-template/template.cpp
+  - src/cpp-template/header/rep.hpp
   - src/cpp-template/header/template-header.hpp
+  - src/cpp-template/header/vector-ios.hpp
+  - src/cpp-template/header/io-set.hpp
   - src/cpp-template/header/input.hpp
   - src/cpp-template/header/make-vector.hpp
-  - src/cpp-template/header/io-set.hpp
-  - src/cpp-template/header/rep.hpp
-  - src/cpp-template/header/vector-ios.hpp
-  - src/math/totient.hpp
-  - src/math/modular-arithmetic/modular-combinatorics.hpp
-  - src/math/modular-arithmetic/static-modint.hpp
-  - src/math/convolution/fast-walsh-hadamard-transform.hpp
-  - src/math/convolution/bitwise-and-convolution.hpp
-  - src/math/convolution/bitwise-xor-convolution.hpp
-  - src/math/totient-enumeration.hpp
-  - src/data-structure/fenwick-tree.hpp
-  - src/data-structure/segment-tree/point-mapping-range-fold-segment-tree.hpp
-  - src/data-structure/disjoint-set-union.hpp
   - src/utility/pair-hash.hpp
   - src/utility/tuple-hash.hpp
   - src/utility/bit/count-trailing-0s.hpp
-  - src/utility/bit/popcount.hpp
   - src/utility/bit/bit-width.hpp
+  - src/utility/bit/popcount.hpp
   - src/utility/bit/count-leading-0s.hpp
+  - src/graph/online-query-jump-on-functional-graph.hpp
+  - src/graph/topological-ordering/lexical-order-topological-sort.hpp
+  - src/graph/offline-query-level-ancestor.hpp
+  - src/graph/offline-query-jump-on-tree.hpp
+  - src/graph/offline-query-lowest-common-ancestor.hpp
+  - src/graph/dijkstra.hpp
+  - src/graph/single-source-shortest-path/in-unweighted-graph.hpp
+  - src/graph/max-flow.hpp
+  - src/graph/graph-template.hpp
+  - src/graph/offline-query-jump-on-functional-graph.hpp
+  - src/geometry/R2/utility/equals.hpp
+  - src/geometry/R2/utility/sign.hpp
+  - src/geometry/R2/class/vector.hpp
+  - src/geometry/R2/class/polygon.hpp
+  - src/geometry/R2/class/circle.hpp
+  - src/geometry/R2/class/line.hpp
+  - src/geometry/R2/class/segment.hpp
+  - src/geometry/R2/class/point.hpp
+  - src/geometry/Z2/constants/ccw-constants.hpp
+  - src/geometry/Z2/utility/next-idx.hpp
+  - src/geometry/Z2/utility/polygon-to-segments.hpp
+  - src/geometry/Z2/operation/ccw.hpp
+  - src/geometry/Z2/segment-function/counterbalance-segments.hpp
+  - src/data-structure/disjoint-set-union.hpp
+  - src/data-structure/fenwick-tree.hpp
+  - src/data-structure/segment-tree/point-mapping-range-fold-segment-tree.hpp
+  - src/sequence/run-length-encoding.hpp
+  - src/sequence/compression.hpp
+  - src/math/totient-enumeration.hpp
+  - src/math/modular-arithmetic/static-modint.hpp
+  - src/math/modular-arithmetic/modular-combinatorics.hpp
+  - src/math/convolution/bitwise-xor-convolution.hpp
+  - src/math/convolution/fast-walsh-hadamard-transform.hpp
+  - src/math/convolution/bitwise-and-convolution.hpp
+  - src/math/totient.hpp
   timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - unit-test/graph/online-query-jump-on-functional-graph.test.cpp
-  - unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
-  - unit-test/sequence/compression.test.cpp
-  - unit-test/geometry/R2/class/vector-and-point.test.cpp
-  - unit-test/math/totient-enumeration.test.cpp
-  - unit-test/math/modular-arithmetic/static-modint.test.cpp
-  - unit-test/math/totient.test.cpp
-  - unit-test/data-structure/segment-tree/point-mapping-range-fold-segment-tree.test.cpp
-  - unit-test/data-structure/fenwick-tree.test.cpp
-  - unit-test/utility/pair-hash.test.cpp
-  - unit-test/utility/tuple-hash.test.cpp
-  - unit-test/utility/bit/count-leading-0s.test.cpp
-  - unit-test/utility/bit/count-trailing-0s.test.cpp
   - unit-test/utility/bit/bit-width.test.cpp
   - unit-test/utility/bit/popcount.test.cpp
+  - unit-test/utility/bit/count-leading-0s.test.cpp
+  - unit-test/utility/bit/count-trailing-0s.test.cpp
+  - unit-test/utility/pair-hash.test.cpp
+  - unit-test/utility/tuple-hash.test.cpp
+  - unit-test/graph/online-query-jump-on-functional-graph.test.cpp
+  - unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
+  - unit-test/geometry/R2/class/vector-and-point.test.cpp
+  - unit-test/data-structure/fenwick-tree.test.cpp
+  - unit-test/data-structure/segment-tree/point-mapping-range-fold-segment-tree.test.cpp
+  - unit-test/sequence/compression.test.cpp
+  - unit-test/math/totient.test.cpp
+  - unit-test/math/totient-enumeration.test.cpp
+  - unit-test/math/modular-arithmetic/static-modint.test.cpp
+  - test/atcoder/abc258_e/online-algorithm.test.cpp
+  - test/atcoder/abc258_e/offline-algorithm.test.cpp
+  - test/atcoder/abc259_c.test.cpp
+  - test/atcoder/abc132_d.test.cpp
   - test/atcoder/abc212_h.test.cpp
   - test/atcoder/abc177_d.test.cpp
-  - test/atcoder/abc132_d.test.cpp
+  - test/atcoder/abc291_e.test.cpp
   - test/atcoder/abc259_d.test.cpp
-  - test/atcoder/abc258_e/offline-algorithm.test.cpp
-  - test/atcoder/abc258_e/online-algorithm.test.cpp
-  - test/atcoder/abc259_c.test.cpp
-  - test/library-checker/bitwise_xor_convolution.test.cpp
-  - test/library-checker/jump_on_tree.test.cpp
-  - test/library-checker/unionfind.test.cpp
-  - test/library-checker/bitwise_and_convolution.test.cpp
+  - test/aoj/4011.test.cpp
+  - test/aoj/grl_5_c.test.cpp
+  - test/aoj/itp1_1_a.test.cpp
+  - test/aoj/2286.test.cpp
+  - test/aoj/dsl_1_a.test.cpp
+  - test/aoj/ntl_1_d.test.cpp
   - test/aoj/grl_6_a.test.cpp
   - test/aoj/grl_1_a.test.cpp
-  - test/aoj/2286.test.cpp
-  - test/aoj/ntl_1_d.test.cpp
-  - test/aoj/itp1_1_a.test.cpp
-  - test/aoj/grl_5_c.test.cpp
-  - test/aoj/dsl_1_a.test.cpp
-  - test/aoj/dsl_2_a.test.cpp
-  - test/aoj/4011.test.cpp
   - test/aoj/dsl_2_b.test.cpp
+  - test/aoj/dsl_2_a.test.cpp
+  - test/library-checker/unionfind.test.cpp
+  - test/library-checker/bitwise_xor_convolution.test.cpp
+  - test/library-checker/bitwise_and_convolution.test.cpp
+  - test/library-checker/jump_on_tree.test.cpp
 documentation_of: src/cpp-template/header/type-alias.hpp
 layout: document
 title: Type alias

@@ -61,8 +61,8 @@ data:
   timestamp: '2023-02-10 17:57:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - unit-test/graph/online-query-jump-on-functional-graph.test.cpp
   - unit-test/utility/bit/bit-width.test.cpp
+  - unit-test/graph/online-query-jump-on-functional-graph.test.cpp
   - test/atcoder/abc258_e/online-algorithm.test.cpp
 documentation_of: src/utility/bit/bit-width.hpp
 layout: document

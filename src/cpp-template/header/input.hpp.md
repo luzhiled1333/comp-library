@@ -52,9 +52,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/atcoder/abc212_h.test.cpp
+  - test/aoj/itp1_1_a.test.cpp
   - test/aoj/grl_6_a.test.cpp
   - test/aoj/grl_1_a.test.cpp
-  - test/aoj/itp1_1_a.test.cpp
 documentation_of: src/cpp-template/header/input.hpp
 layout: document
 title: input
