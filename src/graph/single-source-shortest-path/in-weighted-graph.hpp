@@ -13,11 +13,11 @@ namespace luz::sssp {
   class InWeightedGraph {
     using graph = Graph< cost_type >;
 
-    constexpr cost_type inf_ =
+    static constexpr cost_type inf_ =
         std::numeric_limits< cost_type >::max();
-    constexpr cost_type negative_inf_ =
+    static constexpr cost_type negative_inf_ =
         std::numeric_limits< cost_type >::min();
-    constexpr usize undefined_ = std::numeric_limits< usize >::max();
+    static constexpr usize undefined_ = std::numeric_limits< usize >::max();
 
     graph g;
     usize g_size;
@@ -89,11 +89,11 @@ namespace luz::sssp {
       return g;
     }
 
-    inline cost_type inf() const {
+    static inline cost_type inf() {
       return inf_;
     }
 
-    inline cost_type negative_inf() const {
+    static inline cost_type negative_inf() {
       return negative_inf_;
     }
 
@@ -105,7 +105,7 @@ namespace luz::sssp {
       return ds;
     }
 
-    inline usize undefined() const {
+    static inline usize undefined() {
       return undefined_;
     }
 
