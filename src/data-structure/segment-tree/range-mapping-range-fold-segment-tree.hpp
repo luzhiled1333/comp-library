@@ -13,9 +13,9 @@ namespace luz {
   template < class combined_structure >
   class RangeMappingRangeFoldSegmentTree {
     using C  = combined_structure;
-    using V  = C::value_structure;
+    using V  = typename C::value_structure;
     using VT = typename V::value_type;
-    using O  = C::operator_structure;
+    using O  = typename C::operator_structure;
     using OT = typename O::value_type;
 
     class node_type {
@@ -39,14 +39,14 @@ namespace luz {
     }
 
     void recalc(usize index) {
-      tree[index] =
-          V::operation(tree[index << 1 | 0], tree[index << 1 | 1]);
+      tree[index].value =
+          V::operation(tree[index << 1 | 0].get(), tree[index << 1 | 1].get());
     }
 
     void recalc_bound(usize index) {
       if (index == 0) return;
 
-      const usize l = countr_zero(index);
+      const usize l = countr_zero(index) + 1;
       const usize r = bit_width(index);
       for (usize i: rep(l, r)) {
         recalc(index >> i);
@@ -74,7 +74,7 @@ namespace luz {
 
     RangeMappingRangeFoldSegmentTree() = default;
     explicit RangeMappingRangeFoldSegmentTree(const usize n)
-        : tree(n * 2, V::identity()) {}
+        : tree(n * 2, node_type(V::identity(), O::identity())) {}
     explicit RangeMappingRangeFoldSegmentTree(
         const std::vector< VT > &vs)
         : RangeMappingRangeFoldSegmentTree(vs.size()) {
@@ -84,9 +84,11 @@ namespace luz {
     void build(const std::vector< VT > &vs) {
       usize n = vs.size();
       assert(2 * n == tree.size());
-      std::copy(vs.begin(), vs.end(), tree.begin() + n);
+      for (usize i: rep(0, n)) {
+        tree[i + n] = node_type(vs[i], O::identity());
+      }
       for (usize index: rrep(1, n)) {
-        evaluate(index);
+        recalc(index);
       }
     }
 
@@ -146,11 +148,11 @@ namespace luz {
       recalc_bound(c_last);
     }
 
-    VT fold(usize index) const {
+    VT fold(usize index) {
       return fold(index, index + 1);
     }
 
-    VT fold(usize first, usize last) const {
+    VT fold(usize first, usize last) {
       assert(first <= last);
       assert(last <= size());
 
@@ -182,7 +184,7 @@ namespace luz {
       return V::operation(fold_l, fold_r);
     }
 
-    VT fold_all() const {
+    VT fold_all() {
       return (size() ? tree[1] : V::identity());
     }
   };

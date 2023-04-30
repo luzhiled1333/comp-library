@@ -78,9 +78,9 @@ $a_i \leftarrow x$ で更新する。
 
 ## fold
 ```
-(1) VT fold(usize i) const
-(2) VT fold(usize l, usize r) const
-(3) VT fold_all() const
+(1) VT fold(usize i)
+(2) VT fold(usize l, usize r)
+(3) VT fold_all()
 ```
 
 1. $a_i$ を返す。
