@@ -5,6 +5,7 @@
 #include "src/data-structure/segment-tree/presets/range-chmin-query-solver.hpp"
 
 #include <iostream>
+#include <vector>
 
 namespace luz {
 
@@ -15,7 +16,7 @@ namespace luz {
     std::vector< i32 > init(n, n - 1);
     RangeChminQuerySolver< i32 > v_seg(init), h_seg(init);
 
-    u64 ans = (n - 2) * (n - 2);
+    u64 ans = u64(n - 2) * u64(n - 2);
     for ([[maybe_unused]] usize _: rep(0, q)) {
       usize type, x;
       std::cin >> type >> x;
