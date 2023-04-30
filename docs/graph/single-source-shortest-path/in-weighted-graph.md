@@ -25,7 +25,7 @@ sssp::InWeightedGraph(const Graph<cost_type> &g, usize s)
 
 ## get_original_graph
 ```
-Graph< cost_type > get_original_graph()
+Graph< cost_type > get_original_graph() const
 ```
 
 もとのグラフを返す。
@@ -95,7 +95,7 @@ std::vector< usize > get_parents() const
 
 ## edge_label
 ```
-usize edge_label(const usize v)
+usize edge_label(const usize v) const
 ```
 
 構成された最短経路木における `v` とその親との間にある辺の、もとのグラフでの辺番号を返す。
@@ -104,7 +104,7 @@ usize edge_label(const usize v)
 
 ## get_edge_labels
 ```
-usize get_edge_labels()
+usize get_edge_labels() const
 ```
 
 各頂点に対する `edge_label(v)` を `std::vector` で wrap して返す。`edge_label(v)` は `v` 番目の要素として表される。
