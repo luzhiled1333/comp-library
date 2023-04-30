@@ -7,7 +7,7 @@
 namespace luz::monoid {
 
   template < typename T >
-  class RangeMaximumQueryMonoid {
+  class RangeSumQueryMonoid {
 
    public:
     using value_type = T;
@@ -26,7 +26,7 @@ namespace luz::monoid {
 namespace luz {
 
   template < typename T >
-  using RangeSumQuerySolvre =
+  using RangeSumQuerySolver =
       SegmentTree< monoid::RangeSumQueryMonoid< T > >;
 
 } // namespace luz
