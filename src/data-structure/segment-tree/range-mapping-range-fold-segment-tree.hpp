@@ -23,7 +23,9 @@ namespace luz {
       VT value;
       OT lazy;
 
-      node_type(const VT value_, const OT lazy_) : value(value_), lazy(lazy_) {}
+      node_type(const VT value_, const OT lazy_)
+          : value(value_),
+            lazy(lazy_) {}
 
       VT get() {
         return C::operation(value, lazy);
