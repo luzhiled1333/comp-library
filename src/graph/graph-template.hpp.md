@@ -35,6 +35,10 @@ data:
     title: "\u91CD\u307F\u306A\u3057\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u7D4C\u8DEF\
       \ (Single Source Shortest Path in Unweighted Graph, BFS)"
   - icon: ':heavy_check_mark:'
+    path: src/graph/single-source-shortest-path/in-weighted-graph.hpp
+    title: "\u91CD\u307F\u3042\u308A\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u7D4C\u8DEF\
+      \ (Single Source Shortest Path in Unweighted Graph, SPFA)"
+  - icon: ':heavy_check_mark:'
     path: src/graph/topological-ordering/lexical-order-topological-sort.hpp
     title: "\u8F9E\u66F8\u9806\u6700\u5927/\u6700\u5C0F\u306E\u30C8\u30DD\u30ED\u30B8\
       \u30AB\u30EB\u30BD\u30FC\u30C8"
@@ -42,6 +46,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/grl_1_a.test.cpp
     title: test/aoj/grl_1_a.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/grl_1_b.test.cpp
+    title: test/aoj/grl_1_b.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/grl_5_c.test.cpp
     title: test/aoj/grl_5_c.test.cpp
@@ -122,6 +129,7 @@ data:
   - src/graph/offline-query-lowest-common-ancestor.hpp
   - src/graph/single-source-shortest-path/in-unweighted-graph.hpp
   - src/graph/single-source-shortest-path/in-non-negative-weighted-graph.hpp
+  - src/graph/single-source-shortest-path/in-weighted-graph.hpp
   - src/graph/offline-query-jump-on-functional-graph.hpp
   timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
@@ -132,6 +140,7 @@ data:
   - test/atcoder/abc258_e/offline-algorithm.test.cpp
   - test/atcoder/abc291_e.test.cpp
   - test/aoj/grl_5_c.test.cpp
+  - test/aoj/grl_1_b.test.cpp
   - test/aoj/grl_1_a.test.cpp
   - test/library-checker/jump_on_tree.test.cpp
 documentation_of: src/graph/graph-template.hpp
