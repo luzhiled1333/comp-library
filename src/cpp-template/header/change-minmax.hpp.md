@@ -9,8 +9,9 @@ data:
     path: src/cpp-template/template.cpp
     title: template
   - icon: ':heavy_check_mark:'
-    path: src/graph/dijkstra.hpp
-    title: Dijkstra's Algorithm
+    path: src/graph/single-source-shortest-path/in-non-negative-weighted-graph.hpp
+    title: "\u975E\u8CA0\u91CD\u307F\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u7D4C\u8DEF\
+      \ (Single Source Shortest Path in Non-negative Weighted Graph, Dijkstra's Algorithm)"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/grl_1_a.test.cpp
@@ -44,7 +45,7 @@ data:
   requiredBy:
   - src/cpp-template/template.cpp
   - src/cpp-template/header/template-header.hpp
-  - src/graph/dijkstra.hpp
+  - src/graph/single-source-shortest-path/in-non-negative-weighted-graph.hpp
   timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

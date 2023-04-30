@@ -14,11 +14,12 @@ data:
     path: src/cpp-template/header/type-alias.hpp
     title: Type alias
   - icon: ':heavy_check_mark:'
-    path: src/graph/dijkstra.hpp
-    title: Dijkstra's Algorithm
-  - icon: ':heavy_check_mark:'
     path: src/graph/graph-template.hpp
     title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
+  - icon: ':heavy_check_mark:'
+    path: src/graph/single-source-shortest-path/in-non-negative-weighted-graph.hpp
+    title: "\u975E\u8CA0\u91CD\u307F\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u7D4C\u8DEF\
+      \ (Single Source Shortest Path in Non-negative Weighted Graph, Dijkstra's Algorithm)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -55,11 +56,7 @@ data:
     \ noexcept\n        : f(l - 1),\n          l(std::min(f, l) - 1) {}\n    constexpr\
     \ auto begin() const noexcept {\n      return f;\n    }\n    constexpr auto end()\
     \ const noexcept {\n      return l;\n    }\n  };\n\n} // namespace luz\n#line\
-    \ 2 \"src/cpp-template/header/change-minmax.hpp\"\n\nnamespace luz {\n\n  template\
-    \ < typename T1, typename T2 >\n  inline bool chmax(T1 &a, T2 b) {\n    return\
-    \ a < b and (a = b, true);\n  }\n\n  template < typename T1, typename T2 >\n \
-    \ inline bool chmin(T1 &a, T2 b) {\n    return a > b and (a = b, true);\n  }\n\
-    \n} // namespace luz\n#line 2 \"src/graph/graph-template.hpp\"\n\n#line 4 \"src/graph/graph-template.hpp\"\
+    \ 2 \"src/graph/graph-template.hpp\"\n\n#line 4 \"src/graph/graph-template.hpp\"\
     \n\n#include <cassert>\n#include <vector>\n\nnamespace luz {\n\n  template < typename\
     \ cost_type >\n  class Edge {\n   public:\n    usize from, to;\n    cost_type\
     \ cost;\n    usize id;\n    Edge() = default;\n    Edge(usize from_, usize to_,\
@@ -77,66 +74,74 @@ data:
     \      g[v].emplace_back(v, u, cost, edge_count++);\n    }\n\n    inline Edges<\
     \ cost_type > &operator[](const usize &v) {\n      return g[v];\n    }\n\n   \
     \ inline const Edges< cost_type > &operator[](\n        const usize &v) const\
-    \ {\n      return g[v];\n    }\n  };\n\n} // namespace luz\n#line 3 \"src/graph/dijkstra.hpp\"\
-    \n\n#include <limits>\n#include <queue>\n#include <utility>\n\nnamespace luz {\n\
-    \n  template < typename cost_type >\n  class Dijkstra {\n    static constexpr\
-    \ usize undefined_ =\n        std::numeric_limits< usize >::max();\n    static\
-    \ constexpr cost_type inf_ =\n        std::numeric_limits< cost_type >::max();\n\
-    \n    Graph< cost_type > g;\n    usize g_size;\n    std::vector< cost_type > ds;\n\
-    \    std::vector< usize > froms, ids;\n\n    void dijkstra(usize s) {\n      using\
-    \ pq_type = std::pair< cost_type, usize >;\n      std::priority_queue< pq_type,\
-    \ std::vector< pq_type >,\n                           std::greater< pq_type >\
-    \ >\n          pq;\n\n      ds[s] = 0;\n      pq.emplace(ds[s], s);\n\n      while\
-    \ (not pq.empty()) {\n        auto [cost, v] = pq.top();\n        pq.pop();\n\n\
-    \        if (ds[v] < cost) continue;\n        for (auto &e: g[v]) {\n        \
-    \  if (chmin(ds[e.to], cost + e.cost)) {\n            pq.emplace(ds[e.to], e.to);\n\
-    \            froms[e.to] = v;\n            ids[e.to]   = e.id;\n          }\n\
-    \        }\n      }\n    }\n\n   public:\n    explicit Dijkstra(const Graph< cost_type\
-    \ > &g_, usize source)\n        : g(g_),\n          g_size(g.size()),\n      \
-    \    ds(g_size, inf_),\n          froms(g_size, undefined_),\n          ids(g_size,\
-    \ undefined_) {\n      dijkstra(source);\n    }\n\n    inline usize undefined()\
-    \ const {\n      return undefined_;\n    }\n\n    inline cost_type inf() const\
-    \ {\n      return inf_;\n    }\n\n    inline cost_type dist(const usize v) const\
-    \ {\n      return ds[v];\n    }\n\n    inline usize from_on_shortest_path_tree(const\
-    \ usize v) const {\n      return froms[v];\n    }\n\n    inline usize edge_label(const\
-    \ usize v) const {\n      return ids[v];\n    }\n\n    inline Graph< cost_type\
-    \ > get_original_graph() const {\n      return g;\n    }\n\n    inline std::vector<\
-    \ cost_type > get_distances() const {\n      return ds;\n    }\n\n    inline std::vector<\
-    \ usize > get_shortest_path_tree() const {\n      return froms;\n    }\n\n   \
-    \ inline std::vector< usize > get_edge_labels() const {\n      return ids;\n \
-    \   }\n  };\n\n} // namespace luz\n#line 8 \"test/aoj/grl_1_a.test.cpp\"\n\n#line\
-    \ 10 \"test/aoj/grl_1_a.test.cpp\"\n\nnamespace luz {\n\n  void main_() {\n  \
-    \  usize v = input(), e = input(), source = input();\n\n    Graph< u32 > G(v);\n\
-    \    for ([[maybe_unused]] usize _: rep(0, e)) {\n      usize s = input(), t =\
-    \ input();\n      u32 d = input();\n      G.add_directed_edge(s, t, d);\n    }\n\
-    \n    Dijkstra dijkstra(G, source);\n    auto dists = dijkstra.get_distances();\n\
-    \    for (auto &dist: dists) {\n      if (dist == dijkstra.inf()) {\n        std::cout\
-    \ << \"INF\" << std::endl;\n      } else {\n        std::cout << dist << std::endl;\n\
+    \ {\n      return g[v];\n    }\n  };\n\n} // namespace luz\n#line 2 \"src/graph/single-source-shortest-path/in-non-negative-weighted-graph.hpp\"\
+    \n\n#line 2 \"src/cpp-template/header/change-minmax.hpp\"\n\nnamespace luz {\n\
+    \n  template < typename T1, typename T2 >\n  inline bool chmax(T1 &a, T2 b) {\n\
+    \    return a < b and (a = b, true);\n  }\n\n  template < typename T1, typename\
+    \ T2 >\n  inline bool chmin(T1 &a, T2 b) {\n    return a > b and (a = b, true);\n\
+    \  }\n\n} // namespace luz\n#line 5 \"src/graph/single-source-shortest-path/in-non-negative-weighted-graph.hpp\"\
+    \n\n#include <functional>\n#include <limits>\n#include <queue>\n#include <utility>\n\
+    #line 11 \"src/graph/single-source-shortest-path/in-non-negative-weighted-graph.hpp\"\
+    \n\nnamespace luz::sssp {\n\n  template < typename cost_type >\n  class InNonNegativeWeightedGraph\
+    \ {\n\n    static constexpr usize undefined_ =\n        std::numeric_limits< usize\
+    \ >::max();\n    static constexpr cost_type inf_ =\n        std::numeric_limits<\
+    \ cost_type >::max();\n\n    Graph< cost_type > g;\n    usize g_size;\n    std::vector<\
+    \ cost_type > ds;\n    std::vector< usize > parents, ids;\n\n    void dijkstra(usize\
+    \ s) {\n      using pq_type = std::pair< cost_type, usize >;\n      std::priority_queue<\
+    \ pq_type, std::vector< pq_type >,\n                           std::greater< pq_type\
+    \ > >\n          pq;\n\n      ds[s] = 0;\n      pq.emplace(ds[s], s);\n\n    \
+    \  while (not pq.empty()) {\n        auto [cost, v] = pq.top();\n        pq.pop();\n\
+    \n        if (ds[v] < cost) continue;\n        for (auto &e: g[v]) {\n       \
+    \   if (chmin(ds[e.to], cost + e.cost)) {\n            pq.emplace(ds[e.to], e.to);\n\
+    \            parents[e.to] = v;\n            ids[e.to]     = e.id;\n         \
+    \ }\n        }\n      }\n    }\n\n   public:\n    explicit InNonNegativeWeightedGraph(const\
+    \ Graph< cost_type > &g_,\n                                        usize source)\n\
+    \        : g(g_),\n          g_size(g.size()),\n          ds(g_size, inf_),\n\
+    \          parents(g_size, undefined_),\n          ids(g_size, undefined_) {\n\
+    \      dijkstra(source);\n    }\n\n    inline Graph< cost_type > get_original_graph()\
+    \ const {\n      return g;\n    }\n\n    static inline cost_type inf() {\n   \
+    \   return inf_;\n    }\n\n    inline cost_type distance(const usize v) const\
+    \ {\n      return ds[v];\n    }\n\n    inline std::vector< cost_type > get_distances()\
+    \ const {\n      return ds;\n    }\n\n    static inline usize undefined() {\n\
+    \      return undefined_;\n    }\n\n    inline usize parent(const usize v) const\
+    \ {\n      return parents[v];\n    }\n\n    inline std::vector< usize > get_parents()\
+    \ const {\n      return parents;\n    }\n\n    inline usize edge_label(const usize\
+    \ v) const {\n      return ids[v];\n    }\n\n    inline std::vector< usize > get_edge_labels()\
+    \ const {\n      return ids;\n    }\n  };\n\n} // namespace luz::sssp\n#line 8\
+    \ \"test/aoj/grl_1_a.test.cpp\"\n\n#line 10 \"test/aoj/grl_1_a.test.cpp\"\n\n\
+    namespace luz {\n\n  void main_() {\n    usize v = input(), e = input(), source\
+    \ = input();\n\n    Graph< u32 > G(v);\n    for ([[maybe_unused]] usize _: rep(0,\
+    \ e)) {\n      usize s = input(), t = input();\n      u32 d = input();\n     \
+    \ G.add_directed_edge(s, t, d);\n    }\n\n    sssp::InNonNegativeWeightedGraph\
+    \ solver(G, source);\n    auto dists = solver.get_distances();\n    for (auto\
+    \ &dist: dists) {\n      if (dist == solver.inf()) {\n        std::cout << \"\
+    INF\" << std::endl;\n      } else {\n        std::cout << dist << std::endl;\n\
     \      }\n    }\n  }\n\n} // namespace luz\n\nint main() {\n  luz::main_();\n\
     }\n"
   code: "// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/GRL_1_A\n\
     \n#include \"src/cpp-template/header/input.hpp\"\n#include \"src/cpp-template/header/rep.hpp\"\
-    \n#include \"src/cpp-template/header/type-alias.hpp\"\n#include \"src/graph/dijkstra.hpp\"\
-    \n#include \"src/graph/graph-template.hpp\"\n\n#include <iostream>\n\nnamespace\
-    \ luz {\n\n  void main_() {\n    usize v = input(), e = input(), source = input();\n\
-    \n    Graph< u32 > G(v);\n    for ([[maybe_unused]] usize _: rep(0, e)) {\n  \
-    \    usize s = input(), t = input();\n      u32 d = input();\n      G.add_directed_edge(s,\
-    \ t, d);\n    }\n\n    Dijkstra dijkstra(G, source);\n    auto dists = dijkstra.get_distances();\n\
-    \    for (auto &dist: dists) {\n      if (dist == dijkstra.inf()) {\n        std::cout\
-    \ << \"INF\" << std::endl;\n      } else {\n        std::cout << dist << std::endl;\n\
+    \n#include \"src/cpp-template/header/type-alias.hpp\"\n#include \"src/graph/graph-template.hpp\"\
+    \n#include \"src/graph/single-source-shortest-path/in-non-negative-weighted-graph.hpp\"\
+    \n\n#include <iostream>\n\nnamespace luz {\n\n  void main_() {\n    usize v =\
+    \ input(), e = input(), source = input();\n\n    Graph< u32 > G(v);\n    for ([[maybe_unused]]\
+    \ usize _: rep(0, e)) {\n      usize s = input(), t = input();\n      u32 d =\
+    \ input();\n      G.add_directed_edge(s, t, d);\n    }\n\n    sssp::InNonNegativeWeightedGraph\
+    \ solver(G, source);\n    auto dists = solver.get_distances();\n    for (auto\
+    \ &dist: dists) {\n      if (dist == solver.inf()) {\n        std::cout << \"\
+    INF\" << std::endl;\n      } else {\n        std::cout << dist << std::endl;\n\
     \      }\n    }\n  }\n\n} // namespace luz\n\nint main() {\n  luz::main_();\n\
     }\n"
   dependsOn:
   - src/cpp-template/header/input.hpp
   - src/cpp-template/header/type-alias.hpp
   - src/cpp-template/header/rep.hpp
-  - src/graph/dijkstra.hpp
-  - src/cpp-template/header/change-minmax.hpp
   - src/graph/graph-template.hpp
+  - src/graph/single-source-shortest-path/in-non-negative-weighted-graph.hpp
+  - src/cpp-template/header/change-minmax.hpp
   isVerificationFile: true
   path: test/aoj/grl_1_a.test.cpp
   requiredBy: []
-  timestamp: '2022-08-22 18:26:45+09:00'
+  timestamp: '2023-04-30 17:38:13+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/grl_1_a.test.cpp

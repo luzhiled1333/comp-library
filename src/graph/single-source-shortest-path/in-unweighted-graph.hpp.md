@@ -47,8 +47,10 @@ data:
     \ {\n      return g[v];\n    }\n  };\n\n} // namespace luz\n#line 5 \"src/graph/single-source-shortest-path/in-unweighted-graph.hpp\"\
     \n\n#include <limits>\n#include <queue>\n#line 9 \"src/graph/single-source-shortest-path/in-unweighted-graph.hpp\"\
     \n\nnamespace luz::sssp {\n\n  template < typename cost_type >\n  class InUnweightedGraph\
-    \ {\n    using graph = Graph< cost_type >;\n\n    graph g;\n    usize g_size;\n\
-    \    usize source;\n\n    std::vector< usize > ds, parents, ids;\n\n    void bfs(usize\
+    \ {\n\n    static constexpr usize undefined_ =\n        std::numeric_limits< usize\
+    \ >::max();\n    static constexpr usize inf_ = std::numeric_limits< usize >::max();\n\
+    \n    using graph = Graph< cost_type >;\n\n    graph g;\n    usize g_size;\n \
+    \   usize source;\n\n    std::vector< usize > ds, parents, ids;\n\n    void bfs(usize\
     \ s) {\n      std::queue< usize > que;\n\n      ds[s] = 0;\n      que.emplace(s);\n\
     \n      while (not que.empty()) {\n        usize v = que.front();\n        que.pop();\n\
     \n        for (const auto &e: g[v]) {\n          usize u = e.to;\n          if\
@@ -59,42 +61,41 @@ data:
     \         source(source_),\n          ds(g_size, inf()),\n          parents(g_size,\
     \ undefined()),\n          ids(g_size, undefined()) {\n      bfs(source);\n  \
     \  }\n\n    graph get_original_graph() const {\n      return g;\n    }\n\n   \
-    \ static inline usize inf() {\n      static usize inf_ = std::numeric_limits<\
-    \ usize >::max();\n      return inf_;\n    }\n\n    inline usize distance(const\
+    \ inline usize inf() const {\n      return inf_;\n    }\n\n    inline usize distance(const\
     \ usize v) const {\n      return ds[v];\n    }\n\n    inline std::vector< usize\
-    \ > get_distances() const {\n      return ds;\n    }\n\n    static inline usize\
-    \ undefined() {\n      static usize undefined_ = std::numeric_limits< usize >::max();\n\
-    \      return undefined_;\n    }\n\n    inline usize parent(const usize v) const\
-    \ {\n      return parents[v];\n    }\n\n    inline std::vector< usize > get_parent()\
-    \ const {\n      return parents;\n    }\n\n    inline usize edge_label(const usize\
-    \ v) const {\n      return ids[v];\n    }\n\n    inline std::vector< usize > get_edge_labels()\
-    \ const {\n      return ids;\n    }\n  };\n\n} // namespace luz::sssp\n"
+    \ > get_distances() const {\n      return ds;\n    }\n\n    inline usize undefined()\
+    \ const {\n      return undefined_;\n    }\n\n    inline usize parent(const usize\
+    \ v) const {\n      return parents[v];\n    }\n\n    inline std::vector< usize\
+    \ > get_parents() const {\n      return parents;\n    }\n\n    inline usize edge_label(const\
+    \ usize v) const {\n      return ids[v];\n    }\n\n    inline std::vector< usize\
+    \ > get_edge_labels() const {\n      return ids;\n    }\n  };\n\n} // namespace\
+    \ luz::sssp\n"
   code: "#pragma once\n\n#include \"src/cpp-template/header/type-alias.hpp\"\n#include\
     \ \"src/graph/graph-template.hpp\"\n\n#include <limits>\n#include <queue>\n#include\
     \ <vector>\n\nnamespace luz::sssp {\n\n  template < typename cost_type >\n  class\
-    \ InUnweightedGraph {\n    using graph = Graph< cost_type >;\n\n    graph g;\n\
-    \    usize g_size;\n    usize source;\n\n    std::vector< usize > ds, parents,\
-    \ ids;\n\n    void bfs(usize s) {\n      std::queue< usize > que;\n\n      ds[s]\
-    \ = 0;\n      que.emplace(s);\n\n      while (not que.empty()) {\n        usize\
-    \ v = que.front();\n        que.pop();\n\n        for (const auto &e: g[v]) {\n\
-    \          usize u = e.to;\n          if (ds[u] != inf()) {\n            continue;\n\
-    \          }\n\n          ds[u] = ds[v] + 1;\n          que.emplace(u);\n    \
-    \      parents[u] = v;\n          ids[u]     = e.id;\n        }\n      }\n   \
-    \ }\n\n   public:\n    explicit InUnweightedGraph(const graph &g_, usize source_)\n\
-    \        : g(g_),\n          g_size(g.size()),\n          source(source_),\n \
-    \         ds(g_size, inf()),\n          parents(g_size, undefined()),\n      \
-    \    ids(g_size, undefined()) {\n      bfs(source);\n    }\n\n    graph get_original_graph()\
-    \ const {\n      return g;\n    }\n\n    static inline usize inf() {\n      static\
-    \ usize inf_ = std::numeric_limits< usize >::max();\n      return inf_;\n    }\n\
-    \n    inline usize distance(const usize v) const {\n      return ds[v];\n    }\n\
-    \n    inline std::vector< usize > get_distances() const {\n      return ds;\n\
-    \    }\n\n    static inline usize undefined() {\n      static usize undefined_\
-    \ = std::numeric_limits< usize >::max();\n      return undefined_;\n    }\n\n\
-    \    inline usize parent(const usize v) const {\n      return parents[v];\n  \
-    \  }\n\n    inline std::vector< usize > get_parent() const {\n      return parents;\n\
-    \    }\n\n    inline usize edge_label(const usize v) const {\n      return ids[v];\n\
-    \    }\n\n    inline std::vector< usize > get_edge_labels() const {\n      return\
-    \ ids;\n    }\n  };\n\n} // namespace luz::sssp\n"
+    \ InUnweightedGraph {\n\n    static constexpr usize undefined_ =\n        std::numeric_limits<\
+    \ usize >::max();\n    static constexpr usize inf_ = std::numeric_limits< usize\
+    \ >::max();\n\n    using graph = Graph< cost_type >;\n\n    graph g;\n    usize\
+    \ g_size;\n    usize source;\n\n    std::vector< usize > ds, parents, ids;\n\n\
+    \    void bfs(usize s) {\n      std::queue< usize > que;\n\n      ds[s] = 0;\n\
+    \      que.emplace(s);\n\n      while (not que.empty()) {\n        usize v = que.front();\n\
+    \        que.pop();\n\n        for (const auto &e: g[v]) {\n          usize u\
+    \ = e.to;\n          if (ds[u] != inf()) {\n            continue;\n          }\n\
+    \n          ds[u] = ds[v] + 1;\n          que.emplace(u);\n          parents[u]\
+    \ = v;\n          ids[u]     = e.id;\n        }\n      }\n    }\n\n   public:\n\
+    \    explicit InUnweightedGraph(const graph &g_, usize source_)\n        : g(g_),\n\
+    \          g_size(g.size()),\n          source(source_),\n          ds(g_size,\
+    \ inf()),\n          parents(g_size, undefined()),\n          ids(g_size, undefined())\
+    \ {\n      bfs(source);\n    }\n\n    graph get_original_graph() const {\n   \
+    \   return g;\n    }\n\n    inline usize inf() const {\n      return inf_;\n \
+    \   }\n\n    inline usize distance(const usize v) const {\n      return ds[v];\n\
+    \    }\n\n    inline std::vector< usize > get_distances() const {\n      return\
+    \ ds;\n    }\n\n    inline usize undefined() const {\n      return undefined_;\n\
+    \    }\n\n    inline usize parent(const usize v) const {\n      return parents[v];\n\
+    \    }\n\n    inline std::vector< usize > get_parents() const {\n      return\
+    \ parents;\n    }\n\n    inline usize edge_label(const usize v) const {\n    \
+    \  return ids[v];\n    }\n\n    inline std::vector< usize > get_edge_labels()\
+    \ const {\n      return ids;\n    }\n  };\n\n} // namespace luz::sssp\n"
   dependsOn:
   - src/cpp-template/header/type-alias.hpp
   - src/graph/graph-template.hpp
@@ -102,7 +103,7 @@ data:
   path: src/graph/single-source-shortest-path/in-unweighted-graph.hpp
   requiredBy:
   - src/graph/offline-query-jump-on-tree.hpp
-  timestamp: '2023-02-11 19:04:07+09:00'
+  timestamp: '2023-04-30 17:38:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/jump_on_tree.test.cpp
@@ -136,14 +137,14 @@ sssp::InUnweightedGraph(const Graph<cost_type> &g, usize s)
 
 ## get_original_graph
 ```
-Graph< cost_type > get_original_graph()
+Graph< cost_type > get_original_graph() const
 ```
 
 もとのグラフを返す。
 
 ## inf
 ```
-static usize inf()
+static usize inf() const
 ```
 
 $s$ からの経路が存在しないような頂点 $v$ への $s$ からの最短経路のコストとして定義されている値を返す。
@@ -172,7 +173,7 @@ $s$ からの経路が存在しないような頂点へのコストは `inf()` �
 
 ## undefined
 ```
-static usize undefined()
+static usize undefined() const
 ```
 
 構成された最短経路木において親が存在しないときに返される値。
@@ -199,7 +200,7 @@ std::vector< usize > get_parents() const
 
 ## edge_label
 ```
-usize edge_label(const usize v)
+usize edge_label(const usize v) const
 ```
 
 構成された最短経路木における `v` とその親との間にある辺の、もとのグラフでの辺番号を返す。
@@ -208,7 +209,7 @@ usize edge_label(const usize v)
 
 ## get_edge_labels
 ```
-usize get_edge_labels()
+usize get_edge_labels() const
 ```
 
 各頂点に対する `edge_label(v)` を `std::vector` で wrap して返す。`edge_label(v)` は `v` 番目の要素として表される。

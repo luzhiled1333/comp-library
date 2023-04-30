@@ -173,8 +173,10 @@ data:
     \n\n#line 5 \"src/graph/single-source-shortest-path/in-unweighted-graph.hpp\"\n\
     \n#include <limits>\n#include <queue>\n#line 9 \"src/graph/single-source-shortest-path/in-unweighted-graph.hpp\"\
     \n\nnamespace luz::sssp {\n\n  template < typename cost_type >\n  class InUnweightedGraph\
-    \ {\n    using graph = Graph< cost_type >;\n\n    graph g;\n    usize g_size;\n\
-    \    usize source;\n\n    std::vector< usize > ds, parents, ids;\n\n    void bfs(usize\
+    \ {\n\n    static constexpr usize undefined_ =\n        std::numeric_limits< usize\
+    \ >::max();\n    static constexpr usize inf_ = std::numeric_limits< usize >::max();\n\
+    \n    using graph = Graph< cost_type >;\n\n    graph g;\n    usize g_size;\n \
+    \   usize source;\n\n    std::vector< usize > ds, parents, ids;\n\n    void bfs(usize\
     \ s) {\n      std::queue< usize > que;\n\n      ds[s] = 0;\n      que.emplace(s);\n\
     \n      while (not que.empty()) {\n        usize v = que.front();\n        que.pop();\n\
     \n        for (const auto &e: g[v]) {\n          usize u = e.to;\n          if\
@@ -185,18 +187,16 @@ data:
     \         source(source_),\n          ds(g_size, inf()),\n          parents(g_size,\
     \ undefined()),\n          ids(g_size, undefined()) {\n      bfs(source);\n  \
     \  }\n\n    graph get_original_graph() const {\n      return g;\n    }\n\n   \
-    \ static inline usize inf() {\n      static usize inf_ = std::numeric_limits<\
-    \ usize >::max();\n      return inf_;\n    }\n\n    inline usize distance(const\
+    \ inline usize inf() const {\n      return inf_;\n    }\n\n    inline usize distance(const\
     \ usize v) const {\n      return ds[v];\n    }\n\n    inline std::vector< usize\
-    \ > get_distances() const {\n      return ds;\n    }\n\n    static inline usize\
-    \ undefined() {\n      static usize undefined_ = std::numeric_limits< usize >::max();\n\
-    \      return undefined_;\n    }\n\n    inline usize parent(const usize v) const\
-    \ {\n      return parents[v];\n    }\n\n    inline std::vector< usize > get_parent()\
-    \ const {\n      return parents;\n    }\n\n    inline usize edge_label(const usize\
-    \ v) const {\n      return ids[v];\n    }\n\n    inline std::vector< usize > get_edge_labels()\
-    \ const {\n      return ids;\n    }\n  };\n\n} // namespace luz::sssp\n#line 2\
-    \ \"src/utility/tuple-hash.hpp\"\n\n#line 4 \"src/utility/tuple-hash.hpp\"\n\n\
-    #line 6 \"src/utility/tuple-hash.hpp\"\n#include <tuple>\n#line 8 \"src/utility/tuple-hash.hpp\"\
+    \ > get_distances() const {\n      return ds;\n    }\n\n    inline usize undefined()\
+    \ const {\n      return undefined_;\n    }\n\n    inline usize parent(const usize\
+    \ v) const {\n      return parents[v];\n    }\n\n    inline std::vector< usize\
+    \ > get_parents() const {\n      return parents;\n    }\n\n    inline usize edge_label(const\
+    \ usize v) const {\n      return ids[v];\n    }\n\n    inline std::vector< usize\
+    \ > get_edge_labels() const {\n      return ids;\n    }\n  };\n\n} // namespace\
+    \ luz::sssp\n#line 2 \"src/utility/tuple-hash.hpp\"\n\n#line 4 \"src/utility/tuple-hash.hpp\"\
+    \n\n#line 6 \"src/utility/tuple-hash.hpp\"\n#include <tuple>\n#line 8 \"src/utility/tuple-hash.hpp\"\
     \n\nnamespace luz::impl_tuple_hash {\n\n  template < usize Index >\n  class ImplTupleHash\
     \ {\n   public:\n    template < typename T >\n    usize hash_combine(const T &x,\
     \ usize hr) const {\n      usize h = std::hash< T >()(x);\n      return hr ^ (h\
@@ -286,7 +286,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/jump_on_tree.test.cpp
   requiredBy: []
-  timestamp: '2023-02-11 19:04:07+09:00'
+  timestamp: '2023-04-30 17:38:13+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/jump_on_tree.test.cpp
