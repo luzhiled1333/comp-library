@@ -13,9 +13,10 @@ namespace luz::sssp {
   class InWeightedGraph {
     using graph = Graph< cost_type >;
 
-    constexpr cost_type inf_ = std::numeric_limits< cost_type >::max();
+    constexpr cost_type inf_ =
+        std::numeric_limits< cost_type >::max();
     constexpr cost_type negative_inf_ =
-      std::numeric_limits< cost_type >::min();
+        std::numeric_limits< cost_type >::min();
     constexpr usize undefined_ = std::numeric_limits< usize >::max();
 
     graph g;
