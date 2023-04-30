@@ -11,7 +11,7 @@
 namespace luz {
 
   template < class operator_structure >
-  class RangeMappingRangeFoldSegmentTree {
+  class RangeMappingPointFoldSegmentTree {
     using O  = operator_structure;
     using OT = typename O::value_type;
 
@@ -22,9 +22,9 @@ namespace luz {
     }
 
     void propagate(const usize index) {
-      evaluate_lazy(tree[index << 1 | 0].lazy, tree[index].lazy);
-      evaluate_lazy(tree[index << 1 | 1].lazy, tree[index].lazy);
-      tree[index].lazy = O::identity();
+      evaluate_lazy(tree[index << 1 | 0], tree[index]);
+      evaluate_lazy(tree[index << 1 | 1], tree[index]);
+      tree[index] = O::identity();
     }
 
     void propagate_bound(const usize index) {
@@ -40,17 +40,19 @@ namespace luz {
    public:
     using value_type = OT;
 
-    RangeMappingRangeFoldSegmentTree() = default;
-    explicit RangeMappingRangeFoldSegmentTree(const usize n)
+    RangeMappingPointFoldSegmentTree() = default;
+    explicit RangeMappingPointFoldSegmentTree(const usize n)
         : tree(n * 2, O::identity()) {}
-    explicit RangeMappingRangeFoldSegmentTree(
+    explicit RangeMappingPointFoldSegmentTree(
         const std::vector< OT > &vs)
-        : RangeMappingRangeFoldSegmentTree(vs.size()) {
+        : RangeMappingPointFoldSegmentTree(vs.size()) {
       build(vs);
     }
 
     void build(const std::vector< OT > &vs) {
-      // TODO
+      for (usize i: rep(0, vs.size())) {
+        tree[i + size()] = vs[i];
+      }
     }
 
     usize size() const {
@@ -99,7 +101,7 @@ namespace luz {
       }
     }
 
-    OT fold(usize index) const {
+    OT fold(usize index) {
       assert(index < size());
 
       index += size();
