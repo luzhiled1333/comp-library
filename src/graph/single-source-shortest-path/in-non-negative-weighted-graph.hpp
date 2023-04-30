@@ -63,7 +63,7 @@ namespace luz::sssp {
       return g;
     }
 
-    inline cost_type inf() const {
+    static inline cost_type inf() {
       return inf_;
     }
 
@@ -75,7 +75,7 @@ namespace luz::sssp {
       return ds;
     }
 
-    inline usize undefined() const {
+    static inline usize undefined() {
       return undefined_;
     }
 
