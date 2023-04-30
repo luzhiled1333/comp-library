@@ -6,7 +6,7 @@
 namespace luz {
 
   template < typename T, T ID >
-  using RangeUpdateRangeMinimumQuerySolver =
-      LazySegmentTree< monoid::RangeUpdateRangeMinimumQueryMonoid< T, ID > >;
+  using RangeUpdateRangeMinimumQuerySolver = LazySegmentTree<
+      monoid::RangeUpdateRangeMinimumQueryMonoid< T, ID > >;
 
 } // namespace luz
