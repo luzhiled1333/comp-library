@@ -17,7 +17,8 @@ namespace luz::sssp {
         std::numeric_limits< cost_type >::max();
     static constexpr cost_type negative_inf_ =
         std::numeric_limits< cost_type >::min();
-    static constexpr usize undefined_ = std::numeric_limits< usize >::max();
+    static constexpr usize undefined_ =
+        std::numeric_limits< usize >::max();
 
     graph g;
     usize g_size;
