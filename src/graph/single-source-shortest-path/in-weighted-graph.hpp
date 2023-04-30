@@ -13,6 +13,11 @@ namespace luz::sssp {
   class InWeightedGraph {
     using graph = Graph< cost_type >;
 
+    constexpr cost_type inf_ = std::numeric_limits< cost_type >::max();
+    constexpr cost_type negative_inf_ =
+      std::numeric_limits< cost_type >::min();
+    constexpr usize undefined_ = std::numeric_limits< usize >::max();
+
     graph g;
     usize g_size;
     usize source;
@@ -41,19 +46,24 @@ namespace luz::sssp {
           if (ds[v] + cost >= ds[u]) {
             continue;
           }
+
           ds[u]      = ds[v] + cost;
           parents[u] = v;
           ids[u]     = e.id;
+
           if (in_que[u]) {
             continue;
           }
+
           in_que[u] = true;
           ds_update_cnt[u]++;
+
           if (ds_update_cnt[u] < 2 * g_size) {
             que.emplace(u);
           }
         }
       }
+
       for (usize v: rep(0, g_size)) {
         if (ds_update_cnt[v] >= g_size) {
           ds[v]      = negative_inf();
@@ -78,15 +88,12 @@ namespace luz::sssp {
       return g;
     }
 
-    static inline cost_type negative_inf() {
-      static cost_type negative_inf_ =
-          std::numeric_limits< cost_type >::min();
-      return negative_inf_;
+    inline cost_type inf() const {
+      return inf_;
     }
 
-    static inline cost_type inf() {
-      static cost_type inf_ = std::numeric_limits< cost_type >::max();
-      return inf_;
+    inline cost_type negative_inf() const {
+      return negative_inf_;
     }
 
     inline cost_type distance(const usize v) const {
@@ -97,8 +104,7 @@ namespace luz::sssp {
       return ds;
     }
 
-    static inline usize undefined() {
-      static usize undefined_ = std::numeric_limits< usize >::max();
+    inline usize undefined() const {
       return undefined_;
     }
 
@@ -106,7 +112,7 @@ namespace luz::sssp {
       return parents[v];
     }
 
-    inline std::vector< usize > get_parent() const {
+    inline std::vector< usize > get_parents() const {
       return parents;
     }
 
