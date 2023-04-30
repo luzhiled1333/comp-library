@@ -1,8 +1,9 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_B
 
+#include "src/data-structure/fenwick-tree.hpp"
+
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
-#include "src/data-structure/fenwick-tree.hpp"
 
 #include <iostream>
 
