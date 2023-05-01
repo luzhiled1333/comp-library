@@ -185,7 +185,7 @@ namespace luz {
     }
 
     VT fold_all() {
-      return (size() ? tree[1] : V::identity());
+      return (size() ? tree[1].get() : V::identity());
     }
   };
 
