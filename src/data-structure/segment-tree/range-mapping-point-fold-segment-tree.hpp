@@ -41,8 +41,15 @@ namespace luz {
     using value_type = OT;
 
     RangeMappingPointFoldSegmentTree() = default;
+
     explicit RangeMappingPointFoldSegmentTree(const usize n)
         : tree(n * 2, O::identity()) {}
+
+    explicit RangeMappingPointFoldSegmentTree(const usize n, OT v)
+        : RangeMappingPointFoldSegmentTree(n) {
+      build(std::vector< OT >(n, v));
+    }
+
     explicit RangeMappingPointFoldSegmentTree(
         const std::vector< OT > &vs)
         : RangeMappingPointFoldSegmentTree(vs.size()) {

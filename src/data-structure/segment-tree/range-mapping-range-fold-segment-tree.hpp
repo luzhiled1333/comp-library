@@ -73,8 +73,15 @@ namespace luz {
     using value_type = VT;
 
     RangeMappingRangeFoldSegmentTree() = default;
+
     explicit RangeMappingRangeFoldSegmentTree(const usize n)
         : tree(n * 2, node_type(V::identity(), O::identity())) {}
+
+    explicit RangeMappingRangeFoldSegmentTree(const usize n, const VT v)
+        : RangeMappingRangeFoldSegmentTree(n) {
+      build(std::vector< VT >(n, v));
+    }
+
     explicit RangeMappingRangeFoldSegmentTree(
         const std::vector< VT > &vs)
         : RangeMappingRangeFoldSegmentTree(vs.size()) {
