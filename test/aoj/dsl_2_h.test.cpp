@@ -14,8 +14,7 @@ namespace luz {
     usize n, q;
     std::cin >> n >> q;
 
-    std::vector< i32 > vs(n);
-    RangeAddRangeMinimumQuerySolver< i32 > seg(vs);
+    RangeAddRangeMinimumQuerySolver< i32 > seg(n, 0);
     for ([[maybe_unused]] usize _: rep(0, q)) {
       usize com;
       std::cin >> com;
