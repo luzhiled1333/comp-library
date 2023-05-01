@@ -16,8 +16,8 @@ namespace luz::monoid {
       T value;
       usize count;
 
-      node_type() : value(), count() {}
-      node_type(T v, usize c) : value(v), count(c) {}
+      node_type(): value(), count() {}
+      node_type(T v, usize c): value(v), count(c) {}
 
       F operator+(const F &b) {
         return F(value + b.value, count + b.count);

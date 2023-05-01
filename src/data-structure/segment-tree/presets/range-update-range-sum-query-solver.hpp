@@ -6,7 +6,7 @@
 namespace luz {
 
   template < typename T, T ID >
-  using RangeUpdateRangeSumQuerySolver =
-      LazySegmentTree< monoid::RangeUpdateRangeSumQueryMonoid< T, ID > >;
+  using RangeUpdateRangeSumQuerySolver = LazySegmentTree<
+      monoid::RangeUpdateRangeSumQueryMonoid< T, ID > >;
 
 } // namespace luz

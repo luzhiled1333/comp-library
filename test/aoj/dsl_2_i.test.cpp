@@ -15,7 +15,7 @@ namespace luz {
     std::cin >> n >> q;
 
     using Tree = RangeUpdateRangeSumQuerySolver< i64, -1001 >;
-    using F = Tree::value_type;
+    using F    = Tree::value_type;
     std::vector< F > init(n, {0, 1});
     Tree seg(init);
     for ([[maybe_unused]] usize _: rep(0, q)) {
