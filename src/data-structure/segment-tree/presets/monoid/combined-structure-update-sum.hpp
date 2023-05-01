@@ -22,11 +22,6 @@ namespace luz::monoid {
       F operator+(const F &b) {
         return F(value + b.value, count + b.count);
       }
-
-      friend std::ostream &operator<<(std::ostream &os, node_type &x) {
-        os << "[" << x.value << ", " << x.count << "]";
-        return os;
-      }
     };
 
     using V  = RangeSumQueryMonoid< node_type >;

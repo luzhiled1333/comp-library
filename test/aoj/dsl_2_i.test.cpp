@@ -34,8 +34,6 @@ namespace luz {
 
         std::cout << seg.fold(s, t + 1).value << std::endl;
       }
-
-      std::cerr << seg.fold_all().value << std::endl;
     }
   }
 
