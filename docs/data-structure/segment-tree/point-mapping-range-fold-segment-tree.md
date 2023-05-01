@@ -11,11 +11,13 @@ documentation_of: //src/data-structure/segment-tree/point-mapping-range-fold-seg
 
 ```
 (1) SegmentTree< V >(usize n)
-(2) SegmentTree< V >(vector< VT > vs)
+(2) SegmentTree< V >(usize n, VT v)
+(3) SegmentTree< V >(vector< VT > vs)
 ```
 
 1. 列 $a$ を長さ $n$ の列で初期化する。各要素の初期値は `V::identity()` となる。
-2. 列 $a$ を `vs` で初期化する。
+2. 列 $a$ を長さ $n$ の列で初期化する。各要素の初期値は `v` となる。
+3. 列 $a$ を `vs` で初期化する。
 
 ### 制約
 - $0 \leq n$

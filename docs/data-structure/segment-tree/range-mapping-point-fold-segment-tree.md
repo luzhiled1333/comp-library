@@ -10,12 +10,14 @@ documentation_of: //src/data-structure/segment-tree/range-mapping-point-fold-seg
 `RangeMappingPointFoldSegmentTree` のエイリアスとして `DualSegmentTree` を提供している。
 
 ```
-(1) DualSegmentTree< C >(usize n)
-(2) DualSegmentTree< C >(vector< VT > vs)
+(1) DualSegmentTree< O >(usize n)
+(2) DualSegmentTree< O >(usize n, OT v)
+(3) DualSegmentTree< O >(std::vector< OT > vs)
 ```
 
 1. 列 $a$ を長さ $n$ の列で初期化する。各要素の初期値は `V::identity()` となる。
-2. 列 $a$ を `vs` で初期化する。
+2. 列 $a$ を長さ $n$ の列で初期化する。各要素の初期値は `v` となる。
+3. 列 $a$ を `vs` で初期化する。
 
 ### 制約
 - $0 \leq n$
@@ -25,7 +27,7 @@ documentation_of: //src/data-structure/segment-tree/range-mapping-point-fold-seg
 
 ## build
 ```
-void build(vector< VT > vs)
+void build(vector< OT > vs)
 ```
 
 列 $(a_0, a_1, \dots, a_{n-1})$ を `vs` で初期化して再構築する。
@@ -48,7 +50,7 @@ usize size() const
 
 ## set
 ```
-void set(usize i, VT x)
+void set(usize i, OT x)
 ```
 
 $a_i \leftarrow x$ で更新する。

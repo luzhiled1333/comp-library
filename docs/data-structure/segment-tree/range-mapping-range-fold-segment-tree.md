@@ -11,11 +11,13 @@ documentation_of: //src/data-structure/segment-tree/range-mapping-range-fold-seg
 
 ```
 (1) LazySegmentTree< C >(usize n)
-(2) LazySegmentTree< C >(vector< VT > vs)
+(2) LazySegmentTree< C >(usize n, VT v)
+(3) LazySegmentTree< C >(vector< VT > vs)
 ```
 
 1. 列 $a$ を長さ $n$ の列で初期化する。各要素の初期値は `V::identity()` となる。
-2. 列 $a$ を `vs` で初期化する。
+2. 列 $a$ を長さ $n$ の列で初期化する。各要素の初期値は `v` となる。
+3. 列 $a$ を `vs` で初期化する。
 
 ### 制約
 - $0 \leq n$
