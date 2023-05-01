@@ -77,7 +77,8 @@ namespace luz {
     explicit RangeMappingRangeFoldSegmentTree(const usize n)
         : tree(n * 2, node_type(V::identity(), O::identity())) {}
 
-    explicit RangeMappingRangeFoldSegmentTree(const usize n, const VT v)
+    explicit RangeMappingRangeFoldSegmentTree(const usize n,
+                                              const VT v)
         : RangeMappingRangeFoldSegmentTree(n) {
       build(std::vector< VT >(n, v));
     }
