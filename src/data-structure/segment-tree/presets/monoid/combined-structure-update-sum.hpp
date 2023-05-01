@@ -22,6 +22,11 @@ namespace luz::monoid {
       F operator+(const F &b) {
         return F(value + b.value, count + b.count);
       }
+
+      friend std::ostream &operator<<(std::ostream &os, node_type &x) {
+        os << "[" << x.value << ", " << x.count << "]";
+        return os;
+      }
     };
 
     using V  = RangeSumQueryMonoid< node_type >;
@@ -34,7 +39,7 @@ namespace luz::monoid {
     using operator_structure = O;
 
     static constexpr VT operation(VT a, OT b) {
-      return b == ID ? a : VT(a.value + b * a.count, a.count);
+      return b == ID ? a : VT(b * a.count, a.count);
     }
   };
 
