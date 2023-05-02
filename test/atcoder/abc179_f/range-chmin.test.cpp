@@ -5,7 +5,6 @@
 #include "src/data-structure/segment-tree/presets/range-chmin-query-solver.hpp"
 
 #include <iostream>
-#include <vector>
 
 namespace luz {
 
