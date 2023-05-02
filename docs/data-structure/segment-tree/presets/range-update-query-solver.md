@@ -3,7 +3,7 @@ title: 区間更新クエリ solver (Range Update Query Solver)
 documentation_of: //src/data-structure/segment-tree/presets/range-update-query-solver.hpp
 ---
 
-数列に対する区間更新クエリを処理するデータ構造
+数列に対する区間更新クエリを処理するデータ構造。
 
 内部ではセグメント木を用いているため、詳細な仕様などはそちらのドキュメントに追従する。
 
