@@ -13,7 +13,8 @@ namespace luz {
     usize n, q;
     std::cin >> n >> q;
 
-    RangeChmaxQuerySolver< i32 > v_seg(n, -((i32)n - 1)), h_seg(n, -((i32)n - 1));
+    RangeChmaxQuerySolver< i32 > v_seg(n, -((i32)n - 1)),
+        h_seg(n, -((i32)n - 1));
 
     u64 ans = u64(n - 2) * u64(n - 2);
     for ([[maybe_unused]] usize _: rep(0, q)) {
