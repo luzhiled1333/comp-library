@@ -54,7 +54,7 @@ usize size() const
 void set(usize i, VT x)
 ```
 
-$a_i \leftarrow x $ で更新する。
+$a_i \leftarrow x$ で更新する。
 
 ### 計算量
 - $O(\log(n))$
