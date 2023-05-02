@@ -34,7 +34,7 @@ namespace luz {
     for (usize i: rep(0, n)) {
       qs[i] = {rs[i], cs[i], xs[i]};
     }
- 
+
     std::sort(qs.begin(), qs.end());
 
     RangeMaximumQuerySolver< i64 > seg(n, 0);
@@ -48,26 +48,26 @@ namespace luz {
 
     usize m = *max_element(rs.begin(), rs.end()) + 1;
 
-    i64 ans = 0;
+    i64 ans   = 0;
     usize idx = 0;
 
     for (usize r: rep(0, m)) {
       usize prev_idx = idx;
- 
+
       i64 max = 0;
-      while (idx < qs.size() and std::get<0>(qs[idx]) == r) {
-        i32 x = std::get<2>(qs[idx]);
+      while (idx < qs.size() and std::get< 0 >(qs[idx]) == r) {
+        i32 x = std::get< 2 >(qs[idx]);
         max += x;
- 
-        i32 c = std::get<1>(qs[idx]);
+
+        i32 c = std::get< 1 >(qs[idx]);
         seg_add(c, -x);
- 
+
         idx++;
       }
- 
+
       max += seg.fold_all();
       chmax(ans, max);
- 
+
       for (usize i: rep(prev_idx, idx)) {
         auto [_, c, x] = qs[i];
         seg_add(c, x);
