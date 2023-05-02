@@ -3,7 +3,7 @@ title: 区間 chmin クエリ solver (Range ChangeMin Query Solver)
 documentation_of: //src/data-structure/segment-tree/presets/range-chmin-query-solver.hpp
 ---
 
-数列に対する区間chminクエリを処理するデータ構造
+数列に対する区間chminクエリを処理するデータ構造。
 
 内部ではセグメント木を用いているため、詳細な仕様などはそちらのドキュメントに追従する。
 
