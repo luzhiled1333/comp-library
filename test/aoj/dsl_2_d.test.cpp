@@ -6,7 +6,6 @@
 
 #include <iostream>
 #include <limits>
-#include <vector>
 
 namespace luz {
 
