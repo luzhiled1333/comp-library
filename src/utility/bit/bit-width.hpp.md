@@ -9,11 +9,86 @@ data:
     title: "\u7ACB\u3063\u3066\u3044\u308B bit \u306E\u6570 (population count, popcount)"
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/presets/range-add-query-solver.hpp
+    title: "\u533A\u9593\u52A0\u7B97\u30AF\u30A8\u30EA solver (Range Add Query Solver)"
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/presets/range-add-range-maximum-query-solver.hpp
+    title: "\u533A\u9593\u52A0\u7B97 + \u533A\u9593\u6700\u5927\u30AF\u30A8\u30EA\
+      \ solver (Range Add Range Maximum Query Solver)"
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/presets/range-add-range-minimum-query-solver.hpp
+    title: "\u533A\u9593\u52A0\u7B97 + \u533A\u9593\u6700\u5C0F\u30AF\u30A8\u30EA\
+      \ solver (Range Add Range Minimum Query Solver)"
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/presets/range-add-range-sum-query-solver.hpp
+    title: "\u533A\u9593\u52A0\u7B97 + \u533A\u9593\u548C\u30AF\u30A8\u30EA solver\
+      \ (Range Add Range Sum Query Solver)"
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/presets/range-chmax-query-solver.hpp
+    title: "\u533A\u9593 chmax \u30AF\u30A8\u30EA solver (Range ChangeMax Query Solver)"
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/presets/range-chmin-query-solver.hpp
+    title: "\u533A\u9593 chmin \u30AF\u30A8\u30EA solver (Range ChangeMin Query Solver)"
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/presets/range-update-query-solver.hpp
+    title: "\u533A\u9593\u66F4\u65B0\u30AF\u30A8\u30EA solver (Range Update Query\
+      \ Solver)"
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/presets/range-update-range-maximum-query-solver.hpp
+    title: "\u533A\u9593\u66F4\u65B0 + \u533A\u9593\u6700\u5927\u30AF\u30A8\u30EA\
+      \ solver (Range Update Range Maximum Query Solver)"
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/presets/range-update-range-minimum-query-solver.hpp
+    title: "\u533A\u9593\u66F4\u65B0 + \u533A\u9593\u6700\u5C0F\u30AF\u30A8\u30EA\
+      \ solver (Range Update Range Minimum Query Solver)"
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/presets/range-update-range-sum-query-solver.hpp
+    title: "\u533A\u9593\u66F4\u65B0 + \u533A\u9593\u548C\u30AF\u30A8\u30EA solver\
+      \ (Range Update Range Sum Query Solver)"
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/range-mapping-point-fold-segment-tree.hpp
+    title: "\u533A\u9593\u66F4\u65B0 + \u4E00\u70B9\u53D6\u5F97 \u30BB\u30B0\u30E1\
+      \u30F3\u30C8\u6728 (Dual Segment Tree)"
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/range-mapping-range-fold-segment-tree.hpp
+    title: "\u533A\u9593\u66F4\u65B0+\u533A\u9593\u53D6\u5F97 \u30BB\u30B0\u30E1\u30F3\
+      \u30C8\u6728 (Lazy Segment Tree)"
+  - icon: ':heavy_check_mark:'
     path: src/graph/online-query-jump-on-functional-graph.hpp
     title: "(online) Functional Graph \u4E0A\u306E\u9802\u70B9 $v$ \u304B\u3089 $k$\
       \ \u56DE\u79FB\u52D5\u3057\u305F\u5148\u306E\u9802\u70B9 (Online Jump On Functional\
       \ Graph)"
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/dsl_2_d.test.cpp
+    title: test/aoj/dsl_2_d.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/dsl_2_e.test.cpp
+    title: test/aoj/dsl_2_e.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/dsl_2_f/range-maximum.test.cpp
+    title: test/aoj/dsl_2_f/range-maximum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/dsl_2_f/range-minimum.test.cpp
+    title: test/aoj/dsl_2_f/range-minimum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/dsl_2_g.test.cpp
+    title: test/aoj/dsl_2_g.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/dsl_2_h/range-maximum.test.cpp
+    title: test/aoj/dsl_2_h/range-maximum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/dsl_2_h/range-minimum.test.cpp
+    title: test/aoj/dsl_2_h/range-minimum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/dsl_2_i.test.cpp
+    title: test/aoj/dsl_2_i.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc179_f/range-chmax.test.cpp
+    title: test/atcoder/abc179_f/range-chmax.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc179_f/range-chmin.test.cpp
+    title: test/atcoder/abc179_f/range-chmin.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc258_e/online-algorithm.test.cpp
     title: test/atcoder/abc258_e/online-algorithm.test.cpp
@@ -58,12 +133,34 @@ data:
   path: src/utility/bit/bit-width.hpp
   requiredBy:
   - src/graph/online-query-jump-on-functional-graph.hpp
+  - src/data-structure/segment-tree/presets/range-update-range-maximum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-add-range-sum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-chmin-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-chmax-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-add-range-maximum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-add-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-add-range-minimum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-update-range-sum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-update-range-minimum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-update-query-solver.hpp
+  - src/data-structure/segment-tree/range-mapping-range-fold-segment-tree.hpp
+  - src/data-structure/segment-tree/range-mapping-point-fold-segment-tree.hpp
   timestamp: '2023-02-10 17:57:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - unit-test/utility/bit/bit-width.test.cpp
   - unit-test/graph/online-query-jump-on-functional-graph.test.cpp
+  - test/atcoder/abc179_f/range-chmax.test.cpp
+  - test/atcoder/abc179_f/range-chmin.test.cpp
   - test/atcoder/abc258_e/online-algorithm.test.cpp
+  - test/aoj/dsl_2_f/range-maximum.test.cpp
+  - test/aoj/dsl_2_f/range-minimum.test.cpp
+  - test/aoj/dsl_2_i.test.cpp
+  - test/aoj/dsl_2_e.test.cpp
+  - test/aoj/dsl_2_d.test.cpp
+  - test/aoj/dsl_2_g.test.cpp
+  - test/aoj/dsl_2_h/range-maximum.test.cpp
+  - test/aoj/dsl_2_h/range-minimum.test.cpp
 documentation_of: src/utility/bit/bit-width.hpp
 layout: document
 title: "\u5024\u3092\u8868\u73FE\u3059\u308B\u305F\u3081\u306B\u5FC5\u8981\u306A\u6700\

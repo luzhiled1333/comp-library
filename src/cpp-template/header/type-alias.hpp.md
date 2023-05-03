@@ -33,6 +33,69 @@ data:
     path: src/data-structure/segment-tree/point-mapping-range-fold-segment-tree.hpp
     title: "\u4E00\u70B9\u66F4\u65B0+\u533A\u9593\u53D6\u5F97 \u30BB\u30B0\u30E1\u30F3\
       \u30C8\u6728"
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/presets/monoid/combined-structure-add-sum.hpp
+    title: src/data-structure/segment-tree/presets/monoid/combined-structure-add-sum.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/presets/monoid/combined-structure-update-sum.hpp
+    title: src/data-structure/segment-tree/presets/monoid/combined-structure-update-sum.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/presets/range-add-query-solver.hpp
+    title: "\u533A\u9593\u52A0\u7B97\u30AF\u30A8\u30EA solver (Range Add Query Solver)"
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/presets/range-add-range-maximum-query-solver.hpp
+    title: "\u533A\u9593\u52A0\u7B97 + \u533A\u9593\u6700\u5927\u30AF\u30A8\u30EA\
+      \ solver (Range Add Range Maximum Query Solver)"
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/presets/range-add-range-minimum-query-solver.hpp
+    title: "\u533A\u9593\u52A0\u7B97 + \u533A\u9593\u6700\u5C0F\u30AF\u30A8\u30EA\
+      \ solver (Range Add Range Minimum Query Solver)"
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/presets/range-add-range-sum-query-solver.hpp
+    title: "\u533A\u9593\u52A0\u7B97 + \u533A\u9593\u548C\u30AF\u30A8\u30EA solver\
+      \ (Range Add Range Sum Query Solver)"
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/presets/range-chmax-query-solver.hpp
+    title: "\u533A\u9593 chmax \u30AF\u30A8\u30EA solver (Range ChangeMax Query Solver)"
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/presets/range-chmin-query-solver.hpp
+    title: "\u533A\u9593 chmin \u30AF\u30A8\u30EA solver (Range ChangeMin Query Solver)"
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/presets/range-maximum-query-solver.hpp
+    title: "\u4E00\u70B9\u66F4\u65B0 + \u533A\u9593\u6700\u5927\u30AF\u30A8\u30EA\
+      \ solver (Range Maximum Query Solver)"
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/presets/range-minimum-query-solver.hpp
+    title: "\u4E00\u70B9\u66F4\u65B0 + \u533A\u9593\u6700\u5C0F\u30AF\u30A8\u30EA\
+      \ solver (Range Minimum Query Solver)"
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/presets/range-sum-query-solver.hpp
+    title: "\u4E00\u70B9\u66F4\u65B0 + \u533A\u9593\u548C\u30AF\u30A8\u30EA solver\
+      \ (Range Sum Query Solver)"
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/presets/range-update-query-solver.hpp
+    title: "\u533A\u9593\u66F4\u65B0\u30AF\u30A8\u30EA solver (Range Update Query\
+      \ Solver)"
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/presets/range-update-range-maximum-query-solver.hpp
+    title: "\u533A\u9593\u66F4\u65B0 + \u533A\u9593\u6700\u5927\u30AF\u30A8\u30EA\
+      \ solver (Range Update Range Maximum Query Solver)"
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/presets/range-update-range-minimum-query-solver.hpp
+    title: "\u533A\u9593\u66F4\u65B0 + \u533A\u9593\u6700\u5C0F\u30AF\u30A8\u30EA\
+      \ solver (Range Update Range Minimum Query Solver)"
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/presets/range-update-range-sum-query-solver.hpp
+    title: "\u533A\u9593\u66F4\u65B0 + \u533A\u9593\u548C\u30AF\u30A8\u30EA solver\
+      \ (Range Update Range Sum Query Solver)"
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/range-mapping-point-fold-segment-tree.hpp
+    title: "\u533A\u9593\u66F4\u65B0 + \u4E00\u70B9\u53D6\u5F97 \u30BB\u30B0\u30E1\
+      \u30F3\u30C8\u6728 (Dual Segment Tree)"
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/range-mapping-range-fold-segment-tree.hpp
+    title: "\u533A\u9593\u66F4\u65B0+\u533A\u9593\u53D6\u5F97 \u30BB\u30B0\u30E1\u30F3\
+      \u30C8\u6728 (Lazy Segment Tree)"
   - icon: ':warning:'
     path: src/geometry/R2/class/circle.hpp
     title: src/geometry/R2/class/circle.hpp
@@ -182,8 +245,35 @@ data:
     path: test/aoj/dsl_2_a.test.cpp
     title: test/aoj/dsl_2_a.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/dsl_2_b.test.cpp
-    title: test/aoj/dsl_2_b.test.cpp
+    path: test/aoj/dsl_2_b/fenwick-tree.test.cpp
+    title: test/aoj/dsl_2_b/fenwick-tree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/dsl_2_b/segment-tree.test.cpp
+    title: test/aoj/dsl_2_b/segment-tree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/dsl_2_d.test.cpp
+    title: test/aoj/dsl_2_d.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/dsl_2_e.test.cpp
+    title: test/aoj/dsl_2_e.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/dsl_2_f/range-maximum.test.cpp
+    title: test/aoj/dsl_2_f/range-maximum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/dsl_2_f/range-minimum.test.cpp
+    title: test/aoj/dsl_2_f/range-minimum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/dsl_2_g.test.cpp
+    title: test/aoj/dsl_2_g.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/dsl_2_h/range-maximum.test.cpp
+    title: test/aoj/dsl_2_h/range-maximum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/dsl_2_h/range-minimum.test.cpp
+    title: test/aoj/dsl_2_h/range-minimum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/dsl_2_i.test.cpp
+    title: test/aoj/dsl_2_i.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/grl_1_a.test.cpp
     title: test/aoj/grl_1_a.test.cpp
@@ -209,6 +299,12 @@ data:
     path: test/atcoder/abc177_d.test.cpp
     title: test/atcoder/abc177_d.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc179_f/range-chmax.test.cpp
+    title: test/atcoder/abc179_f/range-chmax.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc179_f/range-chmin.test.cpp
+    title: test/atcoder/abc179_f/range-chmin.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc212_h.test.cpp
     title: test/atcoder/abc212_h.test.cpp
   - icon: ':heavy_check_mark:'
@@ -226,6 +322,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc291_e.test.cpp
     title: test/atcoder/abc291_e.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc298_f.test.cpp
+    title: test/atcoder/abc298_f.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/library-checker/bitwise_and_convolution.test.cpp
     title: test/library-checker/bitwise_and_convolution.test.cpp
@@ -340,6 +439,23 @@ data:
   - src/geometry/Z2/segment-function/counterbalance-segments.hpp
   - src/data-structure/disjoint-set-union.hpp
   - src/data-structure/fenwick-tree.hpp
+  - src/data-structure/segment-tree/presets/range-update-range-maximum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-add-range-sum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-chmin-query-solver.hpp
+  - src/data-structure/segment-tree/presets/monoid/combined-structure-add-sum.hpp
+  - src/data-structure/segment-tree/presets/monoid/combined-structure-update-sum.hpp
+  - src/data-structure/segment-tree/presets/range-chmax-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-sum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-add-range-maximum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-maximum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-add-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-minimum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-add-range-minimum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-update-range-sum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-update-range-minimum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-update-query-solver.hpp
+  - src/data-structure/segment-tree/range-mapping-range-fold-segment-tree.hpp
+  - src/data-structure/segment-tree/range-mapping-point-fold-segment-tree.hpp
   - src/data-structure/segment-tree/point-mapping-range-fold-segment-tree.hpp
   - src/sequence/run-length-encoding.hpp
   - src/sequence/compression.hpp
@@ -368,25 +484,37 @@ data:
   - unit-test/math/totient.test.cpp
   - unit-test/math/totient-enumeration.test.cpp
   - unit-test/math/modular-arithmetic/static-modint.test.cpp
+  - test/atcoder/abc179_f/range-chmax.test.cpp
+  - test/atcoder/abc179_f/range-chmin.test.cpp
   - test/atcoder/abc258_e/online-algorithm.test.cpp
   - test/atcoder/abc258_e/offline-algorithm.test.cpp
   - test/atcoder/abc259_c.test.cpp
+  - test/atcoder/abc298_f.test.cpp
   - test/atcoder/abc132_d.test.cpp
   - test/atcoder/abc212_h.test.cpp
   - test/atcoder/abc177_d.test.cpp
   - test/atcoder/abc291_e.test.cpp
   - test/atcoder/abc259_d.test.cpp
+  - test/aoj/dsl_2_f/range-maximum.test.cpp
+  - test/aoj/dsl_2_f/range-minimum.test.cpp
+  - test/aoj/dsl_2_i.test.cpp
+  - test/aoj/dsl_2_b/fenwick-tree.test.cpp
+  - test/aoj/dsl_2_b/segment-tree.test.cpp
   - test/aoj/4011.test.cpp
   - test/aoj/grl_5_c.test.cpp
   - test/aoj/itp1_1_a.test.cpp
   - test/aoj/grl_1_b.test.cpp
   - test/aoj/2286.test.cpp
+  - test/aoj/dsl_2_e.test.cpp
   - test/aoj/dsl_1_a.test.cpp
   - test/aoj/ntl_1_d.test.cpp
+  - test/aoj/dsl_2_d.test.cpp
   - test/aoj/grl_6_a.test.cpp
   - test/aoj/grl_1_a.test.cpp
-  - test/aoj/dsl_2_b.test.cpp
+  - test/aoj/dsl_2_g.test.cpp
   - test/aoj/dsl_2_a.test.cpp
+  - test/aoj/dsl_2_h/range-maximum.test.cpp
+  - test/aoj/dsl_2_h/range-minimum.test.cpp
   - test/library-checker/unionfind.test.cpp
   - test/library-checker/bitwise_xor_convolution.test.cpp
   - test/library-checker/bitwise_and_convolution.test.cpp

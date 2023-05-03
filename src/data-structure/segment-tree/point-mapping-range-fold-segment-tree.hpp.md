@@ -7,11 +7,29 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/type-alias.hpp
     title: Type alias
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/presets/range-maximum-query-solver.hpp
+    title: "\u4E00\u70B9\u66F4\u65B0 + \u533A\u9593\u6700\u5927\u30AF\u30A8\u30EA\
+      \ solver (Range Maximum Query Solver)"
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/presets/range-minimum-query-solver.hpp
+    title: "\u4E00\u70B9\u66F4\u65B0 + \u533A\u9593\u6700\u5C0F\u30AF\u30A8\u30EA\
+      \ solver (Range Minimum Query Solver)"
+  - icon: ':heavy_check_mark:'
+    path: src/data-structure/segment-tree/presets/range-sum-query-solver.hpp
+    title: "\u4E00\u70B9\u66F4\u65B0 + \u533A\u9593\u548C\u30AF\u30A8\u30EA solver\
+      \ (Range Sum Query Solver)"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/dsl_2_a.test.cpp
     title: test/aoj/dsl_2_a.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/dsl_2_b/segment-tree.test.cpp
+    title: test/aoj/dsl_2_b/segment-tree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc298_f.test.cpp
+    title: test/atcoder/abc298_f.test.cpp
   - icon: ':heavy_check_mark:'
     path: unit-test/data-structure/segment-tree/point-mapping-range-fold-segment-tree.test.cpp
     title: unit-test/data-structure/segment-tree/point-mapping-range-fold-segment-tree.test.cpp
@@ -49,9 +67,11 @@ data:
     \ VT > tree;\n\n    void evaluate(usize index) {\n      tree[index] =\n      \
     \    V::operation(tree[index << 1 | 0], tree[index << 1 | 1]);\n    }\n\n   public:\n\
     \    using value_type = VT;\n\n    PointMappingRangeFoldSegmentTree() = default;\n\
-    \    explicit PointMappingRangeFoldSegmentTree(const usize n)\n        : tree(n\
-    \ * 2, V::identity()) {}\n    explicit PointMappingRangeFoldSegmentTree(\n   \
-    \     const std::vector< VT > &vs)\n        : PointMappingRangeFoldSegmentTree(vs.size())\
+    \n    explicit PointMappingRangeFoldSegmentTree(const usize n)\n        : tree(n\
+    \ * 2, V::identity()) {}\n\n    explicit PointMappingRangeFoldSegmentTree(const\
+    \ usize n, VT v)\n        : PointMappingRangeFoldSegmentTree(n) {\n      build(std::vector<\
+    \ VT >(n, v));\n    }\n\n    explicit PointMappingRangeFoldSegmentTree(\n    \
+    \    const std::vector< VT > &vs)\n        : PointMappingRangeFoldSegmentTree(vs.size())\
     \ {\n      build(vs);\n    }\n\n    void build(const std::vector< VT > &vs) {\n\
     \      usize n = vs.size();\n      assert(2 * n == tree.size());\n      std::copy(vs.begin(),\
     \ vs.end(), tree.begin() + n);\n      for (usize index: rrep(1, n)) {\n      \
@@ -79,9 +99,11 @@ data:
     \n    std::vector< VT > tree;\n\n    void evaluate(usize index) {\n      tree[index]\
     \ =\n          V::operation(tree[index << 1 | 0], tree[index << 1 | 1]);\n   \
     \ }\n\n   public:\n    using value_type = VT;\n\n    PointMappingRangeFoldSegmentTree()\
-    \ = default;\n    explicit PointMappingRangeFoldSegmentTree(const usize n)\n \
-    \       : tree(n * 2, V::identity()) {}\n    explicit PointMappingRangeFoldSegmentTree(\n\
-    \        const std::vector< VT > &vs)\n        : PointMappingRangeFoldSegmentTree(vs.size())\
+    \ = default;\n\n    explicit PointMappingRangeFoldSegmentTree(const usize n)\n\
+    \        : tree(n * 2, V::identity()) {}\n\n    explicit PointMappingRangeFoldSegmentTree(const\
+    \ usize n, VT v)\n        : PointMappingRangeFoldSegmentTree(n) {\n      build(std::vector<\
+    \ VT >(n, v));\n    }\n\n    explicit PointMappingRangeFoldSegmentTree(\n    \
+    \    const std::vector< VT > &vs)\n        : PointMappingRangeFoldSegmentTree(vs.size())\
     \ {\n      build(vs);\n    }\n\n    void build(const std::vector< VT > &vs) {\n\
     \      usize n = vs.size();\n      assert(2 * n == tree.size());\n      std::copy(vs.begin(),\
     \ vs.end(), tree.begin() + n);\n      for (usize index: rrep(1, n)) {\n      \
@@ -107,11 +129,16 @@ data:
   - src/cpp-template/header/type-alias.hpp
   isVerificationFile: false
   path: src/data-structure/segment-tree/point-mapping-range-fold-segment-tree.hpp
-  requiredBy: []
-  timestamp: '2023-01-31 16:32:36+09:00'
+  requiredBy:
+  - src/data-structure/segment-tree/presets/range-sum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-maximum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-minimum-query-solver.hpp
+  timestamp: '2023-05-03 14:59:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - unit-test/data-structure/segment-tree/point-mapping-range-fold-segment-tree.test.cpp
+  - test/atcoder/abc298_f.test.cpp
+  - test/aoj/dsl_2_b/segment-tree.test.cpp
   - test/aoj/dsl_2_a.test.cpp
 documentation_of: src/data-structure/segment-tree/point-mapping-range-fold-segment-tree.hpp
 layout: document
@@ -127,18 +154,19 @@ title: "\u4E00\u70B9\u66F4\u65B0+\u533A\u9593\u53D6\u5F97 \u30BB\u30B0\u30E1\u30
 
 ```
 (1) SegmentTree< V >(usize n)
-(2) SegmentTree< V >(vector< VT > vs)
+(2) SegmentTree< V >(usize n, VT v)
+(3) SegmentTree< V >(vector< VT > vs)
 ```
 
 1. 列 $a$ を長さ $n$ の列で初期化する。各要素の初期値は `V::identity()` となる。
-2. 列 $a$ を `vs` で初期化する。
+2. 列 $a$ を長さ $n$ の列で初期化する。各要素の初期値は `v` となる。
+3. 列 $a$ を `vs` で初期化する。
 
 ### 制約
 - $0 \leq n$
 
 ### 計算量
 - $O(n)$
-
 
 ## build
 ```
@@ -152,7 +180,6 @@ void build(vector< VT > vs)
 
 ### 計算量
 - $O(n)$
-
 
 ## size
 ```
@@ -170,11 +197,10 @@ usize size() const
 void set(usize i, VT x)
 ```
 
-$a_i$ を $x$ で更新する。
+$a_i \leftarrow x$ で更新する。
 
 ### 計算量
 - $O(\log(n))$
-
 
 ## fold
 ```
@@ -187,16 +213,16 @@ $a_i$ を $x$ で更新する。
 2. $a_l \cdot a_{l+1} \cdot \dotsm \cdot a_{r-1}$ を返す。$l = r$ のとき `V::identity()` が返る。
 3. $a_0 \cdot a_1 \cdot \dotsm \cdot a_{n-1}$ を返す。
 
+### 制約
+1. $0 \leq i < n$
+2. $0 \leq l \leq r \leq n$
+
 ### 計算量
 - (1): $O(1)$
 - (2):
   - $O(\log(n))$
   - $d = r - l$ として $O(\log(d))$
 - (3): $O(1)$
-
-### 制約
-1. $0 \leq i < n$
-2. $0 \leq l \leq r \leq n$
 
 ## max_right
 気が向いたらそのうち実装する

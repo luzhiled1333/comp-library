@@ -52,6 +52,108 @@ data:
       path: src/data-structure/segment-tree/point-mapping-range-fold-segment-tree.hpp
       title: "\u4E00\u70B9\u66F4\u65B0+\u533A\u9593\u53D6\u5F97 \u30BB\u30B0\u30E1\
         \u30F3\u30C8\u6728"
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/segment-tree/range-mapping-point-fold-segment-tree.hpp
+      title: "\u533A\u9593\u66F4\u65B0 + \u4E00\u70B9\u53D6\u5F97 \u30BB\u30B0\u30E1\
+        \u30F3\u30C8\u6728 (Dual Segment Tree)"
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/segment-tree/range-mapping-range-fold-segment-tree.hpp
+      title: "\u533A\u9593\u66F4\u65B0+\u533A\u9593\u53D6\u5F97 \u30BB\u30B0\u30E1\
+        \u30F3\u30C8\u6728 (Lazy Segment Tree)"
+  - name: src/data-structure/segment-tree/presets/monoid
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/segment-tree/presets/monoid/combined-structure-add-maximum.hpp
+      title: src/data-structure/segment-tree/presets/monoid/combined-structure-add-maximum.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/segment-tree/presets/monoid/combined-structure-add-minimum.hpp
+      title: src/data-structure/segment-tree/presets/monoid/combined-structure-add-minimum.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/segment-tree/presets/monoid/combined-structure-add-sum.hpp
+      title: src/data-structure/segment-tree/presets/monoid/combined-structure-add-sum.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/segment-tree/presets/monoid/combined-structure-update-maximum.hpp
+      title: src/data-structure/segment-tree/presets/monoid/combined-structure-update-maximum.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/segment-tree/presets/monoid/combined-structure-update-minimum.hpp
+      title: src/data-structure/segment-tree/presets/monoid/combined-structure-update-minimum.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/segment-tree/presets/monoid/combined-structure-update-sum.hpp
+      title: src/data-structure/segment-tree/presets/monoid/combined-structure-update-sum.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/segment-tree/presets/monoid/operator-structure-add.hpp
+      title: src/data-structure/segment-tree/presets/monoid/operator-structure-add.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/segment-tree/presets/monoid/operator-structure-chmax.hpp
+      title: src/data-structure/segment-tree/presets/monoid/operator-structure-chmax.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/segment-tree/presets/monoid/operator-structure-chmin.hpp
+      title: src/data-structure/segment-tree/presets/monoid/operator-structure-chmin.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/segment-tree/presets/monoid/operator-structure-update.hpp
+      title: src/data-structure/segment-tree/presets/monoid/operator-structure-update.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/segment-tree/presets/monoid/value-structure-maximum.hpp
+      title: src/data-structure/segment-tree/presets/monoid/value-structure-maximum.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/segment-tree/presets/monoid/value-structure-minimum.hpp
+      title: src/data-structure/segment-tree/presets/monoid/value-structure-minimum.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/segment-tree/presets/monoid/value-structure-sum.hpp
+      title: src/data-structure/segment-tree/presets/monoid/value-structure-sum.hpp
+  - name: src/data-structure/segment-tree/presets
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/segment-tree/presets/range-add-query-solver.hpp
+      title: "\u533A\u9593\u52A0\u7B97\u30AF\u30A8\u30EA solver (Range Add Query Solver)"
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/segment-tree/presets/range-add-range-maximum-query-solver.hpp
+      title: "\u533A\u9593\u52A0\u7B97 + \u533A\u9593\u6700\u5927\u30AF\u30A8\u30EA\
+        \ solver (Range Add Range Maximum Query Solver)"
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/segment-tree/presets/range-add-range-minimum-query-solver.hpp
+      title: "\u533A\u9593\u52A0\u7B97 + \u533A\u9593\u6700\u5C0F\u30AF\u30A8\u30EA\
+        \ solver (Range Add Range Minimum Query Solver)"
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/segment-tree/presets/range-add-range-sum-query-solver.hpp
+      title: "\u533A\u9593\u52A0\u7B97 + \u533A\u9593\u548C\u30AF\u30A8\u30EA solver\
+        \ (Range Add Range Sum Query Solver)"
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/segment-tree/presets/range-chmax-query-solver.hpp
+      title: "\u533A\u9593 chmax \u30AF\u30A8\u30EA solver (Range ChangeMax Query\
+        \ Solver)"
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/segment-tree/presets/range-chmin-query-solver.hpp
+      title: "\u533A\u9593 chmin \u30AF\u30A8\u30EA solver (Range ChangeMin Query\
+        \ Solver)"
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/segment-tree/presets/range-maximum-query-solver.hpp
+      title: "\u4E00\u70B9\u66F4\u65B0 + \u533A\u9593\u6700\u5927\u30AF\u30A8\u30EA\
+        \ solver (Range Maximum Query Solver)"
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/segment-tree/presets/range-minimum-query-solver.hpp
+      title: "\u4E00\u70B9\u66F4\u65B0 + \u533A\u9593\u6700\u5C0F\u30AF\u30A8\u30EA\
+        \ solver (Range Minimum Query Solver)"
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/segment-tree/presets/range-sum-query-solver.hpp
+      title: "\u4E00\u70B9\u66F4\u65B0 + \u533A\u9593\u548C\u30AF\u30A8\u30EA solver\
+        \ (Range Sum Query Solver)"
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/segment-tree/presets/range-update-query-solver.hpp
+      title: "\u533A\u9593\u66F4\u65B0\u30AF\u30A8\u30EA solver (Range Update Query\
+        \ Solver)"
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/segment-tree/presets/range-update-range-maximum-query-solver.hpp
+      title: "\u533A\u9593\u66F4\u65B0 + \u533A\u9593\u6700\u5927\u30AF\u30A8\u30EA\
+        \ solver (Range Update Range Maximum Query Solver)"
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/segment-tree/presets/range-update-range-minimum-query-solver.hpp
+      title: "\u533A\u9593\u66F4\u65B0 + \u533A\u9593\u6700\u5C0F\u30AF\u30A8\u30EA\
+        \ solver (Range Update Range Minimum Query Solver)"
+    - icon: ':heavy_check_mark:'
+      path: src/data-structure/segment-tree/presets/range-update-range-sum-query-solver.hpp
+      title: "\u533A\u9593\u66F4\u65B0 + \u533A\u9593\u548C\u30AF\u30A8\u30EA solver\
+        \ (Range Update Range Sum Query Solver)"
   - name: src/geometry/R2/class
     pages:
     - icon: ':warning:'
@@ -301,8 +403,17 @@ data:
       path: test/aoj/dsl_2_a.test.cpp
       title: test/aoj/dsl_2_a.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/aoj/dsl_2_b.test.cpp
-      title: test/aoj/dsl_2_b.test.cpp
+      path: test/aoj/dsl_2_d.test.cpp
+      title: test/aoj/dsl_2_d.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/dsl_2_e.test.cpp
+      title: test/aoj/dsl_2_e.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/dsl_2_g.test.cpp
+      title: test/aoj/dsl_2_g.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/dsl_2_i.test.cpp
+      title: test/aoj/dsl_2_i.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/grl_1_a.test.cpp
       title: test/aoj/grl_1_a.test.cpp
@@ -321,6 +432,30 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/ntl_1_d.test.cpp
       title: test/aoj/ntl_1_d.test.cpp
+  - name: test/aoj/dsl_2_b
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/dsl_2_b/fenwick-tree.test.cpp
+      title: test/aoj/dsl_2_b/fenwick-tree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/dsl_2_b/segment-tree.test.cpp
+      title: test/aoj/dsl_2_b/segment-tree.test.cpp
+  - name: test/aoj/dsl_2_f
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/dsl_2_f/range-maximum.test.cpp
+      title: test/aoj/dsl_2_f/range-maximum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/dsl_2_f/range-minimum.test.cpp
+      title: test/aoj/dsl_2_f/range-minimum.test.cpp
+  - name: test/aoj/dsl_2_h
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/dsl_2_h/range-maximum.test.cpp
+      title: test/aoj/dsl_2_h/range-maximum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/dsl_2_h/range-minimum.test.cpp
+      title: test/aoj/dsl_2_h/range-minimum.test.cpp
   - name: test/atcoder
     pages:
     - icon: ':heavy_check_mark:'
@@ -341,6 +476,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/atcoder/abc291_e.test.cpp
       title: test/atcoder/abc291_e.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/atcoder/abc298_f.test.cpp
+      title: test/atcoder/abc298_f.test.cpp
+  - name: test/atcoder/abc179_f
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/atcoder/abc179_f/range-chmax.test.cpp
+      title: test/atcoder/abc179_f/range-chmax.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/atcoder/abc179_f/range-chmin.test.cpp
+      title: test/atcoder/abc179_f/range-chmin.test.cpp
   - name: test/atcoder/abc258_e
     pages:
     - icon: ':heavy_check_mark:'

@@ -51,9 +51,11 @@ data:
     \ VT > tree;\n\n    void evaluate(usize index) {\n      tree[index] =\n      \
     \    V::operation(tree[index << 1 | 0], tree[index << 1 | 1]);\n    }\n\n   public:\n\
     \    using value_type = VT;\n\n    PointMappingRangeFoldSegmentTree() = default;\n\
-    \    explicit PointMappingRangeFoldSegmentTree(const usize n)\n        : tree(n\
-    \ * 2, V::identity()) {}\n    explicit PointMappingRangeFoldSegmentTree(\n   \
-    \     const std::vector< VT > &vs)\n        : PointMappingRangeFoldSegmentTree(vs.size())\
+    \n    explicit PointMappingRangeFoldSegmentTree(const usize n)\n        : tree(n\
+    \ * 2, V::identity()) {}\n\n    explicit PointMappingRangeFoldSegmentTree(const\
+    \ usize n, VT v)\n        : PointMappingRangeFoldSegmentTree(n) {\n      build(std::vector<\
+    \ VT >(n, v));\n    }\n\n    explicit PointMappingRangeFoldSegmentTree(\n    \
+    \    const std::vector< VT > &vs)\n        : PointMappingRangeFoldSegmentTree(vs.size())\
     \ {\n      build(vs);\n    }\n\n    void build(const std::vector< VT > &vs) {\n\
     \      usize n = vs.size();\n      assert(2 * n == tree.size());\n      std::copy(vs.begin(),\
     \ vs.end(), tree.begin() + n);\n      for (usize index: rrep(1, n)) {\n      \
@@ -150,7 +152,7 @@ data:
   isVerificationFile: true
   path: unit-test/data-structure/segment-tree/point-mapping-range-fold-segment-tree.test.cpp
   requiredBy: []
-  timestamp: '2023-01-31 16:32:36+09:00'
+  timestamp: '2023-05-03 14:59:16+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: unit-test/data-structure/segment-tree/point-mapping-range-fold-segment-tree.test.cpp

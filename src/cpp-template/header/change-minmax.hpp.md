@@ -25,6 +25,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc259_c.test.cpp
     title: test/atcoder/abc259_c.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc298_f.test.cpp
+    title: test/atcoder/abc298_f.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -50,6 +53,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/atcoder/abc259_c.test.cpp
+  - test/atcoder/abc298_f.test.cpp
   - test/atcoder/abc177_d.test.cpp
   - test/aoj/itp1_1_a.test.cpp
   - test/aoj/grl_1_a.test.cpp
