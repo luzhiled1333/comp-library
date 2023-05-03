@@ -1,5 +1,5 @@
 ---
-title: 区間更新+一点取得 セグメント木 (Dual Segment Tree)
+title: 区間更新 + 一点取得 セグメント木 (Dual Segment Tree)
 documentation_of: //src/data-structure/segment-tree/range-mapping-point-fold-segment-tree.hpp
 ---
 
