@@ -1,6 +1,7 @@
 #include "src/cpp-template/header/type-alias.hpp"
 
 #include <array>
+#include <cassert>
 
 #include <iostream>
 
@@ -45,10 +46,12 @@ namespace luz::internal {
 
   template< usize r, usize c, class T >
   T &InternalMatrix< r, c, T >::at(const usize i, const usize j) {
+    assert(i < r and j < c);
     return as[i * c + j];
   }
   template< usize r, usize c, class T >
   const T &InternalMatrix< r, c, T >::at(const usize i, const usize j) const {
+    assert(i < r and j < c);
     return as[i * c + j];
   }
 
