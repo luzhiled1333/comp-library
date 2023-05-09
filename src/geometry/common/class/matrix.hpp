@@ -4,16 +4,17 @@
 
 #include <iostream>
 
-namespace luz {
+namespace luz::internal {
 
   template < usize r, usize c, class T >
-  class Matrix {
+  class InternalMatrix {
     static constexpr usize n = r * c;
 
+   protected:
     std::array< T, r * c > as;
 
    public:
-    Matrix() : as() {}
+    InternalMatrix() : as() {}
 
     void debug() {
       for (usize i = 0; i < n; i++) {
@@ -22,46 +23,70 @@ namespace luz {
       std::cerr << std::endl;
     }
 
-    T &at(const usize i, const usize j) {
-      return as[i * c + j];
-    }
-    const T &at(const usize i, const usize j) const {
-      return as[i * c + j];
-    }
+    T &at(const usize i, const usize j);
+    const T &at(const usize i, const usize j) const;
 
-    Matrix< r, c, T > operator+() const;
-    Matrix< r, c, T > operator-() const;
 
-    Matrix< r, c, T > &operator+=(const Matrix< r, c, T > &op);
-    Matrix< r, c, T > &operator-=(const Matrix< r, c, T > &op);
-    Matrix< r, c, T > operator+(const Matrix< r, c, T > &op) const;
-    Matrix< r, c, T > operator-(const Matrix< r, c, T > &op) const;
+    InternalMatrix< r, c, T > operator+() const;
+    InternalMatrix< r, c, T > operator-() const;
 
-    Matrix< r, c, T > &operator*=(const T &scalar);
-    Matrix< r, c, T > &operator/=(const T &scalar);
-    Matrix< r, c, T > operator*(const T &scalar) const;
-    Matrix< r, c, T > operator/(const T &scalar) const;
+    InternalMatrix< r, c, T > &operator+=(const InternalMatrix< r, c, T > &op);
+    InternalMatrix< r, c, T > &operator-=(const InternalMatrix< r, c, T > &op);
+    InternalMatrix< r, c, T > operator+(const InternalMatrix< r, c, T > &op) const;
+    InternalMatrix< r, c, T > operator-(const InternalMatrix< r, c, T > &op) const;
+
+    InternalMatrix< r, c, T > &operator*=(const T &scalar);
+    InternalMatrix< r, c, T > &operator/=(const T &scalar);
+    InternalMatrix< r, c, T > operator*(const T &scalar) const;
+    InternalMatrix< r, c, T > operator/(const T &scalar) const;
 
     T norm() const;
+  };
+
+  template< usize r, usize c, class T >
+  T &InternalMatrix< r, c, T >::at(const usize i, const usize j) {
+    return as[i * c + j];
+  }
+  template< usize r, usize c, class T >
+  const T &InternalMatrix< r, c, T >::at(const usize i, const usize j) const {
+    return as[i * c + j];
+  }
+
+} // namespace luz::internal
+
+namespace luz {
+
+  template < usize r, usize c, class T >
+  class Matrix: public internal::InternalMatrix<r, c, T> {
+   public:
+
+    using internal::InternalMatrix<r, c, T>::InternalMatrix;
+  };
+
+  template< usize r, class T >
+  class Matrix<r, 1, T>: public internal::InternalMatrix<r, 1, T> {
+   public:
+
+    using internal::InternalMatrix<r, 1, T>::InternalMatrix;
 
     const T &x() const {
-      return as[0];
+      return this->as[0];
     }
     const T &y() const {
-      return as[1];
+      return this->as[1];
     }
     const T &z() const {
-      return as[2];
+      return this->as[2];
     }
 
     T &x() {
-      return as[0];
+      return this->as[0];
     }
     T &y() {
-      return as[1];
+      return this->as[1];
     }
     T &z() {
-      return as[2];
+      return this->as[2];
     }
   };
 
