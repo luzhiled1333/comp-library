@@ -1,4 +1,5 @@
 #include "src/cpp-template/header/type-alias.hpp"
+#include "src/cpp-template/header/rep.hpp"
 
 #include <array>
 #include <cassert>
@@ -27,7 +28,6 @@ namespace luz::internal {
     T &at(const usize i, const usize j);
     const T &at(const usize i, const usize j) const;
 
-
     InternalMatrix< r, c, T > operator+() const;
     InternalMatrix< r, c, T > operator-() const;
 
@@ -53,6 +53,53 @@ namespace luz::internal {
   const T &InternalMatrix< r, c, T >::at(const usize i, const usize j) const {
     assert(i < r and j < c);
     return as[i * c + j];
+  }
+
+  template< usize r, usize c, class T >
+  InternalMatrix< r, c, T > InternalMatrix< r, c, T >::operator+() const {
+    return *this;
+  }
+  template< usize r, usize c, class T >
+  InternalMatrix< r, c, T > InternalMatrix< r, c, T >::operator-() const {
+    return InternalMatrix() - *this;
+  }
+
+  template< usize r, usize c, class T >
+  InternalMatrix< r, c, T > &InternalMatrix< r, c, T >::operator+=(const InternalMatrix< r, c, T > &rhs) {
+    for (usize i: rep(0, n)) as[i] += rhs.as[i];
+    return *this;
+  }
+  template< usize r, usize c, class T >
+  InternalMatrix< r, c, T > &InternalMatrix< r, c, T >::operator-=(const InternalMatrix< r, c, T > &rhs) {
+    for (usize i: rep(0, n)) as[i] -= rhs.as[i];
+    return *this;
+  }
+  template< usize r, usize c, class T >
+  InternalMatrix< r, c, T > InternalMatrix< r, c, T >::operator+(const InternalMatrix< r, c, T > &rhs) const {
+    return InternalMatrix(*this) += rhs;
+  }
+  template< usize r, usize c, class T >
+  InternalMatrix< r, c, T > InternalMatrix< r, c, T >::operator-(const InternalMatrix< r, c, T > &rhs) const {
+    return InternalMatrix(*this) -= rhs;
+  }
+
+  template< usize r, usize c, class T >
+  InternalMatrix< r, c, T > &InternalMatrix< r, c, T >::operator*=(const T &scalar) {
+    for (T &a: as) a *= scalar;
+    return *this;
+  }
+  template< usize r, usize c, class T >
+  InternalMatrix< r, c, T > &InternalMatrix< r, c, T >::operator/=(const T &scalar) {
+    for (T &a: as) a /= scalar;
+    return *this;
+  }
+  template< usize r, usize c, class T >
+  InternalMatrix< r, c, T > InternalMatrix< r, c, T >::operator*(const T &scalar) const {
+    return InternalMatrix(*this) *= scalar;
+  }
+  template< usize r, usize c, class T >
+  InternalMatrix< r, c, T > InternalMatrix< r, c, T >::operator/(const T &scalar) const {
+    return InternalMatrix(*this) /= scalar;
   }
 
 } // namespace luz::internal
