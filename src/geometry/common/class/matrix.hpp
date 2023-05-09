@@ -15,6 +15,8 @@ namespace luz::internal {
     std::array< T, r * c > as;
 
    public:
+    using value_type = T;
+
     InternalMatrix(): as() {}
 
     T &at(const usize i, const usize j);
