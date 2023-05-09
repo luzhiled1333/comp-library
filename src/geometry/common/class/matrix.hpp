@@ -17,13 +17,6 @@ namespace luz::internal {
    public:
     InternalMatrix(): as() {}
 
-    void debug() {
-      for (usize i = 0; i < n; i++) {
-        std::cerr << as[i] << " ";
-      }
-      std::cerr << std::endl;
-    }
-
     T &at(const usize i, const usize j);
     const T &at(const usize i, const usize j) const;
 
@@ -31,13 +24,13 @@ namespace luz::internal {
     InternalMatrix< r, c, T > operator-() const;
 
     InternalMatrix< r, c, T > &operator+=(
-        const InternalMatrix< r, c, T > &op);
+        const InternalMatrix< r, c, T > &rhs);
     InternalMatrix< r, c, T > &operator-=(
-        const InternalMatrix< r, c, T > &op);
+        const InternalMatrix< r, c, T > &rhs);
     InternalMatrix< r, c, T > operator+(
-        const InternalMatrix< r, c, T > &op) const;
+        const InternalMatrix< r, c, T > &rhs) const;
     InternalMatrix< r, c, T > operator-(
-        const InternalMatrix< r, c, T > &op) const;
+        const InternalMatrix< r, c, T > &rhs) const;
 
     InternalMatrix< r, c, T > &operator*=(const T &scalar);
     InternalMatrix< r, c, T > &operator/=(const T &scalar);
@@ -152,7 +145,7 @@ namespace luz {
 
     T norm() const {
       T result{};
-      for (T a: as) result += a * a;
+      for (T a: this->as) result += a * a;
       return result;
     }
   };
