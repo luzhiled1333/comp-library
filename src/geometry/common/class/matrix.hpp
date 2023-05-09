@@ -40,8 +40,6 @@ namespace luz::internal {
     InternalMatrix< r, c, T > &operator/=(const T &scalar);
     InternalMatrix< r, c, T > operator*(const T &scalar) const;
     InternalMatrix< r, c, T > operator/(const T &scalar) const;
-
-    T norm() const;
   };
 
   template< usize r, usize c, class T >
@@ -138,6 +136,13 @@ namespace luz {
     T &z() {
       return this->as[2];
     }
+
+    T norm() const {
+      T result{};
+      for (T a: as) result += a * a;
+      return result;
+    }
+
   };
 
 } // namespace luz
