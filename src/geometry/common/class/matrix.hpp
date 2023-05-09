@@ -2,15 +2,32 @@
 
 #include <array>
 
+#include <iostream>
+
 namespace luz {
 
   template < usize r, usize c, class T >
   class Matrix {
+    static constexpr usize n = r * c;
+
     std::array< T, r * c > as;
 
    public:
-    T &operator[](const usize i);
-    const T &operator[](const usize i) const;
+    Matrix() : as() {}
+
+    void debug() {
+      for (usize i = 0; i < n; i++) {
+        std::cerr << as[i] << " ";
+      }
+      std::cerr << std::endl;
+    }
+
+    T &at(const usize i, const usize j) {
+      return as[i * c + j];
+    }
+    const T &at(const usize i, const usize j) const {
+      return as[i * c + j];
+    }
 
     Matrix< r, c, T > operator+() const;
     Matrix< r, c, T > operator-() const;
