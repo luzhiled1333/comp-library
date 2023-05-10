@@ -4,13 +4,12 @@
 #include "src/cpp-template/header/type-alias.hpp"
 
 #include <cassert>
-#include <iostream>
 #include <vector>
 
 namespace luz::internal {
 
   template < usize r, usize c, class T >
-  class InternalMatrix {
+  class Mat {
     static constexpr usize n = r * c;
 
    protected:
@@ -19,111 +18,101 @@ namespace luz::internal {
    public:
     using value_type = T;
 
-    InternalMatrix(): as(r * c) {}
+    Mat(): as(n) {}
 
     T &at(const usize, const usize);
     const T &at(const usize, const usize) const;
 
-    InternalMatrix operator+() const;
-    InternalMatrix operator-() const;
+    Mat operator+() const;
+    Mat operator-() const;
 
-    InternalMatrix &operator+=(const InternalMatrix &);
-    InternalMatrix &operator-=(const InternalMatrix &);
-    InternalMatrix operator+(const InternalMatrix &) const;
-    InternalMatrix operator-(const InternalMatrix &) const;
+    Mat &operator+=(const Mat &);
+    Mat &operator-=(const Mat &);
+    Mat operator+(const Mat &) const;
+    Mat operator-(const Mat &) const;
 
-    InternalMatrix &operator*=(const T &);
-    InternalMatrix &operator/=(const T &);
-    InternalMatrix operator*(const T &) const;
-    InternalMatrix operator/(const T &) const;
+    Mat &operator*=(const T &);
+    Mat &operator/=(const T &);
+    Mat operator*(const T &) const;
+    Mat operator/(const T &) const;
 
-    bool operator==(const InternalMatrix &) const;
-    bool operator!=(const InternalMatrix &) const;
+    bool operator==(const Mat &) const;
+    bool operator!=(const Mat &) const;
 
     // Implement (scalar) * (Matrix)
-    friend InternalMatrix operator*(
-        const T &scalar, const InternalMatrix< r, c, T > &mat) {
-      return InternalMatrix< r, c, T >(mat) *= scalar;
+    friend Mat operator*(const T &scalar, const Mat< r, c, T > &mat) {
+      return Mat< r, c, T >(mat) *= scalar;
     }
   };
 
   template < usize r, usize c, class T >
-  T &InternalMatrix< r, c, T >::at(const usize i, const usize j) {
+  T &Mat< r, c, T >::at(const usize i, const usize j) {
     assert(i < r and j < c);
     return as[i * c + j];
   }
   template < usize r, usize c, class T >
-  const T &InternalMatrix< r, c, T >::at(const usize i,
-                                         const usize j) const {
+  const T &Mat< r, c, T >::at(const usize i, const usize j) const {
     assert(i < r and j < c);
     return as[i * c + j];
   }
 
   template < usize r, usize c, class T >
-  InternalMatrix< r, c, T > InternalMatrix< r, c, T >::operator+()
-      const {
+  Mat< r, c, T > Mat< r, c, T >::operator+() const {
     return *this;
   }
   template < usize r, usize c, class T >
-  InternalMatrix< r, c, T > InternalMatrix< r, c, T >::operator-()
-      const {
-    return InternalMatrix() - *this;
+  Mat< r, c, T > Mat< r, c, T >::operator-() const {
+    return Mat() - *this;
   }
 
   template < usize r, usize c, class T >
-  InternalMatrix< r, c, T > &InternalMatrix< r, c, T >::operator+=(
-      const InternalMatrix< r, c, T > &rhs) {
+  Mat< r, c, T > &Mat< r, c, T >::operator+=(
+      const Mat< r, c, T > &rhs) {
     for (usize i: rep(0, n)) as[i] += rhs.as[i];
     return *this;
   }
   template < usize r, usize c, class T >
-  InternalMatrix< r, c, T > &InternalMatrix< r, c, T >::operator-=(
-      const InternalMatrix< r, c, T > &rhs) {
+  Mat< r, c, T > &Mat< r, c, T >::operator-=(
+      const Mat< r, c, T > &rhs) {
     for (usize i: rep(0, n)) as[i] -= rhs.as[i];
     return *this;
   }
   template < usize r, usize c, class T >
-  InternalMatrix< r, c, T > InternalMatrix< r, c, T >::operator+(
-      const InternalMatrix< r, c, T > &rhs) const {
-    return InternalMatrix(*this) += rhs;
+  Mat< r, c, T > Mat< r, c, T >::operator+(
+      const Mat< r, c, T > &rhs) const {
+    return Mat(*this) += rhs;
   }
   template < usize r, usize c, class T >
-  InternalMatrix< r, c, T > InternalMatrix< r, c, T >::operator-(
-      const InternalMatrix< r, c, T > &rhs) const {
-    return InternalMatrix(*this) -= rhs;
+  Mat< r, c, T > Mat< r, c, T >::operator-(
+      const Mat< r, c, T > &rhs) const {
+    return Mat(*this) -= rhs;
   }
 
   template < usize r, usize c, class T >
-  InternalMatrix< r, c, T > &InternalMatrix< r, c, T >::operator*=(
-      const T &scalar) {
+  Mat< r, c, T > &Mat< r, c, T >::operator*=(const T &scalar) {
     for (T &a: as) a *= scalar;
     return *this;
   }
   template < usize r, usize c, class T >
-  InternalMatrix< r, c, T > &InternalMatrix< r, c, T >::operator/=(
-      const T &scalar) {
+  Mat< r, c, T > &Mat< r, c, T >::operator/=(const T &scalar) {
     for (T &a: as) a /= scalar;
     return *this;
   }
   template < usize r, usize c, class T >
-  InternalMatrix< r, c, T > InternalMatrix< r, c, T >::operator*(
-      const T &scalar) const {
-    return InternalMatrix(*this) *= scalar;
+  Mat< r, c, T > Mat< r, c, T >::operator*(const T &scalar) const {
+    return Mat(*this) *= scalar;
   }
   template < usize r, usize c, class T >
-  InternalMatrix< r, c, T > InternalMatrix< r, c, T >::operator/(
-      const T &scalar) const {
-    return InternalMatrix(*this) /= scalar;
+  Mat< r, c, T > Mat< r, c, T >::operator/(const T &scalar) const {
+    return Mat(*this) /= scalar;
   }
 
   template < usize r, usize c, class T >
-  bool InternalMatrix< r, c, T >::operator==(
-      const InternalMatrix &rhs) const {
+  bool Mat< r, c, T >::operator==(const Mat &rhs) const {
     return as == rhs.as;
   }
   template < usize r, usize c, class T >
-  bool InternalMatrix< r, c, T >::operator!=(
-      const InternalMatrix &rhs) const {
+  bool Mat< r, c, T >::operator!=(const Mat &rhs) const {
     return as != rhs.as;
   }
 
@@ -132,25 +121,23 @@ namespace luz::internal {
 namespace luz {
 
   template < usize r, usize c, class T >
-  class Matrix: public internal::InternalMatrix< r, c, T > {
-    using internal_mat = internal::InternalMatrix< r, c, T >;
+  class Matrix: public internal::Mat< r, c, T > {
+    using internal_mat = internal::Mat< r, c, T >;
 
    public:
-    using internal_mat::InternalMatrix;
+    using internal_mat::Mat;
 
-    Matrix(const internal_mat &mat)
-        : internal_mat::InternalMatrix(mat) {}
+    Matrix(const internal_mat &mat): internal_mat::Mat(mat) {}
   };
 
   template < usize d, class T >
-  class Vector: public internal::InternalMatrix< d, 1, T > {
-    using internal_mat = internal::InternalMatrix< d, 1, T >;
+  class Vector: public internal::Mat< d, 1, T > {
+    using internal_mat = internal::Mat< d, 1, T >;
 
    public:
-    using internal::InternalMatrix< d, 1, T >::InternalMatrix;
+    using internal::Mat< d, 1, T >::Mat;
 
-    Vector(const internal_mat &mat)
-        : internal_mat::InternalMatrix(mat) {}
+    Vector(const internal_mat &mat): internal_mat::Mat(mat) {}
 
     const T &x() const {
       return this->as[0];
