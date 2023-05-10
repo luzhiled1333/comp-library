@@ -138,15 +138,17 @@ namespace luz {
    public:
     using internal_mat::InternalMatrix;
 
-    Matrix(const internal::InternalMatrix< r, c, T > &mat)
-        : internal_mat::InternalMatrix(mat) {}
+    Matrix(const internal_mat &mat) : internal_mat::InternalMatrix(mat) {}
   };
 
-  template < usize r, class T >
-  class Matrix< r, 1, T >
-      : public internal::InternalMatrix< r, 1, T > {
+  template < usize d, class T >
+  class Vector: public internal::InternalMatrix< d, 1, T > {
+    using internal_mat = internal::InternalMatrix< d, 1, T >;
+
    public:
-    using internal::InternalMatrix< r, 1, T >::InternalMatrix;
+    using internal::InternalMatrix< d, 1, T >::InternalMatrix;
+
+    Vector(const internal_mat &mat): internal_mat::InternalMatrix(mat) {}
 
     const T &x() const {
       return this->as[0];
