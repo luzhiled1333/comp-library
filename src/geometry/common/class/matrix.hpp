@@ -21,8 +21,8 @@ namespace luz::internal {
 
     InternalMatrix(): as() {}
 
-    T &at(const usize i, const usize j);
-    const T &at(const usize i, const usize j) const;
+    T &at(const usize, const usize);
+    const T &at(const usize, const usize) const;
 
     InternalMatrix operator+() const;
     InternalMatrix operator-() const;
