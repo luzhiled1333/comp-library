@@ -3,9 +3,9 @@
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
 
-#include <array>
 #include <cassert>
 #include <iostream>
+#include <vector>
 
 namespace luz::internal {
 
@@ -14,12 +14,12 @@ namespace luz::internal {
     static constexpr usize n = r * c;
 
    protected:
-    std::array< T, r * c > as;
+    std::vector< T > as;
 
    public:
     using value_type = T;
 
-    InternalMatrix(): as() {}
+    InternalMatrix(): as(r * c) {}
 
     T &at(const usize, const usize);
     const T &at(const usize, const usize) const;
@@ -133,8 +133,13 @@ namespace luz {
 
   template < usize r, usize c, class T >
   class Matrix: public internal::InternalMatrix< r, c, T > {
+    using internal_mat = internal::InternalMatrix< r, c, T >;
+
    public:
-    using internal::InternalMatrix< r, c, T >::InternalMatrix;
+    using internal_mat::InternalMatrix;
+
+    Matrix(const internal::InternalMatrix< r, c, T > &mat)
+        : internal_mat::InternalMatrix(mat) {}
   };
 
   template < usize r, class T >
