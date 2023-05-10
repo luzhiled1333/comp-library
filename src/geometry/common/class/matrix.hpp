@@ -1,3 +1,5 @@
+#pragma once
+
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
 
@@ -22,22 +24,24 @@ namespace luz::internal {
     T &at(const usize i, const usize j);
     const T &at(const usize i, const usize j) const;
 
-    InternalMatrix< r, c, T > operator+() const;
-    InternalMatrix< r, c, T > operator-() const;
+    InternalMatrix operator+() const;
+    InternalMatrix operator-() const;
 
-    InternalMatrix< r, c, T > &operator+=(
-        const InternalMatrix< r, c, T > &rhs);
-    InternalMatrix< r, c, T > &operator-=(
-        const InternalMatrix< r, c, T > &rhs);
-    InternalMatrix< r, c, T > operator+(
-        const InternalMatrix< r, c, T > &rhs) const;
-    InternalMatrix< r, c, T > operator-(
-        const InternalMatrix< r, c, T > &rhs) const;
+    InternalMatrix &operator+=(const InternalMatrix &);
+    InternalMatrix &operator-=(const InternalMatrix &);
+    InternalMatrix operator+(const InternalMatrix &) const;
+    InternalMatrix operator-(const InternalMatrix &) const;
 
-    InternalMatrix< r, c, T > &operator*=(const T &scalar);
-    InternalMatrix< r, c, T > &operator/=(const T &scalar);
-    InternalMatrix< r, c, T > operator*(const T &scalar) const;
-    InternalMatrix< r, c, T > operator/(const T &scalar) const;
+    InternalMatrix &operator*=(const T &);
+    InternalMatrix &operator/=(const T &);
+    InternalMatrix operator*(const T &) const;
+    InternalMatrix operator/(const T &) const;
+
+    // Implement (scalar) * (Matrix)
+    friend InternalMatrix operator*(
+        const T &scalar, const InternalMatrix< r, c, T > &mat) {
+      return InternalMatrix< r, c, T >(mat) *= scalar;
+    }
   };
 
   template < usize r, usize c, class T >
