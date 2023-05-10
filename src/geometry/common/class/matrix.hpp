@@ -37,6 +37,9 @@ namespace luz::internal {
     InternalMatrix operator*(const T &) const;
     InternalMatrix operator/(const T &) const;
 
+    bool operator==(const InternalMatrix &) const;
+    bool operator!=(const InternalMatrix &) const;
+
     // Implement (scalar) * (Matrix)
     friend InternalMatrix operator*(
         const T &scalar, const InternalMatrix< r, c, T > &mat) {
@@ -111,6 +114,17 @@ namespace luz::internal {
   InternalMatrix< r, c, T > InternalMatrix< r, c, T >::operator/(
       const T &scalar) const {
     return InternalMatrix(*this) /= scalar;
+  }
+
+  template < usize r, usize c, class T >
+  bool InternalMatrix< r, c, T >::operator==(
+      const InternalMatrix &rhs) const {
+    return as == rhs.as;
+  }
+  template < usize r, usize c, class T >
+  bool InternalMatrix< r, c, T >::operator!=(
+      const InternalMatrix &rhs) const {
+    return as != rhs.as;
   }
 
 } // namespace luz::internal
