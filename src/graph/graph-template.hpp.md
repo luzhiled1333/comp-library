@@ -6,6 +6,10 @@ data:
     title: Type alias
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: src/graph/decomposition/strongly-connected-components.hpp
+    title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3(Decomposition of Strongly Connected\
+      \ Components, SCC)"
+  - icon: ':heavy_check_mark:'
     path: src/graph/offline-query-jump-on-functional-graph.hpp
     title: "(offine) Functional Graph \u4E0A\u306E\u9802\u70B9 $v$ \u304B\u3089 $k$\
       \ \u56DE\u79FB\u52D5\u3057\u305F\u5148\u306E\u9802\u70B9 (Offline Jump On Functional\
@@ -65,6 +69,9 @@ data:
     path: test/library-checker/jump_on_tree.test.cpp
     title: test/library-checker/jump_on_tree.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/library-checker/scc.test.cpp
+    title: test/library-checker/scc.test.cpp
+  - icon: ':heavy_check_mark:'
     path: unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
     title: unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
   - icon: ':heavy_check_mark:'
@@ -122,26 +129,28 @@ data:
   isVerificationFile: false
   path: src/graph/graph-template.hpp
   requiredBy:
-  - src/graph/online-query-jump-on-functional-graph.hpp
-  - src/graph/topological-ordering/lexical-order-topological-sort.hpp
-  - src/graph/offline-query-level-ancestor.hpp
+  - src/graph/decomposition/strongly-connected-components.hpp
   - src/graph/offline-query-jump-on-tree.hpp
-  - src/graph/offline-query-lowest-common-ancestor.hpp
-  - src/graph/single-source-shortest-path/in-unweighted-graph.hpp
-  - src/graph/single-source-shortest-path/in-non-negative-weighted-graph.hpp
-  - src/graph/single-source-shortest-path/in-weighted-graph.hpp
+  - src/graph/online-query-jump-on-functional-graph.hpp
   - src/graph/offline-query-jump-on-functional-graph.hpp
+  - src/graph/offline-query-lowest-common-ancestor.hpp
+  - src/graph/topological-ordering/lexical-order-topological-sort.hpp
+  - src/graph/single-source-shortest-path/in-unweighted-graph.hpp
+  - src/graph/single-source-shortest-path/in-weighted-graph.hpp
+  - src/graph/single-source-shortest-path/in-non-negative-weighted-graph.hpp
+  - src/graph/offline-query-level-ancestor.hpp
   timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - unit-test/graph/online-query-jump-on-functional-graph.test.cpp
   - unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
-  - test/atcoder/abc258_e/online-algorithm.test.cpp
-  - test/atcoder/abc258_e/offline-algorithm.test.cpp
-  - test/atcoder/abc291_e.test.cpp
-  - test/aoj/grl_5_c.test.cpp
-  - test/aoj/grl_1_b.test.cpp
+  - unit-test/graph/online-query-jump-on-functional-graph.test.cpp
   - test/aoj/grl_1_a.test.cpp
+  - test/aoj/grl_1_b.test.cpp
+  - test/aoj/grl_5_c.test.cpp
+  - test/atcoder/abc291_e.test.cpp
+  - test/atcoder/abc258_e/offline-algorithm.test.cpp
+  - test/atcoder/abc258_e/online-algorithm.test.cpp
+  - test/library-checker/scc.test.cpp
   - test/library-checker/jump_on_tree.test.cpp
 documentation_of: src/graph/graph-template.hpp
 layout: document

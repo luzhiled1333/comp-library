@@ -28,6 +28,9 @@ data:
     path: test/atcoder/abc291_e.test.cpp
     title: test/atcoder/abc291_e.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/library-checker/scc.test.cpp
+    title: test/library-checker/scc.test.cpp
+  - icon: ':heavy_check_mark:'
     path: unit-test/sequence/compression.test.cpp
     title: unit-test/sequence/compression.test.cpp
   _isVerificationFailed: false
@@ -79,16 +82,17 @@ data:
   isVerificationFile: false
   path: src/cpp-template/header/vector-ios.hpp
   requiredBy:
-  - src/cpp-template/template.cpp
   - src/cpp-template/header/template-header.hpp
+  - src/cpp-template/template.cpp
   timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - unit-test/sequence/compression.test.cpp
-  - test/atcoder/abc258_e/online-algorithm.test.cpp
-  - test/atcoder/abc258_e/offline-algorithm.test.cpp
-  - test/atcoder/abc291_e.test.cpp
   - test/aoj/itp1_1_a.test.cpp
+  - test/atcoder/abc291_e.test.cpp
+  - test/atcoder/abc258_e/offline-algorithm.test.cpp
+  - test/atcoder/abc258_e/online-algorithm.test.cpp
+  - test/library-checker/scc.test.cpp
 documentation_of: src/cpp-template/header/vector-ios.hpp
 layout: document
 title: vector I/O

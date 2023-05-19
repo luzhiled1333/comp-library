@@ -9,6 +9,10 @@ data:
     path: src/cpp-template/template.cpp
     title: template
   - icon: ':heavy_check_mark:'
+    path: src/graph/decomposition/strongly-connected-components.hpp
+    title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3(Decomposition of Strongly Connected\
+      \ Components, SCC)"
+  - icon: ':heavy_check_mark:'
     path: src/graph/single-source-shortest-path/in-non-negative-weighted-graph.hpp
     title: "\u975E\u8CA0\u91CD\u307F\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u7D4C\u8DEF\
       \ (Single Source Shortest Path in Non-negative Weighted Graph, Dijkstra's Algorithm)"
@@ -28,6 +32,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc298_f.test.cpp
     title: test/atcoder/abc298_f.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/scc.test.cpp
+    title: test/library-checker/scc.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -46,17 +53,19 @@ data:
   isVerificationFile: false
   path: src/cpp-template/header/change-minmax.hpp
   requiredBy:
-  - src/cpp-template/template.cpp
   - src/cpp-template/header/template-header.hpp
+  - src/cpp-template/template.cpp
+  - src/graph/decomposition/strongly-connected-components.hpp
   - src/graph/single-source-shortest-path/in-non-negative-weighted-graph.hpp
   timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/grl_1_a.test.cpp
+  - test/aoj/itp1_1_a.test.cpp
   - test/atcoder/abc259_c.test.cpp
   - test/atcoder/abc298_f.test.cpp
   - test/atcoder/abc177_d.test.cpp
-  - test/aoj/itp1_1_a.test.cpp
-  - test/aoj/grl_1_a.test.cpp
+  - test/library-checker/scc.test.cpp
 documentation_of: src/cpp-template/header/change-minmax.hpp
 layout: document
 title: chmin / chmax

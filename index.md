@@ -272,6 +272,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/geometry/Z2/utility/polygon-to-segments.hpp
       title: src/geometry/Z2/utility/polygon-to-segments.hpp
+  - name: src/graph/decomposition
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/graph/decomposition/strongly-connected-components.hpp
+      title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3(Decomposition of Strongly\
+        \ Connected Components, SCC)"
   - name: src/graph
     pages:
     - icon: ':heavy_check_mark:'
@@ -506,6 +512,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/library-checker/jump_on_tree.test.cpp
       title: test/library-checker/jump_on_tree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/library-checker/scc.test.cpp
+      title: test/library-checker/scc.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/library-checker/unionfind.test.cpp
       title: test/library-checker/unionfind.test.cpp

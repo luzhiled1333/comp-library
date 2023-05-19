@@ -59,19 +59,19 @@ data:
   isVerificationFile: false
   path: src/data-structure/segment-tree/presets/monoid/operator-structure-update.hpp
   requiredBy:
+  - src/data-structure/segment-tree/presets/range-update-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-update-range-maximum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-update-range-sum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-update-range-minimum-query-solver.hpp
   - src/data-structure/segment-tree/presets/monoid/combined-structure-update-minimum.hpp
   - src/data-structure/segment-tree/presets/monoid/combined-structure-update-sum.hpp
   - src/data-structure/segment-tree/presets/monoid/combined-structure-update-maximum.hpp
-  - src/data-structure/segment-tree/presets/range-update-range-sum-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-update-range-minimum-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-update-query-solver.hpp
   timestamp: '2023-05-03 14:59:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/dsl_2_f/range-maximum.test.cpp
-  - test/aoj/dsl_2_f/range-minimum.test.cpp
   - test/aoj/dsl_2_i.test.cpp
+  - test/aoj/dsl_2_f/range-minimum.test.cpp
+  - test/aoj/dsl_2_f/range-maximum.test.cpp
   - test/aoj/dsl_2_d.test.cpp
 documentation_of: src/data-structure/segment-tree/presets/monoid/operator-structure-update.hpp
 layout: document

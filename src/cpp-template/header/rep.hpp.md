@@ -88,6 +88,10 @@ data:
     path: src/geometry/Z2/utility/polygon-to-segments.hpp
     title: src/geometry/Z2/utility/polygon-to-segments.hpp
   - icon: ':heavy_check_mark:'
+    path: src/graph/decomposition/strongly-connected-components.hpp
+    title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3(Decomposition of Strongly Connected\
+      \ Components, SCC)"
+  - icon: ':heavy_check_mark:'
     path: src/graph/max-flow.hpp
     title: src/graph/max-flow.hpp
   - icon: ':heavy_check_mark:'
@@ -232,6 +236,9 @@ data:
     path: test/library-checker/jump_on_tree.test.cpp
     title: test/library-checker/jump_on_tree.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/library-checker/scc.test.cpp
+    title: test/library-checker/scc.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/unionfind.test.cpp
     title: test/library-checker/unionfind.test.cpp
   - icon: ':heavy_check_mark:'
@@ -323,91 +330,93 @@ data:
   isVerificationFile: false
   path: src/cpp-template/header/rep.hpp
   requiredBy:
-  - src/cpp-template/template.cpp
-  - src/cpp-template/header/template-header.hpp
-  - src/cpp-template/header/vector-ios.hpp
-  - src/graph/online-query-jump-on-functional-graph.hpp
-  - src/graph/offline-query-level-ancestor.hpp
-  - src/graph/offline-query-jump-on-tree.hpp
-  - src/graph/offline-query-lowest-common-ancestor.hpp
-  - src/graph/max-flow.hpp
-  - src/graph/offline-query-jump-on-functional-graph.hpp
   - src/geometry/Z2/utility/polygon-to-segments.hpp
   - src/geometry/Z2/segment-function/counterbalance-segments.hpp
-  - src/data-structure/disjoint-set-union.hpp
-  - src/data-structure/fenwick-tree.hpp
-  - src/data-structure/segment-tree/presets/range-update-range-maximum-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-add-range-sum-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-chmin-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-chmax-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-sum-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-add-range-maximum-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-maximum-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-add-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-minimum-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-add-range-minimum-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-update-range-sum-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-update-range-minimum-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-update-query-solver.hpp
-  - src/data-structure/segment-tree/range-mapping-range-fold-segment-tree.hpp
-  - src/data-structure/segment-tree/range-mapping-point-fold-segment-tree.hpp
-  - src/data-structure/segment-tree/point-mapping-range-fold-segment-tree.hpp
   - src/sequence/compression.hpp
-  - src/math/totient-enumeration.hpp
   - src/math/modular-arithmetic/modular-combinatorics.hpp
   - src/math/convolution/bitwise-xor-convolution.hpp
   - src/math/convolution/fast-walsh-hadamard-transform.hpp
   - src/math/convolution/bitwise-and-convolution.hpp
+  - src/math/totient-enumeration.hpp
+  - src/data-structure/disjoint-set-union.hpp
+  - src/data-structure/segment-tree/point-mapping-range-fold-segment-tree.hpp
+  - src/data-structure/segment-tree/range-mapping-point-fold-segment-tree.hpp
+  - src/data-structure/segment-tree/presets/range-update-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-add-range-maximum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-add-range-sum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-chmax-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-update-range-maximum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-maximum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-sum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-update-range-sum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-update-range-minimum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-chmin-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-minimum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-add-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-add-range-minimum-query-solver.hpp
+  - src/data-structure/segment-tree/range-mapping-range-fold-segment-tree.hpp
+  - src/data-structure/fenwick-tree.hpp
+  - src/cpp-template/header/vector-ios.hpp
+  - src/cpp-template/header/template-header.hpp
+  - src/cpp-template/template.cpp
+  - src/graph/decomposition/strongly-connected-components.hpp
+  - src/graph/max-flow.hpp
+  - src/graph/offline-query-jump-on-tree.hpp
+  - src/graph/online-query-jump-on-functional-graph.hpp
+  - src/graph/offline-query-jump-on-functional-graph.hpp
+  - src/graph/offline-query-lowest-common-ancestor.hpp
+  - src/graph/offline-query-level-ancestor.hpp
   timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - unit-test/utility/bit/bit-width.test.cpp
-  - unit-test/utility/bit/popcount.test.cpp
-  - unit-test/utility/bit/count-leading-0s.test.cpp
-  - unit-test/utility/bit/count-trailing-0s.test.cpp
-  - unit-test/utility/pair-hash.test.cpp
-  - unit-test/utility/tuple-hash.test.cpp
-  - unit-test/graph/online-query-jump-on-functional-graph.test.cpp
-  - unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
-  - unit-test/data-structure/fenwick-tree.test.cpp
-  - unit-test/data-structure/segment-tree/point-mapping-range-fold-segment-tree.test.cpp
   - unit-test/sequence/compression.test.cpp
-  - unit-test/math/totient.test.cpp
   - unit-test/math/totient-enumeration.test.cpp
-  - test/atcoder/abc179_f/range-chmax.test.cpp
-  - test/atcoder/abc179_f/range-chmin.test.cpp
-  - test/atcoder/abc258_e/online-algorithm.test.cpp
-  - test/atcoder/abc258_e/offline-algorithm.test.cpp
-  - test/atcoder/abc259_c.test.cpp
-  - test/atcoder/abc298_f.test.cpp
-  - test/atcoder/abc132_d.test.cpp
-  - test/atcoder/abc212_h.test.cpp
-  - test/atcoder/abc177_d.test.cpp
-  - test/atcoder/abc291_e.test.cpp
-  - test/atcoder/abc259_d.test.cpp
-  - test/aoj/dsl_2_f/range-maximum.test.cpp
-  - test/aoj/dsl_2_f/range-minimum.test.cpp
+  - unit-test/math/totient.test.cpp
+  - unit-test/data-structure/segment-tree/point-mapping-range-fold-segment-tree.test.cpp
+  - unit-test/data-structure/fenwick-tree.test.cpp
+  - unit-test/utility/bit/count-leading-0s.test.cpp
+  - unit-test/utility/bit/bit-width.test.cpp
+  - unit-test/utility/bit/count-trailing-0s.test.cpp
+  - unit-test/utility/bit/popcount.test.cpp
+  - unit-test/utility/tuple-hash.test.cpp
+  - unit-test/utility/pair-hash.test.cpp
+  - unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
+  - unit-test/graph/online-query-jump-on-functional-graph.test.cpp
+  - test/aoj/dsl_2_e.test.cpp
+  - test/aoj/grl_1_a.test.cpp
   - test/aoj/dsl_2_i.test.cpp
-  - test/aoj/dsl_2_b/fenwick-tree.test.cpp
-  - test/aoj/dsl_2_b/segment-tree.test.cpp
   - test/aoj/4011.test.cpp
-  - test/aoj/grl_5_c.test.cpp
-  - test/aoj/itp1_1_a.test.cpp
+  - test/aoj/dsl_2_a.test.cpp
   - test/aoj/grl_1_b.test.cpp
   - test/aoj/2286.test.cpp
-  - test/aoj/dsl_2_e.test.cpp
   - test/aoj/dsl_1_a.test.cpp
-  - test/aoj/dsl_2_d.test.cpp
   - test/aoj/grl_6_a.test.cpp
-  - test/aoj/grl_1_a.test.cpp
   - test/aoj/dsl_2_g.test.cpp
-  - test/aoj/dsl_2_a.test.cpp
-  - test/aoj/dsl_2_h/range-maximum.test.cpp
+  - test/aoj/dsl_2_f/range-minimum.test.cpp
+  - test/aoj/dsl_2_f/range-maximum.test.cpp
   - test/aoj/dsl_2_h/range-minimum.test.cpp
+  - test/aoj/dsl_2_h/range-maximum.test.cpp
+  - test/aoj/dsl_2_d.test.cpp
+  - test/aoj/dsl_2_b/segment-tree.test.cpp
+  - test/aoj/dsl_2_b/fenwick-tree.test.cpp
+  - test/aoj/grl_5_c.test.cpp
+  - test/aoj/itp1_1_a.test.cpp
+  - test/atcoder/abc259_d.test.cpp
+  - test/atcoder/abc259_c.test.cpp
+  - test/atcoder/abc291_e.test.cpp
+  - test/atcoder/abc258_e/offline-algorithm.test.cpp
+  - test/atcoder/abc258_e/online-algorithm.test.cpp
+  - test/atcoder/abc298_f.test.cpp
+  - test/atcoder/abc132_d.test.cpp
+  - test/atcoder/abc177_d.test.cpp
+  - test/atcoder/abc212_h.test.cpp
+  - test/atcoder/abc179_f/range-chmin.test.cpp
+  - test/atcoder/abc179_f/range-chmax.test.cpp
   - test/library-checker/unionfind.test.cpp
-  - test/library-checker/bitwise_xor_convolution.test.cpp
   - test/library-checker/bitwise_and_convolution.test.cpp
+  - test/library-checker/scc.test.cpp
   - test/library-checker/jump_on_tree.test.cpp
+  - test/library-checker/bitwise_xor_convolution.test.cpp
 documentation_of: src/cpp-template/header/rep.hpp
 layout: document
 title: "rep \u69CB\u9020\u4F53"
