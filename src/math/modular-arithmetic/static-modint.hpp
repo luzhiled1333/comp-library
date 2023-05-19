@@ -96,8 +96,13 @@ namespace luz {
       return pow(mod - 2);
     }
 
-    static u32 get_mod() {
+    static constexpr u32 get_mod() {
       return mod;
+    }
+
+    friend std::ostream &operator<<(std::ostream &os, const modint &m) {
+      os << m.val();
+      return os;
     }
   };
 
