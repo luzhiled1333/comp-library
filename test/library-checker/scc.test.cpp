@@ -3,6 +3,7 @@
 #include "src/cpp-template/header/fast-ios.hpp"
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
+#include "src/cpp-template/header/vector-ios.hpp"
 #include "src/graph/decomposition/strongly-connected-components.hpp"
 #include "src/graph/graph-template.hpp"
 
@@ -24,9 +25,7 @@ namespace luz {
     auto groups = scc.groups();
     std::cout << groups.size() << std::endl;
     for (auto& group: groups) {
-      std::cout << group.size() << " ";
-      for (auto& v: group) std::cout << v << " ";
-      std::cout << std::endl;
+      std::cout << group.size() << " " << group << " " << std::endl;
     }
   }
 
