@@ -1,5 +1,5 @@
 ---
-title: 強連結成分分解(Decomposition of Strongly Connected Components)
+title: 強連結成分分解(Decomposition of Strongly Connected Components, SCC)
 documentation_of: //src/graph/decomposition/strongly-connected-components.hpp
 ---
 
@@ -18,11 +18,9 @@ decomposition::StronglyConnectedComponents(const Graph< cost_type > &g)
 std::vector< std::vector< usize > > groups() const
 ```
 
-次の条件を満たす、「頂点のリスト」のリストを返す。
+$K$ を強連結成分の個数として、強連結成分の頂点のリストのリスト $L=(L_0, L_1, \cdots, L_K)$ を返す。
 
-- 全ての頂点がちょうど1つずつ、いずれかのリストに含まれる
-- 内側のリストと強連結成分が一対一に対応する
-- リストはトポロジカルソートされている
+$L$ はトポロジカルソートされている。すなわち、`g` の各辺 $(u_i, v_i)$ について、頂点 $v_i$ を含む強連結成分が頂点 $u_i$ を含む強連結成分より前に出現しない。
 
 ## group_ids
 ```cpp
