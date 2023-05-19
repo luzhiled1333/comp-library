@@ -60,7 +60,7 @@ data:
       \ Graph)"
   - icon: ':heavy_check_mark:'
     path: src/math/convolution/modint-convolution.hpp
-    title: src/math/convolution/modint-convolution.hpp
+    title: Number Theoretic Transform
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/dsl_2_d.test.cpp

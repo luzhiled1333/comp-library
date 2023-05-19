@@ -9,7 +9,7 @@ data:
     title: Type alias
   - icon: ':heavy_check_mark:'
     path: src/math/convolution/modint-convolution.hpp
-    title: src/math/convolution/modint-convolution.hpp
+    title: Number Theoretic Transform
   - icon: ':heavy_check_mark:'
     path: src/math/modular-arithmetic/static-modint.hpp
     title: src/math/modular-arithmetic/static-modint.hpp

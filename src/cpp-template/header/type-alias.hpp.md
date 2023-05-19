@@ -194,13 +194,13 @@ data:
       \u5909\u63DB/\u9006\u5909\u63DB (Fast Walsh Hadamard Transform / Inverse Transform)"
   - icon: ':heavy_check_mark:'
     path: src/math/convolution/modint-convolution.hpp
-    title: src/math/convolution/modint-convolution.hpp
+    title: Number Theoretic Transform
   - icon: ':heavy_check_mark:'
     path: src/math/modular-arithmetic/modular-combinatorics.hpp
     title: "mod \u7D44\u5408\u305B (mod combinatorics)"
   - icon: ':heavy_check_mark:'
     path: src/math/modular-arithmetic/small-mod-combination.hpp
-    title: "mod \u304C\u5C0F\u3055\u3044\u5834\u5408\u306E combination (Lucas'theorem)"
+    title: "mod \u304C\u5C0F\u3055\u3044\u5834\u5408\u306E combination (Lucas's theorem)"
   - icon: ':heavy_check_mark:'
     path: src/math/modular-arithmetic/static-modint.hpp
     title: src/math/modular-arithmetic/static-modint.hpp

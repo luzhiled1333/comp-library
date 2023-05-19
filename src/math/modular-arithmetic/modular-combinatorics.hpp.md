@@ -10,7 +10,7 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: src/math/modular-arithmetic/small-mod-combination.hpp
-    title: "mod \u304C\u5C0F\u3055\u3044\u5834\u5408\u306E combination (Lucas'theorem)"
+    title: "mod \u304C\u5C0F\u3055\u3044\u5834\u5408\u306E combination (Lucas's theorem)"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc132_d.test.cpp

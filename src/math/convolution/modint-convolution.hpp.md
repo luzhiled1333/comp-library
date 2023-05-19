@@ -245,8 +245,18 @@ data:
   - test/library-checker/modint_convolution.test.cpp
 documentation_of: src/math/convolution/modint-convolution.hpp
 layout: document
-redirect_from:
-- /library/src/math/convolution/modint-convolution.hpp
-- /library/src/math/convolution/modint-convolution.hpp.html
-title: src/math/convolution/modint-convolution.hpp
+title: Number Theoretic Transform
 ---
+
+## modint_convolution
+
+```cpp
+std::vector< modint > modint_convolution(std::vector< modint > f, std::vector< modint > g)
+```
+
+`f` と `g` の畳み込みを返す。
+
+### 計算量
+
+- $O((n + m) \log (n + m))$
+  - `f` の長さを `n`、`g` の長さを `m` とする

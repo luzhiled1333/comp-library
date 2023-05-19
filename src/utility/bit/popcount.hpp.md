@@ -57,7 +57,7 @@ data:
       \ Graph)"
   - icon: ':heavy_check_mark:'
     path: src/math/convolution/modint-convolution.hpp
-    title: src/math/convolution/modint-convolution.hpp
+    title: Number Theoretic Transform
   - icon: ':heavy_check_mark:'
     path: src/utility/bit/bit-width.hpp
     title: "\u5024\u3092\u8868\u73FE\u3059\u308B\u305F\u3081\u306B\u5FC5\u8981\u306A\

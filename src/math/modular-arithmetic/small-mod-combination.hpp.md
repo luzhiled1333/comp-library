@@ -103,7 +103,7 @@ data:
   - test/atcoder/arc117_c.test.cpp
 documentation_of: src/math/modular-arithmetic/small-mod-combination.hpp
 layout: document
-title: "mod \u304C\u5C0F\u3055\u3044\u5834\u5408\u306E combination (Lucas'theorem)"
+title: "mod \u304C\u5C0F\u3055\u3044\u5834\u5408\u306E combination (Lucas's theorem)"
 ---
 
 ## コンストラクタ
