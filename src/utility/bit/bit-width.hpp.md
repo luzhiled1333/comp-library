@@ -58,6 +58,9 @@ data:
     title: "(online) Functional Graph \u4E0A\u306E\u9802\u70B9 $v$ \u304B\u3089 $k$\
       \ \u56DE\u79FB\u52D5\u3057\u305F\u5148\u306E\u9802\u70B9 (Online Jump On Functional\
       \ Graph)"
+  - icon: ':heavy_check_mark:'
+    path: src/math/convolution/modint-convolution.hpp
+    title: src/math/convolution/modint-convolution.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/dsl_2_d.test.cpp
@@ -92,6 +95,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc258_e/online-algorithm.test.cpp
     title: test/atcoder/abc258_e/online-algorithm.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/modint_convolution.test.cpp
+    title: test/library-checker/modint_convolution.test.cpp
   - icon: ':heavy_check_mark:'
     path: unit-test/graph/online-query-jump-on-functional-graph.test.cpp
     title: unit-test/graph/online-query-jump-on-functional-graph.test.cpp
@@ -132,6 +138,7 @@ data:
   isVerificationFile: false
   path: src/utility/bit/bit-width.hpp
   requiredBy:
+  - src/math/convolution/modint-convolution.hpp
   - src/data-structure/segment-tree/range-mapping-point-fold-segment-tree.hpp
   - src/data-structure/segment-tree/presets/range-update-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-add-range-maximum-query-solver.hpp
@@ -161,6 +168,7 @@ data:
   - test/atcoder/abc258_e/online-algorithm.test.cpp
   - test/atcoder/abc179_f/range-chmin.test.cpp
   - test/atcoder/abc179_f/range-chmax.test.cpp
+  - test/library-checker/modint_convolution.test.cpp
 documentation_of: src/utility/bit/bit-width.hpp
 layout: document
 title: "\u5024\u3092\u8868\u73FE\u3059\u308B\u305F\u3081\u306B\u5FC5\u8981\u306A\u6700\

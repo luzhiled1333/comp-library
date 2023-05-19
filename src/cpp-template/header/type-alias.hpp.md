@@ -193,6 +193,9 @@ data:
     title: "\u9AD8\u901F\u30A6\u30A9\u30EB\u30B7\u30E5-\u30A2\u30C0\u30DE\u30FC\u30EB\
       \u5909\u63DB/\u9006\u5909\u63DB (Fast Walsh Hadamard Transform / Inverse Transform)"
   - icon: ':heavy_check_mark:'
+    path: src/math/convolution/modint-convolution.hpp
+    title: src/math/convolution/modint-convolution.hpp
+  - icon: ':heavy_check_mark:'
     path: src/math/modular-arithmetic/modular-combinatorics.hpp
     title: "mod \u7D44\u5408\u305B (mod combinatorics)"
   - icon: ':heavy_check_mark:'
@@ -339,6 +342,9 @@ data:
     path: test/library-checker/jump_on_tree.test.cpp
     title: test/library-checker/jump_on_tree.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/library-checker/modint_convolution.test.cpp
+    title: test/library-checker/modint_convolution.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/scc.test.cpp
     title: test/library-checker/scc.test.cpp
   - icon: ':heavy_check_mark:'
@@ -425,6 +431,7 @@ data:
   - src/math/modular-arithmetic/modular-combinatorics.hpp
   - src/math/modular-arithmetic/static-modint.hpp
   - src/math/convolution/bitwise-xor-convolution.hpp
+  - src/math/convolution/modint-convolution.hpp
   - src/math/convolution/fast-walsh-hadamard-transform.hpp
   - src/math/convolution/bitwise-and-convolution.hpp
   - src/math/totient-enumeration.hpp
@@ -527,6 +534,7 @@ data:
   - test/library-checker/bitwise_and_convolution.test.cpp
   - test/library-checker/scc.test.cpp
   - test/library-checker/jump_on_tree.test.cpp
+  - test/library-checker/modint_convolution.test.cpp
   - test/library-checker/bitwise_xor_convolution.test.cpp
 documentation_of: src/cpp-template/header/type-alias.hpp
 layout: document
