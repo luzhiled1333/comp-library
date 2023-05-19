@@ -62,12 +62,12 @@ data:
     \ {\n      assert(0 <= l and l <= r and r <= n_);\n      return sum(r) - sum(l);\n\
     \    }\n  };\n\n} // namespace luz\n#line 4 \"unit-test/data-structure/fenwick-tree.test.cpp\"\
     \n\n#line 2 \"src/math/modular-arithmetic/static-modint.hpp\"\n\n#line 4 \"src/math/modular-arithmetic/static-modint.hpp\"\
-    \n\n#line 6 \"src/math/modular-arithmetic/static-modint.hpp\"\n\nnamespace luz\
-    \ {\n\n  template < u32 mod >\n  class StaticPrimeModInt {\n    using modint =\
-    \ StaticPrimeModInt;\n\n    u32 v;\n\n   public:\n    StaticPrimeModInt(): v(0)\
-    \ {}\n\n    template < typename T >\n    StaticPrimeModInt(T v_) {\n      i64\
-    \ x = (i64)(v_ % (i64)mod);\n      if (x < 0) x += mod;\n      v = (u32)x;\n \
-    \   }\n\n    u32 val() const {\n      return v;\n    }\n\n    modint &operator+=(const\
+    \n\n#line 6 \"src/math/modular-arithmetic/static-modint.hpp\"\n#include <iostream>\n\
+    \nnamespace luz {\n\n  template < u32 mod >\n  class StaticPrimeModInt {\n   \
+    \ using modint = StaticPrimeModInt;\n\n    u32 v;\n\n   public:\n    StaticPrimeModInt():\
+    \ v(0) {}\n\n    template < typename T >\n    StaticPrimeModInt(T v_) {\n    \
+    \  i64 x = (i64)(v_ % (i64)mod);\n      if (x < 0) x += mod;\n      v = (u32)x;\n\
+    \    }\n\n    u32 val() const {\n      return v;\n    }\n\n    modint &operator+=(const\
     \ modint &rhs) {\n      v += rhs.v;\n      if (v >= mod) v -= mod;\n      return\
     \ *this;\n    }\n\n    modint &operator-=(const modint &rhs) {\n      v += mod\
     \ - rhs.v;\n      if (v >= mod) v -= mod;\n      return *this;\n    }\n\n    modint\
@@ -87,13 +87,15 @@ data:
     \ const {\n      assert(0 <= n);\n      modint x = *this, r = 1;\n      while\
     \ (n) {\n        if (n & 1) r *= x;\n        x *= x;\n        n >>= 1;\n     \
     \ }\n      return r;\n    }\n\n    modint inverse() const {\n      assert(v !=\
-    \ 0);\n      return pow(mod - 2);\n    }\n\n    static u32 get_mod() {\n     \
-    \ return mod;\n    }\n  };\n\n  using modint998244353  = StaticPrimeModInt< 998244353\
-    \ >;\n  using modint1000000007 = StaticPrimeModInt< 1000000007 >;\n\n} // namespace\
-    \ luz\n#line 7 \"unit-test/data-structure/fenwick-tree.test.cpp\"\n\n#line 9 \"\
-    unit-test/data-structure/fenwick-tree.test.cpp\"\n#include <iostream>\n\nnamespace\
-    \ luz {\n\n  void main_() {\n    { // T as i32\n      FenwickTree< i32 > ft(3);\n\
-    \n      ft.add(0, 3);\n      ft.add(1, 6);\n      ft.add(2, -4);\n\n      assert(ft.sum(0,\
+    \ 0);\n      return pow(mod - 2);\n    }\n\n    static constexpr u32 get_mod()\
+    \ {\n      return mod;\n    }\n\n    friend std::ostream &operator<<(std::ostream\
+    \ &os,\n                                    const modint &m) {\n      os << m.val();\n\
+    \      return os;\n    }\n  };\n\n  using modint998244353  = StaticPrimeModInt<\
+    \ 998244353 >;\n  using modint1000000007 = StaticPrimeModInt< 1000000007 >;\n\n\
+    } // namespace luz\n#line 7 \"unit-test/data-structure/fenwick-tree.test.cpp\"\
+    \n\n#line 10 \"unit-test/data-structure/fenwick-tree.test.cpp\"\n\nnamespace luz\
+    \ {\n\n  void main_() {\n    { // T as i32\n      FenwickTree< i32 > ft(3);\n\n\
+    \      ft.add(0, 3);\n      ft.add(1, 6);\n      ft.add(2, -4);\n\n      assert(ft.sum(0,\
     \ 0) == 0);\n      assert(ft.sum(0, 0 + 1) == 3);\n      assert(ft.sum(0, 1 +\
     \ 1) == 9);\n      assert(ft.sum(0, 2 + 1) == 5);\n    }\n\n    { // T as u32\n\
     \      FenwickTree< u32 > ft(3);\n\n      ft.add(0, 5);\n      ft.add(1, 2);\n\
@@ -161,7 +163,7 @@ data:
   isVerificationFile: true
   path: unit-test/data-structure/fenwick-tree.test.cpp
   requiredBy: []
-  timestamp: '2023-05-19 13:40:14+09:00'
+  timestamp: '2023-05-20 00:18:06+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: unit-test/data-structure/fenwick-tree.test.cpp

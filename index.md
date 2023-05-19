@@ -349,6 +349,9 @@ data:
       path: src/math/modular-arithmetic/modular-combinatorics.hpp
       title: "mod \u7D44\u5408\u305B (mod combinatorics)"
     - icon: ':heavy_check_mark:'
+      path: src/math/modular-arithmetic/small-mod-combination.hpp
+      title: "mod \u304C\u5C0F\u3055\u3044\u5834\u5408\u306E combination (Lucas'theorem)"
+    - icon: ':heavy_check_mark:'
       path: src/math/modular-arithmetic/static-modint.hpp
       title: src/math/modular-arithmetic/static-modint.hpp
   - name: src/math
@@ -488,6 +491,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/atcoder/abc298_f.test.cpp
       title: test/atcoder/abc298_f.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/atcoder/arc117_c.test.cpp
+      title: test/atcoder/arc117_c.test.cpp
   - name: test/atcoder/abc179_f
     pages:
     - icon: ':heavy_check_mark:'

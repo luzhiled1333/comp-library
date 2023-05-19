@@ -132,6 +132,9 @@ data:
     path: src/math/modular-arithmetic/modular-combinatorics.hpp
     title: "mod \u7D44\u5408\u305B (mod combinatorics)"
   - icon: ':heavy_check_mark:'
+    path: src/math/modular-arithmetic/small-mod-combination.hpp
+    title: "mod \u304C\u5C0F\u3055\u3044\u5834\u5408\u306E combination (Lucas'theorem)"
+  - icon: ':heavy_check_mark:'
     path: src/math/totient-enumeration.hpp
     title: "\u30AA\u30A4\u30E9\u30FC\u306E\u30C8\u30FC\u30B7\u30A7\u30F3\u30C8\u95A2\
       \u6570\u306E\u5217\u6319"
@@ -229,6 +232,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc298_f.test.cpp
     title: test/atcoder/abc298_f.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/arc117_c.test.cpp
+    title: test/atcoder/arc117_c.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/library-checker/bitwise_and_convolution.test.cpp
     title: test/library-checker/bitwise_and_convolution.test.cpp
@@ -340,6 +346,7 @@ data:
   - src/geometry/Z2/segment-function/counterbalance-segments.hpp
   - src/sequence/compression.hpp
   - src/math/modular-arithmetic/modular-combinatorics.hpp
+  - src/math/modular-arithmetic/small-mod-combination.hpp
   - src/math/convolution/bitwise-xor-convolution.hpp
   - src/math/convolution/modint-convolution.hpp
   - src/math/convolution/fast-walsh-hadamard-transform.hpp
@@ -414,6 +421,7 @@ data:
   - test/atcoder/abc258_e/offline-algorithm.test.cpp
   - test/atcoder/abc258_e/online-algorithm.test.cpp
   - test/atcoder/abc298_f.test.cpp
+  - test/atcoder/arc117_c.test.cpp
   - test/atcoder/abc132_d.test.cpp
   - test/atcoder/abc177_d.test.cpp
   - test/atcoder/abc212_h.test.cpp

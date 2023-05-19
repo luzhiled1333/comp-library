@@ -61,7 +61,7 @@ data:
     \     for (usize k: rep(0, i)) {\n          op(f[j + k], f[j + k + i]);\n    \
     \    }\n        j += i << 1;\n      }\n      i <<= 1;\n    }\n  }\n\n} // namespace\
     \ luz\n#line 2 \"src/math/modular-arithmetic/static-modint.hpp\"\n\n#line 4 \"\
-    src/math/modular-arithmetic/static-modint.hpp\"\n\n#line 6 \"src/math/modular-arithmetic/static-modint.hpp\"\
+    src/math/modular-arithmetic/static-modint.hpp\"\n\n#line 7 \"src/math/modular-arithmetic/static-modint.hpp\"\
     \n\nnamespace luz {\n\n  template < u32 mod >\n  class StaticPrimeModInt {\n \
     \   using modint = StaticPrimeModInt;\n\n    u32 v;\n\n   public:\n    StaticPrimeModInt():\
     \ v(0) {}\n\n    template < typename T >\n    StaticPrimeModInt(T v_) {\n    \
@@ -86,17 +86,19 @@ data:
     \ const {\n      assert(0 <= n);\n      modint x = *this, r = 1;\n      while\
     \ (n) {\n        if (n & 1) r *= x;\n        x *= x;\n        n >>= 1;\n     \
     \ }\n      return r;\n    }\n\n    modint inverse() const {\n      assert(v !=\
-    \ 0);\n      return pow(mod - 2);\n    }\n\n    static u32 get_mod() {\n     \
-    \ return mod;\n    }\n  };\n\n  using modint998244353  = StaticPrimeModInt< 998244353\
-    \ >;\n  using modint1000000007 = StaticPrimeModInt< 1000000007 >;\n\n} // namespace\
-    \ luz\n#line 8 \"test/atcoder/abc212_h.test.cpp\"\n\n// TODO: replace #11\nnamespace\
-    \ luz {\n\n  template < typename T >\n  T sum_of_geometric_sequence(const T& a_0,\
-    \ const T& r,\n                              const usize& n) {\n    if (r == T(1))\
-    \ return a_0 * n;\n    return a_0 * (r.pow(n) - 1) / (r - 1);\n  }\n\n} // namespace\
-    \ luz\n\n#line 22 \"test/atcoder/abc212_h.test.cpp\"\n#include <numeric>\n#line\
-    \ 24 \"test/atcoder/abc212_h.test.cpp\"\n\nnamespace luz {\n\n  void main_() {\n\
-    \    usize n = input(), k = input();\n\n    using mint = modint998244353;\n  \
-    \  std::vector< mint > cs(1 << 16);\n    for ([[maybe_unused]] usize _: rep(0,\
+    \ 0);\n      return pow(mod - 2);\n    }\n\n    static constexpr u32 get_mod()\
+    \ {\n      return mod;\n    }\n\n    friend std::ostream &operator<<(std::ostream\
+    \ &os,\n                                    const modint &m) {\n      os << m.val();\n\
+    \      return os;\n    }\n  };\n\n  using modint998244353  = StaticPrimeModInt<\
+    \ 998244353 >;\n  using modint1000000007 = StaticPrimeModInt< 1000000007 >;\n\n\
+    } // namespace luz\n#line 8 \"test/atcoder/abc212_h.test.cpp\"\n\n// TODO: replace\
+    \ #11\nnamespace luz {\n\n  template < typename T >\n  T sum_of_geometric_sequence(const\
+    \ T& a_0, const T& r,\n                              const usize& n) {\n    if\
+    \ (r == T(1)) return a_0 * n;\n    return a_0 * (r.pow(n) - 1) / (r - 1);\n  }\n\
+    \n} // namespace luz\n\n#line 22 \"test/atcoder/abc212_h.test.cpp\"\n#include\
+    \ <numeric>\n#line 24 \"test/atcoder/abc212_h.test.cpp\"\n\nnamespace luz {\n\n\
+    \  void main_() {\n    usize n = input(), k = input();\n\n    using mint = modint998244353;\n\
+    \    std::vector< mint > cs(1 << 16);\n    for ([[maybe_unused]] usize _: rep(0,\
     \ k)) {\n      cs[input()] = 1;\n    }\n\n    mint inv2 = mint(1) / mint(2);\n\
     \    auto zeta = [](mint& lo, mint& hi) {\n      mint x = lo + hi;\n      mint\
     \ y = lo - hi;\n      lo     = x;\n      hi     = y;\n    };\n    auto mobius\
@@ -136,7 +138,7 @@ data:
   isVerificationFile: true
   path: test/atcoder/abc212_h.test.cpp
   requiredBy: []
-  timestamp: '2023-05-19 13:40:14+09:00'
+  timestamp: '2023-05-20 00:18:06+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/atcoder/abc212_h.test.cpp

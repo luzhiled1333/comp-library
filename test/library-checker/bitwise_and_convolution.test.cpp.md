@@ -68,8 +68,8 @@ data:
     \ f.size())) {\n      f[i] *= g[i];\n    }\n    fast_walsh_hadamard_transform(f,\
     \ mobius);\n    return f;\n  }\n\n} // namespace luz\n#line 2 \"src/math/modular-arithmetic/static-modint.hpp\"\
     \n\n#line 4 \"src/math/modular-arithmetic/static-modint.hpp\"\n\n#line 6 \"src/math/modular-arithmetic/static-modint.hpp\"\
-    \n\nnamespace luz {\n\n  template < u32 mod >\n  class StaticPrimeModInt {\n \
-    \   using modint = StaticPrimeModInt;\n\n    u32 v;\n\n   public:\n    StaticPrimeModInt():\
+    \n#include <iostream>\n\nnamespace luz {\n\n  template < u32 mod >\n  class StaticPrimeModInt\
+    \ {\n    using modint = StaticPrimeModInt;\n\n    u32 v;\n\n   public:\n    StaticPrimeModInt():\
     \ v(0) {}\n\n    template < typename T >\n    StaticPrimeModInt(T v_) {\n    \
     \  i64 x = (i64)(v_ % (i64)mod);\n      if (x < 0) x += mod;\n      v = (u32)x;\n\
     \    }\n\n    u32 val() const {\n      return v;\n    }\n\n    modint &operator+=(const\
@@ -92,19 +92,21 @@ data:
     \ const {\n      assert(0 <= n);\n      modint x = *this, r = 1;\n      while\
     \ (n) {\n        if (n & 1) r *= x;\n        x *= x;\n        n >>= 1;\n     \
     \ }\n      return r;\n    }\n\n    modint inverse() const {\n      assert(v !=\
-    \ 0);\n      return pow(mod - 2);\n    }\n\n    static u32 get_mod() {\n     \
-    \ return mod;\n    }\n  };\n\n  using modint998244353  = StaticPrimeModInt< 998244353\
-    \ >;\n  using modint1000000007 = StaticPrimeModInt< 1000000007 >;\n\n} // namespace\
-    \ luz\n#line 5 \"test/library-checker/bitwise_and_convolution.test.cpp\"\n\n#include\
-    \ <iostream>\n#line 8 \"test/library-checker/bitwise_and_convolution.test.cpp\"\
-    \n\nnamespace luz {\n\n  void main_() {\n    usize n;\n    std::cin >> n;\n\n\
-    \    using mint = modint998244353;\n    std::vector< mint > as(1 << n);\n    for\
-    \ (mint &a: as) {\n      i32 v;\n      std::cin >> v;\n      a = mint(v);\n  \
-    \  }\n\n    std::vector< mint > bs(1 << n);\n    for (mint &b: bs) {\n      i32\
-    \ v;\n      std::cin >> v;\n      b = mint(v);\n    }\n\n    auto cs = bitwise_and_convolution(as,\
-    \ bs);\n    for (usize i: rep(0, 1 << n)) {\n      std::cout << cs[i].val()\n\
-    \                << (i + 1 == (usize(1) << n) ? \"\\n\" : \" \");\n    }\n  }\n\
-    \n} // namespace luz\n\nint main() {\n  luz::main_();\n}\n"
+    \ 0);\n      return pow(mod - 2);\n    }\n\n    static constexpr u32 get_mod()\
+    \ {\n      return mod;\n    }\n\n    friend std::ostream &operator<<(std::ostream\
+    \ &os,\n                                    const modint &m) {\n      os << m.val();\n\
+    \      return os;\n    }\n  };\n\n  using modint998244353  = StaticPrimeModInt<\
+    \ 998244353 >;\n  using modint1000000007 = StaticPrimeModInt< 1000000007 >;\n\n\
+    } // namespace luz\n#line 5 \"test/library-checker/bitwise_and_convolution.test.cpp\"\
+    \n\n#line 8 \"test/library-checker/bitwise_and_convolution.test.cpp\"\n\nnamespace\
+    \ luz {\n\n  void main_() {\n    usize n;\n    std::cin >> n;\n\n    using mint\
+    \ = modint998244353;\n    std::vector< mint > as(1 << n);\n    for (mint &a: as)\
+    \ {\n      i32 v;\n      std::cin >> v;\n      a = mint(v);\n    }\n\n    std::vector<\
+    \ mint > bs(1 << n);\n    for (mint &b: bs) {\n      i32 v;\n      std::cin >>\
+    \ v;\n      b = mint(v);\n    }\n\n    auto cs = bitwise_and_convolution(as, bs);\n\
+    \    for (usize i: rep(0, 1 << n)) {\n      std::cout << cs[i].val()\n       \
+    \         << (i + 1 == (usize(1) << n) ? \"\\n\" : \" \");\n    }\n  }\n\n} //\
+    \ namespace luz\n\nint main() {\n  luz::main_();\n}\n"
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/bitwise_and_convolution\n\
     \n#include \"src/math/convolution/bitwise-and-convolution.hpp\"\n#include \"src/math/modular-arithmetic/static-modint.hpp\"\
     \n\n#include <iostream>\n#include <vector>\n\nnamespace luz {\n\n  void main_()\
@@ -125,7 +127,7 @@ data:
   isVerificationFile: true
   path: test/library-checker/bitwise_and_convolution.test.cpp
   requiredBy: []
-  timestamp: '2023-05-19 13:40:14+09:00'
+  timestamp: '2023-05-20 00:18:06+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/library-checker/bitwise_and_convolution.test.cpp

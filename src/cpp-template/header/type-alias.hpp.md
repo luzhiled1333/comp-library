@@ -199,6 +199,9 @@ data:
     path: src/math/modular-arithmetic/modular-combinatorics.hpp
     title: "mod \u7D44\u5408\u305B (mod combinatorics)"
   - icon: ':heavy_check_mark:'
+    path: src/math/modular-arithmetic/small-mod-combination.hpp
+    title: "mod \u304C\u5C0F\u3055\u3044\u5834\u5408\u306E combination (Lucas'theorem)"
+  - icon: ':heavy_check_mark:'
     path: src/math/modular-arithmetic/static-modint.hpp
     title: src/math/modular-arithmetic/static-modint.hpp
   - icon: ':heavy_check_mark:'
@@ -333,6 +336,9 @@ data:
     path: test/atcoder/abc298_f.test.cpp
     title: test/atcoder/abc298_f.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/atcoder/arc117_c.test.cpp
+    title: test/atcoder/arc117_c.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/bitwise_and_convolution.test.cpp
     title: test/library-checker/bitwise_and_convolution.test.cpp
   - icon: ':heavy_check_mark:'
@@ -429,6 +435,7 @@ data:
   - src/sequence/compression.hpp
   - src/sequence/run-length-encoding.hpp
   - src/math/modular-arithmetic/modular-combinatorics.hpp
+  - src/math/modular-arithmetic/small-mod-combination.hpp
   - src/math/modular-arithmetic/static-modint.hpp
   - src/math/convolution/bitwise-xor-convolution.hpp
   - src/math/convolution/modint-convolution.hpp
@@ -525,6 +532,7 @@ data:
   - test/atcoder/abc258_e/offline-algorithm.test.cpp
   - test/atcoder/abc258_e/online-algorithm.test.cpp
   - test/atcoder/abc298_f.test.cpp
+  - test/atcoder/arc117_c.test.cpp
   - test/atcoder/abc132_d.test.cpp
   - test/atcoder/abc177_d.test.cpp
   - test/atcoder/abc212_h.test.cpp
