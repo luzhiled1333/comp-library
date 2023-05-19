@@ -1,18 +1,18 @@
 ---
-title: 一点更新+区間取得 セグメント木
-documentation_of: //src/data-structure/segment-tree/point-mapping-range-fold-segment-tree.hpp
+title: 区間更新 + 一点取得 セグメント木 (Dual Segment Tree)
+documentation_of: //src/data-structure/segment-tree/range-mapping-point-fold-segment-tree.hpp
 ---
 
 ## Appendix
 [Segment Tree の細かい仕様について]({{ site.baseurl }}/appendix-segment-tree)
 
 ## コンストラクタ
-`PointMappingRangeFoldSegmentTree` のエイリアスとして `SegmentTree` を提供している。
+`RangeMappingPointFoldSegmentTree` のエイリアスとして `DualSegmentTree` を提供している。
 
 ```
-(1) SegmentTree< V >(usize n)
-(2) SegmentTree< V >(usize n, VT v)
-(3) SegmentTree< V >(vector< VT > vs)
+(1) DualSegmentTree< O >(usize n)
+(2) DualSegmentTree< O >(usize n, OT v)
+(3) DualSegmentTree< O >(std::vector< OT > vs)
 ```
 
 1. 列 $a$ を長さ $n$ の列で初期化する。各要素の初期値は `V::identity()` となる。
@@ -27,7 +27,7 @@ documentation_of: //src/data-structure/segment-tree/point-mapping-range-fold-seg
 
 ## build
 ```
-void build(vector< VT > vs)
+void build(vector< OT > vs)
 ```
 
 列 $(a_0, a_1, \dots, a_{n-1})$ を `vs` で初期化して再構築する。
@@ -48,41 +48,44 @@ usize size() const
 ### 計算量
 - $O(1)$
 
-
 ## set
 ```
-void set(usize i, VT x)
+void set(usize i, OT x)
 ```
 
 $a_i \leftarrow x$ で更新する。
 
+### 制約
+- $0 \leq i < n$
+
 ### 計算量
 - $O(\log(n))$
 
-## fold
+## apply
 ```
-(1) VT fold(usize i) const
-(2) VT fold(usize l, usize r) const
-(3) VT fold_all() const
+(1) void apply(usize i, OT x)
+(2) void apply(usize l, usize r, OT x)
 ```
 
-1. $a_i$ を返す。
-2. $a_l \cdot a_{l+1} \cdot \dotsm \cdot a_{r-1}$ を返す。$l = r$ のとき `V::identity()` が返る。
-3. $a_0 \cdot a_1 \cdot \dotsm \cdot a_{n-1}$ を返す。
+1. $a_i \leftarrow f(a_i)$ で更新する。
+2. 任意の $l \leq i < r$ について $a_i \leftarrow f(a_i)$ で更新する。
 
 ### 制約
 1. $0 \leq i < n$
 2. $0 \leq l \leq r \leq n$
 
 ### 計算量
-- (1): $O(1)$
-- (2):
-  - $O(\log(n))$
-  - $d = r - l$ として $O(\log(d))$
-- (3): $O(1)$
+- $O(\log(n))$
 
-## max_right
-気が向いたらそのうち実装する
+## fold
+```
+VT fold(usize i) const
+```
 
-## min_left
-気が向いたらそのうち実装する2
+$a_i$ を返す。
+
+### 制約
+- $0 \leq i < n$
+
+### 計算量
+- $O(\log(n))$

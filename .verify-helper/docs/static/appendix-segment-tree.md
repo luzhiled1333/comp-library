@@ -24,11 +24,15 @@ Segment Tree とその亜種が要求するものは以下の通り。
 | -------------------------------- | ------ | ---- | ---- |
 | `value_structure`                | o      | x    | o    |
 | `operator_structure`             | x      | o    | o    |
+| `combined_structure`             | x      | x    | o    |
+
+`combined_structure` が `value_structure` と `operator_structure` をもつため、いずれも陽に要求するものは $1$ つのみである。
 
 また、各ドキュメントでは次のように省略されて記載されている。
 
 | 型                               | 省略形 |
 | -------------------------------- | ------ |
+| `combined_structure`             | `C`    |
 | `value_structure`                | `V`    |
 | `value_structure::value_type`    | `VT`   |
 | `operator_structure`             | `O`    |
