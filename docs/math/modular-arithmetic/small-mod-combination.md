@@ -20,3 +20,6 @@ mint C(isize n, isize r)
 $_n\mathrm{C}_r$ を計算する。
 
 $r < 0$ または $n < r$ のときは $0$ が返る。
+
+### 計算量
+- $O(\log_{p}(n))$
