@@ -1,6 +1,6 @@
 ---
 title: Number Theoretic Transform
-documentation_of: //src/math/convolution/modint-convoltion.hpp
+documentation_of: //src/math/convolution/modint-convolution.hpp
 ---
 
 ## modint_convolution

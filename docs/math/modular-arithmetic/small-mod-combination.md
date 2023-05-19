@@ -1,5 +1,5 @@
 ---
-title: mod が小さい場合の combination (Lucas'theorem)
+title: mod が小さい場合の combination (Lucas's theorem)
 documentation_of: //src/math/modular-arithmetic/small-mod-combination.hpp
 ---
 
