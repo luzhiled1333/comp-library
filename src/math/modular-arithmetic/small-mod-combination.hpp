@@ -4,7 +4,7 @@
 
 namespace luz {
 
-  template< typename modint >
+  template < typename modint >
   class SmallModCombination {
     static constexpr u32 mod = modint::get_mod();
     Combinatorics< modint > mc;

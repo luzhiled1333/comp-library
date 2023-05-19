@@ -100,7 +100,8 @@ namespace luz {
       return mod;
     }
 
-    friend std::ostream &operator<<(std::ostream &os, const modint &m) {
+    friend std::ostream &operator<<(std::ostream &os,
+                                    const modint &m) {
       os << m.val();
       return os;
     }
