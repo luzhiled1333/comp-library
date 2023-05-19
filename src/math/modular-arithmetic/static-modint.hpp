@@ -2,6 +2,7 @@
 
 #include "src/cpp-template/header/type-alias.hpp"
 
+#include <iostream>
 #include <cassert>
 
 namespace luz {
