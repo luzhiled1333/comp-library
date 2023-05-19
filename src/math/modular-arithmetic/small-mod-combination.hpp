@@ -12,15 +12,21 @@ namespace luz {
    public:
     SmallModCombination(): mc(mod - 1) {}
 
-    modint combination(usize n, usize k) {
-      modint result = 1;
+    modint combination(isize n, isize r) {
+      if (r < 0 or n < r) return 0;
+
+      modint result(1);
       while (n) {
-        result *= mc.combination(n % mod, k % mod);
+        result *= mc.combination(n % mod, r % mod);
         n /= mod;
-        k /= mod;
+        r /= mod;
       }
 
       return result;
+    }
+
+    modint C(isize n, isize r) {
+      return combination(n, r);
     }
   };
 
