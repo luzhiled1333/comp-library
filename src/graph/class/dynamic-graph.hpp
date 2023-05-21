@@ -31,6 +31,7 @@ namespace luz {
     void add_undirected_edge(usize u, usize v, cost_type cost = 1) {
       assert(u < size());
       assert(v < size());
+      assert(u != v);
       g[u].emplace_back(u, v, cost, edge_count);
       g[v].emplace_back(v, u, cost, edge_count++);
     }
