@@ -3,8 +3,8 @@
 #include "src/cpp-template/header/input.hpp"
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
-#include "src/graph/dijkstra.hpp"
 #include "src/graph/graph-template.hpp"
+#include "src/graph/single-source-shortest-path/in-non-negative-weighted-graph.hpp"
 
 #include <iostream>
 
@@ -20,10 +20,10 @@ namespace luz {
       G.add_directed_edge(s, t, d);
     }
 
-    Dijkstra dijkstra(G, source);
-    auto dists = dijkstra.get_distances();
+    sssp::InNonNegativeWeightedGraph solver(G, source);
+    auto dists = solver.get_distances();
     for (auto &dist: dists) {
-      if (dist == dijkstra.inf()) {
+      if (dist == solver.inf()) {
         std::cout << "INF" << std::endl;
       } else {
         std::cout << dist << std::endl;

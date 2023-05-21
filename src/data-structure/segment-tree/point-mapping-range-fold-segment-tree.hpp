@@ -24,8 +24,15 @@ namespace luz {
     using value_type = VT;
 
     PointMappingRangeFoldSegmentTree() = default;
+
     explicit PointMappingRangeFoldSegmentTree(const usize n)
         : tree(n * 2, V::identity()) {}
+
+    explicit PointMappingRangeFoldSegmentTree(const usize n, VT v)
+        : PointMappingRangeFoldSegmentTree(n) {
+      build(std::vector< VT >(n, v));
+    }
+
     explicit PointMappingRangeFoldSegmentTree(
         const std::vector< VT > &vs)
         : PointMappingRangeFoldSegmentTree(vs.size()) {
