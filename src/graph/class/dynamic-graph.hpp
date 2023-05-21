@@ -9,14 +9,14 @@
 namespace luz {
 
   template < typename cost_type >
-  class Graph {
+  class DynamicGraph {
    protected:
     std::vector< std::vector< Edge< cost_type > > > g;
     usize edge_count;
 
    public:
-    Graph() = default;
-    explicit Graph(usize n): g(n), edge_count(0) {}
+    DynamicGraph() = default;
+    explicit DynamicGraph(usize n): g(n), edge_count(0) {}
 
     usize size() const {
       return g.size();
