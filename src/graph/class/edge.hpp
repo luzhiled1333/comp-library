@@ -6,21 +6,23 @@
 
 namespace luz {
 
-  template < typename cost_type >
+  template < typename T >
   class Edge {
    public:
+    using cost_type = T;
+
     usize from, to;
-    cost_type cost;
+    T cost;
     usize id;
     Edge() = default;
-    Edge(usize from_, usize to_, cost_type cost_, usize id_)
+    Edge(usize from_, usize to_, T cost_, usize id_)
         : from(from_),
           to(to_),
           cost(cost_),
           id(id_) {}
   };
 
-  template < typename cost_type >
-  using Edges = std::vector< Edge< cost_type > >;
+  template < typename T >
+  using Edges = std::vector< Edge< T > >;
 
 } // namespace luz
