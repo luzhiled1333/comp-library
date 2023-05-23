@@ -6,7 +6,7 @@ namespace luz {
 
   template < class T >
   class Vector2d: public ColumnVector< 2, T > {
-    using c_vec = ColumnVector< 2, T >;
+    using c_vec        = ColumnVector< 2, T >;
     using internal_mat = internal::Mat< d, 1, T >;
 
    public:
