@@ -13,7 +13,7 @@ namespace luz {
     using internal::Mat< d, 1, T >::Mat;
 
     Vector2d(const c_vec &vec): c_vec::ColumnVector(vec) {}
-    Vector(const internal_mat &mat): internal_mat::Mat(mat) {}
+    Vector2d(const internal_mat &mat): internal_mat::Mat(mat) {}
 
     const T &x() const {
       return this->as[0];
