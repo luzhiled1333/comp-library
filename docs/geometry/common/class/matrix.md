@@ -17,7 +17,7 @@ documentation_of: //src/geometry/common/class/matrix.hpp
 
 
 ## 各種演算
-`Matrix< r, c, T > A, B` と `T x` に対し、以下の演算が実装されています。
+`Matrix< r, c, T > A, B` と `T x` に対し、以下の演算が実装されている。
 
 ```
 +A
