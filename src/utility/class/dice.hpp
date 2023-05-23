@@ -13,14 +13,14 @@ namespace luz {
     // +x, -x, +y, -y, +z, -z
     std::vector< T > dice;
 
-    std::array< std::array< T, 4 >, 3 > rot = {
+    std::array< std::array< T, 4 >, 6 > rot{{
       {2, 5, 3, 4},
       {4, 3, 5, 2},
       {4, 1, 5, 0},
       {0, 5, 1, 4},
       {0, 3, 1, 2},
       {2, 1, 3, 0}
-    };
+    }};
 
     void rotate(std::array< T, 4 > &idxs) {
       for (usize i: rep(1, 4)) {
@@ -32,7 +32,7 @@ namespace luz {
       if (count != 0) {
         bool neg = count < 0;
         rotate(rot[base + neg]);
-        internal_rotate(count + (neg ? +1 : -1));
+        internal_rotate(base, count + (neg ? +1 : -1));
       }
     }
 
@@ -69,5 +69,21 @@ namespace luz {
       return dice[5];
     }
   };
+
+  template < typename T >
+  std::vector< Dice< T > > dice_enumeration(Dice<T> dice) {
+    std::vector< Dice< T > > result;
+
+    for (usize i: rep(0, 6)) {
+      for ([[maybe_unused]] usize _: rep(0, 4)) {
+        result.emplace_back(dice);
+        dice.rotate_z(1);
+      }
+      if (i & 1) dice.rotate_x(1);
+      else dice.rotate_y(1);
+    }
+
+    return result;
+  }
 
 } // namespace luz
