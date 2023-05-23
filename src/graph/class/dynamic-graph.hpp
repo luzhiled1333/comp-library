@@ -1,7 +1,6 @@
 #pragma once
 
 #include "src/cpp-template/header/type-alias.hpp"
-#include "src/graph/class/edge.hpp"
 
 #include <cassert>
 #include <vector>
