@@ -162,7 +162,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/sequence/compression.hpp
     title: "\u5EA7\u6A19\u5727\u7E2E"
+  - icon: ':heavy_check_mark:'
+    path: src/utility/class/dice.hpp
+    title: src/utility/class/dice.hpp
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/1181.test.cpp
+    title: test/aoj/1181.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/2286.test.cpp
     title: test/aoj/2286.test.cpp
@@ -403,6 +409,7 @@ data:
   - src/cpp-template/header/vector-ios.hpp
   - src/cpp-template/header/template-header.hpp
   - src/cpp-template/template.cpp
+  - src/utility/class/dice.hpp
   - src/graph/decomposition/strongly-connected-components.hpp
   - src/graph/max-flow.hpp
   - src/graph/class/static-graph.hpp
@@ -442,6 +449,7 @@ data:
   - test/aoj/dsl_2_f/range-maximum.test.cpp
   - test/aoj/dsl_2_h/range-minimum.test.cpp
   - test/aoj/dsl_2_h/range-maximum.test.cpp
+  - test/aoj/1181.test.cpp
   - test/aoj/dsl_2_d.test.cpp
   - test/aoj/dsl_2_b/segment-tree.test.cpp
   - test/aoj/dsl_2_b/fenwick-tree.test.cpp

@@ -439,6 +439,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/utility/bit/popcount.hpp
       title: "\u7ACB\u3063\u3066\u3044\u308B bit \u306E\u6570 (population count, popcount)"
+  - name: src/utility/class
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/utility/class/dice.hpp
+      title: src/utility/class/dice.hpp
   - name: src/utility
     pages:
     - icon: ':heavy_check_mark:'
@@ -450,6 +455,9 @@ data:
   verificationCategories:
   - name: test/aoj
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/1181.test.cpp
+      title: test/aoj/1181.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/2286.test.cpp
       title: test/aoj/2286.test.cpp

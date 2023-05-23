@@ -16,6 +16,9 @@ data:
     title: template
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/1181.test.cpp
+    title: test/aoj/1181.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/itp1_1_a.test.cpp
     title: test/aoj/itp1_1_a.test.cpp
   - icon: ':heavy_check_mark:'
@@ -88,6 +91,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - unit-test/sequence/compression.test.cpp
+  - test/aoj/1181.test.cpp
   - test/aoj/itp1_1_a.test.cpp
   - test/atcoder/abc291_e.test.cpp
   - test/atcoder/abc258_e/offline-algorithm.test.cpp

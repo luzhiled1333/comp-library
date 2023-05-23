@@ -18,6 +18,9 @@ data:
       \ (Single Source Shortest Path in Non-negative Weighted Graph, Dijkstra's Algorithm)"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/1181.test.cpp
+    title: test/aoj/1181.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/grl_1_a.test.cpp
     title: test/aoj/grl_1_a.test.cpp
   - icon: ':heavy_check_mark:'
@@ -61,6 +64,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/grl_1_a.test.cpp
+  - test/aoj/1181.test.cpp
   - test/aoj/itp1_1_a.test.cpp
   - test/atcoder/abc259_c.test.cpp
   - test/atcoder/abc298_f.test.cpp

@@ -263,12 +263,18 @@ data:
     path: src/utility/bit/popcount.hpp
     title: "\u7ACB\u3063\u3066\u3044\u308B bit \u306E\u6570 (population count, popcount)"
   - icon: ':heavy_check_mark:'
+    path: src/utility/class/dice.hpp
+    title: src/utility/class/dice.hpp
+  - icon: ':heavy_check_mark:'
     path: src/utility/pair-hash.hpp
     title: "std::pair \u306E Hash"
   - icon: ':heavy_check_mark:'
     path: src/utility/tuple-hash.hpp
     title: "std::tuple \u306E Hash"
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/1181.test.cpp
+    title: test/aoj/1181.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/2286.test.cpp
     title: test/aoj/2286.test.cpp
@@ -511,6 +517,7 @@ data:
   - src/utility/bit/bit-width.hpp
   - src/utility/bit/count-trailing-0s.hpp
   - src/utility/bit/count-leading-0s.hpp
+  - src/utility/class/dice.hpp
   - src/utility/pair-hash.hpp
   - src/graph/graph-template.hpp
   - src/graph/decomposition/strongly-connected-components.hpp
@@ -561,6 +568,7 @@ data:
   - test/aoj/dsl_2_f/range-maximum.test.cpp
   - test/aoj/dsl_2_h/range-minimum.test.cpp
   - test/aoj/dsl_2_h/range-maximum.test.cpp
+  - test/aoj/1181.test.cpp
   - test/aoj/dsl_2_d.test.cpp
   - test/aoj/dsl_2_b/segment-tree.test.cpp
   - test/aoj/dsl_2_b/fenwick-tree.test.cpp
