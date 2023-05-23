@@ -81,12 +81,30 @@ data:
     path: src/data-structure/segment-tree/range-mapping-range-fold-segment-tree.hpp
     title: "\u533A\u9593\u66F4\u65B0+\u533A\u9593\u53D6\u5F97 \u30BB\u30B0\u30E1\u30F3\
       \u30C8\u6728 (Lazy Segment Tree)"
+  - icon: ':warning:'
+    path: src/geometry/2d/common/class/vector-2d.hpp
+    title: src/geometry/2d/common/class/vector-2d.hpp
+  - icon: ':warning:'
+    path: src/geometry/2d/r2/class/vector-2d.hpp
+    title: src/geometry/2d/r2/class/vector-2d.hpp
+  - icon: ':warning:'
+    path: src/geometry/2d/z2/class/vector-2d.hpp
+    title: src/geometry/2d/z2/class/vector-2d.hpp
   - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/segment-function/counterbalance-segments.hpp
     title: src/geometry/Z2/segment-function/counterbalance-segments.hpp
   - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/utility/polygon-to-segments.hpp
     title: src/geometry/Z2/utility/polygon-to-segments.hpp
+  - icon: ':warning:'
+    path: src/geometry/common/class/column-vector.hpp
+    title: src/geometry/common/class/column-vector.hpp
+  - icon: ':warning:'
+    path: src/geometry/common/class/internal/matrix.hpp
+    title: src/geometry/common/class/internal/matrix.hpp
+  - icon: ':warning:'
+    path: src/geometry/common/class/matrix.hpp
+    title: "\u884C\u5217"
   - icon: ':heavy_check_mark:'
     path: src/graph/decomposition/strongly-connected-components.hpp
     title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3(Decomposition of Strongly Connected\
@@ -347,6 +365,12 @@ data:
   requiredBy:
   - src/geometry/Z2/utility/polygon-to-segments.hpp
   - src/geometry/Z2/segment-function/counterbalance-segments.hpp
+  - src/geometry/common/class/matrix.hpp
+  - src/geometry/common/class/internal/matrix.hpp
+  - src/geometry/common/class/column-vector.hpp
+  - src/geometry/2d/common/class/vector-2d.hpp
+  - src/geometry/2d/z2/class/vector-2d.hpp
+  - src/geometry/2d/r2/class/vector-2d.hpp
   - src/sequence/compression.hpp
   - src/math/modular-arithmetic/modular-combinatorics.hpp
   - src/math/modular-arithmetic/small-mod-combination.hpp

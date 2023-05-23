@@ -154,6 +154,21 @@ data:
       path: src/data-structure/segment-tree/presets/range-update-range-sum-query-solver.hpp
       title: "\u533A\u9593\u66F4\u65B0 + \u533A\u9593\u548C\u30AF\u30A8\u30EA solver\
         \ (Range Update Range Sum Query Solver)"
+  - name: src/geometry/2d/common/class
+    pages:
+    - icon: ':warning:'
+      path: src/geometry/2d/common/class/vector-2d.hpp
+      title: src/geometry/2d/common/class/vector-2d.hpp
+  - name: src/geometry/2d/r2/class
+    pages:
+    - icon: ':warning:'
+      path: src/geometry/2d/r2/class/vector-2d.hpp
+      title: src/geometry/2d/r2/class/vector-2d.hpp
+  - name: src/geometry/2d/z2/class
+    pages:
+    - icon: ':warning:'
+      path: src/geometry/2d/z2/class/vector-2d.hpp
+      title: src/geometry/2d/z2/class/vector-2d.hpp
   - name: src/geometry/R2/class
     pages:
     - icon: ':warning:'
@@ -280,6 +295,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/geometry/Z2/utility/polygon-to-segments.hpp
       title: src/geometry/Z2/utility/polygon-to-segments.hpp
+  - name: src/geometry/common/class
+    pages:
+    - icon: ':warning:'
+      path: src/geometry/common/class/column-vector.hpp
+      title: src/geometry/common/class/column-vector.hpp
+    - icon: ':warning:'
+      path: src/geometry/common/class/matrix.hpp
+      title: "\u884C\u5217"
+  - name: src/geometry/common/class/internal
+    pages:
+    - icon: ':warning:'
+      path: src/geometry/common/class/internal/matrix.hpp
+      title: src/geometry/common/class/internal/matrix.hpp
   - name: src/graph/decomposition
     pages:
     - icon: ':heavy_check_mark:'
