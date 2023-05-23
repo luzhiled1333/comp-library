@@ -7,6 +7,33 @@
 #include <cassert>
 #include <vector>
 
+namespace luz::internal {
+
+  template < typename Iterator >
+  class OutgoingEdges {
+    Iterator f, l;
+
+   public:
+    OutgoingEdges(Iterator f, Iterator l): f(f), l(l) {}
+
+    Iterator begin() const {
+      return f;
+    }
+    Iterator end() const {
+      return l;
+    }
+    usize size() const {
+      return l - f;
+    }
+
+    auto &&operator[](usize k) {
+      assert(k < size());
+      return begin()[k];
+    }
+  };
+
+} // namespace luz::internal
+
 namespace luz {
 
   template < typename Edge >
@@ -17,6 +44,9 @@ namespace luz {
     using iterator       = typename Edges::iterator;
     using const_iterator = typename Edges::const_iterator;
 
+    template < typename Iterator >
+    using Es = internal::OutgoingEdges< Iterator >;
+
    protected:
     bool constructed;
     usize vertex_count;
@@ -24,29 +54,6 @@ namespace luz {
 
     Edges edges;
     std::vector< usize > outdegrees;
-
-    template < typename Iterator >
-    class OutgoingEdges {
-      Iterator f, l;
-
-     public:
-      OutgoingEdges(Iterator f, Iterator l): f(f), l(l) {}
-
-      Iterator begin() const {
-        return f;
-      }
-      Iterator end() const {
-        return l;
-      }
-      usize size() const {
-        return l - f;
-      }
-
-      auto &&operator[](usize k) {
-        assert(k < size());
-        return begin()[k];
-      }
-    };
 
    public:
     StaticGraph() = default;
@@ -95,19 +102,16 @@ namespace luz {
       outdegrees[v]++;
     }
 
-    OutgoingEdges< iterator > operator[](const usize &v) {
+    Es< iterator > operator[](const usize &v) {
       assert(constructed);
-      return OutgoingEdges< iterator >(
-          edges.begin() + outdegrees[v + 1],
-          edges.begin() + outdegrees[v]);
+      return Es< iterator >(edges.begin() + outdegrees[v + 1],
+                            edges.begin() + outdegrees[v]);
     }
 
-    const OutgoingEdges< const_iterator > &operator[](
-        const usize &v) const {
+    const Es< const_iterator > &operator[](const usize &v) const {
       assert(constructed);
-      return OutgoingEdges< const_iterator >(
-          edges.begin() + outdegrees[v + 1],
-          edges.begin() + outdegrees[v]);
+      return Es< const_iterator >(edges.begin() + outdegrees[v + 1],
+                                  edges.begin() + outdegrees[v]);
     }
   };
 
