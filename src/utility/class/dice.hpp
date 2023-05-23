@@ -36,18 +36,22 @@ namespace luz {
       }
     }
 
+    isize count_minimize(isize count) {
+      return (count % 4 + 5) % 4 - 1;
+    }
+
    public:
     Dice() : dice(6) {}
     Dice(T px, T nx, T py, T ny, T pz, T nz) : dice({px, nx, py, ny, pz, nz}) {}
 
     void rotate_x(isize count) {
-      internal_rotate(0, count % 4);
+      internal_rotate(0, count_minimize(count));
     }
     void rotate_y(isize count) {
-      internal_rotate(2, count % 4);
+      internal_rotate(2, count_minimize(count));
     }
     void rotate_z(isize count) {
-      internal_rotate(4, count % 4);
+      internal_rotate(4, count_minimize(count));
     }
 
     T &right() {
@@ -79,6 +83,7 @@ namespace luz {
         result.emplace_back(dice);
         dice.rotate_z(1);
       }
+
       if (i & 1) dice.rotate_x(1);
       else dice.rotate_y(1);
     }
