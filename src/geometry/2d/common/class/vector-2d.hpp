@@ -10,6 +10,10 @@ namespace luz::geometry::common {
 
    public:
     Vector2d(const c_vec &vec): c_vec::ColumnVector(vec) {}
+    Vector2d(const T x_, const T y_) {
+      x() = x_;
+      y() = y_;
+    }
 
     const T &x() const {
       return this->as[0];
