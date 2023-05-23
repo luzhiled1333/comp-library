@@ -196,6 +196,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/geometry/R2/utility/sign.hpp
       title: src/geometry/R2/utility/sign.hpp
+  - name: src/geometry/Z2/centroid
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/geometry/Z2/centroid/gravity.hpp
+      title: src/geometry/Z2/centroid/gravity.hpp
   - name: src/geometry/Z2/class
     pages:
     - icon: ':heavy_check_mark:'
@@ -266,6 +271,9 @@ data:
       title: src/geometry/Z2/segment-function/counterbalance-segments.hpp
   - name: src/geometry/Z2/utility
     pages:
+    - icon: ':heavy_check_mark:'
+      path: src/geometry/Z2/utility/multiply-for-all-points.hpp
+      title: src/geometry/Z2/utility/multiply-for-all-points.hpp
     - icon: ':heavy_check_mark:'
       path: src/geometry/Z2/utility/next-idx.hpp
       title: src/geometry/Z2/utility/next-idx.hpp
@@ -406,6 +414,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/2286.test.cpp
       title: test/aoj/2286.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/2442.test.cpp
+      title: test/aoj/2442.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/4011.test.cpp
       title: test/aoj/4011.test.cpp

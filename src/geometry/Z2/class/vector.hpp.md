@@ -3,6 +3,9 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: src/geometry/Z2/centroid/gravity.hpp
+    title: src/geometry/Z2/centroid/gravity.hpp
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/class/circle.hpp
     title: "\u5186 (\u6574\u6570\u5E7E\u4F55)"
   - icon: ':heavy_check_mark:'
@@ -48,9 +51,15 @@ data:
     path: src/geometry/Z2/segment-function/counterbalance-segments.hpp
     title: src/geometry/Z2/segment-function/counterbalance-segments.hpp
   - icon: ':heavy_check_mark:'
+    path: src/geometry/Z2/utility/multiply-for-all-points.hpp
+    title: src/geometry/Z2/utility/multiply-for-all-points.hpp
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/utility/polygon-to-segments.hpp
     title: src/geometry/Z2/utility/polygon-to-segments.hpp
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/2442.test.cpp
+    title: test/aoj/2442.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/4011.test.cpp
     title: test/aoj/4011.test.cpp
@@ -111,11 +120,14 @@ data:
   - src/geometry/Z2/operation/square-norm.hpp
   - src/geometry/Z2/normalize/line-normalize.hpp
   - src/geometry/Z2/utility/polygon-to-segments.hpp
+  - src/geometry/Z2/utility/multiply-for-all-points.hpp
   - src/geometry/Z2/segment-function/counterbalance-segments.hpp
+  - src/geometry/Z2/centroid/gravity.hpp
   timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/4011.test.cpp
+  - test/aoj/2442.test.cpp
   - test/atcoder/abc259_d.test.cpp
 documentation_of: src/geometry/Z2/class/vector.hpp
 layout: document

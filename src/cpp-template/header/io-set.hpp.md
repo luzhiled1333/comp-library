@@ -13,6 +13,9 @@ data:
     title: template
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/2442.test.cpp
+    title: test/aoj/2442.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/itp1_1_a.test.cpp
     title: test/aoj/itp1_1_a.test.cpp
   _isVerificationFailed: false
@@ -42,6 +45,7 @@ data:
   timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/2442.test.cpp
   - test/aoj/itp1_1_a.test.cpp
 documentation_of: src/cpp-template/header/io-set.hpp
 layout: document
