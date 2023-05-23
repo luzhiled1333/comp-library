@@ -1,7 +1,7 @@
 #pragma once
 
-#include "src/cpp-template/header/type-alias.hpp"
 #include "src/cpp-template/header/rep.hpp"
+#include "src/cpp-template/header/type-alias.hpp"
 
 #include <algorithm>
 #include <cassert>
@@ -13,8 +13,8 @@ namespace luz {
   class StaticGraph {
     using cost_type = typename Edge::cost_type;
 
-    using Edges = std::vector< Edge >;
-    using iterator = typename Edges::iterator;
+    using Edges          = std::vector< Edge >;
+    using iterator       = typename Edges::iterator;
     using const_iterator = typename Edges::const_iterator;
 
    protected:
@@ -25,12 +25,12 @@ namespace luz {
     Edges edges;
     std::vector< usize > outdegrees;
 
-    template<typename Iterator>
+    template < typename Iterator >
     class OutgoingEdges {
       Iterator f, l;
 
      public:
-      OutgoingEdges(Iterator f, Iterator l) : f(f), l(l) {}
+      OutgoingEdges(Iterator f, Iterator l): f(f), l(l) {}
 
       Iterator begin() const {
         return f;
@@ -50,7 +50,11 @@ namespace luz {
 
    public:
     StaticGraph() = default;
-    explicit StaticGraph(usize n): constructed(false), vertex_count(n), edge_count(0), outdegrees(vertex_count) {}
+    explicit StaticGraph(usize n)
+        : constructed(false),
+          vertex_count(n),
+          edge_count(0),
+          outdegrees(vertex_count) {}
 
     usize size() const {
       return vertex_count;
@@ -64,11 +68,10 @@ namespace luz {
         outdegrees[i] += outdegrees[i + 1];
       }
 
-      std::sort(edges.begin(),
-                edges.end(),
+      std::sort(edges.begin(), edges.end(),
                 [](const Edge &e1, const Edge &e2) {
-                  return e1.from != e2.from ? e1.from > e2.from : e1.to < e2.to;
-                });
+        return e1.from != e2.from ? e1.from > e2.from : e1.to < e2.to;
+      });
 
       constructed = true;
     }
@@ -92,14 +95,19 @@ namespace luz {
       outdegrees[v]++;
     }
 
-    OutgoingEdges<iterator> operator[](const usize &v) {
+    OutgoingEdges< iterator > operator[](const usize &v) {
       assert(constructed);
-      return OutgoingEdges<iterator>(edges.begin() + outdegrees[v + 1], edges.begin() + outdegrees[v]);
+      return OutgoingEdges< iterator >(
+          edges.begin() + outdegrees[v + 1],
+          edges.begin() + outdegrees[v]);
     }
 
-    const OutgoingEdges<const_iterator> &operator[](const usize &v) const {
+    const OutgoingEdges< const_iterator > &operator[](
+        const usize &v) const {
       assert(constructed);
-      return OutgoingEdges<const_iterator>(edges.begin() + outdegrees[v + 1], edges.begin() + outdegrees[v]);
+      return OutgoingEdges< const_iterator >(
+          edges.begin() + outdegrees[v + 1],
+          edges.begin() + outdegrees[v]);
     }
   };
 
