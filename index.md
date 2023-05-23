@@ -308,6 +308,17 @@ data:
     - icon: ':warning:'
       path: src/geometry/common/class/internal/matrix.hpp
       title: src/geometry/common/class/internal/matrix.hpp
+  - name: src/graph/class
+    pages:
+    - icon: ':warning:'
+      path: src/graph/class/dynamic-graph.hpp
+      title: src/graph/class/dynamic-graph.hpp
+    - icon: ':warning:'
+      path: src/graph/class/edge.hpp
+      title: src/graph/class/edge.hpp
+    - icon: ':warning:'
+      path: src/graph/class/static-graph.hpp
+      title: src/graph/class/static-graph.hpp
   - name: src/graph/decomposition
     pages:
     - icon: ':heavy_check_mark:'

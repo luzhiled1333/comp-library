@@ -153,6 +153,15 @@ data:
   - icon: ':warning:'
     path: src/geometry/common/class/matrix.hpp
     title: "\u884C\u5217"
+  - icon: ':warning:'
+    path: src/graph/class/dynamic-graph.hpp
+    title: src/graph/class/dynamic-graph.hpp
+  - icon: ':warning:'
+    path: src/graph/class/edge.hpp
+    title: src/graph/class/edge.hpp
+  - icon: ':warning:'
+    path: src/graph/class/static-graph.hpp
+    title: src/graph/class/static-graph.hpp
   - icon: ':heavy_check_mark:'
     path: src/graph/decomposition/strongly-connected-components.hpp
     title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3(Decomposition of Strongly Connected\
@@ -506,6 +515,9 @@ data:
   - src/graph/graph-template.hpp
   - src/graph/decomposition/strongly-connected-components.hpp
   - src/graph/max-flow.hpp
+  - src/graph/class/edge.hpp
+  - src/graph/class/static-graph.hpp
+  - src/graph/class/dynamic-graph.hpp
   - src/graph/offline-query-jump-on-tree.hpp
   - src/graph/online-query-jump-on-functional-graph.hpp
   - src/graph/offline-query-jump-on-functional-graph.hpp
