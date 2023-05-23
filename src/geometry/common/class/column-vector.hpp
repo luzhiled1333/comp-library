@@ -3,7 +3,7 @@
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/geometry/common/class/internal/matrix.hpp"
 
-namespace luz {
+namespace luz::geometry::common {
 
   template < usize d, class T >
   class ColumnVector: public internal::Mat< d, 1, T > {
@@ -21,4 +21,4 @@ namespace luz {
     }
   };
 
-} // namespace luz
+} // namespace luz::geometry::common

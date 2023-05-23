@@ -6,7 +6,7 @@
 #include <cassert>
 #include <vector>
 
-namespace luz::internal {
+namespace luz::geometry::common::internal {
 
   template < usize r, usize c, class T >
   class Mat {
@@ -116,4 +116,4 @@ namespace luz::internal {
     return as != rhs.as;
   }
 
-} // namespace luz::internal
+} // namespace luz::geometry::common::internal

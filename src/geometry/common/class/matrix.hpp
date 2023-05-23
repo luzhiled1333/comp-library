@@ -3,7 +3,7 @@
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/geometry/common/class/internal/matrix.hpp"
 
-namespace luz {
+namespace luz::geometry::common {
 
   template < usize r, usize c, class T >
   class Matrix: public internal::Mat< r, c, T > {
@@ -15,4 +15,4 @@ namespace luz {
     Matrix(const internal_mat &mat): internal_mat::Mat(mat) {}
   };
 
-} // namespace luz
+} // namespace luz::geometry::common
