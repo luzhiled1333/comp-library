@@ -6,7 +6,7 @@ namespace luz::geometry::common {
 
   template < class T >
   class Vector2d: public ColumnVector< 2, T > {
-    using c_vec        = ColumnVector< 2, T >;
+    using c_vec = ColumnVector< 2, T >;
 
    public:
     Vector2d(const c_vec &vec): c_vec::ColumnVector(vec) {}
@@ -26,4 +26,4 @@ namespace luz::geometry::common {
     }
   };
 
-} // namespace luz
+} // namespace luz::geometry::common

@@ -6,9 +6,9 @@
 
 namespace luz::geometry::r2 {
 
-  template< class R >
+  template < class R >
   class Vector2d: public luz::geometry::common::Vector2d< R > {
-    static_assert(std::is_floating_point<R>::value);
+    static_assert(std::is_floating_point< R >::value);
 
    public:
     Vector2d() = default;
@@ -19,4 +19,4 @@ namespace luz::geometry::r2 {
     }
   };
 
-} // namespace geometry::r2
+} // namespace luz::geometry::r2

@@ -6,12 +6,12 @@
 
 namespace luz::geometry::z2 {
 
-  template< class Z >
+  template < class Z >
   class Vector2d: public luz::geometry::common::Vector2d< Z > {
-    static_assert(std::is_integral<Z>::value);
+    static_assert(std::is_integral< Z >::value);
 
    public:
     Vector2d() = default;
   };
 
-} // namespace geometry::z2
+} // namespace luz::geometry::z2
