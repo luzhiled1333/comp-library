@@ -13,6 +13,8 @@
 namespace luz {
 
   void main_() {
+    using Z = i32;
+
     usize n;
     std::cin >> n;
 
@@ -21,15 +23,15 @@ namespace luz {
       return;
     }
 
-    Z2::Points< i32 > pts(n);
+    Z2::Points< Z > pts(n);
     for (auto &point: pts) {
-      i32 x, y;
+      Z x, y;
       std::cin >> x >> y;
       point = {x, y};
     }
 
-    Z2::Point< i32 > g = ntimes_gravity(pts);
-    pts                = multiply_for_all_points((i32)n, pts);
+    Z2::Point< Z > g = ntimes_gravity(pts);
+    pts              = multiply_for_all_points((Z)n, pts);
 
     n /= 2;
     for (usize i: rep(0, n)) {
