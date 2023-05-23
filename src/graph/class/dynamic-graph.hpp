@@ -8,10 +8,14 @@
 
 namespace luz {
 
-  template < typename cost_type >
+  template < typename Edge >
   class DynamicGraph {
+    using cost_type = typename Edge::cost_type;
+
+    using Edges = std::vector< Edge >;
+
    protected:
-    std::vector< std::vector< Edge< cost_type > > > g;
+    std::vector< Edges > g;
     usize edge_count;
 
    public:
@@ -36,12 +40,11 @@ namespace luz {
       g[v].emplace_back(v, u, cost, edge_count++);
     }
 
-    inline Edges< cost_type > &operator[](const usize &v) {
+    Edges operator[](const usize &v) {
       return g[v];
     }
 
-    inline const Edges< cost_type > &operator[](
-        const usize &v) const {
+    const Edges operator[](const usize &v) const {
       return g[v];
     }
   };
