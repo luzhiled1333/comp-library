@@ -1,0 +1,73 @@
+#pragma once
+
+#include "src/cpp-template/header/rep.hpp"
+#include "src/cpp-template/header/type-alias.hpp"
+
+#include <array>
+#include <vector>
+
+namespace luz {
+
+  template < typename T >
+  class Dice {
+    // +x, -x, +y, -y, +z, -z
+    std::vector< T > dice;
+
+    std::array< std::array< T, 4 >, 3 > rot = {
+      {2, 5, 3, 4},
+      {4, 3, 5, 2},
+      {4, 1, 5, 0},
+      {0, 5, 1, 4},
+      {0, 3, 1, 2},
+      {2, 1, 3, 0}
+    };
+
+    void rotate(std::array< T, 4 > &idxs) {
+      for (usize i: rep(1, 4)) {
+        std::swap(dice[idxs[i - 1]], dice[idxs[i]]);
+      }
+    }
+
+    void internal_rotate(usize base, isize count) {
+      if (count != 0) {
+        bool neg = count < 0;
+        rotate(rot[base + neg]);
+        internal_rotate(count + (neg ? +1 : -1));
+      }
+    }
+
+   public:
+    Dice() : dice(6) {}
+    Dice(T px, T nx, T py, T ny, T pz, T nz) : dice({px, nx, py, ny, pz, nz}) {}
+
+    void rotate_x(isize count) {
+      internal_rotate(0, count % 4);
+    }
+    void rotate_y(isize count) {
+      internal_rotate(2, count % 4);
+    }
+    void rotate_z(isize count) {
+      internal_rotate(4, count % 4);
+    }
+
+    T &right() {
+      return dice[0];
+    }
+    T &left() {
+      return dice[1];
+    }
+    T &back() {
+      return dice[2];
+    }
+    T &front() {
+      return dice[3];
+    }
+    T &top() {
+      return dice[4];
+    }
+    T &bottom() {
+      return dice[5];
+    }
+  };
+
+} // namespace luz
