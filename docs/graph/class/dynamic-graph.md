@@ -1,11 +1,11 @@
 ---
-title: グラフ構造体
-documentation_of: //src/graph/graph-template.hpp
+title: 動的なグラフ構造体
+documentation_of: //src/graph/class/dynamic-graph.hpp
 ---
 
 ## コンストラクタ
 ```
-Graph(usize n)
+DynamicGraph(usize n)
 ```
 
 頂点数 `n` のグラフを定義する。
