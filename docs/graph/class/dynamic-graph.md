@@ -5,7 +5,7 @@ documentation_of: //src/graph/class/dynamic-graph.hpp
 
 ## コンストラクタ
 ```
-DynamicGraph(usize n)
+DynamicGraph< edge >(usize n)
 ```
 
 頂点数 `n` のグラフを定義する。
