@@ -1,13 +1,16 @@
 ---
 title: オフライン最小共通祖先 (Offline Lowest Common Ancestor)
-documentation_of: //src/graph/offline-query-lowest-common-ancestor.hpp
+documentation_of: //src/graph/tree/offline-query/offline-query-lowest-common-ancestor.hpp
 ---
 
 Tarjan's Offline Algorithm によって実装されているオフライン最小共通祖先
 
+## Appendix
+[テンプレートパラメータに渡すグラフ $G$ の仕様について]({{ site.baseurl }}/appendix-graph-type)
+
 ## コンストラクタ
 ```
-OfflineLCAQuery(const Graph<cost_type> &g)
+OfflineLCAQuery(const G &g)
 ```
 
 最小共通祖先を求める木 `g` を渡す。

@@ -3,8 +3,9 @@
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/cpp-template/header/vector-ios.hpp"
-#include "src/graph/graph-template.hpp"
-#include "src/graph/online-query-jump-on-functional-graph.hpp"
+#include "src/graph/class/edge/edge.hpp"
+#include "src/graph/class/static-graph.hpp"
+#include "src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp"
 
 #include <iostream>
 #include <numeric>
@@ -13,6 +14,9 @@
 namespace luz {
 
   void main_() {
+    using edge  = Edge< i32 >;
+    using graph = StaticGraph< edge >;
+
     usize n, q, x;
     std::cin >> n >> q >> x;
 
@@ -31,7 +35,7 @@ namespace luz {
       ws[i] += ws[i + 1];
     }
 
-    Graph< i32 > fg(n);
+    graph fg(n);
     usize r = 0;
     for (usize l: rep(0, n)) {
       while (ws[l] - ws[r] < xp) {
@@ -42,6 +46,7 @@ namespace luz {
       ans[l] += r - l;
     }
 
+    fg.initialize();
     OnlineJumpOnFunctionalGraphQuery online_jump_solver(fg);
     for ([[maybe_unused]] usize _: rep(0, q)) {
       u64 k;

@@ -2,7 +2,6 @@
 
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
-#include "src/graph/graph-template.hpp"
 #include "src/utility/bit/bit-width.hpp"
 
 #include <cassert>
@@ -11,10 +10,13 @@
 
 namespace luz {
 
-  template < typename cost_type >
+  template < class G >
   class OnlineJumpOnFunctionalGraphQuery {
+    using graph     = G;
+    using cost_type = typename graph::cost_type;
+
     usize g_size;
-    Graph< cost_type > g;
+    graph g;
 
     usize LOG;
     std::vector< std::vector< usize > > doubling_table;
@@ -112,7 +114,7 @@ namespace luz {
     }
 
    public:
-    OnlineJumpOnFunctionalGraphQuery(const Graph< cost_type > &g_)
+    OnlineJumpOnFunctionalGraphQuery(const graph &g_)
         : g_size(g_.size()),
           g(g_),
           LOG(bit_width(g_size - 1)),

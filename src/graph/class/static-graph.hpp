@@ -26,7 +26,11 @@ namespace luz::internal {
       return l - f;
     }
 
-    auto &&operator[](usize k) {
+    auto &operator[](usize k) {
+      assert(k < size());
+      return begin()[k];
+    }
+    const auto &operator[](usize k) const {
       assert(k < size());
       return begin()[k];
     }
@@ -38,7 +42,6 @@ namespace luz {
 
   template < typename Edge >
   class StaticGraph {
-    using cost_type = typename Edge::cost_type;
 
     using Edges          = std::vector< Edge >;
     using iterator       = typename Edges::iterator;
@@ -48,7 +51,7 @@ namespace luz {
     using Es = internal::OutgoingEdges< Iterator >;
 
    protected:
-    bool constructed;
+    bool initialized;
     usize vertex_count;
     usize edge_count;
 
@@ -56,9 +59,11 @@ namespace luz {
     std::vector< usize > outdegrees;
 
    public:
+    using cost_type = typename Edge::cost_type;
+
     StaticGraph() = default;
     explicit StaticGraph(usize n)
-        : constructed(false),
+        : initialized(false),
           vertex_count(n),
           edge_count(0),
           outdegrees(vertex_count) {}
@@ -67,8 +72,8 @@ namespace luz {
       return vertex_count;
     }
 
-    void construct() {
-      assert(not constructed);
+    void initialize() {
+      assert(not initialized);
 
       outdegrees.emplace_back(0);
       for (usize i: rrep(0, size())) {
@@ -80,11 +85,11 @@ namespace luz {
         return e1.from != e2.from ? e1.from > e2.from : e1.to < e2.to;
       });
 
-      constructed = true;
+      initialized = true;
     }
 
     void add_directed_edge(usize from, usize to, cost_type cost = 1) {
-      assert(not constructed);
+      assert(not initialized);
       assert(from < size());
       assert(to < size());
       edges.emplace_back(from, to, cost, edge_count++);
@@ -92,7 +97,7 @@ namespace luz {
     }
 
     void add_undirected_edge(usize u, usize v, cost_type cost = 1) {
-      assert(not constructed);
+      assert(not initialized);
       assert(u < size());
       assert(v < size());
       assert(u != v);
@@ -103,15 +108,15 @@ namespace luz {
     }
 
     Es< iterator > operator[](const usize &v) {
-      assert(constructed);
+      assert(initialized);
       return Es< iterator >(edges.begin() + outdegrees[v + 1],
                             edges.begin() + outdegrees[v]);
     }
 
-    const Es< const_iterator > &operator[](const usize &v) const {
-      assert(constructed);
-      return Es< const_iterator >(edges.begin() + outdegrees[v + 1],
-                                  edges.begin() + outdegrees[v]);
+    const Es< const_iterator > operator[](const usize &v) const {
+      assert(initialized);
+      return Es< const_iterator >(edges.cbegin() + outdegrees[v + 1],
+                                  edges.cbegin() + outdegrees[v]);
     }
   };
 

@@ -6,9 +6,11 @@ documentation_of: //src/graph/single-source-shortest-path/in-unweighted-graph.hp
 ## Appendix
 [単一始点最短経路問題の solver の細かい仕様について]({{ site.baseurl }}/appendix-single-source-shortest-path-solver)
 
+[テンプレートパラメータに渡すグラフ $G$ の仕様について]({{ site.baseurl }}/appendix-graph-type)
+
 ## コンストラクタ
 ```
-sssp::InUnweightedGraph(const Graph<cost_type> &g, usize s)
+sssp::InUnweightedGraph(const G &g, usize s)
 ```
 
 頂点 $s$ からの重みなし単一始点最短経路問題を解く。
@@ -27,7 +29,7 @@ sssp::InUnweightedGraph(const Graph<cost_type> &g, usize s)
 
 ## get_original_graph
 ```
-Graph< cost_type > get_original_graph() const
+G get_original_graph() const
 ```
 
 もとのグラフを返す。

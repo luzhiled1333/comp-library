@@ -1,15 +1,18 @@
 ---
 title: (offine) 木のパス $u-v$ 上の $k$ 番目の頂点 (Offline Jump On Tree)
-documentation_of: //src/graph/offline-query-jump-on-tree.hpp
+documentation_of: //src/graph/tree/offline-query/offline-query-jump-on-tree.hpp
 ---
 
 以下では、静的で辺重みのない木について考える。特に断りがない場合、頂点 $u$ と $v$ の距離は $u$, $v$ 間を経由する最小の辺数とする。
 
 木上のパス $u-v$ 上の頂点のうち $u$ からの距離が $k$ であるような頂点を求めるクエリをオフラインで処理する。このようなクエリを $jump(u, v, k)$ と表記する。
 
+## Appendix
+[テンプレートパラメータに渡すグラフ $G$ の仕様について]({{ site.baseurl }}/appendix-graph-type)
+
 ## コンストラクタ
 ```
-OfflineJumpOnTreeQuery(const Graph<cost_type> &g)
+OfflineJumpOnTreeQuery(const G &g)
 ```
 
 ## add_query

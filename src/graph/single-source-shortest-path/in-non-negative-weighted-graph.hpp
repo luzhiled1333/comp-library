@@ -1,7 +1,7 @@
 #pragma once
 
 #include "src/cpp-template/header/change-minmax.hpp"
-#include "src/graph/graph-template.hpp"
+#include "src/cpp-template/header/type-alias.hpp"
 
 #include <functional>
 #include <limits>
@@ -11,15 +11,17 @@
 
 namespace luz::sssp {
 
-  template < typename cost_type >
+  template < class G >
   class InNonNegativeWeightedGraph {
+    using cost_type = typename G::cost_type;
+    using graph     = G;
 
     static constexpr usize undefined_ =
         std::numeric_limits< usize >::max();
     static constexpr cost_type inf_ =
         std::numeric_limits< cost_type >::max();
 
-    Graph< cost_type > g;
+    graph g;
     usize g_size;
     std::vector< cost_type > ds;
     std::vector< usize > parents, ids;
@@ -49,8 +51,7 @@ namespace luz::sssp {
     }
 
    public:
-    explicit InNonNegativeWeightedGraph(const Graph< cost_type > &g_,
-                                        usize source)
+    explicit InNonNegativeWeightedGraph(const graph &g_, usize source)
         : g(g_),
           g_size(g.size()),
           ds(g_size, inf_),
@@ -59,7 +60,7 @@ namespace luz::sssp {
       dijkstra(source);
     }
 
-    inline Graph< cost_type > get_original_graph() const {
+    inline graph get_original_graph() const {
       return g;
     }
 

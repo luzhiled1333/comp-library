@@ -3,15 +3,17 @@
 #include "src/cpp-template/header/change-minmax.hpp"
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
-#include "src/graph/graph-template.hpp"
 
 #include <vector>
 
 namespace luz::decomposition {
 
-  template < typename cost_type >
+  template < class G >
   class StronglyConnectedComponents {
-    Graph< cost_type > g;
+    using graph     = G;
+    using cost_type = typename graph::cost_type;
+
+    graph g;
     usize g_size;
     std::vector< usize > low, ord, visited, group_id;
     usize ord_cnt, group_cnt;
@@ -40,7 +42,7 @@ namespace luz::decomposition {
     }
 
    public:
-    explicit StronglyConnectedComponents(const Graph< cost_type >& g_)
+    explicit StronglyConnectedComponents(const graph& g_)
         : g(g_),
           g_size(g.size()),
           low(g_size),

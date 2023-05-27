@@ -1,7 +1,7 @@
 #pragma once
 
 #include "src/cpp-template/header/type-alias.hpp"
-#include "src/graph/graph-template.hpp"
+#include "src/graph/class/dynamic-graph.hpp"
 
 #include <limits>
 #include <queue>
@@ -9,9 +9,10 @@
 
 namespace luz::sssp {
 
-  template < typename cost_type >
+  template < class G >
   class InWeightedGraph {
-    using graph = Graph< cost_type >;
+    using cost_type = typename G::cost_type;
+    using graph     = G;
 
     static constexpr cost_type inf_ =
         std::numeric_limits< cost_type >::max();

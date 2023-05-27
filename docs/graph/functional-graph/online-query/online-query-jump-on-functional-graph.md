@@ -1,15 +1,16 @@
 ---
 title: (online) Functional Graph 上の頂点 $v$ から $k$ 回移動した先の頂点 (Online Jump On Functional Graph)
-documentation_of: //src/graph/online-query-jump-on-functional-graph.hpp
+documentation_of: //src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp
 ---
 
 Functional Graph において、頂点 $v$ からちょうど $k$ 本の辺を辿って到達する頂点を求めるクエリをオンラインで処理する。このようなクエリを $jump(v, k)$ と表記する。
 
+## Appendix
+[テンプレートパラメータに渡すグラフ $G$ の仕様について]({{ site.baseurl }}/appendix-graph-type)
+
 ## コンストラクタ
 ```
-OnlineJumpOnFunctionalGraphQuery(
-  const Graph<cost_type> &g
-)
+OnlineJumpOnFunctionalGraphQuery(const G &g)
 ```
 
 $jump$ クエリを求めるグラフ $g$ を渡す。
