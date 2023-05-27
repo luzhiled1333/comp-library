@@ -3,8 +3,8 @@
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/cpp-template/header/vector-ios.hpp"
-#include "src/graph/graph-template.hpp"
 #include "src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp"
+#include "src/graph/graph-template.hpp"
 
 #include <iostream>
 #include <numeric>

@@ -12,7 +12,7 @@
 namespace luz {
 
   void main_() {
-    using edge = Edge< usize >;
+    using edge  = Edge< usize >;
     using graph = StaticGraph< edge >;
 
     usize n, m;

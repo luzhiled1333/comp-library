@@ -14,7 +14,7 @@
 namespace luz {
 
   void main_() {
-    using edge = Edge< i64 >;
+    using edge  = Edge< i64 >;
     using graph = StaticGraph< edge >;
 
     usize n, q, x;

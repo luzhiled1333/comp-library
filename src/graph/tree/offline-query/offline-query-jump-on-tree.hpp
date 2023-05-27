@@ -2,9 +2,9 @@
 
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
+#include "src/graph/single-source-shortest-path/in-unweighted-graph.hpp"
 #include "src/graph/tree/offline-query/offline-query-level-ancestor.hpp"
 #include "src/graph/tree/offline-query/offline-query-lowest-common-ancestor.hpp"
-#include "src/graph/single-source-shortest-path/in-unweighted-graph.hpp"
 #include "src/utility/tuple-hash.hpp"
 
 #include <cassert>
@@ -17,7 +17,7 @@ namespace luz {
 
   template < class G >
   class OfflineJumpOnTreeQuery {
-    using graph = G;
+    using graph     = G;
     using cost_type = typename graph::cost_type;
 
     usize g_size;
@@ -73,10 +73,10 @@ namespace luz {
 
         if (d <= distance_sr) {
           converted_qs.emplace_back(i, s,
-                                     depths[r] + distance_sr - d);
+                                    depths[r] + distance_sr - d);
         } else if (d <= distance_sr + distance_rt) {
           converted_qs.emplace_back(i, t,
-                                     depths[r] + d - distance_sr);
+                                    depths[r] + d - distance_sr);
         } else {
           results[qs[i]] = std::nullopt;
         }

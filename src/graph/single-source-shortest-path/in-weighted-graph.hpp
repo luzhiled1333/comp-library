@@ -12,7 +12,7 @@ namespace luz::sssp {
   template < class G >
   class InWeightedGraph {
     using cost_type = typename G::cost_type;
-    using graph = G;
+    using graph     = G;
 
     static constexpr cost_type inf_ =
         std::numeric_limits< cost_type >::max();

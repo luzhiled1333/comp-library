@@ -10,7 +10,7 @@ namespace luz::decomposition {
 
   template < class G >
   class StronglyConnectedComponents {
-    using graph = G;
+    using graph     = G;
     using cost_type = typename graph::cost_type;
 
     graph g;
@@ -42,7 +42,7 @@ namespace luz::decomposition {
     }
 
    public:
-    explicit StronglyConnectedComponents(const graph &g_)
+    explicit StronglyConnectedComponents(const graph& g_)
         : g(g_),
           g_size(g.size()),
           low(g_size),

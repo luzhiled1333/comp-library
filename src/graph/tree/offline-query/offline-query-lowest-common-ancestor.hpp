@@ -14,7 +14,7 @@ namespace luz {
 
   template < class G >
   class OfflineLCAQuery {
-    using graph = G;
+    using graph     = G;
     using cost_type = typename G::cost_type;
     usize g_size;
     graph g;

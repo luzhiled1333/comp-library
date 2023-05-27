@@ -18,7 +18,7 @@ namespace luz {
     usize n, q;
     std::cin >> n >> q;
 
-    using edge = Edge< i32 >;
+    using edge  = Edge< i32 >;
     using graph = StaticGraph< edge >;
 
     graph g(n);

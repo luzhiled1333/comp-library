@@ -1,9 +1,10 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/GRL_1_B
 
+#include "src/graph/class/static-graph.hpp"
+
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/graph/class/edge.hpp"
-#include "src/graph/class/static-graph.hpp"
 #include "src/graph/single-source-shortest-path/in-weighted-graph.hpp"
 
 #include <iostream>
@@ -14,7 +15,7 @@ namespace luz {
     int v, e, source;
     std::cin >> v >> e >> source;
 
-    using edge = Edge< i32 >;
+    using edge  = Edge< i32 >;
     using graph = StaticGraph< edge >;
 
     graph g(v);

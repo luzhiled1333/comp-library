@@ -1,10 +1,11 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/GRL_1_A
 
+#include "src/graph/class/dynamic-graph.hpp"
+
 #include "src/cpp-template/header/input.hpp"
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/graph/class/edge.hpp"
-#include "src/graph/class/dynamic-graph.hpp"
 #include "src/graph/single-source-shortest-path/in-non-negative-weighted-graph.hpp"
 
 #include <iostream>
@@ -14,7 +15,7 @@ namespace luz {
   void main_() {
     usize v = input(), e = input(), source = input();
 
-    using edge = Edge< u32 >;
+    using edge  = Edge< u32 >;
     using graph = DynamicGraph< edge >;
 
     graph g(v);
