@@ -14,8 +14,10 @@ namespace luz {
   void main_() {
     usize v = input(), e = input(), source = input();
 
-    using Edge = Edge< u32 >;
-    StaticGraph< Edge > g(v);
+    using edge = Edge< u32 >;
+    using graph = StaticGraph< edge >;
+
+    graph g(v);
     for ([[maybe_unused]] usize _: rep(0, e)) {
       usize s = input(), t = input();
       u32 d = input();
