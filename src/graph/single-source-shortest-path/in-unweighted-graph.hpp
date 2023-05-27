@@ -1,7 +1,6 @@
 #pragma once
 
 #include "src/cpp-template/header/type-alias.hpp"
-#include "src/graph/graph-template.hpp"
 
 #include <limits>
 #include <queue>
@@ -9,14 +8,14 @@
 
 namespace luz::sssp {
 
-  template < typename cost_type >
+  template < class G >
   class InUnweightedGraph {
+    using cost_type = typename G::cost_type;
+    using graph = G;
 
     static constexpr usize undefined_ =
         std::numeric_limits< usize >::max();
     static constexpr usize inf_ = std::numeric_limits< usize >::max();
-
-    using graph = Graph< cost_type >;
 
     graph g;
     usize g_size;
