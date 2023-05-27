@@ -3,7 +3,7 @@
 #include "src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp"
 
 #include "src/cpp-template/header/type-alias.hpp"
-#include "src/graph/class/edge.hpp"
+#include "src/graph/class/edge/edge.hpp"
 #include "src/graph/class/static-graph.hpp"
 
 #include <cassert>

@@ -3,7 +3,7 @@
 #include "src/graph/functional-graph/offline-query/offline-query-jump-on-functional-graph.hpp"
 
 #include "src/cpp-template/header/type-alias.hpp"
-#include "src/graph/class/edge.hpp"
+#include "src/graph/class/edge/edge.hpp"
 #include "src/graph/class/static-graph.hpp"
 
 #include <cassert>
@@ -40,24 +40,24 @@ namespace luz {
 
     OfflineJumpOnFunctionalGraphQuery
         offline_jump_on_functional_graph_solver(fg);
-    // const u64 large = 1000000000000000000ll;
-    // for (usize v: rep(0, 10)) {
-    //   for (u64 k: rep(0, 100)) {
-    //     offline_jump_on_functional_graph_solver.add_query(v, k);
-    //   }
-    //   offline_jump_on_functional_graph_solver.add_query(v, large);
-    // }
+    const u64 large = 1000000000000000000ll;
+    for (usize v: rep(0, 10)) {
+      for (u64 k: rep(0, 100)) {
+        offline_jump_on_functional_graph_solver.add_query(v, k);
+      }
+      offline_jump_on_functional_graph_solver.add_query(v, large);
+    }
 
-    // offline_jump_on_functional_graph_solver.build();
-    // std::vector< usize > expected{1, 3, 2, 0, 9, 7, 8, 8, 9, 7};
-    // for (usize v: rep(0, 10)) {
-    //   for (u64 k: rep(0, 100)) {
-    //     assert(offline_jump_on_functional_graph_solver.jump(v, k) ==
-    //            naive(fg, v, k));
-    //   }
-    //   assert(offline_jump_on_functional_graph_solver.jump(v, large) ==
-    //          expected[v]);
-    // }
+    offline_jump_on_functional_graph_solver.build();
+    std::vector< usize > expected{1, 3, 2, 0, 9, 7, 8, 8, 9, 7};
+    for (usize v: rep(0, 10)) {
+      for (u64 k: rep(0, 100)) {
+        assert(offline_jump_on_functional_graph_solver.jump(v, k) ==
+               naive(fg, v, k));
+      }
+      assert(offline_jump_on_functional_graph_solver.jump(v, large) ==
+             expected[v]);
+    }
 
     std::cout << "Hello World" << std::endl;
   }

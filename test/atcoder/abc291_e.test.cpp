@@ -2,7 +2,7 @@
 
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/vector-ios.hpp"
-#include "src/graph/class/edge.hpp"
+#include "src/graph/class/edge/edge.hpp"
 #include "src/graph/class/static-graph.hpp"
 #include "src/graph/topological-ordering/lexical-order-topological-sort.hpp"
 
