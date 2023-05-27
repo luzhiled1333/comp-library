@@ -38,7 +38,6 @@ namespace luz {
 
   template < typename Edge >
   class StaticGraph {
-    using cost_type = typename Edge::cost_type;
 
     using Edges          = std::vector< Edge >;
     using iterator       = typename Edges::iterator;
@@ -56,6 +55,8 @@ namespace luz {
     std::vector< usize > outdegrees;
 
    public:
+    using cost_type = typename Edge::cost_type;
+
     StaticGraph() = default;
     explicit StaticGraph(usize n)
         : constructed(false),

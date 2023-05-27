@@ -9,7 +9,6 @@ namespace luz {
 
   template < typename Edge >
   class DynamicGraph {
-    using cost_type = typename Edge::cost_type;
 
     using Edges = std::vector< Edge >;
 
@@ -18,6 +17,8 @@ namespace luz {
     usize edge_count;
 
    public:
+    using cost_type = typename Edge::cost_type;
+
     DynamicGraph() = default;
     explicit DynamicGraph(usize n): g(n), edge_count(0) {}
 
