@@ -3,7 +3,9 @@
 #include "src/cpp-template/header/fast-ios.hpp"
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
-#include "src/graph/offline-query-jump-on-tree.hpp"
+#include "src/graph/class/edge.hpp"
+#include "src/graph/class/static-graph.hpp"
+#include "src/graph/tree/offline-query/offline-query-jump-on-tree.hpp"
 
 #include <iostream>
 #include <queue>
@@ -16,12 +18,17 @@ namespace luz {
     usize n, q;
     std::cin >> n >> q;
 
-    Graph< i32 > g(n);
+    using edge = Edge< i32 >;
+    using graph = StaticGraph< edge >;
+
+    graph g(n);
     for ([[maybe_unused]] usize _: rep(1, n)) {
       usize a, b;
       std::cin >> a >> b;
       g.add_undirected_edge(a, b);
     }
+
+    g.initialize();
 
     OfflineJumpOnTreeQuery offline_jump_on_tree_solver(g);
     std::vector< std::tuple< usize, usize, usize > > qs(q);

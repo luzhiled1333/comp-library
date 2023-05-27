@@ -2,18 +2,22 @@
 
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
-#include "src/graph/graph-template.hpp"
-#include "src/graph/offline-query-lowest-common-ancestor.hpp"
+#include "src/graph/class/edge.hpp"
+#include "src/graph/class/static-graph.hpp"
+#include "src/graph/tree/offline-query/offline-query-lowest-common-ancestor.hpp"
 
 #include <iostream>
 
 namespace luz {
 
   void main_() {
+    using edge = Edge< i32 >;
+    using graph = StaticGraph< edge >;
+
     usize n;
     std::cin >> n;
 
-    Graph< i32 > g(n);
+    graph g(n);
     for (usize v: rep(0, n)) {
       usize k;
       std::cin >> k;
@@ -24,6 +28,8 @@ namespace luz {
         g.add_undirected_edge(u, v);
       }
     }
+
+    g.initialize();
 
     OfflineLCAQuery offline_lcas(g);
 

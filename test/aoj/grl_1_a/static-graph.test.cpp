@@ -24,7 +24,7 @@ namespace luz {
       g.add_directed_edge(s, t, d);
     }
 
-    g.construct();
+    g.initialize();
 
     sssp::InNonNegativeWeightedGraph solver(g, source);
     auto dists = solver.get_distances();

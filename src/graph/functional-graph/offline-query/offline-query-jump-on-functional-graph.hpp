@@ -2,21 +2,25 @@
 
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
-#include "src/graph/graph-template.hpp"
-#include "src/graph/offline-query-level-ancestor.hpp"
+#include "src/graph/tree/offline-query/offline-query-level-ancestor.hpp"
 #include "src/utility/pair-hash.hpp"
 
+#include <cassert>
 #include <unordered_map>
 #include <utility>
 #include <vector>
 
 namespace luz {
-  template < typename cost_type >
-  class OfflineJumpOnFunctionalGraphQuery {
-    usize g_size;
-    Graph< cost_type > g;
 
-    Graph< usize > tree;
+  template < class G >
+  class OfflineJumpOnFunctionalGraphQuery {
+    using graph = G;
+    using cost_type = typename graph::cost_type;
+
+    usize g_size;
+    graph g;
+
+    graph tree;
     usize tree_root;
     std::vector< usize > tree_depth, subtree_roots;
 
@@ -40,7 +44,9 @@ namespace luz {
     std::vector< usize > get_indegrees() const {
       std::vector< usize > indegrees(g_size);
       for (usize v: rep(0, g_size)) {
-        indegrees[g[v][0].to]++;
+        for (auto e: g[v]) {
+          indegrees[e.to]++;
+        }
       }
       return indegrees;
     }
@@ -74,8 +80,16 @@ namespace luz {
         if (indegrees[v] == 0) {
           continue;
         }
-        subtree_roots[v] = v;
         tree.add_undirected_edge(tree_root, v);
+      }
+
+      tree.initialize();
+
+      for (usize v: rep(0, g_size)) {
+        if (indegrees[v] == 0) {
+          continue;
+        }
+        subtree_roots[v] = v;
         dfs_on_subtree(v, tree_root);
       }
     }
@@ -107,7 +121,7 @@ namespace luz {
 
    public:
     explicit OfflineJumpOnFunctionalGraphQuery(
-        const Graph< cost_type > &g_)
+        const graph &g_)
         : g_size(g_.size()),
           g(g_),
           tree(g_size + 1),

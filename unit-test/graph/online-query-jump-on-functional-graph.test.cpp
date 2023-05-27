@@ -1,6 +1,6 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/ITP1_1_A
 
-#include "src/graph/online-query-jump-on-functional-graph.hpp"
+#include "src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp"
 
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/graph/graph-template.hpp"
