@@ -6,25 +6,25 @@ data:
     title: Type alias
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: src/graph/offline-query-jump-on-functional-graph.hpp
+    path: src/graph/functional-graph/offline-query/offline-query-jump-on-functional-graph.hpp
     title: "(offine) Functional Graph \u4E0A\u306E\u9802\u70B9 $v$ \u304B\u3089 $k$\
       \ \u56DE\u79FB\u52D5\u3057\u305F\u5148\u306E\u9802\u70B9 (Offline Jump On Functional\
       \ Graph)"
   - icon: ':heavy_check_mark:'
-    path: src/graph/offline-query-jump-on-tree.hpp
+    path: src/graph/tree/offline-query/offline-query-jump-on-tree.hpp
     title: "(offine) \u6728\u306E\u30D1\u30B9 $u-v$ \u4E0A\u306E $k$ \u756A\u76EE\u306E\
       \u9802\u70B9 (Offline Jump On Tree)"
   - icon: ':heavy_check_mark:'
-    path: src/graph/offline-query-level-ancestor.hpp
+    path: src/graph/tree/offline-query/offline-query-level-ancestor.hpp
     title: "\u30AA\u30D5\u30E9\u30A4\u30F3 Level Ancestor (Offline Level Ancestor)"
   - icon: ':heavy_check_mark:'
-    path: src/graph/offline-query-lowest-common-ancestor.hpp
+    path: src/graph/tree/offline-query/offline-query-lowest-common-ancestor.hpp
     title: "\u30AA\u30D5\u30E9\u30A4\u30F3\u6700\u5C0F\u5171\u901A\u7956\u5148 (Offline\
       \ Lowest Common Ancestor)"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/grl_5_c.test.cpp
-    title: test/aoj/grl_5_c.test.cpp
+    path: test/aoj/grl_5_c/grl_5_c.test.cpp
+    title: test/aoj/grl_5_c/grl_5_c.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc258_e/offline-algorithm.test.cpp
     title: test/atcoder/abc258_e/offline-algorithm.test.cpp
@@ -65,16 +65,16 @@ data:
   isVerificationFile: false
   path: src/utility/pair-hash.hpp
   requiredBy:
-  - src/graph/offline-query-jump-on-tree.hpp
-  - src/graph/offline-query-jump-on-functional-graph.hpp
-  - src/graph/offline-query-lowest-common-ancestor.hpp
-  - src/graph/offline-query-level-ancestor.hpp
+  - src/graph/tree/offline-query/offline-query-jump-on-tree.hpp
+  - src/graph/tree/offline-query/offline-query-lowest-common-ancestor.hpp
+  - src/graph/tree/offline-query/offline-query-level-ancestor.hpp
+  - src/graph/functional-graph/offline-query/offline-query-jump-on-functional-graph.hpp
   timestamp: '2023-02-04 15:43:38+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - unit-test/utility/pair-hash.test.cpp
   - unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
-  - test/aoj/grl_5_c.test.cpp
+  - test/aoj/grl_5_c/grl_5_c.test.cpp
   - test/atcoder/abc258_e/offline-algorithm.test.cpp
   - test/library-checker/jump_on_tree.test.cpp
 documentation_of: src/utility/pair-hash.hpp

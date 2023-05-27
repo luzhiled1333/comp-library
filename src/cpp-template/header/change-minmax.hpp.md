@@ -21,8 +21,11 @@ data:
     path: test/aoj/1181.test.cpp
     title: test/aoj/1181.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/grl_1_a.test.cpp
-    title: test/aoj/grl_1_a.test.cpp
+    path: test/aoj/grl_1_a/dynamic-graph.test.cpp
+    title: test/aoj/grl_1_a/dynamic-graph.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/grl_1_a/static-graph.test.cpp
+    title: test/aoj/grl_1_a/static-graph.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/itp1_1_a.test.cpp
     title: test/aoj/itp1_1_a.test.cpp
@@ -63,7 +66,8 @@ data:
   timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/grl_1_a.test.cpp
+  - test/aoj/grl_1_a/dynamic-graph.test.cpp
+  - test/aoj/grl_1_a/static-graph.test.cpp
   - test/aoj/1181.test.cpp
   - test/aoj/itp1_1_a.test.cpp
   - test/atcoder/abc259_c.test.cpp

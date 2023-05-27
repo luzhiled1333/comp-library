@@ -9,11 +9,11 @@ data:
     title: Type alias
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: src/graph/offline-query-jump-on-tree.hpp
+    path: src/graph/tree/offline-query/offline-query-jump-on-tree.hpp
     title: "(offine) \u6728\u306E\u30D1\u30B9 $u-v$ \u4E0A\u306E $k$ \u756A\u76EE\u306E\
       \u9802\u70B9 (Offline Jump On Tree)"
   - icon: ':heavy_check_mark:'
-    path: src/graph/offline-query-lowest-common-ancestor.hpp
+    path: src/graph/tree/offline-query/offline-query-lowest-common-ancestor.hpp
     title: "\u30AA\u30D5\u30E9\u30A4\u30F3\u6700\u5C0F\u5171\u901A\u7956\u5148 (Offline\
       \ Lowest Common Ancestor)"
   _extendedVerifiedWith:
@@ -21,8 +21,8 @@ data:
     path: test/aoj/dsl_1_a.test.cpp
     title: test/aoj/dsl_1_a.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/grl_5_c.test.cpp
-    title: test/aoj/grl_5_c.test.cpp
+    path: test/aoj/grl_5_c/grl_5_c.test.cpp
+    title: test/aoj/grl_5_c/grl_5_c.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc177_d.test.cpp
     title: test/atcoder/abc177_d.test.cpp
@@ -122,13 +122,13 @@ data:
   isVerificationFile: false
   path: src/data-structure/disjoint-set-union.hpp
   requiredBy:
-  - src/graph/offline-query-jump-on-tree.hpp
-  - src/graph/offline-query-lowest-common-ancestor.hpp
+  - src/graph/tree/offline-query/offline-query-jump-on-tree.hpp
+  - src/graph/tree/offline-query/offline-query-lowest-common-ancestor.hpp
   timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/dsl_1_a.test.cpp
-  - test/aoj/grl_5_c.test.cpp
+  - test/aoj/grl_5_c/grl_5_c.test.cpp
   - test/atcoder/abc259_d.test.cpp
   - test/atcoder/abc177_d.test.cpp
   - test/library-checker/unionfind.test.cpp

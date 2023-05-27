@@ -153,43 +153,29 @@ data:
   - icon: ':warning:'
     path: src/geometry/common/class/matrix.hpp
     title: "\u884C\u5217"
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/graph/class/dynamic-graph.hpp
-    title: src/graph/class/dynamic-graph.hpp
-  - icon: ':warning:'
-    path: src/graph/class/edge.hpp
-    title: src/graph/class/edge.hpp
-  - icon: ':warning:'
+    title: "\u52D5\u7684\u306A\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
+  - icon: ':heavy_check_mark:'
+    path: src/graph/class/edge/edge.hpp
+    title: src/graph/class/edge/edge.hpp
+  - icon: ':heavy_check_mark:'
     path: src/graph/class/static-graph.hpp
-    title: src/graph/class/static-graph.hpp
+    title: "\u9759\u7684\u306A\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
   - icon: ':heavy_check_mark:'
     path: src/graph/decomposition/strongly-connected-components.hpp
     title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3(Decomposition of Strongly Connected\
       \ Components, SCC)"
   - icon: ':heavy_check_mark:'
-    path: src/graph/graph-template.hpp
-    title: "\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
+    path: src/graph/flow/max-flow.hpp
+    title: src/graph/flow/max-flow.hpp
   - icon: ':heavy_check_mark:'
-    path: src/graph/max-flow.hpp
-    title: src/graph/max-flow.hpp
-  - icon: ':heavy_check_mark:'
-    path: src/graph/offline-query-jump-on-functional-graph.hpp
+    path: src/graph/functional-graph/offline-query/offline-query-jump-on-functional-graph.hpp
     title: "(offine) Functional Graph \u4E0A\u306E\u9802\u70B9 $v$ \u304B\u3089 $k$\
       \ \u56DE\u79FB\u52D5\u3057\u305F\u5148\u306E\u9802\u70B9 (Offline Jump On Functional\
       \ Graph)"
   - icon: ':heavy_check_mark:'
-    path: src/graph/offline-query-jump-on-tree.hpp
-    title: "(offine) \u6728\u306E\u30D1\u30B9 $u-v$ \u4E0A\u306E $k$ \u756A\u76EE\u306E\
-      \u9802\u70B9 (Offline Jump On Tree)"
-  - icon: ':heavy_check_mark:'
-    path: src/graph/offline-query-level-ancestor.hpp
-    title: "\u30AA\u30D5\u30E9\u30A4\u30F3 Level Ancestor (Offline Level Ancestor)"
-  - icon: ':heavy_check_mark:'
-    path: src/graph/offline-query-lowest-common-ancestor.hpp
-    title: "\u30AA\u30D5\u30E9\u30A4\u30F3\u6700\u5C0F\u5171\u901A\u7956\u5148 (Offline\
-      \ Lowest Common Ancestor)"
-  - icon: ':heavy_check_mark:'
-    path: src/graph/online-query-jump-on-functional-graph.hpp
+    path: src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp
     title: "(online) Functional Graph \u4E0A\u306E\u9802\u70B9 $v$ \u304B\u3089 $k$\
       \ \u56DE\u79FB\u52D5\u3057\u305F\u5148\u306E\u9802\u70B9 (Online Jump On Functional\
       \ Graph)"
@@ -206,9 +192,16 @@ data:
     title: "\u91CD\u307F\u3042\u308A\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u7D4C\u8DEF\
       \ (Single Source Shortest Path in Unweighted Graph, SPFA)"
   - icon: ':heavy_check_mark:'
-    path: src/graph/topological-ordering/lexical-order-topological-sort.hpp
-    title: "\u8F9E\u66F8\u9806\u6700\u5927/\u6700\u5C0F\u306E\u30C8\u30DD\u30ED\u30B8\
-      \u30AB\u30EB\u30BD\u30FC\u30C8"
+    path: src/graph/tree/offline-query/offline-query-jump-on-tree.hpp
+    title: "(offine) \u6728\u306E\u30D1\u30B9 $u-v$ \u4E0A\u306E $k$ \u756A\u76EE\u306E\
+      \u9802\u70B9 (Offline Jump On Tree)"
+  - icon: ':heavy_check_mark:'
+    path: src/graph/tree/offline-query/offline-query-level-ancestor.hpp
+    title: "\u30AA\u30D5\u30E9\u30A4\u30F3 Level Ancestor (Offline Level Ancestor)"
+  - icon: ':heavy_check_mark:'
+    path: src/graph/tree/offline-query/offline-query-lowest-common-ancestor.hpp
+    title: "\u30AA\u30D5\u30E9\u30A4\u30F3\u6700\u5C0F\u5171\u901A\u7956\u5148 (Offline\
+      \ Lowest Common Ancestor)"
   - icon: ':heavy_check_mark:'
     path: src/math/convolution/bitwise-and-convolution.hpp
     title: src/math/convolution/bitwise-and-convolution.hpp
@@ -321,14 +314,20 @@ data:
     path: test/aoj/dsl_2_i.test.cpp
     title: test/aoj/dsl_2_i.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/grl_1_a.test.cpp
-    title: test/aoj/grl_1_a.test.cpp
+    path: test/aoj/grl_1_a/dynamic-graph.test.cpp
+    title: test/aoj/grl_1_a/dynamic-graph.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/grl_1_b.test.cpp
-    title: test/aoj/grl_1_b.test.cpp
+    path: test/aoj/grl_1_a/static-graph.test.cpp
+    title: test/aoj/grl_1_a/static-graph.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/grl_5_c.test.cpp
-    title: test/aoj/grl_5_c.test.cpp
+    path: test/aoj/grl_1_b/dynamic-graph.test.cpp
+    title: test/aoj/grl_1_b/dynamic-graph.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/grl_1_b/static-graph.test.cpp
+    title: test/aoj/grl_1_b/static-graph.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/grl_5_c/grl_5_c.test.cpp
+    title: test/aoj/grl_5_c/grl_5_c.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/grl_6_a.test.cpp
     title: test/aoj/grl_6_a.test.cpp
@@ -519,21 +518,19 @@ data:
   - src/utility/bit/count-leading-0s.hpp
   - src/utility/class/dice.hpp
   - src/utility/pair-hash.hpp
-  - src/graph/graph-template.hpp
   - src/graph/decomposition/strongly-connected-components.hpp
-  - src/graph/max-flow.hpp
-  - src/graph/class/edge.hpp
+  - src/graph/tree/offline-query/offline-query-jump-on-tree.hpp
+  - src/graph/tree/offline-query/offline-query-lowest-common-ancestor.hpp
+  - src/graph/tree/offline-query/offline-query-level-ancestor.hpp
+  - src/graph/class/edge/edge.hpp
   - src/graph/class/static-graph.hpp
   - src/graph/class/dynamic-graph.hpp
-  - src/graph/offline-query-jump-on-tree.hpp
-  - src/graph/online-query-jump-on-functional-graph.hpp
-  - src/graph/offline-query-jump-on-functional-graph.hpp
-  - src/graph/offline-query-lowest-common-ancestor.hpp
-  - src/graph/topological-ordering/lexical-order-topological-sort.hpp
+  - src/graph/flow/max-flow.hpp
   - src/graph/single-source-shortest-path/in-unweighted-graph.hpp
   - src/graph/single-source-shortest-path/in-weighted-graph.hpp
   - src/graph/single-source-shortest-path/in-non-negative-weighted-graph.hpp
-  - src/graph/offline-query-level-ancestor.hpp
+  - src/graph/functional-graph/offline-query/offline-query-jump-on-functional-graph.hpp
+  - src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp
   timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
@@ -553,16 +550,19 @@ data:
   - unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
   - unit-test/graph/online-query-jump-on-functional-graph.test.cpp
   - test/aoj/dsl_2_e.test.cpp
-  - test/aoj/grl_1_a.test.cpp
+  - test/aoj/grl_1_a/dynamic-graph.test.cpp
+  - test/aoj/grl_1_a/static-graph.test.cpp
   - test/aoj/ntl_1_d.test.cpp
   - test/aoj/dsl_2_i.test.cpp
   - test/aoj/4011.test.cpp
   - test/aoj/dsl_2_a.test.cpp
-  - test/aoj/grl_1_b.test.cpp
+  - test/aoj/grl_1_b/dynamic-graph.test.cpp
+  - test/aoj/grl_1_b/static-graph.test.cpp
   - test/aoj/2442.test.cpp
   - test/aoj/2286.test.cpp
   - test/aoj/dsl_1_a.test.cpp
   - test/aoj/grl_6_a.test.cpp
+  - test/aoj/grl_5_c/grl_5_c.test.cpp
   - test/aoj/dsl_2_g.test.cpp
   - test/aoj/dsl_2_f/range-minimum.test.cpp
   - test/aoj/dsl_2_f/range-maximum.test.cpp
@@ -572,7 +572,6 @@ data:
   - test/aoj/dsl_2_d.test.cpp
   - test/aoj/dsl_2_b/segment-tree.test.cpp
   - test/aoj/dsl_2_b/fenwick-tree.test.cpp
-  - test/aoj/grl_5_c.test.cpp
   - test/aoj/itp1_1_a.test.cpp
   - test/atcoder/abc259_d.test.cpp
   - test/atcoder/abc259_c.test.cpp

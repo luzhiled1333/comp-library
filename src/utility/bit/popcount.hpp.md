@@ -51,7 +51,7 @@ data:
     title: "\u533A\u9593\u66F4\u65B0+\u533A\u9593\u53D6\u5F97 \u30BB\u30B0\u30E1\u30F3\
       \u30C8\u6728 (Lazy Segment Tree)"
   - icon: ':heavy_check_mark:'
-    path: src/graph/online-query-jump-on-functional-graph.hpp
+    path: src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp
     title: "(online) Functional Graph \u4E0A\u306E\u9802\u70B9 $v$ \u304B\u3089 $k$\
       \ \u56DE\u79FB\u52D5\u3057\u305F\u5148\u306E\u9802\u70B9 (Online Jump On Functional\
       \ Graph)"
@@ -164,7 +164,7 @@ data:
   - src/utility/bit/bit-width.hpp
   - src/utility/bit/count-trailing-0s.hpp
   - src/utility/bit/count-leading-0s.hpp
-  - src/graph/online-query-jump-on-functional-graph.hpp
+  - src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp
   timestamp: '2023-02-10 17:57:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

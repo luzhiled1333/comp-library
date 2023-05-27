@@ -17,7 +17,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"src/graph/max-flow.hpp\"\n\n#line 2 \"src/cpp-template/header/rep.hpp\"\
+  bundledCode: "#line 2 \"src/graph/flow/max-flow.hpp\"\n\n#line 2 \"src/cpp-template/header/rep.hpp\"\
     \n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\n\n#include <cstddef>\n\
     #include <cstdint>\n\nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using\
     \ usize = std::size_t;\n\n  using i32 = std::int32_t;\n  using i64 = std::int64_t;\n\
@@ -39,8 +39,8 @@ data:
     \    constexpr rrep(const usize f, const usize l) noexcept\n        : f(l - 1),\n\
     \          l(std::min(f, l) - 1) {}\n    constexpr auto begin() const noexcept\
     \ {\n      return f;\n    }\n    constexpr auto end() const noexcept {\n     \
-    \ return l;\n    }\n  };\n\n} // namespace luz\n#line 5 \"src/graph/max-flow.hpp\"\
-    \n\n#line 7 \"src/graph/max-flow.hpp\"\n#include <cassert>\n#include <limits>\n\
+    \ return l;\n    }\n  };\n\n} // namespace luz\n#line 5 \"src/graph/flow/max-flow.hpp\"\
+    \n\n#line 7 \"src/graph/flow/max-flow.hpp\"\n#include <cassert>\n#include <limits>\n\
     #include <queue>\n#include <vector>\n\nnamespace luz {\n\n  template < typename\
     \ cap_type >\n  class MaxFlowGraph {\n    static constexpr cap_type INF_ =\n \
     \       std::numeric_limits< cap_type >::max();\n\n    struct Edge {\n      usize\
@@ -115,16 +115,16 @@ data:
   - src/cpp-template/header/rep.hpp
   - src/cpp-template/header/type-alias.hpp
   isVerificationFile: false
-  path: src/graph/max-flow.hpp
+  path: src/graph/flow/max-flow.hpp
   requiredBy: []
-  timestamp: '2022-09-14 15:07:36+09:00'
+  timestamp: '2023-05-28 01:36:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/grl_6_a.test.cpp
-documentation_of: src/graph/max-flow.hpp
+documentation_of: src/graph/flow/max-flow.hpp
 layout: document
 redirect_from:
-- /library/src/graph/max-flow.hpp
-- /library/src/graph/max-flow.hpp.html
-title: src/graph/max-flow.hpp
+- /library/src/graph/flow/max-flow.hpp
+- /library/src/graph/flow/max-flow.hpp.html
+title: src/graph/flow/max-flow.hpp
 ---
