@@ -1,6 +1,6 @@
 ---
 title: (offine) 木のパス $u-v$ 上の $k$ 番目の頂点 (Offline Jump On Tree)
-documentation_of: //src/graph/offline-query-jump-on-tree.hpp
+documentation_of: //src/graph/tree/offline-query/offline-query-jump-on-tree.hpp
 ---
 
 以下では、静的で辺重みのない木について考える。特に断りがない場合、頂点 $u$ と $v$ の距離は $u$, $v$ 間を経由する最小の辺数とする。

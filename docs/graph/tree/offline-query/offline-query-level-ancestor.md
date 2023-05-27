@@ -1,6 +1,6 @@
 ---
 title: オフライン Level Ancestor (Offline Level Ancestor)
-documentation_of: //src/graph/offline-query-level-ancestor.hpp
+documentation_of: //src/graph/tree/offline-query/offline-query-level-ancestor.hpp
 ---
 
 ## コンストラクタ

@@ -1,6 +1,6 @@
 ---
 title: (offine) Functional Graph 上の頂点 $v$ から $k$ 回移動した先の頂点 (Offline Jump On Functional Graph)
-documentation_of: //src/graph/offline-query-jump-on-functional-graph.hpp
+documentation_of: //src/graph/functional-graph/offline-query/offline-query-jump-on-functional-graph.hpp
 ---
 
 Functional Graph において、頂点 $v$ からちょうど $k$ 本の辺を辿って到達する頂点を求めるクエリをオフラインで処理する。このようなクエリを $jump(v, k)$ と表記する。

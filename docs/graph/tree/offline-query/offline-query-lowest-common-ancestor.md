@@ -1,6 +1,6 @@
 ---
 title: オフライン最小共通祖先 (Offline Lowest Common Ancestor)
-documentation_of: //src/graph/offline-query-lowest-common-ancestor.hpp
+documentation_of: //src/graph/tree/offline-query/offline-query-lowest-common-ancestor.hpp
 ---
 
 Tarjan's Offline Algorithm によって実装されているオフライン最小共通祖先
