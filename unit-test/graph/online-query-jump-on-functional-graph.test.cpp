@@ -12,7 +12,7 @@
 
 namespace luz {
 
-  template< class G >
+  template < class G >
   usize naive(const G &fg, usize v, u64 k) {
     if (k == 0) {
       return v;
@@ -22,7 +22,7 @@ namespace luz {
   }
 
   void main_() {
-    using edge = Edge< u32 >;
+    using edge  = Edge< u32 >;
     using graph = StaticGraph< edge >;
 
     graph fg(10);

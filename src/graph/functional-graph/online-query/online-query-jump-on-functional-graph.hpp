@@ -12,7 +12,7 @@ namespace luz {
 
   template < class G >
   class OnlineJumpOnFunctionalGraphQuery {
-    using graph = G;
+    using graph     = G;
     using cost_type = typename graph::cost_type;
 
     usize g_size;

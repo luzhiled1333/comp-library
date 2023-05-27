@@ -3,9 +3,9 @@
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/cpp-template/header/vector-ios.hpp"
-#include "src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp"
 #include "src/graph/class/edge.hpp"
 #include "src/graph/class/static-graph.hpp"
+#include "src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp"
 
 #include <iostream>
 #include <numeric>
@@ -14,7 +14,7 @@
 namespace luz {
 
   void main_() {
-    using edge = Edge< i32 >;
+    using edge  = Edge< i32 >;
     using graph = StaticGraph< edge >;
 
     usize n, q, x;
