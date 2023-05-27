@@ -1,13 +1,10 @@
-#include "src/graph/graph-template.hpp"
-
 #include <queue>
 #include <vector>
 
 namespace luz {
 
-  template < typename T, class Compare >
-  std::vector< usize > lexical_order_topological_sort(
-      const Graph< T > &g) {
+  template < class G, class Compare >
+  std::vector< usize > lexical_order_topological_sort(const G &g) {
     usize n = g.size();
 
     std::vector< usize > indegrees(n);

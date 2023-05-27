@@ -2,7 +2,8 @@
 
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/vector-ios.hpp"
-#include "src/graph/graph-template.hpp"
+#include "src/graph/class/edge.hpp"
+#include "src/graph/class/static-graph.hpp"
 #include "src/graph/topological-ordering/lexical-order-topological-sort.hpp"
 
 #include <functional>
@@ -11,7 +12,8 @@
 namespace luz {
 
   void main_() {
-    using graph = Graph< usize >;
+    using edge = Edge< usize >;
+    using graph = StaticGraph< edge >;
 
     usize n, m;
     std::cin >> n >> m;
@@ -22,12 +24,13 @@ namespace luz {
       std::cin >> t >> f;
       g.add_directed_edge(t - 1, f - 1);
     }
+    g.initialize();
 
     auto ord =
-        lexical_order_topological_sort< usize,
+        lexical_order_topological_sort< graph,
                                         std::greater< usize > >(g);
     auto rev =
-        lexical_order_topological_sort< usize, std::less< usize > >(
+        lexical_order_topological_sort< graph, std::less< usize > >(
             g);
 
     if (ord == rev) {
