@@ -3,9 +3,12 @@ title: オフライン Level Ancestor (Offline Level Ancestor)
 documentation_of: //src/graph/tree/offline-query/offline-query-level-ancestor.hpp
 ---
 
+## Appendix
+[テンプレートパラメータに渡すグラフ $G$ の仕様について]({{ site.baseurl }}/appendix-graph-type)
+
 ## コンストラクタ
 ```
-OfflineLAQuery(const Graph<cost_type> &g)
+OfflineLAQuery(const G &g)
 ```
 
 Level ancestor を求める木 `g` を渡す。

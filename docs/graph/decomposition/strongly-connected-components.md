@@ -3,9 +3,12 @@ title: 強連結成分分解(Decomposition of Strongly Connected Components, SCC
 documentation_of: //src/graph/decomposition/strongly-connected-components.hpp
 ---
 
+## Appendix
+[テンプレートパラメータに渡すグラフ $G$ の仕様について]({{ site.baseurl }}/appendix-graph-type)
+
 ## コンストラクタ
 ```cpp
-decomposition::StronglyConnectedComponents(const Graph< cost_type > &g)
+decomposition::StronglyConnectedComponents(const G &g)
 ```
 
 有向グラフ `g` を強連結成分分解する。

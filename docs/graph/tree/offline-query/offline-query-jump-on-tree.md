@@ -7,9 +7,12 @@ documentation_of: //src/graph/tree/offline-query/offline-query-jump-on-tree.hpp
 
 木上のパス $u-v$ 上の頂点のうち $u$ からの距離が $k$ であるような頂点を求めるクエリをオフラインで処理する。このようなクエリを $jump(u, v, k)$ と表記する。
 
+## Appendix
+[テンプレートパラメータに渡すグラフ $G$ の仕様について]({{ site.baseurl }}/appendix-graph-type)
+
 ## コンストラクタ
 ```
-OfflineJumpOnTreeQuery(const Graph<cost_type> &g)
+OfflineJumpOnTreeQuery(const G &g)
 ```
 
 ## add_query

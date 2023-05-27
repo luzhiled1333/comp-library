@@ -3,11 +3,14 @@ title: 辞書順最大/最小のトポロジカルソート
 documentation_of: //src/graph/topological-ordering/lexical-order-topological-sort.hpp
 ---
 
+## Appendix
+[テンプレートパラメータに渡すグラフ $G$ の仕様について]({{ site.baseurl }}/appendix-graph-type)
+
 ## lexical_order_topological_sort
 ```cpp
 std::vector< usize >
 lexical_order_topological_sort(
-  const Graph< cost_type > &g
+  const G &g
 )
 ```
 
@@ -18,16 +21,15 @@ lexical_order_topological_sort(
 ### usage
 #### 辞書順最小を求める場合
 ```cpp
-lexical_order_topological_sort< cost_type, std::greater< usize > >(g)
+lexical_order_topological_sort< G, std::greater< usize > >(g)
 ```
 
 #### 辞書順最大を求める場合
 ```cpp
-lexical_order_topological_sort< cost_type, std::less< usize > >(g)
+lexical_order_topological_sort< G, std::less< usize > >(g)
 ```
 
 ### 制約
-- グラフ `g` は DAG であること
 - `Compare` には `std::greater< usize >` または `std::less< usize >` が渡されること。
 
 ### 計算量
