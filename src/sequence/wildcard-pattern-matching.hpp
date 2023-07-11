@@ -4,13 +4,13 @@
 
 namespace luz {
 
-  // [f1, l1): original
-  // [f2, l2): pattern with wildcard
+  // [warning] false positive occur expect O(1/M)
+  //           when values are randomized
+  // [note] try to use multiple mods if necessary
   template< class modint, class T, class Iter >
   std::vector< i32 > wildcard_pattern_matching(
       Iter f1, Iter l1, Iter f2, Iter l2, const T wildcard) {
     usize n = l1 - f1, m = l2 - f2;
-    std::cerr << n << ", " << m << std::endl;
     std::vector< modint > as(n), bs(n), cs(n), ss(m), ts(m), us(m);
 
     for (Iter iter = f1; iter != l1; ++iter) {
