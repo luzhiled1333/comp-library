@@ -1,6 +1,9 @@
 #pragma once
 
+#include "src/cpp-template/header/type-alias.hpp"
 #include "src/math/convolution/modint-convolution.hpp"
+
+#include <vector>
 
 namespace luz {
 
