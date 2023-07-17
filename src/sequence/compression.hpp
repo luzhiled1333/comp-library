@@ -28,6 +28,10 @@ namespace luz {
       }
     }
 
+    usize element_count() const {
+      return zip_.size();
+    }
+
     std::vector< usize > compressed_vector() const {
       return ziped_vs_;
     }
