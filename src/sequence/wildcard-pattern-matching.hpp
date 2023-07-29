@@ -3,6 +3,7 @@
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/math/convolution/modint-convolution.hpp"
 
+#include <cassert>
 #include <vector>
 
 namespace luz {
@@ -14,6 +15,8 @@ namespace luz {
   std::vector< i32 > wildcard_pattern_matching(
       Iter f1, Iter l1, Iter f2, Iter l2, const T wildcard) {
     usize n = l1 - f1, m = l2 - f2;
+    assert(m <= n);
+
     std::vector< modint > as(n), bs(n), cs(n), ss(m), ts(m), us(m);
 
     for (Iter iter = f1; iter != l1; ++iter) {
