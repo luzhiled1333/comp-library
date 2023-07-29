@@ -10,28 +10,28 @@
 namespace luz {
 
   class DisjointSetUnion {
-    usize n_;
+    usize n;
 
-    // vals_[v] :=
+    // vals[v] :=
     //   if v is root node: -1 * component size
     //   otherwise: parent node
-    std::vector< isize > vals_;
+    std::vector< isize > vals;
 
     void bound_check(usize v) const {
-      assert(v < n_);
+      assert(v < n);
     }
 
     usize impl_leader(usize v) {
-      if (vals_[v] < 0) return v;
-      return vals_[v] = leader(vals_[v]);
+      if (vals[v] < 0) return v;
+      return vals[v] = leader(vals[v]);
     }
 
    public:
     DisjointSetUnion() = default;
-    explicit DisjointSetUnion(usize n): n_(n), vals_(n, -1) {}
+    explicit DisjointSetUnion(usize n): n(n), vals(n, -1) {}
 
     usize size() const {
-      return n_;
+      return n;
     }
 
     usize leader(usize v) {
@@ -51,29 +51,29 @@ namespace luz {
       isize x = impl_leader(u);
       isize y = impl_leader(v);
       if (x == y) return x;
-      if (-vals_[x] < -vals_[y]) std::swap(x, y);
-      vals_[x] += vals_[y];
-      vals_[y] = x;
+      if (-vals[x] < -vals[y]) std::swap(x, y);
+      vals[x] += vals[y];
+      vals[y] = x;
       return x;
     }
 
     usize group_size(usize v) {
       bound_check(v);
-      return -vals_[impl_leader(v)];
+      return -vals[impl_leader(v)];
     }
 
     std::vector< std::vector< usize > > groups() {
-      std::vector< std::vector< usize > > result(n_);
+      std::vector< std::vector< usize > > result(n);
 
-      std::vector< usize > leaders(n_), g_sizes(n_);
-      for (usize v: rep(0, n_)) {
+      std::vector< usize > leaders(n), g_sizes(n);
+      for (usize v: rep(0, n)) {
         leaders[v] = impl_leader(v);
         g_sizes[leaders[v]]++;
       }
-      for (usize v: rep(0, n_)) {
+      for (usize v: rep(0, n)) {
         result[v].reserve(g_sizes[v]);
       }
-      for (usize v: rep(0, n_)) {
+      for (usize v: rep(0, n)) {
         result[leaders[v]].emplace_back(v);
       }
 

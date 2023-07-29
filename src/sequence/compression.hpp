@@ -12,35 +12,35 @@ namespace luz {
 
   template < class T, class Compare = std::less< T > >
   class Compressor {
-    std::vector< T > vs_;
-    std::vector< T > zip_;
-    std::vector< usize > ziped_vs_;
+    std::vector< T > vs;
+    std::vector< T > zip;
+    std::vector< usize > ziped_vs;
 
    public:
     explicit Compressor(std::vector< T > vs)
-        : vs_(vs),
-          zip_(vs),
-          ziped_vs_(vs.size()) {
-      std::sort(zip_.begin(), zip_.end(), Compare());
-      zip_.erase(std::unique(zip_.begin(), zip_.end()), zip_.end());
+        : vs(vs),
+          zip(vs),
+          ziped_vs(vs.size()) {
+      std::sort(zip.begin(), zip.end(), Compare());
+      zip.erase(std::unique(zip.begin(), zip.end()), zip.end());
       for (usize i: rep(0, vs.size())) {
-        ziped_vs_[i] = compress(vs[i]);
+        ziped_vs[i] = compress(vs[i]);
       }
     }
 
     std::vector< usize > compressed_vector() const {
-      return ziped_vs_;
+      return ziped_vs;
     }
 
     usize compress(T v) const {
-      auto iter = std::lower_bound(zip_.begin(), zip_.end(), v);
+      auto iter = std::lower_bound(zip.begin(), zip.end(), v);
       assert(*iter == v);
-      return iter - zip_.begin();
+      return iter - zip.begin();
     }
 
     T expand(usize i) const {
-      assert(i < zip_.size());
-      return zip_[i];
+      assert(i < zip.size());
+      return zip[i];
     }
   };
 
