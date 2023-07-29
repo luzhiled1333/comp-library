@@ -105,30 +105,30 @@ data:
   isVerificationFile: false
   path: src/geometry/Z2/class/vector.hpp
   requiredBy:
-  - src/geometry/Z2/class/polygon.hpp
-  - src/geometry/Z2/class/circle.hpp
-  - src/geometry/Z2/class/point.hpp
-  - src/geometry/Z2/class/line.hpp
-  - src/geometry/Z2/class/segment.hpp
-  - src/geometry/Z2/compare/compare-yx.hpp
-  - src/geometry/Z2/compare/compare-xy.hpp
+  - src/geometry/Z2/normalize/line-normalize.hpp
   - src/geometry/Z2/intersect/is-intersect-point-circle.hpp
   - src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
-  - src/geometry/Z2/operation/inner-product.hpp
+  - src/geometry/Z2/centroid/gravity.hpp
+  - src/geometry/Z2/utility/multiply-for-all-points.hpp
+  - src/geometry/Z2/utility/polygon-to-segments.hpp
+  - src/geometry/Z2/class/segment.hpp
+  - src/geometry/Z2/class/polygon.hpp
+  - src/geometry/Z2/class/point.hpp
+  - src/geometry/Z2/class/line.hpp
+  - src/geometry/Z2/class/circle.hpp
   - src/geometry/Z2/operation/cross-product.hpp
+  - src/geometry/Z2/operation/inner-product.hpp
   - src/geometry/Z2/operation/ccw.hpp
   - src/geometry/Z2/operation/square-norm.hpp
-  - src/geometry/Z2/normalize/line-normalize.hpp
-  - src/geometry/Z2/utility/polygon-to-segments.hpp
-  - src/geometry/Z2/utility/multiply-for-all-points.hpp
+  - src/geometry/Z2/compare/compare-yx.hpp
+  - src/geometry/Z2/compare/compare-xy.hpp
   - src/geometry/Z2/segment-function/counterbalance-segments.hpp
-  - src/geometry/Z2/centroid/gravity.hpp
   timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/atcoder/abc259_d.test.cpp
   - test/aoj/4011.test.cpp
   - test/aoj/2442.test.cpp
-  - test/atcoder/abc259_d.test.cpp
 documentation_of: src/geometry/Z2/class/vector.hpp
 layout: document
 title: "\u30D9\u30AF\u30C8\u30EB (\u6574\u6570\u5E7E\u4F55)"

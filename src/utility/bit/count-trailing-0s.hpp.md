@@ -117,32 +117,32 @@ data:
   isVerificationFile: false
   path: src/utility/bit/count-trailing-0s.hpp
   requiredBy:
+  - src/data-structure/segment-tree/range-mapping-range-fold-segment-tree.hpp
   - src/data-structure/segment-tree/range-mapping-point-fold-segment-tree.hpp
-  - src/data-structure/segment-tree/presets/range-update-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-add-range-maximum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-update-range-sum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-add-range-minimum-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-add-range-sum-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-chmax-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-update-range-maximum-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-update-range-sum-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-update-range-minimum-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-chmin-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-add-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-add-range-minimum-query-solver.hpp
-  - src/data-structure/segment-tree/range-mapping-range-fold-segment-tree.hpp
+  - src/data-structure/segment-tree/presets/range-add-range-maximum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-update-range-minimum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-update-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-chmin-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-update-range-maximum-query-solver.hpp
   timestamp: '2023-02-10 17:57:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - unit-test/utility/bit/count-trailing-0s.test.cpp
-  - test/aoj/dsl_2_e.test.cpp
-  - test/aoj/dsl_2_i.test.cpp
-  - test/aoj/dsl_2_g.test.cpp
-  - test/aoj/dsl_2_f/range-minimum.test.cpp
-  - test/aoj/dsl_2_f/range-maximum.test.cpp
-  - test/aoj/dsl_2_h/range-minimum.test.cpp
-  - test/aoj/dsl_2_h/range-maximum.test.cpp
-  - test/aoj/dsl_2_d.test.cpp
   - test/atcoder/abc179_f/range-chmin.test.cpp
   - test/atcoder/abc179_f/range-chmax.test.cpp
+  - test/aoj/dsl_2_d.test.cpp
+  - test/aoj/dsl_2_i.test.cpp
+  - test/aoj/dsl_2_e.test.cpp
+  - test/aoj/dsl_2_f/range-maximum.test.cpp
+  - test/aoj/dsl_2_f/range-minimum.test.cpp
+  - test/aoj/dsl_2_h/range-maximum.test.cpp
+  - test/aoj/dsl_2_h/range-minimum.test.cpp
+  - test/aoj/dsl_2_g.test.cpp
 documentation_of: src/utility/bit/count-trailing-0s.hpp
 layout: document
 title: "\u6700\u4E0B\u4F4Dbit\u304B\u3089\u9023\u7D9A\u3059\u308B 0 \u306E\u6570 (counting\

@@ -71,9 +71,9 @@ data:
     \ from_, usize to_, T cost_, usize id_)\n        : from(from_),\n          to(to_),\n\
     \          cost(cost_),\n          id(id_) {}\n  };\n\n  template < typename T\
     \ >\n  using Edges = std::vector< Edge< T > >;\n\n} // namespace luz\n#line 2\
-    \ \"src/graph/single-source-shortest-path/in-weighted-graph.hpp\"\n\n#line 5 \"\
+    \ \"src/graph/single-source-shortest-path/in-weighted-graph.hpp\"\n\n#line 4 \"\
     src/graph/single-source-shortest-path/in-weighted-graph.hpp\"\n\n#include <limits>\n\
-    #include <queue>\n#line 9 \"src/graph/single-source-shortest-path/in-weighted-graph.hpp\"\
+    #include <queue>\n#line 8 \"src/graph/single-source-shortest-path/in-weighted-graph.hpp\"\
     \n\nnamespace luz::sssp {\n\n  template < class G >\n  class InWeightedGraph {\n\
     \    using cost_type = typename G::cost_type;\n    using graph     = G;\n\n  \
     \  static constexpr cost_type inf_ =\n        std::numeric_limits< cost_type >::max();\n\
@@ -147,7 +147,7 @@ data:
   isVerificationFile: true
   path: test/aoj/grl_1_b/dynamic-graph.test.cpp
   requiredBy: []
-  timestamp: '2023-05-28 01:36:49+09:00'
+  timestamp: '2023-07-29 18:03:24+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/grl_1_b/dynamic-graph.test.cpp

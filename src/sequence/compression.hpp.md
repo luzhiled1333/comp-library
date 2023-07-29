@@ -88,8 +88,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - unit-test/sequence/compression.test.cpp
-  - test/aoj/4011.test.cpp
   - test/atcoder/abc298_f.test.cpp
+  - test/aoj/4011.test.cpp
 documentation_of: src/sequence/compression.hpp
 layout: document
 title: "\u5EA7\u6A19\u5727\u7E2E"

@@ -8,9 +8,6 @@ data:
     path: src/cpp-template/header/type-alias.hpp
     title: Type alias
   - icon: ':heavy_check_mark:'
-    path: src/graph/class/dynamic-graph.hpp
-    title: "\u52D5\u7684\u306A\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
-  - icon: ':heavy_check_mark:'
     path: src/graph/class/edge/edge.hpp
     title: src/graph/class/edge/edge.hpp
   - icon: ':heavy_check_mark:'
@@ -97,23 +94,9 @@ data:
     \ from_, usize to_, T cost_, usize id_)\n        : from(from_),\n          to(to_),\n\
     \          cost(cost_),\n          id(id_) {}\n  };\n\n  template < typename T\
     \ >\n  using Edges = std::vector< Edge< T > >;\n\n} // namespace luz\n#line 2\
-    \ \"src/graph/single-source-shortest-path/in-weighted-graph.hpp\"\n\n#line 2 \"\
-    src/graph/class/dynamic-graph.hpp\"\n\n#line 4 \"src/graph/class/dynamic-graph.hpp\"\
-    \n\n#line 7 \"src/graph/class/dynamic-graph.hpp\"\n\nnamespace luz {\n\n  template\
-    \ < typename Edge >\n  class DynamicGraph {\n\n    using Edges = std::vector<\
-    \ Edge >;\n\n   protected:\n    std::vector< Edges > g;\n    usize edge_count;\n\
-    \n   public:\n    using cost_type = typename Edge::cost_type;\n\n    DynamicGraph()\
-    \ = default;\n    explicit DynamicGraph(usize n): g(n), edge_count(0) {}\n\n \
-    \   usize size() const {\n      return g.size();\n    }\n\n    void add_directed_edge(usize\
-    \ from, usize to, cost_type cost = 1) {\n      assert(from < size());\n      assert(to\
-    \ < size());\n      g[from].emplace_back(from, to, cost, edge_count++);\n    }\n\
-    \n    void add_undirected_edge(usize u, usize v, cost_type cost = 1) {\n     \
-    \ assert(u < size());\n      assert(v < size());\n      assert(u != v);\n    \
-    \  g[u].emplace_back(u, v, cost, edge_count);\n      g[v].emplace_back(v, u, cost,\
-    \ edge_count++);\n    }\n\n    Edges operator[](const usize &v) {\n      return\
-    \ g[v];\n    }\n\n    const Edges operator[](const usize &v) const {\n      return\
-    \ g[v];\n    }\n  };\n\n} // namespace luz\n#line 5 \"src/graph/single-source-shortest-path/in-weighted-graph.hpp\"\
-    \n\n#include <limits>\n#include <queue>\n#line 9 \"src/graph/single-source-shortest-path/in-weighted-graph.hpp\"\
+    \ \"src/graph/single-source-shortest-path/in-weighted-graph.hpp\"\n\n#line 4 \"\
+    src/graph/single-source-shortest-path/in-weighted-graph.hpp\"\n\n#include <limits>\n\
+    #include <queue>\n#line 8 \"src/graph/single-source-shortest-path/in-weighted-graph.hpp\"\
     \n\nnamespace luz::sssp {\n\n  template < class G >\n  class InWeightedGraph {\n\
     \    using cost_type = typename G::cost_type;\n    using graph     = G;\n\n  \
     \  static constexpr cost_type inf_ =\n        std::numeric_limits< cost_type >::max();\n\
@@ -185,11 +168,10 @@ data:
   - src/cpp-template/header/type-alias.hpp
   - src/graph/class/edge/edge.hpp
   - src/graph/single-source-shortest-path/in-weighted-graph.hpp
-  - src/graph/class/dynamic-graph.hpp
   isVerificationFile: true
   path: test/aoj/grl_1_b/static-graph.test.cpp
   requiredBy: []
-  timestamp: '2023-05-28 01:36:49+09:00'
+  timestamp: '2023-07-29 18:03:24+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/grl_1_b/static-graph.test.cpp

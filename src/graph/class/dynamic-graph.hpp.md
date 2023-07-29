@@ -4,11 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/type-alias.hpp
     title: Type alias
-  _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: src/graph/single-source-shortest-path/in-weighted-graph.hpp
-    title: "\u91CD\u307F\u3042\u308A\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u7D4C\u8DEF\
-      \ (Single Source Shortest Path in Unweighted Graph, SPFA)"
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/grl_1_a/dynamic-graph.test.cpp
@@ -16,9 +12,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/grl_1_b/dynamic-graph.test.cpp
     title: test/aoj/grl_1_b/dynamic-graph.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/grl_1_b/static-graph.test.cpp
-    title: test/aoj/grl_1_b/static-graph.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -60,14 +53,12 @@ data:
   - src/cpp-template/header/type-alias.hpp
   isVerificationFile: false
   path: src/graph/class/dynamic-graph.hpp
-  requiredBy:
-  - src/graph/single-source-shortest-path/in-weighted-graph.hpp
+  requiredBy: []
   timestamp: '2023-05-28 01:36:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/grl_1_a/dynamic-graph.test.cpp
   - test/aoj/grl_1_b/dynamic-graph.test.cpp
-  - test/aoj/grl_1_b/static-graph.test.cpp
 documentation_of: src/graph/class/dynamic-graph.hpp
 layout: document
 title: "\u52D5\u7684\u306A\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"

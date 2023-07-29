@@ -142,11 +142,11 @@ data:
   isVerificationFile: false
   path: src/geometry/common/class/internal/matrix.hpp
   requiredBy:
-  - src/geometry/common/class/matrix.hpp
   - src/geometry/common/class/column-vector.hpp
+  - src/geometry/common/class/matrix.hpp
   - src/geometry/2d/common/class/vector-2d.hpp
-  - src/geometry/2d/z2/class/vector-2d.hpp
   - src/geometry/2d/r2/class/vector-2d.hpp
+  - src/geometry/2d/z2/class/vector-2d.hpp
   timestamp: '2023-05-23 15:46:39+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

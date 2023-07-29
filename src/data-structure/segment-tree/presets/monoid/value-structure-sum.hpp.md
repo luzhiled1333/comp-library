@@ -48,17 +48,17 @@ data:
   isVerificationFile: false
   path: src/data-structure/segment-tree/presets/monoid/value-structure-sum.hpp
   requiredBy:
-  - src/data-structure/segment-tree/presets/range-add-range-sum-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-sum-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-update-range-sum-query-solver.hpp
   - src/data-structure/segment-tree/presets/monoid/combined-structure-update-sum.hpp
   - src/data-structure/segment-tree/presets/monoid/combined-structure-add-sum.hpp
+  - src/data-structure/segment-tree/presets/range-add-range-sum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-sum-query-solver.hpp
   timestamp: '2023-05-03 14:59:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/dsl_2_i.test.cpp
-  - test/aoj/dsl_2_g.test.cpp
   - test/aoj/dsl_2_b/segment-tree.test.cpp
+  - test/aoj/dsl_2_g.test.cpp
 documentation_of: src/data-structure/segment-tree/presets/monoid/value-structure-sum.hpp
 layout: document
 redirect_from:

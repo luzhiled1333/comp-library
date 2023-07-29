@@ -113,11 +113,11 @@ data:
   - unit-test/math/modular-arithmetic/static-modint.test.cpp
   - unit-test/data-structure/fenwick-tree.test.cpp
   - test/atcoder/arc117_c.test.cpp
-  - test/atcoder/abc132_d.test.cpp
   - test/atcoder/abc212_h.test.cpp
-  - test/library-checker/bitwise_and_convolution.test.cpp
-  - test/library-checker/modint_convolution.test.cpp
+  - test/atcoder/abc132_d.test.cpp
   - test/library-checker/bitwise_xor_convolution.test.cpp
+  - test/library-checker/modint_convolution.test.cpp
+  - test/library-checker/bitwise_and_convolution.test.cpp
 documentation_of: src/math/modular-arithmetic/static-modint.hpp
 layout: document
 redirect_from:

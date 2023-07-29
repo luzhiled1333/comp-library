@@ -52,11 +52,11 @@ data:
   isVerificationFile: false
   path: src/data-structure/segment-tree/presets/monoid/value-structure-minimum.hpp
   requiredBy:
-  - src/data-structure/segment-tree/presets/range-update-range-minimum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-add-range-minimum-query-solver.hpp
   - src/data-structure/segment-tree/presets/monoid/combined-structure-update-minimum.hpp
   - src/data-structure/segment-tree/presets/monoid/combined-structure-add-minimum.hpp
   - src/data-structure/segment-tree/presets/range-minimum-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-add-range-minimum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-update-range-minimum-query-solver.hpp
   timestamp: '2023-05-03 14:59:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

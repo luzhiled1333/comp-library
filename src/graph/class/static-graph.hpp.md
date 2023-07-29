@@ -153,12 +153,12 @@ data:
   verifiedWith:
   - unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
   - unit-test/graph/online-query-jump-on-functional-graph.test.cpp
-  - test/aoj/grl_1_a/static-graph.test.cpp
-  - test/aoj/grl_1_b/static-graph.test.cpp
-  - test/aoj/grl_5_c/grl_5_c.test.cpp
   - test/atcoder/abc291_e.test.cpp
   - test/atcoder/abc258_e/offline-algorithm.test.cpp
   - test/atcoder/abc258_e/online-algorithm.test.cpp
+  - test/aoj/grl_1_a/static-graph.test.cpp
+  - test/aoj/grl_1_b/static-graph.test.cpp
+  - test/aoj/grl_5_c/grl_5_c.test.cpp
   - test/library-checker/scc.test.cpp
   - test/library-checker/jump_on_tree.test.cpp
 documentation_of: src/graph/class/static-graph.hpp
