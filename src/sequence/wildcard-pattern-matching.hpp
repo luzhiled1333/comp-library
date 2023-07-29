@@ -1,7 +1,7 @@
 #pragma once
 
-#include "src/cpp-template/header/size-alias.hpp"
 #include "src/cpp-template/header/int-alias.hpp"
+#include "src/cpp-template/header/size-alias.hpp"
 #include "src/math/convolution/modint-convolution.hpp"
 
 #include <cassert>
