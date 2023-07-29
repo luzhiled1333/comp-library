@@ -24,7 +24,7 @@ namespace luz {
       modint y(*iter == wildcard ? 0 : 1);
       usize i = iter - f1;
       as[i] = y * x * x;
-      bs[i] = -2 * y * x;
+      bs[i] = y * x * -2;
       cs[i] = y;
     }
 
