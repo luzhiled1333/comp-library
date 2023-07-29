@@ -1,7 +1,8 @@
 // verification-helper: PROBLEM https://atcoder.jp/contests/abc259/tasks/abc259_d
 
+#include "src/cpp-template/header/int-alias.hpp"
 #include "src/cpp-template/header/rep.hpp"
-#include "src/cpp-template/header/type-alias.hpp"
+#include "src/cpp-template/header/size-alias.hpp"
 #include "src/data-structure/disjoint-set-union.hpp"
 #include "src/geometry/Z2/class/circle.hpp"
 #include "src/geometry/Z2/class/point.hpp"

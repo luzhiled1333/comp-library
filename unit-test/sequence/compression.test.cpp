@@ -2,7 +2,8 @@
 
 #include "src/sequence/compression.hpp"
 
-#include "src/cpp-template/header/type-alias.hpp"
+#include "src/cpp-template/header/int-alias.hpp"
+#include "src/cpp-template/header/size-alias.hpp"
 #include "src/cpp-template/header/vector-ios.hpp"
 
 #include <cassert>
@@ -12,10 +13,10 @@
 namespace luz {
 
   void main_() {
-    std::vector< int > vs({8, -5, 3, 4, 3, 7, 1});
+    std::vector< i32 > vs({8, -5, 3, 4, 3, 7, 1});
     std::vector< usize > expected({5, 0, 2, 3, 2, 4, 1});
 
-    Compressor< int > cp(vs);
+    Compressor< i32 > cp(vs);
     std::vector< usize > result = cp.compressed_vector();
     assert(result == expected);
 

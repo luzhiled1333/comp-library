@@ -1,7 +1,8 @@
 #pragma once
 
+#include "src/cpp-template/header/int-alias.hpp"
 #include "src/cpp-template/header/rep.hpp"
-#include "src/cpp-template/header/type-alias.hpp"
+#include "src/cpp-template/header/size-alias.hpp"
 #include "src/geometry/Z2/class/segment.hpp"
 #include "src/geometry/Z2/compare/compare-xy.hpp"
 #include "src/geometry/Z2/normalize/line-normalize.hpp"

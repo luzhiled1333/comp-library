@@ -2,7 +2,8 @@
 
 #include "src/data-structure/segment-tree/point-mapping-range-fold-segment-tree.hpp"
 
-#include "src/cpp-template/header/type-alias.hpp"
+#include "src/cpp-template/header/int-alias.hpp"
+#include "src/cpp-template/header/size-alias.hpp"
 
 #include <cassert>
 #include <iostream>

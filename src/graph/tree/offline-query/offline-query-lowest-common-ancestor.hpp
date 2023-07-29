@@ -1,7 +1,7 @@
 #pragma once
 
 #include "src/cpp-template/header/rep.hpp"
-#include "src/cpp-template/header/type-alias.hpp"
+#include "src/cpp-template/header/size-alias.hpp"
 #include "src/data-structure/disjoint-set-union.hpp"
 #include "src/utility/pair-hash.hpp"
 

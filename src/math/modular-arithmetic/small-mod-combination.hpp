@@ -1,5 +1,7 @@
 #pragma once
 
+#include "src/cpp-template/header/int-alias.hpp"
+#include "src/cpp-template/header/size-alias.hpp"
 #include "src/math/modular-arithmetic/modular-combinatorics.hpp"
 
 namespace luz {

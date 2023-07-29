@@ -1,7 +1,7 @@
 #pragma once
 
 #include "src/cpp-template/header/rep.hpp"
-#include "src/cpp-template/header/type-alias.hpp"
+#include "src/cpp-template/header/size-alias.hpp"
 #include "src/graph/single-source-shortest-path/in-unweighted-graph.hpp"
 #include "src/graph/tree/offline-query/offline-query-level-ancestor.hpp"
 #include "src/graph/tree/offline-query/offline-query-lowest-common-ancestor.hpp"

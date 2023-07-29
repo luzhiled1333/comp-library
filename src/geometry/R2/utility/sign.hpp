@@ -1,6 +1,6 @@
 #pragma once
 
-#include "src/cpp-template/header/type-alias.hpp"
+#include "src/cpp-template/header/int-alias.hpp"
 #include "src/geometry/R2/numbers/eps.hpp"
 #include "src/geometry/R2/numbers/sign.hpp"
 

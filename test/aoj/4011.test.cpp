@@ -1,7 +1,8 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/4011
 
+#include "src/cpp-template/header/int-alias.hpp"
 #include "src/cpp-template/header/rep.hpp"
-#include "src/cpp-template/header/type-alias.hpp"
+#include "src/cpp-template/header/size-alias.hpp"
 #include "src/geometry/Z2/class/point.hpp"
 #include "src/geometry/Z2/class/polygon.hpp"
 #include "src/geometry/Z2/class/segment.hpp"

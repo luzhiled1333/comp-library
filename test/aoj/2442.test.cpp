@@ -1,9 +1,10 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/2442
 // verification-helper: ERROR 0.00000001
 
+#include "src/cpp-template/header/int-alias.hpp"
 #include "src/cpp-template/header/io-set.hpp"
 #include "src/cpp-template/header/rep.hpp"
-#include "src/cpp-template/header/type-alias.hpp"
+#include "src/cpp-template/header/size-alias.hpp"
 #include "src/geometry/Z2/centroid/gravity.hpp"
 #include "src/geometry/Z2/class/point.hpp"
 #include "src/geometry/Z2/utility/multiply-for-all-points.hpp"

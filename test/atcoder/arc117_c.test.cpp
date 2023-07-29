@@ -1,5 +1,6 @@
 // verification-helper: PROBLEM https://atcoder.jp/contests/arc117/tasks/arc117_c
 
+#include "src/cpp-template/header/size-alias.hpp"
 #include "src/math/modular-arithmetic/small-mod-combination.hpp"
 #include "src/math/modular-arithmetic/static-modint.hpp"
 

@@ -1,7 +1,8 @@
 // verification-helper: PROBLEM https://atcoder.jp/contests/abc179/tasks/abc179_f
 
+#include "src/cpp-template/header/int-alias.hpp"
 #include "src/cpp-template/header/rep.hpp"
-#include "src/cpp-template/header/type-alias.hpp"
+#include "src/cpp-template/header/size-alias.hpp"
 #include "src/data-structure/segment-tree/presets/range-chmin-query-solver.hpp"
 
 #include <iostream>

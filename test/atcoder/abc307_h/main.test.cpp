@@ -1,7 +1,7 @@
 // verification-helper: PROBLEM https://atcoder.jp/contests/abc307/tasks/abc307_h
 // verification-helper: PROBLEM https://atcoder.jp/contests/abc307/tasks/abc307_ex
 
-#include "src/cpp-template/header/type-alias.hpp"
+#include "src/cpp-template/header/size-alias.hpp"
 #include "src/math/modular-arithmetic/static-modint.hpp"
 #include "src/sequence/wildcard-pattern-matching.hpp"
 

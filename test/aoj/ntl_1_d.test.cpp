@@ -1,6 +1,6 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/NTL_1_D
 
-#include "src/cpp-template/header/type-alias.hpp"
+#include "src/cpp-template/header/int-alias.hpp"
 #include "src/math/totient.hpp"
 
 #include <iostream>

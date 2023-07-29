@@ -2,6 +2,7 @@
 
 #include "src/math/totient.hpp"
 
+#include "src/cpp-template/header/int-alias.hpp"
 #include "src/cpp-template/header/rep.hpp"
 
 #include <cassert>

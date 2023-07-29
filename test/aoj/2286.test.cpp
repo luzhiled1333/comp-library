@@ -1,7 +1,8 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/2286
 
+#include "src/cpp-template/header/int-alias.hpp"
 #include "src/cpp-template/header/rep.hpp"
-#include "src/cpp-template/header/type-alias.hpp"
+#include "src/cpp-template/header/size-alias.hpp"
 #include "src/math/totient-enumeration.hpp"
 
 #include <iostream>

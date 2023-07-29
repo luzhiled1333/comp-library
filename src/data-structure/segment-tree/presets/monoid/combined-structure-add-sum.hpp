@@ -1,6 +1,6 @@
 #pragma once
 
-#include "src/cpp-template/header/type-alias.hpp"
+#include "src/cpp-template/header/size-alias.hpp"
 #include "src/data-structure/segment-tree/presets/monoid/operator-structure-add.hpp"
 #include "src/data-structure/segment-tree/presets/monoid/value-structure-sum.hpp"
 

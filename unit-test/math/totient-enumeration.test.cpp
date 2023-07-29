@@ -2,8 +2,8 @@
 
 #include "src/math/totient-enumeration.hpp"
 
+#include "src/cpp-template/header/int-alias.hpp"
 #include "src/cpp-template/header/rep.hpp"
-#include "src/cpp-template/header/type-alias.hpp"
 
 #include <cassert>
 #include <iostream>
