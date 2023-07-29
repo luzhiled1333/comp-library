@@ -1,12 +1,8 @@
 #pragma once
 
-#include <cstddef>
 #include <cstdint>
 
 namespace luz {
-
-  using isize = std::ptrdiff_t;
-  using usize = std::size_t;
 
   using i32 = std::int32_t;
   using i64 = std::int64_t;
