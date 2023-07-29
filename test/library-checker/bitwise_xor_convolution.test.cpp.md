@@ -1,27 +1,30 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/int-alias.hpp
+    title: int alias
+  - icon: ':question:'
     path: src/cpp-template/header/rep.hpp
     title: "rep \u69CB\u9020\u4F53"
-  - icon: ':heavy_check_mark:'
-    path: src/cpp-template/header/type-alias.hpp
-    title: Type alias
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/size-alias.hpp
+    title: size alias
+  - icon: ':x:'
     path: src/math/convolution/bitwise-xor-convolution.hpp
     title: src/math/convolution/bitwise-xor-convolution.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/math/convolution/fast-walsh-hadamard-transform.hpp
     title: "\u9AD8\u901F\u30A6\u30A9\u30EB\u30B7\u30E5-\u30A2\u30C0\u30DE\u30FC\u30EB\
       \u5909\u63DB/\u9006\u5909\u63DB (Fast Walsh Hadamard Transform / Inverse Transform)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/math/modular-arithmetic/static-modint.hpp
     title: src/math/modular-arithmetic/static-modint.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/bitwise_xor_convolution
     links:
@@ -29,17 +32,15 @@ data:
   bundledCode: "#line 1 \"test/library-checker/bitwise_xor_convolution.test.cpp\"\n\
     // verification-helper: PROBLEM https://judge.yosupo.jp/problem/bitwise_xor_convolution\n\
     \n#line 2 \"src/math/convolution/bitwise-xor-convolution.hpp\"\n\n#line 2 \"src/cpp-template/header/rep.hpp\"\
-    \n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\n\n#include <cstddef>\n\
-    #include <cstdint>\n\nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using\
-    \ usize = std::size_t;\n\n  using i32 = std::int32_t;\n  using i64 = std::int64_t;\n\
-    \  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n\n} // namespace\
-    \ luz\n#line 4 \"src/cpp-template/header/rep.hpp\"\n\n#include <algorithm>\n\n\
-    namespace luz {\n\n  struct rep {\n    struct itr {\n      usize i;\n      constexpr\
-    \ itr(const usize i) noexcept: i(i) {}\n      void operator++() noexcept {\n \
-    \       ++i;\n      }\n      constexpr usize operator*() const noexcept {\n  \
-    \      return i;\n      }\n      constexpr bool operator!=(const itr x) const\
-    \ noexcept {\n        return i != x.i;\n      }\n    };\n    const itr f, l;\n\
-    \    constexpr rep(const usize f, const usize l) noexcept\n        : f(std::min(f,\
+    \n\n#line 2 \"src/cpp-template/header/size-alias.hpp\"\n\n#include <cstddef>\n\
+    \nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using usize = std::size_t;\n\
+    \n} // namespace luz\n#line 4 \"src/cpp-template/header/rep.hpp\"\n\n#include\
+    \ <algorithm>\n\nnamespace luz {\n\n  struct rep {\n    struct itr {\n      usize\
+    \ i;\n      constexpr itr(const usize i) noexcept: i(i) {}\n      void operator++()\
+    \ noexcept {\n        ++i;\n      }\n      constexpr usize operator*() const noexcept\
+    \ {\n        return i;\n      }\n      constexpr bool operator!=(const itr x)\
+    \ const noexcept {\n        return i != x.i;\n      }\n    };\n    const itr f,\
+    \ l;\n    constexpr rep(const usize f, const usize l) noexcept\n        : f(std::min(f,\
     \ l)),\n          l(l) {}\n    constexpr auto begin() const noexcept {\n     \
     \ return f;\n    }\n    constexpr auto end() const noexcept {\n      return l;\n\
     \    }\n  };\n\n  struct rrep {\n    struct itr {\n      usize i;\n      constexpr\
@@ -69,10 +70,14 @@ data:
     \ * inv2;\n    };\n\n    fast_walsh_hadamard_transform(f, zeta);\n    fast_walsh_hadamard_transform(g,\
     \ zeta);\n    for (usize i: rep(0, f.size())) {\n      f[i] *= g[i];\n    }\n\
     \    fast_walsh_hadamard_transform(f, mobius);\n    return f;\n  }\n\n} // namespace\
-    \ luz\n#line 2 \"src/math/modular-arithmetic/static-modint.hpp\"\n\n#line 4 \"\
-    src/math/modular-arithmetic/static-modint.hpp\"\n\n#line 6 \"src/math/modular-arithmetic/static-modint.hpp\"\
-    \n#include <iostream>\n\nnamespace luz {\n\n  template < u32 mod >\n  class StaticPrimeModInt\
-    \ {\n    using modint = StaticPrimeModInt;\n\n    u32 v;\n\n   public:\n    StaticPrimeModInt():\
+    \ luz\n#line 2 \"src/math/modular-arithmetic/static-modint.hpp\"\n\n#line 2 \"\
+    src/cpp-template/header/int-alias.hpp\"\n\n#include <cstdint>\n\nnamespace luz\
+    \ {\n\n  using i32  = std::int32_t;\n  using i64  = std::int64_t;\n  using i128\
+    \ = __int128_t;\n\n  using u32  = std::uint32_t;\n  using u64  = std::uint64_t;\n\
+    \  using u128 = __uint128_t;\n\n} // namespace luz\n#line 4 \"src/math/modular-arithmetic/static-modint.hpp\"\
+    \n\n#line 6 \"src/math/modular-arithmetic/static-modint.hpp\"\n#include <iostream>\n\
+    \nnamespace luz {\n\n  template < u32 mod >\n  class StaticPrimeModInt {\n   \
+    \ using modint = StaticPrimeModInt;\n\n    u32 v;\n\n   public:\n    StaticPrimeModInt():\
     \ v(0) {}\n\n    template < typename T >\n    StaticPrimeModInt(T v_) {\n    \
     \  i64 x = (i64)(v_ % (i64)mod);\n      if (x < 0) x += mod;\n      v = (u32)x;\n\
     \    }\n\n    u32 val() const {\n      return v;\n    }\n\n    modint &operator+=(const\
@@ -124,14 +129,15 @@ data:
   dependsOn:
   - src/math/convolution/bitwise-xor-convolution.hpp
   - src/cpp-template/header/rep.hpp
-  - src/cpp-template/header/type-alias.hpp
+  - src/cpp-template/header/size-alias.hpp
   - src/math/convolution/fast-walsh-hadamard-transform.hpp
   - src/math/modular-arithmetic/static-modint.hpp
+  - src/cpp-template/header/int-alias.hpp
   isVerificationFile: true
   path: test/library-checker/bitwise_xor_convolution.test.cpp
   requiredBy: []
-  timestamp: '2023-05-20 00:18:06+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-07-30 00:54:52+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/bitwise_xor_convolution.test.cpp
 layout: document

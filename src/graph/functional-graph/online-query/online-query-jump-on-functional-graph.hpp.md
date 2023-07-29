@@ -1,37 +1,42 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/int-alias.hpp
+    title: int alias
+  - icon: ':question:'
     path: src/cpp-template/header/rep.hpp
     title: "rep \u69CB\u9020\u4F53"
-  - icon: ':heavy_check_mark:'
-    path: src/cpp-template/header/type-alias.hpp
-    title: Type alias
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/size-alias.hpp
+    title: size alias
+  - icon: ':question:'
     path: src/utility/bit/bit-width.hpp
     title: "\u5024\u3092\u8868\u73FE\u3059\u308B\u305F\u3081\u306B\u5FC5\u8981\u306A\
       \u6700\u5C0F\u306Ebit\u5E45 (bit_width)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/utility/bit/popcount.hpp
     title: "\u7ACB\u3063\u3066\u3044\u308B bit \u306E\u6570 (population count, popcount)"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/atcoder/abc258_e/online-algorithm.test.cpp
     title: test/atcoder/abc258_e/online-algorithm.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: unit-test/graph/online-query-jump-on-functional-graph.test.cpp
     title: unit-test/graph/online-query-jump-on-functional-graph.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp\"\
-    \n\n#line 2 \"src/cpp-template/header/rep.hpp\"\n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\
-    \n\n#include <cstddef>\n#include <cstdint>\n\nnamespace luz {\n\n  using isize\
-    \ = std::ptrdiff_t;\n  using usize = std::size_t;\n\n  using i32 = std::int32_t;\n\
-    \  using i64 = std::int64_t;\n  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n\
+    \n\n#line 2 \"src/cpp-template/header/int-alias.hpp\"\n\n#include <cstdint>\n\n\
+    namespace luz {\n\n  using i32  = std::int32_t;\n  using i64  = std::int64_t;\n\
+    \  using i128 = __int128_t;\n\n  using u32  = std::uint32_t;\n  using u64  = std::uint64_t;\n\
+    \  using u128 = __uint128_t;\n\n} // namespace luz\n#line 2 \"src/cpp-template/header/rep.hpp\"\
+    \n\n#line 2 \"src/cpp-template/header/size-alias.hpp\"\n\n#include <cstddef>\n\
+    \nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using usize = std::size_t;\n\
     \n} // namespace luz\n#line 4 \"src/cpp-template/header/rep.hpp\"\n\n#include\
     \ <algorithm>\n\nnamespace luz {\n\n  struct rep {\n    struct itr {\n      usize\
     \ i;\n      constexpr itr(const usize i) noexcept: i(i) {}\n      void operator++()\
@@ -50,19 +55,19 @@ data:
     \          l(std::min(f, l) - 1) {}\n    constexpr auto begin() const noexcept\
     \ {\n      return f;\n    }\n    constexpr auto end() const noexcept {\n     \
     \ return l;\n    }\n  };\n\n} // namespace luz\n#line 2 \"src/utility/bit/bit-width.hpp\"\
-    \n\n#line 2 \"src/utility/bit/popcount.hpp\"\n\n#line 4 \"src/utility/bit/popcount.hpp\"\
+    \n\n#line 2 \"src/utility/bit/popcount.hpp\"\n\n#line 5 \"src/utility/bit/popcount.hpp\"\
     \n\n#include <cassert>\n\nnamespace luz {\n\n  usize popcount(u64 x) {\n    assert(__cplusplus\
     \ <= 201703L);\n\n#ifdef __GNUC__\n    return __builtin_popcountll(x);\n#endif\n\
     \n    x -= (x >> 1) & 0x5555555555555555;\n    x = (x & 0x3333333333333333) +\
     \ ((x >> 2) & 0x3333333333333333);\n    x += (x >> 4) & 0x0f0f0f0f0f0f0f0f;\n\
     \    return x * 0x0101010101010101 >> 56 & 0x7f;\n  }\n\n} // namespace luz\n\
-    #line 4 \"src/utility/bit/bit-width.hpp\"\n\n#line 6 \"src/utility/bit/bit-width.hpp\"\
+    #line 6 \"src/utility/bit/bit-width.hpp\"\n\n#line 8 \"src/utility/bit/bit-width.hpp\"\
     \n\nnamespace luz {\n\n  usize bit_width(u64 x) {\n    assert(__cplusplus <= 201703L);\n\
     \n    if (x == 0) {\n      return 0;\n    }\n\n#ifdef __GNUC__\n    return 64\
     \ - __builtin_clzll(x);\n#endif\n\n    x |= x >> 1;\n    x |= x >> 2;\n    x |=\
     \ x >> 4;\n    x |= x >> 8;\n    x |= x >> 16;\n    x |= x >> 32;\n    return\
-    \ popcount(x);\n  }\n\n} // namespace luz\n#line 6 \"src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp\"\
-    \n\n#line 8 \"src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp\"\
+    \ popcount(x);\n  }\n\n} // namespace luz\n#line 7 \"src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp\"\
+    \n\n#line 9 \"src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp\"\
     \n#include <utility>\n#include <vector>\n\nnamespace luz {\n\n  template < class\
     \ G >\n  class OnlineJumpOnFunctionalGraphQuery {\n    using graph     = G;\n\
     \    using cost_type = typename graph::cost_type;\n\n    usize g_size;\n    graph\
@@ -106,12 +111,12 @@ data:
     \ -= (g_size - 1);\n\n      const auto &loop = loops[loop_id[v]];\n      k +=\
     \ loop_pos[v];\n      k %= loop_size[v];\n      return loop[k];\n    }\n  };\n\
     \n} // namespace luz\n"
-  code: "#pragma once\n\n#include \"src/cpp-template/header/rep.hpp\"\n#include \"\
-    src/cpp-template/header/type-alias.hpp\"\n#include \"src/utility/bit/bit-width.hpp\"\
-    \n\n#include <cassert>\n#include <utility>\n#include <vector>\n\nnamespace luz\
-    \ {\n\n  template < class G >\n  class OnlineJumpOnFunctionalGraphQuery {\n  \
-    \  using graph     = G;\n    using cost_type = typename graph::cost_type;\n\n\
-    \    usize g_size;\n    graph g;\n\n    usize LOG;\n    std::vector< std::vector<\
+  code: "#pragma once\n\n#include \"src/cpp-template/header/int-alias.hpp\"\n#include\
+    \ \"src/cpp-template/header/rep.hpp\"\n#include \"src/cpp-template/header/size-alias.hpp\"\
+    \n#include \"src/utility/bit/bit-width.hpp\"\n\n#include <cassert>\n#include <utility>\n\
+    #include <vector>\n\nnamespace luz {\n\n  template < class G >\n  class OnlineJumpOnFunctionalGraphQuery\
+    \ {\n    using graph     = G;\n    using cost_type = typename graph::cost_type;\n\
+    \n    usize g_size;\n    graph g;\n\n    usize LOG;\n    std::vector< std::vector<\
     \ usize > > doubling_table;\n\n    std::vector< usize > loop_id, loop_size, loop_pos;\n\
     \    std::vector< std::vector< usize > > loops;\n\n    void check_functional_graph()\
     \ const {\n      for (usize v: rep(0, g_size)) {\n        assert(g[v].size() ==\
@@ -152,15 +157,16 @@ data:
     \ loop_pos[v];\n      k %= loop_size[v];\n      return loop[k];\n    }\n  };\n\
     \n} // namespace luz\n"
   dependsOn:
+  - src/cpp-template/header/int-alias.hpp
   - src/cpp-template/header/rep.hpp
-  - src/cpp-template/header/type-alias.hpp
+  - src/cpp-template/header/size-alias.hpp
   - src/utility/bit/bit-width.hpp
   - src/utility/bit/popcount.hpp
   isVerificationFile: false
   path: src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp
   requiredBy: []
-  timestamp: '2023-05-28 01:36:49+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-07-30 00:54:52+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - unit-test/graph/online-query-jump-on-functional-graph.test.cpp
   - test/atcoder/abc258_e/online-algorithm.test.cpp

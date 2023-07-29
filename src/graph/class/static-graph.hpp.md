@@ -1,12 +1,12 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/cpp-template/header/rep.hpp
     title: "rep \u69CB\u9020\u4F53"
-  - icon: ':heavy_check_mark:'
-    path: src/cpp-template/header/type-alias.hpp
-    title: Type alias
+  - icon: ':question:'
+    path: src/cpp-template/header/size-alias.hpp
+    title: size alias
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -18,44 +18,42 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/grl_5_c/grl_5_c.test.cpp
     title: test/aoj/grl_5_c/grl_5_c.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/atcoder/abc258_e/offline-algorithm.test.cpp
     title: test/atcoder/abc258_e/offline-algorithm.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/atcoder/abc258_e/online-algorithm.test.cpp
     title: test/atcoder/abc258_e/online-algorithm.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/atcoder/abc291_e.test.cpp
     title: test/atcoder/abc291_e.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/jump_on_tree.test.cpp
     title: test/library-checker/jump_on_tree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/scc.test.cpp
     title: test/library-checker/scc.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
     title: unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: unit-test/graph/online-query-jump-on-functional-graph.test.cpp
     title: unit-test/graph/online-query-jump-on-functional-graph.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/graph/class/static-graph.hpp\"\n\n#line 2 \"src/cpp-template/header/rep.hpp\"\
-    \n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\n\n#include <cstddef>\n\
-    #include <cstdint>\n\nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using\
-    \ usize = std::size_t;\n\n  using i32 = std::int32_t;\n  using i64 = std::int64_t;\n\
-    \  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n\n} // namespace\
-    \ luz\n#line 4 \"src/cpp-template/header/rep.hpp\"\n\n#include <algorithm>\n\n\
-    namespace luz {\n\n  struct rep {\n    struct itr {\n      usize i;\n      constexpr\
-    \ itr(const usize i) noexcept: i(i) {}\n      void operator++() noexcept {\n \
-    \       ++i;\n      }\n      constexpr usize operator*() const noexcept {\n  \
-    \      return i;\n      }\n      constexpr bool operator!=(const itr x) const\
-    \ noexcept {\n        return i != x.i;\n      }\n    };\n    const itr f, l;\n\
-    \    constexpr rep(const usize f, const usize l) noexcept\n        : f(std::min(f,\
+    \n\n#line 2 \"src/cpp-template/header/size-alias.hpp\"\n\n#include <cstddef>\n\
+    \nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using usize = std::size_t;\n\
+    \n} // namespace luz\n#line 4 \"src/cpp-template/header/rep.hpp\"\n\n#include\
+    \ <algorithm>\n\nnamespace luz {\n\n  struct rep {\n    struct itr {\n      usize\
+    \ i;\n      constexpr itr(const usize i) noexcept: i(i) {}\n      void operator++()\
+    \ noexcept {\n        ++i;\n      }\n      constexpr usize operator*() const noexcept\
+    \ {\n        return i;\n      }\n      constexpr bool operator!=(const itr x)\
+    \ const noexcept {\n        return i != x.i;\n      }\n    };\n    const itr f,\
+    \ l;\n    constexpr rep(const usize f, const usize l) noexcept\n        : f(std::min(f,\
     \ l)),\n          l(l) {}\n    constexpr auto begin() const noexcept {\n     \
     \ return f;\n    }\n    constexpr auto end() const noexcept {\n      return l;\n\
     \    }\n  };\n\n  struct rrep {\n    struct itr {\n      usize i;\n      constexpr\
@@ -105,7 +103,7 @@ data:
     \ + outdegrees[v + 1],\n                                  edges.cbegin() + outdegrees[v]);\n\
     \    }\n  };\n\n} // namespace luz\n"
   code: "#pragma once\n\n#include \"src/cpp-template/header/rep.hpp\"\n#include \"\
-    src/cpp-template/header/type-alias.hpp\"\n\n#include <algorithm>\n#include <cassert>\n\
+    src/cpp-template/header/size-alias.hpp\"\n\n#include <algorithm>\n#include <cassert>\n\
     #include <vector>\n\nnamespace luz::internal {\n\n  template < typename Iterator\
     \ >\n  class OutgoingEdges {\n    Iterator f, l;\n\n   public:\n    OutgoingEdges(Iterator\
     \ f, Iterator l): f(f), l(l) {}\n\n    Iterator begin() const {\n      return\
@@ -144,12 +142,12 @@ data:
     \    }\n  };\n\n} // namespace luz\n"
   dependsOn:
   - src/cpp-template/header/rep.hpp
-  - src/cpp-template/header/type-alias.hpp
+  - src/cpp-template/header/size-alias.hpp
   isVerificationFile: false
   path: src/graph/class/static-graph.hpp
   requiredBy: []
-  timestamp: '2023-05-28 01:36:49+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-07-30 00:54:52+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
   - unit-test/graph/online-query-jump-on-functional-graph.test.cpp

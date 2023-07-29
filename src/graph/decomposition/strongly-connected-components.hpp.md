@@ -1,42 +1,38 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: src/cpp-template/header/change-minmax.hpp
-    title: chmin / chmax
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/change-min.hpp
+    title: chmin
+  - icon: ':question:'
     path: src/cpp-template/header/rep.hpp
     title: "rep \u69CB\u9020\u4F53"
-  - icon: ':heavy_check_mark:'
-    path: src/cpp-template/header/type-alias.hpp
-    title: Type alias
+  - icon: ':question:'
+    path: src/cpp-template/header/size-alias.hpp
+    title: size alias
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/scc.test.cpp
     title: test/library-checker/scc.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/graph/decomposition/strongly-connected-components.hpp\"\
-    \n\n#line 2 \"src/cpp-template/header/change-minmax.hpp\"\n\nnamespace luz {\n\
-    \n  template < typename T1, typename T2 >\n  inline bool chmax(T1 &a, T2 b) {\n\
-    \    return a < b and (a = b, true);\n  }\n\n  template < typename T1, typename\
-    \ T2 >\n  inline bool chmin(T1 &a, T2 b) {\n    return a > b and (a = b, true);\n\
-    \  }\n\n} // namespace luz\n#line 2 \"src/cpp-template/header/rep.hpp\"\n\n#line\
-    \ 2 \"src/cpp-template/header/type-alias.hpp\"\n\n#include <cstddef>\n#include\
-    \ <cstdint>\n\nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using usize\
-    \ = std::size_t;\n\n  using i32 = std::int32_t;\n  using i64 = std::int64_t;\n\
-    \  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n\n} // namespace\
-    \ luz\n#line 4 \"src/cpp-template/header/rep.hpp\"\n\n#include <algorithm>\n\n\
-    namespace luz {\n\n  struct rep {\n    struct itr {\n      usize i;\n      constexpr\
-    \ itr(const usize i) noexcept: i(i) {}\n      void operator++() noexcept {\n \
-    \       ++i;\n      }\n      constexpr usize operator*() const noexcept {\n  \
-    \      return i;\n      }\n      constexpr bool operator!=(const itr x) const\
-    \ noexcept {\n        return i != x.i;\n      }\n    };\n    const itr f, l;\n\
-    \    constexpr rep(const usize f, const usize l) noexcept\n        : f(std::min(f,\
+    \n\n#line 2 \"src/cpp-template/header/change-min.hpp\"\n\nnamespace luz {\n\n\
+    \  template < typename T1, typename T2 >\n  inline bool chmin(T1 &a, T2 b) {\n\
+    \    return a > b and (a = b, true);\n  }\n\n} // namespace luz\n#line 2 \"src/cpp-template/header/rep.hpp\"\
+    \n\n#line 2 \"src/cpp-template/header/size-alias.hpp\"\n\n#include <cstddef>\n\
+    \nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using usize = std::size_t;\n\
+    \n} // namespace luz\n#line 4 \"src/cpp-template/header/rep.hpp\"\n\n#include\
+    \ <algorithm>\n\nnamespace luz {\n\n  struct rep {\n    struct itr {\n      usize\
+    \ i;\n      constexpr itr(const usize i) noexcept: i(i) {}\n      void operator++()\
+    \ noexcept {\n        ++i;\n      }\n      constexpr usize operator*() const noexcept\
+    \ {\n        return i;\n      }\n      constexpr bool operator!=(const itr x)\
+    \ const noexcept {\n        return i != x.i;\n      }\n    };\n    const itr f,\
+    \ l;\n    constexpr rep(const usize f, const usize l) noexcept\n        : f(std::min(f,\
     \ l)),\n          l(l) {}\n    constexpr auto begin() const noexcept {\n     \
     \ return f;\n    }\n    constexpr auto end() const noexcept {\n      return l;\n\
     \    }\n  };\n\n  struct rrep {\n    struct itr {\n      usize i;\n      constexpr\
@@ -72,8 +68,8 @@ data:
     \      }\n      for (usize i: rep(0, g_size)) {\n        groups[group_id[i]].emplace_back(i);\n\
     \      }\n      return groups;\n    }\n\n    std::vector< usize > group_ids()\
     \ const {\n      return group_id;\n    }\n  };\n\n} // namespace luz::decomposition\n"
-  code: "#pragma once\n\n#include \"src/cpp-template/header/change-minmax.hpp\"\n\
-    #include \"src/cpp-template/header/rep.hpp\"\n#include \"src/cpp-template/header/type-alias.hpp\"\
+  code: "#pragma once\n\n#include \"src/cpp-template/header/change-min.hpp\"\n#include\
+    \ \"src/cpp-template/header/rep.hpp\"\n#include \"src/cpp-template/header/size-alias.hpp\"\
     \n\n#include <vector>\n\nnamespace luz::decomposition {\n\n  template < class\
     \ G >\n  class StronglyConnectedComponents {\n    using graph     = G;\n    using\
     \ cost_type = typename graph::cost_type;\n\n    graph g;\n    usize g_size;\n\
@@ -99,14 +95,14 @@ data:
     \      }\n      return groups;\n    }\n\n    std::vector< usize > group_ids()\
     \ const {\n      return group_id;\n    }\n  };\n\n} // namespace luz::decomposition\n"
   dependsOn:
-  - src/cpp-template/header/change-minmax.hpp
+  - src/cpp-template/header/change-min.hpp
   - src/cpp-template/header/rep.hpp
-  - src/cpp-template/header/type-alias.hpp
+  - src/cpp-template/header/size-alias.hpp
   isVerificationFile: false
   path: src/graph/decomposition/strongly-connected-components.hpp
   requiredBy: []
-  timestamp: '2023-05-28 01:36:49+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-07-30 00:54:52+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/library-checker/scc.test.cpp
 documentation_of: src/graph/decomposition/strongly-connected-components.hpp

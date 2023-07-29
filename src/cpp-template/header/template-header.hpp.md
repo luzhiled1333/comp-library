@@ -1,15 +1,21 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: src/cpp-template/header/change-minmax.hpp
-    title: chmin / chmax
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/change-max.hpp
+    title: chmax
+  - icon: ':question:'
+    path: src/cpp-template/header/change-min.hpp
+    title: chmin
+  - icon: ':question:'
     path: src/cpp-template/header/fast-ios.hpp
     title: Fast I/O
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/input.hpp
     title: input
+  - icon: ':question:'
+    path: src/cpp-template/header/int-alias.hpp
+    title: int alias
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/io-set.hpp
     title: specify output precision
@@ -19,13 +25,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/pair-ios.hpp
     title: pair I/O
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/cpp-template/header/rep.hpp
     title: "rep \u69CB\u9020\u4F53"
-  - icon: ':heavy_check_mark:'
-    path: src/cpp-template/header/type-alias.hpp
-    title: Type alias
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/size-alias.hpp
+    title: size alias
+  - icon: ':question:'
     path: src/cpp-template/header/vector-ios.hpp
     title: vector I/O
   _extendedRequiredBy:
@@ -41,23 +47,26 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"src/cpp-template/header/change-minmax.hpp\"\n\nnamespace\
-    \ luz {\n\n  template < typename T1, typename T2 >\n  inline bool chmax(T1 &a,\
-    \ T2 b) {\n    return a < b and (a = b, true);\n  }\n\n  template < typename T1,\
-    \ typename T2 >\n  inline bool chmin(T1 &a, T2 b) {\n    return a > b and (a =\
-    \ b, true);\n  }\n\n} // namespace luz\n#line 2 \"src/cpp-template/header/fast-ios.hpp\"\
+  bundledCode: "#line 2 \"src/cpp-template/header/change-max.hpp\"\n\nnamespace luz\
+    \ {\n\n  template < typename T1, typename T2 >\n  inline bool chmax(T1 &a, T2\
+    \ b) {\n    return a < b and (a = b, true);\n  }\n\n} // namespace luz\n#line\
+    \ 2 \"src/cpp-template/header/change-min.hpp\"\n\nnamespace luz {\n\n  template\
+    \ < typename T1, typename T2 >\n  inline bool chmin(T1 &a, T2 b) {\n    return\
+    \ a > b and (a = b, true);\n  }\n\n} // namespace luz\n#line 2 \"src/cpp-template/header/fast-ios.hpp\"\
     \n\n#include <iostream>\n\nnamespace luz {\n\n  void set_fast_ios() {\n    std::ios::sync_with_stdio(false);\n\
     \    std::cin.tie(nullptr);\n  }\n\n} // namespace luz\n#line 2 \"src/cpp-template/header/input.hpp\"\
-    \n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\n\n#include <cstddef>\n\
-    #include <cstdint>\n\nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using\
-    \ usize = std::size_t;\n\n  using i32 = std::int32_t;\n  using i64 = std::int64_t;\n\
-    \  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n\n} // namespace\
-    \ luz\n#line 4 \"src/cpp-template/header/input.hpp\"\n\n#line 6 \"src/cpp-template/header/input.hpp\"\
-    \n\nnamespace luz {\n\n  template < typename T = i64 >\n  T input() {\n    T tmp;\n\
-    \    std::cin >> tmp;\n    return tmp;\n  }\n\n} // namespace luz\n#line 2 \"\
-    src/cpp-template/header/io-set.hpp\"\n\n#line 4 \"src/cpp-template/header/io-set.hpp\"\
-    \n\n#include <iomanip>\n#line 7 \"src/cpp-template/header/io-set.hpp\"\n\nnamespace\
-    \ luz {\n\n  void io_set(usize precision) {\n    std::cout << std::fixed << std::setprecision(precision);\n\
+    \n\n#line 2 \"src/cpp-template/header/int-alias.hpp\"\n\n#include <cstdint>\n\n\
+    namespace luz {\n\n  using i32  = std::int32_t;\n  using i64  = std::int64_t;\n\
+    \  using i128 = __int128_t;\n\n  using u32  = std::uint32_t;\n  using u64  = std::uint64_t;\n\
+    \  using u128 = __uint128_t;\n\n} // namespace luz\n#line 4 \"src/cpp-template/header/input.hpp\"\
+    \n\n#line 6 \"src/cpp-template/header/input.hpp\"\n\nnamespace luz {\n\n  template\
+    \ < typename T = i64 >\n  T input() {\n    T tmp;\n    std::cin >> tmp;\n    return\
+    \ tmp;\n  }\n\n} // namespace luz\n#line 2 \"src/cpp-template/header/io-set.hpp\"\
+    \n\n#line 2 \"src/cpp-template/header/size-alias.hpp\"\n\n#include <cstddef>\n\
+    \nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using usize = std::size_t;\n\
+    \n} // namespace luz\n#line 4 \"src/cpp-template/header/io-set.hpp\"\n\n#include\
+    \ <iomanip>\n#line 7 \"src/cpp-template/header/io-set.hpp\"\n\nnamespace luz {\n\
+    \n  void io_set(usize precision) {\n    std::cout << std::fixed << std::setprecision(precision);\n\
     \    std::cerr << std::fixed << std::setprecision(precision);\n  }\n\n} // namespace\
     \ luz\n#line 2 \"src/cpp-template/header/make-vector.hpp\"\n\n#line 4 \"src/cpp-template/header/make-vector.hpp\"\
     \n\n#include <vector>\n\nnamespace luz {\n\n  template < typename T >\n  std::vector<\
@@ -96,13 +105,17 @@ data:
     \ vs.size())) {\n      os << vs[i] << (i + 1 != vs.size() ? \" \" : \"\");\n \
     \   }\n    return os;\n  }\n\n  template < typename T >\n  std::istream &operator>>(std::istream\
     \ &is, std::vector< T > &vs) {\n    for (T &v: vs) {\n      is >> v;\n    }\n\
-    \    return is;\n  }\n\n} // namespace luz\n#line 10 \"src/cpp-template/header/template-header.hpp\"\
+    \    return is;\n  }\n\n} // namespace luz\n#line 12 \"src/cpp-template/header/template-header.hpp\"\
     \n"
-  code: '#include "src/cpp-template/header/change-minmax.hpp"
+  code: '#include "src/cpp-template/header/change-max.hpp"
+
+    #include "src/cpp-template/header/change-min.hpp"
 
     #include "src/cpp-template/header/fast-ios.hpp"
 
     #include "src/cpp-template/header/input.hpp"
+
+    #include "src/cpp-template/header/int-alias.hpp"
 
     #include "src/cpp-template/header/io-set.hpp"
 
@@ -112,17 +125,19 @@ data:
 
     #include "src/cpp-template/header/rep.hpp"
 
-    #include "src/cpp-template/header/type-alias.hpp"
+    #include "src/cpp-template/header/size-alias.hpp"
 
     #include "src/cpp-template/header/vector-ios.hpp"
 
     '
   dependsOn:
-  - src/cpp-template/header/change-minmax.hpp
+  - src/cpp-template/header/change-max.hpp
+  - src/cpp-template/header/change-min.hpp
   - src/cpp-template/header/fast-ios.hpp
   - src/cpp-template/header/input.hpp
-  - src/cpp-template/header/type-alias.hpp
+  - src/cpp-template/header/int-alias.hpp
   - src/cpp-template/header/io-set.hpp
+  - src/cpp-template/header/size-alias.hpp
   - src/cpp-template/header/make-vector.hpp
   - src/cpp-template/header/pair-ios.hpp
   - src/cpp-template/header/rep.hpp
@@ -131,7 +146,7 @@ data:
   path: src/cpp-template/header/template-header.hpp
   requiredBy:
   - src/cpp-template/template.cpp
-  timestamp: '2022-08-22 18:26:45+09:00'
+  timestamp: '2023-07-30 00:54:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/itp1_1_a.test.cpp

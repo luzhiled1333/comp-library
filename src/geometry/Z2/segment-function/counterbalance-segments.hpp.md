@@ -1,22 +1,25 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/int-alias.hpp
+    title: int alias
+  - icon: ':question:'
     path: src/cpp-template/header/rep.hpp
     title: "rep \u69CB\u9020\u4F53"
-  - icon: ':heavy_check_mark:'
-    path: src/cpp-template/header/type-alias.hpp
-    title: Type alias
+  - icon: ':question:'
+    path: src/cpp-template/header/size-alias.hpp
+    title: size alias
   - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/class/line.hpp
     title: src/geometry/Z2/class/line.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/geometry/Z2/class/point.hpp
     title: "\u683C\u5B50\u70B9 (\u6574\u6570\u5E7E\u4F55)"
   - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/class/segment.hpp
     title: src/geometry/Z2/class/segment.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/geometry/Z2/class/vector.hpp
     title: "\u30D9\u30AF\u30C8\u30EB (\u6574\u6570\u5E7E\u4F55)"
   - icon: ':heavy_check_mark:'
@@ -37,16 +40,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/operation/inner-product.hpp
     title: src/geometry/Z2/operation/inner-product.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/geometry/Z2/operation/square-norm.hpp
     title: "$\\|v\\|^2 (v \\in {\\mathbb{Z}}^2)$ (norm\u306E2\u4E57)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/geometry/Z2/operation/square.hpp
     title: $x^2 (x \in \mathbb{Z})$
   - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/utility/next-idx.hpp
     title: src/geometry/Z2/utility/next-idx.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/sequence/compression.hpp
     title: "\u5EA7\u6A19\u5727\u7E2E"
   _extendedRequiredBy: []
@@ -60,10 +63,12 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"src/geometry/Z2/segment-function/counterbalance-segments.hpp\"\
-    \n\n#line 2 \"src/cpp-template/header/rep.hpp\"\n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\
-    \n\n#include <cstddef>\n#include <cstdint>\n\nnamespace luz {\n\n  using isize\
-    \ = std::ptrdiff_t;\n  using usize = std::size_t;\n\n  using i32 = std::int32_t;\n\
-    \  using i64 = std::int64_t;\n  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n\
+    \n\n#line 2 \"src/cpp-template/header/int-alias.hpp\"\n\n#include <cstdint>\n\n\
+    namespace luz {\n\n  using i32  = std::int32_t;\n  using i64  = std::int64_t;\n\
+    \  using i128 = __int128_t;\n\n  using u32  = std::uint32_t;\n  using u64  = std::uint64_t;\n\
+    \  using u128 = __uint128_t;\n\n} // namespace luz\n#line 2 \"src/cpp-template/header/rep.hpp\"\
+    \n\n#line 2 \"src/cpp-template/header/size-alias.hpp\"\n\n#include <cstddef>\n\
+    \nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using usize = std::size_t;\n\
     \n} // namespace luz\n#line 4 \"src/cpp-template/header/rep.hpp\"\n\n#include\
     \ <algorithm>\n\nnamespace luz {\n\n  struct rep {\n    struct itr {\n      usize\
     \ i;\n      constexpr itr(const usize i) noexcept: i(i) {}\n      void operator++()\
@@ -163,19 +168,19 @@ data:
     \n\n#line 5 \"src/sequence/compression.hpp\"\n\n#line 8 \"src/sequence/compression.hpp\"\
     \n#include <functional>\n#line 10 \"src/sequence/compression.hpp\"\n\nnamespace\
     \ luz {\n\n  template < class T, class Compare = std::less< T > >\n  class Compressor\
-    \ {\n    std::vector< T > vs_;\n    std::vector< T > zip_;\n    std::vector< usize\
-    \ > ziped_vs_;\n\n   public:\n    explicit Compressor(std::vector< T > vs)\n \
-    \       : vs_(vs),\n          zip_(vs),\n          ziped_vs_(vs.size()) {\n  \
-    \    std::sort(zip_.begin(), zip_.end(), Compare());\n      zip_.erase(std::unique(zip_.begin(),\
-    \ zip_.end()), zip_.end());\n      for (usize i: rep(0, vs.size())) {\n      \
-    \  ziped_vs_[i] = compress(vs[i]);\n      }\n    }\n\n    std::vector< usize >\
-    \ compressed_vector() const {\n      return ziped_vs_;\n    }\n\n    usize compress(T\
-    \ v) const {\n      auto iter = std::lower_bound(zip_.begin(), zip_.end(), v);\n\
-    \      assert(*iter == v);\n      return iter - zip_.begin();\n    }\n\n    T\
-    \ expand(usize i) const {\n      assert(i < zip_.size());\n      return zip_[i];\n\
-    \    }\n  };\n\n} // namespace luz\n#line 11 \"src/geometry/Z2/segment-function/counterbalance-segments.hpp\"\
-    \n\n#include <cmath>\n#line 14 \"src/geometry/Z2/segment-function/counterbalance-segments.hpp\"\
-    \n#include <utility>\n#line 16 \"src/geometry/Z2/segment-function/counterbalance-segments.hpp\"\
+    \ {\n    std::vector< T > vs;\n    std::vector< T > zip;\n    std::vector< usize\
+    \ > ziped_vs;\n\n   public:\n    explicit Compressor(std::vector< T > vs)\n  \
+    \      : vs(vs),\n          zip(vs),\n          ziped_vs(vs.size()) {\n      std::sort(zip.begin(),\
+    \ zip.end(), Compare());\n      zip.erase(std::unique(zip.begin(), zip.end()),\
+    \ zip.end());\n      for (usize i: rep(0, vs.size())) {\n        ziped_vs[i] =\
+    \ compress(vs[i]);\n      }\n    }\n\n    std::vector< usize > compressed_vector()\
+    \ const {\n      return ziped_vs;\n    }\n\n    usize compress(T v) const {\n\
+    \      auto iter = std::lower_bound(zip.begin(), zip.end(), v);\n      assert(*iter\
+    \ == v);\n      return iter - zip.begin();\n    }\n\n    T expand(usize i) const\
+    \ {\n      assert(i < zip.size());\n      return zip[i];\n    }\n  };\n\n} //\
+    \ namespace luz\n#line 12 \"src/geometry/Z2/segment-function/counterbalance-segments.hpp\"\
+    \n\n#include <cmath>\n#line 15 \"src/geometry/Z2/segment-function/counterbalance-segments.hpp\"\
+    \n#include <utility>\n#line 17 \"src/geometry/Z2/segment-function/counterbalance-segments.hpp\"\
     \n\nnamespace luz::Z2 {\n\n  template < typename Z >\n  Segments< Z > counterbalance_segments(\n\
     \      const Segments< Z > &segments) {\n    usize n = segments.size();\n\n  \
     \  std::vector< std::tuple< Z, Z, Z > > normalized_lines(n);\n    for (usize i:\
@@ -204,24 +209,25 @@ data:
     \ a, b)) != 1) {\n            seg = Segment(c, b);\n            result.pop_back();\n\
     \          }\n        }\n\n        result.emplace_back(seg);\n      }\n    }\n\
     \n    return result;\n  }\n} // namespace luz::Z2\n"
-  code: "#pragma once\n\n#include \"src/cpp-template/header/rep.hpp\"\n#include \"\
-    src/cpp-template/header/type-alias.hpp\"\n#include \"src/geometry/Z2/class/segment.hpp\"\
-    \n#include \"src/geometry/Z2/compare/compare-xy.hpp\"\n#include \"src/geometry/Z2/normalize/line-normalize.hpp\"\
-    \n#include \"src/geometry/Z2/operation/ccw.hpp\"\n#include \"src/geometry/Z2/utility/next-idx.hpp\"\
-    \n#include \"src/sequence/compression.hpp\"\n\n#include <cmath>\n#include <tuple>\n\
-    #include <utility>\n#include <vector>\n\nnamespace luz::Z2 {\n\n  template < typename\
-    \ Z >\n  Segments< Z > counterbalance_segments(\n      const Segments< Z > &segments)\
-    \ {\n    usize n = segments.size();\n\n    std::vector< std::tuple< Z, Z, Z >\
-    \ > normalized_lines(n);\n    for (usize i: rep(0, n)) {\n      normalized_lines[i]\
-    \ =\n          normalize_l(Line(segments[i].p0(), segments[i].p1()));\n    }\n\
-    \n    Compressor compressor(normalized_lines);\n    std::vector< usize > line_idxs\
-    \ = compressor.compressed_vector();\n    usize line_count =\n        (*std::max_element(line_idxs.begin(),\
-    \ line_idxs.end())) + 1;\n\n    using event_type = std::pair< Point< Z >, i32\
-    \ >;\n    std::vector< std::vector< event_type > > events_each_line(\n       \
-    \ line_count);\n    for (usize i: rep(0, n)) {\n      usize l_idx = line_idxs[i];\n\
-    \      events_each_line[l_idx].emplace_back(segments[i].p0(), +1);\n      events_each_line[l_idx].emplace_back(segments[i].p1(),\
-    \ -1);\n    }\n\n    auto cmp = [](const event_type &e0, const event_type &e1)\
-    \ {\n      CompareXY< Z > comp;\n      if (e0.first != e1.first) return comp(e0.first,\
+  code: "#pragma once\n\n#include \"src/cpp-template/header/int-alias.hpp\"\n#include\
+    \ \"src/cpp-template/header/rep.hpp\"\n#include \"src/cpp-template/header/size-alias.hpp\"\
+    \n#include \"src/geometry/Z2/class/segment.hpp\"\n#include \"src/geometry/Z2/compare/compare-xy.hpp\"\
+    \n#include \"src/geometry/Z2/normalize/line-normalize.hpp\"\n#include \"src/geometry/Z2/operation/ccw.hpp\"\
+    \n#include \"src/geometry/Z2/utility/next-idx.hpp\"\n#include \"src/sequence/compression.hpp\"\
+    \n\n#include <cmath>\n#include <tuple>\n#include <utility>\n#include <vector>\n\
+    \nnamespace luz::Z2 {\n\n  template < typename Z >\n  Segments< Z > counterbalance_segments(\n\
+    \      const Segments< Z > &segments) {\n    usize n = segments.size();\n\n  \
+    \  std::vector< std::tuple< Z, Z, Z > > normalized_lines(n);\n    for (usize i:\
+    \ rep(0, n)) {\n      normalized_lines[i] =\n          normalize_l(Line(segments[i].p0(),\
+    \ segments[i].p1()));\n    }\n\n    Compressor compressor(normalized_lines);\n\
+    \    std::vector< usize > line_idxs = compressor.compressed_vector();\n    usize\
+    \ line_count =\n        (*std::max_element(line_idxs.begin(), line_idxs.end()))\
+    \ + 1;\n\n    using event_type = std::pair< Point< Z >, i32 >;\n    std::vector<\
+    \ std::vector< event_type > > events_each_line(\n        line_count);\n    for\
+    \ (usize i: rep(0, n)) {\n      usize l_idx = line_idxs[i];\n      events_each_line[l_idx].emplace_back(segments[i].p0(),\
+    \ +1);\n      events_each_line[l_idx].emplace_back(segments[i].p1(), -1);\n  \
+    \  }\n\n    auto cmp = [](const event_type &e0, const event_type &e1) {\n    \
+    \  CompareXY< Z > comp;\n      if (e0.first != e1.first) return comp(e0.first,\
     \ e1.first);\n      return e0.second < e1.second;\n    };\n\n    Segments< Z >\
     \ result;\n    for (auto &events: events_each_line) {\n      std::sort(events.begin(),\
     \ events.end(), cmp);\n\n      for (usize i: rep(1, events.size())) {\n      \
@@ -238,8 +244,9 @@ data:
     \          }\n        }\n\n        result.emplace_back(seg);\n      }\n    }\n\
     \n    return result;\n  }\n} // namespace luz::Z2\n"
   dependsOn:
+  - src/cpp-template/header/int-alias.hpp
   - src/cpp-template/header/rep.hpp
-  - src/cpp-template/header/type-alias.hpp
+  - src/cpp-template/header/size-alias.hpp
   - src/geometry/Z2/class/segment.hpp
   - src/geometry/Z2/class/point.hpp
   - src/geometry/Z2/class/vector.hpp
@@ -257,7 +264,7 @@ data:
   isVerificationFile: false
   path: src/geometry/Z2/segment-function/counterbalance-segments.hpp
   requiredBy: []
-  timestamp: '2022-11-18 16:59:11+09:00'
+  timestamp: '2023-07-30 00:54:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/4011.test.cpp

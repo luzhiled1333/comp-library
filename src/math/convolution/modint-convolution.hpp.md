@@ -1,41 +1,46 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/int-alias.hpp
+    title: int alias
+  - icon: ':question:'
     path: src/cpp-template/header/rep.hpp
     title: "rep \u69CB\u9020\u4F53"
-  - icon: ':heavy_check_mark:'
-    path: src/cpp-template/header/type-alias.hpp
-    title: Type alias
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/size-alias.hpp
+    title: size alias
+  - icon: ':question:'
     path: src/utility/bit/bit-width.hpp
     title: "\u5024\u3092\u8868\u73FE\u3059\u308B\u305F\u3081\u306B\u5FC5\u8981\u306A\
       \u6700\u5C0F\u306Ebit\u5E45 (bit_width)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/utility/bit/popcount.hpp
     title: "\u7ACB\u3063\u3066\u3044\u308B bit \u306E\u6570 (population count, popcount)"
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/sequence/wildcard-pattern-matching.hpp
     title: "\u30EF\u30A4\u30EB\u30C9\u30AB\u30FC\u30C9\u30D1\u30BF\u30FC\u30F3\u30DE\
       \u30C3\u30C1\u30F3\u30B0"
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/atcoder/abc307_h/main.test.cpp
     title: test/atcoder/abc307_h/main.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/modint_convolution.test.cpp
     title: test/library-checker/modint_convolution.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/math/convolution/modint-convolution.hpp\"\n\n#line 2\
-    \ \"src/cpp-template/header/rep.hpp\"\n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\
-    \n\n#include <cstddef>\n#include <cstdint>\n\nnamespace luz {\n\n  using isize\
-    \ = std::ptrdiff_t;\n  using usize = std::size_t;\n\n  using i32 = std::int32_t;\n\
-    \  using i64 = std::int64_t;\n  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n\
+    \ \"src/cpp-template/header/int-alias.hpp\"\n\n#include <cstdint>\n\nnamespace\
+    \ luz {\n\n  using i32  = std::int32_t;\n  using i64  = std::int64_t;\n  using\
+    \ i128 = __int128_t;\n\n  using u32  = std::uint32_t;\n  using u64  = std::uint64_t;\n\
+    \  using u128 = __uint128_t;\n\n} // namespace luz\n#line 2 \"src/cpp-template/header/rep.hpp\"\
+    \n\n#line 2 \"src/cpp-template/header/size-alias.hpp\"\n\n#include <cstddef>\n\
+    \nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using usize = std::size_t;\n\
     \n} // namespace luz\n#line 4 \"src/cpp-template/header/rep.hpp\"\n\n#include\
     \ <algorithm>\n\nnamespace luz {\n\n  struct rep {\n    struct itr {\n      usize\
     \ i;\n      constexpr itr(const usize i) noexcept: i(i) {}\n      void operator++()\
@@ -54,19 +59,19 @@ data:
     \          l(std::min(f, l) - 1) {}\n    constexpr auto begin() const noexcept\
     \ {\n      return f;\n    }\n    constexpr auto end() const noexcept {\n     \
     \ return l;\n    }\n  };\n\n} // namespace luz\n#line 2 \"src/utility/bit/bit-width.hpp\"\
-    \n\n#line 2 \"src/utility/bit/popcount.hpp\"\n\n#line 4 \"src/utility/bit/popcount.hpp\"\
+    \n\n#line 2 \"src/utility/bit/popcount.hpp\"\n\n#line 5 \"src/utility/bit/popcount.hpp\"\
     \n\n#include <cassert>\n\nnamespace luz {\n\n  usize popcount(u64 x) {\n    assert(__cplusplus\
     \ <= 201703L);\n\n#ifdef __GNUC__\n    return __builtin_popcountll(x);\n#endif\n\
     \n    x -= (x >> 1) & 0x5555555555555555;\n    x = (x & 0x3333333333333333) +\
     \ ((x >> 2) & 0x3333333333333333);\n    x += (x >> 4) & 0x0f0f0f0f0f0f0f0f;\n\
     \    return x * 0x0101010101010101 >> 56 & 0x7f;\n  }\n\n} // namespace luz\n\
-    #line 4 \"src/utility/bit/bit-width.hpp\"\n\n#line 6 \"src/utility/bit/bit-width.hpp\"\
+    #line 6 \"src/utility/bit/bit-width.hpp\"\n\n#line 8 \"src/utility/bit/bit-width.hpp\"\
     \n\nnamespace luz {\n\n  usize bit_width(u64 x) {\n    assert(__cplusplus <= 201703L);\n\
     \n    if (x == 0) {\n      return 0;\n    }\n\n#ifdef __GNUC__\n    return 64\
     \ - __builtin_clzll(x);\n#endif\n\n    x |= x >> 1;\n    x |= x >> 2;\n    x |=\
     \ x >> 4;\n    x |= x >> 8;\n    x |= x >> 16;\n    x |= x >> 32;\n    return\
-    \ popcount(x);\n  }\n\n} // namespace luz\n#line 6 \"src/math/convolution/modint-convolution.hpp\"\
-    \n\n#line 8 \"src/math/convolution/modint-convolution.hpp\"\n#include <vector>\n\
+    \ popcount(x);\n  }\n\n} // namespace luz\n#line 7 \"src/math/convolution/modint-convolution.hpp\"\
+    \n\n#line 9 \"src/math/convolution/modint-convolution.hpp\"\n#include <vector>\n\
     \nnamespace luz::internal {\n\n  template < typename modint >\n  class ButterflyInfo\
     \ {\n   public:\n    ButterflyInfo() {\n      if (not roots.empty()) {\n     \
     \   return;\n      }\n\n      u32 mod = modint::get_mod();\n      assert(mod >=\
@@ -151,19 +156,19 @@ data:
     \    internal::butterfly(g);\n    modint s_inv = modint(1) / s;\n    for (usize\
     \ i: rep(0, s)) {\n      f[i] *= g[i] * s_inv;\n    }\n    internal::butterfly_inv(f);\n\
     \    f.resize(n + m - 1);\n    return f;\n  }\n\n} // namespace luz\n"
-  code: "#pragma once\n\n#include \"src/cpp-template/header/rep.hpp\"\n#include \"\
-    src/cpp-template/header/type-alias.hpp\"\n#include \"src/utility/bit/bit-width.hpp\"\
-    \n\n#include <cassert>\n#include <vector>\n\nnamespace luz::internal {\n\n  template\
-    \ < typename modint >\n  class ButterflyInfo {\n   public:\n    ButterflyInfo()\
-    \ {\n      if (not roots.empty()) {\n        return;\n      }\n\n      u32 mod\
-    \ = modint::get_mod();\n      assert(mod >= 3 && mod % 2 == 1);\n      u32 tmp\
-    \        = mod - 1;\n      usize max_base = 0;\n      while (tmp % 2 == 0) {\n\
-    \        tmp >>= 1;\n        max_base++;\n      }\n      modint root = 2;\n  \
-    \    while (root.pow((mod - 1) >> 1) == modint(1)) {\n        root += 1;\n   \
-    \   }\n      assert(root.pow(mod - 1) == modint(1));\n      assert(max_base >=\
-    \ 2);\n      roots.resize(max_base + 1);\n      iroots.resize(max_base + 1);\n\
-    \      rate3.resize(max_base + 1);\n      irate3.resize(max_base + 1);\n\n   \
-    \   roots[max_base]  = root.pow((mod - 1) >> max_base);\n      iroots[max_base]\
+  code: "#pragma once\n\n#include \"src/cpp-template/header/int-alias.hpp\"\n#include\
+    \ \"src/cpp-template/header/rep.hpp\"\n#include \"src/cpp-template/header/size-alias.hpp\"\
+    \n#include \"src/utility/bit/bit-width.hpp\"\n\n#include <cassert>\n#include <vector>\n\
+    \nnamespace luz::internal {\n\n  template < typename modint >\n  class ButterflyInfo\
+    \ {\n   public:\n    ButterflyInfo() {\n      if (not roots.empty()) {\n     \
+    \   return;\n      }\n\n      u32 mod = modint::get_mod();\n      assert(mod >=\
+    \ 3 && mod % 2 == 1);\n      u32 tmp        = mod - 1;\n      usize max_base =\
+    \ 0;\n      while (tmp % 2 == 0) {\n        tmp >>= 1;\n        max_base++;\n\
+    \      }\n      modint root = 2;\n      while (root.pow((mod - 1) >> 1) == modint(1))\
+    \ {\n        root += 1;\n      }\n      assert(root.pow(mod - 1) == modint(1));\n\
+    \      assert(max_base >= 2);\n      roots.resize(max_base + 1);\n      iroots.resize(max_base\
+    \ + 1);\n      rate3.resize(max_base + 1);\n      irate3.resize(max_base + 1);\n\
+    \n      roots[max_base]  = root.pow((mod - 1) >> max_base);\n      iroots[max_base]\
     \ = modint(1) / roots[max_base];\n      for (usize i: rrep(0, max_base)) {\n \
     \       roots[i]  = roots[i + 1] * roots[i + 1];\n        iroots[i] = iroots[i\
     \ + 1] * iroots[i + 1];\n      }\n      modint prod = 1, iprod = 1;\n      for\
@@ -239,16 +244,17 @@ data:
     \ i: rep(0, s)) {\n      f[i] *= g[i] * s_inv;\n    }\n    internal::butterfly_inv(f);\n\
     \    f.resize(n + m - 1);\n    return f;\n  }\n\n} // namespace luz\n"
   dependsOn:
+  - src/cpp-template/header/int-alias.hpp
   - src/cpp-template/header/rep.hpp
-  - src/cpp-template/header/type-alias.hpp
+  - src/cpp-template/header/size-alias.hpp
   - src/utility/bit/bit-width.hpp
   - src/utility/bit/popcount.hpp
   isVerificationFile: false
   path: src/math/convolution/modint-convolution.hpp
   requiredBy:
   - src/sequence/wildcard-pattern-matching.hpp
-  timestamp: '2023-05-19 13:40:14+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-07-30 00:54:52+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/atcoder/abc307_h/main.test.cpp
   - test/library-checker/modint_convolution.test.cpp

@@ -4,17 +4,20 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/input.hpp
     title: input
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/int-alias.hpp
+    title: int alias
+  - icon: ':question:'
     path: src/cpp-template/header/rep.hpp
     title: "rep \u69CB\u9020\u4F53"
-  - icon: ':heavy_check_mark:'
-    path: src/cpp-template/header/type-alias.hpp
-    title: Type alias
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/size-alias.hpp
+    title: size alias
+  - icon: ':question:'
     path: src/math/convolution/fast-walsh-hadamard-transform.hpp
     title: "\u9AD8\u901F\u30A6\u30A9\u30EB\u30B7\u30E5-\u30A2\u30C0\u30DE\u30FC\u30EB\
       \u5909\u63DB/\u9006\u5909\u63DB (Fast Walsh Hadamard Transform / Inverse Transform)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/math/modular-arithmetic/static-modint.hpp
     title: src/math/modular-arithmetic/static-modint.hpp
   _extendedRequiredBy: []
@@ -28,14 +31,15 @@ data:
     - https://atcoder.jp/contests/abc212/tasks/abc212_h
   bundledCode: "#line 1 \"test/atcoder/abc212_h.test.cpp\"\n// verification-helper:\
     \ PROBLEM https://atcoder.jp/contests/abc212/tasks/abc212_h\n\n#line 2 \"src/cpp-template/header/input.hpp\"\
-    \n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\n\n#include <cstddef>\n\
-    #include <cstdint>\n\nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using\
-    \ usize = std::size_t;\n\n  using i32 = std::int32_t;\n  using i64 = std::int64_t;\n\
-    \  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n\n} // namespace\
-    \ luz\n#line 4 \"src/cpp-template/header/input.hpp\"\n\n#include <iostream>\n\n\
-    namespace luz {\n\n  template < typename T = i64 >\n  T input() {\n    T tmp;\n\
-    \    std::cin >> tmp;\n    return tmp;\n  }\n\n} // namespace luz\n#line 2 \"\
-    src/cpp-template/header/rep.hpp\"\n\n#line 4 \"src/cpp-template/header/rep.hpp\"\
+    \n\n#line 2 \"src/cpp-template/header/int-alias.hpp\"\n\n#include <cstdint>\n\n\
+    namespace luz {\n\n  using i32  = std::int32_t;\n  using i64  = std::int64_t;\n\
+    \  using i128 = __int128_t;\n\n  using u32  = std::uint32_t;\n  using u64  = std::uint64_t;\n\
+    \  using u128 = __uint128_t;\n\n} // namespace luz\n#line 4 \"src/cpp-template/header/input.hpp\"\
+    \n\n#include <iostream>\n\nnamespace luz {\n\n  template < typename T = i64 >\n\
+    \  T input() {\n    T tmp;\n    std::cin >> tmp;\n    return tmp;\n  }\n\n} //\
+    \ namespace luz\n#line 2 \"src/cpp-template/header/rep.hpp\"\n\n#line 2 \"src/cpp-template/header/size-alias.hpp\"\
+    \n\n#include <cstddef>\n\nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n\
+    \  using usize = std::size_t;\n\n} // namespace luz\n#line 4 \"src/cpp-template/header/rep.hpp\"\
     \n\n#include <algorithm>\n\nnamespace luz {\n\n  struct rep {\n    struct itr\
     \ {\n      usize i;\n      constexpr itr(const usize i) noexcept: i(i) {}\n  \
     \    void operator++() noexcept {\n        ++i;\n      }\n      constexpr usize\
@@ -111,7 +115,7 @@ data:
     }\n"
   code: "// verification-helper: PROBLEM https://atcoder.jp/contests/abc212/tasks/abc212_h\n\
     \n#include \"src/cpp-template/header/input.hpp\"\n#include \"src/cpp-template/header/rep.hpp\"\
-    \n#include \"src/cpp-template/header/type-alias.hpp\"\n#include \"src/math/convolution/fast-walsh-hadamard-transform.hpp\"\
+    \n#include \"src/cpp-template/header/size-alias.hpp\"\n#include \"src/math/convolution/fast-walsh-hadamard-transform.hpp\"\
     \n#include \"src/math/modular-arithmetic/static-modint.hpp\"\n\n// TODO: replace\
     \ #11\nnamespace luz {\n\n  template < typename T >\n  T sum_of_geometric_sequence(const\
     \ T& a_0, const T& r,\n                              const usize& n) {\n    if\
@@ -131,14 +135,15 @@ data:
     \  }\n\n} // namespace luz\n\nint main() {\n  luz::main_();\n}\n"
   dependsOn:
   - src/cpp-template/header/input.hpp
-  - src/cpp-template/header/type-alias.hpp
+  - src/cpp-template/header/int-alias.hpp
   - src/cpp-template/header/rep.hpp
+  - src/cpp-template/header/size-alias.hpp
   - src/math/convolution/fast-walsh-hadamard-transform.hpp
   - src/math/modular-arithmetic/static-modint.hpp
   isVerificationFile: true
   path: test/atcoder/abc212_h.test.cpp
   requiredBy: []
-  timestamp: '2023-05-20 00:18:06+09:00'
+  timestamp: '2023-07-30 00:54:52+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/atcoder/abc212_h.test.cpp

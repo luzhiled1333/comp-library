@@ -1,59 +1,64 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/int-alias.hpp
+    title: int alias
+  - icon: ':question:'
     path: src/cpp-template/header/rep.hpp
     title: "rep \u69CB\u9020\u4F53"
-  - icon: ':heavy_check_mark:'
-    path: src/cpp-template/header/type-alias.hpp
-    title: Type alias
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/size-alias.hpp
+    title: size alias
+  - icon: ':question:'
     path: src/math/modular-arithmetic/modular-combinatorics.hpp
     title: "mod \u7D44\u5408\u305B (mod combinatorics)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/math/modular-arithmetic/small-mod-combination.hpp
     title: "mod \u304C\u5C0F\u3055\u3044\u5834\u5408\u306E combination (Lucas's theorem)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/math/modular-arithmetic/static-modint.hpp
     title: src/math/modular-arithmetic/static-modint.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://atcoder.jp/contests/arc117/tasks/arc117_c
     links:
     - https://atcoder.jp/contests/arc117/tasks/arc117_c
   bundledCode: "#line 1 \"test/atcoder/arc117_c.test.cpp\"\n// verification-helper:\
-    \ PROBLEM https://atcoder.jp/contests/arc117/tasks/arc117_c\n\n#line 2 \"src/math/modular-arithmetic/small-mod-combination.hpp\"\
-    \n\n#line 2 \"src/math/modular-arithmetic/modular-combinatorics.hpp\"\n\n#line\
-    \ 2 \"src/cpp-template/header/rep.hpp\"\n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\
-    \n\n#include <cstddef>\n#include <cstdint>\n\nnamespace luz {\n\n  using isize\
-    \ = std::ptrdiff_t;\n  using usize = std::size_t;\n\n  using i32 = std::int32_t;\n\
-    \  using i64 = std::int64_t;\n  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n\
-    \n} // namespace luz\n#line 4 \"src/cpp-template/header/rep.hpp\"\n\n#include\
-    \ <algorithm>\n\nnamespace luz {\n\n  struct rep {\n    struct itr {\n      usize\
-    \ i;\n      constexpr itr(const usize i) noexcept: i(i) {}\n      void operator++()\
-    \ noexcept {\n        ++i;\n      }\n      constexpr usize operator*() const noexcept\
-    \ {\n        return i;\n      }\n      constexpr bool operator!=(const itr x)\
-    \ const noexcept {\n        return i != x.i;\n      }\n    };\n    const itr f,\
-    \ l;\n    constexpr rep(const usize f, const usize l) noexcept\n        : f(std::min(f,\
-    \ l)),\n          l(l) {}\n    constexpr auto begin() const noexcept {\n     \
-    \ return f;\n    }\n    constexpr auto end() const noexcept {\n      return l;\n\
-    \    }\n  };\n\n  struct rrep {\n    struct itr {\n      usize i;\n      constexpr\
-    \ itr(const usize i) noexcept: i(i) {}\n      void operator++() noexcept {\n \
-    \       --i;\n      }\n      constexpr usize operator*() const noexcept {\n  \
-    \      return i;\n      }\n      constexpr bool operator!=(const itr x) const\
-    \ noexcept {\n        return i != x.i;\n      }\n    };\n    const itr f, l;\n\
-    \    constexpr rrep(const usize f, const usize l) noexcept\n        : f(l - 1),\n\
-    \          l(std::min(f, l) - 1) {}\n    constexpr auto begin() const noexcept\
-    \ {\n      return f;\n    }\n    constexpr auto end() const noexcept {\n     \
-    \ return l;\n    }\n  };\n\n} // namespace luz\n#line 5 \"src/math/modular-arithmetic/modular-combinatorics.hpp\"\
-    \n\n#include <vector>\n\nnamespace luz {\n\n  template < typename mint >\n  class\
-    \ Combinatorics {\n    static usize bound;\n    static std::vector< mint > fact,\
-    \ finv, inv;\n\n    static void expand(usize n) {\n      n += 1;\n      if (fact.size()\
-    \ >= n) return;\n\n      if (bound == 0) bound = 1;\n\n      fact.resize(n, mint(1));\n\
+    \ PROBLEM https://atcoder.jp/contests/arc117/tasks/arc117_c\n\n#line 2 \"src/cpp-template/header/size-alias.hpp\"\
+    \n\n#include <cstddef>\n\nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n\
+    \  using usize = std::size_t;\n\n} // namespace luz\n#line 2 \"src/math/modular-arithmetic/small-mod-combination.hpp\"\
+    \n\n#line 2 \"src/cpp-template/header/int-alias.hpp\"\n\n#include <cstdint>\n\n\
+    namespace luz {\n\n  using i32  = std::int32_t;\n  using i64  = std::int64_t;\n\
+    \  using i128 = __int128_t;\n\n  using u32  = std::uint32_t;\n  using u64  = std::uint64_t;\n\
+    \  using u128 = __uint128_t;\n\n} // namespace luz\n#line 2 \"src/math/modular-arithmetic/modular-combinatorics.hpp\"\
+    \n\n#line 2 \"src/cpp-template/header/rep.hpp\"\n\n#line 4 \"src/cpp-template/header/rep.hpp\"\
+    \n\n#include <algorithm>\n\nnamespace luz {\n\n  struct rep {\n    struct itr\
+    \ {\n      usize i;\n      constexpr itr(const usize i) noexcept: i(i) {}\n  \
+    \    void operator++() noexcept {\n        ++i;\n      }\n      constexpr usize\
+    \ operator*() const noexcept {\n        return i;\n      }\n      constexpr bool\
+    \ operator!=(const itr x) const noexcept {\n        return i != x.i;\n      }\n\
+    \    };\n    const itr f, l;\n    constexpr rep(const usize f, const usize l)\
+    \ noexcept\n        : f(std::min(f, l)),\n          l(l) {}\n    constexpr auto\
+    \ begin() const noexcept {\n      return f;\n    }\n    constexpr auto end() const\
+    \ noexcept {\n      return l;\n    }\n  };\n\n  struct rrep {\n    struct itr\
+    \ {\n      usize i;\n      constexpr itr(const usize i) noexcept: i(i) {}\n  \
+    \    void operator++() noexcept {\n        --i;\n      }\n      constexpr usize\
+    \ operator*() const noexcept {\n        return i;\n      }\n      constexpr bool\
+    \ operator!=(const itr x) const noexcept {\n        return i != x.i;\n      }\n\
+    \    };\n    const itr f, l;\n    constexpr rrep(const usize f, const usize l)\
+    \ noexcept\n        : f(l - 1),\n          l(std::min(f, l) - 1) {}\n    constexpr\
+    \ auto begin() const noexcept {\n      return f;\n    }\n    constexpr auto end()\
+    \ const noexcept {\n      return l;\n    }\n  };\n\n} // namespace luz\n#line\
+    \ 5 \"src/math/modular-arithmetic/modular-combinatorics.hpp\"\n\n#include <vector>\n\
+    \nnamespace luz {\n\n  template < typename mint >\n  class Combinatorics {\n \
+    \   static usize bound;\n    static std::vector< mint > fact, finv, inv;\n\n \
+    \   static void expand(usize n) {\n      n += 1;\n      if (fact.size() >= n)\
+    \ return;\n\n      if (bound == 0) bound = 1;\n\n      fact.resize(n, mint(1));\n\
     \      finv.resize(n, mint(1));\n      inv.resize(n, mint(1));\n\n      for (usize\
     \ i: rep(bound, n)) {\n        fact[i] = fact[i - 1] * i;\n      }\n\n      finv.back()\
     \ = mint(1) / fact.back();\n      for (usize i: rrep(bound, n)) {\n        finv[i\
@@ -78,7 +83,7 @@ data:
     \ >();\n\n  template < typename mint >\n  std::vector< mint > Combinatorics< mint\
     \ >::finv =\n      std::vector< mint >();\n\n  template < typename mint >\n  std::vector<\
     \ mint > Combinatorics< mint >::inv =\n      std::vector< mint >();\n\n} // namespace\
-    \ luz\n#line 4 \"src/math/modular-arithmetic/small-mod-combination.hpp\"\n\nnamespace\
+    \ luz\n#line 6 \"src/math/modular-arithmetic/small-mod-combination.hpp\"\n\nnamespace\
     \ luz {\n\n  template < typename modint >\n  class SmallModCombination {\n   \
     \ static constexpr u32 mod = modint::get_mod();\n    Combinatorics< modint > mc;\n\
     \n   public:\n    SmallModCombination(): mc(mod - 1) {}\n\n    modint combination(isize\
@@ -117,7 +122,7 @@ data:
     \ &os,\n                                    const modint &m) {\n      os << m.val();\n\
     \      return os;\n    }\n  };\n\n  using modint998244353  = StaticPrimeModInt<\
     \ 998244353 >;\n  using modint1000000007 = StaticPrimeModInt< 1000000007 >;\n\n\
-    } // namespace luz\n#line 5 \"test/atcoder/arc117_c.test.cpp\"\n\n#line 7 \"test/atcoder/arc117_c.test.cpp\"\
+    } // namespace luz\n#line 6 \"test/atcoder/arc117_c.test.cpp\"\n\n#line 8 \"test/atcoder/arc117_c.test.cpp\"\
     \n#include <string>\n\nnamespace luz {\n\n  void main_() {\n    using mint = StaticPrimeModInt<\
     \ 3 >;\n    SmallModCombination< mint > mc;\n\n    usize n;\n    std::cin >> n;\n\
     \n    std::string s;\n    std::cin >> s;\n\n    auto convert = [](char c) {\n\
@@ -131,9 +136,9 @@ data:
     \      }\n    };\n\n    std::cout << inverse(sum) << std::endl;\n  }\n\n} // namespace\
     \ luz\n\nint main() {\n  luz::main_();\n}\n"
   code: "// verification-helper: PROBLEM https://atcoder.jp/contests/arc117/tasks/arc117_c\n\
-    \n#include \"src/math/modular-arithmetic/small-mod-combination.hpp\"\n#include\
-    \ \"src/math/modular-arithmetic/static-modint.hpp\"\n\n#include <iostream>\n#include\
-    \ <string>\n\nnamespace luz {\n\n  void main_() {\n    using mint = StaticPrimeModInt<\
+    \n#include \"src/cpp-template/header/size-alias.hpp\"\n#include \"src/math/modular-arithmetic/small-mod-combination.hpp\"\
+    \n#include \"src/math/modular-arithmetic/static-modint.hpp\"\n\n#include <iostream>\n\
+    #include <string>\n\nnamespace luz {\n\n  void main_() {\n    using mint = StaticPrimeModInt<\
     \ 3 >;\n    SmallModCombination< mint > mc;\n\n    usize n;\n    std::cin >> n;\n\
     \n    std::string s;\n    std::cin >> s;\n\n    auto convert = [](char c) {\n\
     \      switch (c) {\n        case 'B':\n          return 0;\n        case 'W':\n\
@@ -146,16 +151,17 @@ data:
     \      }\n    };\n\n    std::cout << inverse(sum) << std::endl;\n  }\n\n} // namespace\
     \ luz\n\nint main() {\n  luz::main_();\n}\n"
   dependsOn:
+  - src/cpp-template/header/size-alias.hpp
   - src/math/modular-arithmetic/small-mod-combination.hpp
+  - src/cpp-template/header/int-alias.hpp
   - src/math/modular-arithmetic/modular-combinatorics.hpp
   - src/cpp-template/header/rep.hpp
-  - src/cpp-template/header/type-alias.hpp
   - src/math/modular-arithmetic/static-modint.hpp
   isVerificationFile: true
   path: test/atcoder/arc117_c.test.cpp
   requiredBy: []
-  timestamp: '2023-05-20 00:18:06+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-07-30 00:54:52+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/atcoder/arc117_c.test.cpp
 layout: document

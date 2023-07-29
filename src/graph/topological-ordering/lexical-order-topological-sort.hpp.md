@@ -1,18 +1,23 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':question:'
+    path: src/cpp-template/header/size-alias.hpp
+    title: size alias
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/atcoder/abc291_e.test.cpp
     title: test/atcoder/abc291_e.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"src/graph/topological-ordering/lexical-order-topological-sort.hpp\"\
-    \n#include <queue>\n#include <vector>\n\nnamespace luz {\n\n  template < class\
+  bundledCode: "#line 2 \"src/cpp-template/header/size-alias.hpp\"\n\n#include <cstddef>\n\
+    \nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using usize = std::size_t;\n\
+    \n} // namespace luz\n#line 2 \"src/graph/topological-ordering/lexical-order-topological-sort.hpp\"\
+    \n\n#include <queue>\n#include <vector>\n\nnamespace luz {\n\n  template < class\
     \ G, class Compare >\n  std::vector< usize > lexical_order_topological_sort(const\
     \ G &g) {\n    usize n = g.size();\n\n    std::vector< usize > indegrees(n);\n\
     \    for (auto v: rep(0, n)) {\n      for (auto &&e: g[v]) {\n        indegrees[e.to]++;\n\
@@ -24,24 +29,25 @@ data:
     \ continue;\n        pq.emplace(e.to);\n      }\n    }\n\n    if (result.size()\
     \ != n) {\n      return {};\n    }\n\n    return result;\n  }\n\n} // namespace\
     \ luz\n"
-  code: "#include <queue>\n#include <vector>\n\nnamespace luz {\n\n  template < class\
-    \ G, class Compare >\n  std::vector< usize > lexical_order_topological_sort(const\
-    \ G &g) {\n    usize n = g.size();\n\n    std::vector< usize > indegrees(n);\n\
-    \    for (auto v: rep(0, n)) {\n      for (auto &&e: g[v]) {\n        indegrees[e.to]++;\n\
-    \      }\n    }\n\n    std::priority_queue< usize, std::vector< usize >, Compare\
-    \ > pq;\n    for (usize v: rep(0, n)) {\n      if (indegrees[v]) continue;\n \
-    \     pq.emplace(v);\n    }\n\n    std::vector< usize > result;\n    result.reserve(n);\n\
-    \    while (not pq.empty()) {\n      auto v = pq.top();\n      pq.pop();\n\n \
-    \     result.emplace_back(v);\n      for (auto &&e: g[v]) {\n        if (--indegrees[e.to])\
-    \ continue;\n        pq.emplace(e.to);\n      }\n    }\n\n    if (result.size()\
-    \ != n) {\n      return {};\n    }\n\n    return result;\n  }\n\n} // namespace\
-    \ luz\n"
-  dependsOn: []
+  code: "#include \"src/cpp-template/header/size-alias.hpp\"\n\n#include <queue>\n\
+    #include <vector>\n\nnamespace luz {\n\n  template < class G, class Compare >\n\
+    \  std::vector< usize > lexical_order_topological_sort(const G &g) {\n    usize\
+    \ n = g.size();\n\n    std::vector< usize > indegrees(n);\n    for (auto v: rep(0,\
+    \ n)) {\n      for (auto &&e: g[v]) {\n        indegrees[e.to]++;\n      }\n \
+    \   }\n\n    std::priority_queue< usize, std::vector< usize >, Compare > pq;\n\
+    \    for (usize v: rep(0, n)) {\n      if (indegrees[v]) continue;\n      pq.emplace(v);\n\
+    \    }\n\n    std::vector< usize > result;\n    result.reserve(n);\n    while\
+    \ (not pq.empty()) {\n      auto v = pq.top();\n      pq.pop();\n\n      result.emplace_back(v);\n\
+    \      for (auto &&e: g[v]) {\n        if (--indegrees[e.to]) continue;\n    \
+    \    pq.emplace(e.to);\n      }\n    }\n\n    if (result.size() != n) {\n    \
+    \  return {};\n    }\n\n    return result;\n  }\n\n} // namespace luz\n"
+  dependsOn:
+  - src/cpp-template/header/size-alias.hpp
   isVerificationFile: false
   path: src/graph/topological-ordering/lexical-order-topological-sort.hpp
   requiredBy: []
-  timestamp: '2023-05-28 01:36:49+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-07-30 00:54:52+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/atcoder/abc291_e.test.cpp
 documentation_of: src/graph/topological-ordering/lexical-order-topological-sort.hpp

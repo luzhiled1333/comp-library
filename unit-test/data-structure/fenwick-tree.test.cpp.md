@@ -1,70 +1,74 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/int-alias.hpp
+    title: int alias
+  - icon: ':question:'
     path: src/cpp-template/header/rep.hpp
     title: "rep \u69CB\u9020\u4F53"
-  - icon: ':heavy_check_mark:'
-    path: src/cpp-template/header/type-alias.hpp
-    title: Type alias
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/size-alias.hpp
+    title: size alias
+  - icon: ':question:'
     path: src/data-structure/fenwick-tree.hpp
     title: Fenwick Tree (Binary Indexed Tree, BIT)
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/math/modular-arithmetic/static-modint.hpp
     title: src/math/modular-arithmetic/static-modint.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/ITP1_1_A
     links:
     - https://onlinejudge.u-aizu.ac.jp/problems/ITP1_1_A
   bundledCode: "#line 1 \"unit-test/data-structure/fenwick-tree.test.cpp\"\n// verification-helper:\
     \ PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/ITP1_1_A\n\n#line 2 \"src/data-structure/fenwick-tree.hpp\"\
-    \n\n#line 2 \"src/cpp-template/header/rep.hpp\"\n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\
-    \n\n#include <cstddef>\n#include <cstdint>\n\nnamespace luz {\n\n  using isize\
-    \ = std::ptrdiff_t;\n  using usize = std::size_t;\n\n  using i32 = std::int32_t;\n\
-    \  using i64 = std::int64_t;\n  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n\
-    \n} // namespace luz\n#line 4 \"src/cpp-template/header/rep.hpp\"\n\n#include\
-    \ <algorithm>\n\nnamespace luz {\n\n  struct rep {\n    struct itr {\n      usize\
-    \ i;\n      constexpr itr(const usize i) noexcept: i(i) {}\n      void operator++()\
-    \ noexcept {\n        ++i;\n      }\n      constexpr usize operator*() const noexcept\
-    \ {\n        return i;\n      }\n      constexpr bool operator!=(const itr x)\
-    \ const noexcept {\n        return i != x.i;\n      }\n    };\n    const itr f,\
-    \ l;\n    constexpr rep(const usize f, const usize l) noexcept\n        : f(std::min(f,\
-    \ l)),\n          l(l) {}\n    constexpr auto begin() const noexcept {\n     \
-    \ return f;\n    }\n    constexpr auto end() const noexcept {\n      return l;\n\
-    \    }\n  };\n\n  struct rrep {\n    struct itr {\n      usize i;\n      constexpr\
-    \ itr(const usize i) noexcept: i(i) {}\n      void operator++() noexcept {\n \
-    \       --i;\n      }\n      constexpr usize operator*() const noexcept {\n  \
-    \      return i;\n      }\n      constexpr bool operator!=(const itr x) const\
-    \ noexcept {\n        return i != x.i;\n      }\n    };\n    const itr f, l;\n\
-    \    constexpr rrep(const usize f, const usize l) noexcept\n        : f(l - 1),\n\
-    \          l(std::min(f, l) - 1) {}\n    constexpr auto begin() const noexcept\
-    \ {\n      return f;\n    }\n    constexpr auto end() const noexcept {\n     \
-    \ return l;\n    }\n  };\n\n} // namespace luz\n#line 5 \"src/data-structure/fenwick-tree.hpp\"\
-    \n\n#include <cassert>\n#include <vector>\n\nnamespace luz {\n\n  template < typename\
-    \ T >\n  class FenwickTree {\n    usize n_;\n    std::vector< T > vals_;\n\n \
-    \   T sum(usize k) const {\n      T result(0);\n      while (k > 0) {\n      \
-    \  result += vals_[k];\n        k -= k & -k;\n      }\n      return result;\n\
-    \    }\n\n   public:\n    FenwickTree() = default;\n\n    explicit FenwickTree(usize\
-    \ n): n_(n), vals_(n + 1, T()) {}\n\n    explicit FenwickTree(const std::vector<\
-    \ T > &as)\n        : n_(as.size()),\n          vals_(as.size() + 1, T()) {\n\
-    \      for (usize i: rep(1, as.size() + 1)) {\n        vals_[i] = as[i - 1];\n\
-    \      }\n      for (usize i: rep(1, as.size() + 1)) {\n        usize j = i +\
-    \ (i & -i);\n        if (j <= as.size()) {\n          vals_[j] += vals_[i];\n\
-    \        }\n      }\n    }\n\n    void add(usize k, const T &v) {\n      assert(0\
-    \ <= k and k < n_);\n      k++;\n      while (k <= n_) {\n        vals_[k] +=\
-    \ v;\n        k += k & -k;\n      }\n    }\n\n    T sum(usize l, usize r) const\
-    \ {\n      assert(0 <= l and l <= r and r <= n_);\n      return sum(r) - sum(l);\n\
-    \    }\n  };\n\n} // namespace luz\n#line 4 \"unit-test/data-structure/fenwick-tree.test.cpp\"\
-    \n\n#line 2 \"src/math/modular-arithmetic/static-modint.hpp\"\n\n#line 4 \"src/math/modular-arithmetic/static-modint.hpp\"\
-    \n\n#line 6 \"src/math/modular-arithmetic/static-modint.hpp\"\n#include <iostream>\n\
-    \nnamespace luz {\n\n  template < u32 mod >\n  class StaticPrimeModInt {\n   \
-    \ using modint = StaticPrimeModInt;\n\n    u32 v;\n\n   public:\n    StaticPrimeModInt():\
+    \n\n#line 2 \"src/cpp-template/header/rep.hpp\"\n\n#line 2 \"src/cpp-template/header/size-alias.hpp\"\
+    \n\n#include <cstddef>\n\nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n\
+    \  using usize = std::size_t;\n\n} // namespace luz\n#line 4 \"src/cpp-template/header/rep.hpp\"\
+    \n\n#include <algorithm>\n\nnamespace luz {\n\n  struct rep {\n    struct itr\
+    \ {\n      usize i;\n      constexpr itr(const usize i) noexcept: i(i) {}\n  \
+    \    void operator++() noexcept {\n        ++i;\n      }\n      constexpr usize\
+    \ operator*() const noexcept {\n        return i;\n      }\n      constexpr bool\
+    \ operator!=(const itr x) const noexcept {\n        return i != x.i;\n      }\n\
+    \    };\n    const itr f, l;\n    constexpr rep(const usize f, const usize l)\
+    \ noexcept\n        : f(std::min(f, l)),\n          l(l) {}\n    constexpr auto\
+    \ begin() const noexcept {\n      return f;\n    }\n    constexpr auto end() const\
+    \ noexcept {\n      return l;\n    }\n  };\n\n  struct rrep {\n    struct itr\
+    \ {\n      usize i;\n      constexpr itr(const usize i) noexcept: i(i) {}\n  \
+    \    void operator++() noexcept {\n        --i;\n      }\n      constexpr usize\
+    \ operator*() const noexcept {\n        return i;\n      }\n      constexpr bool\
+    \ operator!=(const itr x) const noexcept {\n        return i != x.i;\n      }\n\
+    \    };\n    const itr f, l;\n    constexpr rrep(const usize f, const usize l)\
+    \ noexcept\n        : f(l - 1),\n          l(std::min(f, l) - 1) {}\n    constexpr\
+    \ auto begin() const noexcept {\n      return f;\n    }\n    constexpr auto end()\
+    \ const noexcept {\n      return l;\n    }\n  };\n\n} // namespace luz\n#line\
+    \ 5 \"src/data-structure/fenwick-tree.hpp\"\n\n#include <cassert>\n#include <vector>\n\
+    \nnamespace luz {\n\n  template < typename T >\n  class FenwickTree {\n    usize\
+    \ n;\n    std::vector< T > vals;\n\n    T sum(usize k) const {\n      T result(0);\n\
+    \      while (k > 0) {\n        result += vals[k];\n        k -= k & -k;\n   \
+    \   }\n      return result;\n    }\n\n   public:\n    FenwickTree() = default;\n\
+    \n    explicit FenwickTree(usize n): n(n), vals(n + 1, T()) {}\n\n    explicit\
+    \ FenwickTree(const std::vector< T > &as)\n        : n(as.size()),\n         \
+    \ vals(as.size() + 1, T()) {\n      for (usize i: rep(1, as.size() + 1)) {\n \
+    \       vals[i] = as[i - 1];\n      }\n      for (usize i: rep(1, as.size() +\
+    \ 1)) {\n        usize j = i + (i & -i);\n        if (j <= as.size()) {\n    \
+    \      vals[j] += vals[i];\n        }\n      }\n    }\n\n    void add(usize k,\
+    \ const T &v) {\n      assert(k < n);\n      k++;\n      while (k <= n) {\n  \
+    \      vals[k] += v;\n        k += k & -k;\n      }\n    }\n\n    T sum(usize\
+    \ l, usize r) const {\n      assert(l <= r and r <= n);\n      return sum(r) -\
+    \ sum(l);\n    }\n  };\n\n} // namespace luz\n#line 4 \"unit-test/data-structure/fenwick-tree.test.cpp\"\
+    \n\n#line 2 \"src/cpp-template/header/int-alias.hpp\"\n\n#include <cstdint>\n\n\
+    namespace luz {\n\n  using i32  = std::int32_t;\n  using i64  = std::int64_t;\n\
+    \  using i128 = __int128_t;\n\n  using u32  = std::uint32_t;\n  using u64  = std::uint64_t;\n\
+    \  using u128 = __uint128_t;\n\n} // namespace luz\n#line 2 \"src/math/modular-arithmetic/static-modint.hpp\"\
+    \n\n#line 4 \"src/math/modular-arithmetic/static-modint.hpp\"\n\n#line 6 \"src/math/modular-arithmetic/static-modint.hpp\"\
+    \n#include <iostream>\n\nnamespace luz {\n\n  template < u32 mod >\n  class StaticPrimeModInt\
+    \ {\n    using modint = StaticPrimeModInt;\n\n    u32 v;\n\n   public:\n    StaticPrimeModInt():\
     \ v(0) {}\n\n    template < typename T >\n    StaticPrimeModInt(T v_) {\n    \
     \  i64 x = (i64)(v_ % (i64)mod);\n      if (x < 0) x += mod;\n      v = (u32)x;\n\
     \    }\n\n    u32 val() const {\n      return v;\n    }\n\n    modint &operator+=(const\
@@ -124,7 +128,7 @@ data:
     Hello World\" << std::endl;\n  }\n\n} // namespace luz\n\nint main() {\n  luz::main_();\n\
     }\n"
   code: "// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/ITP1_1_A\n\
-    \n#include \"src/data-structure/fenwick-tree.hpp\"\n\n#include \"src/cpp-template/header/type-alias.hpp\"\
+    \n#include \"src/data-structure/fenwick-tree.hpp\"\n\n#include \"src/cpp-template/header/int-alias.hpp\"\
     \n#include \"src/math/modular-arithmetic/static-modint.hpp\"\n\n#include <cassert>\n\
     #include <iostream>\n\nnamespace luz {\n\n  void main_() {\n    { // T as i32\n\
     \      FenwickTree< i32 > ft(3);\n\n      ft.add(0, 3);\n      ft.add(1, 6);\n\
@@ -158,13 +162,14 @@ data:
   dependsOn:
   - src/data-structure/fenwick-tree.hpp
   - src/cpp-template/header/rep.hpp
-  - src/cpp-template/header/type-alias.hpp
+  - src/cpp-template/header/size-alias.hpp
+  - src/cpp-template/header/int-alias.hpp
   - src/math/modular-arithmetic/static-modint.hpp
   isVerificationFile: true
   path: unit-test/data-structure/fenwick-tree.test.cpp
   requiredBy: []
-  timestamp: '2023-05-20 00:18:06+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-07-30 00:54:52+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: unit-test/data-structure/fenwick-tree.test.cpp
 layout: document

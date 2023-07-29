@@ -1,29 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/geometry/Z2/class/circle.hpp
     title: "\u5186 (\u6574\u6570\u5E7E\u4F55)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/geometry/Z2/class/point.hpp
     title: "\u683C\u5B50\u70B9 (\u6574\u6570\u5E7E\u4F55)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/geometry/Z2/class/vector.hpp
     title: "\u30D9\u30AF\u30C8\u30EB (\u6574\u6570\u5E7E\u4F55)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/geometry/Z2/operation/square-norm.hpp
     title: "$\\|v\\|^2 (v \\in {\\mathbb{Z}}^2)$ (norm\u306E2\u4E57)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/geometry/Z2/operation/square.hpp
     title: $x^2 (x \in \mathbb{Z})$
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/atcoder/abc259_d.test.cpp
     title: test/atcoder/abc259_d.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/geometry/Z2/intersect/is-intersect-circle-circle.hpp\"\
@@ -82,7 +82,7 @@ data:
   path: src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
   requiredBy: []
   timestamp: '2022-08-22 19:09:09+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/atcoder/abc259_d.test.cpp
 documentation_of: src/geometry/Z2/intersect/is-intersect-circle-circle.hpp

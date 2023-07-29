@@ -1,15 +1,21 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: src/cpp-template/header/change-minmax.hpp
-    title: chmin / chmax
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/change-max.hpp
+    title: chmax
+  - icon: ':question:'
+    path: src/cpp-template/header/change-min.hpp
+    title: chmin
+  - icon: ':question:'
     path: src/cpp-template/header/fast-ios.hpp
     title: Fast I/O
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/input.hpp
     title: input
+  - icon: ':question:'
+    path: src/cpp-template/header/int-alias.hpp
+    title: int alias
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/io-set.hpp
     title: specify output precision
@@ -19,16 +25,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/pair-ios.hpp
     title: pair I/O
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/cpp-template/header/rep.hpp
     title: "rep \u69CB\u9020\u4F53"
+  - icon: ':question:'
+    path: src/cpp-template/header/size-alias.hpp
+    title: size alias
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/template-header.hpp
     title: Template Header
-  - icon: ':heavy_check_mark:'
-    path: src/cpp-template/header/type-alias.hpp
-    title: Type alias
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/cpp-template/header/vector-ios.hpp
     title: vector I/O
   _extendedRequiredBy: []
@@ -41,23 +47,26 @@ data:
     links:
     - https://onlinejudge.u-aizu.ac.jp/problems/ITP1_1_A
   bundledCode: "#line 1 \"test/aoj/itp1_1_a.test.cpp\"\n// verification-helper: PROBLEM\
-    \ https://onlinejudge.u-aizu.ac.jp/problems/ITP1_1_A\n\n#line 2 \"src/cpp-template/header/change-minmax.hpp\"\
+    \ https://onlinejudge.u-aizu.ac.jp/problems/ITP1_1_A\n\n#line 2 \"src/cpp-template/header/change-max.hpp\"\
     \n\nnamespace luz {\n\n  template < typename T1, typename T2 >\n  inline bool\
-    \ chmax(T1 &a, T2 b) {\n    return a < b and (a = b, true);\n  }\n\n  template\
-    \ < typename T1, typename T2 >\n  inline bool chmin(T1 &a, T2 b) {\n    return\
-    \ a > b and (a = b, true);\n  }\n\n} // namespace luz\n#line 2 \"src/cpp-template/header/fast-ios.hpp\"\
+    \ chmax(T1 &a, T2 b) {\n    return a < b and (a = b, true);\n  }\n\n} // namespace\
+    \ luz\n#line 2 \"src/cpp-template/header/change-min.hpp\"\n\nnamespace luz {\n\
+    \n  template < typename T1, typename T2 >\n  inline bool chmin(T1 &a, T2 b) {\n\
+    \    return a > b and (a = b, true);\n  }\n\n} // namespace luz\n#line 2 \"src/cpp-template/header/fast-ios.hpp\"\
     \n\n#include <iostream>\n\nnamespace luz {\n\n  void set_fast_ios() {\n    std::ios::sync_with_stdio(false);\n\
     \    std::cin.tie(nullptr);\n  }\n\n} // namespace luz\n#line 2 \"src/cpp-template/header/input.hpp\"\
-    \n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\n\n#include <cstddef>\n\
-    #include <cstdint>\n\nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using\
-    \ usize = std::size_t;\n\n  using i32 = std::int32_t;\n  using i64 = std::int64_t;\n\
-    \  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n\n} // namespace\
-    \ luz\n#line 4 \"src/cpp-template/header/input.hpp\"\n\n#line 6 \"src/cpp-template/header/input.hpp\"\
-    \n\nnamespace luz {\n\n  template < typename T = i64 >\n  T input() {\n    T tmp;\n\
-    \    std::cin >> tmp;\n    return tmp;\n  }\n\n} // namespace luz\n#line 2 \"\
-    src/cpp-template/header/io-set.hpp\"\n\n#line 4 \"src/cpp-template/header/io-set.hpp\"\
-    \n\n#include <iomanip>\n#line 7 \"src/cpp-template/header/io-set.hpp\"\n\nnamespace\
-    \ luz {\n\n  void io_set(usize precision) {\n    std::cout << std::fixed << std::setprecision(precision);\n\
+    \n\n#line 2 \"src/cpp-template/header/int-alias.hpp\"\n\n#include <cstdint>\n\n\
+    namespace luz {\n\n  using i32  = std::int32_t;\n  using i64  = std::int64_t;\n\
+    \  using i128 = __int128_t;\n\n  using u32  = std::uint32_t;\n  using u64  = std::uint64_t;\n\
+    \  using u128 = __uint128_t;\n\n} // namespace luz\n#line 4 \"src/cpp-template/header/input.hpp\"\
+    \n\n#line 6 \"src/cpp-template/header/input.hpp\"\n\nnamespace luz {\n\n  template\
+    \ < typename T = i64 >\n  T input() {\n    T tmp;\n    std::cin >> tmp;\n    return\
+    \ tmp;\n  }\n\n} // namespace luz\n#line 2 \"src/cpp-template/header/io-set.hpp\"\
+    \n\n#line 2 \"src/cpp-template/header/size-alias.hpp\"\n\n#include <cstddef>\n\
+    \nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using usize = std::size_t;\n\
+    \n} // namespace luz\n#line 4 \"src/cpp-template/header/io-set.hpp\"\n\n#include\
+    \ <iomanip>\n#line 7 \"src/cpp-template/header/io-set.hpp\"\n\nnamespace luz {\n\
+    \n  void io_set(usize precision) {\n    std::cout << std::fixed << std::setprecision(precision);\n\
     \    std::cerr << std::fixed << std::setprecision(precision);\n  }\n\n} // namespace\
     \ luz\n#line 2 \"src/cpp-template/header/make-vector.hpp\"\n\n#line 4 \"src/cpp-template/header/make-vector.hpp\"\
     \n\n#include <vector>\n\nnamespace luz {\n\n  template < typename T >\n  std::vector<\
@@ -107,11 +116,13 @@ data:
     \  luz::main_();\n}\n"
   dependsOn:
   - src/cpp-template/header/template-header.hpp
-  - src/cpp-template/header/change-minmax.hpp
+  - src/cpp-template/header/change-max.hpp
+  - src/cpp-template/header/change-min.hpp
   - src/cpp-template/header/fast-ios.hpp
   - src/cpp-template/header/input.hpp
-  - src/cpp-template/header/type-alias.hpp
+  - src/cpp-template/header/int-alias.hpp
   - src/cpp-template/header/io-set.hpp
+  - src/cpp-template/header/size-alias.hpp
   - src/cpp-template/header/make-vector.hpp
   - src/cpp-template/header/pair-ios.hpp
   - src/cpp-template/header/rep.hpp
@@ -119,7 +130,7 @@ data:
   isVerificationFile: true
   path: test/aoj/itp1_1_a.test.cpp
   requiredBy: []
-  timestamp: '2022-08-22 18:26:45+09:00'
+  timestamp: '2023-07-30 00:54:52+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/itp1_1_a.test.cpp

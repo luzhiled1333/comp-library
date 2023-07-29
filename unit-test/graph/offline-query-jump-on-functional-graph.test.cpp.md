@@ -1,34 +1,37 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/int-alias.hpp
+    title: int alias
+  - icon: ':question:'
     path: src/cpp-template/header/rep.hpp
     title: "rep \u69CB\u9020\u4F53"
-  - icon: ':heavy_check_mark:'
-    path: src/cpp-template/header/type-alias.hpp
-    title: Type alias
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/size-alias.hpp
+    title: size alias
+  - icon: ':question:'
     path: src/graph/class/edge/edge.hpp
     title: src/graph/class/edge/edge.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/graph/class/static-graph.hpp
     title: "\u9759\u7684\u306A\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/graph/functional-graph/offline-query/offline-query-jump-on-functional-graph.hpp
     title: "(offine) Functional Graph \u4E0A\u306E\u9802\u70B9 $v$ \u304B\u3089 $k$\
       \ \u56DE\u79FB\u52D5\u3057\u305F\u5148\u306E\u9802\u70B9 (Offline Jump On Functional\
       \ Graph)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/graph/tree/offline-query/offline-query-level-ancestor.hpp
     title: "\u30AA\u30D5\u30E9\u30A4\u30F3 Level Ancestor (Offline Level Ancestor)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/utility/pair-hash.hpp
     title: "std::pair \u306E Hash"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/ITP1_1_A
     links:
@@ -36,10 +39,12 @@ data:
   bundledCode: "#line 1 \"unit-test/graph/offline-query-jump-on-functional-graph.test.cpp\"\
     \n// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/ITP1_1_A\n\
     \n#line 2 \"src/graph/functional-graph/offline-query/offline-query-jump-on-functional-graph.hpp\"\
-    \n\n#line 2 \"src/cpp-template/header/rep.hpp\"\n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\
-    \n\n#include <cstddef>\n#include <cstdint>\n\nnamespace luz {\n\n  using isize\
-    \ = std::ptrdiff_t;\n  using usize = std::size_t;\n\n  using i32 = std::int32_t;\n\
-    \  using i64 = std::int64_t;\n  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n\
+    \n\n#line 2 \"src/cpp-template/header/int-alias.hpp\"\n\n#include <cstdint>\n\n\
+    namespace luz {\n\n  using i32  = std::int32_t;\n  using i64  = std::int64_t;\n\
+    \  using i128 = __int128_t;\n\n  using u32  = std::uint32_t;\n  using u64  = std::uint64_t;\n\
+    \  using u128 = __uint128_t;\n\n} // namespace luz\n#line 2 \"src/cpp-template/header/rep.hpp\"\
+    \n\n#line 2 \"src/cpp-template/header/size-alias.hpp\"\n\n#include <cstddef>\n\
+    \nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using usize = std::size_t;\n\
     \n} // namespace luz\n#line 4 \"src/cpp-template/header/rep.hpp\"\n\n#include\
     \ <algorithm>\n\nnamespace luz {\n\n  struct rep {\n    struct itr {\n      usize\
     \ i;\n      constexpr itr(const usize i) noexcept: i(i) {}\n      void operator++()\
@@ -88,8 +93,8 @@ data:
     \   path.reserve(g_size);\n      dfs(root);\n    }\n\n    std::optional< usize\
     \ > la(usize v, usize level) const {\n      bound_check(v);\n      query_type\
     \ qi(v, level);\n      assert(results.count(qi));\n      return (*results.find(qi)).second;\n\
-    \    }\n  };\n\n} // namespace luz\n#line 7 \"src/graph/functional-graph/offline-query/offline-query-jump-on-functional-graph.hpp\"\
-    \n\n#line 12 \"src/graph/functional-graph/offline-query/offline-query-jump-on-functional-graph.hpp\"\
+    \    }\n  };\n\n} // namespace luz\n#line 8 \"src/graph/functional-graph/offline-query/offline-query-jump-on-functional-graph.hpp\"\
+    \n\n#line 13 \"src/graph/functional-graph/offline-query/offline-query-jump-on-functional-graph.hpp\"\
     \n\nnamespace luz {\n\n  template < class G >\n  class OfflineJumpOnFunctionalGraphQuery\
     \ {\n    using graph     = G;\n    using cost_type = typename graph::cost_type;\n\
     \n    usize g_size;\n    graph g;\n\n    graph tree;\n    usize tree_root;\n \
@@ -188,9 +193,9 @@ data:
     \    const Es< const_iterator > operator[](const usize &v) const {\n      assert(initialized);\n\
     \      return Es< const_iterator >(edges.cbegin() + outdegrees[v + 1],\n     \
     \                             edges.cbegin() + outdegrees[v]);\n    }\n  };\n\n\
-    } // namespace luz\n#line 8 \"unit-test/graph/offline-query-jump-on-functional-graph.test.cpp\"\
-    \n\n#line 10 \"unit-test/graph/offline-query-jump-on-functional-graph.test.cpp\"\
-    \n#include <iostream>\n#line 12 \"unit-test/graph/offline-query-jump-on-functional-graph.test.cpp\"\
+    } // namespace luz\n#line 9 \"unit-test/graph/offline-query-jump-on-functional-graph.test.cpp\"\
+    \n\n#line 11 \"unit-test/graph/offline-query-jump-on-functional-graph.test.cpp\"\
+    \n#include <iostream>\n#line 13 \"unit-test/graph/offline-query-jump-on-functional-graph.test.cpp\"\
     \n\nnamespace luz {\n\n  template < class G >\n  usize naive(const G& fg, usize\
     \ v, u64 k) {\n    if (k == 0) {\n      return v;\n    } else {\n      return\
     \ naive(fg, fg[v][0].to, k - 1);\n    }\n  }\n\n  void main_() {\n    using edge\
@@ -211,19 +216,19 @@ data:
     }\n"
   code: "// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/ITP1_1_A\n\
     \n#include \"src/graph/functional-graph/offline-query/offline-query-jump-on-functional-graph.hpp\"\
-    \n\n#include \"src/cpp-template/header/type-alias.hpp\"\n#include \"src/graph/class/edge/edge.hpp\"\
-    \n#include \"src/graph/class/static-graph.hpp\"\n\n#include <cassert>\n#include\
-    \ <iostream>\n#include <vector>\n\nnamespace luz {\n\n  template < class G >\n\
-    \  usize naive(const G& fg, usize v, u64 k) {\n    if (k == 0) {\n      return\
-    \ v;\n    } else {\n      return naive(fg, fg[v][0].to, k - 1);\n    }\n  }\n\n\
-    \  void main_() {\n    using edge  = Edge< u32 >;\n    using graph = StaticGraph<\
-    \ edge >;\n\n    graph fg(10);\n    fg.add_directed_edge(0, 1);\n    fg.add_directed_edge(1,\
-    \ 3);\n    fg.add_directed_edge(2, 2);\n    fg.add_directed_edge(3, 0);\n    fg.add_directed_edge(4,\
-    \ 5);\n    fg.add_directed_edge(5, 7);\n    fg.add_directed_edge(6, 8);\n    fg.add_directed_edge(7,\
-    \ 8);\n    fg.add_directed_edge(8, 9);\n    fg.add_directed_edge(9, 7);\n    fg.initialize();\n\
-    \n    OfflineJumpOnFunctionalGraphQuery\n        offline_jump_on_functional_graph_solver(fg);\n\
-    \    const u64 large = 1000000000000000000ll;\n    for (usize v: rep(0, 10)) {\n\
-    \      for (u64 k: rep(0, 100)) {\n        offline_jump_on_functional_graph_solver.add_query(v,\
+    \n\n#include \"src/cpp-template/header/int-alias.hpp\"\n#include \"src/cpp-template/header/size-alias.hpp\"\
+    \n#include \"src/graph/class/edge/edge.hpp\"\n#include \"src/graph/class/static-graph.hpp\"\
+    \n\n#include <cassert>\n#include <iostream>\n#include <vector>\n\nnamespace luz\
+    \ {\n\n  template < class G >\n  usize naive(const G& fg, usize v, u64 k) {\n\
+    \    if (k == 0) {\n      return v;\n    } else {\n      return naive(fg, fg[v][0].to,\
+    \ k - 1);\n    }\n  }\n\n  void main_() {\n    using edge  = Edge< u32 >;\n  \
+    \  using graph = StaticGraph< edge >;\n\n    graph fg(10);\n    fg.add_directed_edge(0,\
+    \ 1);\n    fg.add_directed_edge(1, 3);\n    fg.add_directed_edge(2, 2);\n    fg.add_directed_edge(3,\
+    \ 0);\n    fg.add_directed_edge(4, 5);\n    fg.add_directed_edge(5, 7);\n    fg.add_directed_edge(6,\
+    \ 8);\n    fg.add_directed_edge(7, 8);\n    fg.add_directed_edge(8, 9);\n    fg.add_directed_edge(9,\
+    \ 7);\n    fg.initialize();\n\n    OfflineJumpOnFunctionalGraphQuery\n       \
+    \ offline_jump_on_functional_graph_solver(fg);\n    const u64 large = 1000000000000000000ll;\n\
+    \    for (usize v: rep(0, 10)) {\n      for (u64 k: rep(0, 100)) {\n        offline_jump_on_functional_graph_solver.add_query(v,\
     \ k);\n      }\n      offline_jump_on_functional_graph_solver.add_query(v, large);\n\
     \    }\n\n    offline_jump_on_functional_graph_solver.build();\n    std::vector<\
     \ usize > expected{1, 3, 2, 0, 9, 7, 8, 8, 9, 7};\n    for (usize v: rep(0, 10))\
@@ -234,8 +239,9 @@ data:
     }\n"
   dependsOn:
   - src/graph/functional-graph/offline-query/offline-query-jump-on-functional-graph.hpp
+  - src/cpp-template/header/int-alias.hpp
   - src/cpp-template/header/rep.hpp
-  - src/cpp-template/header/type-alias.hpp
+  - src/cpp-template/header/size-alias.hpp
   - src/graph/tree/offline-query/offline-query-level-ancestor.hpp
   - src/utility/pair-hash.hpp
   - src/graph/class/edge/edge.hpp
@@ -243,8 +249,8 @@ data:
   isVerificationFile: true
   path: unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
   requiredBy: []
-  timestamp: '2023-05-28 01:36:49+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-07-30 00:54:52+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
 layout: document

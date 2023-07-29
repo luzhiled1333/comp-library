@@ -1,12 +1,12 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/cpp-template/header/rep.hpp
     title: "rep \u69CB\u9020\u4F53"
-  - icon: ':heavy_check_mark:'
-    path: src/cpp-template/header/type-alias.hpp
-    title: Type alias
+  - icon: ':question:'
+    path: src/cpp-template/header/size-alias.hpp
+    title: size alias
   - icon: ':warning:'
     path: src/geometry/2d/common/class/vector-2d.hpp
     title: src/geometry/2d/common/class/vector-2d.hpp
@@ -24,11 +24,9 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"src/geometry/2d/r2/class/vector-2d.hpp\"\n\n#line 2 \"src/geometry/2d/common/class/vector-2d.hpp\"\
-    \n\n#line 2 \"src/geometry/common/class/column-vector.hpp\"\n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\
-    \n\n#include <cstddef>\n#include <cstdint>\n\nnamespace luz {\n\n  using isize\
-    \ = std::ptrdiff_t;\n  using usize = std::size_t;\n\n  using i32 = std::int32_t;\n\
-    \  using i64 = std::int64_t;\n  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n\
-    \n} // namespace luz\n#line 2 \"src/geometry/common/class/internal/matrix.hpp\"\
+    \n\n#line 2 \"src/geometry/common/class/column-vector.hpp\"\n\n#line 2 \"src/cpp-template/header/size-alias.hpp\"\
+    \n\n#include <cstddef>\n\nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n\
+    \  using usize = std::size_t;\n\n} // namespace luz\n#line 2 \"src/geometry/common/class/internal/matrix.hpp\"\
     \n\n#line 2 \"src/cpp-template/header/rep.hpp\"\n\n#line 4 \"src/cpp-template/header/rep.hpp\"\
     \n\n#include <algorithm>\n\nnamespace luz {\n\n  struct rep {\n    struct itr\
     \ {\n      usize i;\n      constexpr itr(const usize i) noexcept: i(i) {}\n  \
@@ -117,13 +115,13 @@ data:
   dependsOn:
   - src/geometry/2d/common/class/vector-2d.hpp
   - src/geometry/common/class/column-vector.hpp
-  - src/cpp-template/header/type-alias.hpp
+  - src/cpp-template/header/size-alias.hpp
   - src/geometry/common/class/internal/matrix.hpp
   - src/cpp-template/header/rep.hpp
   isVerificationFile: false
   path: src/geometry/2d/r2/class/vector-2d.hpp
   requiredBy: []
-  timestamp: '2023-05-23 15:46:39+09:00'
+  timestamp: '2023-07-30 00:54:52+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/2d/r2/class/vector-2d.hpp

@@ -1,47 +1,45 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/cpp-template/header/rep.hpp
     title: "rep \u69CB\u9020\u4F53"
-  - icon: ':heavy_check_mark:'
-    path: src/cpp-template/header/type-alias.hpp
-    title: Type alias
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/size-alias.hpp
+    title: size alias
+  - icon: ':question:'
     path: src/cpp-template/header/vector-ios.hpp
     title: vector I/O
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/graph/class/edge/edge.hpp
     title: src/graph/class/edge/edge.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/graph/class/static-graph.hpp
     title: "\u9759\u7684\u306A\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/graph/topological-ordering/lexical-order-topological-sort.hpp
     title: "\u8F9E\u66F8\u9806\u6700\u5927/\u6700\u5C0F\u306E\u30C8\u30DD\u30ED\u30B8\
       \u30AB\u30EB\u30BD\u30FC\u30C8"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://atcoder.jp/contests/abc291/tasks/abc291_e
     links:
     - https://atcoder.jp/contests/abc291/tasks/abc291_e
   bundledCode: "#line 1 \"test/atcoder/abc291_e.test.cpp\"\n// verification-helper:\
     \ PROBLEM https://atcoder.jp/contests/abc291/tasks/abc291_e\n\n#line 2 \"src/cpp-template/header/rep.hpp\"\
-    \n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\n\n#include <cstddef>\n\
-    #include <cstdint>\n\nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using\
-    \ usize = std::size_t;\n\n  using i32 = std::int32_t;\n  using i64 = std::int64_t;\n\
-    \  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n\n} // namespace\
-    \ luz\n#line 4 \"src/cpp-template/header/rep.hpp\"\n\n#include <algorithm>\n\n\
-    namespace luz {\n\n  struct rep {\n    struct itr {\n      usize i;\n      constexpr\
-    \ itr(const usize i) noexcept: i(i) {}\n      void operator++() noexcept {\n \
-    \       ++i;\n      }\n      constexpr usize operator*() const noexcept {\n  \
-    \      return i;\n      }\n      constexpr bool operator!=(const itr x) const\
-    \ noexcept {\n        return i != x.i;\n      }\n    };\n    const itr f, l;\n\
-    \    constexpr rep(const usize f, const usize l) noexcept\n        : f(std::min(f,\
+    \n\n#line 2 \"src/cpp-template/header/size-alias.hpp\"\n\n#include <cstddef>\n\
+    \nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using usize = std::size_t;\n\
+    \n} // namespace luz\n#line 4 \"src/cpp-template/header/rep.hpp\"\n\n#include\
+    \ <algorithm>\n\nnamespace luz {\n\n  struct rep {\n    struct itr {\n      usize\
+    \ i;\n      constexpr itr(const usize i) noexcept: i(i) {}\n      void operator++()\
+    \ noexcept {\n        ++i;\n      }\n      constexpr usize operator*() const noexcept\
+    \ {\n        return i;\n      }\n      constexpr bool operator!=(const itr x)\
+    \ const noexcept {\n        return i != x.i;\n      }\n    };\n    const itr f,\
+    \ l;\n    constexpr rep(const usize f, const usize l) noexcept\n        : f(std::min(f,\
     \ l)),\n          l(l) {}\n    constexpr auto begin() const noexcept {\n     \
     \ return f;\n    }\n    constexpr auto end() const noexcept {\n      return l;\n\
     \    }\n  };\n\n  struct rrep {\n    struct itr {\n      usize i;\n      constexpr\
@@ -104,8 +102,8 @@ data:
     \    }\n\n    const Es< const_iterator > operator[](const usize &v) const {\n\
     \      assert(initialized);\n      return Es< const_iterator >(edges.cbegin()\
     \ + outdegrees[v + 1],\n                                  edges.cbegin() + outdegrees[v]);\n\
-    \    }\n  };\n\n} // namespace luz\n#line 1 \"src/graph/topological-ordering/lexical-order-topological-sort.hpp\"\
-    \n#include <queue>\n#line 3 \"src/graph/topological-ordering/lexical-order-topological-sort.hpp\"\
+    \    }\n  };\n\n} // namespace luz\n#line 2 \"src/graph/topological-ordering/lexical-order-topological-sort.hpp\"\
+    \n\n#include <queue>\n#line 5 \"src/graph/topological-ordering/lexical-order-topological-sort.hpp\"\
     \n\nnamespace luz {\n\n  template < class G, class Compare >\n  std::vector< usize\
     \ > lexical_order_topological_sort(const G &g) {\n    usize n = g.size();\n\n\
     \    std::vector< usize > indegrees(n);\n    for (auto v: rep(0, n)) {\n     \
@@ -148,7 +146,7 @@ data:
     \ luz\n\nint main() {\n  luz::main_();\n}\n"
   dependsOn:
   - src/cpp-template/header/rep.hpp
-  - src/cpp-template/header/type-alias.hpp
+  - src/cpp-template/header/size-alias.hpp
   - src/cpp-template/header/vector-ios.hpp
   - src/graph/class/edge/edge.hpp
   - src/graph/class/static-graph.hpp
@@ -156,8 +154,8 @@ data:
   isVerificationFile: true
   path: test/atcoder/abc291_e.test.cpp
   requiredBy: []
-  timestamp: '2023-05-28 01:36:49+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-07-30 00:54:52+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/atcoder/abc291_e.test.cpp
 layout: document

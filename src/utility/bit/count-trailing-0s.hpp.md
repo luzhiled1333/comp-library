@@ -1,10 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: src/cpp-template/header/type-alias.hpp
-    title: Type alias
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/int-alias.hpp
+    title: int alias
+  - icon: ':question:'
+    path: src/cpp-template/header/size-alias.hpp
+    title: size alias
+  - icon: ':question:'
     path: src/utility/bit/popcount.hpp
     title: "\u7ACB\u3063\u3066\u3044\u308B bit \u306E\u6570 (population count, popcount)"
   _extendedRequiredBy:
@@ -84,36 +87,41 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc179_f/range-chmin.test.cpp
     title: test/atcoder/abc179_f/range-chmin.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: unit-test/utility/bit/count-trailing-0s.test.cpp
     title: unit-test/utility/bit/count-trailing-0s.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"src/utility/bit/count-trailing-0s.hpp\"\n\n#line 2 \"src/utility/bit/popcount.hpp\"\
-    \n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\n\n#include <cstddef>\n\
-    #include <cstdint>\n\nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using\
-    \ usize = std::size_t;\n\n  using i32 = std::int32_t;\n  using i64 = std::int64_t;\n\
-    \  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n\n} // namespace\
-    \ luz\n#line 4 \"src/utility/bit/popcount.hpp\"\n\n#include <cassert>\n\nnamespace\
-    \ luz {\n\n  usize popcount(u64 x) {\n    assert(__cplusplus <= 201703L);\n\n\
-    #ifdef __GNUC__\n    return __builtin_popcountll(x);\n#endif\n\n    x -= (x >>\
-    \ 1) & 0x5555555555555555;\n    x = (x & 0x3333333333333333) + ((x >> 2) & 0x3333333333333333);\n\
-    \    x += (x >> 4) & 0x0f0f0f0f0f0f0f0f;\n    return x * 0x0101010101010101 >>\
-    \ 56 & 0x7f;\n  }\n\n} // namespace luz\n#line 4 \"src/utility/bit/count-trailing-0s.hpp\"\
-    \n\n#line 6 \"src/utility/bit/count-trailing-0s.hpp\"\n\nnamespace luz {\n\n \
-    \ usize countr_zero(u64 x) {\n    assert(__cplusplus <= 201703L);\n\n    if (x\
-    \ == 0) {\n      return 64;\n    }\n\n#ifdef __GNUC__\n    return __builtin_ctzll(x);\n\
-    #endif\n\n    return popcount((x & -x) - 1);\n  }\n\n} // namespace luz\n"
-  code: "#pragma once\n\n#include \"src/utility/bit/popcount.hpp\"\n\n#include <cassert>\n\
-    \nnamespace luz {\n\n  usize countr_zero(u64 x) {\n    assert(__cplusplus <= 201703L);\n\
-    \n    if (x == 0) {\n      return 64;\n    }\n\n#ifdef __GNUC__\n    return __builtin_ctzll(x);\n\
-    #endif\n\n    return popcount((x & -x) - 1);\n  }\n\n} // namespace luz\n"
+  bundledCode: "#line 2 \"src/utility/bit/count-trailing-0s.hpp\"\n\n#line 2 \"src/cpp-template/header/int-alias.hpp\"\
+    \n\n#include <cstdint>\n\nnamespace luz {\n\n  using i32  = std::int32_t;\n  using\
+    \ i64  = std::int64_t;\n  using i128 = __int128_t;\n\n  using u32  = std::uint32_t;\n\
+    \  using u64  = std::uint64_t;\n  using u128 = __uint128_t;\n\n} // namespace\
+    \ luz\n#line 2 \"src/cpp-template/header/size-alias.hpp\"\n\n#include <cstddef>\n\
+    \nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using usize = std::size_t;\n\
+    \n} // namespace luz\n#line 2 \"src/utility/bit/popcount.hpp\"\n\n#line 5 \"src/utility/bit/popcount.hpp\"\
+    \n\n#include <cassert>\n\nnamespace luz {\n\n  usize popcount(u64 x) {\n    assert(__cplusplus\
+    \ <= 201703L);\n\n#ifdef __GNUC__\n    return __builtin_popcountll(x);\n#endif\n\
+    \n    x -= (x >> 1) & 0x5555555555555555;\n    x = (x & 0x3333333333333333) +\
+    \ ((x >> 2) & 0x3333333333333333);\n    x += (x >> 4) & 0x0f0f0f0f0f0f0f0f;\n\
+    \    return x * 0x0101010101010101 >> 56 & 0x7f;\n  }\n\n} // namespace luz\n\
+    #line 6 \"src/utility/bit/count-trailing-0s.hpp\"\n\n#line 8 \"src/utility/bit/count-trailing-0s.hpp\"\
+    \n\nnamespace luz {\n\n  usize countr_zero(u64 x) {\n    assert(__cplusplus <=\
+    \ 201703L);\n\n    if (x == 0) {\n      return 64;\n    }\n\n#ifdef __GNUC__\n\
+    \    return __builtin_ctzll(x);\n#endif\n\n    return popcount((x & -x) - 1);\n\
+    \  }\n\n} // namespace luz\n"
+  code: "#pragma once\n\n#include \"src/cpp-template/header/int-alias.hpp\"\n#include\
+    \ \"src/cpp-template/header/size-alias.hpp\"\n#include \"src/utility/bit/popcount.hpp\"\
+    \n\n#include <cassert>\n\nnamespace luz {\n\n  usize countr_zero(u64 x) {\n  \
+    \  assert(__cplusplus <= 201703L);\n\n    if (x == 0) {\n      return 64;\n  \
+    \  }\n\n#ifdef __GNUC__\n    return __builtin_ctzll(x);\n#endif\n\n    return\
+    \ popcount((x & -x) - 1);\n  }\n\n} // namespace luz\n"
   dependsOn:
+  - src/cpp-template/header/int-alias.hpp
+  - src/cpp-template/header/size-alias.hpp
   - src/utility/bit/popcount.hpp
-  - src/cpp-template/header/type-alias.hpp
   isVerificationFile: false
   path: src/utility/bit/count-trailing-0s.hpp
   requiredBy:
@@ -129,8 +137,8 @@ data:
   - src/data-structure/segment-tree/presets/range-update-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-chmin-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-update-range-maximum-query-solver.hpp
-  timestamp: '2023-02-10 17:57:59+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-07-30 00:54:52+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - unit-test/utility/bit/count-trailing-0s.test.cpp
   - test/atcoder/abc179_f/range-chmin.test.cpp

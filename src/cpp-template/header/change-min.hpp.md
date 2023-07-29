@@ -8,7 +8,7 @@ data:
   - icon: ':warning:'
     path: src/cpp-template/template.cpp
     title: template
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/graph/decomposition/strongly-connected-components.hpp
     title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3(Decomposition of Strongly Connected\
       \ Components, SCC)"
@@ -18,9 +18,6 @@ data:
       \ (Single Source Shortest Path in Non-negative Weighted Graph, Dijkstra's Algorithm)"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/1181.test.cpp
-    title: test/aoj/1181.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/grl_1_a/dynamic-graph.test.cpp
     title: test/aoj/grl_1_a/dynamic-graph.test.cpp
   - icon: ':heavy_check_mark:'
@@ -29,54 +26,42 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/itp1_1_a.test.cpp
     title: test/aoj/itp1_1_a.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/atcoder/abc177_d.test.cpp
-    title: test/atcoder/abc177_d.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/atcoder/abc259_c.test.cpp
     title: test/atcoder/abc259_c.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/atcoder/abc298_f.test.cpp
-    title: test/atcoder/abc298_f.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/library-checker/scc.test.cpp
     title: test/library-checker/scc.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"src/cpp-template/header/change-minmax.hpp\"\n\nnamespace\
-    \ luz {\n\n  template < typename T1, typename T2 >\n  inline bool chmax(T1 &a,\
-    \ T2 b) {\n    return a < b and (a = b, true);\n  }\n\n  template < typename T1,\
-    \ typename T2 >\n  inline bool chmin(T1 &a, T2 b) {\n    return a > b and (a =\
-    \ b, true);\n  }\n\n} // namespace luz\n"
-  code: "#pragma once\n\nnamespace luz {\n\n  template < typename T1, typename T2\
-    \ >\n  inline bool chmax(T1 &a, T2 b) {\n    return a < b and (a = b, true);\n\
-    \  }\n\n  template < typename T1, typename T2 >\n  inline bool chmin(T1 &a, T2\
+  bundledCode: "#line 2 \"src/cpp-template/header/change-min.hpp\"\n\nnamespace luz\
+    \ {\n\n  template < typename T1, typename T2 >\n  inline bool chmin(T1 &a, T2\
     \ b) {\n    return a > b and (a = b, true);\n  }\n\n} // namespace luz\n"
+  code: "#pragma once\n\nnamespace luz {\n\n  template < typename T1, typename T2\
+    \ >\n  inline bool chmin(T1 &a, T2 b) {\n    return a > b and (a = b, true);\n\
+    \  }\n\n} // namespace luz\n"
   dependsOn: []
   isVerificationFile: false
-  path: src/cpp-template/header/change-minmax.hpp
+  path: src/cpp-template/header/change-min.hpp
   requiredBy:
   - src/cpp-template/header/template-header.hpp
   - src/cpp-template/template.cpp
   - src/graph/single-source-shortest-path/in-non-negative-weighted-graph.hpp
   - src/graph/decomposition/strongly-connected-components.hpp
-  timestamp: '2022-08-22 18:26:45+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-07-30 00:54:52+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/atcoder/abc298_f.test.cpp
   - test/atcoder/abc259_c.test.cpp
-  - test/atcoder/abc177_d.test.cpp
   - test/aoj/itp1_1_a.test.cpp
   - test/aoj/grl_1_a/dynamic-graph.test.cpp
   - test/aoj/grl_1_a/static-graph.test.cpp
-  - test/aoj/1181.test.cpp
   - test/library-checker/scc.test.cpp
-documentation_of: src/cpp-template/header/change-minmax.hpp
+documentation_of: src/cpp-template/header/change-min.hpp
 layout: document
-title: chmin / chmax
+title: chmin
 ---
 
 ## chmin
@@ -85,12 +70,4 @@ bool chmin(T1 &a, T2 b)
 ```
 
 `a` よりも `b` のほうが小さいとき `a` の値を `b` に変更する。
-更新があったときのみ `true` を返す。
-
-## chmax
-```
-bool chmax(T1 &a, T2 b)
-```
-
-`a` よりも `b` のほうが大きいとき `a` の値を `b` に変更する。
 更新があったときのみ `true` を返す。

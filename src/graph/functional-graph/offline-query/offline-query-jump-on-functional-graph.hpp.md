@@ -1,36 +1,41 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/int-alias.hpp
+    title: int alias
+  - icon: ':question:'
     path: src/cpp-template/header/rep.hpp
     title: "rep \u69CB\u9020\u4F53"
-  - icon: ':heavy_check_mark:'
-    path: src/cpp-template/header/type-alias.hpp
-    title: Type alias
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/size-alias.hpp
+    title: size alias
+  - icon: ':x:'
     path: src/graph/tree/offline-query/offline-query-level-ancestor.hpp
     title: "\u30AA\u30D5\u30E9\u30A4\u30F3 Level Ancestor (Offline Level Ancestor)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/utility/pair-hash.hpp
     title: "std::pair \u306E Hash"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/atcoder/abc258_e/offline-algorithm.test.cpp
     title: test/atcoder/abc258_e/offline-algorithm.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
     title: unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/graph/functional-graph/offline-query/offline-query-jump-on-functional-graph.hpp\"\
-    \n\n#line 2 \"src/cpp-template/header/rep.hpp\"\n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\
-    \n\n#include <cstddef>\n#include <cstdint>\n\nnamespace luz {\n\n  using isize\
-    \ = std::ptrdiff_t;\n  using usize = std::size_t;\n\n  using i32 = std::int32_t;\n\
-    \  using i64 = std::int64_t;\n  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n\
+    \n\n#line 2 \"src/cpp-template/header/int-alias.hpp\"\n\n#include <cstdint>\n\n\
+    namespace luz {\n\n  using i32  = std::int32_t;\n  using i64  = std::int64_t;\n\
+    \  using i128 = __int128_t;\n\n  using u32  = std::uint32_t;\n  using u64  = std::uint64_t;\n\
+    \  using u128 = __uint128_t;\n\n} // namespace luz\n#line 2 \"src/cpp-template/header/rep.hpp\"\
+    \n\n#line 2 \"src/cpp-template/header/size-alias.hpp\"\n\n#include <cstddef>\n\
+    \nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using usize = std::size_t;\n\
     \n} // namespace luz\n#line 4 \"src/cpp-template/header/rep.hpp\"\n\n#include\
     \ <algorithm>\n\nnamespace luz {\n\n  struct rep {\n    struct itr {\n      usize\
     \ i;\n      constexpr itr(const usize i) noexcept: i(i) {}\n      void operator++()\
@@ -79,8 +84,8 @@ data:
     \   path.reserve(g_size);\n      dfs(root);\n    }\n\n    std::optional< usize\
     \ > la(usize v, usize level) const {\n      bound_check(v);\n      query_type\
     \ qi(v, level);\n      assert(results.count(qi));\n      return (*results.find(qi)).second;\n\
-    \    }\n  };\n\n} // namespace luz\n#line 7 \"src/graph/functional-graph/offline-query/offline-query-jump-on-functional-graph.hpp\"\
-    \n\n#line 12 \"src/graph/functional-graph/offline-query/offline-query-jump-on-functional-graph.hpp\"\
+    \    }\n  };\n\n} // namespace luz\n#line 8 \"src/graph/functional-graph/offline-query/offline-query-jump-on-functional-graph.hpp\"\
+    \n\n#line 13 \"src/graph/functional-graph/offline-query/offline-query-jump-on-functional-graph.hpp\"\
     \n\nnamespace luz {\n\n  template < class G >\n  class OfflineJumpOnFunctionalGraphQuery\
     \ {\n    using graph     = G;\n    using cost_type = typename graph::cost_type;\n\
     \n    usize g_size;\n    graph g;\n\n    graph tree;\n    usize tree_root;\n \
@@ -135,9 +140,10 @@ data:
     \   }\n\n    usize jump(usize v, u64 k) const {\n      query_type qi(v, k);\n\
     \      assert(result.count(qi));\n      return result.find(qi)->second;\n    }\n\
     \  };\n} // namespace luz\n"
-  code: "#pragma once\n\n#include \"src/cpp-template/header/rep.hpp\"\n#include \"\
-    src/cpp-template/header/type-alias.hpp\"\n#include \"src/graph/tree/offline-query/offline-query-level-ancestor.hpp\"\
-    \n#include \"src/utility/pair-hash.hpp\"\n\n#include <cassert>\n#include <unordered_map>\n\
+  code: "#pragma once\n\n#include \"src/cpp-template/header/int-alias.hpp\"\n#include\
+    \ \"src/cpp-template/header/rep.hpp\"\n#include \"src/cpp-template/header/size-alias.hpp\"\
+    \n#include \"src/graph/tree/offline-query/offline-query-level-ancestor.hpp\"\n\
+    #include \"src/utility/pair-hash.hpp\"\n\n#include <cassert>\n#include <unordered_map>\n\
     #include <utility>\n#include <vector>\n\nnamespace luz {\n\n  template < class\
     \ G >\n  class OfflineJumpOnFunctionalGraphQuery {\n    using graph     = G;\n\
     \    using cost_type = typename graph::cost_type;\n\n    usize g_size;\n    graph\
@@ -193,15 +199,16 @@ data:
     \ k);\n      assert(result.count(qi));\n      return result.find(qi)->second;\n\
     \    }\n  };\n} // namespace luz\n"
   dependsOn:
+  - src/cpp-template/header/int-alias.hpp
   - src/cpp-template/header/rep.hpp
-  - src/cpp-template/header/type-alias.hpp
+  - src/cpp-template/header/size-alias.hpp
   - src/graph/tree/offline-query/offline-query-level-ancestor.hpp
   - src/utility/pair-hash.hpp
   isVerificationFile: false
   path: src/graph/functional-graph/offline-query/offline-query-jump-on-functional-graph.hpp
   requiredBy: []
-  timestamp: '2023-05-28 01:36:49+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-07-30 00:54:52+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
   - test/atcoder/abc258_e/offline-algorithm.test.cpp

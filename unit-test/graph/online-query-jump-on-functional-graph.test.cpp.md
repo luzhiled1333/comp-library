@@ -1,35 +1,38 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/int-alias.hpp
+    title: int alias
+  - icon: ':question:'
     path: src/cpp-template/header/rep.hpp
     title: "rep \u69CB\u9020\u4F53"
-  - icon: ':heavy_check_mark:'
-    path: src/cpp-template/header/type-alias.hpp
-    title: Type alias
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/size-alias.hpp
+    title: size alias
+  - icon: ':question:'
     path: src/graph/class/edge/edge.hpp
     title: src/graph/class/edge/edge.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/graph/class/static-graph.hpp
     title: "\u9759\u7684\u306A\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp
     title: "(online) Functional Graph \u4E0A\u306E\u9802\u70B9 $v$ \u304B\u3089 $k$\
       \ \u56DE\u79FB\u52D5\u3057\u305F\u5148\u306E\u9802\u70B9 (Online Jump On Functional\
       \ Graph)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/utility/bit/bit-width.hpp
     title: "\u5024\u3092\u8868\u73FE\u3059\u308B\u305F\u3081\u306B\u5FC5\u8981\u306A\
       \u6700\u5C0F\u306Ebit\u5E45 (bit_width)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/utility/bit/popcount.hpp
     title: "\u7ACB\u3063\u3066\u3044\u308B bit \u306E\u6570 (population count, popcount)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/ITP1_1_A
     links:
@@ -37,10 +40,12 @@ data:
   bundledCode: "#line 1 \"unit-test/graph/online-query-jump-on-functional-graph.test.cpp\"\
     \n// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/ITP1_1_A\n\
     \n#line 2 \"src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp\"\
-    \n\n#line 2 \"src/cpp-template/header/rep.hpp\"\n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\
-    \n\n#include <cstddef>\n#include <cstdint>\n\nnamespace luz {\n\n  using isize\
-    \ = std::ptrdiff_t;\n  using usize = std::size_t;\n\n  using i32 = std::int32_t;\n\
-    \  using i64 = std::int64_t;\n  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n\
+    \n\n#line 2 \"src/cpp-template/header/int-alias.hpp\"\n\n#include <cstdint>\n\n\
+    namespace luz {\n\n  using i32  = std::int32_t;\n  using i64  = std::int64_t;\n\
+    \  using i128 = __int128_t;\n\n  using u32  = std::uint32_t;\n  using u64  = std::uint64_t;\n\
+    \  using u128 = __uint128_t;\n\n} // namespace luz\n#line 2 \"src/cpp-template/header/rep.hpp\"\
+    \n\n#line 2 \"src/cpp-template/header/size-alias.hpp\"\n\n#include <cstddef>\n\
+    \nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using usize = std::size_t;\n\
     \n} // namespace luz\n#line 4 \"src/cpp-template/header/rep.hpp\"\n\n#include\
     \ <algorithm>\n\nnamespace luz {\n\n  struct rep {\n    struct itr {\n      usize\
     \ i;\n      constexpr itr(const usize i) noexcept: i(i) {}\n      void operator++()\
@@ -59,19 +64,19 @@ data:
     \          l(std::min(f, l) - 1) {}\n    constexpr auto begin() const noexcept\
     \ {\n      return f;\n    }\n    constexpr auto end() const noexcept {\n     \
     \ return l;\n    }\n  };\n\n} // namespace luz\n#line 2 \"src/utility/bit/bit-width.hpp\"\
-    \n\n#line 2 \"src/utility/bit/popcount.hpp\"\n\n#line 4 \"src/utility/bit/popcount.hpp\"\
+    \n\n#line 2 \"src/utility/bit/popcount.hpp\"\n\n#line 5 \"src/utility/bit/popcount.hpp\"\
     \n\n#include <cassert>\n\nnamespace luz {\n\n  usize popcount(u64 x) {\n    assert(__cplusplus\
     \ <= 201703L);\n\n#ifdef __GNUC__\n    return __builtin_popcountll(x);\n#endif\n\
     \n    x -= (x >> 1) & 0x5555555555555555;\n    x = (x & 0x3333333333333333) +\
     \ ((x >> 2) & 0x3333333333333333);\n    x += (x >> 4) & 0x0f0f0f0f0f0f0f0f;\n\
     \    return x * 0x0101010101010101 >> 56 & 0x7f;\n  }\n\n} // namespace luz\n\
-    #line 4 \"src/utility/bit/bit-width.hpp\"\n\n#line 6 \"src/utility/bit/bit-width.hpp\"\
+    #line 6 \"src/utility/bit/bit-width.hpp\"\n\n#line 8 \"src/utility/bit/bit-width.hpp\"\
     \n\nnamespace luz {\n\n  usize bit_width(u64 x) {\n    assert(__cplusplus <= 201703L);\n\
     \n    if (x == 0) {\n      return 0;\n    }\n\n#ifdef __GNUC__\n    return 64\
     \ - __builtin_clzll(x);\n#endif\n\n    x |= x >> 1;\n    x |= x >> 2;\n    x |=\
     \ x >> 4;\n    x |= x >> 8;\n    x |= x >> 16;\n    x |= x >> 32;\n    return\
-    \ popcount(x);\n  }\n\n} // namespace luz\n#line 6 \"src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp\"\
-    \n\n#line 8 \"src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp\"\
+    \ popcount(x);\n  }\n\n} // namespace luz\n#line 7 \"src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp\"\
+    \n\n#line 9 \"src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp\"\
     \n#include <utility>\n#include <vector>\n\nnamespace luz {\n\n  template < class\
     \ G >\n  class OnlineJumpOnFunctionalGraphQuery {\n    using graph     = G;\n\
     \    using cost_type = typename graph::cost_type;\n\n    usize g_size;\n    graph\
@@ -159,9 +164,9 @@ data:
     \    const Es< const_iterator > operator[](const usize &v) const {\n      assert(initialized);\n\
     \      return Es< const_iterator >(edges.cbegin() + outdegrees[v + 1],\n     \
     \                             edges.cbegin() + outdegrees[v]);\n    }\n  };\n\n\
-    } // namespace luz\n#line 8 \"unit-test/graph/online-query-jump-on-functional-graph.test.cpp\"\
-    \n\n#line 10 \"unit-test/graph/online-query-jump-on-functional-graph.test.cpp\"\
-    \n#include <iostream>\n#line 12 \"unit-test/graph/online-query-jump-on-functional-graph.test.cpp\"\
+    } // namespace luz\n#line 9 \"unit-test/graph/online-query-jump-on-functional-graph.test.cpp\"\
+    \n\n#line 11 \"unit-test/graph/online-query-jump-on-functional-graph.test.cpp\"\
+    \n#include <iostream>\n#line 13 \"unit-test/graph/online-query-jump-on-functional-graph.test.cpp\"\
     \n\nnamespace luz {\n\n  template < class G >\n  usize naive(const G &fg, usize\
     \ v, u64 k) {\n    if (k == 0) {\n      return v;\n    } else {\n      return\
     \ naive(fg, fg[v][0].to, k - 1);\n    }\n  }\n\n  void main_() {\n    using edge\
@@ -179,17 +184,17 @@ data:
     }\n"
   code: "// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/ITP1_1_A\n\
     \n#include \"src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp\"\
-    \n\n#include \"src/cpp-template/header/type-alias.hpp\"\n#include \"src/graph/class/edge/edge.hpp\"\
-    \n#include \"src/graph/class/static-graph.hpp\"\n\n#include <cassert>\n#include\
-    \ <iostream>\n#include <vector>\n\nnamespace luz {\n\n  template < class G >\n\
-    \  usize naive(const G &fg, usize v, u64 k) {\n    if (k == 0) {\n      return\
-    \ v;\n    } else {\n      return naive(fg, fg[v][0].to, k - 1);\n    }\n  }\n\n\
-    \  void main_() {\n    using edge  = Edge< u32 >;\n    using graph = StaticGraph<\
-    \ edge >;\n\n    graph fg(10);\n    fg.add_directed_edge(0, 1);\n    fg.add_directed_edge(1,\
-    \ 3);\n    fg.add_directed_edge(2, 2);\n    fg.add_directed_edge(3, 0);\n    fg.add_directed_edge(4,\
-    \ 5);\n    fg.add_directed_edge(5, 7);\n    fg.add_directed_edge(6, 8);\n    fg.add_directed_edge(7,\
-    \ 8);\n    fg.add_directed_edge(8, 9);\n    fg.add_directed_edge(9, 7);\n    fg.initialize();\n\
-    \n    OnlineJumpOnFunctionalGraphQuery\n        online_jump_on_functional_graph_solver(fg);\n\
+    \n\n#include \"src/cpp-template/header/int-alias.hpp\"\n#include \"src/cpp-template/header/size-alias.hpp\"\
+    \n#include \"src/graph/class/edge/edge.hpp\"\n#include \"src/graph/class/static-graph.hpp\"\
+    \n\n#include <cassert>\n#include <iostream>\n#include <vector>\n\nnamespace luz\
+    \ {\n\n  template < class G >\n  usize naive(const G &fg, usize v, u64 k) {\n\
+    \    if (k == 0) {\n      return v;\n    } else {\n      return naive(fg, fg[v][0].to,\
+    \ k - 1);\n    }\n  }\n\n  void main_() {\n    using edge  = Edge< u32 >;\n  \
+    \  using graph = StaticGraph< edge >;\n\n    graph fg(10);\n    fg.add_directed_edge(0,\
+    \ 1);\n    fg.add_directed_edge(1, 3);\n    fg.add_directed_edge(2, 2);\n    fg.add_directed_edge(3,\
+    \ 0);\n    fg.add_directed_edge(4, 5);\n    fg.add_directed_edge(5, 7);\n    fg.add_directed_edge(6,\
+    \ 8);\n    fg.add_directed_edge(7, 8);\n    fg.add_directed_edge(8, 9);\n    fg.add_directed_edge(9,\
+    \ 7);\n    fg.initialize();\n\n    OnlineJumpOnFunctionalGraphQuery\n        online_jump_on_functional_graph_solver(fg);\n\
     \    const u64 large = 1000000000000000000ll;\n    std::vector< usize > expected{1,\
     \ 3, 2, 0, 9, 7, 8, 8, 9, 7};\n    for (usize v: rep(0, 10)) {\n      for (u64\
     \ k: rep(0, 100)) {\n        assert(online_jump_on_functional_graph_solver.jump(v,\
@@ -199,8 +204,9 @@ data:
     }\n"
   dependsOn:
   - src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp
+  - src/cpp-template/header/int-alias.hpp
   - src/cpp-template/header/rep.hpp
-  - src/cpp-template/header/type-alias.hpp
+  - src/cpp-template/header/size-alias.hpp
   - src/utility/bit/bit-width.hpp
   - src/utility/bit/popcount.hpp
   - src/graph/class/edge/edge.hpp
@@ -208,8 +214,8 @@ data:
   isVerificationFile: true
   path: unit-test/graph/online-query-jump-on-functional-graph.test.cpp
   requiredBy: []
-  timestamp: '2023-05-28 01:36:49+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-07-30 00:54:52+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: unit-test/graph/online-query-jump-on-functional-graph.test.cpp
 layout: document

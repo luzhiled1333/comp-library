@@ -1,34 +1,37 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/int-alias.hpp
+    title: int alias
+  - icon: ':question:'
     path: src/cpp-template/header/rep.hpp
     title: "rep \u69CB\u9020\u4F53"
-  - icon: ':heavy_check_mark:'
-    path: src/cpp-template/header/type-alias.hpp
-    title: Type alias
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/size-alias.hpp
+    title: size alias
+  - icon: ':x:'
     path: src/math/convolution/modint-convolution.hpp
     title: Number Theoretic Transform
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/math/modular-arithmetic/static-modint.hpp
     title: src/math/modular-arithmetic/static-modint.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/sequence/wildcard-pattern-matching.hpp
     title: "\u30EF\u30A4\u30EB\u30C9\u30AB\u30FC\u30C9\u30D1\u30BF\u30FC\u30F3\u30DE\
       \u30C3\u30C1\u30F3\u30B0"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/utility/bit/bit-width.hpp
     title: "\u5024\u3092\u8868\u73FE\u3059\u308B\u305F\u3081\u306B\u5FC5\u8981\u306A\
       \u6700\u5C0F\u306Ebit\u5E45 (bit_width)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/utility/bit/popcount.hpp
     title: "\u7ACB\u3063\u3066\u3044\u308B bit \u306E\u6570 (population count, popcount)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://atcoder.jp/contests/abc307/tasks/abc307_ex
     links:
@@ -36,43 +39,44 @@ data:
     - https://atcoder.jp/contests/abc307/tasks/abc307_h
   bundledCode: "#line 1 \"test/atcoder/abc307_h/main.test.cpp\"\n// verification-helper:\
     \ PROBLEM https://atcoder.jp/contests/abc307/tasks/abc307_h\n// verification-helper:\
-    \ PROBLEM https://atcoder.jp/contests/abc307/tasks/abc307_ex\n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\
-    \n\n#include <cstddef>\n#include <cstdint>\n\nnamespace luz {\n\n  using isize\
-    \ = std::ptrdiff_t;\n  using usize = std::size_t;\n\n  using i32 = std::int32_t;\n\
-    \  using i64 = std::int64_t;\n  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n\
-    \n} // namespace luz\n#line 2 \"src/math/modular-arithmetic/static-modint.hpp\"\
-    \n\n#line 4 \"src/math/modular-arithmetic/static-modint.hpp\"\n\n#include <cassert>\n\
-    #include <iostream>\n\nnamespace luz {\n\n  template < u32 mod >\n  class StaticPrimeModInt\
-    \ {\n    using modint = StaticPrimeModInt;\n\n    u32 v;\n\n   public:\n    StaticPrimeModInt():\
-    \ v(0) {}\n\n    template < typename T >\n    StaticPrimeModInt(T v_) {\n    \
-    \  i64 x = (i64)(v_ % (i64)mod);\n      if (x < 0) x += mod;\n      v = (u32)x;\n\
-    \    }\n\n    u32 val() const {\n      return v;\n    }\n\n    modint &operator+=(const\
-    \ modint &rhs) {\n      v += rhs.v;\n      if (v >= mod) v -= mod;\n      return\
-    \ *this;\n    }\n\n    modint &operator-=(const modint &rhs) {\n      v += mod\
-    \ - rhs.v;\n      if (v >= mod) v -= mod;\n      return *this;\n    }\n\n    modint\
-    \ &operator*=(const modint &rhs) {\n      v = (u32)(u64(1) * v * rhs.v % mod);\n\
-    \      return *this;\n    }\n\n    modint &operator/=(const modint &rhs) {\n \
-    \     *this *= rhs.inverse();\n      return *this;\n    }\n\n    modint operator+()\
-    \ const {\n      return *this;\n    }\n\n    modint operator-() const {\n    \
-    \  return modint() - *this;\n    }\n\n    friend modint operator+(const modint\
-    \ &lhs, const modint &rhs) {\n      return modint(lhs) += rhs;\n    }\n\n    friend\
-    \ modint operator-(const modint &lhs, const modint &rhs) {\n      return modint(lhs)\
-    \ -= rhs;\n    }\n\n    friend modint operator*(const modint &lhs, const modint\
-    \ &rhs) {\n      return modint(lhs) *= rhs;\n    }\n\n    friend modint operator/(const\
-    \ modint &lhs, const modint &rhs) {\n      return modint(lhs) /= rhs;\n    }\n\
-    \n    friend bool operator==(const modint &lhs, const modint &rhs) {\n      return\
-    \ lhs.v == rhs.v;\n    }\n\n    friend bool operator!=(const modint &lhs, const\
-    \ modint &rhs) {\n      return lhs.v != rhs.v;\n    }\n\n    modint pow(i64 n)\
-    \ const {\n      assert(0 <= n);\n      modint x = *this, r = 1;\n      while\
-    \ (n) {\n        if (n & 1) r *= x;\n        x *= x;\n        n >>= 1;\n     \
-    \ }\n      return r;\n    }\n\n    modint inverse() const {\n      assert(v !=\
-    \ 0);\n      return pow(mod - 2);\n    }\n\n    static constexpr u32 get_mod()\
-    \ {\n      return mod;\n    }\n\n    friend std::ostream &operator<<(std::ostream\
-    \ &os,\n                                    const modint &m) {\n      os << m.val();\n\
-    \      return os;\n    }\n  };\n\n  using modint998244353  = StaticPrimeModInt<\
-    \ 998244353 >;\n  using modint1000000007 = StaticPrimeModInt< 1000000007 >;\n\n\
-    } // namespace luz\n#line 2 \"src/sequence/wildcard-pattern-matching.hpp\"\n\n\
-    #line 2 \"src/math/convolution/modint-convolution.hpp\"\n\n#line 2 \"src/cpp-template/header/rep.hpp\"\
+    \ PROBLEM https://atcoder.jp/contests/abc307/tasks/abc307_ex\n\n#line 2 \"src/cpp-template/header/size-alias.hpp\"\
+    \n\n#include <cstddef>\n\nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n\
+    \  using usize = std::size_t;\n\n} // namespace luz\n#line 2 \"src/math/modular-arithmetic/static-modint.hpp\"\
+    \n\n#line 2 \"src/cpp-template/header/int-alias.hpp\"\n\n#include <cstdint>\n\n\
+    namespace luz {\n\n  using i32  = std::int32_t;\n  using i64  = std::int64_t;\n\
+    \  using i128 = __int128_t;\n\n  using u32  = std::uint32_t;\n  using u64  = std::uint64_t;\n\
+    \  using u128 = __uint128_t;\n\n} // namespace luz\n#line 4 \"src/math/modular-arithmetic/static-modint.hpp\"\
+    \n\n#include <cassert>\n#include <iostream>\n\nnamespace luz {\n\n  template <\
+    \ u32 mod >\n  class StaticPrimeModInt {\n    using modint = StaticPrimeModInt;\n\
+    \n    u32 v;\n\n   public:\n    StaticPrimeModInt(): v(0) {}\n\n    template <\
+    \ typename T >\n    StaticPrimeModInt(T v_) {\n      i64 x = (i64)(v_ % (i64)mod);\n\
+    \      if (x < 0) x += mod;\n      v = (u32)x;\n    }\n\n    u32 val() const {\n\
+    \      return v;\n    }\n\n    modint &operator+=(const modint &rhs) {\n     \
+    \ v += rhs.v;\n      if (v >= mod) v -= mod;\n      return *this;\n    }\n\n \
+    \   modint &operator-=(const modint &rhs) {\n      v += mod - rhs.v;\n      if\
+    \ (v >= mod) v -= mod;\n      return *this;\n    }\n\n    modint &operator*=(const\
+    \ modint &rhs) {\n      v = (u32)(u64(1) * v * rhs.v % mod);\n      return *this;\n\
+    \    }\n\n    modint &operator/=(const modint &rhs) {\n      *this *= rhs.inverse();\n\
+    \      return *this;\n    }\n\n    modint operator+() const {\n      return *this;\n\
+    \    }\n\n    modint operator-() const {\n      return modint() - *this;\n   \
+    \ }\n\n    friend modint operator+(const modint &lhs, const modint &rhs) {\n \
+    \     return modint(lhs) += rhs;\n    }\n\n    friend modint operator-(const modint\
+    \ &lhs, const modint &rhs) {\n      return modint(lhs) -= rhs;\n    }\n\n    friend\
+    \ modint operator*(const modint &lhs, const modint &rhs) {\n      return modint(lhs)\
+    \ *= rhs;\n    }\n\n    friend modint operator/(const modint &lhs, const modint\
+    \ &rhs) {\n      return modint(lhs) /= rhs;\n    }\n\n    friend bool operator==(const\
+    \ modint &lhs, const modint &rhs) {\n      return lhs.v == rhs.v;\n    }\n\n \
+    \   friend bool operator!=(const modint &lhs, const modint &rhs) {\n      return\
+    \ lhs.v != rhs.v;\n    }\n\n    modint pow(i64 n) const {\n      assert(0 <= n);\n\
+    \      modint x = *this, r = 1;\n      while (n) {\n        if (n & 1) r *= x;\n\
+    \        x *= x;\n        n >>= 1;\n      }\n      return r;\n    }\n\n    modint\
+    \ inverse() const {\n      assert(v != 0);\n      return pow(mod - 2);\n    }\n\
+    \n    static constexpr u32 get_mod() {\n      return mod;\n    }\n\n    friend\
+    \ std::ostream &operator<<(std::ostream &os,\n                               \
+    \     const modint &m) {\n      os << m.val();\n      return os;\n    }\n  };\n\
+    \n  using modint998244353  = StaticPrimeModInt< 998244353 >;\n  using modint1000000007\
+    \ = StaticPrimeModInt< 1000000007 >;\n\n} // namespace luz\n#line 2 \"src/sequence/wildcard-pattern-matching.hpp\"\
+    \n\n#line 2 \"src/math/convolution/modint-convolution.hpp\"\n\n#line 2 \"src/cpp-template/header/rep.hpp\"\
     \n\n#line 4 \"src/cpp-template/header/rep.hpp\"\n\n#include <algorithm>\n\nnamespace\
     \ luz {\n\n  struct rep {\n    struct itr {\n      usize i;\n      constexpr itr(const\
     \ usize i) noexcept: i(i) {}\n      void operator++() noexcept {\n        ++i;\n\
@@ -91,18 +95,18 @@ data:
     \ - 1) {}\n    constexpr auto begin() const noexcept {\n      return f;\n    }\n\
     \    constexpr auto end() const noexcept {\n      return l;\n    }\n  };\n\n}\
     \ // namespace luz\n#line 2 \"src/utility/bit/bit-width.hpp\"\n\n#line 2 \"src/utility/bit/popcount.hpp\"\
-    \n\n#line 4 \"src/utility/bit/popcount.hpp\"\n\n#line 6 \"src/utility/bit/popcount.hpp\"\
+    \n\n#line 5 \"src/utility/bit/popcount.hpp\"\n\n#line 7 \"src/utility/bit/popcount.hpp\"\
     \n\nnamespace luz {\n\n  usize popcount(u64 x) {\n    assert(__cplusplus <= 201703L);\n\
     \n#ifdef __GNUC__\n    return __builtin_popcountll(x);\n#endif\n\n    x -= (x\
     \ >> 1) & 0x5555555555555555;\n    x = (x & 0x3333333333333333) + ((x >> 2) &\
     \ 0x3333333333333333);\n    x += (x >> 4) & 0x0f0f0f0f0f0f0f0f;\n    return x\
-    \ * 0x0101010101010101 >> 56 & 0x7f;\n  }\n\n} // namespace luz\n#line 4 \"src/utility/bit/bit-width.hpp\"\
-    \n\n#line 6 \"src/utility/bit/bit-width.hpp\"\n\nnamespace luz {\n\n  usize bit_width(u64\
+    \ * 0x0101010101010101 >> 56 & 0x7f;\n  }\n\n} // namespace luz\n#line 6 \"src/utility/bit/bit-width.hpp\"\
+    \n\n#line 8 \"src/utility/bit/bit-width.hpp\"\n\nnamespace luz {\n\n  usize bit_width(u64\
     \ x) {\n    assert(__cplusplus <= 201703L);\n\n    if (x == 0) {\n      return\
     \ 0;\n    }\n\n#ifdef __GNUC__\n    return 64 - __builtin_clzll(x);\n#endif\n\n\
     \    x |= x >> 1;\n    x |= x >> 2;\n    x |= x >> 4;\n    x |= x >> 8;\n    x\
     \ |= x >> 16;\n    x |= x >> 32;\n    return popcount(x);\n  }\n\n} // namespace\
-    \ luz\n#line 6 \"src/math/convolution/modint-convolution.hpp\"\n\n#line 8 \"src/math/convolution/modint-convolution.hpp\"\
+    \ luz\n#line 7 \"src/math/convolution/modint-convolution.hpp\"\n\n#line 9 \"src/math/convolution/modint-convolution.hpp\"\
     \n#include <vector>\n\nnamespace luz::internal {\n\n  template < typename modint\
     \ >\n  class ButterflyInfo {\n   public:\n    ButterflyInfo() {\n      if (not\
     \ roots.empty()) {\n        return;\n      }\n\n      u32 mod = modint::get_mod();\n\
@@ -187,8 +191,8 @@ data:
     \ s = 1 << bit_width(n + m - 2);\n    f.resize(s);\n    g.resize(s);\n    internal::butterfly(f);\n\
     \    internal::butterfly(g);\n    modint s_inv = modint(1) / s;\n    for (usize\
     \ i: rep(0, s)) {\n      f[i] *= g[i] * s_inv;\n    }\n    internal::butterfly_inv(f);\n\
-    \    f.resize(n + m - 1);\n    return f;\n  }\n\n} // namespace luz\n#line 5 \"\
-    src/sequence/wildcard-pattern-matching.hpp\"\n\n#line 8 \"src/sequence/wildcard-pattern-matching.hpp\"\
+    \    f.resize(n + m - 1);\n    return f;\n  }\n\n} // namespace luz\n#line 6 \"\
+    src/sequence/wildcard-pattern-matching.hpp\"\n\n#line 9 \"src/sequence/wildcard-pattern-matching.hpp\"\
     \n\nnamespace luz {\n\n  // [warning] false positive occur expect O(1/M)\n  //\
     \           when values are randomized\n  // [note] try to use multiple mods if\
     \ necessary\n  template < class modint, class T, class Iter >\n  std::vector<\
@@ -217,7 +221,7 @@ data:
     \ luz\n\nint main() {\n  luz::main_();\n}\n"
   code: "// verification-helper: PROBLEM https://atcoder.jp/contests/abc307/tasks/abc307_h\n\
     // verification-helper: PROBLEM https://atcoder.jp/contests/abc307/tasks/abc307_ex\n\
-    \n#include \"src/cpp-template/header/type-alias.hpp\"\n#include \"src/math/modular-arithmetic/static-modint.hpp\"\
+    \n#include \"src/cpp-template/header/size-alias.hpp\"\n#include \"src/math/modular-arithmetic/static-modint.hpp\"\
     \n#include \"src/sequence/wildcard-pattern-matching.hpp\"\n\n#include <iostream>\n\
     \nnamespace luz {\n\n  void main_() {\n    using mint = modint998244353;\n\n \
     \   usize l, w;\n    std::string s;\n\n    std::cin >> l >> w >> s;\n    s +=\
@@ -227,8 +231,9 @@ data:
     \ wpm.end(), 1) << std::endl;\n  }\n\n} // namespace luz\n\nint main() {\n  luz::main_();\n\
     }\n"
   dependsOn:
-  - src/cpp-template/header/type-alias.hpp
+  - src/cpp-template/header/size-alias.hpp
   - src/math/modular-arithmetic/static-modint.hpp
+  - src/cpp-template/header/int-alias.hpp
   - src/sequence/wildcard-pattern-matching.hpp
   - src/math/convolution/modint-convolution.hpp
   - src/cpp-template/header/rep.hpp
@@ -237,8 +242,8 @@ data:
   isVerificationFile: true
   path: test/atcoder/abc307_h/main.test.cpp
   requiredBy: []
-  timestamp: '2023-07-29 18:39:10+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-07-30 00:54:52+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/atcoder/abc307_h/main.test.cpp
 layout: document

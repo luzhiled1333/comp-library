@@ -1,28 +1,28 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: src/cpp-template/header/type-alias.hpp
-    title: Type alias
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/int-alias.hpp
+    title: int alias
+  - icon: ':x:'
     path: src/geometry/R2/class/point.hpp
     title: src/geometry/R2/class/point.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/geometry/R2/class/vector.hpp
     title: src/geometry/R2/class/vector.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/geometry/R2/numbers/eps.hpp
     title: src/geometry/R2/numbers/eps.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/geometry/R2/numbers/sign.hpp
     title: src/geometry/R2/numbers/sign.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/geometry/R2/utility/equals.hpp
     title: src/geometry/R2/utility/equals.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/geometry/R2/utility/is-fp-exception.hpp
     title: src/geometry/R2/utility/is-fp-exception.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/geometry/R2/utility/sign.hpp
     title: src/geometry/R2/utility/sign.hpp
   _extendedRequiredBy: []
@@ -34,11 +34,11 @@ data:
     links: []
   bundledCode: "#line 2 \"src/geometry/R2/class/circle.hpp\"\n\n#line 2 \"src/geometry/R2/class/point.hpp\"\
     \n\n#line 2 \"src/geometry/R2/class/vector.hpp\"\n\n#line 2 \"src/geometry/R2/utility/equals.hpp\"\
-    \n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\n\n#include <cstddef>\n\
-    #include <cstdint>\n\nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using\
-    \ usize = std::size_t;\n\n  using i32 = std::int32_t;\n  using i64 = std::int64_t;\n\
-    \  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n\n} // namespace\
-    \ luz\n#line 2 \"src/geometry/R2/numbers/sign.hpp\"\n\nnamespace luz::numbers::sign\
+    \n\n#line 2 \"src/geometry/R2/numbers/sign.hpp\"\n\n#line 2 \"src/cpp-template/header/int-alias.hpp\"\
+    \n\n#include <cstdint>\n\nnamespace luz {\n\n  using i32  = std::int32_t;\n  using\
+    \ i64  = std::int64_t;\n  using i128 = __int128_t;\n\n  using u32  = std::uint32_t;\n\
+    \  using u64  = std::uint64_t;\n  using u128 = __uint128_t;\n\n} // namespace\
+    \ luz\n#line 4 \"src/geometry/R2/numbers/sign.hpp\"\n\nnamespace luz::numbers::sign\
     \ {\n\n  constexpr i32 negative = -1;\n  constexpr i32 zero     = 0;\n  constexpr\
     \ i32 positive = +1;\n\n} // namespace luz::numbers::sign\n#line 2 \"src/geometry/R2/utility/sign.hpp\"\
     \n\n#line 2 \"src/geometry/R2/numbers/eps.hpp\"\n\n#include <cmath>\n\nnamespace\
@@ -47,8 +47,8 @@ data:
     \  }\n\n} // namespace luz::R2\n#line 6 \"src/geometry/R2/utility/sign.hpp\"\n\
     \nnamespace luz::R2 {\n\n  template < typename R >\n  i32 sign(R r) {\n    if\
     \ (r < -eps()) return numbers::sign::negative;\n    if (r > +eps()) return numbers::sign::positive;\n\
-    \    return numbers::sign::zero;\n  }\n\n} // namespace luz::R2\n#line 6 \"src/geometry/R2/utility/equals.hpp\"\
-    \n\nnamespace luz::R2 {\n\n  template < typename R >\n  i32 equals(R r0, R r1)\
+    \    return numbers::sign::zero;\n  }\n\n} // namespace luz::R2\n#line 5 \"src/geometry/R2/utility/equals.hpp\"\
+    \n\nnamespace luz::R2 {\n\n  template < typename R >\n  bool equals(R r0, R r1)\
     \ {\n    return sign(r1 - r0) == numbers::sign::zero;\n  }\n\n} // namespace luz::R2\n\
     #line 2 \"src/geometry/R2/utility/is-fp-exception.hpp\"\n\n#line 4 \"src/geometry/R2/utility/is-fp-exception.hpp\"\
     \n\nnamespace luz::R2 {\n\n  template < typename R >\n  bool is_fp_exception(R\
@@ -98,15 +98,15 @@ data:
   - src/geometry/R2/class/point.hpp
   - src/geometry/R2/class/vector.hpp
   - src/geometry/R2/utility/equals.hpp
-  - src/cpp-template/header/type-alias.hpp
   - src/geometry/R2/numbers/sign.hpp
+  - src/cpp-template/header/int-alias.hpp
   - src/geometry/R2/utility/sign.hpp
   - src/geometry/R2/numbers/eps.hpp
   - src/geometry/R2/utility/is-fp-exception.hpp
   isVerificationFile: false
   path: src/geometry/R2/class/circle.hpp
   requiredBy: []
-  timestamp: '2023-02-03 00:11:50+09:00'
+  timestamp: '2023-07-30 00:54:52+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/geometry/R2/class/circle.hpp

@@ -12,7 +12,7 @@ data:
     path: src/data-structure/segment-tree/presets/range-add-range-maximum-query-solver.hpp
     title: "\u533A\u9593\u52A0\u7B97 + \u533A\u9593\u6700\u5927\u30AF\u30A8\u30EA\
       \ solver (Range Add Range Maximum Query Solver)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/data-structure/segment-tree/presets/range-maximum-query-solver.hpp
     title: "\u4E00\u70B9\u66F4\u65B0 + \u533A\u9593\u6700\u5927\u30AF\u30A8\u30EA\
       \ solver (Range Maximum Query Solver)"
@@ -27,12 +27,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/dsl_2_h/range-maximum.test.cpp
     title: test/aoj/dsl_2_h/range-maximum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/atcoder/abc298_f.test.cpp
     title: test/atcoder/abc298_f.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/data-structure/segment-tree/presets/monoid/value-structure-maximum.hpp\"\
@@ -58,7 +58,7 @@ data:
   - src/data-structure/segment-tree/presets/range-maximum-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-update-range-maximum-query-solver.hpp
   timestamp: '2023-05-03 14:59:16+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/atcoder/abc298_f.test.cpp
   - test/aoj/dsl_2_f/range-maximum.test.cpp

@@ -1,37 +1,35 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/cpp-template/header/rep.hpp
     title: "rep \u69CB\u9020\u4F53"
-  - icon: ':heavy_check_mark:'
-    path: src/cpp-template/header/type-alias.hpp
-    title: Type alias
+  - icon: ':question:'
+    path: src/cpp-template/header/size-alias.hpp
+    title: size alias
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/dsl_2_b/fenwick-tree.test.cpp
     title: test/aoj/dsl_2_b/fenwick-tree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: unit-test/data-structure/fenwick-tree.test.cpp
     title: unit-test/data-structure/fenwick-tree.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/data-structure/fenwick-tree.hpp\"\n\n#line 2 \"src/cpp-template/header/rep.hpp\"\
-    \n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\n\n#include <cstddef>\n\
-    #include <cstdint>\n\nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using\
-    \ usize = std::size_t;\n\n  using i32 = std::int32_t;\n  using i64 = std::int64_t;\n\
-    \  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n\n} // namespace\
-    \ luz\n#line 4 \"src/cpp-template/header/rep.hpp\"\n\n#include <algorithm>\n\n\
-    namespace luz {\n\n  struct rep {\n    struct itr {\n      usize i;\n      constexpr\
-    \ itr(const usize i) noexcept: i(i) {}\n      void operator++() noexcept {\n \
-    \       ++i;\n      }\n      constexpr usize operator*() const noexcept {\n  \
-    \      return i;\n      }\n      constexpr bool operator!=(const itr x) const\
-    \ noexcept {\n        return i != x.i;\n      }\n    };\n    const itr f, l;\n\
-    \    constexpr rep(const usize f, const usize l) noexcept\n        : f(std::min(f,\
+    \n\n#line 2 \"src/cpp-template/header/size-alias.hpp\"\n\n#include <cstddef>\n\
+    \nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using usize = std::size_t;\n\
+    \n} // namespace luz\n#line 4 \"src/cpp-template/header/rep.hpp\"\n\n#include\
+    \ <algorithm>\n\nnamespace luz {\n\n  struct rep {\n    struct itr {\n      usize\
+    \ i;\n      constexpr itr(const usize i) noexcept: i(i) {}\n      void operator++()\
+    \ noexcept {\n        ++i;\n      }\n      constexpr usize operator*() const noexcept\
+    \ {\n        return i;\n      }\n      constexpr bool operator!=(const itr x)\
+    \ const noexcept {\n        return i != x.i;\n      }\n    };\n    const itr f,\
+    \ l;\n    constexpr rep(const usize f, const usize l) noexcept\n        : f(std::min(f,\
     \ l)),\n          l(l) {}\n    constexpr auto begin() const noexcept {\n     \
     \ return f;\n    }\n    constexpr auto end() const noexcept {\n      return l;\n\
     \    }\n  };\n\n  struct rrep {\n    struct itr {\n      usize i;\n      constexpr\
@@ -44,44 +42,43 @@ data:
     \ {\n      return f;\n    }\n    constexpr auto end() const noexcept {\n     \
     \ return l;\n    }\n  };\n\n} // namespace luz\n#line 5 \"src/data-structure/fenwick-tree.hpp\"\
     \n\n#include <cassert>\n#include <vector>\n\nnamespace luz {\n\n  template < typename\
-    \ T >\n  class FenwickTree {\n    usize n_;\n    std::vector< T > vals_;\n\n \
-    \   T sum(usize k) const {\n      T result(0);\n      while (k > 0) {\n      \
-    \  result += vals_[k];\n        k -= k & -k;\n      }\n      return result;\n\
-    \    }\n\n   public:\n    FenwickTree() = default;\n\n    explicit FenwickTree(usize\
-    \ n): n_(n), vals_(n + 1, T()) {}\n\n    explicit FenwickTree(const std::vector<\
-    \ T > &as)\n        : n_(as.size()),\n          vals_(as.size() + 1, T()) {\n\
-    \      for (usize i: rep(1, as.size() + 1)) {\n        vals_[i] = as[i - 1];\n\
-    \      }\n      for (usize i: rep(1, as.size() + 1)) {\n        usize j = i +\
-    \ (i & -i);\n        if (j <= as.size()) {\n          vals_[j] += vals_[i];\n\
-    \        }\n      }\n    }\n\n    void add(usize k, const T &v) {\n      assert(0\
-    \ <= k and k < n_);\n      k++;\n      while (k <= n_) {\n        vals_[k] +=\
-    \ v;\n        k += k & -k;\n      }\n    }\n\n    T sum(usize l, usize r) const\
-    \ {\n      assert(0 <= l and l <= r and r <= n_);\n      return sum(r) - sum(l);\n\
-    \    }\n  };\n\n} // namespace luz\n"
+    \ T >\n  class FenwickTree {\n    usize n;\n    std::vector< T > vals;\n\n   \
+    \ T sum(usize k) const {\n      T result(0);\n      while (k > 0) {\n        result\
+    \ += vals[k];\n        k -= k & -k;\n      }\n      return result;\n    }\n\n\
+    \   public:\n    FenwickTree() = default;\n\n    explicit FenwickTree(usize n):\
+    \ n(n), vals(n + 1, T()) {}\n\n    explicit FenwickTree(const std::vector< T >\
+    \ &as)\n        : n(as.size()),\n          vals(as.size() + 1, T()) {\n      for\
+    \ (usize i: rep(1, as.size() + 1)) {\n        vals[i] = as[i - 1];\n      }\n\
+    \      for (usize i: rep(1, as.size() + 1)) {\n        usize j = i + (i & -i);\n\
+    \        if (j <= as.size()) {\n          vals[j] += vals[i];\n        }\n   \
+    \   }\n    }\n\n    void add(usize k, const T &v) {\n      assert(k < n);\n  \
+    \    k++;\n      while (k <= n) {\n        vals[k] += v;\n        k += k & -k;\n\
+    \      }\n    }\n\n    T sum(usize l, usize r) const {\n      assert(l <= r and\
+    \ r <= n);\n      return sum(r) - sum(l);\n    }\n  };\n\n} // namespace luz\n"
   code: "#pragma once\n\n#include \"src/cpp-template/header/rep.hpp\"\n#include \"\
-    src/cpp-template/header/type-alias.hpp\"\n\n#include <cassert>\n#include <vector>\n\
+    src/cpp-template/header/size-alias.hpp\"\n\n#include <cassert>\n#include <vector>\n\
     \nnamespace luz {\n\n  template < typename T >\n  class FenwickTree {\n    usize\
-    \ n_;\n    std::vector< T > vals_;\n\n    T sum(usize k) const {\n      T result(0);\n\
-    \      while (k > 0) {\n        result += vals_[k];\n        k -= k & -k;\n  \
-    \    }\n      return result;\n    }\n\n   public:\n    FenwickTree() = default;\n\
-    \n    explicit FenwickTree(usize n): n_(n), vals_(n + 1, T()) {}\n\n    explicit\
-    \ FenwickTree(const std::vector< T > &as)\n        : n_(as.size()),\n        \
-    \  vals_(as.size() + 1, T()) {\n      for (usize i: rep(1, as.size() + 1)) {\n\
-    \        vals_[i] = as[i - 1];\n      }\n      for (usize i: rep(1, as.size()\
-    \ + 1)) {\n        usize j = i + (i & -i);\n        if (j <= as.size()) {\n  \
-    \        vals_[j] += vals_[i];\n        }\n      }\n    }\n\n    void add(usize\
-    \ k, const T &v) {\n      assert(0 <= k and k < n_);\n      k++;\n      while\
-    \ (k <= n_) {\n        vals_[k] += v;\n        k += k & -k;\n      }\n    }\n\n\
-    \    T sum(usize l, usize r) const {\n      assert(0 <= l and l <= r and r <=\
-    \ n_);\n      return sum(r) - sum(l);\n    }\n  };\n\n} // namespace luz\n"
+    \ n;\n    std::vector< T > vals;\n\n    T sum(usize k) const {\n      T result(0);\n\
+    \      while (k > 0) {\n        result += vals[k];\n        k -= k & -k;\n   \
+    \   }\n      return result;\n    }\n\n   public:\n    FenwickTree() = default;\n\
+    \n    explicit FenwickTree(usize n): n(n), vals(n + 1, T()) {}\n\n    explicit\
+    \ FenwickTree(const std::vector< T > &as)\n        : n(as.size()),\n         \
+    \ vals(as.size() + 1, T()) {\n      for (usize i: rep(1, as.size() + 1)) {\n \
+    \       vals[i] = as[i - 1];\n      }\n      for (usize i: rep(1, as.size() +\
+    \ 1)) {\n        usize j = i + (i & -i);\n        if (j <= as.size()) {\n    \
+    \      vals[j] += vals[i];\n        }\n      }\n    }\n\n    void add(usize k,\
+    \ const T &v) {\n      assert(k < n);\n      k++;\n      while (k <= n) {\n  \
+    \      vals[k] += v;\n        k += k & -k;\n      }\n    }\n\n    T sum(usize\
+    \ l, usize r) const {\n      assert(l <= r and r <= n);\n      return sum(r) -\
+    \ sum(l);\n    }\n  };\n\n} // namespace luz\n"
   dependsOn:
   - src/cpp-template/header/rep.hpp
-  - src/cpp-template/header/type-alias.hpp
+  - src/cpp-template/header/size-alias.hpp
   isVerificationFile: false
   path: src/data-structure/fenwick-tree.hpp
   requiredBy: []
-  timestamp: '2022-08-22 18:26:45+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-07-30 00:54:52+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - unit-test/data-structure/fenwick-tree.test.cpp
   - test/aoj/dsl_2_b/fenwick-tree.test.cpp

@@ -1,12 +1,12 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: src/cpp-template/header/change-minmax.hpp
-    title: chmin / chmax
-  - icon: ':heavy_check_mark:'
-    path: src/cpp-template/header/type-alias.hpp
-    title: Type alias
+  - icon: ':question:'
+    path: src/cpp-template/header/change-min.hpp
+    title: chmin
+  - icon: ':question:'
+    path: src/cpp-template/header/size-alias.hpp
+    title: size alias
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -21,15 +21,11 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"src/graph/single-source-shortest-path/in-non-negative-weighted-graph.hpp\"\
-    \n\n#line 2 \"src/cpp-template/header/change-minmax.hpp\"\n\nnamespace luz {\n\
-    \n  template < typename T1, typename T2 >\n  inline bool chmax(T1 &a, T2 b) {\n\
-    \    return a < b and (a = b, true);\n  }\n\n  template < typename T1, typename\
-    \ T2 >\n  inline bool chmin(T1 &a, T2 b) {\n    return a > b and (a = b, true);\n\
-    \  }\n\n} // namespace luz\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\
-    \n\n#include <cstddef>\n#include <cstdint>\n\nnamespace luz {\n\n  using isize\
-    \ = std::ptrdiff_t;\n  using usize = std::size_t;\n\n  using i32 = std::int32_t;\n\
-    \  using i64 = std::int64_t;\n  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n\
-    \n} // namespace luz\n#line 5 \"src/graph/single-source-shortest-path/in-non-negative-weighted-graph.hpp\"\
+    \n\n#line 2 \"src/cpp-template/header/change-min.hpp\"\n\nnamespace luz {\n\n\
+    \  template < typename T1, typename T2 >\n  inline bool chmin(T1 &a, T2 b) {\n\
+    \    return a > b and (a = b, true);\n  }\n\n} // namespace luz\n#line 2 \"src/cpp-template/header/size-alias.hpp\"\
+    \n\n#include <cstddef>\n\nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n\
+    \  using usize = std::size_t;\n\n} // namespace luz\n#line 5 \"src/graph/single-source-shortest-path/in-non-negative-weighted-graph.hpp\"\
     \n\n#include <functional>\n#include <limits>\n#include <queue>\n#include <utility>\n\
     #include <vector>\n\nnamespace luz::sssp {\n\n  template < class G >\n  class\
     \ InNonNegativeWeightedGraph {\n    using cost_type = typename G::cost_type;\n\
@@ -58,12 +54,12 @@ data:
     \ const {\n      return parents;\n    }\n\n    inline usize edge_label(const usize\
     \ v) const {\n      return ids[v];\n    }\n\n    inline std::vector< usize > get_edge_labels()\
     \ const {\n      return ids;\n    }\n  };\n\n} // namespace luz::sssp\n"
-  code: "#pragma once\n\n#include \"src/cpp-template/header/change-minmax.hpp\"\n\
-    #include \"src/cpp-template/header/type-alias.hpp\"\n\n#include <functional>\n\
-    #include <limits>\n#include <queue>\n#include <utility>\n#include <vector>\n\n\
-    namespace luz::sssp {\n\n  template < class G >\n  class InNonNegativeWeightedGraph\
-    \ {\n    using cost_type = typename G::cost_type;\n    using graph     = G;\n\n\
-    \    static constexpr usize undefined_ =\n        std::numeric_limits< usize >::max();\n\
+  code: "#pragma once\n\n#include \"src/cpp-template/header/change-min.hpp\"\n#include\
+    \ \"src/cpp-template/header/size-alias.hpp\"\n\n#include <functional>\n#include\
+    \ <limits>\n#include <queue>\n#include <utility>\n#include <vector>\n\nnamespace\
+    \ luz::sssp {\n\n  template < class G >\n  class InNonNegativeWeightedGraph {\n\
+    \    using cost_type = typename G::cost_type;\n    using graph     = G;\n\n  \
+    \  static constexpr usize undefined_ =\n        std::numeric_limits< usize >::max();\n\
     \    static constexpr cost_type inf_ =\n        std::numeric_limits< cost_type\
     \ >::max();\n\n    graph g;\n    usize g_size;\n    std::vector< cost_type > ds;\n\
     \    std::vector< usize > parents, ids;\n\n    void dijkstra(usize s) {\n    \
@@ -89,12 +85,12 @@ data:
     \ std::vector< usize > get_edge_labels() const {\n      return ids;\n    }\n \
     \ };\n\n} // namespace luz::sssp\n"
   dependsOn:
-  - src/cpp-template/header/change-minmax.hpp
-  - src/cpp-template/header/type-alias.hpp
+  - src/cpp-template/header/change-min.hpp
+  - src/cpp-template/header/size-alias.hpp
   isVerificationFile: false
   path: src/graph/single-source-shortest-path/in-non-negative-weighted-graph.hpp
   requiredBy: []
-  timestamp: '2023-05-28 01:36:49+09:00'
+  timestamp: '2023-07-30 00:54:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/grl_1_a/dynamic-graph.test.cpp

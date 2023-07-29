@@ -1,50 +1,53 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/cpp-template/header/fast-ios.hpp
     title: Fast I/O
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/int-alias.hpp
+    title: int alias
+  - icon: ':question:'
     path: src/cpp-template/header/rep.hpp
     title: "rep \u69CB\u9020\u4F53"
-  - icon: ':heavy_check_mark:'
-    path: src/cpp-template/header/type-alias.hpp
-    title: Type alias
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/size-alias.hpp
+    title: size alias
+  - icon: ':question:'
     path: src/data-structure/disjoint-set-union.hpp
     title: Disjoint Set Union (Union Find)
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/graph/class/edge/edge.hpp
     title: src/graph/class/edge/edge.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/graph/class/static-graph.hpp
     title: "\u9759\u7684\u306A\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/graph/single-source-shortest-path/in-unweighted-graph.hpp
     title: "\u91CD\u307F\u306A\u3057\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u7D4C\u8DEF\
       \ (Single Source Shortest Path in Unweighted Graph, BFS)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/graph/tree/offline-query/offline-query-jump-on-tree.hpp
     title: "(offine) \u6728\u306E\u30D1\u30B9 $u-v$ \u4E0A\u306E $k$ \u756A\u76EE\u306E\
       \u9802\u70B9 (Offline Jump On Tree)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/graph/tree/offline-query/offline-query-level-ancestor.hpp
     title: "\u30AA\u30D5\u30E9\u30A4\u30F3 Level Ancestor (Offline Level Ancestor)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/graph/tree/offline-query/offline-query-lowest-common-ancestor.hpp
     title: "\u30AA\u30D5\u30E9\u30A4\u30F3\u6700\u5C0F\u5171\u901A\u7956\u5148 (Offline\
       \ Lowest Common Ancestor)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/utility/pair-hash.hpp
     title: "std::pair \u306E Hash"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/utility/tuple-hash.hpp
     title: "std::tuple \u306E Hash"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     PROBLEM: https://judge.yosupo.jp/problem/jump_on_tree
     links:
@@ -52,73 +55,75 @@ data:
   bundledCode: "#line 1 \"test/library-checker/jump_on_tree.test.cpp\"\n// verification-helper:\
     \ PROBLEM https://judge.yosupo.jp/problem/jump_on_tree\n\n#line 2 \"src/cpp-template/header/fast-ios.hpp\"\
     \n\n#include <iostream>\n\nnamespace luz {\n\n  void set_fast_ios() {\n    std::ios::sync_with_stdio(false);\n\
-    \    std::cin.tie(nullptr);\n  }\n\n} // namespace luz\n#line 2 \"src/cpp-template/header/rep.hpp\"\
-    \n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\n\n#include <cstddef>\n\
-    #include <cstdint>\n\nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using\
-    \ usize = std::size_t;\n\n  using i32 = std::int32_t;\n  using i64 = std::int64_t;\n\
-    \  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n\n} // namespace\
-    \ luz\n#line 4 \"src/cpp-template/header/rep.hpp\"\n\n#include <algorithm>\n\n\
-    namespace luz {\n\n  struct rep {\n    struct itr {\n      usize i;\n      constexpr\
-    \ itr(const usize i) noexcept: i(i) {}\n      void operator++() noexcept {\n \
-    \       ++i;\n      }\n      constexpr usize operator*() const noexcept {\n  \
-    \      return i;\n      }\n      constexpr bool operator!=(const itr x) const\
-    \ noexcept {\n        return i != x.i;\n      }\n    };\n    const itr f, l;\n\
-    \    constexpr rep(const usize f, const usize l) noexcept\n        : f(std::min(f,\
-    \ l)),\n          l(l) {}\n    constexpr auto begin() const noexcept {\n     \
-    \ return f;\n    }\n    constexpr auto end() const noexcept {\n      return l;\n\
-    \    }\n  };\n\n  struct rrep {\n    struct itr {\n      usize i;\n      constexpr\
-    \ itr(const usize i) noexcept: i(i) {}\n      void operator++() noexcept {\n \
-    \       --i;\n      }\n      constexpr usize operator*() const noexcept {\n  \
-    \      return i;\n      }\n      constexpr bool operator!=(const itr x) const\
-    \ noexcept {\n        return i != x.i;\n      }\n    };\n    const itr f, l;\n\
-    \    constexpr rrep(const usize f, const usize l) noexcept\n        : f(l - 1),\n\
-    \          l(std::min(f, l) - 1) {}\n    constexpr auto begin() const noexcept\
-    \ {\n      return f;\n    }\n    constexpr auto end() const noexcept {\n     \
-    \ return l;\n    }\n  };\n\n} // namespace luz\n#line 2 \"src/graph/class/edge/edge.hpp\"\
-    \n\n#line 4 \"src/graph/class/edge/edge.hpp\"\n\n#include <vector>\n\nnamespace\
-    \ luz {\n\n  template < typename T >\n  class Edge {\n   public:\n    using cost_type\
-    \ = T;\n\n    usize from, to;\n    T cost;\n    usize id;\n    Edge() = default;\n\
-    \    Edge(usize from_, usize to_, T cost_, usize id_)\n        : from(from_),\n\
-    \          to(to_),\n          cost(cost_),\n          id(id_) {}\n  };\n\n  template\
-    \ < typename T >\n  using Edges = std::vector< Edge< T > >;\n\n} // namespace\
-    \ luz\n#line 2 \"src/graph/class/static-graph.hpp\"\n\n#line 5 \"src/graph/class/static-graph.hpp\"\
-    \n\n#line 7 \"src/graph/class/static-graph.hpp\"\n#include <cassert>\n#line 9\
-    \ \"src/graph/class/static-graph.hpp\"\n\nnamespace luz::internal {\n\n  template\
-    \ < typename Iterator >\n  class OutgoingEdges {\n    Iterator f, l;\n\n   public:\n\
-    \    OutgoingEdges(Iterator f, Iterator l): f(f), l(l) {}\n\n    Iterator begin()\
-    \ const {\n      return f;\n    }\n    Iterator end() const {\n      return l;\n\
-    \    }\n    usize size() const {\n      return l - f;\n    }\n\n    auto &operator[](usize\
-    \ k) {\n      assert(k < size());\n      return begin()[k];\n    }\n    const\
-    \ auto &operator[](usize k) const {\n      assert(k < size());\n      return begin()[k];\n\
-    \    }\n  };\n\n} // namespace luz::internal\n\nnamespace luz {\n\n  template\
-    \ < typename Edge >\n  class StaticGraph {\n\n    using Edges          = std::vector<\
-    \ Edge >;\n    using iterator       = typename Edges::iterator;\n    using const_iterator\
-    \ = typename Edges::const_iterator;\n\n    template < typename Iterator >\n  \
-    \  using Es = internal::OutgoingEdges< Iterator >;\n\n   protected:\n    bool\
-    \ initialized;\n    usize vertex_count;\n    usize edge_count;\n\n    Edges edges;\n\
-    \    std::vector< usize > outdegrees;\n\n   public:\n    using cost_type = typename\
-    \ Edge::cost_type;\n\n    StaticGraph() = default;\n    explicit StaticGraph(usize\
-    \ n)\n        : initialized(false),\n          vertex_count(n),\n          edge_count(0),\n\
-    \          outdegrees(vertex_count) {}\n\n    usize size() const {\n      return\
-    \ vertex_count;\n    }\n\n    void initialize() {\n      assert(not initialized);\n\
-    \n      outdegrees.emplace_back(0);\n      for (usize i: rrep(0, size())) {\n\
-    \        outdegrees[i] += outdegrees[i + 1];\n      }\n\n      std::sort(edges.begin(),\
-    \ edges.end(),\n                [](const Edge &e1, const Edge &e2) {\n       \
-    \ return e1.from != e2.from ? e1.from > e2.from : e1.to < e2.to;\n      });\n\n\
-    \      initialized = true;\n    }\n\n    void add_directed_edge(usize from, usize\
-    \ to, cost_type cost = 1) {\n      assert(not initialized);\n      assert(from\
-    \ < size());\n      assert(to < size());\n      edges.emplace_back(from, to, cost,\
-    \ edge_count++);\n      outdegrees[from]++;\n    }\n\n    void add_undirected_edge(usize\
-    \ u, usize v, cost_type cost = 1) {\n      assert(not initialized);\n      assert(u\
-    \ < size());\n      assert(v < size());\n      assert(u != v);\n      edges.emplace_back(u,\
-    \ v, cost, edge_count);\n      outdegrees[u]++;\n      edges.emplace_back(v, u,\
-    \ cost, edge_count++);\n      outdegrees[v]++;\n    }\n\n    Es< iterator > operator[](const\
-    \ usize &v) {\n      assert(initialized);\n      return Es< iterator >(edges.begin()\
-    \ + outdegrees[v + 1],\n                            edges.begin() + outdegrees[v]);\n\
-    \    }\n\n    const Es< const_iterator > operator[](const usize &v) const {\n\
-    \      assert(initialized);\n      return Es< const_iterator >(edges.cbegin()\
-    \ + outdegrees[v + 1],\n                                  edges.cbegin() + outdegrees[v]);\n\
-    \    }\n  };\n\n} // namespace luz\n#line 2 \"src/graph/tree/offline-query/offline-query-jump-on-tree.hpp\"\
+    \    std::cin.tie(nullptr);\n  }\n\n} // namespace luz\n#line 2 \"src/cpp-template/header/int-alias.hpp\"\
+    \n\n#include <cstdint>\n\nnamespace luz {\n\n  using i32  = std::int32_t;\n  using\
+    \ i64  = std::int64_t;\n  using i128 = __int128_t;\n\n  using u32  = std::uint32_t;\n\
+    \  using u64  = std::uint64_t;\n  using u128 = __uint128_t;\n\n} // namespace\
+    \ luz\n#line 2 \"src/cpp-template/header/rep.hpp\"\n\n#line 2 \"src/cpp-template/header/size-alias.hpp\"\
+    \n\n#include <cstddef>\n\nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n\
+    \  using usize = std::size_t;\n\n} // namespace luz\n#line 4 \"src/cpp-template/header/rep.hpp\"\
+    \n\n#include <algorithm>\n\nnamespace luz {\n\n  struct rep {\n    struct itr\
+    \ {\n      usize i;\n      constexpr itr(const usize i) noexcept: i(i) {}\n  \
+    \    void operator++() noexcept {\n        ++i;\n      }\n      constexpr usize\
+    \ operator*() const noexcept {\n        return i;\n      }\n      constexpr bool\
+    \ operator!=(const itr x) const noexcept {\n        return i != x.i;\n      }\n\
+    \    };\n    const itr f, l;\n    constexpr rep(const usize f, const usize l)\
+    \ noexcept\n        : f(std::min(f, l)),\n          l(l) {}\n    constexpr auto\
+    \ begin() const noexcept {\n      return f;\n    }\n    constexpr auto end() const\
+    \ noexcept {\n      return l;\n    }\n  };\n\n  struct rrep {\n    struct itr\
+    \ {\n      usize i;\n      constexpr itr(const usize i) noexcept: i(i) {}\n  \
+    \    void operator++() noexcept {\n        --i;\n      }\n      constexpr usize\
+    \ operator*() const noexcept {\n        return i;\n      }\n      constexpr bool\
+    \ operator!=(const itr x) const noexcept {\n        return i != x.i;\n      }\n\
+    \    };\n    const itr f, l;\n    constexpr rrep(const usize f, const usize l)\
+    \ noexcept\n        : f(l - 1),\n          l(std::min(f, l) - 1) {}\n    constexpr\
+    \ auto begin() const noexcept {\n      return f;\n    }\n    constexpr auto end()\
+    \ const noexcept {\n      return l;\n    }\n  };\n\n} // namespace luz\n#line\
+    \ 2 \"src/graph/class/edge/edge.hpp\"\n\n#line 4 \"src/graph/class/edge/edge.hpp\"\
+    \n\n#include <vector>\n\nnamespace luz {\n\n  template < typename T >\n  class\
+    \ Edge {\n   public:\n    using cost_type = T;\n\n    usize from, to;\n    T cost;\n\
+    \    usize id;\n    Edge() = default;\n    Edge(usize from_, usize to_, T cost_,\
+    \ usize id_)\n        : from(from_),\n          to(to_),\n          cost(cost_),\n\
+    \          id(id_) {}\n  };\n\n  template < typename T >\n  using Edges = std::vector<\
+    \ Edge< T > >;\n\n} // namespace luz\n#line 2 \"src/graph/class/static-graph.hpp\"\
+    \n\n#line 5 \"src/graph/class/static-graph.hpp\"\n\n#line 7 \"src/graph/class/static-graph.hpp\"\
+    \n#include <cassert>\n#line 9 \"src/graph/class/static-graph.hpp\"\n\nnamespace\
+    \ luz::internal {\n\n  template < typename Iterator >\n  class OutgoingEdges {\n\
+    \    Iterator f, l;\n\n   public:\n    OutgoingEdges(Iterator f, Iterator l):\
+    \ f(f), l(l) {}\n\n    Iterator begin() const {\n      return f;\n    }\n    Iterator\
+    \ end() const {\n      return l;\n    }\n    usize size() const {\n      return\
+    \ l - f;\n    }\n\n    auto &operator[](usize k) {\n      assert(k < size());\n\
+    \      return begin()[k];\n    }\n    const auto &operator[](usize k) const {\n\
+    \      assert(k < size());\n      return begin()[k];\n    }\n  };\n\n} // namespace\
+    \ luz::internal\n\nnamespace luz {\n\n  template < typename Edge >\n  class StaticGraph\
+    \ {\n\n    using Edges          = std::vector< Edge >;\n    using iterator   \
+    \    = typename Edges::iterator;\n    using const_iterator = typename Edges::const_iterator;\n\
+    \n    template < typename Iterator >\n    using Es = internal::OutgoingEdges<\
+    \ Iterator >;\n\n   protected:\n    bool initialized;\n    usize vertex_count;\n\
+    \    usize edge_count;\n\n    Edges edges;\n    std::vector< usize > outdegrees;\n\
+    \n   public:\n    using cost_type = typename Edge::cost_type;\n\n    StaticGraph()\
+    \ = default;\n    explicit StaticGraph(usize n)\n        : initialized(false),\n\
+    \          vertex_count(n),\n          edge_count(0),\n          outdegrees(vertex_count)\
+    \ {}\n\n    usize size() const {\n      return vertex_count;\n    }\n\n    void\
+    \ initialize() {\n      assert(not initialized);\n\n      outdegrees.emplace_back(0);\n\
+    \      for (usize i: rrep(0, size())) {\n        outdegrees[i] += outdegrees[i\
+    \ + 1];\n      }\n\n      std::sort(edges.begin(), edges.end(),\n            \
+    \    [](const Edge &e1, const Edge &e2) {\n        return e1.from != e2.from ?\
+    \ e1.from > e2.from : e1.to < e2.to;\n      });\n\n      initialized = true;\n\
+    \    }\n\n    void add_directed_edge(usize from, usize to, cost_type cost = 1)\
+    \ {\n      assert(not initialized);\n      assert(from < size());\n      assert(to\
+    \ < size());\n      edges.emplace_back(from, to, cost, edge_count++);\n      outdegrees[from]++;\n\
+    \    }\n\n    void add_undirected_edge(usize u, usize v, cost_type cost = 1) {\n\
+    \      assert(not initialized);\n      assert(u < size());\n      assert(v < size());\n\
+    \      assert(u != v);\n      edges.emplace_back(u, v, cost, edge_count);\n  \
+    \    outdegrees[u]++;\n      edges.emplace_back(v, u, cost, edge_count++);\n \
+    \     outdegrees[v]++;\n    }\n\n    Es< iterator > operator[](const usize &v)\
+    \ {\n      assert(initialized);\n      return Es< iterator >(edges.begin() + outdegrees[v\
+    \ + 1],\n                            edges.begin() + outdegrees[v]);\n    }\n\n\
+    \    const Es< const_iterator > operator[](const usize &v) const {\n      assert(initialized);\n\
+    \      return Es< const_iterator >(edges.cbegin() + outdegrees[v + 1],\n     \
+    \                             edges.cbegin() + outdegrees[v]);\n    }\n  };\n\n\
+    } // namespace luz\n#line 2 \"src/graph/tree/offline-query/offline-query-jump-on-tree.hpp\"\
     \n\n#line 2 \"src/graph/single-source-shortest-path/in-unweighted-graph.hpp\"\n\
     \n#line 4 \"src/graph/single-source-shortest-path/in-unweighted-graph.hpp\"\n\n\
     #include <limits>\n#include <queue>\n#line 8 \"src/graph/single-source-shortest-path/in-unweighted-graph.hpp\"\
@@ -179,30 +184,30 @@ data:
     \    }\n  };\n\n} // namespace luz\n#line 2 \"src/graph/tree/offline-query/offline-query-lowest-common-ancestor.hpp\"\
     \n\n#line 2 \"src/data-structure/disjoint-set-union.hpp\"\n\n#line 5 \"src/data-structure/disjoint-set-union.hpp\"\
     \n\n#line 9 \"src/data-structure/disjoint-set-union.hpp\"\n\nnamespace luz {\n\
-    \n  class DisjointSetUnion {\n    usize n_;\n\n    // vals_[v] :=\n    //   if\
-    \ v is root node: -1 * component size\n    //   otherwise: parent node\n    std::vector<\
-    \ isize > vals_;\n\n    void bound_check(usize v) const {\n      assert(v < n_);\n\
-    \    }\n\n    usize impl_leader(usize v) {\n      if (vals_[v] < 0) return v;\n\
-    \      return vals_[v] = leader(vals_[v]);\n    }\n\n   public:\n    DisjointSetUnion()\
-    \ = default;\n    explicit DisjointSetUnion(usize n): n_(n), vals_(n, -1) {}\n\
-    \n    usize size() const {\n      return n_;\n    }\n\n    usize leader(usize\
-    \ v) {\n      bound_check(v);\n      return impl_leader(v);\n    }\n\n    bool\
-    \ same(usize u, usize v) {\n      bound_check(u), bound_check(v);\n      return\
-    \ impl_leader(u) == impl_leader(v);\n    }\n\n    usize merge(usize u, usize v)\
-    \ {\n      bound_check(u);\n      bound_check(v);\n\n      isize x = impl_leader(u);\n\
-    \      isize y = impl_leader(v);\n      if (x == y) return x;\n      if (-vals_[x]\
-    \ < -vals_[y]) std::swap(x, y);\n      vals_[x] += vals_[y];\n      vals_[y] =\
-    \ x;\n      return x;\n    }\n\n    usize group_size(usize v) {\n      bound_check(v);\n\
-    \      return -vals_[impl_leader(v)];\n    }\n\n    std::vector< std::vector<\
-    \ usize > > groups() {\n      std::vector< std::vector< usize > > result(n_);\n\
-    \n      std::vector< usize > leaders(n_), g_sizes(n_);\n      for (usize v: rep(0,\
-    \ n_)) {\n        leaders[v] = impl_leader(v);\n        g_sizes[leaders[v]]++;\n\
-    \      }\n      for (usize v: rep(0, n_)) {\n        result[v].reserve(g_sizes[v]);\n\
-    \      }\n      for (usize v: rep(0, n_)) {\n        result[leaders[v]].emplace_back(v);\n\
-    \      }\n\n      auto empty_check = [](const std::vector< usize > &vs) {\n  \
-    \      return vs.empty();\n      };\n      result.erase(\n          std::remove_if(result.begin(),\
-    \ result.end(), empty_check),\n          result.end());\n\n      return result;\n\
-    \    }\n  };\n\n} // namespace luz\n#line 7 \"src/graph/tree/offline-query/offline-query-lowest-common-ancestor.hpp\"\
+    \n  class DisjointSetUnion {\n    usize n;\n\n    // vals[v] :=\n    //   if v\
+    \ is root node: -1 * component size\n    //   otherwise: parent node\n    std::vector<\
+    \ isize > vals;\n\n    void bound_check(usize v) const {\n      assert(v < n);\n\
+    \    }\n\n    usize impl_leader(usize v) {\n      if (vals[v] < 0) return v;\n\
+    \      return vals[v] = leader(vals[v]);\n    }\n\n   public:\n    DisjointSetUnion()\
+    \ = default;\n    explicit DisjointSetUnion(usize n): n(n), vals(n, -1) {}\n\n\
+    \    usize size() const {\n      return n;\n    }\n\n    usize leader(usize v)\
+    \ {\n      bound_check(v);\n      return impl_leader(v);\n    }\n\n    bool same(usize\
+    \ u, usize v) {\n      bound_check(u), bound_check(v);\n      return impl_leader(u)\
+    \ == impl_leader(v);\n    }\n\n    usize merge(usize u, usize v) {\n      bound_check(u);\n\
+    \      bound_check(v);\n\n      isize x = impl_leader(u);\n      isize y = impl_leader(v);\n\
+    \      if (x == y) return x;\n      if (-vals[x] < -vals[y]) std::swap(x, y);\n\
+    \      vals[x] += vals[y];\n      vals[y] = x;\n      return x;\n    }\n\n   \
+    \ usize group_size(usize v) {\n      bound_check(v);\n      return -vals[impl_leader(v)];\n\
+    \    }\n\n    std::vector< std::vector< usize > > groups() {\n      std::vector<\
+    \ std::vector< usize > > result(n);\n\n      std::vector< usize > leaders(n),\
+    \ g_sizes(n);\n      for (usize v: rep(0, n)) {\n        leaders[v] = impl_leader(v);\n\
+    \        g_sizes[leaders[v]]++;\n      }\n      for (usize v: rep(0, n)) {\n \
+    \       result[v].reserve(g_sizes[v]);\n      }\n      for (usize v: rep(0, n))\
+    \ {\n        result[leaders[v]].emplace_back(v);\n      }\n\n      auto empty_check\
+    \ = [](const std::vector< usize > &vs) {\n        return vs.empty();\n      };\n\
+    \      result.erase(\n          std::remove_if(result.begin(), result.end(), empty_check),\n\
+    \          result.end());\n\n      return result;\n    }\n  };\n\n} // namespace\
+    \ luz\n#line 7 \"src/graph/tree/offline-query/offline-query-lowest-common-ancestor.hpp\"\
     \n\n#line 12 \"src/graph/tree/offline-query/offline-query-lowest-common-ancestor.hpp\"\
     \n\nnamespace luz {\n\n  template < class G >\n  class OfflineLCAQuery {\n   \
     \ using graph     = G;\n    using cost_type = typename G::cost_type;\n    usize\
@@ -275,7 +280,7 @@ data:
     \           usize distance) const {\n      bound_check(start);\n      bound_check(end);\n\
     \      query_type qi(start, end, distance);\n      assert(results.count(qi));\n\
     \      return (*results.find(qi)).second;\n    }\n  };\n\n} // namespace luz\n\
-    #line 9 \"test/library-checker/jump_on_tree.test.cpp\"\n\n#line 14 \"test/library-checker/jump_on_tree.test.cpp\"\
+    #line 10 \"test/library-checker/jump_on_tree.test.cpp\"\n\n#line 15 \"test/library-checker/jump_on_tree.test.cpp\"\
     \n\nnamespace luz {\n\n  void main_() {\n    usize n, q;\n    std::cin >> n >>\
     \ q;\n\n    using edge  = Edge< i32 >;\n    using graph = StaticGraph< edge >;\n\
     \n    graph g(n);\n    for ([[maybe_unused]] usize _: rep(1, n)) {\n      usize\
@@ -290,11 +295,12 @@ data:
     } // namespace luz\n\nint main() {\n  luz::set_fast_ios();\n\n  luz::main_();\n\
     }\n"
   code: "// verification-helper: PROBLEM https://judge.yosupo.jp/problem/jump_on_tree\n\
-    \n#include \"src/cpp-template/header/fast-ios.hpp\"\n#include \"src/cpp-template/header/rep.hpp\"\
-    \n#include \"src/cpp-template/header/type-alias.hpp\"\n#include \"src/graph/class/edge/edge.hpp\"\
-    \n#include \"src/graph/class/static-graph.hpp\"\n#include \"src/graph/tree/offline-query/offline-query-jump-on-tree.hpp\"\
-    \n\n#include <iostream>\n#include <queue>\n#include <tuple>\n#include <vector>\n\
-    \nnamespace luz {\n\n  void main_() {\n    usize n, q;\n    std::cin >> n >> q;\n\
+    \n#include \"src/cpp-template/header/fast-ios.hpp\"\n#include \"src/cpp-template/header/int-alias.hpp\"\
+    \n#include \"src/cpp-template/header/rep.hpp\"\n#include \"src/cpp-template/header/size-alias.hpp\"\
+    \n#include \"src/graph/class/edge/edge.hpp\"\n#include \"src/graph/class/static-graph.hpp\"\
+    \n#include \"src/graph/tree/offline-query/offline-query-jump-on-tree.hpp\"\n\n\
+    #include <iostream>\n#include <queue>\n#include <tuple>\n#include <vector>\n\n\
+    namespace luz {\n\n  void main_() {\n    usize n, q;\n    std::cin >> n >> q;\n\
     \n    using edge  = Edge< i32 >;\n    using graph = StaticGraph< edge >;\n\n \
     \   graph g(n);\n    for ([[maybe_unused]] usize _: rep(1, n)) {\n      usize\
     \ a, b;\n      std::cin >> a >> b;\n      g.add_undirected_edge(a, b);\n    }\n\
@@ -309,8 +315,9 @@ data:
     }\n"
   dependsOn:
   - src/cpp-template/header/fast-ios.hpp
+  - src/cpp-template/header/int-alias.hpp
   - src/cpp-template/header/rep.hpp
-  - src/cpp-template/header/type-alias.hpp
+  - src/cpp-template/header/size-alias.hpp
   - src/graph/class/edge/edge.hpp
   - src/graph/class/static-graph.hpp
   - src/graph/tree/offline-query/offline-query-jump-on-tree.hpp
@@ -323,8 +330,8 @@ data:
   isVerificationFile: true
   path: test/library-checker/jump_on_tree.test.cpp
   requiredBy: []
-  timestamp: '2023-05-28 01:36:49+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-07-30 00:54:52+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/library-checker/jump_on_tree.test.cpp
 layout: document

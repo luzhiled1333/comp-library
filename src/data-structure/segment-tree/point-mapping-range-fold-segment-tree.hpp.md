@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/cpp-template/header/rep.hpp
     title: "rep \u69CB\u9020\u4F53"
-  - icon: ':heavy_check_mark:'
-    path: src/cpp-template/header/type-alias.hpp
-    title: Type alias
+  - icon: ':question:'
+    path: src/cpp-template/header/size-alias.hpp
+    title: size alias
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: src/data-structure/segment-tree/presets/range-maximum-query-solver.hpp
     title: "\u4E00\u70B9\u66F4\u65B0 + \u533A\u9593\u6700\u5927\u30AF\u30A8\u30EA\
       \ solver (Range Maximum Query Solver)"
@@ -27,40 +27,39 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/dsl_2_b/segment-tree.test.cpp
     title: test/aoj/dsl_2_b/segment-tree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/atcoder/abc298_f.test.cpp
     title: test/atcoder/abc298_f.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: unit-test/data-structure/segment-tree/point-mapping-range-fold-segment-tree.test.cpp
     title: unit-test/data-structure/segment-tree/point-mapping-range-fold-segment-tree.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/data-structure/segment-tree/point-mapping-range-fold-segment-tree.hpp\"\
-    \n\n#line 2 \"src/cpp-template/header/rep.hpp\"\n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\
-    \n\n#include <cstddef>\n#include <cstdint>\n\nnamespace luz {\n\n  using isize\
-    \ = std::ptrdiff_t;\n  using usize = std::size_t;\n\n  using i32 = std::int32_t;\n\
-    \  using i64 = std::int64_t;\n  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n\
-    \n} // namespace luz\n#line 4 \"src/cpp-template/header/rep.hpp\"\n\n#include\
-    \ <algorithm>\n\nnamespace luz {\n\n  struct rep {\n    struct itr {\n      usize\
-    \ i;\n      constexpr itr(const usize i) noexcept: i(i) {}\n      void operator++()\
-    \ noexcept {\n        ++i;\n      }\n      constexpr usize operator*() const noexcept\
-    \ {\n        return i;\n      }\n      constexpr bool operator!=(const itr x)\
-    \ const noexcept {\n        return i != x.i;\n      }\n    };\n    const itr f,\
-    \ l;\n    constexpr rep(const usize f, const usize l) noexcept\n        : f(std::min(f,\
-    \ l)),\n          l(l) {}\n    constexpr auto begin() const noexcept {\n     \
-    \ return f;\n    }\n    constexpr auto end() const noexcept {\n      return l;\n\
-    \    }\n  };\n\n  struct rrep {\n    struct itr {\n      usize i;\n      constexpr\
-    \ itr(const usize i) noexcept: i(i) {}\n      void operator++() noexcept {\n \
-    \       --i;\n      }\n      constexpr usize operator*() const noexcept {\n  \
-    \      return i;\n      }\n      constexpr bool operator!=(const itr x) const\
-    \ noexcept {\n        return i != x.i;\n      }\n    };\n    const itr f, l;\n\
-    \    constexpr rrep(const usize f, const usize l) noexcept\n        : f(l - 1),\n\
-    \          l(std::min(f, l) - 1) {}\n    constexpr auto begin() const noexcept\
-    \ {\n      return f;\n    }\n    constexpr auto end() const noexcept {\n     \
-    \ return l;\n    }\n  };\n\n} // namespace luz\n#line 5 \"src/data-structure/segment-tree/point-mapping-range-fold-segment-tree.hpp\"\
+    \n\n#line 2 \"src/cpp-template/header/rep.hpp\"\n\n#line 2 \"src/cpp-template/header/size-alias.hpp\"\
+    \n\n#include <cstddef>\n\nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n\
+    \  using usize = std::size_t;\n\n} // namespace luz\n#line 4 \"src/cpp-template/header/rep.hpp\"\
+    \n\n#include <algorithm>\n\nnamespace luz {\n\n  struct rep {\n    struct itr\
+    \ {\n      usize i;\n      constexpr itr(const usize i) noexcept: i(i) {}\n  \
+    \    void operator++() noexcept {\n        ++i;\n      }\n      constexpr usize\
+    \ operator*() const noexcept {\n        return i;\n      }\n      constexpr bool\
+    \ operator!=(const itr x) const noexcept {\n        return i != x.i;\n      }\n\
+    \    };\n    const itr f, l;\n    constexpr rep(const usize f, const usize l)\
+    \ noexcept\n        : f(std::min(f, l)),\n          l(l) {}\n    constexpr auto\
+    \ begin() const noexcept {\n      return f;\n    }\n    constexpr auto end() const\
+    \ noexcept {\n      return l;\n    }\n  };\n\n  struct rrep {\n    struct itr\
+    \ {\n      usize i;\n      constexpr itr(const usize i) noexcept: i(i) {}\n  \
+    \    void operator++() noexcept {\n        --i;\n      }\n      constexpr usize\
+    \ operator*() const noexcept {\n        return i;\n      }\n      constexpr bool\
+    \ operator!=(const itr x) const noexcept {\n        return i != x.i;\n      }\n\
+    \    };\n    const itr f, l;\n    constexpr rrep(const usize f, const usize l)\
+    \ noexcept\n        : f(l - 1),\n          l(std::min(f, l) - 1) {}\n    constexpr\
+    \ auto begin() const noexcept {\n      return f;\n    }\n    constexpr auto end()\
+    \ const noexcept {\n      return l;\n    }\n  };\n\n} // namespace luz\n#line\
+    \ 5 \"src/data-structure/segment-tree/point-mapping-range-fold-segment-tree.hpp\"\
     \n\n#include <cassert>\n#include <vector>\n\nnamespace luz {\n\n  template < class\
     \ value_structure >\n  class PointMappingRangeFoldSegmentTree {\n    using V \
     \ = value_structure;\n    using VT = typename V::value_type;\n\n    std::vector<\
@@ -93,7 +92,7 @@ data:
     \      PointMappingRangeFoldSegmentTree< value_structure >;\n\n} // namespace\
     \ luz\n"
   code: "#pragma once\n\n#include \"src/cpp-template/header/rep.hpp\"\n#include \"\
-    src/cpp-template/header/type-alias.hpp\"\n\n#include <cassert>\n#include <vector>\n\
+    src/cpp-template/header/size-alias.hpp\"\n\n#include <cassert>\n#include <vector>\n\
     \nnamespace luz {\n\n  template < class value_structure >\n  class PointMappingRangeFoldSegmentTree\
     \ {\n    using V  = value_structure;\n    using VT = typename V::value_type;\n\
     \n    std::vector< VT > tree;\n\n    void evaluate(usize index) {\n      tree[index]\
@@ -126,15 +125,15 @@ data:
     \ luz\n"
   dependsOn:
   - src/cpp-template/header/rep.hpp
-  - src/cpp-template/header/type-alias.hpp
+  - src/cpp-template/header/size-alias.hpp
   isVerificationFile: false
   path: src/data-structure/segment-tree/point-mapping-range-fold-segment-tree.hpp
   requiredBy:
   - src/data-structure/segment-tree/presets/range-sum-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-maximum-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-minimum-query-solver.hpp
-  timestamp: '2023-05-03 14:59:16+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-07-30 00:54:52+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - unit-test/data-structure/segment-tree/point-mapping-range-fold-segment-tree.test.cpp
   - test/atcoder/abc298_f.test.cpp

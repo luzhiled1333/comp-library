@@ -1,37 +1,42 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/int-alias.hpp
+    title: int alias
+  - icon: ':question:'
     path: src/cpp-template/header/rep.hpp
     title: "rep \u69CB\u9020\u4F53"
-  - icon: ':heavy_check_mark:'
-    path: src/cpp-template/header/type-alias.hpp
-    title: Type alias
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
+    path: src/cpp-template/header/size-alias.hpp
+    title: size alias
+  - icon: ':x:'
     path: src/math/convolution/modint-convolution.hpp
     title: Number Theoretic Transform
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/utility/bit/bit-width.hpp
     title: "\u5024\u3092\u8868\u73FE\u3059\u308B\u305F\u3081\u306B\u5FC5\u8981\u306A\
       \u6700\u5C0F\u306Ebit\u5E45 (bit_width)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/utility/bit/popcount.hpp
     title: "\u7ACB\u3063\u3066\u3044\u308B bit \u306E\u6570 (population count, popcount)"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/atcoder/abc307_h/main.test.cpp
     title: test/atcoder/abc307_h/main.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/sequence/wildcard-pattern-matching.hpp\"\n\n#line 2\
-    \ \"src/cpp-template/header/type-alias.hpp\"\n\n#include <cstddef>\n#include <cstdint>\n\
-    \nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n  using usize = std::size_t;\n\
-    \n  using i32 = std::int32_t;\n  using i64 = std::int64_t;\n  using u32 = std::uint32_t;\n\
-    \  using u64 = std::uint64_t;\n\n} // namespace luz\n#line 2 \"src/math/convolution/modint-convolution.hpp\"\
+    \ \"src/cpp-template/header/int-alias.hpp\"\n\n#include <cstdint>\n\nnamespace\
+    \ luz {\n\n  using i32  = std::int32_t;\n  using i64  = std::int64_t;\n  using\
+    \ i128 = __int128_t;\n\n  using u32  = std::uint32_t;\n  using u64  = std::uint64_t;\n\
+    \  using u128 = __uint128_t;\n\n} // namespace luz\n#line 2 \"src/cpp-template/header/size-alias.hpp\"\
+    \n\n#include <cstddef>\n\nnamespace luz {\n\n  using isize = std::ptrdiff_t;\n\
+    \  using usize = std::size_t;\n\n} // namespace luz\n#line 2 \"src/math/convolution/modint-convolution.hpp\"\
     \n\n#line 2 \"src/cpp-template/header/rep.hpp\"\n\n#line 4 \"src/cpp-template/header/rep.hpp\"\
     \n\n#include <algorithm>\n\nnamespace luz {\n\n  struct rep {\n    struct itr\
     \ {\n      usize i;\n      constexpr itr(const usize i) noexcept: i(i) {}\n  \
@@ -51,18 +56,18 @@ data:
     \ auto begin() const noexcept {\n      return f;\n    }\n    constexpr auto end()\
     \ const noexcept {\n      return l;\n    }\n  };\n\n} // namespace luz\n#line\
     \ 2 \"src/utility/bit/bit-width.hpp\"\n\n#line 2 \"src/utility/bit/popcount.hpp\"\
-    \n\n#line 4 \"src/utility/bit/popcount.hpp\"\n\n#include <cassert>\n\nnamespace\
+    \n\n#line 5 \"src/utility/bit/popcount.hpp\"\n\n#include <cassert>\n\nnamespace\
     \ luz {\n\n  usize popcount(u64 x) {\n    assert(__cplusplus <= 201703L);\n\n\
     #ifdef __GNUC__\n    return __builtin_popcountll(x);\n#endif\n\n    x -= (x >>\
     \ 1) & 0x5555555555555555;\n    x = (x & 0x3333333333333333) + ((x >> 2) & 0x3333333333333333);\n\
     \    x += (x >> 4) & 0x0f0f0f0f0f0f0f0f;\n    return x * 0x0101010101010101 >>\
-    \ 56 & 0x7f;\n  }\n\n} // namespace luz\n#line 4 \"src/utility/bit/bit-width.hpp\"\
-    \n\n#line 6 \"src/utility/bit/bit-width.hpp\"\n\nnamespace luz {\n\n  usize bit_width(u64\
+    \ 56 & 0x7f;\n  }\n\n} // namespace luz\n#line 6 \"src/utility/bit/bit-width.hpp\"\
+    \n\n#line 8 \"src/utility/bit/bit-width.hpp\"\n\nnamespace luz {\n\n  usize bit_width(u64\
     \ x) {\n    assert(__cplusplus <= 201703L);\n\n    if (x == 0) {\n      return\
     \ 0;\n    }\n\n#ifdef __GNUC__\n    return 64 - __builtin_clzll(x);\n#endif\n\n\
     \    x |= x >> 1;\n    x |= x >> 2;\n    x |= x >> 4;\n    x |= x >> 8;\n    x\
     \ |= x >> 16;\n    x |= x >> 32;\n    return popcount(x);\n  }\n\n} // namespace\
-    \ luz\n#line 6 \"src/math/convolution/modint-convolution.hpp\"\n\n#line 8 \"src/math/convolution/modint-convolution.hpp\"\
+    \ luz\n#line 7 \"src/math/convolution/modint-convolution.hpp\"\n\n#line 9 \"src/math/convolution/modint-convolution.hpp\"\
     \n#include <vector>\n\nnamespace luz::internal {\n\n  template < typename modint\
     \ >\n  class ButterflyInfo {\n   public:\n    ButterflyInfo() {\n      if (not\
     \ roots.empty()) {\n        return;\n      }\n\n      u32 mod = modint::get_mod();\n\
@@ -147,8 +152,8 @@ data:
     \ s = 1 << bit_width(n + m - 2);\n    f.resize(s);\n    g.resize(s);\n    internal::butterfly(f);\n\
     \    internal::butterfly(g);\n    modint s_inv = modint(1) / s;\n    for (usize\
     \ i: rep(0, s)) {\n      f[i] *= g[i] * s_inv;\n    }\n    internal::butterfly_inv(f);\n\
-    \    f.resize(n + m - 1);\n    return f;\n  }\n\n} // namespace luz\n#line 5 \"\
-    src/sequence/wildcard-pattern-matching.hpp\"\n\n#line 8 \"src/sequence/wildcard-pattern-matching.hpp\"\
+    \    f.resize(n + m - 1);\n    return f;\n  }\n\n} // namespace luz\n#line 6 \"\
+    src/sequence/wildcard-pattern-matching.hpp\"\n\n#line 9 \"src/sequence/wildcard-pattern-matching.hpp\"\
     \n\nnamespace luz {\n\n  // [warning] false positive occur expect O(1/M)\n  //\
     \           when values are randomized\n  // [note] try to use multiple mods if\
     \ necessary\n  template < class modint, class T, class Iter >\n  std::vector<\
@@ -168,29 +173,30 @@ data:
     \ result.size())) {\n      usize j = i + m - 1;\n      modint x(f[j] + g[j] +\
     \ h[j]);\n      if (x.val() == 0) result[i] = 1;\n    }\n\n    return result;\n\
     \  }\n\n} // namespace luz\n"
-  code: "#pragma once\n\n#include \"src/cpp-template/header/type-alias.hpp\"\n#include\
-    \ \"src/math/convolution/modint-convolution.hpp\"\n\n#include <cassert>\n#include\
-    \ <vector>\n\nnamespace luz {\n\n  // [warning] false positive occur expect O(1/M)\n\
-    \  //           when values are randomized\n  // [note] try to use multiple mods\
-    \ if necessary\n  template < class modint, class T, class Iter >\n  std::vector<\
-    \ i32 > wildcard_pattern_matching(Iter f1, Iter l1,\n                        \
-    \                       Iter f2, Iter l2,\n                                  \
-    \             const T wildcard) {\n    usize n = l1 - f1, m = l2 - f2;\n    assert(m\
-    \ <= n);\n\n    std::vector< modint > as(n), bs(n), cs(n), ss(m), ts(m), us(m);\n\
-    \n    for (Iter iter = f1; iter != l1; ++iter) {\n      modint x(*iter == wildcard\
-    \ ? 0 : *iter);\n      modint y(*iter == wildcard ? 0 : 1);\n      usize i = iter\
-    \ - f1;\n      as[i]   = y * x * x;\n      bs[i]   = y * x * -2;\n      cs[i]\
-    \   = y;\n    }\n\n    for (Iter iter = f2; iter != l2; ++iter) {\n      modint\
-    \ x(*iter == wildcard ? 0 : *iter);\n      modint y(*iter == wildcard ? 0 : 1);\n\
-    \      usize i = l2 - iter - 1;\n      ss[i]   = y;\n      ts[i]   = y * x;\n\
-    \      us[i]   = y * x * x;\n    }\n\n    auto f = modint_convolution(as, ss);\n\
-    \    auto g = modint_convolution(bs, ts);\n    auto h = modint_convolution(cs,\
-    \ us);\n\n    std::vector< i32 > result(n - m + 1);\n    for (usize i: rep(0,\
-    \ result.size())) {\n      usize j = i + m - 1;\n      modint x(f[j] + g[j] +\
-    \ h[j]);\n      if (x.val() == 0) result[i] = 1;\n    }\n\n    return result;\n\
-    \  }\n\n} // namespace luz\n"
+  code: "#pragma once\n\n#include \"src/cpp-template/header/int-alias.hpp\"\n#include\
+    \ \"src/cpp-template/header/size-alias.hpp\"\n#include \"src/math/convolution/modint-convolution.hpp\"\
+    \n\n#include <cassert>\n#include <vector>\n\nnamespace luz {\n\n  // [warning]\
+    \ false positive occur expect O(1/M)\n  //           when values are randomized\n\
+    \  // [note] try to use multiple mods if necessary\n  template < class modint,\
+    \ class T, class Iter >\n  std::vector< i32 > wildcard_pattern_matching(Iter f1,\
+    \ Iter l1,\n                                               Iter f2, Iter l2,\n\
+    \                                               const T wildcard) {\n    usize\
+    \ n = l1 - f1, m = l2 - f2;\n    assert(m <= n);\n\n    std::vector< modint >\
+    \ as(n), bs(n), cs(n), ss(m), ts(m), us(m);\n\n    for (Iter iter = f1; iter !=\
+    \ l1; ++iter) {\n      modint x(*iter == wildcard ? 0 : *iter);\n      modint\
+    \ y(*iter == wildcard ? 0 : 1);\n      usize i = iter - f1;\n      as[i]   = y\
+    \ * x * x;\n      bs[i]   = y * x * -2;\n      cs[i]   = y;\n    }\n\n    for\
+    \ (Iter iter = f2; iter != l2; ++iter) {\n      modint x(*iter == wildcard ? 0\
+    \ : *iter);\n      modint y(*iter == wildcard ? 0 : 1);\n      usize i = l2 -\
+    \ iter - 1;\n      ss[i]   = y;\n      ts[i]   = y * x;\n      us[i]   = y * x\
+    \ * x;\n    }\n\n    auto f = modint_convolution(as, ss);\n    auto g = modint_convolution(bs,\
+    \ ts);\n    auto h = modint_convolution(cs, us);\n\n    std::vector< i32 > result(n\
+    \ - m + 1);\n    for (usize i: rep(0, result.size())) {\n      usize j = i + m\
+    \ - 1;\n      modint x(f[j] + g[j] + h[j]);\n      if (x.val() == 0) result[i]\
+    \ = 1;\n    }\n\n    return result;\n  }\n\n} // namespace luz\n"
   dependsOn:
-  - src/cpp-template/header/type-alias.hpp
+  - src/cpp-template/header/int-alias.hpp
+  - src/cpp-template/header/size-alias.hpp
   - src/math/convolution/modint-convolution.hpp
   - src/cpp-template/header/rep.hpp
   - src/utility/bit/bit-width.hpp
@@ -198,8 +204,8 @@ data:
   isVerificationFile: false
   path: src/sequence/wildcard-pattern-matching.hpp
   requiredBy: []
-  timestamp: '2023-07-29 18:39:10+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-07-30 00:54:52+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/atcoder/abc307_h/main.test.cpp
 documentation_of: src/sequence/wildcard-pattern-matching.hpp

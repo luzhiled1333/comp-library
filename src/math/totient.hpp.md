@@ -1,49 +1,39 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: src/cpp-template/header/type-alias.hpp
-    title: Type alias
+  _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/ntl_1_d.test.cpp
     title: test/aoj/ntl_1_d.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: unit-test/math/totient.test.cpp
     title: unit-test/math/totient.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"src/math/totient.hpp\"\n\n#line 2 \"src/cpp-template/header/type-alias.hpp\"\
-    \n\n#include <cstddef>\n#include <cstdint>\n\nnamespace luz {\n\n  using isize\
-    \ = std::ptrdiff_t;\n  using usize = std::size_t;\n\n  using i32 = std::int32_t;\n\
-    \  using i64 = std::int64_t;\n  using u32 = std::uint32_t;\n  using u64 = std::uint64_t;\n\
-    \n} // namespace luz\n#line 4 \"src/math/totient.hpp\"\n\n#include <cassert>\n\
-    #include <limits>\n\nnamespace luz {\n\n  template < typename T >\n  T totient(T\
-    \ n) {\n    static_assert(std::numeric_limits< T >::is_integer,\n            \
-    \      \"T must be integer\");\n    assert(n >= 0);\n    T t = n, p = 2;\n   \
-    \ while (p * p <= n) {\n      if (n % p == 0) {\n        t -= t / p;\n       \
-    \ while (n % p == 0) {\n          n /= p;\n        }\n      }\n      p++;\n  \
-    \  }\n    if (n > 1) {\n      t -= t / n;\n    }\n    return t;\n  }\n\n} // namespace\
-    \ luz\n"
-  code: "#pragma once\n\n#include \"src/cpp-template/header/type-alias.hpp\"\n\n#include\
-    \ <cassert>\n#include <limits>\n\nnamespace luz {\n\n  template < typename T >\n\
-    \  T totient(T n) {\n    static_assert(std::numeric_limits< T >::is_integer,\n\
-    \                  \"T must be integer\");\n    assert(n >= 0);\n    T t = n,\
-    \ p = 2;\n    while (p * p <= n) {\n      if (n % p == 0) {\n        t -= t /\
-    \ p;\n        while (n % p == 0) {\n          n /= p;\n        }\n      }\n  \
-    \    p++;\n    }\n    if (n > 1) {\n      t -= t / n;\n    }\n    return t;\n\
-    \  }\n\n} // namespace luz\n"
-  dependsOn:
-  - src/cpp-template/header/type-alias.hpp
+  bundledCode: "#line 2 \"src/math/totient.hpp\"\n\n#include <cassert>\n#include <limits>\n\
+    \nnamespace luz {\n\n  template < typename T >\n  T totient(T n) {\n    static_assert(std::numeric_limits<\
+    \ T >::is_integer,\n                  \"T must be integer\");\n    assert(n >=\
+    \ 0);\n    T t = n, p = 2;\n    while (p * p <= n) {\n      if (n % p == 0) {\n\
+    \        t -= t / p;\n        while (n % p == 0) {\n          n /= p;\n      \
+    \  }\n      }\n      p++;\n    }\n    if (n > 1) {\n      t -= t / n;\n    }\n\
+    \    return t;\n  }\n\n} // namespace luz\n"
+  code: "#pragma once\n\n#include <cassert>\n#include <limits>\n\nnamespace luz {\n\
+    \n  template < typename T >\n  T totient(T n) {\n    static_assert(std::numeric_limits<\
+    \ T >::is_integer,\n                  \"T must be integer\");\n    assert(n >=\
+    \ 0);\n    T t = n, p = 2;\n    while (p * p <= n) {\n      if (n % p == 0) {\n\
+    \        t -= t / p;\n        while (n % p == 0) {\n          n /= p;\n      \
+    \  }\n      }\n      p++;\n    }\n    if (n > 1) {\n      t -= t / n;\n    }\n\
+    \    return t;\n  }\n\n} // namespace luz\n"
+  dependsOn: []
   isVerificationFile: false
   path: src/math/totient.hpp
   requiredBy: []
-  timestamp: '2022-08-31 12:35:14+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-07-30 00:54:52+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - unit-test/math/totient.test.cpp
   - test/aoj/ntl_1_d.test.cpp
