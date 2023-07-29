@@ -1,6 +1,6 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/1181
 
-#include "src/cpp-template/header/change-minmax.hpp"
+#include "src/cpp-template/header/change-max.hpp"
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/cpp-template/header/vector-ios.hpp"

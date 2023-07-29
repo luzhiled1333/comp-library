@@ -1,4 +1,5 @@
-#include "src/cpp-template/header/change-minmax.hpp"
+#include "src/cpp-template/header/change-max.hpp"
+#include "src/cpp-template/header/change-min.hpp"
 #include "src/cpp-template/header/fast-ios.hpp"
 #include "src/cpp-template/header/input.hpp"
 #include "src/cpp-template/header/io-set.hpp"

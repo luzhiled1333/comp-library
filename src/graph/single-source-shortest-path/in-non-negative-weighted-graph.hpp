@@ -1,6 +1,6 @@
 #pragma once
 
-#include "src/cpp-template/header/change-minmax.hpp"
+#include "src/cpp-template/header/change-min.hpp"
 #include "src/cpp-template/header/type-alias.hpp"
 
 #include <functional>
