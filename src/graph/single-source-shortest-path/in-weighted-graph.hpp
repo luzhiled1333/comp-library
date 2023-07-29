@@ -1,6 +1,6 @@
 #pragma once
 
-#include "src/cpp-template/header/type-alias.hpp"
+#include "src/cpp-template/header/size-alias.hpp"
 #include "src/graph/class/dynamic-graph.hpp"
 
 #include <limits>

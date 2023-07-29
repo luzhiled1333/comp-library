@@ -2,7 +2,7 @@
 
 #include "src/cpp-template/header/input.hpp"
 #include "src/cpp-template/header/rep.hpp"
-#include "src/cpp-template/header/type-alias.hpp"
+#include "src/cpp-template/header/size-alias.hpp"
 #include "src/math/convolution/fast-walsh-hadamard-transform.hpp"
 #include "src/math/modular-arithmetic/static-modint.hpp"
 

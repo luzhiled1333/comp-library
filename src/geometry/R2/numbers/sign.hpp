@@ -1,5 +1,7 @@
 #pragma once
 
+#include "src/cpp-template/header/int-alias.hpp"
+
 namespace luz::numbers::sign {
 
   constexpr i32 negative = -1;

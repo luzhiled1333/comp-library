@@ -1,7 +1,7 @@
 // verification-helper: PROBLEM https://atcoder.jp/contests/abc132/tasks/abc132_d
 
 #include "src/cpp-template/header/rep.hpp"
-#include "src/cpp-template/header/type-alias.hpp"
+#include "src/cpp-template/header/int-alias.hpp"
 #include "src/math/modular-arithmetic/modular-combinatorics.hpp"
 #include "src/math/modular-arithmetic/static-modint.hpp"
 
