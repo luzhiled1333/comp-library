@@ -11,9 +11,10 @@ namespace luz {
   // [warning] false positive occur expect O(1/M)
   //           when values are randomized
   // [note] try to use multiple mods if necessary
-  template< class modint, class T, class Iter >
-  std::vector< i32 > wildcard_pattern_matching(
-      Iter f1, Iter l1, Iter f2, Iter l2, const T wildcard) {
+  template < class modint, class T, class Iter >
+  std::vector< i32 > wildcard_pattern_matching(Iter f1, Iter l1,
+                                               Iter f2, Iter l2,
+                                               const T wildcard) {
     usize n = l1 - f1, m = l2 - f2;
     assert(m <= n);
 
@@ -23,18 +24,18 @@ namespace luz {
       modint x(*iter == wildcard ? 0 : *iter);
       modint y(*iter == wildcard ? 0 : 1);
       usize i = iter - f1;
-      as[i] = y * x * x;
-      bs[i] = y * x * -2;
-      cs[i] = y;
+      as[i]   = y * x * x;
+      bs[i]   = y * x * -2;
+      cs[i]   = y;
     }
 
     for (Iter iter = f2; iter != l2; ++iter) {
       modint x(*iter == wildcard ? 0 : *iter);
       modint y(*iter == wildcard ? 0 : 1);
       usize i = l2 - iter - 1;
-      ss[i] = y;
-      ts[i] = y * x;
-      us[i] = y * x * x;
+      ss[i]   = y;
+      ts[i]   = y * x;
+      us[i]   = y * x * x;
     }
 
     auto f = modint_convolution(as, ss);
@@ -51,4 +52,4 @@ namespace luz {
     return result;
   }
 
-}
+} // namespace luz
