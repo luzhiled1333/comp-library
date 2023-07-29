@@ -1,4 +1,5 @@
 // verification-helper: PROBLEM https://atcoder.jp/contests/abc307/tasks/abc307_h
+// verification-helper: PROBLEM https://atcoder.jp/contests/abc307/tasks/abc307_ex
 
 #include "src/cpp-template/header/type-alias.hpp"
 #include "src/math/modular-arithmetic/static-modint.hpp"
@@ -11,9 +12,10 @@ namespace luz {
   void main_() {
     using mint = modint998244353;
 
-    usize l = input(), w = input();
+    usize l, w;
     std::string s;
-    std::cin >> s;
+
+    std::cin >> l >> w >> s;
     s += std::string(w - 1, '.');
     s += s.substr(0, w - 1);
 
