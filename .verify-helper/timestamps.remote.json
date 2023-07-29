@@ -34,6 +34,7 @@
 "test/atcoder/abc259_d.test.cpp": "2022-08-22 19:09:09 +0900",
 "test/atcoder/abc291_e.test.cpp": "2023-05-28 01:36:49 +0900",
 "test/atcoder/abc298_f.test.cpp": "2023-05-03 14:59:16 +0900",
+"test/atcoder/abc307_h/main.test.cpp": "2023-07-29 18:39:10 +0900",
 "test/atcoder/arc117_c.test.cpp": "2023-05-20 00:18:06 +0900",
 "test/library-checker/bitwise_and_convolution.test.cpp": "2023-05-20 00:18:06 +0900",
 "test/library-checker/bitwise_xor_convolution.test.cpp": "2023-05-20 00:18:06 +0900",
