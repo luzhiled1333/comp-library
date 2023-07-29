@@ -1,7 +1,7 @@
+#include "src/cpp-template/header/size-alias.hpp"
+
 #include <queue>
 #include <vector>
-
-#include "src/cpp-template/header/size-alias.hpp"
 
 namespace luz {
 

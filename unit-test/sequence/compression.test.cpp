@@ -2,8 +2,8 @@
 
 #include "src/sequence/compression.hpp"
 
-#include "src/cpp-template/header/size-alias.hpp"
 #include "src/cpp-template/header/int-alias.hpp"
+#include "src/cpp-template/header/size-alias.hpp"
 #include "src/cpp-template/header/vector-ios.hpp"
 
 #include <cassert>

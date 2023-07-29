@@ -1,8 +1,8 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_G
 
+#include "src/cpp-template/header/int-alias.hpp"
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/size-alias.hpp"
-#include "src/cpp-template/header/int-alias.hpp"
 #include "src/data-structure/segment-tree/presets/range-add-range-sum-query-solver.hpp"
 
 #include <iostream>

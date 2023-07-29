@@ -1,8 +1,8 @@
 // verification-helper: PROBLEM https://atcoder.jp/contests/abc258/tasks/abc258_e
 
+#include "src/cpp-template/header/int-alias.hpp"
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/size-alias.hpp"
-#include "src/cpp-template/header/int-alias.hpp"
 #include "src/cpp-template/header/vector-ios.hpp"
 #include "src/graph/class/edge/edge.hpp"
 #include "src/graph/class/static-graph.hpp"

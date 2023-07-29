@@ -1,8 +1,8 @@
 #pragma once
 
+#include "src/cpp-template/header/int-alias.hpp"
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/size-alias.hpp"
-#include "src/cpp-template/header/int-alias.hpp"
 #include "src/graph/tree/offline-query/offline-query-level-ancestor.hpp"
 #include "src/utility/pair-hash.hpp"
 

@@ -1,9 +1,9 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/1181
 
 #include "src/cpp-template/header/change-max.hpp"
+#include "src/cpp-template/header/int-alias.hpp"
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/size-alias.hpp"
-#include "src/cpp-template/header/int-alias.hpp"
 #include "src/cpp-template/header/vector-ios.hpp"
 #include "src/utility/class/dice.hpp"
 

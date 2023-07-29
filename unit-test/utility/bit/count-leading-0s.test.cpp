@@ -2,9 +2,9 @@
 
 #include "src/utility/bit/count-leading-0s.hpp"
 
+#include "src/cpp-template/header/int-alias.hpp"
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/size-alias.hpp"
-#include "src/cpp-template/header/int-alias.hpp"
 
 #include <cassert>
 #include <iostream>

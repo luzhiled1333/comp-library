@@ -1,8 +1,8 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_F
 
+#include "src/cpp-template/header/int-alias.hpp"
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/size-alias.hpp"
-#include "src/cpp-template/header/int-alias.hpp"
 #include "src/data-structure/segment-tree/presets/range-update-range-maximum-query-solver.hpp"
 
 #include <iostream>

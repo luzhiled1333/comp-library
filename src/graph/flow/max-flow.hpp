@@ -56,8 +56,8 @@ namespace luz {
       for (usize &i = iter[v]; i < graph[v].size(); i++) {
         Edge &e = graph[v][i];
         if (e.cap > 0 and min_cost[v] + 1 == min_cost[e.to]) {
-          cap_type d = find_augment_path(
-              e.to, t, std::min(flow_limit, e.cap));
+          cap_type d =
+              find_augment_path(e.to, t, std::min(flow_limit, e.cap));
           if (d > 0) {
             e.cap -= d;
             graph[e.to][e.rev].cap += d;
