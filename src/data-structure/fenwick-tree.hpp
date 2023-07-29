@@ -42,7 +42,7 @@ namespace luz {
     }
 
     void add(usize k, const T &v) {
-      assert(0 <= k and k < n_);
+      assert(k < n_);
       k++;
       while (k <= n_) {
         vals_[k] += v;
@@ -51,7 +51,7 @@ namespace luz {
     }
 
     T sum(usize l, usize r) const {
-      assert(0 <= l and l <= r and r <= n_);
+      assert(l <= r and r <= n_);
       return sum(r) - sum(l);
     }
   };
