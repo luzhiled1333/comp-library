@@ -59,6 +59,10 @@ data:
     path: src/math/convolution/modint-convolution.hpp
     title: Number Theoretic Transform
   - icon: ':heavy_check_mark:'
+    path: src/sequence/wildcard-pattern-matching.hpp
+    title: "\u30EF\u30A4\u30EB\u30C9\u30AB\u30FC\u30C9\u30D1\u30BF\u30FC\u30F3\u30DE\
+      \u30C3\u30C1\u30F3\u30B0"
+  - icon: ':heavy_check_mark:'
     path: src/utility/bit/bit-width.hpp
     title: "\u5024\u3092\u8868\u73FE\u3059\u308B\u305F\u3081\u306B\u5FC5\u8981\u306A\
       \u6700\u5C0F\u306Ebit\u5E45 (bit_width)"
@@ -104,6 +108,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc258_e/online-algorithm.test.cpp
     title: test/atcoder/abc258_e/online-algorithm.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc307_h/main.test.cpp
+    title: test/atcoder/abc307_h/main.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/library-checker/modint_convolution.test.cpp
     title: test/library-checker/modint_convolution.test.cpp
@@ -164,6 +171,7 @@ data:
   - src/data-structure/segment-tree/presets/range-update-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-chmin-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-update-range-maximum-query-solver.hpp
+  - src/sequence/wildcard-pattern-matching.hpp
   - src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp
   timestamp: '2023-02-10 17:57:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
@@ -174,6 +182,7 @@ data:
   - unit-test/utility/bit/popcount.test.cpp
   - unit-test/graph/online-query-jump-on-functional-graph.test.cpp
   - test/atcoder/abc258_e/online-algorithm.test.cpp
+  - test/atcoder/abc307_h/main.test.cpp
   - test/atcoder/abc179_f/range-chmin.test.cpp
   - test/atcoder/abc179_f/range-chmax.test.cpp
   - test/aoj/dsl_2_d.test.cpp

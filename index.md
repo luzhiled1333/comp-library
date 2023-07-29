@@ -427,6 +427,10 @@ data:
       path: src/sequence/run-length-encoding.hpp
       title: "\u30E9\u30F3\u30EC\u30F3\u30B0\u30B9\u5727\u7E2E (\u9023\u9577\u5727\
         \u7E2E, Run Length Encoding, RLE)"
+    - icon: ':heavy_check_mark:'
+      path: src/sequence/wildcard-pattern-matching.hpp
+      title: "\u30EF\u30A4\u30EB\u30C9\u30AB\u30FC\u30C9\u30D1\u30BF\u30FC\u30F3\u30DE\
+        \u30C3\u30C1\u30F3\u30B0"
   - name: src/utility/bit
     pages:
     - icon: ':heavy_check_mark:'
@@ -586,6 +590,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/atcoder/abc258_e/online-algorithm.test.cpp
       title: test/atcoder/abc258_e/online-algorithm.test.cpp
+  - name: test/atcoder/abc307_h
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/atcoder/abc307_h/main.test.cpp
+      title: test/atcoder/abc307_h/main.test.cpp
   - name: test/library-checker
     pages:
     - icon: ':heavy_check_mark:'

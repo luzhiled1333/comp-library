@@ -14,8 +14,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/utility/bit/popcount.hpp
     title: "\u7ACB\u3063\u3066\u3044\u308B bit \u306E\u6570 (population count, popcount)"
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: src/sequence/wildcard-pattern-matching.hpp
+    title: "\u30EF\u30A4\u30EB\u30C9\u30AB\u30FC\u30C9\u30D1\u30BF\u30FC\u30F3\u30DE\
+      \u30C3\u30C1\u30F3\u30B0"
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc307_h/main.test.cpp
+    title: test/atcoder/abc307_h/main.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/library-checker/modint_convolution.test.cpp
     title: test/library-checker/modint_convolution.test.cpp
@@ -238,10 +245,12 @@ data:
   - src/utility/bit/popcount.hpp
   isVerificationFile: false
   path: src/math/convolution/modint-convolution.hpp
-  requiredBy: []
+  requiredBy:
+  - src/sequence/wildcard-pattern-matching.hpp
   timestamp: '2023-05-19 13:40:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/atcoder/abc307_h/main.test.cpp
   - test/library-checker/modint_convolution.test.cpp
 documentation_of: src/math/convolution/modint-convolution.hpp
 layout: document

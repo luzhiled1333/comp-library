@@ -61,6 +61,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/math/convolution/modint-convolution.hpp
     title: Number Theoretic Transform
+  - icon: ':heavy_check_mark:'
+    path: src/sequence/wildcard-pattern-matching.hpp
+    title: "\u30EF\u30A4\u30EB\u30C9\u30AB\u30FC\u30C9\u30D1\u30BF\u30FC\u30F3\u30DE\
+      \u30C3\u30C1\u30F3\u30B0"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/dsl_2_d.test.cpp
@@ -95,6 +99,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc258_e/online-algorithm.test.cpp
     title: test/atcoder/abc258_e/online-algorithm.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc307_h/main.test.cpp
+    title: test/atcoder/abc307_h/main.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/library-checker/modint_convolution.test.cpp
     title: test/library-checker/modint_convolution.test.cpp
@@ -151,6 +158,7 @@ data:
   - src/data-structure/segment-tree/presets/range-update-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-chmin-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-update-range-maximum-query-solver.hpp
+  - src/sequence/wildcard-pattern-matching.hpp
   - src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp
   timestamp: '2023-02-10 17:57:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
@@ -158,6 +166,7 @@ data:
   - unit-test/utility/bit/bit-width.test.cpp
   - unit-test/graph/online-query-jump-on-functional-graph.test.cpp
   - test/atcoder/abc258_e/online-algorithm.test.cpp
+  - test/atcoder/abc307_h/main.test.cpp
   - test/atcoder/abc179_f/range-chmin.test.cpp
   - test/atcoder/abc179_f/range-chmax.test.cpp
   - test/aoj/dsl_2_d.test.cpp
