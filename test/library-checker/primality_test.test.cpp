@@ -6,7 +6,6 @@
 #include "src/math/primes/primality-test.hpp"
 
 #include <iostream>
-#include <vector>
 
 namespace luz {
 
