@@ -27,5 +27,6 @@
 "test/atcoder/abc177_d.test.cpp": "2023-07-30 00:54:52 +0900",
 "test/atcoder/abc179_f/range-chmax.test.cpp": "2023-07-30 00:54:52 +0900",
 "test/atcoder/abc179_f/range-chmin.test.cpp": "2023-07-30 00:54:52 +0900",
-"test/atcoder/abc212_h.test.cpp": "2023-07-30 00:54:52 +0900"
+"test/atcoder/abc212_h.test.cpp": "2023-07-30 00:54:52 +0900",
+"test/atcoder/abc258_e/offline-algorithm.test.cpp": "2023-07-30 00:54:52 +0900"
 }
