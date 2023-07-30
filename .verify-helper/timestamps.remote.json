@@ -40,6 +40,7 @@
 "test/library-checker/bitwise_xor_convolution.test.cpp": "2023-07-30 00:54:52 +0900",
 "test/library-checker/jump_on_tree.test.cpp": "2023-07-30 00:54:52 +0900",
 "test/library-checker/modint_convolution.test.cpp": "2023-07-30 00:54:52 +0900",
+"test/library-checker/primality_test.test.cpp": "2023-07-30 18:05:22 +0900",
 "test/library-checker/scc.test.cpp": "2023-07-30 00:54:52 +0900",
 "test/library-checker/unionfind.test.cpp": "2023-07-30 00:54:52 +0900",
 "unit-test/data-structure/fenwick-tree.test.cpp": "2023-07-30 00:54:52 +0900",
