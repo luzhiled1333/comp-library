@@ -1,40 +1,40 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/rep.hpp
     title: "rep \u69CB\u9020\u4F53"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/size-alias.hpp
     title: size alias
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/data-structure/disjoint-set-union.hpp
     title: Disjoint Set Union (Union Find)
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/graph/single-source-shortest-path/in-unweighted-graph.hpp
     title: "\u91CD\u307F\u306A\u3057\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u7D4C\u8DEF\
       \ (Single Source Shortest Path in Unweighted Graph, BFS)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/graph/tree/offline-query/offline-query-level-ancestor.hpp
     title: "\u30AA\u30D5\u30E9\u30A4\u30F3 Level Ancestor (Offline Level Ancestor)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/graph/tree/offline-query/offline-query-lowest-common-ancestor.hpp
     title: "\u30AA\u30D5\u30E9\u30A4\u30F3\u6700\u5C0F\u5171\u901A\u7956\u5148 (Offline\
       \ Lowest Common Ancestor)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/utility/pair-hash.hpp
     title: "std::pair \u306E Hash"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/utility/tuple-hash.hpp
     title: "std::tuple \u306E Hash"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/jump_on_tree.test.cpp
     title: test/library-checker/jump_on_tree.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/graph/tree/offline-query/offline-query-jump-on-tree.hpp\"\
@@ -263,7 +263,7 @@ data:
   path: src/graph/tree/offline-query/offline-query-jump-on-tree.hpp
   requiredBy: []
   timestamp: '2023-07-30 00:54:52+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/library-checker/jump_on_tree.test.cpp
 documentation_of: src/graph/tree/offline-query/offline-query-jump-on-tree.hpp

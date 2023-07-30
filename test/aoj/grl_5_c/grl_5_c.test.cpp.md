@@ -1,29 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/int-alias.hpp
     title: int alias
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/rep.hpp
     title: "rep \u69CB\u9020\u4F53"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/size-alias.hpp
     title: size alias
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/data-structure/disjoint-set-union.hpp
     title: Disjoint Set Union (Union Find)
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/graph/class/edge/edge.hpp
     title: src/graph/class/edge/edge.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/graph/class/static-graph.hpp
     title: "\u9759\u7684\u306A\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/graph/tree/offline-query/offline-query-lowest-common-ancestor.hpp
     title: "\u30AA\u30D5\u30E9\u30A4\u30F3\u6700\u5C0F\u5171\u901A\u7956\u5148 (Offline\
       \ Lowest Common Ancestor)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/utility/pair-hash.hpp
     title: "std::pair \u306E Hash"
   _extendedRequiredBy: []

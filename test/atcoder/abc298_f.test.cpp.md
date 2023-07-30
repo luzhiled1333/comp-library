@@ -4,16 +4,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/change-max.hpp
     title: chmax
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/int-alias.hpp
     title: int alias
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/rep.hpp
     title: "rep \u69CB\u9020\u4F53"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/size-alias.hpp
     title: size alias
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/data-structure/segment-tree/point-mapping-range-fold-segment-tree.hpp
     title: "\u4E00\u70B9\u66F4\u65B0+\u533A\u9593\u53D6\u5F97 \u30BB\u30B0\u30E1\u30F3\
       \u30C8\u6728"
@@ -24,7 +24,7 @@ data:
     path: src/data-structure/segment-tree/presets/range-maximum-query-solver.hpp
     title: "\u4E00\u70B9\u66F4\u65B0 + \u533A\u9593\u6700\u5927\u30AF\u30A8\u30EA\
       \ solver (Range Maximum Query Solver)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/sequence/compression.hpp
     title: "\u5EA7\u6A19\u5727\u7E2E"
   _extendedRequiredBy: []

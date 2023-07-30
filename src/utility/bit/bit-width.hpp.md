@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/int-alias.hpp
     title: int alias
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/size-alias.hpp
     title: size alias
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/utility/bit/popcount.hpp
     title: "\u7ACB\u3063\u3066\u3044\u308B bit \u306E\u6570 (population count, popcount)"
   _extendedRequiredBy:
@@ -56,12 +56,12 @@ data:
     path: src/data-structure/segment-tree/range-mapping-range-fold-segment-tree.hpp
     title: "\u533A\u9593\u66F4\u65B0+\u533A\u9593\u53D6\u5F97 \u30BB\u30B0\u30E1\u30F3\
       \u30C8\u6728 (Lazy Segment Tree)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp
     title: "(online) Functional Graph \u4E0A\u306E\u9802\u70B9 $v$ \u304B\u3089 $k$\
       \ \u56DE\u79FB\u52D5\u3057\u305F\u5148\u306E\u9802\u70B9 (Online Jump On Functional\
       \ Graph)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/math/convolution/modint-convolution.hpp
     title: Number Theoretic Transform
   - icon: ':heavy_check_mark:'
@@ -105,18 +105,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc307_h/main.test.cpp
     title: test/atcoder/abc307_h/main.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/modint_convolution.test.cpp
     title: test/library-checker/modint_convolution.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: unit-test/graph/online-query-jump-on-functional-graph.test.cpp
     title: unit-test/graph/online-query-jump-on-functional-graph.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: unit-test/utility/bit/bit-width.test.cpp
     title: unit-test/utility/bit/bit-width.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/utility/bit/bit-width.hpp\"\n\n#line 2 \"src/cpp-template/header/int-alias.hpp\"\
@@ -167,7 +167,7 @@ data:
   - src/sequence/wildcard-pattern-matching.hpp
   - src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp
   timestamp: '2023-07-30 00:54:52+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - unit-test/utility/bit/bit-width.test.cpp
   - unit-test/graph/online-query-jump-on-functional-graph.test.cpp

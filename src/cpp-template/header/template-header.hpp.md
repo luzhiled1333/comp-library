@@ -4,16 +4,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/change-max.hpp
     title: chmax
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/change-min.hpp
     title: chmin
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/fast-ios.hpp
     title: Fast I/O
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/input.hpp
     title: input
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/int-alias.hpp
     title: int alias
   - icon: ':heavy_check_mark:'
@@ -25,13 +25,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/pair-ios.hpp
     title: pair I/O
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/rep.hpp
     title: "rep \u69CB\u9020\u4F53"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/size-alias.hpp
     title: size alias
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/vector-ios.hpp
     title: vector I/O
   _extendedRequiredBy:

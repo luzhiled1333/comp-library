@@ -8,7 +8,7 @@ data:
   - icon: ':warning:'
     path: src/geometry/R2/class/line.hpp
     title: src/geometry/R2/class/line.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/R2/class/point.hpp
     title: src/geometry/R2/class/point.hpp
   - icon: ':warning:'
@@ -17,16 +17,16 @@ data:
   - icon: ':warning:'
     path: src/geometry/R2/class/segment.hpp
     title: src/geometry/R2/class/segment.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/R2/class/vector.hpp
     title: src/geometry/R2/class/vector.hpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: unit-test/geometry/R2/class/vector-and-point.test.cpp
     title: unit-test/geometry/R2/class/vector-and-point.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/geometry/R2/utility/is-fp-exception.hpp\"\n\n#include\
@@ -46,7 +46,7 @@ data:
   - src/geometry/R2/class/circle.hpp
   - src/geometry/R2/class/vector.hpp
   timestamp: '2023-02-03 00:11:50+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - unit-test/geometry/R2/class/vector-and-point.test.cpp
 documentation_of: src/geometry/R2/utility/is-fp-exception.hpp

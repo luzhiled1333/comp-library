@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/int-alias.hpp
     title: int alias
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/size-alias.hpp
     title: size alias
   _extendedRequiredBy:
@@ -53,27 +53,27 @@ data:
     path: src/data-structure/segment-tree/range-mapping-range-fold-segment-tree.hpp
     title: "\u533A\u9593\u66F4\u65B0+\u533A\u9593\u53D6\u5F97 \u30BB\u30B0\u30E1\u30F3\
       \u30C8\u6728 (Lazy Segment Tree)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp
     title: "(online) Functional Graph \u4E0A\u306E\u9802\u70B9 $v$ \u304B\u3089 $k$\
       \ \u56DE\u79FB\u52D5\u3057\u305F\u5148\u306E\u9802\u70B9 (Online Jump On Functional\
       \ Graph)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/math/convolution/modint-convolution.hpp
     title: Number Theoretic Transform
   - icon: ':heavy_check_mark:'
     path: src/sequence/wildcard-pattern-matching.hpp
     title: "\u30EF\u30A4\u30EB\u30C9\u30AB\u30FC\u30C9\u30D1\u30BF\u30FC\u30F3\u30DE\
       \u30C3\u30C1\u30F3\u30B0"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/utility/bit/bit-width.hpp
     title: "\u5024\u3092\u8868\u73FE\u3059\u308B\u305F\u3081\u306B\u5FC5\u8981\u306A\
       \u6700\u5C0F\u306Ebit\u5E45 (bit_width)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/utility/bit/count-leading-0s.hpp
     title: "\u6700\u4E0A\u4F4Dbit\u304B\u3089\u9023\u7D9A\u3059\u308B 0 \u306E\u6570\
       \ (counting leading 0s, countl_zero)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/utility/bit/count-trailing-0s.hpp
     title: "\u6700\u4E0B\u4F4Dbit\u304B\u3089\u9023\u7D9A\u3059\u308B 0 \u306E\u6570\
       \ (counting trailing 0s, countr_zero)"
@@ -114,27 +114,27 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc307_h/main.test.cpp
     title: test/atcoder/abc307_h/main.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/modint_convolution.test.cpp
     title: test/library-checker/modint_convolution.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: unit-test/graph/online-query-jump-on-functional-graph.test.cpp
     title: unit-test/graph/online-query-jump-on-functional-graph.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: unit-test/utility/bit/bit-width.test.cpp
     title: unit-test/utility/bit/bit-width.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: unit-test/utility/bit/count-leading-0s.test.cpp
     title: unit-test/utility/bit/count-leading-0s.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: unit-test/utility/bit/count-trailing-0s.test.cpp
     title: unit-test/utility/bit/count-trailing-0s.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: unit-test/utility/bit/popcount.test.cpp
     title: unit-test/utility/bit/popcount.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/utility/bit/popcount.hpp\"\n\n#line 2 \"src/cpp-template/header/int-alias.hpp\"\
@@ -181,7 +181,7 @@ data:
   - src/sequence/wildcard-pattern-matching.hpp
   - src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp
   timestamp: '2023-07-30 00:54:52+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - unit-test/utility/bit/count-trailing-0s.test.cpp
   - unit-test/utility/bit/count-leading-0s.test.cpp

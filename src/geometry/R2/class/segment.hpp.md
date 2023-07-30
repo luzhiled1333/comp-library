@@ -1,28 +1,28 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/int-alias.hpp
     title: int alias
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/R2/class/point.hpp
     title: src/geometry/R2/class/point.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/R2/class/vector.hpp
     title: src/geometry/R2/class/vector.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/R2/numbers/eps.hpp
     title: src/geometry/R2/numbers/eps.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/R2/numbers/sign.hpp
     title: src/geometry/R2/numbers/sign.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/R2/utility/equals.hpp
     title: src/geometry/R2/utility/equals.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/R2/utility/is-fp-exception.hpp
     title: src/geometry/R2/utility/is-fp-exception.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/R2/utility/sign.hpp
     title: src/geometry/R2/utility/sign.hpp
   _extendedRequiredBy: []

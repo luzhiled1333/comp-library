@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/int-alias.hpp
     title: int alias
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/size-alias.hpp
     title: size alias
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/utility/bit/popcount.hpp
     title: "\u7ACB\u3063\u3066\u3044\u308B bit \u306E\u6570 (population count, popcount)"
   _extendedRequiredBy:
@@ -87,12 +87,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc179_f/range-chmin.test.cpp
     title: test/atcoder/abc179_f/range-chmin.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: unit-test/utility/bit/count-trailing-0s.test.cpp
     title: unit-test/utility/bit/count-trailing-0s.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/utility/bit/count-trailing-0s.hpp\"\n\n#line 2 \"src/cpp-template/header/int-alias.hpp\"\
@@ -138,7 +138,7 @@ data:
   - src/data-structure/segment-tree/presets/range-chmin-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-update-range-maximum-query-solver.hpp
   timestamp: '2023-07-30 00:54:52+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - unit-test/utility/bit/count-trailing-0s.test.cpp
   - test/atcoder/abc179_f/range-chmin.test.cpp

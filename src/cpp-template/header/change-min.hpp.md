@@ -8,7 +8,7 @@ data:
   - icon: ':warning:'
     path: src/cpp-template/template.cpp
     title: template
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/graph/decomposition/strongly-connected-components.hpp
     title: "\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3(Decomposition of Strongly Connected\
       \ Components, SCC)"
@@ -29,12 +29,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc259_c.test.cpp
     title: test/atcoder/abc259_c.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/scc.test.cpp
     title: test/library-checker/scc.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/cpp-template/header/change-min.hpp\"\n\nnamespace luz\
@@ -52,7 +52,7 @@ data:
   - src/graph/single-source-shortest-path/in-non-negative-weighted-graph.hpp
   - src/graph/decomposition/strongly-connected-components.hpp
   timestamp: '2023-07-30 00:54:52+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/atcoder/abc259_c.test.cpp
   - test/aoj/itp1_1_a.test.cpp
