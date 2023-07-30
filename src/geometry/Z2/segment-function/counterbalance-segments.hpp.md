@@ -13,13 +13,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/class/line.hpp
     title: src/geometry/Z2/class/line.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/class/point.hpp
     title: "\u683C\u5B50\u70B9 (\u6574\u6570\u5E7E\u4F55)"
   - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/class/segment.hpp
     title: src/geometry/Z2/class/segment.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/class/vector.hpp
     title: "\u30D9\u30AF\u30C8\u30EB (\u6574\u6570\u5E7E\u4F55)"
   - icon: ':heavy_check_mark:'
@@ -40,10 +40,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/operation/inner-product.hpp
     title: src/geometry/Z2/operation/inner-product.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/operation/square-norm.hpp
     title: "$\\|v\\|^2 (v \\in {\\mathbb{Z}}^2)$ (norm\u306E2\u4E57)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/operation/square.hpp
     title: $x^2 (x \in \mathbb{Z})$
   - icon: ':heavy_check_mark:'

@@ -11,17 +11,17 @@ data:
     path: src/data-structure/segment-tree/point-mapping-range-fold-segment-tree.hpp
     title: "\u4E00\u70B9\u66F4\u65B0+\u533A\u9593\u53D6\u5F97 \u30BB\u30B0\u30E1\u30F3\
       \u30C8\u6728"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/data-structure/segment-tree/presets/monoid/value-structure-maximum.hpp
     title: src/data-structure/segment-tree/presets/monoid/value-structure-maximum.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc298_f.test.cpp
     title: test/atcoder/abc298_f.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/data-structure/segment-tree/presets/range-maximum-query-solver.hpp\"\
@@ -102,7 +102,7 @@ data:
   path: src/data-structure/segment-tree/presets/range-maximum-query-solver.hpp
   requiredBy: []
   timestamp: '2023-07-30 00:54:52+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/atcoder/abc298_f.test.cpp
 documentation_of: src/data-structure/segment-tree/presets/range-maximum-query-solver.hpp

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/data-structure/segment-tree/presets/monoid/operator-structure-update.hpp
     title: src/data-structure/segment-tree/presets/monoid/operator-structure-update.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/data-structure/segment-tree/presets/monoid/value-structure-maximum.hpp
     title: src/data-structure/segment-tree/presets/monoid/value-structure-maximum.hpp
   _extendedRequiredBy:

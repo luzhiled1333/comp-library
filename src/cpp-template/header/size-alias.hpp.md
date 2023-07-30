@@ -57,7 +57,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/data-structure/segment-tree/presets/range-chmin-query-solver.hpp
     title: "\u533A\u9593 chmin \u30AF\u30A8\u30EA solver (Range ChangeMin Query Solver)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/data-structure/segment-tree/presets/range-maximum-query-solver.hpp
     title: "\u4E00\u70B9\u66F4\u65B0 + \u533A\u9593\u6700\u5927\u30AF\u30A8\u30EA\
       \ solver (Range Maximum Query Solver)"
@@ -141,7 +141,7 @@ data:
     title: "(offine) Functional Graph \u4E0A\u306E\u9802\u70B9 $v$ \u304B\u3089 $k$\
       \ \u56DE\u79FB\u52D5\u3057\u305F\u5148\u306E\u9802\u70B9 (Offline Jump On Functional\
       \ Graph)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp
     title: "(online) Functional Graph \u4E0A\u306E\u9802\u70B9 $v$ \u304B\u3089 $k$\
       \ \u56DE\u79FB\u52D5\u3057\u305F\u5148\u306E\u9802\u70B9 (Online Jump On Functional\
@@ -158,7 +158,7 @@ data:
     path: src/graph/single-source-shortest-path/in-weighted-graph.hpp
     title: "\u91CD\u307F\u3042\u308A\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u7D4C\u8DEF\
       \ (Single Source Shortest Path in Unweighted Graph, SPFA)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/graph/topological-ordering/lexical-order-topological-sort.hpp
     title: "\u8F9E\u66F8\u9806\u6700\u5927/\u6700\u5C0F\u306E\u30C8\u30DD\u30ED\u30B8\
       \u30AB\u30EB\u30BD\u30FC\u30C8"
@@ -183,7 +183,7 @@ data:
     path: src/math/convolution/fast-walsh-hadamard-transform.hpp
     title: "\u9AD8\u901F\u30A6\u30A9\u30EB\u30B7\u30E5-\u30A2\u30C0\u30DE\u30FC\u30EB\
       \u5909\u63DB/\u9006\u5909\u63DB (Fast Walsh Hadamard Transform / Inverse Transform)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/math/convolution/modint-convolution.hpp
     title: Number Theoretic Transform
   - icon: ':question:'
@@ -199,11 +199,11 @@ data:
   - icon: ':question:'
     path: src/sequence/compression.hpp
     title: "\u5EA7\u6A19\u5727\u7E2E"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/sequence/run-length-encoding.hpp
     title: "\u30E9\u30F3\u30EC\u30F3\u30B0\u30B9\u5727\u7E2E (\u9023\u9577\u5727\u7E2E\
       , Run Length Encoding, RLE)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/sequence/wildcard-pattern-matching.hpp
     title: "\u30EF\u30A4\u30EB\u30C9\u30AB\u30FC\u30C9\u30D1\u30BF\u30FC\u30F3\u30DE\
       \u30C3\u30C1\u30F3\u30B0"
@@ -319,22 +319,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc258_e/offline-algorithm.test.cpp
     title: test/atcoder/abc258_e/offline-algorithm.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc258_e/online-algorithm.test.cpp
     title: test/atcoder/abc258_e/online-algorithm.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc259_c.test.cpp
     title: test/atcoder/abc259_c.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc259_d.test.cpp
     title: test/atcoder/abc259_d.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc291_e.test.cpp
     title: test/atcoder/abc291_e.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc298_f.test.cpp
     title: test/atcoder/abc298_f.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc307_h/main.test.cpp
     title: test/atcoder/abc307_h/main.test.cpp
   - icon: ':x:'

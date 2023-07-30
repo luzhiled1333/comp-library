@@ -19,7 +19,7 @@ data:
     title: "\u7ACB\u3063\u3066\u3044\u308B bit \u306E\u6570 (population count, popcount)"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc258_e/online-algorithm.test.cpp
     title: test/atcoder/abc258_e/online-algorithm.test.cpp
   - icon: ':x:'
@@ -27,7 +27,7 @@ data:
     title: unit-test/graph/online-query-jump-on-functional-graph.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp\"\
@@ -166,7 +166,7 @@ data:
   path: src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp
   requiredBy: []
   timestamp: '2023-07-30 00:54:52+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - unit-test/graph/online-query-jump-on-functional-graph.test.cpp
   - test/atcoder/abc258_e/online-algorithm.test.cpp

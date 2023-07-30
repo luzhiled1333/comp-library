@@ -18,12 +18,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc177_d.test.cpp
     title: test/atcoder/abc177_d.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc298_f.test.cpp
     title: test/atcoder/abc298_f.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/cpp-template/header/change-max.hpp\"\n\nnamespace luz\
@@ -39,7 +39,7 @@ data:
   - src/cpp-template/header/template-header.hpp
   - src/cpp-template/template.cpp
   timestamp: '2023-07-30 00:54:52+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/atcoder/abc298_f.test.cpp
   - test/atcoder/abc177_d.test.cpp

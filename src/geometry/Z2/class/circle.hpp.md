@@ -1,26 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/class/point.hpp
     title: "\u683C\u5B50\u70B9 (\u6574\u6570\u5E7E\u4F55)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/class/vector.hpp
     title: "\u30D9\u30AF\u30C8\u30EB (\u6574\u6570\u5E7E\u4F55)"
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
     title: "\u5186\u3068\u5186\u306E\u4EA4\u5DEE\u5224\u5B9A"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/intersect/is-intersect-point-circle.hpp
     title: "\u70B9\u3068\u5186\u306E\u4EA4\u5DEE\u5224\u5B9A"
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc259_d.test.cpp
     title: test/atcoder/abc259_d.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/geometry/Z2/class/circle.hpp\"\n\n#line 2 \"src/geometry/Z2/class/point.hpp\"\
@@ -65,7 +65,7 @@ data:
   - src/geometry/Z2/intersect/is-intersect-point-circle.hpp
   - src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
   timestamp: '2022-08-22 19:09:09+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/atcoder/abc259_d.test.cpp
 documentation_of: src/geometry/Z2/class/circle.hpp

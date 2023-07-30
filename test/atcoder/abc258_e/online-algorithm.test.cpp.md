@@ -19,7 +19,7 @@ data:
   - icon: ':question:'
     path: src/graph/class/static-graph.hpp
     title: "\u9759\u7684\u306A\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp
     title: "(online) Functional Graph \u4E0A\u306E\u9802\u70B9 $v$ \u304B\u3089 $k$\
       \ \u56DE\u79FB\u52D5\u3057\u305F\u5148\u306E\u9802\u70B9 (Online Jump On Functional\
@@ -33,9 +33,9 @@ data:
     title: "\u7ACB\u3063\u3066\u3044\u308B bit \u306E\u6570 (population count, popcount)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://atcoder.jp/contests/abc258/tasks/abc258_e
     links:
@@ -223,7 +223,7 @@ data:
   path: test/atcoder/abc258_e/online-algorithm.test.cpp
   requiredBy: []
   timestamp: '2023-07-30 00:54:52+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/atcoder/abc258_e/online-algorithm.test.cpp
 layout: document

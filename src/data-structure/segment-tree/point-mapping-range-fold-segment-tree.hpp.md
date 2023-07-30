@@ -8,7 +8,7 @@ data:
     path: src/cpp-template/header/size-alias.hpp
     title: size alias
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/data-structure/segment-tree/presets/range-maximum-query-solver.hpp
     title: "\u4E00\u70B9\u66F4\u65B0 + \u533A\u9593\u6700\u5927\u30AF\u30A8\u30EA\
       \ solver (Range Maximum Query Solver)"
@@ -27,7 +27,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/dsl_2_b/segment-tree.test.cpp
     title: test/aoj/dsl_2_b/segment-tree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc298_f.test.cpp
     title: test/atcoder/abc298_f.test.cpp
   - icon: ':x:'

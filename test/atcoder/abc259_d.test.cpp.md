@@ -13,32 +13,32 @@ data:
   - icon: ':question:'
     path: src/data-structure/disjoint-set-union.hpp
     title: Disjoint Set Union (Union Find)
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/class/circle.hpp
     title: "\u5186 (\u6574\u6570\u5E7E\u4F55)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/class/point.hpp
     title: "\u683C\u5B50\u70B9 (\u6574\u6570\u5E7E\u4F55)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/class/vector.hpp
     title: "\u30D9\u30AF\u30C8\u30EB (\u6574\u6570\u5E7E\u4F55)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
     title: "\u5186\u3068\u5186\u306E\u4EA4\u5DEE\u5224\u5B9A"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/intersect/is-intersect-point-circle.hpp
     title: "\u70B9\u3068\u5186\u306E\u4EA4\u5DEE\u5224\u5B9A"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/operation/square-norm.hpp
     title: "$\\|v\\|^2 (v \\in {\\mathbb{Z}}^2)$ (norm\u306E2\u4E57)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/operation/square.hpp
     title: $x^2 (x \in \mathbb{Z})$
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://atcoder.jp/contests/abc259/tasks/abc259_d
     links:
@@ -183,7 +183,7 @@ data:
   path: test/atcoder/abc259_d.test.cpp
   requiredBy: []
   timestamp: '2023-07-30 00:54:52+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/atcoder/abc259_d.test.cpp
 layout: document

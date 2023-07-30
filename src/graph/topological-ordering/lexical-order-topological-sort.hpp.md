@@ -6,12 +6,12 @@ data:
     title: size alias
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc291_e.test.cpp
     title: test/atcoder/abc291_e.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/cpp-template/header/size-alias.hpp\"\n\n#include <cstddef>\n\
@@ -47,7 +47,7 @@ data:
   path: src/graph/topological-ordering/lexical-order-topological-sort.hpp
   requiredBy: []
   timestamp: '2023-07-30 00:54:52+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/atcoder/abc291_e.test.cpp
 documentation_of: src/graph/topological-ordering/lexical-order-topological-sort.hpp

@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: src/cpp-template/header/int-alias.hpp
     title: int alias
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/class/vector.hpp
     title: "\u30D9\u30AF\u30C8\u30EB (\u6574\u6570\u5E7E\u4F55)"
   - icon: ':heavy_check_mark:'
@@ -16,10 +16,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/operation/inner-product.hpp
     title: src/geometry/Z2/operation/inner-product.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/operation/square-norm.hpp
     title: "$\\|v\\|^2 (v \\in {\\mathbb{Z}}^2)$ (norm\u306E2\u4E57)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/operation/square.hpp
     title: $x^2 (x \in \mathbb{Z})$
   _extendedRequiredBy:

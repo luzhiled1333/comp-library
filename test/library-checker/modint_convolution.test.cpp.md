@@ -10,7 +10,7 @@ data:
   - icon: ':question:'
     path: src/cpp-template/header/size-alias.hpp
     title: size alias
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/math/convolution/modint-convolution.hpp
     title: Number Theoretic Transform
   - icon: ':question:'

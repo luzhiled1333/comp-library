@@ -10,7 +10,7 @@ data:
   - icon: ':question:'
     path: src/cpp-template/header/size-alias.hpp
     title: size alias
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/math/convolution/modint-convolution.hpp
     title: Number Theoretic Transform
   - icon: ':question:'
@@ -22,12 +22,12 @@ data:
     title: "\u7ACB\u3063\u3066\u3044\u308B bit \u306E\u6570 (population count, popcount)"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc307_h/main.test.cpp
     title: test/atcoder/abc307_h/main.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/sequence/wildcard-pattern-matching.hpp\"\n\n#line 2\
@@ -205,7 +205,7 @@ data:
   path: src/sequence/wildcard-pattern-matching.hpp
   requiredBy: []
   timestamp: '2023-07-30 00:54:52+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/atcoder/abc307_h/main.test.cpp
 documentation_of: src/sequence/wildcard-pattern-matching.hpp

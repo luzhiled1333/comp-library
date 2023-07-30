@@ -10,13 +10,13 @@ data:
   - icon: ':question:'
     path: src/cpp-template/header/size-alias.hpp
     title: size alias
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/math/convolution/modint-convolution.hpp
     title: Number Theoretic Transform
   - icon: ':question:'
     path: src/math/modular-arithmetic/static-modint.hpp
     title: src/math/modular-arithmetic/static-modint.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/sequence/wildcard-pattern-matching.hpp
     title: "\u30EF\u30A4\u30EB\u30C9\u30AB\u30FC\u30C9\u30D1\u30BF\u30FC\u30F3\u30DE\
       \u30C3\u30C1\u30F3\u30B0"
@@ -29,9 +29,9 @@ data:
     title: "\u7ACB\u3063\u3066\u3044\u308B bit \u306E\u6570 (population count, popcount)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://atcoder.jp/contests/abc307/tasks/abc307_ex
     links:
@@ -243,7 +243,7 @@ data:
   path: test/atcoder/abc307_h/main.test.cpp
   requiredBy: []
   timestamp: '2023-07-30 00:54:52+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/atcoder/abc307_h/main.test.cpp
 layout: document

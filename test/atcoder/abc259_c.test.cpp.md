@@ -10,15 +10,15 @@ data:
   - icon: ':question:'
     path: src/cpp-template/header/size-alias.hpp
     title: size alias
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/sequence/run-length-encoding.hpp
     title: "\u30E9\u30F3\u30EC\u30F3\u30B0\u30B9\u5727\u7E2E (\u9023\u9577\u5727\u7E2E\
       , Run Length Encoding, RLE)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://atcoder.jp/contests/abc259/tasks/abc259_c
     links:
@@ -89,7 +89,7 @@ data:
   path: test/atcoder/abc259_c.test.cpp
   requiredBy: []
   timestamp: '2023-07-30 00:54:52+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/atcoder/abc259_c.test.cpp
 layout: document

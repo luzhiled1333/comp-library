@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/cpp-template/header/change-max.hpp
     title: chmax
   - icon: ':question:'
@@ -17,10 +17,10 @@ data:
     path: src/data-structure/segment-tree/point-mapping-range-fold-segment-tree.hpp
     title: "\u4E00\u70B9\u66F4\u65B0+\u533A\u9593\u53D6\u5F97 \u30BB\u30B0\u30E1\u30F3\
       \u30C8\u6728"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/data-structure/segment-tree/presets/monoid/value-structure-maximum.hpp
     title: src/data-structure/segment-tree/presets/monoid/value-structure-maximum.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/data-structure/segment-tree/presets/range-maximum-query-solver.hpp
     title: "\u4E00\u70B9\u66F4\u65B0 + \u533A\u9593\u6700\u5927\u30AF\u30A8\u30EA\
       \ solver (Range Maximum Query Solver)"
@@ -29,9 +29,9 @@ data:
     title: "\u5EA7\u6A19\u5727\u7E2E"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://atcoder.jp/contests/abc298/tasks/abc298_f
     links:
@@ -179,7 +179,7 @@ data:
   path: test/atcoder/abc298_f.test.cpp
   requiredBy: []
   timestamp: '2023-07-30 00:54:52+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/atcoder/abc298_f.test.cpp
 layout: document

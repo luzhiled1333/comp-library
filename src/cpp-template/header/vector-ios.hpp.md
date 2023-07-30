@@ -24,10 +24,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc258_e/offline-algorithm.test.cpp
     title: test/atcoder/abc258_e/offline-algorithm.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc258_e/online-algorithm.test.cpp
     title: test/atcoder/abc258_e/online-algorithm.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc291_e.test.cpp
     title: test/atcoder/abc291_e.test.cpp
   - icon: ':x:'

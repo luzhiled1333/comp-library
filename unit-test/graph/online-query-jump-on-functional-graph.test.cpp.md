@@ -16,7 +16,7 @@ data:
   - icon: ':question:'
     path: src/graph/class/static-graph.hpp
     title: "\u9759\u7684\u306A\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp
     title: "(online) Functional Graph \u4E0A\u306E\u9802\u70B9 $v$ \u304B\u3089 $k$\
       \ \u56DE\u79FB\u52D5\u3057\u305F\u5148\u306E\u9802\u70B9 (Online Jump On Functional\
