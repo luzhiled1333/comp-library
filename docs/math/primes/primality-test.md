@@ -1,5 +1,5 @@
 ---
-title: 高速素因数分解
+title: 高速素数判定
 documentation_of: //src/math/primes/primality-test.hpp
 ---
 
