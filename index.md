@@ -413,6 +413,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/math/modular-arithmetic/static-modint.hpp
       title: src/math/modular-arithmetic/static-modint.hpp
+  - name: src/math/primes
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/math/primes/primality-test.hpp
+      title: "\u9AD8\u901F\u7D20\u6570\u5224\u5B9A"
   - name: src/math
     pages:
     - icon: ':heavy_check_mark:'
@@ -615,6 +620,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/library-checker/modint_convolution.test.cpp
       title: test/library-checker/modint_convolution.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/library-checker/primality_test.test.cpp
+      title: test/library-checker/primality_test.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/library-checker/scc.test.cpp
       title: test/library-checker/scc.test.cpp

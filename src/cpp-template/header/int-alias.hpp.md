@@ -112,6 +112,9 @@ data:
     path: src/math/modular-arithmetic/static-modint.hpp
     title: src/math/modular-arithmetic/static-modint.hpp
   - icon: ':heavy_check_mark:'
+    path: src/math/primes/primality-test.hpp
+    title: "\u9AD8\u901F\u7D20\u6570\u5224\u5B9A"
+  - icon: ':heavy_check_mark:'
     path: src/sequence/wildcard-pattern-matching.hpp
     title: "\u30EF\u30A4\u30EB\u30C9\u30AB\u30FC\u30C9\u30D1\u30BF\u30FC\u30F3\u30DE\
       \u30C3\u30C1\u30F3\u30B0"
@@ -243,6 +246,9 @@ data:
     path: test/library-checker/modint_convolution.test.cpp
     title: test/library-checker/modint_convolution.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/library-checker/primality_test.test.cpp
+    title: test/library-checker/primality_test.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/scc.test.cpp
     title: test/library-checker/scc.test.cpp
   - icon: ':heavy_check_mark:'
@@ -311,6 +317,7 @@ data:
   - src/utility/bit/count-trailing-0s.hpp
   - src/utility/bit/bit-width.hpp
   - src/utility/bit/count-leading-0s.hpp
+  - src/math/primes/primality-test.hpp
   - src/math/modular-arithmetic/small-mod-combination.hpp
   - src/math/modular-arithmetic/static-modint.hpp
   - src/math/convolution/modint-convolution.hpp
@@ -397,6 +404,7 @@ data:
   - test/aoj/2442.test.cpp
   - test/library-checker/bitwise_xor_convolution.test.cpp
   - test/library-checker/modint_convolution.test.cpp
+  - test/library-checker/primality_test.test.cpp
   - test/library-checker/bitwise_and_convolution.test.cpp
   - test/library-checker/scc.test.cpp
   - test/library-checker/jump_on_tree.test.cpp

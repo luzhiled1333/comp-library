@@ -353,6 +353,9 @@ data:
     path: test/library-checker/modint_convolution.test.cpp
     title: test/library-checker/modint_convolution.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/library-checker/primality_test.test.cpp
+    title: test/library-checker/primality_test.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/scc.test.cpp
     title: test/library-checker/scc.test.cpp
   - icon: ':heavy_check_mark:'
@@ -531,6 +534,7 @@ data:
   - test/aoj/2442.test.cpp
   - test/library-checker/bitwise_xor_convolution.test.cpp
   - test/library-checker/modint_convolution.test.cpp
+  - test/library-checker/primality_test.test.cpp
   - test/library-checker/bitwise_and_convolution.test.cpp
   - test/library-checker/scc.test.cpp
   - test/library-checker/jump_on_tree.test.cpp

@@ -16,6 +16,9 @@ data:
     path: test/library-checker/jump_on_tree.test.cpp
     title: test/library-checker/jump_on_tree.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/library-checker/primality_test.test.cpp
+    title: test/library-checker/primality_test.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/library-checker/scc.test.cpp
     title: test/library-checker/scc.test.cpp
   _isVerificationFailed: false
@@ -39,6 +42,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/itp1_1_a.test.cpp
+  - test/library-checker/primality_test.test.cpp
   - test/library-checker/scc.test.cpp
   - test/library-checker/jump_on_tree.test.cpp
 documentation_of: src/cpp-template/header/fast-ios.hpp
