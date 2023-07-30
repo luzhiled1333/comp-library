@@ -19,12 +19,12 @@ data:
   - icon: ':question:'
     path: src/graph/class/static-graph.hpp
     title: "\u9759\u7684\u306A\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/graph/functional-graph/offline-query/offline-query-jump-on-functional-graph.hpp
     title: "(offine) Functional Graph \u4E0A\u306E\u9802\u70B9 $v$ \u304B\u3089 $k$\
       \ \u56DE\u79FB\u52D5\u3057\u305F\u5148\u306E\u9802\u70B9 (Offline Jump On Functional\
       \ Graph)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/graph/tree/offline-query/offline-query-level-ancestor.hpp
     title: "\u30AA\u30D5\u30E9\u30A4\u30F3 Level Ancestor (Offline Level Ancestor)"
   - icon: ':question:'
@@ -32,9 +32,9 @@ data:
     title: "std::pair \u306E Hash"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://atcoder.jp/contests/abc258/tasks/abc258_e
     links:
@@ -258,7 +258,7 @@ data:
   path: test/atcoder/abc258_e/offline-algorithm.test.cpp
   requiredBy: []
   timestamp: '2023-07-30 00:54:52+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/atcoder/abc258_e/offline-algorithm.test.cpp
 layout: document

@@ -14,7 +14,7 @@ data:
     path: src/graph/single-source-shortest-path/in-unweighted-graph.hpp
     title: "\u91CD\u307F\u306A\u3057\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u7D4C\u8DEF\
       \ (Single Source Shortest Path in Unweighted Graph, BFS)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/graph/tree/offline-query/offline-query-level-ancestor.hpp
     title: "\u30AA\u30D5\u30E9\u30A4\u30F3 Level Ancestor (Offline Level Ancestor)"
   - icon: ':question:'

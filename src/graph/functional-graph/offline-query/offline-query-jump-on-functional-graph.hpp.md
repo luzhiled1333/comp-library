@@ -10,7 +10,7 @@ data:
   - icon: ':question:'
     path: src/cpp-template/header/size-alias.hpp
     title: size alias
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/graph/tree/offline-query/offline-query-level-ancestor.hpp
     title: "\u30AA\u30D5\u30E9\u30A4\u30F3 Level Ancestor (Offline Level Ancestor)"
   - icon: ':question:'
@@ -18,7 +18,7 @@ data:
     title: "std::pair \u306E Hash"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc258_e/offline-algorithm.test.cpp
     title: test/atcoder/abc258_e/offline-algorithm.test.cpp
   - icon: ':x:'
@@ -26,7 +26,7 @@ data:
     title: unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/graph/functional-graph/offline-query/offline-query-jump-on-functional-graph.hpp\"\
@@ -208,7 +208,7 @@ data:
   path: src/graph/functional-graph/offline-query/offline-query-jump-on-functional-graph.hpp
   requiredBy: []
   timestamp: '2023-07-30 00:54:52+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
   - test/atcoder/abc258_e/offline-algorithm.test.cpp

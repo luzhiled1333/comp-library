@@ -92,7 +92,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/geometry/Z2/segment-function/counterbalance-segments.hpp
     title: src/geometry/Z2/segment-function/counterbalance-segments.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/graph/functional-graph/offline-query/offline-query-jump-on-functional-graph.hpp
     title: "(offine) Functional Graph \u4E0A\u306E\u9802\u70B9 $v$ \u304B\u3089 $k$\
       \ \u56DE\u79FB\u52D5\u3057\u305F\u5148\u306E\u9802\u70B9 (Offline Jump On Functional\
@@ -212,7 +212,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/atcoder/abc212_h.test.cpp
     title: test/atcoder/abc212_h.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc258_e/offline-algorithm.test.cpp
     title: test/atcoder/abc258_e/offline-algorithm.test.cpp
   - icon: ':x:'

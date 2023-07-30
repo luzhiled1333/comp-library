@@ -11,7 +11,7 @@ data:
     path: src/utility/pair-hash.hpp
     title: "std::pair \u306E Hash"
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':question:'
     path: src/graph/functional-graph/offline-query/offline-query-jump-on-functional-graph.hpp
     title: "(offine) Functional Graph \u4E0A\u306E\u9802\u70B9 $v$ \u304B\u3089 $k$\
       \ \u56DE\u79FB\u52D5\u3057\u305F\u5148\u306E\u9802\u70B9 (Offline Jump On Functional\
@@ -21,7 +21,7 @@ data:
     title: "(offine) \u6728\u306E\u30D1\u30B9 $u-v$ \u4E0A\u306E $k$ \u756A\u76EE\u306E\
       \u9802\u70B9 (Offline Jump On Tree)"
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/atcoder/abc258_e/offline-algorithm.test.cpp
     title: test/atcoder/abc258_e/offline-algorithm.test.cpp
   - icon: ':x:'
@@ -32,7 +32,7 @@ data:
     title: unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/graph/tree/offline-query/offline-query-level-ancestor.hpp\"\
@@ -121,7 +121,7 @@ data:
   - src/graph/tree/offline-query/offline-query-jump-on-tree.hpp
   - src/graph/functional-graph/offline-query/offline-query-jump-on-functional-graph.hpp
   timestamp: '2023-07-30 00:54:52+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - unit-test/graph/offline-query-jump-on-functional-graph.test.cpp
   - test/atcoder/abc258_e/offline-algorithm.test.cpp
