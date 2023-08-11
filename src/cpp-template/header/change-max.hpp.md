@@ -36,15 +36,15 @@ data:
   isVerificationFile: false
   path: src/cpp-template/header/change-max.hpp
   requiredBy:
-  - src/cpp-template/header/template-header.hpp
   - src/cpp-template/template.cpp
+  - src/cpp-template/header/template-header.hpp
   timestamp: '2023-07-30 00:54:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/atcoder/abc298_f.test.cpp
-  - test/atcoder/abc177_d.test.cpp
   - test/aoj/itp1_1_a.test.cpp
   - test/aoj/1181.test.cpp
+  - test/atcoder/abc177_d.test.cpp
+  - test/atcoder/abc298_f.test.cpp
 documentation_of: src/cpp-template/header/change-max.hpp
 layout: document
 title: chmax

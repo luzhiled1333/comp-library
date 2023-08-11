@@ -246,20 +246,20 @@ data:
   isVerificationFile: false
   path: src/data-structure/segment-tree/range-mapping-range-fold-segment-tree.hpp
   requiredBy:
-  - src/data-structure/segment-tree/presets/range-update-range-sum-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-add-range-minimum-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-add-range-sum-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-add-range-maximum-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-update-range-minimum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-add-range-minimum-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-update-range-maximum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-add-range-maximum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-update-range-sum-query-solver.hpp
   timestamp: '2023-07-30 00:54:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/dsl_2_i.test.cpp
-  - test/aoj/dsl_2_f/range-maximum.test.cpp
   - test/aoj/dsl_2_f/range-minimum.test.cpp
-  - test/aoj/dsl_2_h/range-maximum.test.cpp
+  - test/aoj/dsl_2_f/range-maximum.test.cpp
   - test/aoj/dsl_2_h/range-minimum.test.cpp
+  - test/aoj/dsl_2_h/range-maximum.test.cpp
   - test/aoj/dsl_2_g.test.cpp
 documentation_of: src/data-structure/segment-tree/range-mapping-range-fold-segment-tree.hpp
 layout: document

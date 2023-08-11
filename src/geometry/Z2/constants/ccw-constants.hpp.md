@@ -38,8 +38,8 @@ data:
   isVerificationFile: false
   path: src/geometry/Z2/constants/ccw-constants.hpp
   requiredBy:
-  - src/geometry/Z2/operation/ccw.hpp
   - src/geometry/Z2/segment-function/counterbalance-segments.hpp
+  - src/geometry/Z2/operation/ccw.hpp
   timestamp: '2023-07-30 00:54:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

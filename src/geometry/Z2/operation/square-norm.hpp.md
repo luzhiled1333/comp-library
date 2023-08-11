@@ -62,15 +62,15 @@ data:
   isVerificationFile: false
   path: src/geometry/Z2/operation/square-norm.hpp
   requiredBy:
-  - src/geometry/Z2/intersect/is-intersect-point-circle.hpp
-  - src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
-  - src/geometry/Z2/operation/ccw.hpp
   - src/geometry/Z2/segment-function/counterbalance-segments.hpp
+  - src/geometry/Z2/intersect/is-intersect-circle-circle.hpp
+  - src/geometry/Z2/intersect/is-intersect-point-circle.hpp
+  - src/geometry/Z2/operation/ccw.hpp
   timestamp: '2022-08-22 18:26:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/atcoder/abc259_d.test.cpp
   - test/aoj/4011.test.cpp
+  - test/atcoder/abc259_d.test.cpp
 documentation_of: src/geometry/Z2/operation/square-norm.hpp
 layout: document
 title: "$\\|v\\|^2 (v \\in {\\mathbb{Z}}^2)$ (norm\u306E2\u4E57)"

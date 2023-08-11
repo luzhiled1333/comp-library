@@ -168,8 +168,8 @@ data:
   timestamp: '2023-07-30 00:54:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - unit-test/graph/online-query-jump-on-functional-graph.test.cpp
   - test/atcoder/abc258_e/online-algorithm.test.cpp
+  - unit-test/graph/online-query-jump-on-functional-graph.test.cpp
 documentation_of: src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp
 layout: document
 title: "(online) Functional Graph \u4E0A\u306E\u9802\u70B9 $v$ \u304B\u3089 $k$ \u56DE\

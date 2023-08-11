@@ -179,17 +179,17 @@ data:
   isVerificationFile: false
   path: src/data-structure/segment-tree/range-mapping-point-fold-segment-tree.hpp
   requiredBy:
-  - src/data-structure/segment-tree/presets/range-chmax-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-add-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-update-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-chmin-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-chmax-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-update-query-solver.hpp
   timestamp: '2023-07-30 00:54:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/atcoder/abc179_f/range-chmin.test.cpp
-  - test/atcoder/abc179_f/range-chmax.test.cpp
   - test/aoj/dsl_2_d.test.cpp
   - test/aoj/dsl_2_e.test.cpp
+  - test/atcoder/abc179_f/range-chmax.test.cpp
+  - test/atcoder/abc179_f/range-chmin.test.cpp
 documentation_of: src/data-structure/segment-tree/range-mapping-point-fold-segment-tree.hpp
 layout: document
 title: "\u533A\u9593\u66F4\u65B0 + \u4E00\u70B9\u53D6\u5F97 \u30BB\u30B0\u30E1\u30F3\

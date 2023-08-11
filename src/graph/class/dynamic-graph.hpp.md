@@ -64,9 +64,9 @@ data:
   timestamp: '2023-07-30 00:54:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/grl_1_a/dynamic-graph.test.cpp
   - test/aoj/grl_1_b/dynamic-graph.test.cpp
   - test/aoj/grl_1_b/static-graph.test.cpp
+  - test/aoj/grl_1_a/dynamic-graph.test.cpp
 documentation_of: src/graph/class/dynamic-graph.hpp
 layout: document
 title: "\u52D5\u7684\u306A\u30B0\u30E9\u30D5\u69CB\u9020\u4F53"

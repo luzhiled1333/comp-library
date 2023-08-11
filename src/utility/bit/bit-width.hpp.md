@@ -152,38 +152,38 @@ data:
   path: src/utility/bit/bit-width.hpp
   requiredBy:
   - src/math/convolution/modint-convolution.hpp
+  - src/data-structure/segment-tree/presets/range-add-range-sum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-update-range-minimum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-add-range-minimum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-add-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-chmin-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-chmax-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-update-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-update-range-maximum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-add-range-maximum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-update-range-sum-query-solver.hpp
   - src/data-structure/segment-tree/range-mapping-range-fold-segment-tree.hpp
   - src/data-structure/segment-tree/range-mapping-point-fold-segment-tree.hpp
-  - src/data-structure/segment-tree/presets/range-update-range-sum-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-add-range-minimum-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-add-range-sum-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-chmax-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-add-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-add-range-maximum-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-update-range-minimum-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-update-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-chmin-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-update-range-maximum-query-solver.hpp
   - src/sequence/wildcard-pattern-matching.hpp
   - src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp
   timestamp: '2023-07-30 00:54:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/dsl_2_i.test.cpp
+  - test/aoj/dsl_2_f/range-minimum.test.cpp
+  - test/aoj/dsl_2_f/range-maximum.test.cpp
+  - test/aoj/dsl_2_d.test.cpp
+  - test/aoj/dsl_2_h/range-minimum.test.cpp
+  - test/aoj/dsl_2_h/range-maximum.test.cpp
+  - test/aoj/dsl_2_e.test.cpp
+  - test/aoj/dsl_2_g.test.cpp
+  - test/atcoder/abc307_h/main.test.cpp
+  - test/atcoder/abc179_f/range-chmax.test.cpp
+  - test/atcoder/abc179_f/range-chmin.test.cpp
+  - test/atcoder/abc258_e/online-algorithm.test.cpp
+  - test/library-checker/modint_convolution.test.cpp
   - unit-test/utility/bit/bit-width.test.cpp
   - unit-test/graph/online-query-jump-on-functional-graph.test.cpp
-  - test/atcoder/abc258_e/online-algorithm.test.cpp
-  - test/atcoder/abc307_h/main.test.cpp
-  - test/atcoder/abc179_f/range-chmin.test.cpp
-  - test/atcoder/abc179_f/range-chmax.test.cpp
-  - test/aoj/dsl_2_d.test.cpp
-  - test/aoj/dsl_2_i.test.cpp
-  - test/aoj/dsl_2_e.test.cpp
-  - test/aoj/dsl_2_f/range-maximum.test.cpp
-  - test/aoj/dsl_2_f/range-minimum.test.cpp
-  - test/aoj/dsl_2_h/range-maximum.test.cpp
-  - test/aoj/dsl_2_h/range-minimum.test.cpp
-  - test/aoj/dsl_2_g.test.cpp
-  - test/library-checker/modint_convolution.test.cpp
 documentation_of: src/utility/bit/bit-width.hpp
 layout: document
 title: "\u5024\u3092\u8868\u73FE\u3059\u308B\u305F\u3081\u306B\u5FC5\u8981\u306A\u6700\

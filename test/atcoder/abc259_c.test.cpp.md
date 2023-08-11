@@ -48,26 +48,26 @@ data:
     \ auto begin() const noexcept {\n      return f;\n    }\n    constexpr auto end()\
     \ const noexcept {\n      return l;\n    }\n  };\n\n} // namespace luz\n#line\
     \ 2 \"src/sequence/run-length-encoding.hpp\"\n\n#line 4 \"src/sequence/run-length-encoding.hpp\"\
-    \n\n#include <string>\n#include <utility>\n#include <vector>\n\nnamespace luz::impl\
-    \ {\n\n  template < typename T >\n  std::vector< std::pair< T, usize > > rle(\n\
-    \      const std::vector< T > &vs) {\n    std::vector< std::pair< T, usize > >\
-    \ result;\n    for (const auto &v: vs) {\n      if (result.empty() or result.back().first\
-    \ != v) {\n        result.emplace_back(v, 0);\n      }\n      result.back().second++;\n\
-    \    }\n    return result;\n  }\n\n} // namespace luz::impl\n\nnamespace luz {\n\
-    \n  template < typename T >\n  std::vector< std::pair< T, usize > > run_length_encoding(\n\
-    \      const std::vector< T > &vs) {\n    return impl::rle(vs);\n  }\n\n  std::vector<\
-    \ std::pair< char, usize > > run_length_encoding(\n      const std::string &s)\
-    \ {\n    std::vector< char > cs(s.begin(), s.end());\n    return impl::rle(cs);\n\
-    \  }\n\n} // namespace luz\n#line 7 \"test/atcoder/abc259_c.test.cpp\"\n\n#line\
-    \ 9 \"test/atcoder/abc259_c.test.cpp\"\n#include <iostream>\n#line 11 \"test/atcoder/abc259_c.test.cpp\"\
-    \n\nnamespace luz {\n\n  void main_() {\n    std::string s, t;\n    std::cin >>\
-    \ s >> t;\n\n    auto ss = run_length_encoding(s);\n    auto ts = run_length_encoding(t);\n\
-    \n    usize n = std::min(ss.size(), ts.size());\n    for (usize i: rep(0, n))\
-    \ {\n      auto &[sc, scnt] = ss[i];\n      auto &[tc, tcnt] = ts[i];\n\n    \
-    \  if (scnt >= 2) {\n        chmin(tcnt, scnt);\n      }\n    }\n\n    if (ss\
-    \ == ts) {\n      std::cout << \"Yes\" << std::endl;\n    } else {\n      std::cout\
-    \ << \"No\" << std::endl;\n    }\n  }\n\n} // namespace luz\n\nint main() {\n\
-    \  luz::main_();\n}\n"
+    \n\n#include <string>\n#include <utility>\n#include <vector>\n\nnamespace luz\
+    \ {\n\n  template < class T, class Iter >\n  std::vector< std::pair< T, usize\
+    \ > > run_length_encoding(\n      Iter first, Iter last) {\n    std::vector< std::pair<\
+    \ T, usize > > result;\n\n    while (first != last) {\n      if (result.empty()\
+    \ or result.back().first != *first) {\n        result.emplace_back(*first, 0);\n\
+    \      }\n\n      result.back().second++;\n      ++first;\n    }\n\n    return\
+    \ result;\n  }\n\n  template < typename T >\n  std::vector< std::pair< T, usize\
+    \ > > run_length_encoding(\n      const std::vector< T > &vs) {\n    return run_length_encoding(vs.begin(),\
+    \ vs.end());\n  }\n\n  std::vector< std::pair< char, usize > > run_length_encoding(\n\
+    \      const std::string &s) {\n    return run_length_encoding< char >(s.begin(),\
+    \ s.end());\n  }\n\n} // namespace luz\n#line 7 \"test/atcoder/abc259_c.test.cpp\"\
+    \n\n#line 9 \"test/atcoder/abc259_c.test.cpp\"\n#include <iostream>\n#line 11\
+    \ \"test/atcoder/abc259_c.test.cpp\"\n\nnamespace luz {\n\n  void main_() {\n\
+    \    std::string s, t;\n    std::cin >> s >> t;\n\n    auto ss = run_length_encoding(s);\n\
+    \    auto ts = run_length_encoding(t);\n\n    usize n = std::min(ss.size(), ts.size());\n\
+    \    for (usize i: rep(0, n)) {\n      auto &[sc, scnt] = ss[i];\n      auto &[tc,\
+    \ tcnt] = ts[i];\n\n      if (scnt >= 2) {\n        chmin(tcnt, scnt);\n     \
+    \ }\n    }\n\n    if (ss == ts) {\n      std::cout << \"Yes\" << std::endl;\n\
+    \    } else {\n      std::cout << \"No\" << std::endl;\n    }\n  }\n\n} // namespace\
+    \ luz\n\nint main() {\n  luz::main_();\n}\n"
   code: "// verification-helper: PROBLEM https://atcoder.jp/contests/abc259/tasks/abc259_c\n\
     \n#include \"src/cpp-template/header/change-min.hpp\"\n#include \"src/cpp-template/header/rep.hpp\"\
     \n#include \"src/cpp-template/header/size-alias.hpp\"\n#include \"src/sequence/run-length-encoding.hpp\"\
@@ -88,7 +88,7 @@ data:
   isVerificationFile: true
   path: test/atcoder/abc259_c.test.cpp
   requiredBy: []
-  timestamp: '2023-07-30 00:54:52+09:00'
+  timestamp: '2023-08-11 19:35:51+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/atcoder/abc259_c.test.cpp

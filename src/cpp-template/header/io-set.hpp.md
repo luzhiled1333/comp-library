@@ -39,13 +39,13 @@ data:
   isVerificationFile: false
   path: src/cpp-template/header/io-set.hpp
   requiredBy:
-  - src/cpp-template/header/template-header.hpp
   - src/cpp-template/template.cpp
+  - src/cpp-template/header/template-header.hpp
   timestamp: '2023-07-30 00:54:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/itp1_1_a.test.cpp
   - test/aoj/2442.test.cpp
+  - test/aoj/itp1_1_a.test.cpp
 documentation_of: src/cpp-template/header/io-set.hpp
 layout: document
 title: specify output precision
