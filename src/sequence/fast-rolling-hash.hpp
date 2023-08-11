@@ -17,12 +17,12 @@ namespace luz {
     const u64 base;
     std::vector< u64 > power;
 
-    u64 add(u64 a, u64 b) const {
+    static u64 add(u64 a, u64 b) {
       if ((a += b) >= mod) a -= mod;
       return a;
     }
 
-    u64 mul(u64 a, u64 b) const {
+    static u64 mul(u64 a, u64 b) {
       u128 c = u128(a) * b;
       return add(c >> 61, c & mod);
     }
@@ -82,7 +82,7 @@ namespace luz {
     }
 
    private:
-    u64 mod_pow(u64 b, u64 e) {
+    static u64 mod_pow(u64 b, u64 e) {
       u64 res{1};
 
       while (e) {
@@ -96,12 +96,29 @@ namespace luz {
       return res;
     }
 
+    static bool is_primitive_root(u64 b) {
+      constexpr u64 ps[] = {2, 3, 5, 7, 11, 13, 31, 41, 61, 151, 331, 1321};
+      for (const auto &p: ps) {
+        if (mod_pow(b, (mod - 1) / p) == 1) {
+          return false;
+        }
+      }
+      return true;
+    }
+
     static u64 generate_base() {
       std::mt19937_64 mt(std::chrono::steady_clock::now()
                              .time_since_epoch()
                              .count());
       std::uniform_int_distribution< u64 > rand(1, mod - 1);
-      return rand(mt);
+      while (true) {
+        u64 b = rand(mt);
+        if (not is_primitive_root(b)) {
+          continue;
+        }
+
+        return b;
+      }
     }
   };
 
