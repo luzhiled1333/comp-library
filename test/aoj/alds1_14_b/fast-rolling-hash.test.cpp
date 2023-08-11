@@ -1,6 +1,7 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_14_B
 
 #include "src/sequence/fast-rolling-hash.hpp"
+
 #include "src/cpp-template/header/rep.hpp"
 #include "src/cpp-template/header/size-alias.hpp"
 
