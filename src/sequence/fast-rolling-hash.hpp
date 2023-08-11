@@ -13,7 +13,7 @@
 namespace luz {
 
   class FastRollingHash {
-    static const u64 mod = (1ull << 61ull) - 1;
+    static constexpr u64 mod = (1ull << 61ull) - 1;
 
     const u64 base;
     std::vector< u64 > power;
