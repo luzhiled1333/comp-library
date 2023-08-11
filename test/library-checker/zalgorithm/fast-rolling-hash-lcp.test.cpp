@@ -32,4 +32,3 @@ namespace luz {
 int main() {
   luz::main_();
 }
-
