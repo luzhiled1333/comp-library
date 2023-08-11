@@ -42,6 +42,8 @@ namespace luz {
 
     FastRollingHash(): base(generate_base()), power{1} {}
 
+    explicit FastRollingHash(u64 base): base(base), power{1} {}
+
     template < class Iter >
     Hs build(Iter first, Iter last) const {
       Hs hs(1);
