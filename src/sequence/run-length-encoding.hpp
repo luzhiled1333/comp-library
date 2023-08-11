@@ -8,8 +8,9 @@
 
 namespace luz {
 
-  template< class T, class Iter >
-  std::vector< std::pair< T, usize > > run_length_encoding(Iter first, Iter last) {
+  template < class T, class Iter >
+  std::vector< std::pair< T, usize > > run_length_encoding(
+      Iter first, Iter last) {
     std::vector< std::pair< T, usize > > result;
 
     while (first != last) {
@@ -32,7 +33,7 @@ namespace luz {
 
   std::vector< std::pair< char, usize > > run_length_encoding(
       const std::string &s) {
-    return run_length_encoding<char>(s.begin(), s.end());
+    return run_length_encoding< char >(s.begin(), s.end());
   }
 
 } // namespace luz
