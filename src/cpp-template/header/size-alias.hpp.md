@@ -200,6 +200,10 @@ data:
     path: src/sequence/compression.hpp
     title: "\u5EA7\u6A19\u5727\u7E2E"
   - icon: ':heavy_check_mark:'
+    path: src/sequence/fast-rolling-hash.hpp
+    title: "\u9AD8\u901F\u306A\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5\
+      \ (Fast Rolling Hash with $\\mod 2^{61} - 1$)"
+  - icon: ':heavy_check_mark:'
     path: src/sequence/run-length-encoding.hpp
     title: "\u30E9\u30F3\u30EC\u30F3\u30B0\u30B9\u5727\u7E2E (\u9023\u9577\u5727\u7E2E\
       , Run Length Encoding, RLE)"
@@ -244,6 +248,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/4011.test.cpp
     title: test/aoj/4011.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/alds1_14_b/fast-rolling-hash.test.cpp
+    title: test/aoj/alds1_14_b/fast-rolling-hash.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/dsl_1_a.test.cpp
     title: test/aoj/dsl_1_a.test.cpp
@@ -362,6 +369,9 @@ data:
     path: test/library-checker/unionfind.test.cpp
     title: test/library-checker/unionfind.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/library-checker/zalgorithm/fast-rolling-hash-lcp.test.cpp
+    title: test/library-checker/zalgorithm/fast-rolling-hash-lcp.test.cpp
+  - icon: ':heavy_check_mark:'
     path: unit-test/data-structure/fenwick-tree.test.cpp
     title: unit-test/data-structure/fenwick-tree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -465,6 +475,7 @@ data:
   - src/data-structure/disjoint-set-union.hpp
   - src/sequence/run-length-encoding.hpp
   - src/sequence/wildcard-pattern-matching.hpp
+  - src/sequence/fast-rolling-hash.hpp
   - src/sequence/compression.hpp
   - src/graph/class/edge/edge.hpp
   - src/graph/class/dynamic-graph.hpp
@@ -487,6 +498,7 @@ data:
   - test/aoj/dsl_2_i.test.cpp
   - test/aoj/dsl_2_f/range-minimum.test.cpp
   - test/aoj/dsl_2_f/range-maximum.test.cpp
+  - test/aoj/alds1_14_b/fast-rolling-hash.test.cpp
   - test/aoj/grl_1_b/dynamic-graph.test.cpp
   - test/aoj/grl_1_b/static-graph.test.cpp
   - test/aoj/dsl_2_a.test.cpp
@@ -525,6 +537,7 @@ data:
   - test/library-checker/jump_on_tree.test.cpp
   - test/library-checker/primality_test.test.cpp
   - test/library-checker/scc.test.cpp
+  - test/library-checker/zalgorithm/fast-rolling-hash-lcp.test.cpp
   - test/library-checker/bitwise_xor_convolution.test.cpp
   - unit-test/math/totient.test.cpp
   - unit-test/math/totient-enumeration.test.cpp

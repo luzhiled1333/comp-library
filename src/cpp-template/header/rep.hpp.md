@@ -163,6 +163,10 @@ data:
     path: src/sequence/compression.hpp
     title: "\u5EA7\u6A19\u5727\u7E2E"
   - icon: ':heavy_check_mark:'
+    path: src/sequence/fast-rolling-hash.hpp
+    title: "\u9AD8\u901F\u306A\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5\
+      \ (Fast Rolling Hash with $\\mod 2^{61} - 1$)"
+  - icon: ':heavy_check_mark:'
     path: src/sequence/wildcard-pattern-matching.hpp
     title: "\u30EF\u30A4\u30EB\u30C9\u30AB\u30FC\u30C9\u30D1\u30BF\u30FC\u30F3\u30DE\
       \u30C3\u30C1\u30F3\u30B0"
@@ -182,6 +186,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/4011.test.cpp
     title: test/aoj/4011.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/alds1_14_b/fast-rolling-hash.test.cpp
+    title: test/aoj/alds1_14_b/fast-rolling-hash.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj/dsl_1_a.test.cpp
     title: test/aoj/dsl_1_a.test.cpp
@@ -296,6 +303,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/library-checker/unionfind.test.cpp
     title: test/library-checker/unionfind.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/library-checker/zalgorithm/fast-rolling-hash-lcp.test.cpp
+    title: test/library-checker/zalgorithm/fast-rolling-hash-lcp.test.cpp
   - icon: ':heavy_check_mark:'
     path: unit-test/data-structure/fenwick-tree.test.cpp
     title: unit-test/data-structure/fenwick-tree.test.cpp
@@ -421,6 +431,7 @@ data:
   - src/data-structure/segment-tree/range-mapping-point-fold-segment-tree.hpp
   - src/data-structure/disjoint-set-union.hpp
   - src/sequence/wildcard-pattern-matching.hpp
+  - src/sequence/fast-rolling-hash.hpp
   - src/sequence/compression.hpp
   - src/graph/class/static-graph.hpp
   - src/graph/decomposition/strongly-connected-components.hpp
@@ -437,6 +448,7 @@ data:
   - test/aoj/dsl_2_i.test.cpp
   - test/aoj/dsl_2_f/range-minimum.test.cpp
   - test/aoj/dsl_2_f/range-maximum.test.cpp
+  - test/aoj/alds1_14_b/fast-rolling-hash.test.cpp
   - test/aoj/grl_1_b/dynamic-graph.test.cpp
   - test/aoj/grl_1_b/static-graph.test.cpp
   - test/aoj/dsl_2_a.test.cpp
@@ -474,6 +486,7 @@ data:
   - test/library-checker/modint_convolution.test.cpp
   - test/library-checker/jump_on_tree.test.cpp
   - test/library-checker/scc.test.cpp
+  - test/library-checker/zalgorithm/fast-rolling-hash-lcp.test.cpp
   - test/library-checker/bitwise_xor_convolution.test.cpp
   - unit-test/math/totient.test.cpp
   - unit-test/math/totient-enumeration.test.cpp

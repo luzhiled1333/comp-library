@@ -34,6 +34,9 @@ data:
     path: test/library-checker/scc.test.cpp
     title: test/library-checker/scc.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/library-checker/zalgorithm/fast-rolling-hash-lcp.test.cpp
+    title: test/library-checker/zalgorithm/fast-rolling-hash-lcp.test.cpp
+  - icon: ':heavy_check_mark:'
     path: unit-test/sequence/compression.test.cpp
     title: unit-test/sequence/compression.test.cpp
   _isVerificationFailed: false
@@ -94,6 +97,7 @@ data:
   - test/atcoder/abc258_e/online-algorithm.test.cpp
   - test/atcoder/abc258_e/offline-algorithm.test.cpp
   - test/library-checker/scc.test.cpp
+  - test/library-checker/zalgorithm/fast-rolling-hash-lcp.test.cpp
   - unit-test/sequence/compression.test.cpp
 documentation_of: src/cpp-template/header/vector-ios.hpp
 layout: document

@@ -435,6 +435,10 @@ data:
       path: src/sequence/compression.hpp
       title: "\u5EA7\u6A19\u5727\u7E2E"
     - icon: ':heavy_check_mark:'
+      path: src/sequence/fast-rolling-hash.hpp
+      title: "\u9AD8\u901F\u306A\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5\
+        \ (Fast Rolling Hash with $\\mod 2^{61} - 1$)"
+    - icon: ':heavy_check_mark:'
       path: src/sequence/run-length-encoding.hpp
       title: "\u30E9\u30F3\u30EC\u30F3\u30B0\u30B9\u5727\u7E2E (\u9023\u9577\u5727\
         \u7E2E, Run Length Encoding, RLE)"
@@ -514,6 +518,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/ntl_1_d.test.cpp
       title: test/aoj/ntl_1_d.test.cpp
+  - name: test/aoj/alds1_14_b
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/alds1_14_b/fast-rolling-hash.test.cpp
+      title: test/aoj/alds1_14_b/fast-rolling-hash.test.cpp
   - name: test/aoj/dsl_2_b
     pages:
     - icon: ':heavy_check_mark:'
@@ -629,6 +638,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/library-checker/unionfind.test.cpp
       title: test/library-checker/unionfind.test.cpp
+  - name: test/library-checker/zalgorithm
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/library-checker/zalgorithm/fast-rolling-hash-lcp.test.cpp
+      title: test/library-checker/zalgorithm/fast-rolling-hash-lcp.test.cpp
   - name: unit-test/data-structure
     pages:
     - icon: ':heavy_check_mark:'
