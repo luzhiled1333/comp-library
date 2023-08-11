@@ -25,16 +25,31 @@ namespace luz::impl {
 
 namespace luz {
 
+  template< class T, class Iter >
+  std::vector< std::pair< T, usize > > run_length_encoding(Iter first, Iter last) {
+    std::vector< std::pair< T, usize > > result;
+
+    while (first != last) {
+      if (result.empty() or result.back().first != *first) {
+        result.emplace_back(*first, 0);
+      }
+
+      result.back().second++;
+      ++first;
+    }
+
+    return result;
+  }
+
   template < typename T >
   std::vector< std::pair< T, usize > > run_length_encoding(
       const std::vector< T > &vs) {
-    return impl::rle(vs);
+    return run_length_encoding(vs.begin(), vs.end());
   }
 
   std::vector< std::pair< char, usize > > run_length_encoding(
       const std::string &s) {
-    std::vector< char > cs(s.begin(), s.end());
-    return impl::rle(cs);
+    return run_length_encoding<char>(s.begin(), s.end());
   }
 
 } // namespace luz
