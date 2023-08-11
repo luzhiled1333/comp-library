@@ -97,7 +97,8 @@ namespace luz {
     }
 
     static bool is_primitive_root(u64 b) {
-      constexpr u64 ps[] = {2, 3, 5, 7, 11, 13, 31, 41, 61, 151, 331, 1321};
+      constexpr u64 ps[] = {2,  3,  5,  7,   11,  13,
+                            31, 41, 61, 151, 331, 1321};
       for (const auto &p: ps) {
         if (mod_pow(b, (mod - 1) / p) == 1) {
           return false;
