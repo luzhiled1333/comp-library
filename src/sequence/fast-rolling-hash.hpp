@@ -111,7 +111,7 @@ namespace luz {
       std::mt19937_64 mt(std::chrono::steady_clock::now()
                              .time_since_epoch()
                              .count());
-      std::uniform_int_distribution< u64 > rand(1, mod - 1);
+      std::uniform_int_distribution< u64 > rand(1e9, mod - 1);
       while (true) {
         u64 b = rand(mt);
         if (not is_primitive_root(b)) {
