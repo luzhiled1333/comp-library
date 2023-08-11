@@ -62,7 +62,7 @@ usize froll.lcp(const Hs &a, usize l1, usize r1,
                 const Hs &b, usize l2, usize r2)
 ```
 
-列 $A$ のハッシュ列 `a` とその区間 $[l1, r1)$、列 $B$ のハッシュ列 `b` とその区間 $[l2, r2)$ を渡すことで、列 $A$ の区間 $[l1, r1)$ と列 $B$ の区間 $[l2, r2)$ の最長共通接頭辞 (Longest Common Prefix) を返す。
+列 $A$ のハッシュ列 `a` とその区間 $[l1, r1)$、列 $B$ のハッシュ列 `b` とその区間 $[l2, r2)$ を渡すことで、列 $A$ の区間 $[l1, r1)$ と列 $B$ の区間 $[l2, r2)$ の最長共通接頭辞 (Longest Common Prefix) の長さを返す。
 
 ### 計算量
 - 2 つの区間の長さの最小値を $n$ として $O(\log n)$
