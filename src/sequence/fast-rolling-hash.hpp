@@ -5,6 +5,7 @@
 #include "src/cpp-template/header/size-alias.hpp"
 
 #include <algorithm>
+#include <cassert>
 #include <chrono>
 #include <random>
 #include <vector>
@@ -56,9 +57,11 @@ namespace luz {
       return hs;
     }
 
-    u64 query(const Hs &s, usize first, usize last) {
-      expand(last - first);
-      return add(s[last], mod - mul(s[first], power[last - first]));
+    u64 query(const Hs &s, usize l, usize r) {
+      assert(l <= r);
+
+      expand(r - l);
+      return add(s[r], mod - mul(s[l], power[r - l]));
     }
 
     u64 combine(u64 h1, u64 h2, usize h2len) {
@@ -66,15 +69,17 @@ namespace luz {
       return add(mul(h1, power[h2len]), h2);
     }
 
-    usize lcp(const Hs &a, usize first1, usize last1, const Hs &b,
-              usize first2, usize last2) {
-      usize len = std::min(last1 - first1, last2 - first2);
+    usize lcp(const Hs &a, usize l1, usize r1, const Hs &b, usize l2,
+              usize r2) {
+      assert(l1 <= r1);
+      assert(l2 <= r2);
+
+      usize len = std::min(r1 - l1, r2 - l2);
       usize low = 0, high = len + 1;
 
       while (high - low > 1) {
         usize mid = (low + high) / 2;
-        if (query(a, first1, first1 + mid) ==
-            query(b, first2, first2 + mid)) {
+        if (query(a, l1, l1 + mid) == query(b, l2, l2 + mid)) {
           low = mid;
         } else {
           high = mid;
