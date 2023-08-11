@@ -82,6 +82,20 @@ namespace luz {
     }
 
    private:
+    u64 mod_pow(u64 b, u64 e) {
+      u64 res{1};
+
+      while (e) {
+        if (e & 1) {
+          res = mul(res, b);
+        }
+        b = mul(b, b);
+        e >>= 1;
+      }
+
+      return res;
+    }
+
     static u64 generate_base() {
       std::mt19937_64 mt(std::chrono::steady_clock::now()
                              .time_since_epoch()
@@ -89,7 +103,6 @@ namespace luz {
       std::uniform_int_distribution< u64 > rand(1, mod - 1);
       return rand(mt);
     }
-
   };
 
 } // namespace luz
