@@ -58,7 +58,7 @@ namespace luz {
     }
 
     u64 query(const Hs &s, usize l, usize r) {
-      assert(l <= r);
+      assert(l <= r and r < s.size());
 
       expand(r - l);
       return add(s[r], mod - mul(s[l], power[r - l]));
@@ -71,8 +71,8 @@ namespace luz {
 
     usize lcp(const Hs &a, usize l1, usize r1, const Hs &b, usize l2,
               usize r2) {
-      assert(l1 <= r1);
-      assert(l2 <= r2);
+      assert(l1 <= r1 and r1 < a.size());
+      assert(l2 <= r2 and r2 < b.size());
 
       usize len = std::min(r1 - l1, r2 - l2);
       usize low = 0, high = len + 1;
