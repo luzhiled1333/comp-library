@@ -28,7 +28,7 @@ namespace luz {
   template < typename T >
   std::vector< std::pair< T, usize > > run_length_encoding(
       const std::vector< T > &vs) {
-    return run_length_encoding(vs.begin(), vs.end());
+    return run_length_encoding< T >(vs.begin(), vs.end());
   }
 
   std::vector< std::pair< char, usize > > run_length_encoding(
