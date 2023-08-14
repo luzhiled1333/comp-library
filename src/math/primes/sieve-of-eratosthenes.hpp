@@ -50,6 +50,8 @@ namespace luz {
     }
 
     std::vector< u32 > prime_factor(u32 n) {
+      assert(n != 0);
+
       std::vector< u32 > pfs;
       while (n != 1) {
         u32 mpf = ps[n];

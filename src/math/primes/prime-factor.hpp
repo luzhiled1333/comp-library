@@ -2,11 +2,14 @@
 
 #include "src/cpp-template/header/int-alias.hpp"
 
+#include <cassert>
 #include <vector>
 
 namespace luz {
 
   std::vector< u64 > prime_factor(u64 n) {
+    assert(n != 0);
+
     std::vector< u64 > ps;
 
     for (u64 p = 2; p * p <= n and n != 1; p++) {
