@@ -12,7 +12,7 @@ namespace luz {
 
     std::vector< u64 > ps;
 
-    for (u64 p = 2; p * p <= n and n != 1; p++) {
+    for (u64 p = 2; p * p <= n; p++) {
       while (n % p == 0) {
         ps.emplace_back(p);
         n /= p;
