@@ -117,20 +117,20 @@ data:
     \   }\n\n    void set(usize index, const OT x) {\n      assert(index < size());\n\
     \      index += size();\n\n      const usize l = 1;\n      const usize r = bit_width(index);\n\
     \      for (usize i: rrep(l, r)) {\n        propagate(index >> i);\n      }\n\n\
-    \      tree[index] = node_type(x, O::identity());\n    }\n\n    void apply(usize\
-    \ index, const OT &x) {\n      return apply(index, index + 1, x);\n    }\n\n \
-    \   void apply(usize first, usize last, const OT &x) {\n      assert(first <=\
-    \ last);\n      assert(last <= size());\n\n      first += size();\n      last\
-    \ += size();\n\n      propagate_bound(first);\n      propagate_bound(last);\n\n\
-    \      while (first != last) {\n        if (first & 1) {\n          evaluate_lazy(tree[first],\
-    \ x);\n          first += 1;\n        }\n        first >>= 1;\n\n        if (last\
-    \ & 1) {\n          last -= 1;\n          evaluate_lazy(tree[last], x);\n    \
-    \    }\n        last >>= 1;\n      }\n    }\n\n    OT fold(usize index) {\n  \
-    \    assert(index < size());\n\n      index += size();\n\n      OT result = tree[index];\n\
-    \      while (index != 1) {\n        index >>= 1;\n        evaluate_lazy(result,\
-    \ tree[index]);\n      }\n      return result;\n    }\n  };\n\n  template < class\
-    \ operator_structure >\n  using DualSegmentTree =\n      RangeMappingPointFoldSegmentTree<\
-    \ operator_structure >;\n\n} // namespace luz\n"
+    \      tree[index] = x;\n    }\n\n    void apply(usize index, const OT &x) {\n\
+    \      return apply(index, index + 1, x);\n    }\n\n    void apply(usize first,\
+    \ usize last, const OT &x) {\n      assert(first <= last);\n      assert(last\
+    \ <= size());\n\n      first += size();\n      last += size();\n\n      propagate_bound(first);\n\
+    \      propagate_bound(last);\n\n      while (first != last) {\n        if (first\
+    \ & 1) {\n          evaluate_lazy(tree[first], x);\n          first += 1;\n  \
+    \      }\n        first >>= 1;\n\n        if (last & 1) {\n          last -= 1;\n\
+    \          evaluate_lazy(tree[last], x);\n        }\n        last >>= 1;\n   \
+    \   }\n    }\n\n    OT fold(usize index) {\n      assert(index < size());\n\n\
+    \      index += size();\n\n      OT result = tree[index];\n      while (index\
+    \ != 1) {\n        index >>= 1;\n        evaluate_lazy(result, tree[index]);\n\
+    \      }\n      return result;\n    }\n  };\n\n  template < class operator_structure\
+    \ >\n  using DualSegmentTree =\n      RangeMappingPointFoldSegmentTree< operator_structure\
+    \ >;\n\n} // namespace luz\n"
   code: "#pragma once\n\n#include \"src/cpp-template/header/rep.hpp\"\n#include \"\
     src/cpp-template/header/size-alias.hpp\"\n#include \"src/utility/bit/bit-width.hpp\"\
     \n#include \"src/utility/bit/count-trailing-0s.hpp\"\n\n#include <cassert>\n#include\
@@ -155,20 +155,20 @@ data:
     \   }\n\n    void set(usize index, const OT x) {\n      assert(index < size());\n\
     \      index += size();\n\n      const usize l = 1;\n      const usize r = bit_width(index);\n\
     \      for (usize i: rrep(l, r)) {\n        propagate(index >> i);\n      }\n\n\
-    \      tree[index] = node_type(x, O::identity());\n    }\n\n    void apply(usize\
-    \ index, const OT &x) {\n      return apply(index, index + 1, x);\n    }\n\n \
-    \   void apply(usize first, usize last, const OT &x) {\n      assert(first <=\
-    \ last);\n      assert(last <= size());\n\n      first += size();\n      last\
-    \ += size();\n\n      propagate_bound(first);\n      propagate_bound(last);\n\n\
-    \      while (first != last) {\n        if (first & 1) {\n          evaluate_lazy(tree[first],\
-    \ x);\n          first += 1;\n        }\n        first >>= 1;\n\n        if (last\
-    \ & 1) {\n          last -= 1;\n          evaluate_lazy(tree[last], x);\n    \
-    \    }\n        last >>= 1;\n      }\n    }\n\n    OT fold(usize index) {\n  \
-    \    assert(index < size());\n\n      index += size();\n\n      OT result = tree[index];\n\
-    \      while (index != 1) {\n        index >>= 1;\n        evaluate_lazy(result,\
-    \ tree[index]);\n      }\n      return result;\n    }\n  };\n\n  template < class\
-    \ operator_structure >\n  using DualSegmentTree =\n      RangeMappingPointFoldSegmentTree<\
-    \ operator_structure >;\n\n} // namespace luz\n"
+    \      tree[index] = x;\n    }\n\n    void apply(usize index, const OT &x) {\n\
+    \      return apply(index, index + 1, x);\n    }\n\n    void apply(usize first,\
+    \ usize last, const OT &x) {\n      assert(first <= last);\n      assert(last\
+    \ <= size());\n\n      first += size();\n      last += size();\n\n      propagate_bound(first);\n\
+    \      propagate_bound(last);\n\n      while (first != last) {\n        if (first\
+    \ & 1) {\n          evaluate_lazy(tree[first], x);\n          first += 1;\n  \
+    \      }\n        first >>= 1;\n\n        if (last & 1) {\n          last -= 1;\n\
+    \          evaluate_lazy(tree[last], x);\n        }\n        last >>= 1;\n   \
+    \   }\n    }\n\n    OT fold(usize index) {\n      assert(index < size());\n\n\
+    \      index += size();\n\n      OT result = tree[index];\n      while (index\
+    \ != 1) {\n        index >>= 1;\n        evaluate_lazy(result, tree[index]);\n\
+    \      }\n      return result;\n    }\n  };\n\n  template < class operator_structure\
+    \ >\n  using DualSegmentTree =\n      RangeMappingPointFoldSegmentTree< operator_structure\
+    \ >;\n\n} // namespace luz\n"
   dependsOn:
   - src/cpp-template/header/rep.hpp
   - src/cpp-template/header/size-alias.hpp
@@ -183,7 +183,7 @@ data:
   - src/data-structure/segment-tree/presets/range-chmin-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-chmax-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-update-query-solver.hpp
-  timestamp: '2023-07-30 00:54:52+09:00'
+  timestamp: '2023-08-18 19:53:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/dsl_2_d.test.cpp
