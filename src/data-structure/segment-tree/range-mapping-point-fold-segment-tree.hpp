@@ -76,7 +76,7 @@ namespace luz {
         propagate(index >> i);
       }
 
-      tree[index] = node_type(x, O::identity());
+      tree[index] = x;
     }
 
     void apply(usize index, const OT &x) {
