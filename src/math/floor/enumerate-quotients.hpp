@@ -2,7 +2,6 @@
 
 #include "src/cpp-template/header/int-alias.hpp"
 
-#include <algorithm>
 #include <cassert>
 #include <tuple>
 #include <vector>
