@@ -19,4 +19,4 @@ jobs:
         sudo apt-get install `apt-cache search -n clang-format-[0-9]+ | sort -V -r | sed -n '1{s/^\([^ ]*\).*/\1/p}'`
     - name: apply formatter
       run: |
-        clang-format-18 --dry-run --Werror $(find . -name "*.hpp" -or -name "*.cpp")
+        `apt-cache search -n clang-format-[0-9]+ | sort -V -r | sed -n '1{s/^\([^ ]*\).*/\1/p}'` --dry-run --Werror $(find . -name "*.hpp" -or -name "*.cpp")
