@@ -35,8 +35,8 @@ data:
   timestamp: '2023-07-30 00:54:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/ntl_1_d.test.cpp
   - unit-test/math/totient.test.cpp
+  - test/aoj/ntl_1_d.test.cpp
 documentation_of: src/math/totient.hpp
 layout: document
 title: "\u30AA\u30A4\u30E9\u30FC\u306E\u30C8\u30FC\u30B7\u30A7\u30F3\u30C8\u95A2\u6570\

@@ -162,45 +162,45 @@ data:
   isVerificationFile: false
   path: src/utility/bit/popcount.hpp
   requiredBy:
-  - src/math/convolution/modint-convolution.hpp
-  - src/utility/bit/bit-width.hpp
-  - src/utility/bit/count-trailing-0s.hpp
-  - src/utility/bit/count-leading-0s.hpp
-  - src/data-structure/segment-tree/presets/range-add-range-sum-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-update-range-minimum-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-add-range-minimum-query-solver.hpp
+  - src/data-structure/segment-tree/range-mapping-point-fold-segment-tree.hpp
+  - src/data-structure/segment-tree/range-mapping-range-fold-segment-tree.hpp
   - src/data-structure/segment-tree/presets/range-add-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-add-range-minimum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-update-range-minimum-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-chmin-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-add-range-maximum-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-chmax-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-update-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-update-range-maximum-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-add-range-maximum-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-update-range-sum-query-solver.hpp
-  - src/data-structure/segment-tree/range-mapping-range-fold-segment-tree.hpp
-  - src/data-structure/segment-tree/range-mapping-point-fold-segment-tree.hpp
+  - src/data-structure/segment-tree/presets/range-add-range-sum-query-solver.hpp
   - src/sequence/wildcard-pattern-matching.hpp
   - src/graph/functional-graph/online-query/online-query-jump-on-functional-graph.hpp
+  - src/math/convolution/modint-convolution.hpp
+  - src/utility/bit/count-trailing-0s.hpp
+  - src/utility/bit/count-leading-0s.hpp
+  - src/utility/bit/bit-width.hpp
   timestamp: '2023-07-30 00:54:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/dsl_2_i.test.cpp
-  - test/aoj/dsl_2_f/range-minimum.test.cpp
-  - test/aoj/dsl_2_f/range-maximum.test.cpp
+  - unit-test/graph/online-query-jump-on-functional-graph.test.cpp
+  - unit-test/utility/bit/bit-width.test.cpp
+  - unit-test/utility/bit/count-trailing-0s.test.cpp
+  - unit-test/utility/bit/popcount.test.cpp
+  - unit-test/utility/bit/count-leading-0s.test.cpp
+  - test/library-checker/modint_convolution.test.cpp
+  - test/atcoder/abc258_e/online-algorithm.test.cpp
+  - test/atcoder/abc179_f/range-chmin.test.cpp
+  - test/atcoder/abc179_f/range-chmax.test.cpp
+  - test/atcoder/abc307_h/main.test.cpp
   - test/aoj/dsl_2_d.test.cpp
   - test/aoj/dsl_2_h/range-minimum.test.cpp
   - test/aoj/dsl_2_h/range-maximum.test.cpp
-  - test/aoj/dsl_2_e.test.cpp
   - test/aoj/dsl_2_g.test.cpp
-  - test/atcoder/abc307_h/main.test.cpp
-  - test/atcoder/abc179_f/range-chmax.test.cpp
-  - test/atcoder/abc179_f/range-chmin.test.cpp
-  - test/atcoder/abc258_e/online-algorithm.test.cpp
-  - test/library-checker/modint_convolution.test.cpp
-  - unit-test/utility/bit/bit-width.test.cpp
-  - unit-test/utility/bit/popcount.test.cpp
-  - unit-test/utility/bit/count-leading-0s.test.cpp
-  - unit-test/utility/bit/count-trailing-0s.test.cpp
-  - unit-test/graph/online-query-jump-on-functional-graph.test.cpp
+  - test/aoj/dsl_2_f/range-minimum.test.cpp
+  - test/aoj/dsl_2_f/range-maximum.test.cpp
+  - test/aoj/dsl_2_i.test.cpp
+  - test/aoj/dsl_2_e.test.cpp
 documentation_of: src/utility/bit/popcount.hpp
 layout: document
 title: "\u7ACB\u3063\u3066\u3044\u308B bit \u306E\u6570 (population count, popcount)"

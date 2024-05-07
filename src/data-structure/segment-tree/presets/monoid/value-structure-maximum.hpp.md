@@ -52,17 +52,17 @@ data:
   isVerificationFile: false
   path: src/data-structure/segment-tree/presets/monoid/value-structure-maximum.hpp
   requiredBy:
-  - src/data-structure/segment-tree/presets/range-maximum-query-solver.hpp
-  - src/data-structure/segment-tree/presets/monoid/combined-structure-update-maximum.hpp
-  - src/data-structure/segment-tree/presets/monoid/combined-structure-add-maximum.hpp
-  - src/data-structure/segment-tree/presets/range-update-range-maximum-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-add-range-maximum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/monoid/combined-structure-add-maximum.hpp
+  - src/data-structure/segment-tree/presets/monoid/combined-structure-update-maximum.hpp
+  - src/data-structure/segment-tree/presets/range-update-range-maximum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-maximum-query-solver.hpp
   timestamp: '2023-05-03 14:59:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/dsl_2_f/range-maximum.test.cpp
-  - test/aoj/dsl_2_h/range-maximum.test.cpp
   - test/atcoder/abc298_f.test.cpp
+  - test/aoj/dsl_2_h/range-maximum.test.cpp
+  - test/aoj/dsl_2_f/range-maximum.test.cpp
 documentation_of: src/data-structure/segment-tree/presets/monoid/value-structure-maximum.hpp
 layout: document
 redirect_from:

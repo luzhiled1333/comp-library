@@ -57,20 +57,20 @@ data:
   isVerificationFile: false
   path: src/data-structure/segment-tree/presets/monoid/operator-structure-add.hpp
   requiredBy:
-  - src/data-structure/segment-tree/presets/range-add-range-sum-query-solver.hpp
-  - src/data-structure/segment-tree/presets/range-add-range-minimum-query-solver.hpp
   - src/data-structure/segment-tree/presets/range-add-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-add-range-minimum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-add-range-maximum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/monoid/combined-structure-add-maximum.hpp
   - src/data-structure/segment-tree/presets/monoid/combined-structure-add-minimum.hpp
   - src/data-structure/segment-tree/presets/monoid/combined-structure-add-sum.hpp
-  - src/data-structure/segment-tree/presets/monoid/combined-structure-add-maximum.hpp
-  - src/data-structure/segment-tree/presets/range-add-range-maximum-query-solver.hpp
+  - src/data-structure/segment-tree/presets/range-add-range-sum-query-solver.hpp
   timestamp: '2023-05-03 14:59:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/dsl_2_h/range-minimum.test.cpp
   - test/aoj/dsl_2_h/range-maximum.test.cpp
-  - test/aoj/dsl_2_e.test.cpp
   - test/aoj/dsl_2_g.test.cpp
+  - test/aoj/dsl_2_e.test.cpp
 documentation_of: src/data-structure/segment-tree/presets/monoid/operator-structure-add.hpp
 layout: document
 redirect_from:

@@ -80,8 +80,8 @@ data:
   timestamp: '2023-07-30 00:54:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/dsl_2_b/fenwick-tree.test.cpp
   - unit-test/data-structure/fenwick-tree.test.cpp
+  - test/aoj/dsl_2_b/fenwick-tree.test.cpp
 documentation_of: src/data-structure/fenwick-tree.hpp
 layout: document
 title: Fenwick Tree (Binary Indexed Tree, BIT)

@@ -53,12 +53,12 @@ data:
   isVerificationFile: false
   path: src/geometry/R2/numbers/sign.hpp
   requiredBy:
+  - src/geometry/R2/class/vector.hpp
+  - src/geometry/R2/class/segment.hpp
+  - src/geometry/R2/class/line.hpp
+  - src/geometry/R2/class/circle.hpp
   - src/geometry/R2/class/point.hpp
   - src/geometry/R2/class/polygon.hpp
-  - src/geometry/R2/class/circle.hpp
-  - src/geometry/R2/class/segment.hpp
-  - src/geometry/R2/class/vector.hpp
-  - src/geometry/R2/class/line.hpp
   - src/geometry/R2/utility/sign.hpp
   - src/geometry/R2/utility/equals.hpp
   timestamp: '2023-07-30 00:54:52+09:00'

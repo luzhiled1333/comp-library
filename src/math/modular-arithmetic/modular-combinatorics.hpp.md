@@ -114,8 +114,8 @@ data:
   timestamp: '2023-07-30 00:54:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/atcoder/arc117_c.test.cpp
   - test/atcoder/abc132_d.test.cpp
+  - test/atcoder/arc117_c.test.cpp
 documentation_of: src/math/modular-arithmetic/modular-combinatorics.hpp
 layout: document
 title: "mod \u7D44\u5408\u305B (mod combinatorics)"

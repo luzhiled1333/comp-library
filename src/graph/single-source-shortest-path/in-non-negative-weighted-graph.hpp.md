@@ -93,8 +93,8 @@ data:
   timestamp: '2023-07-30 00:54:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/grl_1_a/dynamic-graph.test.cpp
   - test/aoj/grl_1_a/static-graph.test.cpp
+  - test/aoj/grl_1_a/dynamic-graph.test.cpp
 documentation_of: src/graph/single-source-shortest-path/in-non-negative-weighted-graph.hpp
 layout: document
 title: "\u975E\u8CA0\u91CD\u307F\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u7D4C\u8DEF (Single\

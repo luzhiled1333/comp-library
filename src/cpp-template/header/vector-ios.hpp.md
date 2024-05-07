@@ -91,14 +91,14 @@ data:
   timestamp: '2023-07-30 00:54:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/itp1_1_a.test.cpp
-  - test/aoj/1181.test.cpp
-  - test/atcoder/abc291_e.test.cpp
-  - test/atcoder/abc258_e/online-algorithm.test.cpp
-  - test/atcoder/abc258_e/offline-algorithm.test.cpp
+  - unit-test/sequence/compression.test.cpp
   - test/library-checker/scc.test.cpp
   - test/library-checker/zalgorithm/fast-rolling-hash-lcp.test.cpp
-  - unit-test/sequence/compression.test.cpp
+  - test/atcoder/abc258_e/offline-algorithm.test.cpp
+  - test/atcoder/abc258_e/online-algorithm.test.cpp
+  - test/atcoder/abc291_e.test.cpp
+  - test/aoj/itp1_1_a.test.cpp
+  - test/aoj/1181.test.cpp
 documentation_of: src/cpp-template/header/vector-ios.hpp
 layout: document
 title: vector I/O

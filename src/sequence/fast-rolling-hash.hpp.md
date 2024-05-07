@@ -136,8 +136,8 @@ data:
   timestamp: '2023-08-12 04:06:58+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/alds1_14_b/fast-rolling-hash.test.cpp
   - test/library-checker/zalgorithm/fast-rolling-hash-lcp.test.cpp
+  - test/aoj/alds1_14_b/fast-rolling-hash.test.cpp
 documentation_of: src/sequence/fast-rolling-hash.hpp
 layout: document
 title: "\u9AD8\u901F\u306A\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\u30E5 (Fast\

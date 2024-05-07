@@ -256,8 +256,8 @@ data:
   timestamp: '2023-07-30 00:54:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/atcoder/abc307_h/main.test.cpp
   - test/library-checker/modint_convolution.test.cpp
+  - test/atcoder/abc307_h/main.test.cpp
 documentation_of: src/math/convolution/modint-convolution.hpp
 layout: document
 title: Number Theoretic Transform
